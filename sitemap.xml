@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/08/30/SQLMAP%E6%8F%90%E6%95%B0%E6%8D%AE/</loc>
+    
+    <lastmod>2017-08-30T12:49:37.909Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/08/30/Centos-Hexo-Github/</loc>
     
     <lastmod>2017-08-30T12:35:20.055Z</lastmod>
