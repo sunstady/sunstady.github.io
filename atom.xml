@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-30T12:27:29.676Z</updated>
+  <updated>2017-08-30T12:35:20.055Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/30/Centos-Hexo-Github/"/>
     <id>http://yoursite.com/2017/08/30/Centos-Hexo-Github/</id>
     <published>2017-08-30T11:25:18.000Z</published>
-    <updated>2017-08-30T12:27:29.676Z</updated>
+    <updated>2017-08-30T12:35:20.055Z</updated>
     
     <content type="html"><![CDATA[<p>本文只介绍style安装的过程，其他版本请另行借鉴！(万变不离其宗)</p>
 <p>必需品：</p>
@@ -101,8 +101,7 @@
 <li>npm install hexo-generator-sitemap –save</li>
 </ul>
 </blockquote>
-<p>安装结束后，进行下一步<br>修改Hexo配置文件(站点文件，即<code>hexo/config._yml</code>,,<code>hexo/themes/next/_config.yml</code>是主题文件)</p>
-<p><code>注： key值没有对应的value值的时候，冒号后面一定要有空格！否则会报错，例如：timezone:会报错，，timezone: 不会</code></p>
+<p>安装结束后，进行下一步<br>修改Hexo配置文件(站点文件，即<code>hexo/config._yml</code>,,<code>hexo/themes/next/_config.yml</code>是主题文件)<br><code>注： key值没有对应的value值的时候，冒号后面一定要有空格！否则会报错，例如：timezone:会报错，，timezone: 不会</code></p>
 <p>###部署到Github<br>这个简单</p>
 <p>####配置本机全局git变量(如果已经配置过请忽略)<br>在VPS(你的服务器)上设置你的Git</p>
 <blockquote>
@@ -129,7 +128,7 @@
 <p>####配置Hexo， 编译与部署<br>在<code>站点文件_config.yml</code>里第一段</p>
 <blockquote>
 <ul>
-<li>Site 站点信息设置<br>title: Sanstyle  站名<br>subtitle: 世界， 你好    这是副标题<br>description:   站描述<br>autor: MC   作者<br>language: zh-CN  语言<br>timezone: </li>
+<li>#Site 站点信息设置<br>title: Sanstyle  #站名<br>subtitle: 世界， 你好    #这是副标题<br>description:   #站描述<br>autor: MC   #作者<br>language: zh-CN  #语言<br>timezone: </li>
 </ul>
 </blockquote>
 <p>在<code>站点文件_config.yml</code>里最后一段</p>
@@ -186,7 +185,7 @@ commonweal: /404.html
 </code></pre></li>
 </ul>
 </blockquote>
-<p><code>若你的站点运行在子目录中，请将链接前缀的</code>/`去掉</p>
+<p>若你的站点运行在子目录中，请将链接前缀的<code>/</code>去掉</p>
 <p>设定菜单项的图标，对应的字段是 menu_icons。 此设定格式是 item name: icon name，其中 item name 与上一步所配置的菜单名字对应，icon name 是 Font Awesome 图标的 名字。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。</p>
 <blockquote>
 <ul>
@@ -205,11 +204,7 @@ commonweal: heartbeat
 <ul>
 <li>avatar: <a href="http://xxxx.com/xxxxx.jpg" target="_blank" rel="external">http://xxxx.com/xxxxx.jpg</a></li>
 </ul>
-<ul>
-<li>源码拷贝太多，贴<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">next的使用说明</a>供大家参考</li>
-</ul>
 </blockquote>
-<p>####找主题<br><a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
 <p>###访问：<br>现在可以通过<code>用户名.github.io</code>访问博客</p>
 ]]></content>
     
