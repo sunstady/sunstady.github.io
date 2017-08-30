@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-30T05:11:34.075Z</updated>
+  <updated>2017-08-30T06:12:20.510Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试</title>
+    <link href="http://yoursite.com/2017/08/30/%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/2017/08/30/测试/</id>
+    <published>2017-08-30T06:10:46.000Z</published>
+    <updated>2017-08-30T06:12:20.510Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Centos-Hexo-Github"><a href="#Centos-Hexo-Github" class="headerlink" title="Centos + Hexo + Github"></a>Centos + Hexo + Github</h1><blockquote>
+<ul>
+<li>注册有腾讯云</li>
+<li>腾讯云安装</li>
+<li>注册有</li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Centos-Hexo-Github&quot;&gt;&lt;a href=&quot;#Centos-Hexo-Github&quot; class=&quot;headerlink&quot; title=&quot;Centos + Hexo + Github&quot;&gt;&lt;/a&gt;Centos + Hexo + Github&lt;/h1&gt;&lt;
+    
+    </summary>
+    
+    
+      <category term="环境" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
