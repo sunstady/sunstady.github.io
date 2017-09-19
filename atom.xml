@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-19T13:45:25.255Z</updated>
+  <updated>2017-09-19T13:46:26.992Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Example3_9</title>
+    <link href="http://yoursite.com/2017/09/19/Example3-9/"/>
+    <id>http://yoursite.com/2017/09/19/Example3-9/</id>
+    <published>2017-09-19T13:46:00.000Z</published>
+    <updated>2017-09-19T13:46:26.992Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>求满足1+ 2!+ 3!+ ... +n!&lt;= 9999的最大整数N</code></p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example3_9</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="keyword">int</span> n= <span class="number">1</span>;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">sum</span>= <span class="number">0</span>, t= <span class="number">1</span>;</div><div class="line">        t= n* t;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ t;</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">sum</span>&gt; <span class="number">9999</span>)&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            n++;</div><div class="line">            t= n* t;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"满足条件的最大整数："</span>+ (n- <span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;求满足1+ 2!+ 3!+ ... +n!&amp;lt;= 9999的最大整数N&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight axapta&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Example3_8</title>
