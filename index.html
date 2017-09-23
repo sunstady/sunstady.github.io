@@ -295,6 +295,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/小型通讯录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/23/小型通讯录/" itemprop="url">小型通讯录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T13:36:43+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/23/小型通讯录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/23/小型通讯录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/23/小型通讯录/" class="leancloud_visitors" data-flag-title="小型通讯录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>定义Friend类，编写它具有的属性：姓名(name)、电话(phone)、邮箱(email)和公司(comp)以及它的方法showInfo()。编写测试类AddFriend，实现添加联系人的功能(从键盘输入)</code></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//AddFriend.java</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> class AddFried &#123;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		Friend <span class="keyword">friend</span>= <span class="keyword">new</span> Friend();</div><div class="line">		Scanner inputScanner= <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人姓名: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setName(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人电话: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setPhone(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人电子邮箱: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setEmail(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人公司: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setComp(inputScanner.next());</div><div class="line">		</div><div class="line">		<span class="keyword">friend</span>.showInfo();</div><div class="line">		</div><div class="line"><span class="comment">//		friend.name= "花千骨";</span></div><div class="line"><span class="comment">//		friend.showInfo();</span></div><div class="line">		<span class="comment">/*</span></div><div class="line"><span class="comment">		 * 没有封装，将String name等四个变量封装为private就行</span></div><div class="line"><span class="comment">		 * 封装：把不想或不该告诉别人的事情隐藏起来</span></div><div class="line"><span class="comment">		 * 具体做法：将属性私有化，提供公有化的方法来访问属性</span></div><div class="line"><span class="comment">		 * */</span></div><div class="line">		inputScanner.<span class="built_in">close</span>();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Friend.java</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> class Friend &#123;</div><div class="line">	<span class="keyword">String</span> name;<span class="comment">// 默认private</span></div><div class="line">	<span class="keyword">String</span> phone;</div><div class="line">	<span class="keyword">String</span> email;</div><div class="line">	<span class="keyword">String</span> comp;</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setName(<span class="keyword">String</span> name) &#123;</div><div class="line">		<span class="keyword">this</span>.name= name;<span class="comment">// 访问本类中的属性和方法</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getName()&#123;</div><div class="line">		<span class="built_in">return</span> name;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getPhone() &#123;</div><div class="line">		<span class="built_in">return</span> phone;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setPhone(<span class="keyword">String</span> phone) &#123;</div><div class="line">		<span class="keyword">this</span>.phone = phone;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getEmail() &#123;</div><div class="line">		<span class="built_in">return</span> email;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setEmail(<span class="keyword">String</span> email) &#123;</div><div class="line">		<span class="keyword">this</span>.email = email;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getComp() &#123;</div><div class="line">		<span class="built_in">return</span> comp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setComp(<span class="keyword">String</span> comp) &#123;</div><div class="line">		<span class="keyword">this</span>.comp = comp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> showInfo()&#123;</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"新朋友的联系信息为: "</span>);</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"姓名: "</span>+ <span class="keyword">this</span>.getName());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"电话: "</span>+ <span class="keyword">this</span>.getPhone());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"电子邮箱: "</span>+ <span class="keyword">this</span>.getEmail());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"公司: "</span>+ <span class="keyword">this</span>.hashCode());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/竞猜商品/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -389,8 +535,8 @@
         
           
             <p><code>电视商品价格竞猜活动， 活动规则是：随机出现一个商品名，用户猜测它的价格，连续猜测5次，如果猜对便可获得此商品</code><br><code>提示：(1)定义GuessMachine，编写它的initial方法，预定义商品信息根据产生的随机数字，选定一款竞猜商品</code><br><code>(2)编写GuessMachine的guess方法，如果猜测正确，返回“猜对了，恭喜中奖！”，价格偏高，提示高了，偏低，提示低了。</code><br><code>(3)编写测试类模拟竞猜，产生随机数 Math.radom();只产生0.0~1.0之间的数</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GuessMachine</span> &#123;</div><div class="line">	String mach= <span class="literal">null</span>;</div><div class="line">	<span class="keyword">int</span> price= <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initial</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">int</span> data= (<span class="keyword">int</span>)(Math.random()* <span class="number">4</span>);</div><div class="line">		<span class="keyword">switch</span>(data)&#123;</div><div class="line">		<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">			mach= <span class="string">"电视机"</span>;</div><div class="line">			price= <span class="number">3359</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">			mach= <span class="string">"电冰箱"</span>;</div><div class="line">			price= <span class="number">1243</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">			mach= <span class="string">"油烟机"</span>;</div><div class="line">			price= <span class="number">4654</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">			mach= <span class="string">"ipthone"</span>;</div><div class="line">			price= <span class="number">2324</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">			mach= <span class="string">"洗衣机"</span>;</div><div class="line">			price= <span class="number">5643</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">default</span>:</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"><span class="comment">//		System.out.println(data);</span></div><div class="line"><span class="comment">//		System.out.println("请输出"+ mach+ "的价格: ");</span></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">guess</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		Scanner inpScanner= <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">		<span class="keyword">int</span> guess= <span class="number">0</span>;<span class="comment">//用户输入的价格</span></div><div class="line">		<span class="keyword">int</span> i= <span class="number">0</span>;<span class="comment">//用户猜价格的次数</span></div><div class="line">		<span class="keyword">while</span>(i&lt; <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"请输入您竞猜的价格: "</span>);</div><div class="line">			guess= inpScanner.nextInt();</div><div class="line">			<span class="keyword">if</span>(price== guess)&#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"猜对了，恭喜中奖！"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(price&gt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"低了，请高一点。"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span> (price&lt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"高了， 请低一点。"</span>);</div><div class="line">			&#125;</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(i&gt;= <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"您已经猜奖5次，欢迎下次光临！"</span>);</div><div class="line">		&#125;</div><div class="line">		inpScanner.close();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>Test.java</code><br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.cnstrong.com;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args)&#123;</div><div class="line">		GuessMachine gMachine= <span class="keyword">new</span> <span class="type">GuessMachine</span>();</div><div class="line">		</div><div class="line">		gMachine.initial();<span class="comment">//初始化</span></div><div class="line">		gMachine.guess();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//GuessMachine</span></div><div class="line"></div><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GuessMachine</span> &#123;</div><div class="line">	String mach= <span class="literal">null</span>;</div><div class="line">	<span class="keyword">int</span> price= <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initial</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">int</span> data= (<span class="keyword">int</span>)(Math.random()* <span class="number">4</span>);</div><div class="line">		<span class="keyword">switch</span>(data)&#123;</div><div class="line">		<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">			mach= <span class="string">"电视机"</span>;</div><div class="line">			price= <span class="number">3359</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">			mach= <span class="string">"电冰箱"</span>;</div><div class="line">			price= <span class="number">1243</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">			mach= <span class="string">"油烟机"</span>;</div><div class="line">			price= <span class="number">4654</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">			mach= <span class="string">"ipthone"</span>;</div><div class="line">			price= <span class="number">2324</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">			mach= <span class="string">"洗衣机"</span>;</div><div class="line">			price= <span class="number">5643</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">default</span>:</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"><span class="comment">//		System.out.println(data);</span></div><div class="line"><span class="comment">//		System.out.println("请输出"+ mach+ "的价格: ");</span></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">guess</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		Scanner inpScanner= <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">		<span class="keyword">int</span> guess= <span class="number">0</span>;<span class="comment">//用户输入的价格</span></div><div class="line">		<span class="keyword">int</span> i= <span class="number">0</span>;<span class="comment">//用户猜价格的次数</span></div><div class="line">		<span class="keyword">while</span>(i&lt; <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"请输入您竞猜的价格: "</span>);</div><div class="line">			guess= inpScanner.nextInt();</div><div class="line">			<span class="keyword">if</span>(price== guess)&#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"猜对了，恭喜中奖！"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(price&gt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"低了，请高一点。"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span> (price&lt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"高了， 请低一点。"</span>);</div><div class="line">			&#125;</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(i&gt;= <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"您已经猜奖5次，欢迎下次光临！"</span>);</div><div class="line">		&#125;</div><div class="line">		inpScanner.close();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Test.java</span></div><div class="line"></div><div class="line"><span class="keyword">package</span> com.cnstrong.com;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args)&#123;</div><div class="line">		GuessMachine gMachine= <span class="keyword">new</span> <span class="type">GuessMachine</span>();</div><div class="line">		</div><div class="line">		gMachine.initial();<span class="comment">//初始化</span></div><div class="line">		gMachine.guess();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1585,155 +1731,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/相册/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/23/相册/" itemprop="url">相册</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T08:47:56+08:00">
-                2017-09-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/23/相册/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/23/相册/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/23/相册/" class="leancloud_visitors" data-flag-title="相册">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>老规矩，先贴上index.html</code></p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="xml">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span></div><div class="line"><span class="xml">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span></div><div class="line"><span class="xml">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>精品相册1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></div><div class="line"><span class="xml">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/img_style.css"</span> /&gt;</span></span></div><div class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></div><div class="line"><span class="xml">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span></div><div class="line"><span class="xml">		</span></div><div class="line"><span class="xml">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"picList"</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="comment">&lt;!--&lt;div id="Left"&gt;&lt;/div&gt;--&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/1.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/2.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/3.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/4.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/5.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/6.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/7.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/8.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/main/9.jpg"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="comment">&lt;!--&lt;div id="Right"&gt;&lt;/div&gt;--&gt;</span></span></div><div class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">		</span></div><div class="line"><span class="xml">		<span class="comment">&lt;!--</span></span></div><div class="line"><span class="xml">        	作者：sunstady@gmail.com</span></div><div class="line"><span class="xml">        	时间：2017-08-11</span></div><div class="line"><span class="xml">        	描述：添加挡板</span></div><div class="line"><span class="xml">        --&gt;</span></div><div class="line"><span class="xml">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"pan"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">		<span class="comment">&lt;!--</span></span></div><div class="line"><span class="xml">        	作者：sunstady@gmail.com</span></div><div class="line"><span class="xml">        	时间：2017-08-11</span></div><div class="line"><span class="xml">        	描述：显示特效图片的位置 包含图片以及按钮</span></div><div class="line"><span class="xml">        --&gt;</span></div><div class="line"><span class="xml">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="comment">&lt;!--</span></span></div><div class="line"><span class="xml">            	作者：sunstady@gmail.com</span></div><div class="line"><span class="xml">            	时间：2017-08-11</span></div><div class="line"><span class="xml">            	描述：中间显示图片容器的位置</span></div><div class="line"><span class="xml">            --&gt;</span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"showimage"</span>&gt;</span></span></div><div class="line"><span class="xml">				<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/show/0/1.jpg"</span> <span class="attr">title</span>=<span class="string">"1"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">				<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/show/0/2.jpg"</span> <span class="attr">title</span>=<span class="string">"2"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">				<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/show/0/3.jpg"</span> <span class="attr">title</span>=<span class="string">"3"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">				<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/show/0/4.jpg"</span> <span class="attr">title</span>=<span class="string">"4"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">				<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/show/0/5.jpg"</span> <span class="attr">title</span>=<span class="string">"5"</span>/&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="comment">&lt;!--</span></span></div><div class="line"><span class="xml">            	作者：sunstady@gmail.com</span></div><div class="line"><span class="xml">            	时间：2017-08-11</span></div><div class="line"><span class="xml">            	描述：切换图片的按钮</span></div><div class="line"><span class="xml">            --&gt;</span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"pre"</span>&gt;</span> <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;&lt;/<span class="attr">p</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"next"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>&gt;<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></div><div class="line"><span class="xml">	<span class="comment">&lt;!--</span></span></div><div class="line"><span class="xml">    	作者：sunstady@gmail.com</span></div><div class="line"><span class="xml">    	时间：2017-08-11</span></div><div class="line"><span class="xml">    	描述：导入js文件</span></div><div class="line"><span class="xml">    --&gt;</span></div><div class="line"><span class="xml">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery-1.11.3.js"</span> &gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">		$(function()&#123;</span></div><div class="line"><span class="xml">			//点击每一张图片容器的时候</span></div><div class="line"><span class="xml">			$("#picList span").click(function()&#123;</span></div><div class="line"><span class="xml">				//获取showimage中的所有img标签</span></div><div class="line"><span class="xml">				var $img = $("#showimage img");</span></div><div class="line"><span class="xml">				//获取点击的那一个图片</span></div><div class="line"><span class="xml">				//$(this).index();返回指定元素在相对应的集合中下标的位置</span></div><div class="line"><span class="xml">				var index = $(this).index();//0</span></div><div class="line"><span class="xml">				for(var i=0;i<span class="tag">&lt;<span class="name">5;i++)&#123;</span></span></span></div><div class="line"><span class="xml">					//获取图片路径</span></div><div class="line"><span class="xml">					//img/show/0/1.jpg</span></div><div class="line"><span class="xml">					var url="img/show/"+index+"/"+(i+1)+".jpg";</span></div><div class="line"><span class="xml">					//更换图片</span></div><div class="line"><span class="xml">					$img.eq(i).attr("src",url);</span></div><div class="line"><span class="xml">				&#125;</span></div><div class="line"><span class="xml">				//让特效显示</span></div><div class="line"><span class="xml">				//淡入效果、600毫秒的执行时间</span></div><div class="line"><span class="xml">				$("#pan").fadeIn(600);</span></div><div class="line"><span class="xml">				$("#show").fadeIn(600).show();</span></div><div class="line"><span class="xml">			&#125;);</span></div><div class="line"><span class="xml">			//点击挡板的事件，让特效消失</span></div><div class="line"><span class="xml">			$("#pan").click(function()&#123;</span></div><div class="line"><span class="xml">				//淡出的效果</span></div><div class="line"><span class="xml">				$("#pan").fadeOut(600);</span></div><div class="line"><span class="xml">				$("#show").fadeOut(600);</span></div><div class="line"><span class="xml">			&#125;);</span></div><div class="line"><span class="xml">			//点击下一张按钮</span></div><div class="line"><span class="xml">			$("#next").click(function()&#123;</span></div><div class="line"><span class="xml">				//索引到最后 一张图片</span></div><div class="line"><span class="xml">				$("#showimage span:last-child").animate(</span></div><div class="line"><span class="xml">					&#123;left:"680px"&#125;,500,function()&#123;</span></div><div class="line"><span class="xml">						$(this).animate(&#123;left:"0px"&#125;,500);</span></div><div class="line"><span class="xml">						//更换位置</span></div><div class="line"><span class="xml">						//将指定的元素，插入到当前集合中的开头位置</span></div><div class="line"><span class="xml">						$("#showimage").prepend(this);</span></div><div class="line"><span class="xml">					&#125;);</span></div><div class="line"><span class="xml">			&#125;);</span></div><div class="line"><span class="xml">			//点击上一张按钮</span></div><div class="line"><span class="xml">			$("#pre").click(function()&#123;</span></div><div class="line"><span class="xml">				//索引到第一张图片</span></div><div class="line"><span class="xml">				$("#showimage span:first-child").animate(</span></div><div class="line"><span class="xml">					&#123;left:"-680px"&#125;,500,function()&#123;</span></div><div class="line"><span class="xml">						$(this).animate(&#123;left:"0px"&#125;,500);</span></div><div class="line"><span class="xml">						//更换位置</span></div><div class="line"><span class="xml">						//将指定的元素，插入到当前集合中的结尾位置</span></div><div class="line"><span class="xml">						$("#showimage").append(this);</span></div><div class="line"><span class="xml">					&#125;);</span></div><div class="line"><span class="xml">			&#125;);</span></div><div class="line"><span class="xml">		&#125;);</span></div><div class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml">	</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<p>/img目录下的图片放在<a href="https://github.com/sunstady/hexo/tree/master/%E7%9B%B8%E5%86%8C/img" target="_blank" rel="external">ghthub</a></p>
-<p>/js目录下的<a href="https://github.com/sunstady/hexo/tree/master/%E7%9B%B8%E5%86%8C/img/js" target="_blank" rel="external">jquery-1.11.3.js</a></p>
-<p><code>/css目录下的img_style.css</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"><span class="comment">/*添加背景*/</span></div><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(../img/bg.jpg);</div><div class="line">	<span class="comment">/*隐藏滚动栏*/</span></div><div class="line">	<span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#picList</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">750px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">600px</span>;</div><div class="line">	<span class="comment">/*margin:第一个上下距离 第二个左右距离 auto 自适应*/</span></div><div class="line">	<span class="attribute">margin</span>: <span class="number">100px</span> auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">230px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">160px</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">5px</span>;</div><div class="line">	<span class="attribute">margin</span>: auto auto;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*行内元素不支持宽高的设置*/</span></div><div class="line"><span class="selector-tag">span</span>&#123;</div><div class="line">	<span class="attribute">background-color</span>: <span class="number">#FFFFFF</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">240px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">170px</span>;</div><div class="line">	<span class="comment">/*把行内元素改变成块元素，支持宽高的设置*/</span></div><div class="line">	<span class="attribute">display</span>: block;</div><div class="line">	<span class="attribute">float</span>: left;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">5px</span>;</div><div class="line">	<span class="comment">/*加入外阴影*/</span></div><div class="line">	<span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">20px</span> <span class="number">#FFFFFF</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*遮光挡板*/</span></div><div class="line"><span class="selector-id">#pan</span>&#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">left</span>: <span class="number">0px</span>;</div><div class="line">	<span class="attribute">top</span>: <span class="number">0px</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">	<span class="comment">/*前三个参数：设置颜色编码 第四个参数：设置透明度*/</span></div><div class="line">	<span class="attribute">background</span>: <span class="built_in">rgba</span>(0,0,0,0.8);</div><div class="line">	<span class="comment">/*设置默认隐藏*/</span></div><div class="line">	<span class="attribute">display</span>: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#showimage</span>&#123;</div><div class="line">	<span class="comment">/*设置中间容器的显示位置*/</span></div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">top</span>: <span class="number">150px</span>;</div><div class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">	<span class="attribute">margin-left</span>: -<span class="number">330px</span>;</div><div class="line">	<span class="comment">/*设置层级显示关系*/</span></div><div class="line">	<span class="attribute">z-index</span>: <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*设置每一张大图的容器边框*/</span></div><div class="line"><span class="comment">/*派生选择器控制绝对路径的属性*/</span></div><div class="line"><span class="selector-id">#showimage</span> <span class="selector-tag">span</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">650px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">440px</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="number">#FFFFFF</span>;</div><div class="line">	<span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">0px</span> <span class="number">#FFFFFF</span>;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#showimage</span> <span class="selector-tag">img</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">640px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">430px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#show</span> <span class="selector-tag">p</span>&#123;</div><div class="line">	<span class="attribute">color</span>: white;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">60px</span>;</div><div class="line">	<span class="attribute">text-align</span>: center;</div><div class="line">	<span class="attribute">margin-top</span>: -<span class="number">5px</span>;</div><div class="line">	<span class="comment">/*设置粗体*/</span></div><div class="line">	<span class="attribute">font-weight</span>: bold;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*上一张图片的按钮*/</span></div><div class="line"><span class="selector-id">#pre</span>&#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">width</span>: <span class="number">50px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">	<span class="attribute">top</span>: <span class="number">320px</span>;</div><div class="line">	<span class="attribute">left</span>: <span class="number">10%</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="built_in">rgba</span>(0,0,0,0.5);</div><div class="line">	<span class="comment">/*设置圆角*/</span></div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">	<span class="attribute">z-index</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#next</span>&#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">width</span>: <span class="number">50px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">	<span class="attribute">top</span>: <span class="number">320px</span>;</div><div class="line">	<span class="attribute">right</span>: <span class="number">10%</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="built_in">rgba</span>(0,0,0,0.5);</div><div class="line">	<span class="comment">/*设置圆角*/</span></div><div class="line">	<span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">	<span class="attribute">z-index</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*让这个显示特效的区域隐藏*/</span></div><div class="line"><span class="selector-id">#show</span>&#123;</div><div class="line">	<span class="attribute">display</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1787,7 +1784,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
