@@ -295,6 +295,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/n次base64解密/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/23/n次base64解密/" itemprop="url">n次base64解密</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:11:41+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/23/n次base64解密/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/23/n次base64解密/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/23/n次base64解密/" class="leancloud_visitors" data-flag-title="n次base64解密">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>请在python3环境下运行</code><br>import base64<br>str = ‘’’<br>Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSWFJteFZVMjA1VjAxV2JETlhhMk0xVmpKS1NHVkVRbUZX<br>VmxsM1ZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjSEJXYTFwaFpWWmFkRTFV<br>VWxSTmF6RTFWa2QwYzJGc1NuUmhSemxWVmpOT00xcFZXbUZrUjA1R1drWlNUbUpGY0VwV2JURXdZVEZr<br>U0ZOclpHcFNWR3hoV1d4U1IyUnNXbGRYYlhSWFRWaENSbFpYZUhkV01ERkZVbFJDVjAxdVVuWldha3BI<br>VmpGT2RWVnNXbWhsYlhob1ZtMXdUMkl5UmtkalJtUllZbGhTV0ZSV2FFTlNiRnBZWlVoa1YwMUVSa1pW<br>YkZKRFZqSkdjbUV6YUZaaGExcG9WakJhVDJOdFJrZFhiV2hzWWxob2IxWnRNWGRVTVZWNVVtdGtWMWRI<br>YUZsWmJGWmhZMVphZEdONlJteFNiSEJaV2xWb2ExWXdNVVZTYTFwV1lrWktSRlpxU2tabFZsSlpZVVpr<br>VTFKV2NIbFdWRUpoVkRKT2MyTkZhR3BTYkVwVVZteG9RMWRzV25KWGJHUmFWakZHTkZaSGRHdFdiVXBI<br>VjJ4U1dtSkhhRlJXTUZwVFZqRmtkRkp0ZUZkaVZrbzFWbXBLTkZReFdsaFRiRnBxVWxkU1lWUlZXbmRs<br>YkZweFVtMUdUMkpGV2xwWlZWcHJWVEZLVjJOSWJGZFdSVXBvVmtSS1QyUkdTbkphUm1ocFZqTm9WVmRX<br>VWs5Uk1XUkhWMjVTVGxaRlNsaFVWbVEwVjBaYVdHUkhkRmhTTUhCSlZsZDRjMWR0U2toaFJsSlhUVVp3<br>VkZacVNrZFNiRkp6Vlcxc1UwMHhSalpXYWtvd1ZURlZlRmR1U2s1WFJYQnhWVzB4YjFZeFVsaE9Wemxz<br>WWtad2VGVnRNVWRVTWtwR1YyeHdXbFpXY0hKV1ZFWkxWMVpHY21KR1pHbFhSVXBKVm10U1MxVXhXWGhX<br>YmxaV1lsaENWRmxyVm5kV1ZscDBaVWM1VWsxWFVucFdNV2h2VjBkS1JrNVdVbFZXTTJoSVZHdGFjMk5z<br>WkhSa1IyaHBVbGhCZDFkV1ZtOVVNVnAwVTJ4V1YyRXhTbUZhVjNSaFYwWndSbFpZYUZkTlZrcDVWR3hh<br>VDJGV1NuUlBWRTVYVFc1b1dGbHFTa1psUm1SWldrVTFWMVpzY0ZWWFZsSkhaREZrUjJKSVRtaFNlbXhQ<br>VkZaYWQyVkdWblJsU0dScFVqQndWMVl5ZEhkV01ERnhVbXRvVjFaRldreFdNVnBIWTIxS1IxcEdaRTVO<br>UlhCS1ZtMTBVMU14VlhoWFdHaGhVMFphVmxscldrdGpSbHB4VkcwNWEySkhVbnBYYTFKVFYyeFpkMkpF<br>VWxkTmFsWlVWa2Q0WVZKc1RuTmhSbkJZVTBWS1NWWnFRbUZXYlZaWVZXdG9hMUp0YUZSWmJGcExVMnhr<br>VjFadFJtcE5WMUl3Vld4b2MyRkdTbGRUYlVaaFZqTlNhRmxWV25OT2JFcHpXa2R3YVZORlNrbFdiR040<br>WXpGVmQwMUliR2hTYlhoWVdXeG9RMVJHVW5KYVJWcHNVbTFTZWxsVldsTmhSVEZ6VTI1b1YxWjZSVEJh<br>UkVaclVqSktTVlJ0YUZObGJYaFFWa1phWVdReVZrZFdibEpPVmxkU1YxUlhkSGRXTVd4eVZXMUdXRkl3<br>VmpSWk1HaExWMnhhV0ZWclpHRldWMUpRVldwS1MxSXlSa2hoUlRWWFltdEtNbFp0TVRCVk1VMTRWVzVT<br>VjJKSFVsVlpiWFIzWWpGV2NWTnRPVmRTYlhoYVdUQmFhMkV3TVZkalJteGhWbGROTVZaWGMzaGpNVTUx<br>WTBaa1RtRnNXbFZXYTJRMFV6RktjMXBJVmxSaVJscFlXV3RhZG1Wc1drZFdiVVphVmpGS1IxUnNXbUZW<br>UmxsNVlVaENWbUpIYUVSVWJYaHJWbFpHZEZKdGNFNVdNVWwzVmxkNGIyTXlSa2RUYkdSVVlsVmFWbFp1<br>Y0Zka2JGcHlWMjFHYWxacmNEQmFSV1F3VlRKRmVsRllaRmhpUmxwb1dWUktSMVl4VG5OYVIyaE9UV3hL<br>V1ZkWGVHOVJNVTE0WTBaYVdHRXpRbk5WYlRGVFpXeHNWbGRzVG1oV2EzQXhWVmMxYjFZeFdYcGhTRXBY<br>VmtWYWVsWnFSbGRqTVdSellVZG9UazFWY0RKV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRY<br>Ym1Sc1ZteHNOVlJzYUd0V01rcEhZa1JhV2xaV1NsQldNakZHWlZaV2NscEhSbGRXTVVwUlZsUkNWazVX<br>V1hsU2EyaG9VbFJXV0ZsdGRFdE5iRnAwVFZSQ1ZrMVZNVFJXVnpWVFZqSktTRlZzV2xwaVdGSXpXV3BH<br>VjJOV1RuUlBWbVJUWWxob1lWZFVRbUZoTVZwelUyNU9hbEp0ZUZaV2JGcExVMFphV0dNemFGaFNiRnA1<br>V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmxVUms5U01WcDFWR3hvYVZKc2NGbFhWM1JoWkRGa1YxZHJhR3hT<br>TUZwaFZtcEdTMUl4VW5OWGJVWldVbXhzTlZsVldsTldNa1Y0VjJ0MFZWWnNjSEpaZWtaaFpFVTVWMVpy<br>TlZkaWEwWXpWbXhqZDAxV1RYaFZXR2hZWW1zMVZWbHNWbUZXYkZwMFpVaGtUazFXY0hsV01qRkhZV3hh<br>Y21ORVJsaGhNWEJRVmtkNFlXTnRUa1ZYYkdST1lteEtlVmRZY0VkV2JWWlhWRzVXVkdKRk5XOVpXSEJY<br>VjFaa1YxVnJaR3ROYTFwSVdXdGFiMkZ0Vm5KWGJHaFZWbTFTVkZZeWVHdGpiRnBWVW14b1UyRXpRbUZX<br>Vm1NeFlqRlplRmRxV2xKWFIyaFhWbXRXWVdWc1duRlNiWFJyVm14S01GVnRlRTloUjFaelYyeGtWMkpI<br>VGpSVWEyUlNaVlphY2xwR1pGaFNNMmg1Vmxkd1ExbFhUa2RXYmxKc1UwZFNjMWxyV2xkT1ZsSnpXWHBX<br>VjAxRVJsaFphMUpoVjJ4YVYyTklXbGROYm1ob1ZtcEdZV05XVm5OYVJUVlhZbXRLU2xZeGFIZFNNVmw1<br>VkZoc1UyRXlhSEJWYlhNeFkwWnNWVkZ1WkU1aVJuQXdXbFZqTldFd01WWk5WRkpYWWtkb2RsWXdXbXRU<br>UjBaSFlVWndhVmRIYUc5V2JURTBZekpPYzFwSVZtRlNNMEpVV1d0YWQwNUdXbGhOVkVKT1VteHNORll5<br>TlZOV2JVcElaVWRvVm1KSFVsUlZNRnBoWTFaT2NscEZPV2xTV0VJMlZtdGtORmxXVlhsVGExcFlWMGhD<br>V0Zac1duZFNNVkY0VjJ0T1ZtSkZTbFpVVlZGM1VGRTlQUT09<br>‘’’<br>for i in range(1,16):<br>    str = base64.b64decode(str)<br>print (str)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/相册/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1604,151 +1748,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/Example3-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/19/Example3-5/" itemprop="url">Example3_5</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-19T21:40:51+08:00">
-                2017-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/19/Example3-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/19/Example3-5/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/19/Example3-5/" class="leancloud_visitors" data-flag-title="Example3_5">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>编写一个应用程序，求100以内的全部素数</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example3_5</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        <span class="keyword">int</span> i, j;</div><div class="line">        <span class="keyword">for</span>(j= <span class="number">2</span>; j&lt;= <span class="number">100</span>; j++)&#123;</div><div class="line">            <span class="keyword">for</span>(i= <span class="number">2</span>; i&lt;= j/<span class="number">2</span>; i++)&#123;</div><div class="line">                <span class="keyword">if</span>(j%i== <span class="number">0</span>)&#123;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(i&gt; j/ <span class="number">2</span>)&#123;</div><div class="line">                System.<span class="keyword">out</span>.print(<span class="string">" "</span>+ j);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1802,7 +1801,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1815,7 +1814,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
