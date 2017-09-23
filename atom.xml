@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-23T06:10:45.112Z</updated>
+  <updated>2017-09-23T06:44:21.248Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,17 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>enum问题</title>
+    <link href="http://yoursite.com/2017/09/23/enum%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/09/23/enum问题/</id>
+    <published>2017-09-23T06:34:53.000Z</published>
+    <updated>2017-09-23T06:44:21.248Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>今天有个想法，是输出每个月的天数，正好最近学了enum，就想用这个来做。
+说干就干，啪啪啪啪...咦~有个错误，我改我改我改！
+然而改了多次，还是没成功，最后根据错误提示问了下度娘，说是格式有误。
+我就想，是不是不能重复内容，我改我改，改到enum里面的内容只有两位31，30，还真是！
+但还是有相同的错误，又想了想，前面加上月份呢？ 啪！问题解决</code><br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Tian</span>&#123;</span></div><div class="line">	一月<span class="number">31</span>天, 二月<span class="number">28</span>天, 三月<span class="number">31</span>天, 四月<span class="number">30</span>天, 五月<span class="number">31</span>天, 六月<span class="number">30</span>天, </div><div class="line">	七月<span class="number">31</span>天, 八月<span class="number">31</span>天, 九月<span class="number">30</span>天, 十月<span class="number">31</span>天, 十一月<span class="number">30</span>天, 十二月<span class="number">31</span>天</div><div class="line">&#125;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Java</span> &#123;</span></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		<span class="keyword">for</span>(Tian <span class="symbol">a:</span> Tian.values())&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(a);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>总结: enum中的内容不能重复，enum中的内容不能只是数字,不然会出现</code>Syntax error on token(s), misplaced constructs(s)<code>这个错误</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;今天有个想法，是输出每个月的天数，正好最近学了enum，就想用这个来做。
+说干就干，啪啪啪啪...咦~有个错误，我改我改我改！
+然而改了多次，还是没成功，最后根据错误提示问了下度娘，说是格式有误。
+我就想，是不是不能重复内容，我改我改，改到enum里面的内容只有
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>eclipse快捷键</title>
     <link href="http://yoursite.com/2017/09/23/eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2017/09/23/eclipse快捷键/</id>
     <published>2017-09-23T05:55:03.000Z</published>
-    <updated>2017-09-23T06:10:45.112Z</updated>
+    <updated>2017-09-23T06:34:16.472Z</updated>
     
     <content type="html"><![CDATA[<p><code>eclipse常用快捷键</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Syso+alt+/            快速输出代码</div><div class="line">Ctrl+<span class="built_in">shift</span>+f          快速调整代码格式</div><div class="line">Ctrl+D                快速删除光标所在的行</div><div class="line"><span class="built_in">shift</span>+回车            当输入代码较长的时候换行</div><div class="line">ctrl+F11              运行</div><div class="line">Alt+上下箭头           快速移动光标所在的行代码</div><div class="line">Ctrl+alt+上下箭头      快速复制光标所在行代码</div><div class="line">Alt+/                 快速补全代码</div><div class="line">Ctrl+/                快速添加单行注释</div><div class="line">Ctrl+<span class="built_in">shift</span>+/          添加多行注释</div></pre></td></tr></table></figure>
 <p><code>小常识</code></p>
 <p>打开eclipse，在上方的菜单栏中找到Window<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/101.jpg?raw=true" alt="Window"><br>选中Preferences，点击Java–&gt;Editor–&gt;Content<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/102.jpg?raw=true" alt="Preferences"><br>在红框中输入下面一行字符串，点击OK，退出。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
 <p><code>输入这一串，敲代码的时候可以智能提示</code></p>
+<p><code>包的命名规则</code><br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*<span class="strong">*.*</span><span class="strong">*(对应项目的名字).*</span><span class="strong">*（项目功能）</span></div><div class="line"><span class="strong">com 公司 </span></div><div class="line"><span class="strong">org 组织</span></div><div class="line"><span class="strong">model 模型</span></div><div class="line"><span class="strong">util 工具</span></div><div class="line"><span class="strong">edu 教育</span></div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
@@ -467,29 +497,6 @@
     
       &lt;p&gt;&lt;code&gt;一个数如果恰好等于它的因子之和，这个数就称为“完数”，编写一个应用程序，求1000之内的所有完整完数&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight axapta&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Example3_6</title>
-    <link href="http://yoursite.com/2017/09/19/Example3-6/"/>
-    <id>http://yoursite.com/2017/09/19/Example3-6/</id>
-    <published>2017-09-19T13:42:30.000Z</published>
-    <updated>2017-09-19T13:42:58.680Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和</code></p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example3_6</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="keyword">double</span> <span class="keyword">sum</span>= <span class="number">0</span>, a= <span class="number">1</span>, i= <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i&lt;= <span class="number">20</span>)&#123;</div><div class="line">            a= (<span class="number">1.0</span>/i)* a;</div><div class="line">            i++;</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ a;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"使用while循环计算的sum= "</span>+ <span class="keyword">sum</span>);</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">sum</span>= <span class="number">0</span>, i= <span class="number">1</span>, a= <span class="number">1</span>; i&lt;= <span class="number">20</span>; i++)&#123;</div><div class="line">            a= a*(<span class="number">1.0</span>/ i);</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ a;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"使用for循环计算的sum= "</span>+ <span class="keyword">sum</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight axapta&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
     
     </summary>
     

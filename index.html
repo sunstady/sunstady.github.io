@@ -295,6 +295,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/enum问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/23/enum问题/" itemprop="url">enum问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T14:34:53+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/23/enum问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/23/enum问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/23/enum问题/" class="leancloud_visitors" data-flag-title="enum问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>今天有个想法，是输出每个月的天数，正好最近学了enum，就想用这个来做。
+说干就干，啪啪啪啪...咦~有个错误，我改我改我改！
+然而改了多次，还是没成功，最后根据错误提示问了下度娘，说是格式有误。
+我就想，是不是不能重复内容，我改我改，改到enum里面的内容只有两位31，30，还真是！
+但还是有相同的错误，又想了想，前面加上月份呢？ 啪！问题解决</code><br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Tian</span>&#123;</span></div><div class="line">	一月<span class="number">31</span>天, 二月<span class="number">28</span>天, 三月<span class="number">31</span>天, 四月<span class="number">30</span>天, 五月<span class="number">31</span>天, 六月<span class="number">30</span>天, </div><div class="line">	七月<span class="number">31</span>天, 八月<span class="number">31</span>天, 九月<span class="number">30</span>天, 十月<span class="number">31</span>天, 十一月<span class="number">30</span>天, 十二月<span class="number">31</span>天</div><div class="line">&#125;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Java</span> &#123;</span></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		<span class="keyword">for</span>(Tian <span class="symbol">a:</span> Tian.values())&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(a);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>总结: enum中的内容不能重复，enum中的内容不能只是数字,不然会出现</code>Syntax error on token(s), misplaced constructs(s)<code>这个错误</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/eclipse快捷键/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -393,6 +542,7 @@
 <p><code>小常识</code></p>
 <p>打开eclipse，在上方的菜单栏中找到Window<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/101.jpg?raw=true" alt="Window"><br>选中Preferences，点击Java–&gt;Editor–&gt;Content<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/102.jpg?raw=true" alt="Preferences"><br>在红框中输入下面一行字符串，点击OK，退出。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
 <p><code>输入这一串，敲代码的时候可以智能提示</code></p>
+<p><code>包的命名规则</code><br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*<span class="strong">*.*</span><span class="strong">*(对应项目的名字).*</span><span class="strong">*（项目功能）</span></div><div class="line"><span class="strong">com 公司 </span></div><div class="line"><span class="strong">org 组织</span></div><div class="line"><span class="strong">model 模型</span></div><div class="line"><span class="strong">util 工具</span></div><div class="line"><span class="strong">edu 教育</span></div></pre></td></tr></table></figure></p>
 
           
         
@@ -1591,150 +1741,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/维吉尼亚/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/23/维吉尼亚/" itemprop="url">维吉尼亚</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:14:28+08:00">
-                2017-09-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/23/维吉尼亚/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/23/维吉尼亚/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/23/维吉尼亚/" class="leancloud_visitors" data-flag-title="维吉尼亚">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>运行环境python3</code><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">key='helloworld'</div><div class="line">plaintext='whereisthekey'</div><div class="line"></div><div class="line"><span class="comment">#key='relations'</span></div><div class="line"><span class="comment">#plaintext='tobeornottobeth'</span></div><div class="line"> </div><div class="line">ascii='abcdefghijklmnopqrstuvwxyz'</div><div class="line">keylen=len(key)</div><div class="line">ptlen=len(plaintext)</div><div class="line">ciphertext = ''</div><div class="line">i = 0</div><div class="line">while i &lt; ptlen:</div><div class="line">    j = i % keylen</div><div class="line">    k = ascii.index(key[j])</div><div class="line">    m = ascii.index(plaintext[i])</div><div class="line">    ciphertext += ascii[(m+k)%26]</div><div class="line">    i += 1</div><div class="line"> </div><div class="line">print (ciphertext)</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1788,7 +1794,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
