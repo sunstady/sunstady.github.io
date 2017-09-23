@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-23T01:17:46.664Z</updated>
+  <updated>2017-09-23T01:21:29.961Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字符串转莫尔斯</title>
+    <link href="http://yoursite.com/2017/09/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E8%8E%AB%E5%B0%94%E6%96%AF/"/>
+    <id>http://yoursite.com/2017/09/23/字符串转莫尔斯/</id>
+    <published>2017-09-23T01:20:50.000Z</published>
+    <updated>2017-09-23T01:21:29.961Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>请在python3环境下运行</code></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">CODE = &#123;<span class="string">'A'</span>: <span class="string">'.-'</span>,     <span class="string">'B'</span>: <span class="string">'-...'</span>,   <span class="string">'C'</span>: <span class="string">'-.-.'</span>,</div><div class="line">        <span class="string">'D'</span>: <span class="string">'-..'</span>,    <span class="string">'E'</span>: <span class="string">'.'</span>,      <span class="string">'F'</span>: <span class="string">'..-.'</span>,</div><div class="line">        <span class="string">'G'</span>: <span class="string">'--.'</span>,    <span class="string">'H'</span>: <span class="string">'....'</span>,   <span class="string">'I'</span>: <span class="string">'..'</span>,</div><div class="line">        <span class="string">'J'</span>: <span class="string">'.---'</span>,   <span class="string">'K'</span>: <span class="string">'-.-'</span>,    <span class="string">'L'</span>: <span class="string">'.-..'</span>,</div><div class="line">        <span class="string">'M'</span>: <span class="string">'--'</span>,     <span class="string">'N'</span>: <span class="string">'-.'</span>,     <span class="string">'O'</span>: <span class="string">'---'</span>,</div><div class="line">        <span class="string">'P'</span>: <span class="string">'.--.'</span>,   <span class="string">'Q'</span>: <span class="string">'--.-'</span>,   <span class="string">'R'</span>: <span class="string">'.-.'</span>,</div><div class="line">             <span class="string">'S'</span>: <span class="string">'...'</span>,    <span class="string">'T'</span>: <span class="string">'-'</span>,      <span class="string">'U'</span>: <span class="string">'..-'</span>,</div><div class="line">        <span class="string">'V'</span>: <span class="string">'...-'</span>,   <span class="string">'W'</span>: <span class="string">'.--'</span>,    <span class="string">'X'</span>: <span class="string">'-..-'</span>,</div><div class="line">        <span class="string">'Y'</span>: <span class="string">'-.--'</span>,   <span class="string">'Z'</span>: <span class="string">'--..'</span>,</div><div class="line"></div><div class="line">        <span class="string">'0'</span>: <span class="string">'-----'</span>,  <span class="string">'1'</span>: <span class="string">'.----'</span>,  <span class="string">'2'</span>: <span class="string">'..---'</span>,</div><div class="line">        <span class="string">'3'</span>: <span class="string">'...--'</span>,  <span class="string">'4'</span>: <span class="string">'....-'</span>,  <span class="string">'5'</span>: <span class="string">'.....'</span>,</div><div class="line">        <span class="string">'6'</span>: <span class="string">'-....'</span>,  <span class="string">'7'</span>: <span class="string">'--...'</span>,  <span class="string">'8'</span>: <span class="string">'---..'</span>,</div><div class="line">        <span class="string">'9'</span>: <span class="string">'----.'</span></div><div class="line">        &#125;</div><div class="line">def main():</div><div class="line"></div><div class="line">        msg = <span class="built_in">input</span>(<span class="string">'MESSAGE: '</span>)</div><div class="line"></div><div class="line">        <span class="keyword">for</span> <span class="built_in">char</span> <span class="keyword">in</span> msg:</div><div class="line">                <span class="keyword">if</span> <span class="built_in">char</span> == <span class="string">' '</span>:</div><div class="line">                        <span class="built_in">print</span></div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                        <span class="built_in">print</span> (CODE[<span class="built_in">char</span>.<span class="built_in">upper</span>()] + <span class="string">'  '</span>,)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">        main()</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;请在python3环境下运行&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;lin
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>转换字符串为莫尔斯</title>
@@ -694,33 +717,6 @@ commonweal: heartbeat
     
     
       <category term="环境" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/08/30/hello-world/"/>
-    <id>http://yoursite.com/2017/08/30/hello-world/</id>
-    <published>2017-08-30T05:11:34.075Z</published>
-    <updated>2017-08-30T05:11:34.075Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   
