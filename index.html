@@ -295,6 +295,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/移位/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/23/移位/" itemprop="url">移位</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:27:02+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/23/移位/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/23/移位/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/23/移位/" class="leancloud_visitors" data-flag-title="移位">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>运行环境python2.7</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">key=<span class="string">'CRL'</span>.upper()</div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> in range(<span class="number">0</span>,<span class="number">26</span>):</div><div class="line">    flag=<span class="string">''</span></div><div class="line">    <span class="keyword">for</span> <span class="built_in">j</span> in key:</div><div class="line">        <span class="keyword">if</span> <span class="built_in">j</span>.isalpha():</div><div class="line">            flag+=chr(((ord(<span class="built_in">j</span>)-ord(<span class="string">'A'</span>)+<span class="built_in">i</span>)<span class="comment">%26)+ord('A'))</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            flag+=<span class="built_in">j</span></div><div class="line">    print str(<span class="built_in">i</span>).zfill(<span class="number">2</span>),flag</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/字符串转莫尔斯/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -388,7 +533,7 @@
       
         
           
-            <p><code>请在python3环境下运行</code></p>
+            <p><code>运行环境python3</code></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">CODE = &#123;<span class="string">'A'</span>: <span class="string">'.-'</span>,     <span class="string">'B'</span>: <span class="string">'-...'</span>,   <span class="string">'C'</span>: <span class="string">'-.-.'</span>,</div><div class="line">        <span class="string">'D'</span>: <span class="string">'-..'</span>,    <span class="string">'E'</span>: <span class="string">'.'</span>,      <span class="string">'F'</span>: <span class="string">'..-.'</span>,</div><div class="line">        <span class="string">'G'</span>: <span class="string">'--.'</span>,    <span class="string">'H'</span>: <span class="string">'....'</span>,   <span class="string">'I'</span>: <span class="string">'..'</span>,</div><div class="line">        <span class="string">'J'</span>: <span class="string">'.---'</span>,   <span class="string">'K'</span>: <span class="string">'-.-'</span>,    <span class="string">'L'</span>: <span class="string">'.-..'</span>,</div><div class="line">        <span class="string">'M'</span>: <span class="string">'--'</span>,     <span class="string">'N'</span>: <span class="string">'-.'</span>,     <span class="string">'O'</span>: <span class="string">'---'</span>,</div><div class="line">        <span class="string">'P'</span>: <span class="string">'.--.'</span>,   <span class="string">'Q'</span>: <span class="string">'--.-'</span>,   <span class="string">'R'</span>: <span class="string">'.-.'</span>,</div><div class="line">             <span class="string">'S'</span>: <span class="string">'...'</span>,    <span class="string">'T'</span>: <span class="string">'-'</span>,      <span class="string">'U'</span>: <span class="string">'..-'</span>,</div><div class="line">        <span class="string">'V'</span>: <span class="string">'...-'</span>,   <span class="string">'W'</span>: <span class="string">'.--'</span>,    <span class="string">'X'</span>: <span class="string">'-..-'</span>,</div><div class="line">        <span class="string">'Y'</span>: <span class="string">'-.--'</span>,   <span class="string">'Z'</span>: <span class="string">'--..'</span>,</div><div class="line"></div><div class="line">        <span class="string">'0'</span>: <span class="string">'-----'</span>,  <span class="string">'1'</span>: <span class="string">'.----'</span>,  <span class="string">'2'</span>: <span class="string">'..---'</span>,</div><div class="line">        <span class="string">'3'</span>: <span class="string">'...--'</span>,  <span class="string">'4'</span>: <span class="string">'....-'</span>,  <span class="string">'5'</span>: <span class="string">'.....'</span>,</div><div class="line">        <span class="string">'6'</span>: <span class="string">'-....'</span>,  <span class="string">'7'</span>: <span class="string">'--...'</span>,  <span class="string">'8'</span>: <span class="string">'---..'</span>,</div><div class="line">        <span class="string">'9'</span>: <span class="string">'----.'</span></div><div class="line">        &#125;</div><div class="line">def main():</div><div class="line"></div><div class="line">        msg = <span class="built_in">input</span>(<span class="string">'MESSAGE: '</span>)</div><div class="line"></div><div class="line">        <span class="keyword">for</span> <span class="built_in">char</span> <span class="keyword">in</span> msg:</div><div class="line">                <span class="keyword">if</span> <span class="built_in">char</span> == <span class="string">' '</span>:</div><div class="line">                        <span class="built_in">print</span></div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                        <span class="built_in">print</span> (CODE[<span class="built_in">char</span>.<span class="built_in">upper</span>()] + <span class="string">'  '</span>,)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">        main()</div></pre></td></tr></table></figure>
 
           
@@ -677,7 +822,7 @@
       
         
           
-            <p><code>请在python3环境下运行</code><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">key='helloworld'</div><div class="line">plaintext='whereisthekey'</div><div class="line"></div><div class="line"><span class="comment">#key='relations'</span></div><div class="line"><span class="comment">#plaintext='tobeornottobeth'</span></div><div class="line"> </div><div class="line">ascii='abcdefghijklmnopqrstuvwxyz'</div><div class="line">keylen=len(key)</div><div class="line">ptlen=len(plaintext)</div><div class="line">ciphertext = ''</div><div class="line">i = 0</div><div class="line">while i &lt; ptlen:</div><div class="line">    j = i % keylen</div><div class="line">    k = ascii.index(key[j])</div><div class="line">    m = ascii.index(plaintext[i])</div><div class="line">    ciphertext += ascii[(m+k)%26]</div><div class="line">    i += 1</div><div class="line"> </div><div class="line">print (ciphertext)</div></pre></td></tr></table></figure></p>
+            <p><code>运行环境python3</code><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">key='helloworld'</div><div class="line">plaintext='whereisthekey'</div><div class="line"></div><div class="line"><span class="comment">#key='relations'</span></div><div class="line"><span class="comment">#plaintext='tobeornottobeth'</span></div><div class="line"> </div><div class="line">ascii='abcdefghijklmnopqrstuvwxyz'</div><div class="line">keylen=len(key)</div><div class="line">ptlen=len(plaintext)</div><div class="line">ciphertext = ''</div><div class="line">i = 0</div><div class="line">while i &lt; ptlen:</div><div class="line">    j = i % keylen</div><div class="line">    k = ascii.index(key[j])</div><div class="line">    m = ascii.index(plaintext[i])</div><div class="line">    ciphertext += ascii[(m+k)%26]</div><div class="line">    i += 1</div><div class="line"> </div><div class="line">print (ciphertext)</div></pre></td></tr></table></figure></p>
 
           
         
@@ -821,7 +966,7 @@
       
         
           
-            <p><code>请在python3环境下运行</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> base64</div><div class="line">str = <span class="string">'''</span></div><div class="line"><span class="string">Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSWFJteFZVMjA1VjAxV2JETlhhMk0xVmpKS1NHVkVRbUZX</span></div><div class="line"><span class="string">VmxsM1ZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjSEJXYTFwaFpWWmFkRTFV</span></div><div class="line"><span class="string">VWxSTmF6RTFWa2QwYzJGc1NuUmhSemxWVmpOT00xcFZXbUZrUjA1R1drWlNUbUpGY0VwV2JURXdZVEZr</span></div><div class="line"><span class="string">U0ZOclpHcFNWR3hoV1d4U1IyUnNXbGRYYlhSWFRWaENSbFpYZUhkV01ERkZVbFJDVjAxdVVuWldha3BI</span></div><div class="line"><span class="string">VmpGT2RWVnNXbWhsYlhob1ZtMXdUMkl5UmtkalJtUllZbGhTV0ZSV2FFTlNiRnBZWlVoa1YwMUVSa1pW</span></div><div class="line"><span class="string">YkZKRFZqSkdjbUV6YUZaaGExcG9WakJhVDJOdFJrZFhiV2hzWWxob2IxWnRNWGRVTVZWNVVtdGtWMWRI</span></div><div class="line"><span class="string">YUZsWmJGWmhZMVphZEdONlJteFNiSEJaV2xWb2ExWXdNVVZTYTFwV1lrWktSRlpxU2tabFZsSlpZVVpr</span></div><div class="line"><span class="string">VTFKV2NIbFdWRUpoVkRKT2MyTkZhR3BTYkVwVVZteG9RMWRzV25KWGJHUmFWakZHTkZaSGRHdFdiVXBI</span></div><div class="line"><span class="string">VjJ4U1dtSkhhRlJXTUZwVFZqRmtkRkp0ZUZkaVZrbzFWbXBLTkZReFdsaFRiRnBxVWxkU1lWUlZXbmRs</span></div><div class="line"><span class="string">YkZweFVtMUdUMkpGV2xwWlZWcHJWVEZLVjJOSWJGZFdSVXBvVmtSS1QyUkdTbkphUm1ocFZqTm9WVmRX</span></div><div class="line"><span class="string">VWs5Uk1XUkhWMjVTVGxaRlNsaFVWbVEwVjBaYVdHUkhkRmhTTUhCSlZsZDRjMWR0U2toaFJsSlhUVVp3</span></div><div class="line"><span class="string">VkZacVNrZFNiRkp6Vlcxc1UwMHhSalpXYWtvd1ZURlZlRmR1U2s1WFJYQnhWVzB4YjFZeFVsaE9Wemxz</span></div><div class="line"><span class="string">WWtad2VGVnRNVWRVTWtwR1YyeHdXbFpXY0hKV1ZFWkxWMVpHY21KR1pHbFhSVXBKVm10U1MxVXhXWGhX</span></div><div class="line"><span class="string">YmxaV1lsaENWRmxyVm5kV1ZscDBaVWM1VWsxWFVucFdNV2h2VjBkS1JrNVdVbFZXTTJoSVZHdGFjMk5z</span></div><div class="line"><span class="string">WkhSa1IyaHBVbGhCZDFkV1ZtOVVNVnAwVTJ4V1YyRXhTbUZhVjNSaFYwWndSbFpZYUZkTlZrcDVWR3hh</span></div><div class="line"><span class="string">VDJGV1NuUlBWRTVYVFc1b1dGbHFTa1psUm1SWldrVTFWMVpzY0ZWWFZsSkhaREZrUjJKSVRtaFNlbXhQ</span></div><div class="line"><span class="string">VkZaYWQyVkdWblJsU0dScFVqQndWMVl5ZEhkV01ERnhVbXRvVjFaRldreFdNVnBIWTIxS1IxcEdaRTVO</span></div><div class="line"><span class="string">UlhCS1ZtMTBVMU14VlhoWFdHaGhVMFphVmxscldrdGpSbHB4VkcwNWEySkhVbnBYYTFKVFYyeFpkMkpF</span></div><div class="line"><span class="string">VWxkTmFsWlVWa2Q0WVZKc1RuTmhSbkJZVTBWS1NWWnFRbUZXYlZaWVZXdG9hMUp0YUZSWmJGcExVMnhr</span></div><div class="line"><span class="string">VjFadFJtcE5WMUl3Vld4b2MyRkdTbGRUYlVaaFZqTlNhRmxWV25OT2JFcHpXa2R3YVZORlNrbFdiR040</span></div><div class="line"><span class="string">WXpGVmQwMUliR2hTYlhoWVdXeG9RMVJHVW5KYVJWcHNVbTFTZWxsVldsTmhSVEZ6VTI1b1YxWjZSVEJh</span></div><div class="line"><span class="string">UkVaclVqSktTVlJ0YUZObGJYaFFWa1phWVdReVZrZFdibEpPVmxkU1YxUlhkSGRXTVd4eVZXMUdXRkl3</span></div><div class="line"><span class="string">VmpSWk1HaExWMnhhV0ZWclpHRldWMUpRVldwS1MxSXlSa2hoUlRWWFltdEtNbFp0TVRCVk1VMTRWVzVT</span></div><div class="line"><span class="string">VjJKSFVsVlpiWFIzWWpGV2NWTnRPVmRTYlhoYVdUQmFhMkV3TVZkalJteGhWbGROTVZaWGMzaGpNVTUx</span></div><div class="line"><span class="string">WTBaa1RtRnNXbFZXYTJRMFV6RktjMXBJVmxSaVJscFlXV3RhZG1Wc1drZFdiVVphVmpGS1IxUnNXbUZW</span></div><div class="line"><span class="string">UmxsNVlVaENWbUpIYUVSVWJYaHJWbFpHZEZKdGNFNVdNVWwzVmxkNGIyTXlSa2RUYkdSVVlsVmFWbFp1</span></div><div class="line"><span class="string">Y0Zka2JGcHlWMjFHYWxacmNEQmFSV1F3VlRKRmVsRllaRmhpUmxwb1dWUktSMVl4VG5OYVIyaE9UV3hL</span></div><div class="line"><span class="string">V1ZkWGVHOVJNVTE0WTBaYVdHRXpRbk5WYlRGVFpXeHNWbGRzVG1oV2EzQXhWVmMxYjFZeFdYcGhTRXBY</span></div><div class="line"><span class="string">VmtWYWVsWnFSbGRqTVdSellVZG9UazFWY0RKV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRY</span></div><div class="line"><span class="string">Ym1Sc1ZteHNOVlJzYUd0V01rcEhZa1JhV2xaV1NsQldNakZHWlZaV2NscEhSbGRXTVVwUlZsUkNWazVX</span></div><div class="line"><span class="string">V1hsU2EyaG9VbFJXV0ZsdGRFdE5iRnAwVFZSQ1ZrMVZNVFJXVnpWVFZqSktTRlZzV2xwaVdGSXpXV3BH</span></div><div class="line"><span class="string">VjJOV1RuUlBWbVJUWWxob1lWZFVRbUZoTVZwelUyNU9hbEp0ZUZaV2JGcExVMFphV0dNemFGaFNiRnA1</span></div><div class="line"><span class="string">V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmxVUms5U01WcDFWR3hvYVZKc2NGbFhWM1JoWkRGa1YxZHJhR3hT</span></div><div class="line"><span class="string">TUZwaFZtcEdTMUl4VW5OWGJVWldVbXhzTlZsVldsTldNa1Y0VjJ0MFZWWnNjSEpaZWtaaFpFVTVWMVpy</span></div><div class="line"><span class="string">TlZkaWEwWXpWbXhqZDAxV1RYaFZXR2hZWW1zMVZWbHNWbUZXYkZwMFpVaGtUazFXY0hsV01qRkhZV3hh</span></div><div class="line"><span class="string">Y21ORVJsaGhNWEJRVmtkNFlXTnRUa1ZYYkdST1lteEtlVmRZY0VkV2JWWlhWRzVXVkdKRk5XOVpXSEJY</span></div><div class="line"><span class="string">VjFaa1YxVnJaR3ROYTFwSVdXdGFiMkZ0Vm5KWGJHaFZWbTFTVkZZeWVHdGpiRnBWVW14b1UyRXpRbUZX</span></div><div class="line"><span class="string">Vm1NeFlqRlplRmRxV2xKWFIyaFhWbXRXWVdWc1duRlNiWFJyVm14S01GVnRlRTloUjFaelYyeGtWMkpI</span></div><div class="line"><span class="string">VGpSVWEyUlNaVlphY2xwR1pGaFNNMmg1Vmxkd1ExbFhUa2RXYmxKc1UwZFNjMWxyV2xkT1ZsSnpXWHBX</span></div><div class="line"><span class="string">VjAxRVJsaFphMUpoVjJ4YVYyTklXbGROYm1ob1ZtcEdZV05XVm5OYVJUVlhZbXRLU2xZeGFIZFNNVmw1</span></div><div class="line"><span class="string">VkZoc1UyRXlhSEJWYlhNeFkwWnNWVkZ1WkU1aVJuQXdXbFZqTldFd01WWk5WRkpYWWtkb2RsWXdXbXRU</span></div><div class="line"><span class="string">UjBaSFlVWndhVmRIYUc5V2JURTBZekpPYzFwSVZtRlNNMEpVV1d0YWQwNUdXbGhOVkVKT1VteHNORll5</span></div><div class="line"><span class="string">TlZOV2JVcElaVWRvVm1KSFVsUlZNRnBoWTFaT2NscEZPV2xTV0VJMlZtdGtORmxXVlhsVGExcFlWMGhD</span></div><div class="line"><span class="string">V0Zac1duZFNNVkY0VjJ0T1ZtSkZTbFpVVlZGM1VGRTlQUT09</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">16</span>):</div><div class="line">    str = base64.b64decode(str)</div><div class="line"><span class="keyword">print</span> (str)</div></pre></td></tr></table></figure></p>
+            <p><code>运行环境python3</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> base64</div><div class="line">str = <span class="string">'''</span></div><div class="line"><span class="string">Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSWFJteFZVMjA1VjAxV2JETlhhMk0xVmpKS1NHVkVRbUZX</span></div><div class="line"><span class="string">VmxsM1ZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjSEJXYTFwaFpWWmFkRTFV</span></div><div class="line"><span class="string">VWxSTmF6RTFWa2QwYzJGc1NuUmhSemxWVmpOT00xcFZXbUZrUjA1R1drWlNUbUpGY0VwV2JURXdZVEZr</span></div><div class="line"><span class="string">U0ZOclpHcFNWR3hoV1d4U1IyUnNXbGRYYlhSWFRWaENSbFpYZUhkV01ERkZVbFJDVjAxdVVuWldha3BI</span></div><div class="line"><span class="string">VmpGT2RWVnNXbWhsYlhob1ZtMXdUMkl5UmtkalJtUllZbGhTV0ZSV2FFTlNiRnBZWlVoa1YwMUVSa1pW</span></div><div class="line"><span class="string">YkZKRFZqSkdjbUV6YUZaaGExcG9WakJhVDJOdFJrZFhiV2hzWWxob2IxWnRNWGRVTVZWNVVtdGtWMWRI</span></div><div class="line"><span class="string">YUZsWmJGWmhZMVphZEdONlJteFNiSEJaV2xWb2ExWXdNVVZTYTFwV1lrWktSRlpxU2tabFZsSlpZVVpr</span></div><div class="line"><span class="string">VTFKV2NIbFdWRUpoVkRKT2MyTkZhR3BTYkVwVVZteG9RMWRzV25KWGJHUmFWakZHTkZaSGRHdFdiVXBI</span></div><div class="line"><span class="string">VjJ4U1dtSkhhRlJXTUZwVFZqRmtkRkp0ZUZkaVZrbzFWbXBLTkZReFdsaFRiRnBxVWxkU1lWUlZXbmRs</span></div><div class="line"><span class="string">YkZweFVtMUdUMkpGV2xwWlZWcHJWVEZLVjJOSWJGZFdSVXBvVmtSS1QyUkdTbkphUm1ocFZqTm9WVmRX</span></div><div class="line"><span class="string">VWs5Uk1XUkhWMjVTVGxaRlNsaFVWbVEwVjBaYVdHUkhkRmhTTUhCSlZsZDRjMWR0U2toaFJsSlhUVVp3</span></div><div class="line"><span class="string">VkZacVNrZFNiRkp6Vlcxc1UwMHhSalpXYWtvd1ZURlZlRmR1U2s1WFJYQnhWVzB4YjFZeFVsaE9Wemxz</span></div><div class="line"><span class="string">WWtad2VGVnRNVWRVTWtwR1YyeHdXbFpXY0hKV1ZFWkxWMVpHY21KR1pHbFhSVXBKVm10U1MxVXhXWGhX</span></div><div class="line"><span class="string">YmxaV1lsaENWRmxyVm5kV1ZscDBaVWM1VWsxWFVucFdNV2h2VjBkS1JrNVdVbFZXTTJoSVZHdGFjMk5z</span></div><div class="line"><span class="string">WkhSa1IyaHBVbGhCZDFkV1ZtOVVNVnAwVTJ4V1YyRXhTbUZhVjNSaFYwWndSbFpZYUZkTlZrcDVWR3hh</span></div><div class="line"><span class="string">VDJGV1NuUlBWRTVYVFc1b1dGbHFTa1psUm1SWldrVTFWMVpzY0ZWWFZsSkhaREZrUjJKSVRtaFNlbXhQ</span></div><div class="line"><span class="string">VkZaYWQyVkdWblJsU0dScFVqQndWMVl5ZEhkV01ERnhVbXRvVjFaRldreFdNVnBIWTIxS1IxcEdaRTVO</span></div><div class="line"><span class="string">UlhCS1ZtMTBVMU14VlhoWFdHaGhVMFphVmxscldrdGpSbHB4VkcwNWEySkhVbnBYYTFKVFYyeFpkMkpF</span></div><div class="line"><span class="string">VWxkTmFsWlVWa2Q0WVZKc1RuTmhSbkJZVTBWS1NWWnFRbUZXYlZaWVZXdG9hMUp0YUZSWmJGcExVMnhr</span></div><div class="line"><span class="string">VjFadFJtcE5WMUl3Vld4b2MyRkdTbGRUYlVaaFZqTlNhRmxWV25OT2JFcHpXa2R3YVZORlNrbFdiR040</span></div><div class="line"><span class="string">WXpGVmQwMUliR2hTYlhoWVdXeG9RMVJHVW5KYVJWcHNVbTFTZWxsVldsTmhSVEZ6VTI1b1YxWjZSVEJh</span></div><div class="line"><span class="string">UkVaclVqSktTVlJ0YUZObGJYaFFWa1phWVdReVZrZFdibEpPVmxkU1YxUlhkSGRXTVd4eVZXMUdXRkl3</span></div><div class="line"><span class="string">VmpSWk1HaExWMnhhV0ZWclpHRldWMUpRVldwS1MxSXlSa2hoUlRWWFltdEtNbFp0TVRCVk1VMTRWVzVT</span></div><div class="line"><span class="string">VjJKSFVsVlpiWFIzWWpGV2NWTnRPVmRTYlhoYVdUQmFhMkV3TVZkalJteGhWbGROTVZaWGMzaGpNVTUx</span></div><div class="line"><span class="string">WTBaa1RtRnNXbFZXYTJRMFV6RktjMXBJVmxSaVJscFlXV3RhZG1Wc1drZFdiVVphVmpGS1IxUnNXbUZW</span></div><div class="line"><span class="string">UmxsNVlVaENWbUpIYUVSVWJYaHJWbFpHZEZKdGNFNVdNVWwzVmxkNGIyTXlSa2RUYkdSVVlsVmFWbFp1</span></div><div class="line"><span class="string">Y0Zka2JGcHlWMjFHYWxacmNEQmFSV1F3VlRKRmVsRllaRmhpUmxwb1dWUktSMVl4VG5OYVIyaE9UV3hL</span></div><div class="line"><span class="string">V1ZkWGVHOVJNVTE0WTBaYVdHRXpRbk5WYlRGVFpXeHNWbGRzVG1oV2EzQXhWVmMxYjFZeFdYcGhTRXBY</span></div><div class="line"><span class="string">VmtWYWVsWnFSbGRqTVdSellVZG9UazFWY0RKV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRY</span></div><div class="line"><span class="string">Ym1Sc1ZteHNOVlJzYUd0V01rcEhZa1JhV2xaV1NsQldNakZHWlZaV2NscEhSbGRXTVVwUlZsUkNWazVX</span></div><div class="line"><span class="string">V1hsU2EyaG9VbFJXV0ZsdGRFdE5iRnAwVFZSQ1ZrMVZNVFJXVnpWVFZqSktTRlZzV2xwaVdGSXpXV3BH</span></div><div class="line"><span class="string">VjJOV1RuUlBWbVJUWWxob1lWZFVRbUZoTVZwelUyNU9hbEp0ZUZaV2JGcExVMFphV0dNemFGaFNiRnA1</span></div><div class="line"><span class="string">V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmxVUms5U01WcDFWR3hvYVZKc2NGbFhWM1JoWkRGa1YxZHJhR3hT</span></div><div class="line"><span class="string">TUZwaFZtcEdTMUl4VW5OWGJVWldVbXhzTlZsVldsTldNa1Y0VjJ0MFZWWnNjSEpaZWtaaFpFVTVWMVpy</span></div><div class="line"><span class="string">TlZkaWEwWXpWbXhqZDAxV1RYaFZXR2hZWW1zMVZWbHNWbUZXYkZwMFpVaGtUazFXY0hsV01qRkhZV3hh</span></div><div class="line"><span class="string">Y21ORVJsaGhNWEJRVmtkNFlXTnRUa1ZYYkdST1lteEtlVmRZY0VkV2JWWlhWRzVXVkdKRk5XOVpXSEJY</span></div><div class="line"><span class="string">VjFaa1YxVnJaR3ROYTFwSVdXdGFiMkZ0Vm5KWGJHaFZWbTFTVkZZeWVHdGpiRnBWVW14b1UyRXpRbUZX</span></div><div class="line"><span class="string">Vm1NeFlqRlplRmRxV2xKWFIyaFhWbXRXWVdWc1duRlNiWFJyVm14S01GVnRlRTloUjFaelYyeGtWMkpI</span></div><div class="line"><span class="string">VGpSVWEyUlNaVlphY2xwR1pGaFNNMmg1Vmxkd1ExbFhUa2RXYmxKc1UwZFNjMWxyV2xkT1ZsSnpXWHBX</span></div><div class="line"><span class="string">VjAxRVJsaFphMUpoVjJ4YVYyTklXbGROYm1ob1ZtcEdZV05XVm5OYVJUVlhZbXRLU2xZeGFIZFNNVmw1</span></div><div class="line"><span class="string">VkZoc1UyRXlhSEJWYlhNeFkwWnNWVkZ1WkU1aVJuQXdXbFZqTldFd01WWk5WRkpYWWtkb2RsWXdXbXRU</span></div><div class="line"><span class="string">UjBaSFlVWndhVmRIYUc5V2JURTBZekpPYzFwSVZtRlNNMEpVV1d0YWQwNUdXbGhOVkVKT1VteHNORll5</span></div><div class="line"><span class="string">TlZOV2JVcElaVWRvVm1KSFVsUlZNRnBoWTFaT2NscEZPV2xTV0VJMlZtdGtORmxXVlhsVGExcFlWMGhD</span></div><div class="line"><span class="string">V0Zac1duZFNNVkY0VjJ0T1ZtSkZTbFpVVlZGM1VGRTlQUT09</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">16</span>):</div><div class="line">    str = base64.b64decode(str)</div><div class="line"><span class="keyword">print</span> (str)</div></pre></td></tr></table></figure></p>
 
           
         
@@ -1601,151 +1746,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/Example3-9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/19/Example3-9/" itemprop="url">Example3_9</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-19T21:46:00+08:00">
-                2017-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/19/Example3-9/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/19/Example3-9/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/19/Example3-9/" class="leancloud_visitors" data-flag-title="Example3_9">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>求满足1+ 2!+ 3!+ ... +n!&lt;= 9999的最大整数N</code></p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example3_9</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="keyword">int</span> n= <span class="number">1</span>;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">sum</span>= <span class="number">0</span>, t= <span class="number">1</span>;</div><div class="line">        t= n* t;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ t;</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">sum</span>&gt; <span class="number">9999</span>)&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            n++;</div><div class="line">            t= n* t;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"满足条件的最大整数："</span>+ (n- <span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1799,7 +1799,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1812,7 +1812,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>

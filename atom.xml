@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-23T01:21:29.961Z</updated>
+  <updated>2017-09-23T01:27:55.750Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,20 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>移位</title>
+    <link href="http://yoursite.com/2017/09/23/%E7%A7%BB%E4%BD%8D/"/>
+    <id>http://yoursite.com/2017/09/23/移位/</id>
+    <published>2017-09-23T01:27:02.000Z</published>
+    <updated>2017-09-23T01:27:55.750Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>运行环境python2.7</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">key=<span class="string">'CRL'</span>.upper()</div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> in range(<span class="number">0</span>,<span class="number">26</span>):</div><div class="line">    flag=<span class="string">''</span></div><div class="line">    <span class="keyword">for</span> <span class="built_in">j</span> in key:</div><div class="line">        <span class="keyword">if</span> <span class="built_in">j</span>.isalpha():</div><div class="line">            flag+=chr(((ord(<span class="built_in">j</span>)-ord(<span class="string">'A'</span>)+<span class="built_in">i</span>)<span class="comment">%26)+ord('A'))</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            flag+=<span class="built_in">j</span></div><div class="line">    print str(<span class="built_in">i</span>).zfill(<span class="number">2</span>),flag</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;运行环境python2.7&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
+    
+    </summary>
+    
+    
+      <category term="移位" scheme="http://yoursite.com/tags/%E7%A7%BB%E4%BD%8D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>字符串转莫尔斯</title>
     <link href="http://yoursite.com/2017/09/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E8%8E%AB%E5%B0%94%E6%96%AF/"/>
     <id>http://yoursite.com/2017/09/23/字符串转莫尔斯/</id>
     <published>2017-09-23T01:20:50.000Z</published>
-    <updated>2017-09-23T01:21:29.961Z</updated>
+    <updated>2017-09-23T01:28:26.470Z</updated>
     
-    <content type="html"><![CDATA[<p><code>请在python3环境下运行</code></p>
+    <content type="html"><![CDATA[<p><code>运行环境python3</code></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">CODE = &#123;<span class="string">'A'</span>: <span class="string">'.-'</span>,     <span class="string">'B'</span>: <span class="string">'-...'</span>,   <span class="string">'C'</span>: <span class="string">'-.-.'</span>,</div><div class="line">        <span class="string">'D'</span>: <span class="string">'-..'</span>,    <span class="string">'E'</span>: <span class="string">'.'</span>,      <span class="string">'F'</span>: <span class="string">'..-.'</span>,</div><div class="line">        <span class="string">'G'</span>: <span class="string">'--.'</span>,    <span class="string">'H'</span>: <span class="string">'....'</span>,   <span class="string">'I'</span>: <span class="string">'..'</span>,</div><div class="line">        <span class="string">'J'</span>: <span class="string">'.---'</span>,   <span class="string">'K'</span>: <span class="string">'-.-'</span>,    <span class="string">'L'</span>: <span class="string">'.-..'</span>,</div><div class="line">        <span class="string">'M'</span>: <span class="string">'--'</span>,     <span class="string">'N'</span>: <span class="string">'-.'</span>,     <span class="string">'O'</span>: <span class="string">'---'</span>,</div><div class="line">        <span class="string">'P'</span>: <span class="string">'.--.'</span>,   <span class="string">'Q'</span>: <span class="string">'--.-'</span>,   <span class="string">'R'</span>: <span class="string">'.-.'</span>,</div><div class="line">             <span class="string">'S'</span>: <span class="string">'...'</span>,    <span class="string">'T'</span>: <span class="string">'-'</span>,      <span class="string">'U'</span>: <span class="string">'..-'</span>,</div><div class="line">        <span class="string">'V'</span>: <span class="string">'...-'</span>,   <span class="string">'W'</span>: <span class="string">'.--'</span>,    <span class="string">'X'</span>: <span class="string">'-..-'</span>,</div><div class="line">        <span class="string">'Y'</span>: <span class="string">'-.--'</span>,   <span class="string">'Z'</span>: <span class="string">'--..'</span>,</div><div class="line"></div><div class="line">        <span class="string">'0'</span>: <span class="string">'-----'</span>,  <span class="string">'1'</span>: <span class="string">'.----'</span>,  <span class="string">'2'</span>: <span class="string">'..---'</span>,</div><div class="line">        <span class="string">'3'</span>: <span class="string">'...--'</span>,  <span class="string">'4'</span>: <span class="string">'....-'</span>,  <span class="string">'5'</span>: <span class="string">'.....'</span>,</div><div class="line">        <span class="string">'6'</span>: <span class="string">'-....'</span>,  <span class="string">'7'</span>: <span class="string">'--...'</span>,  <span class="string">'8'</span>: <span class="string">'---..'</span>,</div><div class="line">        <span class="string">'9'</span>: <span class="string">'----.'</span></div><div class="line">        &#125;</div><div class="line">def main():</div><div class="line"></div><div class="line">        msg = <span class="built_in">input</span>(<span class="string">'MESSAGE: '</span>)</div><div class="line"></div><div class="line">        <span class="keyword">for</span> <span class="built_in">char</span> <span class="keyword">in</span> msg:</div><div class="line">                <span class="keyword">if</span> <span class="built_in">char</span> == <span class="string">' '</span>:</div><div class="line">                        <span class="built_in">print</span></div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                        <span class="built_in">print</span> (CODE[<span class="built_in">char</span>.<span class="built_in">upper</span>()] + <span class="string">'  '</span>,)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">        main()</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;code&gt;请在python3环境下运行&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;lin
+      &lt;p&gt;&lt;code&gt;运行环境python3&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
     
     </summary>
     
@@ -64,14 +87,14 @@
     <link href="http://yoursite.com/2017/09/23/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A/"/>
     <id>http://yoursite.com/2017/09/23/维吉尼亚/</id>
     <published>2017-09-23T01:14:28.000Z</published>
-    <updated>2017-09-23T01:19:43.392Z</updated>
+    <updated>2017-09-23T01:28:52.926Z</updated>
     
-    <content type="html"><![CDATA[<p><code>请在python3环境下运行</code><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">key='helloworld'</div><div class="line">plaintext='whereisthekey'</div><div class="line"></div><div class="line"><span class="comment">#key='relations'</span></div><div class="line"><span class="comment">#plaintext='tobeornottobeth'</span></div><div class="line"> </div><div class="line">ascii='abcdefghijklmnopqrstuvwxyz'</div><div class="line">keylen=len(key)</div><div class="line">ptlen=len(plaintext)</div><div class="line">ciphertext = ''</div><div class="line">i = 0</div><div class="line">while i &lt; ptlen:</div><div class="line">    j = i % keylen</div><div class="line">    k = ascii.index(key[j])</div><div class="line">    m = ascii.index(plaintext[i])</div><div class="line">    ciphertext += ascii[(m+k)%26]</div><div class="line">    i += 1</div><div class="line"> </div><div class="line">print (ciphertext)</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<p><code>运行环境python3</code><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">key='helloworld'</div><div class="line">plaintext='whereisthekey'</div><div class="line"></div><div class="line"><span class="comment">#key='relations'</span></div><div class="line"><span class="comment">#plaintext='tobeornottobeth'</span></div><div class="line"> </div><div class="line">ascii='abcdefghijklmnopqrstuvwxyz'</div><div class="line">keylen=len(key)</div><div class="line">ptlen=len(plaintext)</div><div class="line">ciphertext = ''</div><div class="line">i = 0</div><div class="line">while i &lt; ptlen:</div><div class="line">    j = i % keylen</div><div class="line">    k = ascii.index(key[j])</div><div class="line">    m = ascii.index(plaintext[i])</div><div class="line">    ciphertext += ascii[(m+k)%26]</div><div class="line">    i += 1</div><div class="line"> </div><div class="line">print (ciphertext)</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;code&gt;请在python3环境下运行&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=
+      &lt;p&gt;&lt;code&gt;运行环境python3&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;li
     
     </summary>
     
@@ -85,14 +108,14 @@
     <link href="http://yoursite.com/2017/09/23/n%E6%AC%A1base64%E8%A7%A3%E5%AF%86/"/>
     <id>http://yoursite.com/2017/09/23/n次base64解密/</id>
     <published>2017-09-23T01:11:41.000Z</published>
-    <updated>2017-09-23T01:18:52.000Z</updated>
+    <updated>2017-09-23T01:29:17.790Z</updated>
     
-    <content type="html"><![CDATA[<p><code>请在python3环境下运行</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> base64</div><div class="line">str = <span class="string">'''</span></div><div class="line"><span class="string">Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSWFJteFZVMjA1VjAxV2JETlhhMk0xVmpKS1NHVkVRbUZX</span></div><div class="line"><span class="string">VmxsM1ZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjSEJXYTFwaFpWWmFkRTFV</span></div><div class="line"><span class="string">VWxSTmF6RTFWa2QwYzJGc1NuUmhSemxWVmpOT00xcFZXbUZrUjA1R1drWlNUbUpGY0VwV2JURXdZVEZr</span></div><div class="line"><span class="string">U0ZOclpHcFNWR3hoV1d4U1IyUnNXbGRYYlhSWFRWaENSbFpYZUhkV01ERkZVbFJDVjAxdVVuWldha3BI</span></div><div class="line"><span class="string">VmpGT2RWVnNXbWhsYlhob1ZtMXdUMkl5UmtkalJtUllZbGhTV0ZSV2FFTlNiRnBZWlVoa1YwMUVSa1pW</span></div><div class="line"><span class="string">YkZKRFZqSkdjbUV6YUZaaGExcG9WakJhVDJOdFJrZFhiV2hzWWxob2IxWnRNWGRVTVZWNVVtdGtWMWRI</span></div><div class="line"><span class="string">YUZsWmJGWmhZMVphZEdONlJteFNiSEJaV2xWb2ExWXdNVVZTYTFwV1lrWktSRlpxU2tabFZsSlpZVVpr</span></div><div class="line"><span class="string">VTFKV2NIbFdWRUpoVkRKT2MyTkZhR3BTYkVwVVZteG9RMWRzV25KWGJHUmFWakZHTkZaSGRHdFdiVXBI</span></div><div class="line"><span class="string">VjJ4U1dtSkhhRlJXTUZwVFZqRmtkRkp0ZUZkaVZrbzFWbXBLTkZReFdsaFRiRnBxVWxkU1lWUlZXbmRs</span></div><div class="line"><span class="string">YkZweFVtMUdUMkpGV2xwWlZWcHJWVEZLVjJOSWJGZFdSVXBvVmtSS1QyUkdTbkphUm1ocFZqTm9WVmRX</span></div><div class="line"><span class="string">VWs5Uk1XUkhWMjVTVGxaRlNsaFVWbVEwVjBaYVdHUkhkRmhTTUhCSlZsZDRjMWR0U2toaFJsSlhUVVp3</span></div><div class="line"><span class="string">VkZacVNrZFNiRkp6Vlcxc1UwMHhSalpXYWtvd1ZURlZlRmR1U2s1WFJYQnhWVzB4YjFZeFVsaE9Wemxz</span></div><div class="line"><span class="string">WWtad2VGVnRNVWRVTWtwR1YyeHdXbFpXY0hKV1ZFWkxWMVpHY21KR1pHbFhSVXBKVm10U1MxVXhXWGhX</span></div><div class="line"><span class="string">YmxaV1lsaENWRmxyVm5kV1ZscDBaVWM1VWsxWFVucFdNV2h2VjBkS1JrNVdVbFZXTTJoSVZHdGFjMk5z</span></div><div class="line"><span class="string">WkhSa1IyaHBVbGhCZDFkV1ZtOVVNVnAwVTJ4V1YyRXhTbUZhVjNSaFYwWndSbFpZYUZkTlZrcDVWR3hh</span></div><div class="line"><span class="string">VDJGV1NuUlBWRTVYVFc1b1dGbHFTa1psUm1SWldrVTFWMVpzY0ZWWFZsSkhaREZrUjJKSVRtaFNlbXhQ</span></div><div class="line"><span class="string">VkZaYWQyVkdWblJsU0dScFVqQndWMVl5ZEhkV01ERnhVbXRvVjFaRldreFdNVnBIWTIxS1IxcEdaRTVO</span></div><div class="line"><span class="string">UlhCS1ZtMTBVMU14VlhoWFdHaGhVMFphVmxscldrdGpSbHB4VkcwNWEySkhVbnBYYTFKVFYyeFpkMkpF</span></div><div class="line"><span class="string">VWxkTmFsWlVWa2Q0WVZKc1RuTmhSbkJZVTBWS1NWWnFRbUZXYlZaWVZXdG9hMUp0YUZSWmJGcExVMnhr</span></div><div class="line"><span class="string">VjFadFJtcE5WMUl3Vld4b2MyRkdTbGRUYlVaaFZqTlNhRmxWV25OT2JFcHpXa2R3YVZORlNrbFdiR040</span></div><div class="line"><span class="string">WXpGVmQwMUliR2hTYlhoWVdXeG9RMVJHVW5KYVJWcHNVbTFTZWxsVldsTmhSVEZ6VTI1b1YxWjZSVEJh</span></div><div class="line"><span class="string">UkVaclVqSktTVlJ0YUZObGJYaFFWa1phWVdReVZrZFdibEpPVmxkU1YxUlhkSGRXTVd4eVZXMUdXRkl3</span></div><div class="line"><span class="string">VmpSWk1HaExWMnhhV0ZWclpHRldWMUpRVldwS1MxSXlSa2hoUlRWWFltdEtNbFp0TVRCVk1VMTRWVzVT</span></div><div class="line"><span class="string">VjJKSFVsVlpiWFIzWWpGV2NWTnRPVmRTYlhoYVdUQmFhMkV3TVZkalJteGhWbGROTVZaWGMzaGpNVTUx</span></div><div class="line"><span class="string">WTBaa1RtRnNXbFZXYTJRMFV6RktjMXBJVmxSaVJscFlXV3RhZG1Wc1drZFdiVVphVmpGS1IxUnNXbUZW</span></div><div class="line"><span class="string">UmxsNVlVaENWbUpIYUVSVWJYaHJWbFpHZEZKdGNFNVdNVWwzVmxkNGIyTXlSa2RUYkdSVVlsVmFWbFp1</span></div><div class="line"><span class="string">Y0Zka2JGcHlWMjFHYWxacmNEQmFSV1F3VlRKRmVsRllaRmhpUmxwb1dWUktSMVl4VG5OYVIyaE9UV3hL</span></div><div class="line"><span class="string">V1ZkWGVHOVJNVTE0WTBaYVdHRXpRbk5WYlRGVFpXeHNWbGRzVG1oV2EzQXhWVmMxYjFZeFdYcGhTRXBY</span></div><div class="line"><span class="string">VmtWYWVsWnFSbGRqTVdSellVZG9UazFWY0RKV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRY</span></div><div class="line"><span class="string">Ym1Sc1ZteHNOVlJzYUd0V01rcEhZa1JhV2xaV1NsQldNakZHWlZaV2NscEhSbGRXTVVwUlZsUkNWazVX</span></div><div class="line"><span class="string">V1hsU2EyaG9VbFJXV0ZsdGRFdE5iRnAwVFZSQ1ZrMVZNVFJXVnpWVFZqSktTRlZzV2xwaVdGSXpXV3BH</span></div><div class="line"><span class="string">VjJOV1RuUlBWbVJUWWxob1lWZFVRbUZoTVZwelUyNU9hbEp0ZUZaV2JGcExVMFphV0dNemFGaFNiRnA1</span></div><div class="line"><span class="string">V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmxVUms5U01WcDFWR3hvYVZKc2NGbFhWM1JoWkRGa1YxZHJhR3hT</span></div><div class="line"><span class="string">TUZwaFZtcEdTMUl4VW5OWGJVWldVbXhzTlZsVldsTldNa1Y0VjJ0MFZWWnNjSEpaZWtaaFpFVTVWMVpy</span></div><div class="line"><span class="string">TlZkaWEwWXpWbXhqZDAxV1RYaFZXR2hZWW1zMVZWbHNWbUZXYkZwMFpVaGtUazFXY0hsV01qRkhZV3hh</span></div><div class="line"><span class="string">Y21ORVJsaGhNWEJRVmtkNFlXTnRUa1ZYYkdST1lteEtlVmRZY0VkV2JWWlhWRzVXVkdKRk5XOVpXSEJY</span></div><div class="line"><span class="string">VjFaa1YxVnJaR3ROYTFwSVdXdGFiMkZ0Vm5KWGJHaFZWbTFTVkZZeWVHdGpiRnBWVW14b1UyRXpRbUZX</span></div><div class="line"><span class="string">Vm1NeFlqRlplRmRxV2xKWFIyaFhWbXRXWVdWc1duRlNiWFJyVm14S01GVnRlRTloUjFaelYyeGtWMkpI</span></div><div class="line"><span class="string">VGpSVWEyUlNaVlphY2xwR1pGaFNNMmg1Vmxkd1ExbFhUa2RXYmxKc1UwZFNjMWxyV2xkT1ZsSnpXWHBX</span></div><div class="line"><span class="string">VjAxRVJsaFphMUpoVjJ4YVYyTklXbGROYm1ob1ZtcEdZV05XVm5OYVJUVlhZbXRLU2xZeGFIZFNNVmw1</span></div><div class="line"><span class="string">VkZoc1UyRXlhSEJWYlhNeFkwWnNWVkZ1WkU1aVJuQXdXbFZqTldFd01WWk5WRkpYWWtkb2RsWXdXbXRU</span></div><div class="line"><span class="string">UjBaSFlVWndhVmRIYUc5V2JURTBZekpPYzFwSVZtRlNNMEpVV1d0YWQwNUdXbGhOVkVKT1VteHNORll5</span></div><div class="line"><span class="string">TlZOV2JVcElaVWRvVm1KSFVsUlZNRnBoWTFaT2NscEZPV2xTV0VJMlZtdGtORmxXVlhsVGExcFlWMGhD</span></div><div class="line"><span class="string">V0Zac1duZFNNVkY0VjJ0T1ZtSkZTbFpVVlZGM1VGRTlQUT09</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">16</span>):</div><div class="line">    str = base64.b64decode(str)</div><div class="line"><span class="keyword">print</span> (str)</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<p><code>运行环境python3</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> base64</div><div class="line">str = <span class="string">'''</span></div><div class="line"><span class="string">Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSWFJteFZVMjA1VjAxV2JETlhhMk0xVmpKS1NHVkVRbUZX</span></div><div class="line"><span class="string">VmxsM1ZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjSEJXYTFwaFpWWmFkRTFV</span></div><div class="line"><span class="string">VWxSTmF6RTFWa2QwYzJGc1NuUmhSemxWVmpOT00xcFZXbUZrUjA1R1drWlNUbUpGY0VwV2JURXdZVEZr</span></div><div class="line"><span class="string">U0ZOclpHcFNWR3hoV1d4U1IyUnNXbGRYYlhSWFRWaENSbFpYZUhkV01ERkZVbFJDVjAxdVVuWldha3BI</span></div><div class="line"><span class="string">VmpGT2RWVnNXbWhsYlhob1ZtMXdUMkl5UmtkalJtUllZbGhTV0ZSV2FFTlNiRnBZWlVoa1YwMUVSa1pW</span></div><div class="line"><span class="string">YkZKRFZqSkdjbUV6YUZaaGExcG9WakJhVDJOdFJrZFhiV2hzWWxob2IxWnRNWGRVTVZWNVVtdGtWMWRI</span></div><div class="line"><span class="string">YUZsWmJGWmhZMVphZEdONlJteFNiSEJaV2xWb2ExWXdNVVZTYTFwV1lrWktSRlpxU2tabFZsSlpZVVpr</span></div><div class="line"><span class="string">VTFKV2NIbFdWRUpoVkRKT2MyTkZhR3BTYkVwVVZteG9RMWRzV25KWGJHUmFWakZHTkZaSGRHdFdiVXBI</span></div><div class="line"><span class="string">VjJ4U1dtSkhhRlJXTUZwVFZqRmtkRkp0ZUZkaVZrbzFWbXBLTkZReFdsaFRiRnBxVWxkU1lWUlZXbmRs</span></div><div class="line"><span class="string">YkZweFVtMUdUMkpGV2xwWlZWcHJWVEZLVjJOSWJGZFdSVXBvVmtSS1QyUkdTbkphUm1ocFZqTm9WVmRX</span></div><div class="line"><span class="string">VWs5Uk1XUkhWMjVTVGxaRlNsaFVWbVEwVjBaYVdHUkhkRmhTTUhCSlZsZDRjMWR0U2toaFJsSlhUVVp3</span></div><div class="line"><span class="string">VkZacVNrZFNiRkp6Vlcxc1UwMHhSalpXYWtvd1ZURlZlRmR1U2s1WFJYQnhWVzB4YjFZeFVsaE9Wemxz</span></div><div class="line"><span class="string">WWtad2VGVnRNVWRVTWtwR1YyeHdXbFpXY0hKV1ZFWkxWMVpHY21KR1pHbFhSVXBKVm10U1MxVXhXWGhX</span></div><div class="line"><span class="string">YmxaV1lsaENWRmxyVm5kV1ZscDBaVWM1VWsxWFVucFdNV2h2VjBkS1JrNVdVbFZXTTJoSVZHdGFjMk5z</span></div><div class="line"><span class="string">WkhSa1IyaHBVbGhCZDFkV1ZtOVVNVnAwVTJ4V1YyRXhTbUZhVjNSaFYwWndSbFpZYUZkTlZrcDVWR3hh</span></div><div class="line"><span class="string">VDJGV1NuUlBWRTVYVFc1b1dGbHFTa1psUm1SWldrVTFWMVpzY0ZWWFZsSkhaREZrUjJKSVRtaFNlbXhQ</span></div><div class="line"><span class="string">VkZaYWQyVkdWblJsU0dScFVqQndWMVl5ZEhkV01ERnhVbXRvVjFaRldreFdNVnBIWTIxS1IxcEdaRTVO</span></div><div class="line"><span class="string">UlhCS1ZtMTBVMU14VlhoWFdHaGhVMFphVmxscldrdGpSbHB4VkcwNWEySkhVbnBYYTFKVFYyeFpkMkpF</span></div><div class="line"><span class="string">VWxkTmFsWlVWa2Q0WVZKc1RuTmhSbkJZVTBWS1NWWnFRbUZXYlZaWVZXdG9hMUp0YUZSWmJGcExVMnhr</span></div><div class="line"><span class="string">VjFadFJtcE5WMUl3Vld4b2MyRkdTbGRUYlVaaFZqTlNhRmxWV25OT2JFcHpXa2R3YVZORlNrbFdiR040</span></div><div class="line"><span class="string">WXpGVmQwMUliR2hTYlhoWVdXeG9RMVJHVW5KYVJWcHNVbTFTZWxsVldsTmhSVEZ6VTI1b1YxWjZSVEJh</span></div><div class="line"><span class="string">UkVaclVqSktTVlJ0YUZObGJYaFFWa1phWVdReVZrZFdibEpPVmxkU1YxUlhkSGRXTVd4eVZXMUdXRkl3</span></div><div class="line"><span class="string">VmpSWk1HaExWMnhhV0ZWclpHRldWMUpRVldwS1MxSXlSa2hoUlRWWFltdEtNbFp0TVRCVk1VMTRWVzVT</span></div><div class="line"><span class="string">VjJKSFVsVlpiWFIzWWpGV2NWTnRPVmRTYlhoYVdUQmFhMkV3TVZkalJteGhWbGROTVZaWGMzaGpNVTUx</span></div><div class="line"><span class="string">WTBaa1RtRnNXbFZXYTJRMFV6RktjMXBJVmxSaVJscFlXV3RhZG1Wc1drZFdiVVphVmpGS1IxUnNXbUZW</span></div><div class="line"><span class="string">UmxsNVlVaENWbUpIYUVSVWJYaHJWbFpHZEZKdGNFNVdNVWwzVmxkNGIyTXlSa2RUYkdSVVlsVmFWbFp1</span></div><div class="line"><span class="string">Y0Zka2JGcHlWMjFHYWxacmNEQmFSV1F3VlRKRmVsRllaRmhpUmxwb1dWUktSMVl4VG5OYVIyaE9UV3hL</span></div><div class="line"><span class="string">V1ZkWGVHOVJNVTE0WTBaYVdHRXpRbk5WYlRGVFpXeHNWbGRzVG1oV2EzQXhWVmMxYjFZeFdYcGhTRXBY</span></div><div class="line"><span class="string">VmtWYWVsWnFSbGRqTVdSellVZG9UazFWY0RKV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRY</span></div><div class="line"><span class="string">Ym1Sc1ZteHNOVlJzYUd0V01rcEhZa1JhV2xaV1NsQldNakZHWlZaV2NscEhSbGRXTVVwUlZsUkNWazVX</span></div><div class="line"><span class="string">V1hsU2EyaG9VbFJXV0ZsdGRFdE5iRnAwVFZSQ1ZrMVZNVFJXVnpWVFZqSktTRlZzV2xwaVdGSXpXV3BH</span></div><div class="line"><span class="string">VjJOV1RuUlBWbVJUWWxob1lWZFVRbUZoTVZwelUyNU9hbEp0ZUZaV2JGcExVMFphV0dNemFGaFNiRnA1</span></div><div class="line"><span class="string">V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmxVUms5U01WcDFWR3hvYVZKc2NGbFhWM1JoWkRGa1YxZHJhR3hT</span></div><div class="line"><span class="string">TUZwaFZtcEdTMUl4VW5OWGJVWldVbXhzTlZsVldsTldNa1Y0VjJ0MFZWWnNjSEpaZWtaaFpFVTVWMVpy</span></div><div class="line"><span class="string">TlZkaWEwWXpWbXhqZDAxV1RYaFZXR2hZWW1zMVZWbHNWbUZXYkZwMFpVaGtUazFXY0hsV01qRkhZV3hh</span></div><div class="line"><span class="string">Y21ORVJsaGhNWEJRVmtkNFlXTnRUa1ZYYkdST1lteEtlVmRZY0VkV2JWWlhWRzVXVkdKRk5XOVpXSEJY</span></div><div class="line"><span class="string">VjFaa1YxVnJaR3ROYTFwSVdXdGFiMkZ0Vm5KWGJHaFZWbTFTVkZZeWVHdGpiRnBWVW14b1UyRXpRbUZX</span></div><div class="line"><span class="string">Vm1NeFlqRlplRmRxV2xKWFIyaFhWbXRXWVdWc1duRlNiWFJyVm14S01GVnRlRTloUjFaelYyeGtWMkpI</span></div><div class="line"><span class="string">VGpSVWEyUlNaVlphY2xwR1pGaFNNMmg1Vmxkd1ExbFhUa2RXYmxKc1UwZFNjMWxyV2xkT1ZsSnpXWHBX</span></div><div class="line"><span class="string">VjAxRVJsaFphMUpoVjJ4YVYyTklXbGROYm1ob1ZtcEdZV05XVm5OYVJUVlhZbXRLU2xZeGFIZFNNVmw1</span></div><div class="line"><span class="string">VkZoc1UyRXlhSEJWYlhNeFkwWnNWVkZ1WkU1aVJuQXdXbFZqTldFd01WWk5WRkpYWWtkb2RsWXdXbXRU</span></div><div class="line"><span class="string">UjBaSFlVWndhVmRIYUc5V2JURTBZekpPYzFwSVZtRlNNMEpVV1d0YWQwNUdXbGhOVkVKT1VteHNORll5</span></div><div class="line"><span class="string">TlZOV2JVcElaVWRvVm1KSFVsUlZNRnBoWTFaT2NscEZPV2xTV0VJMlZtdGtORmxXVlhsVGExcFlWMGhD</span></div><div class="line"><span class="string">V0Zac1duZFNNVkY0VjJ0T1ZtSkZTbFpVVlZGM1VGRTlQUT09</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">16</span>):</div><div class="line">    str = base64.b64decode(str)</div><div class="line"><span class="keyword">print</span> (str)</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;code&gt;请在python3环境下运行&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
+      &lt;p&gt;&lt;code&gt;运行环境python3&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line
     
     </summary>
     
@@ -506,217 +529,6 @@
     
     
       <category term="SQLMAP" scheme="http://yoursite.com/tags/SQLMAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos + Hexo + Github</title>
-    <link href="http://yoursite.com/2017/08/30/Centos-Hexo-Github/"/>
-    <id>http://yoursite.com/2017/08/30/Centos-Hexo-Github/</id>
-    <published>2017-08-30T11:25:18.000Z</published>
-    <updated>2017-08-30T12:35:20.055Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文只介绍style安装的过程，其他版本请另行借鉴！(万变不离其宗)</p>
-<p>必需品：</p>
-<blockquote>
-<ul>
-<li>注册有腾讯有以及域名</li>
-<li>腾讯云中安装Centos 7</li>
-<li>注册有Github</li>
-</ul>
-</blockquote>
-<p>###Centos 7 中  下载并安装LNMP<br>  我安装的是稳定版</p>
-<blockquote>
-<ul>
-<li>wget -c <a href="http://soft.vpser.net/lnmp/lnmp1.4.tar.gz" target="_blank" rel="external">http://soft.vpser.net/lnmp/lnmp1.4.tar.gz</a> &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; cd lnmp1.4 &amp;&amp; ./install.sh lnmp</li>
-</ul>
-</blockquote>
-<p>安装成功后， 下一步</p>
-<p>###Centos 7 中  安装Hexo<br>这个茬可真不好弄==，style第一次安装的时候出了许多的错误，无奈之下只能一点一点解决。安装过程中借鉴了许多资料，另行总结才搭配好，总觉得网上的教程不是很全面。<br>在root下安装</p>
-<p>####首先安装Node.js<br>找到最新的下载地址，用 wget 命令下载到本地</p>
-<blockquote>
-<ul>
-<li>wget <a href="https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz" target="_blank" rel="external">https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz</a></li>
-</ul>
-</blockquote>
-<p>下载完后解压，因为是xz文件， 所以如下</p>
-<blockquote>
-<ul>
-<li>xz -d node-v4.4.4-linux-x64.tar.gz</li>
-<li>tar -xvf node-v4.4.4-linux-x64.tar</li>
-</ul>
-</blockquote>
-<p>文件被解压到当前文件夹下</p>
-<blockquote>
-<ul>
-<li>mv node-v4.4.4-linux-x64 node-v4.4.4</li>
-<li>mv  node-v4.4.4 /usr/local/node</li>
-</ul>
-</blockquote>
-<p>####配置环境变量</p>
-<blockquote>
-<p><em>#编辑 /etc/profile (使用 vim)<br>    vim /etc/profile
-</em>#在底部添加PATH变量<br>    export PATH=$PATH:/usr/local/node/bin<br>*#保存退出， 先按<code>Esc</code>键， 再按<code>Shift + :</code><br>    输入<code>wq</code>即可保存退出</p>
-<ul>
-<li>最后保存并使其生效即可<br>  source /etc/profile</li>
-</ul>
-</blockquote>
-<p>###安装Hexo</p>
-<blockquote>
-<ul>
-<li>创建目录<br>  mkdir hexo </li>
-<li>切换目录<br>  cd hexo</li>
-<li>安装Git(已安装， 跳过)<br>  yum install git-core</li>
-<li>安装Hexo<br>  npm install -g hexo-cli</li>
-<li>初始化Hexo<br>  hexo init</li>
-</ul>
-</blockquote>
-<p>这里可能有个问题，就是在安装Hexo的时候， 输入安装Hexo的安装指令<code>npm install -g hexo-cli</code>，可能会出现错误，如果出错，可将官方源替换成淘宝源</p>
-<blockquote>
-<ul>
-<li>npm install -g hexo –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></li>
-</ul>
-</blockquote>
-<p>####安装插件</p>
-<blockquote>
-<ul>
-<li>npm install hexo-generator-index –save</li>
-<li>npm install hexo-generator-archive –save</li>
-<li>npm install hexo-generator-category –save</li>
-<li>npm install hexo-generator-tag –save</li>
-<li>npm install hexo-server –save</li>
-<li>npm install hexo-deployer-git –save</li>
-<li>npm install hexo-deployer-heroku –save</li>
-<li>npm install hexo-deployer-rsync –save</li>
-<li>npm install hexo-deployer-openshift –save</li>
-<li>npm install hexo-renderer-marked –save</li>
-<li>npm install hexo-renderer-stylus –save</li>
-<li>npm install hexo-generator-feed –save</li>
-<li>npm install hexo-generator-sitemap –save</li>
-</ul>
-</blockquote>
-<p>安装结束后，进行下一步<br>修改Hexo配置文件(站点文件，即<code>hexo/config._yml</code>,,<code>hexo/themes/next/_config.yml</code>是主题文件)<br><code>注： key值没有对应的value值的时候，冒号后面一定要有空格！否则会报错，例如：timezone:会报错，，timezone: 不会</code></p>
-<p>###部署到Github<br>这个简单</p>
-<p>####配置本机全局git变量(如果已经配置过请忽略)<br>在VPS(你的服务器)上设置你的Git</p>
-<blockquote>
-<ul>
-<li>git config –global user.email “你的github注册时的邮箱”</li>
-<li>git config –global user.name “你的名字”</li>
-</ul>
-</blockquote>
-<p>####生成ssh和密钥<br>输入下面一段指令</p>
-<blockquote>
-<ul>
-<li>less ~/.ssh/id_rsa.pub</li>
-</ul>
-</blockquote>
-<p>如果出现一堆密码，则证明你已经生成ssh，可跳过下面一步，如果报错，请进行下一步。</p>
-<blockquote>
-<ul>
-<li>ssh-keygen -t rsa -C example@126.com<br><code>注： -C后面跟你在github注册的用户名邮箱，这样公钥才会被github认可</code><br><code>回车后，不用输入文件夹路径和名字，自动选择默认的路径，存储新的ssh密钥</code><br><code>连续回车，结束</code><br><code>查看公钥内容，稍后加入github账户的sshkey中</code></li>
-<li>less ~/.ssh/id_rsa.pub</li>
-</ul>
-</blockquote>
-<p>###创建博客工程<br>  创建一个新的仓库，仓库名为<code>用户名.github.io</code>，比如我的github用户名是<code>sunstady</code>，则创建的项目名为<code>sunstady.github.io</code></p>
-<p>###将ssh密钥添加到github中<br>生成后，需要将密钥放到github上去，登录你的github账号，进入密钥设置面板：<a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a><br>在执行<code>less ~/.ssh/id_rsa.pub</code>后，会有一堆长的密码，把这一堆密码全部复制到github上</p>
-<p>####配置Hexo， 编译与部署<br>在<code>站点文件_config.yml</code>里第一段</p>
-<blockquote>
-<ul>
-<li>#Site 站点信息设置<br>title: Sanstyle  #站名<br>subtitle: 世界， 你好    #这是副标题<br>description:   #站描述<br>autor: MC   #作者<br>language: zh-CN  #语言<br>timezone: </li>
-</ul>
-</blockquote>
-<p>在<code>站点文件_config.yml</code>里最后一段</p>
-<blockquote>
-<ul>
-<li>deploy:<pre><code>type: git
-repo:git@github.com:sunstady/sunstady.github.io.git
-branch: master
-message: &apos;站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}&apos;
-</code></pre></li>
-</ul>
-</blockquote>
-<p>这里， 就是你创建的博客工程<br>最后一步，编译， 上传静态代码</p>
-<blockquote>
-<ul>
-<li>编译<br>  hexo generate</li>
-<li>在主机的hexo目录下，执行以下命令将自动更新到github<br>  hexo d</li>
-</ul>
-</blockquote>
-<p>###修改主题和配置文件</p>
-<p>####安装主题NEXT<br>切换到目录<code>hexo</code>下</p>
-<blockquote>
-<ul>
-<li>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>在<code>站点文件_config.yml</code>中</li>
-<li>找到 theme: 修改后面的参数，默认是 landscape<br>  theme: next</li>
-</ul>
-</blockquote>
-<p>####验证主题<br>首先启动Hexo站点， 并开启调试模式，整个命令是<code>hexo s --debug</code>。<br>在启动服务的过程中，注意观察命令行输出是否有任何异常信息，当命令行提示：<br><code>INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code><br>此时即可使用浏览器访问<code>http://localhost:4000</code>，检查站点是否正确运行。</p>
-<p>###主题设定</p>
-<p>####选择Scheme<br>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
-<blockquote>
-<ul>
-<li>Muse - 默认Scheme， 这是NexT最初的版本，黑白主调，大量留白</li>
-<li>Mist - Muse的紧凑版本， 整洁有序的单栏外观</li>
-<li>Pisces - 双栏Scheme， 小家碧玉似的清新</li>
-</ul>
-</blockquote>
-<p>Scheme的切换通过更改<code>主题文件</code>，搜索scheme关键字(用 vim 打开后，输入<code>/scheme</code>就可搜索)<br>你会看到三行scheme的配置，将你启用的scheme前面注释<code>#</code>去掉即可。</p>
-<blockquote>
-<ul>
-<li>scheme: Pisces</li>
-</ul>
-</blockquote>
-<p>####设置菜单<br>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 Font Awesome 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
-<p>编辑<code>主题文件</code>， 修改如下：</p>
-<blockquote>
-<ul>
-<li>menu:<pre><code>home: /
-archives: /archives
-about: /about
-categories: /categories
-tags: /tags
-commonweal: /404.html
-</code></pre></li>
-</ul>
-</blockquote>
-<p>若你的站点运行在子目录中，请将链接前缀的<code>/</code>去掉</p>
-<p>设定菜单项的图标，对应的字段是 menu_icons。 此设定格式是 item name: icon name，其中 item name 与上一步所配置的菜单名字对应，icon name 是 Font Awesome 图标的 名字。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。</p>
-<blockquote>
-<ul>
-<li>menu_icons: <pre><code>enable: true
-home: home
-about: about
-categories: th
-tags: tags
-archives: archive
-commonweal: heartbeat
-</code></pre></li>
-</ul>
-</blockquote>
-<p>####设置头像<br>编辑<code>主题文件</code>，修改字段<code>avatar</code>, 值设置成头像的链接地址</p>
-<blockquote>
-<ul>
-<li>avatar: <a href="http://xxxx.com/xxxxx.jpg" target="_blank" rel="external">http://xxxx.com/xxxxx.jpg</a></li>
-</ul>
-</blockquote>
-<p>###访问：<br>现在可以通过<code>用户名.github.io</code>访问博客</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文只介绍style安装的过程，其他版本请另行借鉴！(万变不离其宗)&lt;/p&gt;
-&lt;p&gt;必需品：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;注册有腾讯有以及域名&lt;/li&gt;
-&lt;li&gt;腾讯云中安装Centos 7&lt;/li&gt;
-&lt;li&gt;注册有Github&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="环境" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
