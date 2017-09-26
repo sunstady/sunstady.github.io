@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-26T00:43:26.061Z</updated>
+  <updated>2017-09-26T13:26:23.021Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内部类</title>
+    <link href="http://yoursite.com/2017/09/26/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    <id>http://yoursite.com/2017/09/26/内部类/</id>
+    <published>2017-09-26T13:25:05.000Z</published>
+    <updated>2017-09-26T13:26:23.021Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>内部类提供了更好的封装，可以把内部类隐藏在外部类之内，不允许同一个包中的其他类访问该类</code><br><code>内部类的方法可以直接访问外部类的所有数据，包括私有的数据</code><br><code>内部类所实现的功能使用外部类同样可以实现，只是有时使用内部类更方便</code><br><code>内部类分为：成员内部类、静态内部类、方法内部类、匿名内部类</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">neibulei</span> &#123;</span></div><div class="line">	<span class="comment">//内部类Inner，类Inner在类neibulei的内部</span></div><div class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span>&#123;</span></div><div class="line">		<span class="comment">//内部类的方法</span></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</div><div class="line">			System.out.println(<span class="string">"Hello World!"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		<span class="comment">//创建外部类对象</span></div><div class="line">		neibulei neibulei= <span class="keyword">new</span> neibulei();</div><div class="line">		<span class="comment">//创建内部类对象</span></div><div class="line">		Inner inner= neibulei.<span class="keyword">new</span> Inner();</div><div class="line">		<span class="comment">//调用内部类对象的方法</span></div><div class="line">		inner.show();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;内部类提供了更好的封装，可以把内部类隐藏在外部类之内，不允许同一个包中的其他类访问该类&lt;/code&gt;&lt;br&gt;&lt;code&gt;内部类的方法可以直接访问外部类的所有数据，包括私有的数据&lt;/code&gt;&lt;br&gt;&lt;code&gt;内部类所实现的功能使用外部类同样可以实现，只是有时使
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>可变参数</title>
@@ -475,29 +497,6 @@
     
       &lt;p&gt;&lt;code&gt;传入的str1包含中文、负数,位数很长的数字的字符串也能正常匹配&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight processing&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Example3_9</title>
-    <link href="http://yoursite.com/2017/09/19/Example3-9/"/>
-    <id>http://yoursite.com/2017/09/19/Example3-9/</id>
-    <published>2017-09-19T13:46:00.000Z</published>
-    <updated>2017-09-19T13:46:26.992Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>求满足1+ 2!+ 3!+ ... +n!&lt;= 9999的最大整数N</code></p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example3_9</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="keyword">int</span> n= <span class="number">1</span>;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">sum</span>= <span class="number">0</span>, t= <span class="number">1</span>;</div><div class="line">        t= n* t;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ t;</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">sum</span>&gt; <span class="number">9999</span>)&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            n++;</div><div class="line">            t= n* t;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"满足条件的最大整数："</span>+ (n- <span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;求满足1+ 2!+ 3!+ ... +n!&amp;lt;= 9999的最大整数N&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight axapta&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
     
     </summary>
     
