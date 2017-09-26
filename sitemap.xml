@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/09/26/static/</loc>
+    
+    <lastmod>2017-09-26T00:24:34.387Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/09/23/enum%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2017-09-23T06:44:21.248Z</lastmod>
