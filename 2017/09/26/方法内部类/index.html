@@ -104,18 +104,18 @@
 
 
 
-<meta name="description" content="static存在的时候，调用b2.setN(5)，sum=6，去掉static，sum从0开始 123456789101112131415161718192021222324252627class B&amp;#123;	int n;	static int sum= 0;  	void setN(int n)&amp;#123;		this.n= n;		System.out.println(&quot;this.n= &quot;">
+<meta name="description" content="方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。1234567891011121314151617181920212223242526//外部类public class HelloWorld &amp;#123;    private String n">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="static">
-<meta property="og:url" content="http://yoursite.com/2017/09/26/static/index.html">
+<meta property="og:title" content="方法内部类">
+<meta property="og:url" content="http://yoursite.com/2017/09/26/方法内部类/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="static存在的时候，调用b2.setN(5)，sum=6，去掉static，sum从0开始 123456789101112131415161718192021222324252627class B&amp;#123;	int n;	static int sum= 0;  	void setN(int n)&amp;#123;		this.n= n;		System.out.println(&quot;this.n= &quot;">
+<meta property="og:description" content="方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。1234567891011121314151617181920212223242526//外部类public class HelloWorld &amp;#123;    private String n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-26T00:24:34.387Z">
+<meta property="og:updated_time" content="2017-09-26T14:34:10.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="static">
-<meta name="twitter:description" content="static存在的时候，调用b2.setN(5)，sum=6，去掉static，sum从0开始 123456789101112131415161718192021222324252627class B&amp;#123;	int n;	static int sum= 0;  	void setN(int n)&amp;#123;		this.n= n;		System.out.println(&quot;this.n= &quot;">
+<meta name="twitter:title" content="方法内部类">
+<meta name="twitter:description" content="方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。1234567891011121314151617181920212223242526//外部类public class HelloWorld &amp;#123;    private String n">
 
 
 
@@ -145,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/26/static/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/26/方法内部类/"/>
 
 
 
 
 
-  <title>static | Sanstyle</title>
+  <title>方法内部类 | Sanstyle</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/static/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/方法内部类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">static</h1>
+          <h1 class="post-title" itemprop="name headline">方法内部类</h1>
         
 
         <div class="post-meta">
@@ -328,7 +328,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T08:23:29+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T22:32:02+08:00">
                 2017-09-26
               </time>
             
@@ -347,9 +347,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/26/static/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/26/方法内部类/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/26/static/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/26/方法内部类/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +357,7 @@
 
           
           
-             <span id="/2017/09/26/static/" class="leancloud_visitors" data-flag-title="static">
+             <span id="/2017/09/26/方法内部类/" class="leancloud_visitors" data-flag-title="方法内部类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,8 +388,7 @@
       
 
       
-        <p><code>static存在的时候，调用b2.setN(5)，sum=6，去掉static，sum从0开始</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> <span class="title">B</span>&#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">static</span> <span class="keyword">int</span> sum= <span class="number">0</span>;  </div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setN</span>(<span class="params"><span class="keyword">int</span> n</span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.n= n;</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"this.n= "</span>+ <span class="keyword">this</span>.n);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getSum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">1</span>;i&lt;= n; i++)&#123;</div><div class="line">			sum= sum+ i;</div><div class="line">		&#125;</div><div class="line">		System.<span class="keyword">out</span>.println(sum);</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example4_9</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		B b1=<span class="keyword">new</span> B(), b2= <span class="keyword">new</span> B();</div><div class="line">		b1.setN(<span class="number">3</span>);</div><div class="line">		b2.setN(<span class="number">5</span>);</div><div class="line">		<span class="keyword">int</span> a1= b1.getSum();</div><div class="line">		<span class="keyword">int</span> a2= b2.getSum();</div><div class="line">		System.<span class="keyword">out</span>.println(a1+ a2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。<br><code>由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//外部类</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloWorld</span> &#123;</div><div class="line">    <span class="keyword">private</span> String name = <span class="string">"爱慕课"</span>;</div><div class="line">    <span class="comment">// 外部类中的show方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123; </div><div class="line">	<span class="comment">// 定义方法内部类</span></div><div class="line">	<span class="keyword">class</span> <span class="title">MInner</span> &#123;</div><div class="line">	    <span class="keyword">int</span> score = <span class="number">83</span>;</div><div class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getScore</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> score + <span class="number">10</span>;</div><div class="line">	    &#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 创建方法内部类的对象</span></div><div class="line">	MInner mi= <span class="keyword">new</span> MInner();</div><div class="line">	<span class="comment">// 调用内部类的方法</span></div><div class="line">	<span class="keyword">int</span> newScore= mi.getScore();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"姓名："</span> + name + <span class="string">"\n加分后的成绩："</span> + newScore);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 测试方法内部类</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">	<span class="comment">// 创建外部类的对象</span></div><div class="line">	HelloWorld mo= <span class="keyword">new</span> HelloWorld();</div><div class="line">	<span class="comment">// 调用外部类的方法</span></div><div class="line">	mo.show();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -451,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/23/enum问题/" rel="next" title="enum问题">
-                <i class="fa fa-chevron-left"></i> enum问题
+              <a href="/2017/09/26/成员内部类与静态内部类/" rel="next" title="成员内部类与静态内部类">
+                <i class="fa fa-chevron-left"></i> 成员内部类与静态内部类
               </a>
             
           </div>
@@ -460,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/26/可变参数/" rel="prev" title="可变参数">
-                可变参数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -776,9 +771,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/09/26/static/';
-          this.page.identifier = '2017/09/26/static/';
-          this.page.title = 'static';
+          this.page.url = 'http://yoursite.com/2017/09/26/方法内部类/';
+          this.page.identifier = '2017/09/26/方法内部类/';
+          this.page.title = '方法内部类';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstady.disqus.com/embed.js';
