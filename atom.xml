@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-26T00:24:34.387Z</updated>
+  <updated>2017-09-26T00:43:26.061Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>可变参数</title>
+    <link href="http://yoursite.com/2017/09/26/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/"/>
+    <id>http://yoursite.com/2017/09/26/可变参数/</id>
+    <published>2017-09-26T00:38:45.000Z</published>
+    <updated>2017-09-26T00:43:26.061Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>x是可变参数的代表，代表若干哥int型参数</code><br><code>x.length是x代表的参数的个数</code><br><code>x[i]是x代表的第i个参数(类似数组)</code></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example4_11</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		f(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">		f(<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>);</div><div class="line">		f(<span class="number">9</span>, <span class="number">7</span>, <span class="number">6</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span>(<span class="params"><span class="keyword">int</span> ... x</span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; x.length; i++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(x[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的方法输出的是一个数字一行，觉得不好看，改版如下<br><code>print输出不换行，println输出换行</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example4_11</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		f(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">		f(<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>);</div><div class="line">		f(<span class="number">9</span>, <span class="number">7</span>, <span class="number">6</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span>(<span class="params"><span class="keyword">int</span> ... x</span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; x.length<span class="number">-1</span>; i++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.print(x[i]);</div><div class="line">		&#125;</div><div class="line">		System.<span class="keyword">out</span>.println(x[x.length<span class="number">-1</span>]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;x是可变参数的代表，代表若干哥int型参数&lt;/code&gt;&lt;br&gt;&lt;code&gt;x.length是x代表的参数的个数&lt;/code&gt;&lt;br&gt;&lt;code&gt;x[i]是x代表的第i个参数(类似数组)&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight c
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>static</title>
@@ -474,29 +498,6 @@
     
       &lt;p&gt;&lt;code&gt;求满足1+ 2!+ 3!+ ... +n!&amp;lt;= 9999的最大整数N&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight axapta&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Example3_8</title>
-    <link href="http://yoursite.com/2017/09/19/Example3-8/"/>
-    <id>http://yoursite.com/2017/09/19/Example3-8/</id>
-    <published>2017-09-19T13:44:57.000Z</published>
-    <updated>2017-09-19T13:45:25.255Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>编写一个应用程序，计算两个非零正整数的最大公约数和最小公约数，要求两个非零正整数从键盘输入</code></p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Example3_8 &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        System.out.println(<span class="string">"请输入两个非零正整数，每输入一个数回车确认"</span>);</div><div class="line">        Scanner <span class="attr">reader=</span> new Scanner(System.<span class="keyword">in</span>);</div><div class="line">        int <span class="attr">m=</span> <span class="number">0</span>, <span class="attr">n=</span> <span class="number">0</span>, <span class="attr">t=</span> <span class="number">0</span>, <span class="attr">gy=</span> <span class="number">0</span>, <span class="attr">gb=</span> <span class="number">0</span>;</div><div class="line">        <span class="attr">m=</span> reader.nextInt();</div><div class="line">        <span class="attr">n=</span> reader.nextInt();</div><div class="line">        <span class="keyword">if</span>(m&gt; n)&#123;</div><div class="line">            <span class="attr">t=</span> m;</div><div class="line">            <span class="attr">m=</span> n;</div><div class="line">            <span class="attr">n=</span> t;</div><div class="line">        &#125;</div><div class="line">        for(int <span class="attr">i=</span> <span class="number">1</span>; i&lt;= m; i++)&#123;</div><div class="line">            <span class="keyword">if</span>(m% <span class="attr">i==</span> <span class="number">0</span> &amp;&amp; n% <span class="attr">i==</span> <span class="number">0</span>)&#123;</div><div class="line">                <span class="attr">gy=</span> i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="attr">gb=</span> m* n/ gy;</div><div class="line">        System.out.println(m+ <span class="string">"和"</span>+ n+ <span class="string">"的最大公约数为: "</span>+ gy);</div><div class="line">        System.out.println(m+ <span class="string">"和"</span>+ n+ <span class="string">"的最小公倍数为: "</span>+ gb);</div><div class="line">        reader.close();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;编写一个应用程序，计算两个非零正整数的最大公约数和最小公约数，要求两个非零正整数从键盘输入&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight nix&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div clas
     
     </summary>
     
