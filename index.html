@@ -401,7 +401,7 @@
 <p>load data local infile ‘C:/文件名.txt’ into table 数据表名;</p>
 </blockquote>
 <p>如果第一行开头出现特殊符号，我的解决方法是在第一行中增加一行可以删去的信息，等导入数据库后，<code>DELETE FROM 数据库表 WHERE 字段=&#39;字段对应的唯一信息&#39;;</code>删除第一行就行。</p>
-<p><code>导入数据库到MySQL</code><br><figure class="highlight plain"><figcaption><span>-u root -p < 数据库文件名```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">回车后输入数据库密码，即可导入成功。</div><div class="line">`导出数据库`</div><div class="line">```mysqldump -u  root -p 数据库名 &gt; 要保存的数据库文件名</div></pre></td></tr></table></figure></p>
+<p><code>导入数据库到MySQL</code><br><figure class="highlight plain"><figcaption><span>-u root -p < 数据库文件名```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">回车后输入数据库密码，即可导入成功。</div><div class="line">`导出数据库`</div><div class="line">```mysqldump -u  root -p 数据库名 &gt; 要保存的数据库文件名</div></pre></td></tr></table></figure></p>
 <p>回车后输入数据库密码，导出的数据库在当前目录。但这只是治标不治本，希望大家能提出宝贵的建议，共同学习。</p>
 
           
