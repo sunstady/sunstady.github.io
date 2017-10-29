@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-29T08:03:55.618Z</updated>
+  <updated>2017-10-29T08:05:49.035Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://yoursite.com/2017/10/29/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     <id>http://yoursite.com/2017/10/29/Java连接MySQL数据库/</id>
     <published>2017-10-29T07:45:51.000Z</published>
-    <updated>2017-10-29T08:03:55.618Z</updated>
+    <updated>2017-10-29T08:05:49.035Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>工具：<br>eclipse<br>MySQL5.5<br>MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar</p>
 </blockquote>
-<p>Java编译器是eclipse，下载<code>mysql-connector-java-5.1.44-bin.jar</code>，我下的是最新版。<br>加载驱动：<br>1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：<img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg" alt="lib"><br>2、右键工程名，点击Properties <img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/2.jpg" alt="properties"><br>选择Java Build Path中的Libraries，点击Add JARs…, 选择刚才添加的JDBC，如下图:<img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/3.jpg" alt="JDBC"><br>3、配置好MySQL，添加一个用户，用户名是style,密码是1234,  创建一个数据库, 数据库名是student。创建表：</p>
+<p>Java编译器是eclipse，下载<code>mysql-connector-java-5.1.44-bin.jar</code>，我下的是最新版。<br>加载驱动：<br>1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：<img src="https://raw.githubusercontent.com/sunstady/hexo/d27213020770dfd56fd073dc33909d63192befa4/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg" alt="lib"><br>2、右键工程名，点击Properties <img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/2.jpg" alt="properties"><br>选择Java Build Path中的Libraries，点击Add JARs…, 选择刚才添加的JDBC，如下图:<img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/3.jpg" alt="JDBC"><br>3、配置好MySQL，添加一个用户，用户名是style,密码是1234,  创建一个数据库, 数据库名是student。创建表：</p>
 <blockquote>
 <p>create table students(<br>    -&gt; sno char(7) not null,<br>    -&gt; sname varchar(8) not null,<br>    -&gt; sex char(2) not null,<br>    -&gt; bdate date not null,<br>    -&gt; height dec(5,2) default 000.00,<br>    -&gt; primary key(sno));</p>
 </blockquote>
