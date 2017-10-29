@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MySQL," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -104,18 +104,23 @@
 
 
 
-<meta name="description" content="创建数据表  CRETE TABLE tes(NAME VARCHAR(20) NULL,SEX VARCHAR(5) NULL,STUDENTID INT(20) NULL);  txt文件中的内容如下  你好    男  123世界    女  456啦啦啦  男  485  中间空格部分是TAB键, 保存为UTF-8编码.导入txt文件  load data local infile ‘C:">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="工具：eclipseMySQL5.5MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar  Java编译器是eclipse，下载mysql-connector-java-5.1.44-bin.jar，我下的是最新版。加载驱动：1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：2、右键工程名，点击Properties 选择Java">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="txt文件导入MySQL">
-<meta property="og:url" content="http://yoursite.com/2017/10/28/txt文件导入MySQL/index.html">
+<meta property="og:title" content="Java连接MySQL数据库">
+<meta property="og:url" content="http://yoursite.com/2017/10/29/Java连接MySQL数据库/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="创建数据表  CRETE TABLE tes(NAME VARCHAR(20) NULL,SEX VARCHAR(5) NULL,STUDENTID INT(20) NULL);  txt文件中的内容如下  你好    男  123世界    女  456啦啦啦  男  485  中间空格部分是TAB键, 保存为UTF-8编码.导入txt文件  load data local infile ‘C:">
+<meta property="og:description" content="工具：eclipseMySQL5.5MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar  Java编译器是eclipse，下载mysql-connector-java-5.1.44-bin.jar，我下的是最新版。加载驱动：1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：2、右键工程名，点击Properties 选择Java">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-28T10:40:26.396Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/4.jpg">
+<meta property="og:updated_time" content="2017-10-29T07:52:52.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="txt文件导入MySQL">
-<meta name="twitter:description" content="创建数据表  CRETE TABLE tes(NAME VARCHAR(20) NULL,SEX VARCHAR(5) NULL,STUDENTID INT(20) NULL);  txt文件中的内容如下  你好    男  123世界    女  456啦啦啦  男  485  中间空格部分是TAB键, 保存为UTF-8编码.导入txt文件  load data local infile ‘C:">
+<meta name="twitter:title" content="Java连接MySQL数据库">
+<meta name="twitter:description" content="工具：eclipseMySQL5.5MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar  Java编译器是eclipse，下载mysql-connector-java-5.1.44-bin.jar，我下的是最新版。加载驱动：1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：2、右键工程名，点击Properties 选择Java">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg">
 
 
 
@@ -145,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/28/txt文件导入MySQL/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/29/Java连接MySQL数据库/"/>
 
 
 
 
 
-  <title>txt文件导入MySQL | Sanstyle</title>
+  <title>Java连接MySQL数据库 | Sanstyle</title>
   
 
 
@@ -299,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/28/txt文件导入MySQL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/29/Java连接MySQL数据库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -316,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">txt文件导入MySQL</h1>
+          <h1 class="post-title" itemprop="name headline">Java连接MySQL数据库</h1>
         
 
         <div class="post-meta">
@@ -328,8 +333,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-28T18:26:37+08:00">
-                2017-10-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T15:45:51+08:00">
+                2017-10-29
               </time>
             
 
@@ -347,9 +352,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/28/txt文件导入MySQL/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/29/Java连接MySQL数据库/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/28/txt文件导入MySQL/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/29/Java连接MySQL数据库/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +362,7 @@
 
           
           
-             <span id="/2017/10/28/txt文件导入MySQL/" class="leancloud_visitors" data-flag-title="txt文件导入MySQL">
+             <span id="/2017/10/29/Java连接MySQL数据库/" class="leancloud_visitors" data-flag-title="Java连接MySQL数据库">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,29 +393,19 @@
       
 
       
-        <p><code>创建数据表</code></p>
-<blockquote>
-<p>CRETE TABLE tes(<br>NAME VARCHAR(20) NULL,<br>SEX VARCHAR(5) NULL,<br>STUDENTID INT(20) NULL);</p>
+        <blockquote>
+<p>工具：<br>eclipse<br>MySQL5.5<br>MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar</p>
 </blockquote>
-<p><code>txt文件中的内容如下</code></p>
+<p>Java编译器是eclipse，下载<code>mysql-connector-java-5.1.44-bin.jar</code>，我下的是最新版。<br>加载驱动：<br>1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：<img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg" alt="lib"><br>2、右键工程名，点击Properties <img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/2.jpg" alt="properties"><br>选择Java Build Path中的Libraries，点击Add JARs…, 选择刚才添加的JDBC，如下图:<img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/3.jpg" alt="JDBC"><br>3、配置好MySQL，添加一个用户，用户名是style,密码是1234,  创建一个数据库, 数据库名是student。创建表：</p>
 <blockquote>
-<p>你好    男  123<br>世界    女  456<br>啦啦啦  男  485</p>
+<p>create table students(<br>    -&gt; sno char(7) not null,<br>    -&gt; sname varchar(8) not null,<br>    -&gt; sex char(2) not null,<br>    -&gt; bdate date not null,<br>    -&gt; height dec(5,2) default 000.00,<br>    -&gt; primary key(sno));</p>
 </blockquote>
-<p>中间空格部分是<code>TAB</code>键, 保存为UTF-8编码.<br><code>导入txt文件</code></p>
+<p>然后插入一条数据：</p>
 <blockquote>
-<p>load data local infile ‘C:/文件名.txt’ into table 数据表名;</p>
+<p>insert into students(sno,sname,sex,bdate,height) values(‘qwe’,’gfa’,’男’,’2017-10-29’,’fwef’);</p>
 </blockquote>
-<p>如果第一行开头出现特殊符号，我的解决方法是在第一行中增加一行可以删去的信息，等导入数据库后，<code>DELETE FROM 数据库表 WHERE 字段=&#39;字段对应的唯一信息&#39;;</code>删除第一行就行。<br>但这只是治标不治本，希望大家能提出宝贵的建议，共同学习。</p>
-<p><code>导入数据库到MySQL</code></p>
-<blockquote>
-<p>mysql -u root -p &lt; 数据库文件名</p>
-</blockquote>
-<p>回车后输入数据库密码，即可导入成功。</p>
-<p><code>导出数据库</code></p>
-<blockquote>
-<p>mysqldump -u  root -p 数据库名 &gt; 要保存的数据库文件名</p>
-</blockquote>
-<p>回车后输入数据库密码，导出的数据库在当前目录。</p>
+<p>创建好数据库后, 编写Java文件来访问MySQL数据库。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> sqldemo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> class main &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        <span class="comment">//声明Connection对象</span></div><div class="line">        Connection con;</div><div class="line">        <span class="comment">//驱动程序名</span></div><div class="line">        <span class="keyword">String</span> driver = <span class="string">"com.mysql.jdbc.Driver"</span>;</div><div class="line">        <span class="comment">//URL指向要访问的数据库名student</span></div><div class="line">        <span class="keyword">String</span> url = <span class="string">"jdbc:mysql://139.199.224.40:3306/student"</span>;</div><div class="line">        <span class="comment">//MySQL配置时的用户名</span></div><div class="line">        <span class="keyword">String</span> user = <span class="string">"sanstyle"</span>;</div><div class="line">        <span class="comment">//MySQL配置时的密码</span></div><div class="line">        <span class="keyword">String</span> password = <span class="string">"1234qwer"</span>;</div><div class="line">        <span class="comment">//遍历查询结果集</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//加载驱动程序</span></div><div class="line">            Class.forName(driver);</div><div class="line">            <span class="comment">//1.getConnection()方法，连接MySQL数据库！！</span></div><div class="line">            con = DriverManager.getConnection(url,user,password);</div><div class="line">            <span class="keyword">if</span>(!con.isClosed())</div><div class="line">                System.out.<span class="built_in">println</span>(<span class="string">"Succeeded connecting to the Database!"</span>);</div><div class="line">            <span class="comment">//2.创建statement类对象，用来执行SQL语句！！</span></div><div class="line">            Statement statement = con.createStatement();</div><div class="line">            <span class="comment">//要执行的SQL语句</span></div><div class="line">            <span class="keyword">String</span> sql = <span class="string">"select * from students"</span>;</div><div class="line">            <span class="comment">//3.ResultSet类，用来存放获取的结果集！！</span></div><div class="line">            ResultSet rs = statement.executeQuery(sql);</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"执行结果如下所示:"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"姓名"</span> + <span class="string">"\t"</span> + <span class="string">"性别"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);  </div><div class="line">             </div><div class="line">            <span class="keyword">String</span> job = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">String</span> id = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">while</span>(rs.next())&#123;</div><div class="line">                <span class="comment">//获取stuname这列数据</span></div><div class="line">                job = rs.getString(<span class="string">"sname"</span>);</div><div class="line">                <span class="comment">//获取stuid这列数据</span></div><div class="line">                id = rs.getString(<span class="string">"sex"</span>);</div><div class="line">                <span class="comment">//输出结果</span></div><div class="line">                System.out.<span class="built_in">println</span>(job + <span class="string">"\t"</span> + id);</div><div class="line">            &#125;</div><div class="line">            rs.close();</div><div class="line">            con.close();</div><div class="line">        &#125; <span class="keyword">catch</span>(ClassNotFoundException e) &#123;   </div><div class="line">            <span class="comment">//数据库驱动类异常处理</span></div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"Sorry,can`t find the Driver!"</span>);   </div><div class="line">            e.printStackTrace();   </div><div class="line">            &#125; <span class="keyword">catch</span>(SQLException e) &#123;</div><div class="line">            <span class="comment">//数据库连接失败异常处理</span></div><div class="line">            e.printStackTrace();  </div><div class="line">            &#125;<span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            <span class="comment">// <span class="doctag">TODO:</span> handle exception</span></div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;<span class="keyword">finally</span>&#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"数据库数据获取成功！"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果如图所示：<br><img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/4.jpg" alt="结果"></p>
 
       
     </div>
@@ -459,7 +454,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -472,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/28/本地连接腾讯云MySQL/" rel="next" title="本地连接腾讯云MySQL">
-                <i class="fa fa-chevron-left"></i> 本地连接腾讯云MySQL
+              <a href="/2017/10/28/txt文件导入MySQL/" rel="next" title="txt文件导入MySQL">
+                <i class="fa fa-chevron-left"></i> txt文件导入MySQL
               </a>
             
           </div>
@@ -481,10 +476,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/29/Java连接MySQL数据库/" rel="prev" title="Java连接MySQL数据库">
-                Java连接MySQL数据库 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -797,9 +788,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/28/txt文件导入MySQL/';
-          this.page.identifier = '2017/10/28/txt文件导入MySQL/';
-          this.page.title = 'txt文件导入MySQL';
+          this.page.url = 'http://yoursite.com/2017/10/29/Java连接MySQL数据库/';
+          this.page.identifier = '2017/10/29/Java连接MySQL数据库/';
+          this.page.title = 'Java连接MySQL数据库';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstady.disqus.com/embed.js';
