@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-29T08:17:47.121Z</updated>
+  <updated>2017-10-31T02:22:31.889Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Example5_9</title>
+    <link href="http://yoursite.com/2017/10/31/Example5-9/"/>
+    <id>http://yoursite.com/2017/10/31/Example5-9/</id>
+    <published>2017-10-31T02:22:01.000Z</published>
+    <updated>2017-10-31T02:22:31.889Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>写一个类Aa， 该类创建的对象可以调用方法k输出英文字母表，然后再编写一个该类的子类Bb，要求子类Bb必须继承Aa类的方法k(不允许重写)，子类创建的对象不仅可以调用方法k输出英文字母表，而且可以调用子类新增的方法g输出希腊字母表。</code></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> <span class="title">Ab</span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> final <span class="keyword">void</span> <span class="title">k</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">char</span> cStart= <span class="string">'a'</span>, cEnd= <span class="string">'z'</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">char</span> c= cStart; c&lt;= cEnd; c++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.print(<span class="string">" "</span>+ c);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> <span class="title">Ba</span> <span class="title">extends</span> <span class="title">Ab</span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">g</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">char</span> cStart= <span class="string">'α'</span>, cEnd= <span class="string">'ω'</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">char</span> c= cStart; c&lt;= cEnd; c++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.print(<span class="string">" "</span>+ c);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_9</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		Ba ba=<span class="keyword">new</span> Ba();</div><div class="line">		ba.k();</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">""</span>);</div><div class="line">		ba.g();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;写一个类Aa， 该类创建的对象可以调用方法k输出英文字母表，然后再编写一个该类的子类Bb，要求子类Bb必须继承Aa类的方法k(不允许重写)，子类创建的对象不仅可以调用方法k输出英文字母表，而且可以调用子类新增的方法g输出希腊字母表。&lt;/code&gt;&lt;/p&gt;
+&lt;fi
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java连接MySQL数据库</title>
@@ -567,29 +590,6 @@
     
       &lt;p&gt;&lt;code&gt;运行环境python2.7&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字符串转莫尔斯</title>
-    <link href="http://yoursite.com/2017/09/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E8%8E%AB%E5%B0%94%E6%96%AF/"/>
-    <id>http://yoursite.com/2017/09/23/字符串转莫尔斯/</id>
-    <published>2017-09-23T01:20:50.000Z</published>
-    <updated>2017-09-23T01:28:26.470Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>运行环境python3</code></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">CODE = &#123;<span class="string">'A'</span>: <span class="string">'.-'</span>,     <span class="string">'B'</span>: <span class="string">'-...'</span>,   <span class="string">'C'</span>: <span class="string">'-.-.'</span>,</div><div class="line">        <span class="string">'D'</span>: <span class="string">'-..'</span>,    <span class="string">'E'</span>: <span class="string">'.'</span>,      <span class="string">'F'</span>: <span class="string">'..-.'</span>,</div><div class="line">        <span class="string">'G'</span>: <span class="string">'--.'</span>,    <span class="string">'H'</span>: <span class="string">'....'</span>,   <span class="string">'I'</span>: <span class="string">'..'</span>,</div><div class="line">        <span class="string">'J'</span>: <span class="string">'.---'</span>,   <span class="string">'K'</span>: <span class="string">'-.-'</span>,    <span class="string">'L'</span>: <span class="string">'.-..'</span>,</div><div class="line">        <span class="string">'M'</span>: <span class="string">'--'</span>,     <span class="string">'N'</span>: <span class="string">'-.'</span>,     <span class="string">'O'</span>: <span class="string">'---'</span>,</div><div class="line">        <span class="string">'P'</span>: <span class="string">'.--.'</span>,   <span class="string">'Q'</span>: <span class="string">'--.-'</span>,   <span class="string">'R'</span>: <span class="string">'.-.'</span>,</div><div class="line">             <span class="string">'S'</span>: <span class="string">'...'</span>,    <span class="string">'T'</span>: <span class="string">'-'</span>,      <span class="string">'U'</span>: <span class="string">'..-'</span>,</div><div class="line">        <span class="string">'V'</span>: <span class="string">'...-'</span>,   <span class="string">'W'</span>: <span class="string">'.--'</span>,    <span class="string">'X'</span>: <span class="string">'-..-'</span>,</div><div class="line">        <span class="string">'Y'</span>: <span class="string">'-.--'</span>,   <span class="string">'Z'</span>: <span class="string">'--..'</span>,</div><div class="line"></div><div class="line">        <span class="string">'0'</span>: <span class="string">'-----'</span>,  <span class="string">'1'</span>: <span class="string">'.----'</span>,  <span class="string">'2'</span>: <span class="string">'..---'</span>,</div><div class="line">        <span class="string">'3'</span>: <span class="string">'...--'</span>,  <span class="string">'4'</span>: <span class="string">'....-'</span>,  <span class="string">'5'</span>: <span class="string">'.....'</span>,</div><div class="line">        <span class="string">'6'</span>: <span class="string">'-....'</span>,  <span class="string">'7'</span>: <span class="string">'--...'</span>,  <span class="string">'8'</span>: <span class="string">'---..'</span>,</div><div class="line">        <span class="string">'9'</span>: <span class="string">'----.'</span></div><div class="line">        &#125;</div><div class="line">def main():</div><div class="line"></div><div class="line">        msg = <span class="built_in">input</span>(<span class="string">'MESSAGE: '</span>)</div><div class="line"></div><div class="line">        <span class="keyword">for</span> <span class="built_in">char</span> <span class="keyword">in</span> msg:</div><div class="line">                <span class="keyword">if</span> <span class="built_in">char</span> == <span class="string">' '</span>:</div><div class="line">                        <span class="built_in">print</span></div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                        <span class="built_in">print</span> (CODE[<span class="built_in">char</span>.<span class="built_in">upper</span>()] + <span class="string">'  '</span>,)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">        main()</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;运行环境python3&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
     
     </summary>
     
