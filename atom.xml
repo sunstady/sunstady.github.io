@@ -168,41 +168,92 @@
     <link href="http://yoursite.com/2017/10/28/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E8%85%BE%E8%AE%AF%E4%BA%91MySQL/"/>
     <id>http://yoursite.com/2017/10/28/本地连接腾讯云MySQL/</id>
     <published>2017-10-28T03:33:35.000Z</published>
-    <updated>2017-11-09T09:09:12.070Z</updated>
+    <updated>2017-11-09T09:24:54.234Z</updated>
     
     <content type="html"><![CDATA[<p>在腾讯云的MySQL中先新建一个用户，用于远程登录账号。<br>环境是centos7<br><code>登录MySQL</code> </p>
+<blockquote>
 <p>mysql -u root -p 回车后输入密码</p>
+</blockquote>
 <p><code>创建用户</code></p>
-<p>允许本地IP访问localhost<br>create user ‘style’@’localhost’ identified by ‘123456’;</p>
+<p>允许本地IP访问localhost</p>
+<blockquote>
+<p>create user ‘style’@’localhost’ identified by ‘123456’;</p>
+</blockquote>
 <p>用户名是<code>style</code>，密码是<code>123456</code>;</p>
-<p><code>允许外网IP访问</code><br>create user ‘style’@’%’ identified by ‘123456’;</p>
-<p><code>刷新授权</code><br>flush privileges;</p>
+<p><code>允许外网IP访问</code></p>
+<blockquote>
+<p>create user ‘style’@’%’ identified by ‘123456’;</p>
+</blockquote>
+<p><code>刷新授权</code></p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
 <p><code>为用户创建数据库</code></p>
-<p>数据库名是<code>student</code><br>create database student DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</p>
+<p>数据库名是<code>student</code></p>
+<blockquote>
+<p>create database student DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</p>
+</blockquote>
 <p><code>为新用户分配权限</code></p>
-<p>授予用户通过外网IP对于该数据库的全部权限<br>grant all privileges on <code>student</code>.* to ‘style’@’%’ identified by ‘1234’;</p>
-<p>授予用户在本地服务器对该数据库的全部权限<br>grant all privileges on <code>student</code>.* to ‘style’@’localhost’ identified by ‘1234’;</p>
-<p><code>刷新权限</code><br>flush privileges;</p>
-<p><code>退出root重新登录</code><br>exit</p>
-<p>用新账号style重新登录，由于使用的是 % 任意IP连接， 所以需要指定外部访问IP<br>mysql -h 腾讯云的公网IP -u用户名 -p密码</p>
+<p>授予用户通过外网IP对于该数据库的全部权限</p>
+<blockquote>
+<p>grant all privileges on <code>student</code>.* to ‘style’@’%’ identified by ‘1234’;</p>
+</blockquote>
+<p>授予用户在本地服务器对该数据库的全部权限</p>
+<blockquote>
+<p>grant all privileges on <code>student</code>.* to ‘style’@’localhost’ identified by ‘1234’;</p>
+</blockquote>
+<p><code>刷新权限</code></p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p><code>退出root重新登录</code></p>
+<blockquote>
+<p>exit</p>
+</blockquote>
+<p>用新账号style重新登录，由于使用的是 % 任意IP连接， 所以需要指定外部访问IP</p>
+<blockquote>
+<p>mysql -h 腾讯云的公网IP -u用户名 -p密码</p>
+</blockquote>
 <p>登录成功！</p>
-<p><code>查询用户权限</code><br>show grants for style</p>
-<p><code>赋予权限</code><br>grant all privileges on <em>.</em> to ‘style’@’%’ identified by ‘1234’;</p>
+<p><code>查询用户权限</code></p>
+<blockquote>
+<p>show grants for style</p>
+</blockquote>
+<p><code>赋予权限</code></p>
+<blockquote>
+<p>grant all privileges on <em>.</em> to ‘style’@’%’ identified by ‘1234’;</p>
+</blockquote>
 <p>授予style用户在所有数据库上的所有权限</p>
-<p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权<br>evoke all privileges on <em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘’style`@’%’ identified by ‘1234’;</p>
-<p>甚至还可以指定该用户只能执行select和update命令<br>grant select, update on student.* to ‘style’@’%’ identified by ‘1234’;</p>
+<p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权</p>
+<blockquote>
+<p>evoke all privileges on <em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘style`@’%’ identified by ‘1234’;</p>
+</blockquote>
+<p>甚至还可以指定该用户只能执行select和update命令</p>
+<blockquote>
+<p>grant select, update on student.* to ‘style’@’%’ identified by ‘1234’;</p>
+</blockquote>
 <p>这样一来，再次以<code>style</code>用户登录MySQL，只有<code>student</code>数据库是对其可见的，并且如果你只授权它<code>select</code>权限，那么它就不能执行<code>delete</code>语句</p>
-<p><code>每当调整权限后，通常需要执行以下语句来刷新权限</code><br>flush privileges;</p>
-<p><code>删除创建的用户</code><br>drop user style@’%’;</p>
-<p><code>可用如下命令查看相应用户及对应的host</code><br>select host, user from user;</p>
+<p><code>每当调整权限后，通常需要执行以下语句来刷新权限</code></p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p><code>删除创建的用户</code></p>
+<blockquote>
+<p>drop user style@’%’;</p>
+</blockquote>
+<p><code>可用如下命令查看相应用户及对应的host</code></p>
+<blockquote>
+<p>select host, user from user;</p>
+</blockquote>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;在腾讯云的MySQL中先新建一个用户，用于远程登录账号。&lt;br&gt;环境是centos7&lt;br&gt;&lt;code&gt;登录MySQL&lt;/code&gt; &lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;mysql -u root -p 回车后输入密码&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;创建用户&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;允许本地I
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;co
     
     </summary>
     
