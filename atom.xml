@@ -168,7 +168,7 @@
     <link href="http://yoursite.com/2017/10/28/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E8%85%BE%E8%AE%AF%E4%BA%91MySQL/"/>
     <id>http://yoursite.com/2017/10/28/本地连接腾讯云MySQL/</id>
     <published>2017-10-28T03:33:35.000Z</published>
-    <updated>2017-11-09T10:08:53.757Z</updated>
+    <updated>2017-11-09T13:15:09.363Z</updated>
     
     <content type="html"><![CDATA[<p>在腾讯云的MySQL中先新建一个用户，用于远程登录账号。<br>环境是centos7<br><code>登录MySQL</code> </p>
 <blockquote>
@@ -226,7 +226,7 @@
 <p>授予style用户在所有数据库上的所有权限</p>
 <p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权</p>
 <blockquote>
-<p>evoke all privileges on <em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘style`@’%’ identified by ‘1234’;</p>
+<p>revoke all privileges on <em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘style`@’%’ identified by ‘1234’;</p>
 </blockquote>
 <p>甚至还可以指定该用户只能执行select和update命令</p>
 <blockquote>
@@ -245,7 +245,7 @@
 <blockquote>
 <p>select host, user from user;</p>
 </blockquote>
-<p><code>MarkSown</code>语法用的不是很好，有些符号没有显示，以下图为准<br><img src="https://raw.githubusercontent.com/sunstady/hexo/4253ca1b37b9b9e71350293f0c739b36d15ba89b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/4253ca1b37b9b9e71350293f0c739b36d15ba89b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/4253ca1b37b9b9e71350293f0c739b36d15ba89b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="MySQL用户"></p>
+<p><code>MarkSown</code>语法用的不是很好，有些符号没有显示，以下图为准<br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="MySQL用户"></p>
 ]]></content>
     
     <summary type="html">
