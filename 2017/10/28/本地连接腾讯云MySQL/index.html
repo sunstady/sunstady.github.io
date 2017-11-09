@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="在腾讯云的MySQL中先新建一个用户，用于远程登录账号。环境是centos7登录MySQL  mysql -u root -p 回车后输入密码 创建用户 允许本地IP访问localhost  create user ‘style’@’localhost’ identified by ‘123456’;  用户名是style，密码是123456; 允许外网IP访问  create user ‘sty">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-09T08:59:36.169Z">
+<meta property="og:updated_time" content="2017-11-09T09:03:21.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="本地连接腾讯云MySQL">
 <meta name="twitter:description" content="在腾讯云的MySQL中先新建一个用户，用于远程登录账号。环境是centos7登录MySQL  mysql -u root -p 回车后输入密码 创建用户 允许本地IP访问localhost  create user ‘style’@’localhost’ identified by ‘123456’;  用户名是style，密码是123456; 允许外网IP访问  create user ‘sty">
@@ -442,7 +442,7 @@
 <p>授予style用户在所有数据库上的所有权限</p>
 <p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权</p>
 <blockquote>
-<p>evoke all privileges on<em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘’style`@’%’ identified by ‘1234’;</p>
+<p>evoke all privileges on <em> . </em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘’style`@’%’ identified by ‘1234’;</p>
 </blockquote>
 <p>甚至还可以指定该用户只能执行select和update命令</p>
 <blockquote>

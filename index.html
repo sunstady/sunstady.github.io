@@ -1199,7 +1199,7 @@
 <p>授予style用户在所有数据库上的所有权限</p>
 <p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权</p>
 <blockquote>
-<p>evoke all privileges on<em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘’style`@’%’ identified by ‘1234’;</p>
+<p>evoke all privileges on <em> . </em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘’style`@’%’ identified by ‘1234’;</p>
 </blockquote>
 <p>甚至还可以指定该用户只能执行select和update命令</p>
 <blockquote>
