@@ -295,6 +295,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/方法内部类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/26/方法内部类/" itemprop="url">方法内部类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T22:32:02+08:00">
+                2017-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/26/方法内部类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/26/方法内部类/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/26/方法内部类/" class="leancloud_visitors" data-flag-title="方法内部类">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。<br><code>由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//外部类</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloWorld</span> &#123;</div><div class="line">    <span class="keyword">private</span> String name = <span class="string">"爱慕课"</span>;</div><div class="line">    <span class="comment">// 外部类中的show方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123; </div><div class="line">	<span class="comment">// 定义方法内部类</span></div><div class="line">	<span class="keyword">class</span> <span class="title">MInner</span> &#123;</div><div class="line">	    <span class="keyword">int</span> score = <span class="number">83</span>;</div><div class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getScore</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> score + <span class="number">10</span>;</div><div class="line">	    &#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 创建方法内部类的对象</span></div><div class="line">	MInner mi= <span class="keyword">new</span> MInner();</div><div class="line">	<span class="comment">// 调用内部类的方法</span></div><div class="line">	<span class="keyword">int</span> newScore= mi.getScore();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"姓名："</span> + name + <span class="string">"\n加分后的成绩："</span> + newScore);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 测试方法内部类</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">	<span class="comment">// 创建外部类的对象</span></div><div class="line">	HelloWorld mo= <span class="keyword">new</span> HelloWorld();</div><div class="line">	<span class="comment">// 调用外部类的方法</span></div><div class="line">	mo.show();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/成员内部类与静态内部类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1599,151 +1743,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/列置换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/23/列置换/" itemprop="url">列置换</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:35:09+08:00">
-                2017-09-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/23/列置换/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/23/列置换/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/23/列置换/" class="leancloud_visitors" data-flag-title="列置换">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>运行环境python2.7</code></p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!usr/bin/env python</span></div><div class="line"><span class="comment">#-*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">from</span> itertools import *</div><div class="line"></div><div class="line"><span class="built_in">from</span> optparse import *</div><div class="line"></div><div class="line">def <span class="built_in">start</span>():</div><div class="line"></div><div class="line">	opt = OptionParser()</div><div class="line"></div><div class="line">	opt.add_option(<span class="string">'-c'</span>,dest=<span class="string">'content'</span>,help=<span class="string">'Input your content'</span>)</div><div class="line"></div><div class="line">	opt.add_option(<span class="string">'-o'</span>,dest=<span class="string">'output'</span>,help=<span class="string">'File to save the result'</span>)</div><div class="line"></div><div class="line">	<span class="built_in">get</span>,args = opt.parse_args()</div><div class="line"></div><div class="line">	<span class="keyword">if</span> <span class="built_in">get</span>.content is None <span class="keyword">or</span> <span class="built_in">get</span>.output is None:</div><div class="line"></div><div class="line">		print <span class="string">'Use \'help\' to get help'</span></div><div class="line"></div><div class="line">		exit(<span class="number">0</span>)</div><div class="line"></div><div class="line">	<span class="literal">return</span> <span class="built_in">get</span>.content,<span class="built_in">get</span>.output</div><div class="line"></div><div class="line">def Exp(content,output):</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="built_in">len</span>(content)):</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> <span class="built_in">len</span>(content)%i == <span class="number">0</span>:</div><div class="line"></div><div class="line">			filename = <span class="built_in">open</span>(output,<span class="string">'a+'</span>)</div><div class="line"></div><div class="line">			getList = Code(i)</div><div class="line"></div><div class="line">			getCo = SplitStr(i,content)</div><div class="line"></div><div class="line">			<span class="keyword">for</span> <span class="built_in">num</span> <span class="keyword">in</span> getList:</div><div class="line"></div><div class="line">				<span class="built_in">get</span> = <span class="string">''</span></div><div class="line"></div><div class="line">				<span class="keyword">for</span> s <span class="keyword">in</span> getCo:</div><div class="line"></div><div class="line">					<span class="keyword">for</span> <span class="literal">one</span> <span class="keyword">in</span> <span class="built_in">num</span>:</div><div class="line"></div><div class="line">						<span class="built_in">get</span> = <span class="built_in">get</span> + s[int(<span class="literal">one</span>):int(<span class="literal">one</span>)+<span class="number">1</span>]</div><div class="line"></div><div class="line">				filename.<span class="built_in">write</span>(<span class="built_in">get</span>+<span class="string">'\n'</span>)</div><div class="line"></div><div class="line">			filename.<span class="built_in">close</span>()</div><div class="line"></div><div class="line">	print <span class="string">'The result is saved as '</span> + output</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">def SplitStr(<span class="built_in">num</span>,content):</div><div class="line"></div><div class="line">	<span class="built_in">result</span> = []</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="built_in">len</span>(content)/<span class="built_in">num</span>):</div><div class="line"></div><div class="line">		<span class="built_in">result</span>.append(content[i*<span class="built_in">num</span>:(i+<span class="number">1</span>)*<span class="built_in">num</span>])</div><div class="line"></div><div class="line">	<span class="literal">return</span> <span class="built_in">result</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">def Code(<span class="built_in">num</span>):</div><div class="line"></div><div class="line">	<span class="built_in">number</span> = <span class="string">''</span></div><div class="line"></div><div class="line">	<span class="built_in">result</span> = []</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="built_in">num</span>):</div><div class="line"></div><div class="line">		<span class="built_in">number</span> = <span class="built_in">number</span> + str(i)</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> permutations(<span class="built_in">number</span>,<span class="built_in">num</span>):</div><div class="line"></div><div class="line">		<span class="built_in">result</span>.append(i)</div><div class="line"></div><div class="line">	<span class="literal">return</span> <span class="built_in">result</span></div><div class="line"></div><div class="line"></div><div class="line">def main():</div><div class="line"></div><div class="line">	content,output = <span class="built_in">start</span>()</div><div class="line"></div><div class="line">	Exp(content,output)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line"></div><div class="line">	main()</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1797,7 +1796,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
