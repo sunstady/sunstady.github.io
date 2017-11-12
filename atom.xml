@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-10T12:53:36.891Z</updated>
+  <updated>2017-11-12T13:25:29.204Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟存储器</title>
+    <link href="http://yoursite.com/2017/11/12/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/"/>
+    <id>http://yoursite.com/2017/11/12/虚拟存储器/</id>
+    <published>2017-11-12T13:24:14.000Z</published>
+    <updated>2017-11-12T13:25:29.204Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>1、什么是虚拟存储器？（虚存）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解答：虚拟存储器是由硬件和操作系统自动实现存储信息调度和管理的，是在具有层次结果存储器的计算机系统中，自动实现部分装入和部分替换功能，能从逻辑上为用户提供一个比物理贮寸容量大的多，可寻址的“主存储器”。</div></pre></td></tr></table></figure></p>
+<p><code>2、为什么要引入虚拟存储器？</code><br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">解答：<span class="number">1</span>&gt;能提高操作系统的内存利用率和系统吞吐量 </div><div class="line"><span class="number">2</span>&gt;在计算机系统中，主存的容量有一定的限制，不可能大大满足各种用户的需要，而在技术上辅助存储器却可以做的相当大。为了给大作业提供方便，使它们不再承担对主存和辅存的具体分配和管理工作，而由操作系统把主存和辅存统一管理起来。</div></pre></td></tr></table></figure></p>
+<p><code>3、虚拟存储器的特征？</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">解答：虚拟存储器具有虚拟性、离散性、多次性及强对换性等特征，其中最重要的特征是虚拟性。</div><div class="line"><span class="meta">1&gt;</span><span class="bash">	虚拟性。虚拟性是指能够从逻辑上扩充内存容量，使用户所看到的内存容量远大于实际的内存容量，这是虚拟存储器所表现出的最重要的特征，也是虚拟存储器最重要的目标。</span></div><div class="line"><span class="meta">2&gt;</span><span class="bash">	离散性。离散性是指内存分配时采用离散分配的方式，没有离散性就不可能实现虚拟存储器。采用连续分配方式，需要将作业装入到连续的内存区域，这样需要连续地一次性申请一部分内存空间，以便将整个作业先后多次装入内存。如果仍然采用连续装入的方式，则无法实现虚拟存储功能，只有采用离散分配方式，才能为它申请内存空间，以避免浪费内存空间。</span></div><div class="line"><span class="meta">3&gt;</span><span class="bash">	多次性。多次性是指一个作业被分成多次调入内存运行。作业在运行时，只将当前运行的那部分程序和数据装入内存，以后再陆续从外存将需要的部分调入内存。</span></div><div class="line"><span class="meta">4&gt;</span><span class="bash">	对换性。对换性是指允许在作业运行过程中换进换出。允许将暂时不用的程序和数据从内存调至外存的对换区，以后需要时再从外存调入到内存。</span></div></pre></td></tr></table></figure></p>
+<p><code>4、虚存可以建立在分区分配管理的基础上吗？为什么？</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解答：不可以。在虚拟存储器中，允许将一个作业分多次调入内存。入宫采用连续分配方式时，应将作业装入一个连续的内存区域中。为此，需事先为它一次性地申请足够的内存空间，以便将整个作业先后分多次装入内存，这不仅会使相当一部分内存空间都处于暂时或“永久”的空闲状态，造成内存资源的严重浪费，而且也无法从逻辑上扩大内存容量。因此，虚拟存储器的实现都是建立在离散分配存储管理方式的基础上。</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;1、什么是虚拟存储器？（虚存）&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t
+    
+    </summary>
+    
+    
+      <category term="OS" scheme="http://yoursite.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>人生苦短</title>
@@ -562,30 +586,6 @@
     
       &lt;p&gt;&lt;code&gt;eclipse常用快捷键&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小型通讯录</title>
-    <link href="http://yoursite.com/2017/09/23/%E5%B0%8F%E5%9E%8B%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
-    <id>http://yoursite.com/2017/09/23/小型通讯录/</id>
-    <published>2017-09-23T05:36:43.000Z</published>
-    <updated>2017-09-23T05:40:49.216Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>定义Friend类，编写它具有的属性：姓名(name)、电话(phone)、邮箱(email)和公司(comp)以及它的方法showInfo()。编写测试类AddFriend，实现添加联系人的功能(从键盘输入)</code></p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//AddFriend.java</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> class AddFried &#123;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		Friend <span class="keyword">friend</span>= <span class="keyword">new</span> Friend();</div><div class="line">		Scanner inputScanner= <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人姓名: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setName(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人电话: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setPhone(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人电子邮箱: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setEmail(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人公司: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setComp(inputScanner.next());</div><div class="line">		</div><div class="line">		<span class="keyword">friend</span>.showInfo();</div><div class="line">		</div><div class="line"><span class="comment">//		friend.name= "花千骨";</span></div><div class="line"><span class="comment">//		friend.showInfo();</span></div><div class="line">		<span class="comment">/*</span></div><div class="line"><span class="comment">		 * 没有封装，将String name等四个变量封装为private就行</span></div><div class="line"><span class="comment">		 * 封装：把不想或不该告诉别人的事情隐藏起来</span></div><div class="line"><span class="comment">		 * 具体做法：将属性私有化，提供公有化的方法来访问属性</span></div><div class="line"><span class="comment">		 * */</span></div><div class="line">		inputScanner.<span class="built_in">close</span>();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Friend.java</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> class Friend &#123;</div><div class="line">	<span class="keyword">String</span> name;<span class="comment">// 默认private</span></div><div class="line">	<span class="keyword">String</span> phone;</div><div class="line">	<span class="keyword">String</span> email;</div><div class="line">	<span class="keyword">String</span> comp;</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setName(<span class="keyword">String</span> name) &#123;</div><div class="line">		<span class="keyword">this</span>.name= name;<span class="comment">// 访问本类中的属性和方法</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getName()&#123;</div><div class="line">		<span class="built_in">return</span> name;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getPhone() &#123;</div><div class="line">		<span class="built_in">return</span> phone;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setPhone(<span class="keyword">String</span> phone) &#123;</div><div class="line">		<span class="keyword">this</span>.phone = phone;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getEmail() &#123;</div><div class="line">		<span class="built_in">return</span> email;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setEmail(<span class="keyword">String</span> email) &#123;</div><div class="line">		<span class="keyword">this</span>.email = email;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getComp() &#123;</div><div class="line">		<span class="built_in">return</span> comp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setComp(<span class="keyword">String</span> comp) &#123;</div><div class="line">		<span class="keyword">this</span>.comp = comp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> showInfo()&#123;</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"新朋友的联系信息为: "</span>);</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"姓名: "</span>+ <span class="keyword">this</span>.getName());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"电话: "</span>+ <span class="keyword">this</span>.getPhone());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"电子邮箱: "</span>+ <span class="keyword">this</span>.getEmail());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"公司: "</span>+ <span class="keyword">this</span>.hashCode());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;定义Friend类，编写它具有的属性：姓名(name)、电话(phone)、邮箱(email)和公司(comp)以及它的方法showInfo()。编写测试类AddFriend，实现添加联系人的功能(从键盘输入)&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=
     
     </summary>
     
