@@ -104,18 +104,22 @@
 
 
 
-<meta name="description" content="方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。1234567891011121314151617181920212223242526//外部类public class HelloWorld &amp;#123;    private String n">
+<meta name="description" content="java中使用AES对数据进行加解密算法模式：ECB 密钥  长度：128bits 16位长  偏移量： 默认  补码方式：PKCS5Padding  解密串编码方式：base64密钥为16位长度的字符串1234567891011121314151617181920212223242526272829/** * 使用参数中的密钥加密 * @param 明文 * @param 密钥 * @retur">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="方法内部类">
-<meta property="og:url" content="http://yoursite.com/2017/09/26/方法内部类/index.html">
+<meta property="og:title" content="Java解决Base64包问题">
+<meta property="og:url" content="http://yoursite.com/2017/11/28/Java解决Base64包问题/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。1234567891011121314151617181920212223242526//外部类public class HelloWorld &amp;#123;    private String n">
+<meta property="og:description" content="java中使用AES对数据进行加解密算法模式：ECB 密钥  长度：128bits 16位长  偏移量： 默认  补码方式：PKCS5Padding  解密串编码方式：base64密钥为16位长度的字符串1234567891011121314151617181920212223242526272829/** * 使用参数中的密钥加密 * @param 明文 * @param 密钥 * @retur">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-26T14:34:10.012Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/3.jpg">
+<meta property="og:updated_time" content="2017-11-28T13:30:15.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="方法内部类">
-<meta name="twitter:description" content="方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。1234567891011121314151617181920212223242526//外部类public class HelloWorld &amp;#123;    private String n">
+<meta name="twitter:title" content="Java解决Base64包问题">
+<meta name="twitter:description" content="java中使用AES对数据进行加解密算法模式：ECB 密钥  长度：128bits 16位长  偏移量： 默认  补码方式：PKCS5Padding  解密串编码方式：base64密钥为16位长度的字符串1234567891011121314151617181920212223242526272829/** * 使用参数中的密钥加密 * @param 明文 * @param 密钥 * @retur">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/1.jpg">
 
 
 
@@ -145,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/26/方法内部类/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/28/Java解决Base64包问题/"/>
 
 
 
 
 
-  <title>方法内部类 | Sanstyle</title>
+  <title>Java解决Base64包问题 | Sanstyle</title>
   
 
 
@@ -299,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/方法内部类/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/Java解决Base64包问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -316,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">方法内部类</h1>
+          <h1 class="post-title" itemprop="name headline">Java解决Base64包问题</h1>
         
 
         <div class="post-meta">
@@ -328,8 +332,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T22:32:02+08:00">
-                2017-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-28T21:28:09+08:00">
+                2017-11-28
               </time>
             
 
@@ -347,9 +351,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/26/方法内部类/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/28/Java解决Base64包问题/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/26/方法内部类/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/28/Java解决Base64包问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +361,7 @@
 
           
           
-             <span id="/2017/09/26/方法内部类/" class="leancloud_visitors" data-flag-title="方法内部类">
+             <span id="/2017/11/28/Java解决Base64包问题/" class="leancloud_visitors" data-flag-title="Java解决Base64包问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,7 +392,14 @@
       
 
       
-        <p>方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。<br><code>由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//外部类</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloWorld</span> &#123;</div><div class="line">    <span class="keyword">private</span> String name = <span class="string">"爱慕课"</span>;</div><div class="line">    <span class="comment">// 外部类中的show方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123; </div><div class="line">	<span class="comment">// 定义方法内部类</span></div><div class="line">	<span class="keyword">class</span> <span class="title">MInner</span> &#123;</div><div class="line">	    <span class="keyword">int</span> score = <span class="number">83</span>;</div><div class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getScore</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> score + <span class="number">10</span>;</div><div class="line">	    &#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 创建方法内部类的对象</span></div><div class="line">	MInner mi= <span class="keyword">new</span> MInner();</div><div class="line">	<span class="comment">// 调用内部类的方法</span></div><div class="line">	<span class="keyword">int</span> newScore= mi.getScore();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"姓名："</span> + name + <span class="string">"\n加分后的成绩："</span> + newScore);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 测试方法内部类</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">	<span class="comment">// 创建外部类的对象</span></div><div class="line">	HelloWorld mo= <span class="keyword">new</span> HelloWorld();</div><div class="line">	<span class="comment">// 调用外部类的方法</span></div><div class="line">	mo.show();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>java中使用AES对数据进行加解密<br><code>算法模式：ECB 密钥 
+长度：128bits 16位长 
+偏移量： 默认 
+补码方式：PKCS5Padding 
+解密串编码方式：base64</code><br>密钥为16位长度的字符串<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 使用参数中的密钥加密</span></div><div class="line"><span class="comment"> * @param 明文</span></div><div class="line"><span class="comment"> * @param 密钥</span></div><div class="line"><span class="comment"> * @return 密文</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> Encrypt(<span class="keyword">String</span> sSrc, <span class="keyword">String</span> sKey) &#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (sKey == <span class="keyword">null</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key为空null"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 判断Key是否为16位</span></div><div class="line">        <span class="keyword">if</span> (sKey.length() != <span class="number">16</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key长度不是16位"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">byte</span>[] raw = sKey.getBytes(<span class="string">"utf-8"</span>);</div><div class="line">        SecretKeySpec skeySpec = <span class="keyword">new</span> SecretKeySpec(raw, <span class="string">"AES"</span>);</div><div class="line">        Cipher cipher = Cipher.getInstance(<span class="string">"AES/ECB/PKCS5Padding"</span>);<span class="comment">//"算法/模式/补码方式"</span></div><div class="line">        cipher.init(Cipher.ENCRYPT_MODE, skeySpec);</div><div class="line">        <span class="built_in">byte</span>[] encrypted = cipher.doFinal(sSrc.getBytes(<span class="string">"utf-8"</span>));</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Base64().encodeToString(encrypted);<span class="comment">//此处使用BASE64做转码功能，同时能起到2次加密的作用。</span></div><div class="line">    &#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 使用参数中的密钥解密</span></div><div class="line"><span class="comment"> * @param 密文</span></div><div class="line"><span class="comment"> * @param 密钥</span></div><div class="line"><span class="comment"> * @return 明文</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> Decrypt(<span class="keyword">String</span> sSrc, <span class="keyword">String</span> sKey) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">// 判断Key是否正确</span></div><div class="line">        <span class="keyword">if</span> (sKey == <span class="keyword">null</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key为空null"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 判断Key是否为16位</span></div><div class="line">        <span class="keyword">if</span> (sKey.length() != <span class="number">16</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key长度不是16位"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">byte</span>[] raw = sKey.getBytes(<span class="string">"utf-8"</span>);</div><div class="line">        SecretKeySpec skeySpec = <span class="keyword">new</span> SecretKeySpec(raw, <span class="string">"AES"</span>);</div><div class="line">        Cipher cipher = Cipher.getInstance(<span class="string">"AES/ECB/PKCS5Padding"</span>);</div><div class="line">        cipher.init(Cipher.DECRYPT_MODE, skeySpec);</div><div class="line">        <span class="built_in">byte</span>[] encrypted1 = <span class="keyword">new</span> Base64().decode(sSrc);<span class="comment">//先用base64解密</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="built_in">byte</span>[] original = cipher.doFinal(encrypted1);</div><div class="line">            <span class="keyword">String</span> originalString = <span class="keyword">new</span> <span class="keyword">String</span>(original,<span class="string">"utf-8"</span>);</div><div class="line">            <span class="keyword">return</span> originalString;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.<span class="built_in">println</span>(e.toString());</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">        System.out.<span class="built_in">println</span>(ex.toString());</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">测试方法</div><div class="line"><span class="keyword">String</span> password = <span class="string">"ABCDEFGHIJKLMNOP"</span>;</div><div class="line"><span class="keyword">String</span> content1 = <span class="string">"我的博客名是geekfly"</span>;</div><div class="line">System.out.<span class="built_in">println</span>(<span class="string">"加密前："</span> + content1);  </div><div class="line"><span class="keyword">String</span> content2 = Encrypt(content1, password);</div><div class="line">System.out.<span class="built_in">println</span>(<span class="string">"加密后："</span> + content2);</div><div class="line"><span class="keyword">String</span> content3 = Decrypt(content2, password);</div><div class="line">System.out.<span class="built_in">println</span>(<span class="string">"解密后："</span> + content3);</div></pre></td></tr></table></figure>
+<p>在这个过程中出现个问题，<code>base64 cannot be resolved to a type</code>,<br>问题显示: <code>The import org.apache cannot be resolved</code>.<br>解决方法: 去<a href="http://hc.apache.org/downloads.cgi下载，`HttpClient4.5.3.zip`" target="_blank" rel="external">http://hc.apache.org/downloads.cgi下载，`HttpClient4.5.3.zip`</a>, 解压后得到<code>\httpcomponents-client-4.5.3\lib</code>, 里面有很多jar包<img src="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/1.jpg" alt="jar"><br>加进来<img src="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/2.jpg" alt="jar"><br>这样就好了！<img src="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/3.jpg" alt="jar"><br>总结下：org.apache, 不是标准的java中的库。所以eclipse中，无法自动识别。<br>org.apache下包括了一堆相关的库，此处用到的是org.apache.http, 所以：需要找到对应的org.apache.http相关的jar包，然后加到当前的项目中。</p>
 
       
     </div>
@@ -450,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/26/成员内部类与静态内部类/" rel="next" title="成员内部类与静态内部类">
-                <i class="fa fa-chevron-left"></i> 成员内部类与静态内部类
+              <a href="/2017/11/28/Java获取本机外网IP/" rel="next" title="Java获取本机外网IP">
+                <i class="fa fa-chevron-left"></i> Java获取本机外网IP
               </a>
             
           </div>
@@ -459,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/28/super关键字/" rel="prev" title="super关键字">
-                super关键字 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -775,9 +782,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/09/26/方法内部类/';
-          this.page.identifier = '2017/09/26/方法内部类/';
-          this.page.title = '方法内部类';
+          this.page.url = 'http://yoursite.com/2017/11/28/Java解决Base64包问题/';
+          this.page.identifier = '2017/11/28/Java解决Base64包问题/';
+          this.page.title = 'Java解决Base64包问题';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstady.disqus.com/embed.js';
