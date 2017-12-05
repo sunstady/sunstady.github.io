@@ -295,6 +295,294 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/java读写文件二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/05/java读写文件二/" itemprop="url">java读写文件二</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-05T11:54:42+08:00">
+                2017-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/05/java读写文件二/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/05/java读写文件二/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/05/java读写文件二/" class="leancloud_visitors" data-flag-title="java读写文件二">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Java的输入流、输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.<span class="keyword">BufferedReader</span>;  </div><div class="line"><span class="keyword">import</span> java.io.BufferedWriter;  </div><div class="line"><span class="keyword">import</span> java.io.FileNotFoundException;  </div><div class="line"><span class="keyword">import</span> java.io.FileReader;  </div><div class="line"><span class="keyword">import</span> java.io.FileWriter;  </div><div class="line"><span class="keyword">import</span> java.io.IOException;  </div><div class="line">  </div><div class="line"><span class="keyword">public</span> class Test4 &#123;  </div><div class="line">  </div><div class="line">    <span class="comment">/** </span></div><div class="line"><span class="comment">     * @param args </span></div><div class="line"><span class="comment">     */</span>  </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;  </div><div class="line">        <span class="comment">// TODO Auto-generated method stub  </span></div><div class="line">        <span class="keyword">BufferedReader</span> br = <span class="keyword">null</span>;  </div><div class="line">        BufferedWriter bw = <span class="keyword">null</span>;  </div><div class="line">        <span class="keyword">try</span> &#123;  </div><div class="line">            br = <span class="keyword">new</span> <span class="keyword">BufferedReader</span>(<span class="keyword">new</span> FileReader(<span class="string">"Input.txt"</span>));  </div><div class="line">            bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"Output.txt"</span>));  </div><div class="line">            <span class="keyword">String</span> <span class="built_in">str</span> = <span class="string">""</span>;  </div><div class="line">            <span class="built_in">int</span> i = <span class="number">1</span>;  </div><div class="line">            <span class="keyword">while</span>((<span class="built_in">str</span> = br.readLine()) != <span class="keyword">null</span>)&#123;  </div><div class="line">                bw.write(i+<span class="string">" "</span>);  </div><div class="line">                bw.write(<span class="built_in">str</span>);  </div><div class="line">                System.out.<span class="built_in">println</span>(i+ <span class="string">" "</span>+ <span class="built_in">str</span>);  </div><div class="line">                bw.newLine();  <span class="comment">//换行，换行后可以使用readline()来一行行读取数据</span></div><div class="line">                i++;  </div><div class="line">            &#125;  </div><div class="line">            bw.flush();  </div><div class="line">            <span class="comment">//清空缓冲区的数据流，进行流的操作时，数据先被读到内存中，然后再用数据写到文件中，</span></div><div class="line">            <span class="comment">//当数据读完时，如果调用close()方法关闭读写流，就可能造成数据丢失，</span></div><div class="line">            <span class="comment">//原因是一部分的数据可能留在缓存区</span></div><div class="line">            bw.close();  </div><div class="line">            br.close();  </div><div class="line">              </div><div class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;  </div><div class="line">            <span class="comment">// TODO Auto-generated catch block  </span></div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"找不到指定文件！"</span>);  </div><div class="line">        &#125;<span class="keyword">catch</span> (IOException e) &#123;  </div><div class="line">            <span class="comment">// TODO Auto-generated catch block  </span></div><div class="line">            e.printStackTrace();  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/java读写文件一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/05/java读写文件一/" itemprop="url">java读写文件一</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-05T11:27:31+08:00">
+                2017-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/05/java读写文件一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/05/java读写文件一/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/05/java读写文件一/" class="leancloud_visitors" data-flag-title="java读写文件一">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>写入文件后可逆序输出</code><br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> Test3 &#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">		<span class="comment">//创建文件对象</span></div><div class="line">		<span class="keyword">File</span> <span class="keyword">file</span>= <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"2.txt"</span>);</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">file</span>.exists()) &#123;</div><div class="line">			<span class="comment">//文件存在</span></div><div class="line">			String name= <span class="keyword">file</span>.getName();</div><div class="line">			<span class="keyword">long</span> len= <span class="keyword">file</span>.length();</div><div class="line">			<span class="comment">//判断文件隐藏属性</span></div><div class="line">			<span class="keyword">boolean</span> hidden= <span class="keyword">file</span>.isHidden();</div><div class="line">			System.out.<span class="keyword">println</span>(<span class="string">"文件名称: "</span>+ name+ <span class="string">"\n文件长度: "</span>+ len+ <span class="string">"\n隐藏属性: "</span>+ hidden);</div><div class="line">			writefile(<span class="keyword">file</span>);</div><div class="line">			readfile(<span class="keyword">file</span>);</div><div class="line">		&#125;<span class="keyword">else</span> &#123;</div><div class="line">			<span class="comment">//文件不存在，创建文件</span></div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">file</span>.createNewFile();</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;<span class="keyword">finally</span> &#123;</div><div class="line">				System.out.<span class="keyword">println</span>(<span class="string">"文件已创建"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> readfile(<span class="keyword">File</span> <span class="keyword">file</span>) &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">		FileInputStream fileInputStream= <span class="keyword">new</span> FileInputStream(<span class="keyword">file</span>);</div><div class="line">		</div><div class="line">		<span class="keyword">byte</span>[] b= <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">		</div><div class="line">		<span class="keyword">int</span> len= fileInputStream.<span class="keyword">read</span>(b);</div><div class="line">		fileInputStream.close();</div><div class="line">		StringBuilder ab = <span class="keyword">new</span> StringBuilder(<span class="keyword">new</span> String(b, <span class="number">0</span>, len));</div><div class="line">		</div><div class="line">		System.out.<span class="keyword">println</span>(<span class="string">"文件读出的内容是: \n"</span>+ ab.<span class="keyword">reverse</span>().toString());</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> writefile(<span class="keyword">File</span> <span class="keyword">file</span>) &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		Scanner in= <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		System.out.<span class="keyword">println</span>(<span class="string">"请输入要写入得内容"</span>);</div><div class="line">		String string= in.<span class="keyword">next</span>();</div><div class="line">		</div><div class="line">		<span class="comment">//建立文件传输管道</span></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			FileOutputStream fileOutputStream= <span class="keyword">new</span> FileOutputStream(<span class="keyword">file</span>);</div><div class="line">			</div><div class="line">			<span class="comment">//写文件</span></div><div class="line">			fileOutputStream.<span class="keyword">write</span>(string.getBytes());</div><div class="line">			</div><div class="line">			<span class="comment">//关闭管道</span></div><div class="line">			fileOutputStream.close();</div><div class="line">			System.out.<span class="keyword">println</span>(<span class="string">"文件写入完成"</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;<span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/04/UDP简单大文件传送/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1458,296 +1746,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/base混合加密/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/10/base混合加密/" itemprop="url">base混合加密</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T20:11:44+08:00">
-                2017-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/10/base混合加密/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/10/base混合加密/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/10/base混合加密/" class="leancloud_visitors" data-flag-title="base混合加密">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import base64</div><div class="line"><span class="keyword">file</span> = <span class="keyword">open</span>(<span class="string">'base.txt'</span>,<span class="string">'r'</span>)</div><div class="line"><span class="keyword">st</span> = <span class="keyword">file</span>.<span class="keyword">read</span>()</div><div class="line"><span class="keyword">while</span> True:</div><div class="line">   <span class="keyword">try</span>:</div><div class="line">       <span class="keyword">st</span> = base64.b16decode(<span class="keyword">st</span>)</div><div class="line">   excep<span class="variable">t:</span></div><div class="line">       <span class="keyword">try</span>:</div><div class="line">           <span class="keyword">st</span> = base64.b32decode(<span class="keyword">st</span>)</div><div class="line">       excep<span class="variable">t:</span></div><div class="line">           <span class="keyword">st</span> = base64.b64decode(<span class="keyword">st</span>)</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">st</span>.<span class="keyword">find</span>(<span class="string">'flag'</span>) == <span class="number">0</span>):</div><div class="line">       <span class="keyword">print</span>(<span class="keyword">st</span>)</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/VMware-Workstation-14黑屏问题及密钥/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/08/VMware-Workstation-14黑屏问题及密钥/" itemprop="url">VMware Workstation 14黑屏问题及密钥</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T19:16:42+08:00">
-                2017-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/08/VMware-Workstation-14黑屏问题及密钥/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/08/VMware-Workstation-14黑屏问题及密钥/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/08/VMware-Workstation-14黑屏问题及密钥/" class="leancloud_visitors" data-flag-title="VMware Workstation 14黑屏问题及密钥">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。<br>首先上VM的密钥：<br>VMware Workstation Pro 14 许可证序列号：<br><code>FF590-2DX83-M81LZ-XDM7E-MKUT4</code><br><code>CG54H-D8D0H-H8DHY-C6X7X-N2KG6</code><br><code>ZC3WK-AFXEK-488JP-A7MQX-XL8YF</code><br><code>AC5XK-0ZD4H-088HP-9NQZV-ZG2R4</code><br><code>ZC5XK-A6E0M-080XQ-04ZZG-YF08D</code><br><code>ZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8</code></p>
-<p>黑屏问题解决:<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以管理员身份进入cmd，输入`netsh winsock reset`, 重启，问题解决</div></pre></td></tr></table></figure></p>
-<p>网上也有其他的解决方法，不过没试过：<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">以管理员身份运行命令提示符（<span class="keyword">cmd</span>.<span class="bash">exe），输入命令 netsh winsock show catalog</span></div><div class="line"><span class="bash">可以看到VMware注册了两个LSP：vSockets DGRAM、vSockets STREAM，路径是%windir%\system32\vsocklib.dll</span></div><div class="line"><span class="bash">观察有没有其他模块也注册了vSockets DGRAM、vSockets STREAM，如果有，就卸载掉这个模块所属的软件。</span></div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1801,7 +1799,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
