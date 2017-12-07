@@ -295,6 +295,224 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/07/情报搜集技术/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/07/情报搜集技术/" itemprop="url">情报搜集技术</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-07T21:05:45+08:00">
+                2017-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/07/情报搜集技术/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/07/情报搜集技术/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/07/情报搜集技术/" class="leancloud_visitors" data-flag-title="情报搜集技术">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#外围信息搜集<br><code>网站的IP地址查询</code><br>kali中使用nslookup工具对testfire.net这个网站进行查询<br>root@bt:~# nslookup<br>回车后输入set type=A<br>回车后输入testfire.net<br>就可以了。</p>
+<p><code>IP2Location地理位置查询</code><br>查询IP地址，可以在<a href="http://www.maxmind.com网站上使用该服务。" target="_blank" rel="external">http://www.maxmind.com网站上使用该服务。</a><br>如果是国内的IP地址，推荐使用“<a href="http://www.cz88.net" target="_blank" rel="external">QQ纯真数据库</a>”。</p>
+<p><code>IP2Domain反查域名</code><br>一台物理服务器上面可能运行多个虚拟主机，这些虚拟主机具有不同的域名，但通常公用一个IP地址。如果你要知道有哪些网站公用这台服务器，就有可能通过此台服务器上其他网站的漏洞获取服务器控制权，进而迂回获取渗透目标的权限，这种攻击技术也称为<code>旁注</code>。可以使用<a href="http://www.ip-adress.com/reverse_ip/提供的服务查询有哪些域名指向同一个IP地址。" target="_blank" rel="external">http://www.ip-adress.com/reverse_ip/提供的服务查询有哪些域名指向同一个IP地址。</a><br>国内也有一些类似的网站可用于IP反查，如<a href="http://www.7c.com/,该网站针对国内的IP查询结果更为准确。" target="_blank" rel="external">http://www.7c.com/,该网站针对国内的IP查询结果更为准确。</a></p>
+<p><code>探索网站的目录结构</code><br>如果管理员允许，Web服务器会将没有默认页面的目录以文件列表的方式显示出来，而这些开放了浏览功能的网站目录往往会透露一些网站可供浏览的页面之外的信息，甚至能够再这些目录中发现网站源代码甚至后端数据库的连接口令。可以再Google中输入<code>parent directory site:testfire.net</code>来查找<code>testfire.net</code>上的此类目录。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a7365224bc81889bc152361bc00d6c6adf8f1fdd/Metasploit/1.jpg" alt="1"><br>打开第一个链接，网站的bank目录中的文件内容一览无余。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a7365224bc81889bc152361bc00d6c6adf8f1fdd/Metasploit/2.jpg" alt="2"><br>在浏览网站目录时，应当对以下几种文件特别留意: </p>
+<blockquote>
+<p>1、扩展名为inc的文件:可能会包含网站的配置信息，如数据库用户名/口令等。<br>2、扩展名为bak的文件：通常是一些文本编辑器在编辑源代码后留下的备份文件，可以让你知道与其对应的程序脚本文件中的大致内容。<br>3、扩展名为txt或sql的文件：一般包含网站运行的SQL脚本，可能会透露类似数据库结构等信息。</p>
+</blockquote>
+<p><code>检索特定类型的文件</code><br>在Google中输入<code>site:testfire.net filetype:xls</code>，可以查询testfire.net这个网站中<code>xls</code>类型文件。</p>
+<p><code>搜索网站中的E-mail地址</code><br>使用Metasploit中一个非常棒的辅助模块search_email_collector，进行有针对性的右键地址搜集。<br>search_email_collector模块要求提供一个邮箱后缀（域名），它并不是通过直接遍历网站页面获取邮件地址，而是通过多个搜索引擎的查询结果分析使用此后缀的邮件地址，使用它就能够很方便地获取某个机构地大量邮件地址。<br>msf&gt; use auxiliary/gather/search_email_collector<br>msf auxiliary(search_email_collector)&gt; set DOMAIN altoromutual.com<br>回车后输入<code>run</code><br>testfire网站模拟了一个名为altoromutual地电子银行站点，用它来做测试。</p>
+<p><code>搜索易存在SQL注入点地页面</code><br>使用Google可以筛选出网站中容易出现SQL注入漏洞的页面，如网站登录页面。例如在google.com中输入<code>site:testfire.net inurl:login</code>关键字进行搜索，得到了其后台登录URL。</p>
+<p>#主机探测与端口扫描<br><code>Metasploit的主机发现模块</code><br>Metasploit中提供了一些辅助模块可用于活跃主机的发现，这些模块位于Metasploit源码路径的modules/auxiliary/scanner/discovery/目录中。其中两个常用模块的主要功能为: </p>
+<blockquote>
+<p>1、arp_sweep使用ARP请求枚举本地局域网络中的所有活跃主机。<br>2、udp_sweep通过发送UDP数据包探查指定主机是否活跃，并发现主机上的UDP服务。</p>
+</blockquote>
+<p>Metasploit的arp_sweep模块是一个ARP扫描器。如下演示使用方法。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7b903b987b55b4a51741ca5aa99b739ca823fa26/Metasploit/3.jpg" alt="3"><br>首先需要输入RHOSTS来对扫描目标进行设置，设置好后输入run命令启动扫描器。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7b903b987b55b4a51741ca5aa99b739ca823fa26/Metasploit/4.jpg" alt="4"><br>从代码中可以看到，arp_sweep模块很快发现了192.168.2.0/24网段上拥有3台活跃主机，其中前两个IP地址为宿主主机上模拟的虚拟网卡IP地址。arp_sweep模块只能探测同一子网中的活跃主机，对于远程网络，可以使用更为强大的Nmap扫描器进行探测。</p>
+<p><code>使用Nmap进行主机探测</code><br>通常一个Nmap命令格式如下所示:<br><code>nmap &lt;扫描选项&gt; &lt;扫描目标&gt;</code><br>如果仅是在一个内部网中发现存活主机，可以使用-sn，这个选项会使用ICMP的Ping扫描获取网络中的存活主机情况，而不会进一步探测主机的详细情况。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7b903b987b55b4a51741ca5aa99b739ca823fa26/Metasploit/5.jpg" alt="5"><br>如果是在Internet环境中，推荐使用-Pn选项，它会告诉Nmap不要使用Ping扫描，因为ICMP数据包通常无法穿透Internet上的网络边界(通常是被防火墙过滤掉了)。<br>在Internet环境中，可以使用nmap-PU通过对开放的UDP端口进行探测以确定存活的主机，其功能类似Metasploit中的udp_sweep辅助模块。Nmap在进行UDP主机探测时，默认会列出开放的TCP端口，如果想加快扫描速度，可以使用-sn告诉Nmap仅探测存活主机，不对开放的TCP端口进行扫描。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7b903b987b55b4a51741ca5aa99b739ca823fa26/Metasploit/6.jpg" alt="6"></p>
+<p><code>操作系统辨识</code><br>可以使用-O选项让Nmap对目标的操作系统进行识别。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1bcad0f74cfe69d2cdd622dd9fa2f05703111fc5/Metasploit/7.jpg" alt="7"><br>使用nmap -A命令可以获取更详细的服务和操作系统信息。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1bcad0f74cfe69d2cdd622dd9fa2f05703111fc5/Metasploit/8.jpg" alt="8"></p>
+<p>#端口扫描与服务类型探测<br><code>Metasploit中的端口扫描器</code><br>Metasploit的辅助模块中提供了几款实用的端口扫描器。可以输入<code>search portscan</code>命令找到相关的端口扫描器。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/c70b8330ff18e201da09119dfd60926f4a1126d3/Metasploit/9.jpg" alt="9"></p>
+<blockquote>
+<p>1、ack: 通过ACK扫描的方式对防火墙上未被屏蔽的端口进行探测。<br>2、ftpbounce: 通过FTP bounce攻击的原理对TCP服务进行枚举，一些新的FTP服务器软件能够很好的防范FTP bounce攻击，但在一些旧的Solaris及FreeBSD系统的FTP服务中此类攻击方式仍能够被利用。<br>3、syn: 通过一次完整的TCP连接来判断端口是否开放，这种扫描方式最精确，但扫描速度慢。<br>4、xmas: 一种更为隐秘的扫描方式，通过发送FIN、PSH和URG标志，能够躲避一些高级的TCP标记监测器的过滤。</p>
+</blockquote>
+<p>一般情况下，推荐使用syn端口扫描器，因为它的扫描速度较快、结果精确且不容易被对方察觉。</p>
+<p><code>Nmap的端口扫描功能</code><br>Nmap对端口的状态分为六个层次: open(开放)、cloase(关闭)、filtered(被过滤)、unfiltered(未过滤)、open|filtered(开放或被过滤)、closed|filtered(关闭或被过滤)。<br>下面对这几种端口状态进行说明: </p>
+<blockquote>
+<p>1、open: 一个应用程序正在此端口上进行监听，以接收来自TCP、UDP或SCTP协议的数据。这是在渗透测试中最关注的一类端口，开放端口往往能够为我们提供一条能够进入系统的攻击路径。<br>2、closed: 关闭的端口指的是主机已响应，但没有应用程序监听的端口。这些信息并非毫无价值，扫描出关闭端口至少说明主机是活跃的。<br>3、filtered: 指Nmap不能确认端口是否开放，但根据响应数据猜测该端口可能被防火墙等设备过滤。<br>4、unfiltered: 仅在使用ACK扫描时，Nmap无法确定端口是否开放，会归为此类。可以使用其他类型的扫描(如WIndow扫描、SYN扫描、FIN扫描)进一步确认端口的信息。</p>
+</blockquote>
+<p>常用的Nmap扫描类型参数主要有: </p>
+<blockquote>
+<p>1、-sT: TCP connect扫描，类似Metasploit中的tcp扫描模块。<br>2、-sS: TCP SYN扫描，类似Metasploit中的syn扫描模块。<br>3、-sF/-sX/-sN: 这些扫描通过发送一些特殊的标志位以避开设备或软件的监测，<br>4、-sP: 通过发送ICMP echo请求探测主机是否存活，原理同ping。<br>5、-sU: 探测目标主机开放了哪些UDP端口。<br>6、-sA: TCP ACK扫描，类似Metasploit中的ack扫描模块。</p>
+</blockquote>
+<p>常用的Nmap扫描选项有: </p>
+<blockquote>
+<p>1、-Pn: 在扫描之前，不发送ICMP echo请求测试目标是否活跃。<br>2、-O: 启用对于TCP/IP协议栈的指纹特征扫描以获取远程主机的操作系统类型等信息。<br>3、-F: 快速扫描模式，只扫描在nmap-services中列出的端口。<br>4、-p&lt;端口范围&gt;: 可以使用这个参数指定希望扫描的端口，也可以使用一段端口范围(例如1~1023).在IP协议扫描中(使用-sO参数)，该参数的意义是指定想要扫描的协议号(0~255)。</p>
+</blockquote>
+<p>使用Nmap对192.168.2.2进行一次端口扫描的结果，其中用到了-sS选项，该选项指定使用TCP SYN扫描，这种扫描方式不等待打开一个完全的TCP连接，所以执行速度会更快，而且这种扫描通常不会被IDS等设备记录。如果想同时列出UDP端口，可以加上-sU，但执行速度就会变得比较慢。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/c70b8330ff18e201da09119dfd60926f4a1126d3/Metasploit/10.jpg" alt="10"></p>
+<p><code>使用Nmap探测更详细的服务信息</code><br>如果想获取更加详细的服务版本等信息，需要使用-sV选项。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/c70b8330ff18e201da09119dfd60926f4a1126d3/Metasploit/11.jpg" alt="11"></p>
+<p>#服务扫描与查点<br>在Metasploit的Scanner辅助模块中，有很多用于服务扫描和查点的工具，这些工具常以[service_name]_version和[service_name]_login命令。</p>
+<blockquote>
+<p>1、[service_name]_version可用于遍历网络中包含了某种服务的主机，并进一步确定服务的版本。<br>2、[service_name]_login可对于某种服务进行口令探测攻击。</p>
+</blockquote>
+<p>在MSF终端中，可以输入search name:_version命令查看所有可用的服务查点模块。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a704d0e75ae982e9cab39e4f2ffb6c19e6302111/Metasploit/12.jpg" alt="12"></p>
+<p><code>SSH服务扫描</code><br>与telnet不同的是，ssh采用安全的加密信息传输方式。通常管理员会使用ssh对服务器进行远程管理，服务器会向ssh客户端返回一个远程的Shell连接。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/721626d19ef6e241055ddbe78243d436b477c61f/Metasploit/13.jpg" alt="13"></p>
+<p><code>Oracle数据库服务查点</code><br>使用mssql_ping模块查找网络中的Microsoft SQL Server，使用tnslsnr_version模块查找网络中开放端口的Oracle监听器服务。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/721626d19ef6e241055ddbe78243d436b477c61f/Metasploit/14.jpg" alt="14"></p>
+<p><code>开放代理探测与利用</code><br>避免被对方的入侵监测系统跟踪，需要隐藏自己的身份，最简单和最常见的是使用代理服务器。<br>Metasploit提供了open_proxy模块，能够让你更加方便地获取免费地HTTP代理服务器地址。获取免费开放代理后，就可以在浏览器或者一些支持配置代理地渗透软件中配置代理，这可以在进行渗透测试时隐藏你的真实IP地址。比开放代理更保险地隐藏攻击源方法是利用开放的或自主架设VPN服务，可以自己架设OpenVPN。使用这些VPN可以采用加密方式转发路由你的渗透测试数据包，而无需担心你的攻击发起源被跟踪到。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/721626d19ef6e241055ddbe78243d436b477c61f/Metasploit/15.jpg" alt="15"></p>
+<p>#口令猜测与嗅探<br><code>SSH服务口令猜测</code><br>载入ssh_login模块后，首先需要设置RHOSTS参数指定口令攻击的对象，可以是一个IP地址，或一段IP地址，同样也可以使用CIDR表示的地址区段。然后使用USERNAME参数指定一个用户名(或者使用USER_FILE参数指定一个包含多个用户名的文本文件，每个用户名占一行)，并使用PASSWORD指定一个特定的口令字符串(或者使用PASS_FILE参数指定一个包含多个口令的字典文件，每个口令占一行)，也可以使用USER PASS_FILE指定一个用户名和口令的配对文件(用户名和口令之间用空格隔开，每对用户名和口令占一行)。默认情况下，ssh_login模块还会尝试空口令，以及与用户名相同的弱口令进行登录测试。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/721626d19ef6e241055ddbe78243d436b477c61f/Metasploit/16.jpg" alt="16"></p>
+<p><code>psnuffle口令嗅探</code><br>psnuffle是目前Metasploit中唯一用于口令嗅探的工具，可以使用它截获常见协议的身份认证过程，并将用户名和口令信息记录下来。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/721626d19ef6e241055ddbe78243d436b477c61f/Metasploit/17.jpg" alt="17"></p>
+<p>#网络漏洞扫描<br><code>OpenVAS漏洞扫描器</code><br>可以用来识别远程主机、Web应用存在的各种漏洞，使用NVT脚本对多种远程系统的安全问题进行监测。<br>在kali中安装openVAS，输入命令: <code>apt-get install openvas</code>，安装过程中可能会出现错误，输入<code>openvas-check-setpu</code>查看安装到哪步出错，以及缺少什么东西。<br>配置OpenVAS的过程如下:<br>1、输入以下命令生成OpenVAS运行所需的证书文件，生成证书过程中，系统会询问一些信息，可以按回车键使用其默认值: </p>
+<blockquote>
+<p>root@bt:~# openvas-mkcert -q<br>root@bt:~# openvas-mkcert-client -n om -i</p>
+</blockquote>
+<p>2、升级NVT库: </p>
+<blockquote>
+<p>root@bt:~# openvas-nvt-sync</p>
+</blockquote>
+<p>3、对OpenVAS的扫描引擎进行一些初始化的操作，依次输入如下命令: </p>
+<blockquote>
+<p>root@bt:~# openvassd<br>root@bt:~# openvasmd –migrate<br>root@bt:~# openvasmd –rebuild</p>
+</blockquote>
+<p>4、使用openvasad命令添加一个管理员角色的OpenVAS登录用户: </p>
+<blockquote>
+<p>root@bt:~# openvasad -c ‘add_user’ -n admin -r ‘Admin’<br>Enter password:<br>admain:MESSAGE:2327:2017-12-07 03h37.44 EDT: No rules file provided, the new user will have no restrictions.<br>admin:MESSAGE:2327:2017-12-07 03h37.44 EDT: User admin has been successfully created.</p>
+</blockquote>
+<p>5、在终端输入如下命令启动OpenVAS Scanner: </p>
+<blockquote>
+<p>root@bt:~# openvassd –listen=127.0.0.1 –port=9391<br>All plugins loaded</p>
+</blockquote>
+<p>6、最后启动OpenVAS Manager，在终端中运行如下命令: </p>
+<blockquote>
+<p>root@bt:~# openvasmd –database=/usr/local/var/lib/openvas/mgr/tasks.db –slisten=127.0.0.1 –sport=9391 –listen=0.0.0.0 –port=9390</p>
+</blockquote>
+<p>如果在启动OpenVAS各部件时报错，可以运行以下脚本确认OpenVAS已经安装配置无误，如果脚本运行检测出错误，请按照屏幕提示进行修正。</p>
+<blockquote>
+<p>root@bt:~# /pentest/misc/openvas/openvas-check-setup</p>
+</blockquote>
+<p><code>Nmap扫描漏洞</code><br>如果服务器开启了SMB服务，可以使用Nmap的SMB服务漏洞扫描模块对它进行探测。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/40f45c2251e998b61ef89f35d93a199d4eea86b2/Metasploit/18.jpg" alt="18"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/40f45c2251e998b61ef89f35d93a199d4eea86b2/Metasploit/19.jpg" alt="19"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/java读写文件二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1602,150 +1820,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/RGB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/10/RGB/" itemprop="url">RGB</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T20:26:17+08:00">
-                2017-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/10/RGB/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/10/RGB/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/10/RGB/" class="leancloud_visitors" data-flag-title="RGB">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="built_in">from</span> PIL import Image</div><div class="line">MAX = <span class="number">280</span></div><div class="line">pic = Image.<span class="built_in">new</span>(<span class="string">"RGB"</span>,(MAX, MAX))</div><div class="line"><span class="built_in">file</span> = <span class="built_in">open</span>(<span class="string">"flag.txt"</span>,<span class="string">'r'</span>)</div><div class="line">m = <span class="built_in">file</span>.<span class="built_in">read</span>().<span class="built_in">split</span>(<span class="string">'\n'</span>)</div><div class="line">i=<span class="number">0</span></div><div class="line"><span class="keyword">for</span> y <span class="keyword">in</span> range (<span class="number">0</span>,MAX):</div><div class="line">   <span class="keyword">for</span> x <span class="keyword">in</span> range (<span class="number">0</span>,MAX):</div><div class="line">       <span class="keyword">if</span>(m[i] == <span class="string">'(0, 0, 0)'</span>):</div><div class="line">           pic.putpixel([x,y],(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</div><div class="line">       <span class="keyword">else</span>:</div><div class="line">           pic.putpixel([x,y],(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>))</div><div class="line">       i = i+<span class="number">1</span></div><div class="line">pic.show()</div><div class="line">pic.save(<span class="string">"flag.png"</span>)</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1799,7 +1873,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

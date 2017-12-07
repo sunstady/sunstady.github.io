@@ -295,6 +295,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/RGB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/10/RGB/" itemprop="url">RGB</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T20:26:17+08:00">
+                2017-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/10/RGB/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/10/RGB/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/10/RGB/" class="leancloud_visitors" data-flag-title="RGB">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="built_in">from</span> PIL import Image</div><div class="line">MAX = <span class="number">280</span></div><div class="line">pic = Image.<span class="built_in">new</span>(<span class="string">"RGB"</span>,(MAX, MAX))</div><div class="line"><span class="built_in">file</span> = <span class="built_in">open</span>(<span class="string">"flag.txt"</span>,<span class="string">'r'</span>)</div><div class="line">m = <span class="built_in">file</span>.<span class="built_in">read</span>().<span class="built_in">split</span>(<span class="string">'\n'</span>)</div><div class="line">i=<span class="number">0</span></div><div class="line"><span class="keyword">for</span> y <span class="keyword">in</span> range (<span class="number">0</span>,MAX):</div><div class="line">   <span class="keyword">for</span> x <span class="keyword">in</span> range (<span class="number">0</span>,MAX):</div><div class="line">       <span class="keyword">if</span>(m[i] == <span class="string">'(0, 0, 0)'</span>):</div><div class="line">           pic.putpixel([x,y],(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</div><div class="line">       <span class="keyword">else</span>:</div><div class="line">           pic.putpixel([x,y],(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>))</div><div class="line">       i = i+<span class="number">1</span></div><div class="line">pic.show()</div><div class="line">pic.save(<span class="string">"flag.png"</span>)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/base混合加密/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1696,155 +1840,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/super关键字/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/28/super关键字/" itemprop="url">super关键字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T09:40:22+08:00">
-                2017-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/28/super关键字/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/28/super关键字/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/28/super关键字/" class="leancloud_visitors" data-flag-title="super关键字">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>使用super调用父类的构造方法</code><br>子类不继承父类的构造方法，因此，子类如果想使用父类的构造方法，必须在子类的构造方法中使用，必须使用关键字super来表示，而且super必须是子类构造方法中的<code>头一条</code>语句<br><code>Student5_6.java</code><br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> Student5_6 &#123;</div><div class="line">	<span class="built_in">int</span> <span class="keyword">number</span>;</div><div class="line">	String <span class="keyword">name</span>;</div><div class="line">	Student5_6()&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	Student5_6(<span class="built_in">int</span> <span class="keyword">number</span>, String <span class="keyword">name</span>)&#123;</div><div class="line">		this.<span class="keyword">number</span>= <span class="keyword">number</span>;</div><div class="line">		this.<span class="keyword">name</span>= <span class="keyword">name</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="built_in">int</span> getNumber()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">number</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> String getName() &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">name</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>UniverStudent.java</code><br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">UniverStudent</span> <span class="keyword">extends</span> <span class="title">Student5_6</span> </span>&#123;</div><div class="line">	boolean isNarriage;<span class="comment">//子类新增的结婚属性</span></div><div class="line">	<span class="type">UniverStudent</span>(int number, <span class="type">String</span> name, boolean v)&#123;</div><div class="line">		<span class="keyword">super</span>(number, name);<span class="comment">//调用父类的构造方法</span></div><div class="line">	&#125;</div><div class="line">	public boolean getIsNarriage()&#123;</div><div class="line">		<span class="keyword">return</span> isNarriage;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Example5_6.java</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_6</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		UniverStudent zhangStudent= <span class="keyword">new</span> UniverStudent(<span class="number">20111</span>, <span class="string">"张三"</span>, <span class="literal">false</span>);</div><div class="line">		<span class="keyword">int</span> number= zhangStudent.getNumber();</div><div class="line">		String name= zhangStudent.getName();</div><div class="line">		boolean marriage= zhangStudent.getIsNarriage();</div><div class="line">		System.<span class="keyword">out</span>.println(name+ <span class="string">"的学号是: "</span>+ number);</div><div class="line">		<span class="keyword">if</span>(marriage== <span class="literal">true</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(name+ <span class="string">"已婚"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			System.<span class="keyword">out</span>.println(name+ <span class="string">"未婚"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>使用super操作被隐藏的成员变量和方法</code><br>如果在子类中想使用被子类隐藏的成员变量或方法，可以使用关键字super，super.x、super.play()，就是访问和调用被子类隐藏的成员变量x和方法play()<br><code>Sum.java</code><br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sum</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">double</span> f()&#123;</div><div class="line">		<span class="keyword">double</span> <span class="keyword">sum</span>= <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">1</span>; i&lt;= n;i++)&#123;</div><div class="line">			<span class="keyword">sum</span>= <span class="keyword">sum</span>+ i;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">sum</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Average.java</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Average</span> <span class="keyword">extends</span> <span class="title">Sum</span> </span>&#123;</div><div class="line">	<span class="keyword">double</span> nm;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">fq</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">double</span> c;</div><div class="line">		<span class="keyword">super</span>.n= (<span class="keyword">int</span>)nm;</div><div class="line">		c= <span class="keyword">super</span>.f();</div><div class="line">		<span class="keyword">return</span> c+ nm;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">g</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">double</span> c;</div><div class="line">		c= <span class="keyword">super</span>.f();</div><div class="line">		<span class="keyword">return</span> c- nm;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Example5_7.java</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_7</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		Average average= <span class="keyword">new</span> Average();</div><div class="line">		average.nm= <span class="number">100.5678</span>;</div><div class="line">		<span class="keyword">double</span> result1= average.fq();</div><div class="line">		<span class="keyword">double</span> result2= average.g();</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"result1= "</span>+ result1);</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"result2= "</span>+ result2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1898,7 +1893,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
