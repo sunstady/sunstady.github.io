@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-08T02:50:17.874Z</updated>
+  <updated>2017-12-12T12:41:31.117Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OS填空题</title>
+    <link href="http://yoursite.com/2017/12/12/OS%E5%A1%AB%E7%A9%BA%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/12/12/OS填空题/</id>
+    <published>2017-12-12T12:40:54.000Z</published>
+    <updated>2017-12-12T12:41:31.117Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">影响文件安全的主要因素:</span> `认为因素`, `系统因素`, `自然因素`。</div><div class="line"><span class="symbol">程序执行时呈现出局部性规律:</span> `时间局限性`, `空间局限性`。</div><div class="line"><span class="symbol">操作系统的主要功能有:</span> `处理机管理`, `存储器管理`, `设备管理`, `文件管理`, `用户接口`。</div><div class="line"><span class="symbol">解决通道“瓶颈”问题最有效的方法是增加设备到主机间的:</span> `通路`。</div><div class="line"><span class="symbol">进程三种基本状态:</span> `就绪状态`, `执行状态`, `阻塞状态`。</div><div class="line"><span class="symbol">目录管理的主要功能:</span> `实现按名存取`, `提高检索速度`, `文件共享`, `允许文件重名`。</div><div class="line"><span class="symbol">在操作系统中，实现进程同步的机制有:</span> `信号量机制`, `管程机制`。</div><div class="line"><span class="symbol">进程同步机制应遵循的准则:</span> `空闲让进`, `忙则等待`, `有限等待`, `让权等待`。</div><div class="line"><span class="symbol">抢占式进程调度方式基于的主要原则有:</span> `优先权原则`, `短进程优先原则`, `时间片原则`。</div><div class="line"><span class="symbol">请求分页系统的主要硬件支持有:</span> `请求分页页表机制`, `缺页中断机构`, `地址变换机构`。</div><div class="line"><span class="symbol">通常采用解除死锁的两种方法是:</span> `剥夺资源`, `撤销进程`。</div><div class="line"><span class="symbol">设备分配中的主要数据结构(英文缩写):</span> `DCT`, `COCT`, `CHCT`, `SDT`。</div><div class="line"><span class="symbol">进程、文件、线程在系统中是否存在的唯一标志(英文缩写):</span> `PCB`, `FCB`, `TCB`。</div><div class="line"><span class="symbol">产生进程死锁的必要条件:</span> `互斥条件`, `请求和保持条件`, `不剥夺条件`, `环路等待条件`。</div><div class="line"><span class="symbol">目前比较流行的操作系统(实例):</span> `Windows`, `UNIX`, `Linux`。</div><div class="line"><span class="symbol">操作系统的基本特征:</span> `并发性`, `共享性`, `虚拟性`, `异步性`。</div><div class="line"><span class="symbol">操作系统的基本类型:</span> `批处理系统`, `分时系统`, `实时系统`。</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight autohotkey&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="OS" scheme="http://yoursite.com/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>隐写之图片隐藏</title>
@@ -630,29 +651,6 @@
 &lt;p&gt;mysql -u root -p 回车后输入密码&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;co
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>修改MySQL密码</title>
-    <link href="http://yoursite.com/2017/10/27/%E4%BF%AE%E6%94%B9MySQL%E5%AF%86%E7%A0%81/"/>
-    <id>http://yoursite.com/2017/10/27/修改MySQL密码/</id>
-    <published>2017-10-27T12:46:46.000Z</published>
-    <updated>2017-10-27T12:51:25.760Z</updated>
-    
-    <content type="html"><![CDATA[<p>在DOS下执行：<code>mysql -u root -p</code><br>然后输入旧的密码，如果是第一次进入，则直接回车<br>mysql&gt;<code>show databases;</code><br>mysql&gt;<code>use mysql;</code><br>注意一定先执行<code>use mysql;</code>再执行下面命令设置密码，如新密码123456<br>mysql&gt;<code>UPDATE user SET password=PASSWORD(&#39;123456&#39;) WHERE user=&#39;root&#39;;</code><br>mysql&gt;<code>FLUSH PRIVILEGES;</code><br>mysql&gt;<code>exit;</code></p>
-<p>附上常用mysql命令(win8.1以管理员身份执行win+x+a):<br>安装mysql服务：<code>mysqld -install</code><br>卸载mysql服务：<code>mysqld -remove</code><br>启动mysql服务：<code>net start mysql</code><br>停止mysql服务：<code>net stop mysql</code></p>
-<p>如果启动mysql服务出现1067错误码<br>尝试清理<code>datadir</code>目录下的以下文件：<code>auto.cnf</code>、<code>Cryhelyxx-pc.err</code>、<code>Cryhelyxx-pc.pid</code>、<code>ib_logfile0</code>、<code>ib_logfile1</code>、<code>ibdata1</code>、<code>ibtmp1</code><br>注意：在清理之前请备份好数据库，否则后果自负，并再次启动mysql服务：<code>net start mysql</code>。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在DOS下执行：&lt;code&gt;mysql -u root -p&lt;/code&gt;&lt;br&gt;然后输入旧的密码，如果是第一次进入，则直接回车&lt;br&gt;mysql&amp;gt;&lt;code&gt;show databases;&lt;/code&gt;&lt;br&gt;mysql&amp;gt;&lt;code&gt;use mysql;&lt;/c
     
     </summary>
     
