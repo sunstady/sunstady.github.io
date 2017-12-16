@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2017-12-16T09:29:02.484Z</updated>
+  <updated>2017-12-13T12:56:03.207Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -14,26 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>您好</title>
-    <link href="http://sunstady.github.io/2017/12/16/%E6%82%A8%E5%A5%BD/"/>
-    <id>http://sunstady.github.io/2017/12/16/您好/</id>
-    <published>2017-12-16T09:28:45.000Z</published>
-    <updated>2017-12-16T09:29:02.484Z</updated>
-    
-    <content type="html"><![CDATA[<p>dsfas</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;dsfas&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Four_or_six</title>
@@ -552,6 +532,51 @@
     
     
       <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>txt文件导入MySQL</title>
+    <link href="http://sunstady.github.io/2017/10/28/txt%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/"/>
+    <id>http://sunstady.github.io/2017/10/28/txt文件导入MySQL/</id>
+    <published>2017-10-28T10:26:37.000Z</published>
+    <updated>2017-10-28T10:40:26.396Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>创建数据表</code></p>
+<blockquote>
+<p>CRETE TABLE tes(<br>NAME VARCHAR(20) NULL,<br>SEX VARCHAR(5) NULL,<br>STUDENTID INT(20) NULL);</p>
+</blockquote>
+<p><code>txt文件中的内容如下</code></p>
+<blockquote>
+<p>你好    男  123<br>世界    女  456<br>啦啦啦  男  485</p>
+</blockquote>
+<p>中间空格部分是<code>TAB</code>键, 保存为UTF-8编码.<br><code>导入txt文件</code></p>
+<blockquote>
+<p>load data local infile ‘C:/文件名.txt’ into table 数据表名;</p>
+</blockquote>
+<p>如果第一行开头出现特殊符号，我的解决方法是在第一行中增加一行可以删去的信息，等导入数据库后，<code>DELETE FROM 数据库表 WHERE 字段=&#39;字段对应的唯一信息&#39;;</code>删除第一行就行。<br>但这只是治标不治本，希望大家能提出宝贵的建议，共同学习。</p>
+<p><code>导入数据库到MySQL</code></p>
+<blockquote>
+<p>mysql -u root -p &lt; 数据库文件名</p>
+</blockquote>
+<p>回车后输入数据库密码，即可导入成功。</p>
+<p><code>导出数据库</code></p>
+<blockquote>
+<p>mysqldump -u  root -p 数据库名 &gt; 要保存的数据库文件名</p>
+</blockquote>
+<p>回车后输入数据库密码，导出的数据库在当前目录。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;创建数据表&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CRETE TABLE tes(&lt;br&gt;NAME VARCHAR(20) NULL,&lt;br&gt;SEX VARCHAR(5) NULL,&lt;br&gt;STUDENTID INT(20) NULL);&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://sunstady.github.io/tags/MySQL/"/>
     
   </entry>
   
