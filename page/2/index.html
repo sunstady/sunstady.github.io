@@ -311,6 +311,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/28/Java解决Base64包问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/28/Java解决Base64包问题/" itemprop="url">Java解决Base64包问题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-28T21:28:09+08:00">
+                2017-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/28/Java解决Base64包问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/28/Java解决Base64包问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/28/Java解决Base64包问题/" class="leancloud_visitors" data-flag-title="Java解决Base64包问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>java中使用AES对数据进行加解密<br><code>算法模式：ECB 密钥 
+长度：128bits 16位长 
+偏移量： 默认 
+补码方式：PKCS5Padding 
+解密串编码方式：base64</code><br>密钥为16位长度的字符串<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 使用参数中的密钥加密</span></div><div class="line"><span class="comment"> * @param 明文</span></div><div class="line"><span class="comment"> * @param 密钥</span></div><div class="line"><span class="comment"> * @return 密文</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> Encrypt(<span class="keyword">String</span> sSrc, <span class="keyword">String</span> sKey) &#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (sKey == <span class="keyword">null</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key为空null"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 判断Key是否为16位</span></div><div class="line">        <span class="keyword">if</span> (sKey.length() != <span class="number">16</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key长度不是16位"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">byte</span>[] raw = sKey.getBytes(<span class="string">"utf-8"</span>);</div><div class="line">        SecretKeySpec skeySpec = <span class="keyword">new</span> SecretKeySpec(raw, <span class="string">"AES"</span>);</div><div class="line">        Cipher cipher = Cipher.getInstance(<span class="string">"AES/ECB/PKCS5Padding"</span>);<span class="comment">//"算法/模式/补码方式"</span></div><div class="line">        cipher.init(Cipher.ENCRYPT_MODE, skeySpec);</div><div class="line">        <span class="built_in">byte</span>[] encrypted = cipher.doFinal(sSrc.getBytes(<span class="string">"utf-8"</span>));</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Base64().encodeToString(encrypted);<span class="comment">//此处使用BASE64做转码功能，同时能起到2次加密的作用。</span></div><div class="line">    &#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 使用参数中的密钥解密</span></div><div class="line"><span class="comment"> * @param 密文</span></div><div class="line"><span class="comment"> * @param 密钥</span></div><div class="line"><span class="comment"> * @return 明文</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> Decrypt(<span class="keyword">String</span> sSrc, <span class="keyword">String</span> sKey) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">// 判断Key是否正确</span></div><div class="line">        <span class="keyword">if</span> (sKey == <span class="keyword">null</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key为空null"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 判断Key是否为16位</span></div><div class="line">        <span class="keyword">if</span> (sKey.length() != <span class="number">16</span>) &#123;</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="string">"Key长度不是16位"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">byte</span>[] raw = sKey.getBytes(<span class="string">"utf-8"</span>);</div><div class="line">        SecretKeySpec skeySpec = <span class="keyword">new</span> SecretKeySpec(raw, <span class="string">"AES"</span>);</div><div class="line">        Cipher cipher = Cipher.getInstance(<span class="string">"AES/ECB/PKCS5Padding"</span>);</div><div class="line">        cipher.init(Cipher.DECRYPT_MODE, skeySpec);</div><div class="line">        <span class="built_in">byte</span>[] encrypted1 = <span class="keyword">new</span> Base64().decode(sSrc);<span class="comment">//先用base64解密</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="built_in">byte</span>[] original = cipher.doFinal(encrypted1);</div><div class="line">            <span class="keyword">String</span> originalString = <span class="keyword">new</span> <span class="keyword">String</span>(original,<span class="string">"utf-8"</span>);</div><div class="line">            <span class="keyword">return</span> originalString;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.<span class="built_in">println</span>(e.toString());</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">        System.out.<span class="built_in">println</span>(ex.toString());</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">测试方法</div><div class="line"><span class="keyword">String</span> password = <span class="string">"ABCDEFGHIJKLMNOP"</span>;</div><div class="line"><span class="keyword">String</span> content1 = <span class="string">"我的博客名是geekfly"</span>;</div><div class="line">System.out.<span class="built_in">println</span>(<span class="string">"加密前："</span> + content1);  </div><div class="line"><span class="keyword">String</span> content2 = Encrypt(content1, password);</div><div class="line">System.out.<span class="built_in">println</span>(<span class="string">"加密后："</span> + content2);</div><div class="line"><span class="keyword">String</span> content3 = Decrypt(content2, password);</div><div class="line">System.out.<span class="built_in">println</span>(<span class="string">"解密后："</span> + content3);</div></pre></td></tr></table></figure>
+<p>在这个过程中出现个问题，<code>base64 cannot be resolved to a type</code>,<br>问题显示: <code>The import org.apache cannot be resolved</code>.<br>解决方法: 去 <a href="http://hc.apache.org/downloads.cgi" target="_blank" rel="external">http://hc.apache.org/downloads.cgi</a> 下载， <code>HttpClient4.5.3.zip</code>, 解压后得到<code>\httpcomponents-client-4.5.3\lib</code>, 里面有很多jar包<img src="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/1.jpg" alt="jar"><br>加进来<img src="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/2.jpg" alt="jar"><br>这样就好了！<img src="https://raw.githubusercontent.com/sunstady/hexo/b6fc09a76883f5f28ca0c3bb665b9e130d4511d9/base64/3.jpg" alt="jar"><br>总结下：org.apache, 不是标准的java中的库。所以eclipse中，无法自动识别。<br>org.apache下包括了一堆相关的库，此处用到的是org.apache.http, 所以：需要找到对应的org.apache.http相关的jar包，然后加到当前的项目中。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/28/Java获取本机外网IP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1601,162 +1752,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/10/29/Java连接MySQL数据库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/29/Java连接MySQL数据库/" itemprop="url">Java连接MySQL数据库</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T15:45:51+08:00">
-                2017-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/29/Java连接MySQL数据库/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/29/Java连接MySQL数据库/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/29/Java连接MySQL数据库/" class="leancloud_visitors" data-flag-title="Java连接MySQL数据库">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>工具：<br>eclipse<br>MySQL5.5<br>MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar</p>
-</blockquote>
-<p>Java编译器是eclipse，下载<code>mysql-connector-java-5.1.44-bin.jar</code>，我下的是最新版。<br>加载驱动：<br>1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：<img src="https://raw.githubusercontent.com/sunstady/hexo/d27213020770dfd56fd073dc33909d63192befa4/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg" alt="lib"><br>2、右键工程名，点击Properties <img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/2.jpg" alt="properties"><br>选择Java Build Path中的Libraries，点击Add JARs…, 选择刚才添加的JDBC，如下图:<img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/3.jpg" alt="JDBC"><br>3、配置好MySQL，添加一个用户，用户名是style,密码是1234,  创建一个数据库, 数据库名是student。创建表：</p>
-<blockquote>
-<p>create table students(<br>    -&gt; sno int(10) not null,<br>    -&gt; sname varchar(8) not null,<br>    -&gt; sex char(2) not null,<br>    -&gt; bdate date not null,<br>    -&gt; height dec(5,2) default 000.00,<br>    -&gt; primary key(sno));</p>
-</blockquote>
-<p>然后插入一条数据：</p>
-<blockquote>
-<p>insert into students(sno,sname,sex,bdate,height) values(‘1’,’gfa’,’男’,’2017-10-29’,’fwef’);</p>
-</blockquote>
-<p>创建好数据库后, 编写Java文件来访问MySQL数据库。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> sqldemo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> class mains &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        <span class="comment">//声明Connection对象</span></div><div class="line">        Connection con;</div><div class="line">        <span class="comment">//驱动程序名</span></div><div class="line">        <span class="keyword">String</span> driver = <span class="string">"com.mysql.jdbc.Driver"</span>;</div><div class="line">        <span class="comment">//URL指向要访问的数据库名student</span></div><div class="line">        <span class="keyword">String</span> url = <span class="string">"jdbc:mysql://localhost:3306/student"</span>;</div><div class="line">        <span class="comment">//MySQL配置时的用户名</span></div><div class="line">        <span class="keyword">String</span> user = <span class="string">"style"</span>;</div><div class="line">        <span class="comment">//MySQL配置时的密码</span></div><div class="line">        <span class="keyword">String</span> password = <span class="string">"1234"</span>;</div><div class="line">        <span class="comment">//遍历查询结果集</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//加载驱动程序</span></div><div class="line">            Class.forName(driver);</div><div class="line">            <span class="comment">//1.getConnection()方法，连接MySQL数据库！！</span></div><div class="line">            con = DriverManager.getConnection(url,user,password);</div><div class="line">            <span class="keyword">if</span>(!con.isClosed())</div><div class="line">                System.out.<span class="built_in">println</span>(<span class="string">"Succeeded connecting to the Database!"</span>);</div><div class="line">            <span class="comment">//2.创建statement类对象，用来执行SQL语句！！</span></div><div class="line">            Statement statement = con.createStatement();</div><div class="line">            <span class="comment">//要执行的SQL语句</span></div><div class="line">            <span class="keyword">String</span> sql = <span class="string">"select * from students"</span>;</div><div class="line">            <span class="comment">//3.ResultSet类，用来存放获取的结果集！！</span></div><div class="line">            ResultSet rs = statement.executeQuery(sql);</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"执行结果如下所示:"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"姓名"</span> + <span class="string">"\t"</span> + <span class="string">"性别"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);  </div><div class="line">             </div><div class="line">            <span class="keyword">String</span> job = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">String</span> id = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">while</span>(rs.next())&#123;</div><div class="line">                <span class="comment">//获取stuname这列数据</span></div><div class="line">                job = rs.getString(<span class="string">"sname"</span>);</div><div class="line">                <span class="comment">//获取stuid这列数据</span></div><div class="line">                id = rs.getString(<span class="string">"sex"</span>);</div><div class="line">                <span class="comment">//输出结果</span></div><div class="line">                System.out.<span class="built_in">println</span>(job + <span class="string">"\t"</span> + id);</div><div class="line">            &#125;</div><div class="line">            rs.close();</div><div class="line">            con.close();</div><div class="line">        &#125; <span class="keyword">catch</span>(ClassNotFoundException e) &#123;   </div><div class="line">            <span class="comment">//数据库驱动类异常处理</span></div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"Sorry,can`t find the Driver!"</span>);   </div><div class="line">            e.printStackTrace();   </div><div class="line">            &#125; <span class="keyword">catch</span>(SQLException e) &#123;</div><div class="line">            <span class="comment">//数据库连接失败异常处理</span></div><div class="line">            e.printStackTrace();  </div><div class="line">            &#125;<span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            <span class="comment">// <span class="doctag">TODO:</span> handle exception</span></div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;<span class="keyword">finally</span>&#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"数据库数据获取成功！"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>运行结果如图所示：<br><img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/4.jpg" alt="结果"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1810,7 +1805,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
