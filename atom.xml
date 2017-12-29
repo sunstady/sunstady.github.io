@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2017-12-13T12:56:03.207Z</updated>
+  <updated>2017-12-29T12:02:33.332Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>银行管理系统</title>
+    <link href="http://sunstady.github.io/2017/12/29/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://sunstady.github.io/2017/12/29/银行管理系统/</id>
+    <published>2017-12-29T12:01:23.000Z</published>
+    <updated>2017-12-29T12:02:33.332Z</updated>
+    
+    <content type="html"><![CDATA[<p>此次的项目是银行管理系统，要求连接数据库，在此记录下。</p>
+<p>##总界面<br>在此界面除了开户和退出两个功能能实现外，其它功能都需要登录后才能使用。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/1.png" alt="总界面"></p>
+<p>##开户界面<br>此界面需要用户输入个人信息来进行开户操作，用户输入的信息将会保存到数据库中。开户成功后系统会反馈一个开户账号。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/2.png" alt="开户界面"><br>这个账号是使用的<code>System.currentTimeMillis()</code>产生一个当前的毫秒，这个毫秒其实就是自1970年1月1日0时起的毫秒数。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/3.png" alt="开户账号"></p>
+<p>##登录界面<br>此界面需要用户输入开户的账号和密码，系统会从数据库中读取信息与之比对，无误则成功登录。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/4.png" alt="登录界面"></p>
+<p>##存款界面<br>此界面需要用户输入存款金额，完成后系统会显示当前账号的余额。此操作记录将会存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/4.png" alt="存款界面"></p>
+<p>##取款界面<br>此界面需要用户输入取款金额，完成后系统会显示当前账号的余额。此操作记录将会保存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/6.png" alt="取款界面"></p>
+<p>##转账界面<br>此界面需要用户输入对方的账号和转账金额，完成后系统会显示当前账号的余额。此操作记录将会保存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/7.png" alt="转账界面"></p>
+<p>##销户界面<br>进入此界面，系统会判断账户余额是否为零，如果不是，不能销户。用户将余额取出，销户完成。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/8.png" alt="销户界面"></p>
+<p>##修改密码界面<br>用户需要输入两次相同的六位数字或字母密码，此操作记录将会保存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/10.png" alt="修改密码界面"></p>
+<p>##查看个人信息界面<br>此界面将会显示查询到的当前账户的信息包括账号，姓名，性别，身份证号，联系电话以及开户时间。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/9.png" alt="查看个人信息界面"><br><a href="http://download.csdn.net/download/sanstyle/10180777" target="_blank" rel="external">源码下载链接</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此次的项目是银行管理系统，要求连接数据库，在此记录下。&lt;/p&gt;
+&lt;p&gt;##总界面&lt;br&gt;在此界面除了开户和退出两个功能能实现外，其它功能都需要登录后才能使用。&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sunstady/h
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
+    
+      <category term="MySQL" scheme="http://sunstady.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Four_or_six</title>
@@ -532,51 +565,6 @@
     
     
       <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>txt文件导入MySQL</title>
-    <link href="http://sunstady.github.io/2017/10/28/txt%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5MySQL/"/>
-    <id>http://sunstady.github.io/2017/10/28/txt文件导入MySQL/</id>
-    <published>2017-10-28T10:26:37.000Z</published>
-    <updated>2017-10-28T10:40:26.396Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>创建数据表</code></p>
-<blockquote>
-<p>CRETE TABLE tes(<br>NAME VARCHAR(20) NULL,<br>SEX VARCHAR(5) NULL,<br>STUDENTID INT(20) NULL);</p>
-</blockquote>
-<p><code>txt文件中的内容如下</code></p>
-<blockquote>
-<p>你好    男  123<br>世界    女  456<br>啦啦啦  男  485</p>
-</blockquote>
-<p>中间空格部分是<code>TAB</code>键, 保存为UTF-8编码.<br><code>导入txt文件</code></p>
-<blockquote>
-<p>load data local infile ‘C:/文件名.txt’ into table 数据表名;</p>
-</blockquote>
-<p>如果第一行开头出现特殊符号，我的解决方法是在第一行中增加一行可以删去的信息，等导入数据库后，<code>DELETE FROM 数据库表 WHERE 字段=&#39;字段对应的唯一信息&#39;;</code>删除第一行就行。<br>但这只是治标不治本，希望大家能提出宝贵的建议，共同学习。</p>
-<p><code>导入数据库到MySQL</code></p>
-<blockquote>
-<p>mysql -u root -p &lt; 数据库文件名</p>
-</blockquote>
-<p>回车后输入数据库密码，即可导入成功。</p>
-<p><code>导出数据库</code></p>
-<blockquote>
-<p>mysqldump -u  root -p 数据库名 &gt; 要保存的数据库文件名</p>
-</blockquote>
-<p>回车后输入数据库密码，导出的数据库在当前目录。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;创建数据表&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CRETE TABLE tes(&lt;br&gt;NAME VARCHAR(20) NULL,&lt;br&gt;SEX VARCHAR(5) NULL,&lt;br&gt;STUDENTID INT(20) NULL);&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://sunstady.github.io/tags/MySQL/"/>
     
   </entry>
   
