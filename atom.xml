@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2017-12-31T12:52:48.717Z</updated>
+  <updated>2017-12-31T13:00:26.790Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java知识点一</title>
+    <link href="http://sunstady.github.io/2017/12/31/Java%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80/"/>
+    <id>http://sunstady.github.io/2017/12/31/Java知识点一/</id>
+    <published>2017-12-31T12:59:54.000Z</published>
+    <updated>2017-12-31T13:00:26.790Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、面向对象的特征有哪些方面</p>
+<blockquote>
+<p>1、抽象：抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。<br>抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。<br>抽象包括两个方面，一是过程抽象，二是数据抽象。</p>
+<p>2、继承：继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。<br>对象的一个新类可以从现有的类中派生，这个过程称为类继承。<br>新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）。<br>派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。</p>
+<p>3、封装：封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。<br>面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。</p>
+<p>4、多态性：多态性是指允许不同类的对象对同一消息作出响应。<br>多态性包括参数化多态性和包含多态性。<br>多态性语言具有灵活、抽象、行为共享、代码共享的优势，很好的解决了应用程序函数同名问题。</p>
+</blockquote>
+<p>2、什么是接口？写出接口与抽象类的区别。</p>
+<blockquote>
+<p>接口是你在写程序时所有方法的一个声明，只设计，无实现。<br>区别：<br>1、都没有方法体<br>2、通过接口可以支持多重继承，抽象类不支持<br>3、抽象类可以包含已经实现的方法而接口不可以</p>
+</blockquote>
+<p>3、写出String和StringBuffer的区别，int和Integer有什么区别。</p>
+<blockquote>
+<p>String类创建的对象不可修改，StringBuffer创建的的对象是内存空间可以改变的大小的，可以调用append方法追加到字符串序列;<br>Int是java的原始数据类型，Integer是java为int提供的封装类,引用数据类型。</p>
+</blockquote>
+<p>4、sleep() 和 wait() 有什么区别?sleep()不释放同步锁,wait()释放同步锁。</p>
+<blockquote>
+<p>sleep方法是Thread类的静态方法,线程在占用CPU资源期间，通过调用Sleep方法来使自己放CPU资源，休眠一段时间。<br>wait是object类的方法，可以中断方法的执行，使本线程等待，暂时让出cpu的使用权，并允许其他线程使用这个同步方法。</p>
+</blockquote>
+<p>5、简述线程的生命周期</p>
+<blockquote>
+<p>新建、运行、中断、死亡</p>
+</blockquote>
+<p>6、举例说明如何获取当前的年月日，时分秒以及从1970年到现在的毫秒数。<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Date</span> nowtime=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">System</span>.out.println(nowtime);</div><div class="line"></div><div class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</div><div class="line">  <span class="built_in">Date</span> currentTime=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  <span class="built_in">Date</span> beginTime=sdf.<span class="built_in">parse</span>(<span class="string">"1970-01-01 12:53:30"</span>);</div><div class="line">  long interval=(currentTime.getTime()-beginTime.getTime());</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1、面向对象的特征有哪些方面&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、抽象：抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。&lt;br&gt;抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。&lt;br&gt;抽象包括两个方面，一是过
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>窗口程序</title>
@@ -527,27 +573,6 @@
     
     
       <category term="软件" scheme="http://sunstady.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Example5_10</title>
-    <link href="http://sunstady.github.io/2017/10/31/Example5-10/"/>
-    <id>http://sunstady.github.io/2017/10/31/Example5-10/</id>
-    <published>2017-10-31T02:57:00.000Z</published>
-    <updated>2017-10-31T02:57:41.527Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>写一个类，该类有一个方法，public int ff(int a, int b), 该方法返回a 和b 的最大公约数。然后再编写一个该类的子类，要求子类重写方法ff，而且重写的方法将返回a 和b 的最小公约数；要求在重写的方法的方法体中首先调用被隐藏的方法返回a 和b 的最大公约数m ，然后将乘积(a* b)/ m返回；要求在应用的程序的主类中分别使用父类和子类创建对象，并分别调用方法f 计算两个正整数的最大公约数和最小公约数。</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AAb</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(b&lt; a)&#123;</div><div class="line">			<span class="keyword">int</span> temp= <span class="number">0</span>;</div><div class="line">			temp= a;</div><div class="line">			a= b;</div><div class="line">			b= temp;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> r= b% a;</div><div class="line">		<span class="keyword">while</span>(r!= <span class="number">0</span>)&#123;</div><div class="line">			b= a;</div><div class="line">			a= r;</div><div class="line">			r= b% a;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> a;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BBb</span> <span class="keyword">extends</span> <span class="title">AAb</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> division= <span class="keyword">super</span>.f(a, b);</div><div class="line">		<span class="keyword">return</span> (a* b)/ division;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example5_10</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		AAb aAb= <span class="keyword">new</span> AAb();</div><div class="line">		BBb bBb= <span class="keyword">new</span> BBb();</div><div class="line">		System.out.println(<span class="string">"最大公约数: "</span>+ aAb.f(<span class="number">36</span>, <span class="number">24</span>));</div><div class="line">		System.out.println(<span class="string">"最小公倍数: "</span>+ bBb.f(<span class="number">36</span>, <span class="number">24</span>));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;写一个类，该类有一个方法，public int ff(int a, int b), 该方法返回a 和b 的最大公约数。然后再编写一个该类的子类，要求子类重写方法ff，而且重写的方法将返回a 和b 的最小公约数；要求在重写的方法的方法体中首先调用被隐藏的方法返回a
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
     
   </entry>
   
