@@ -311,6 +311,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/09/22/Java中this用法-一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/22/Java中this用法-一/" itemprop="url">Java中this用法(一)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T13:43:02+08:00">
+                2017-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/22/Java中this用法-一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/22/Java中this用法-一/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/22/Java中this用法-一/" class="leancloud_visitors" data-flag-title="Java中this用法(一)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>/*
+作为参数传递
+需要在某些完全分离的类中调用一个方法，并将当前对象的一个引用作为参数传递时
+*/</code></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Demo</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		B b = <span class="keyword">new</span> B(<span class="keyword">new</span> AB());</div><div class="line">		System.<span class="keyword">out</span>.println(b);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> <span class="title">AB</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AB</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">new</span> B(<span class="keyword">this</span>).print();  <span class="comment">// 匿名对象</span></div><div class="line">        <span class="comment">/*匿名对象就是没有名字的对象。</span></div><div class="line"><span class="comment">         * 如果对象只使用一次，就可以作为匿名对象，代码中 new B(this).print(); </span></div><div class="line"><span class="comment">         * 等价于 ( new B(this) ).print();，</span></div><div class="line"><span class="comment">         * 先通过 new B(this) 创建一个没有名字的对象，再调用它的方法。*/</span></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"Hello from A!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> <span class="title">B</span>&#123;</div><div class="line">    AB a;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">B</span>(<span class="params">AB a</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.a = a;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        a.print();</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"Hello from B!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/09/21/判断输入的字符串是否为数字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1607,164 +1755,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/08/31/FengCms上传Webshell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/31/FengCms上传Webshell/" itemprop="url">FengCms上传Webshell</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-31T00:33:40+08:00">
-                2017-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/31/FengCms上传Webshell/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/31/FengCms上传Webshell/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/08/31/FengCms上传Webshell/" class="leancloud_visitors" data-flag-title="FengCms上传Webshell">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天拿一个演示站做测试<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/101.jpg?raw=true" alt="FengCms"></p>
-<p>首页很平常，有一个输入框，可能有注入漏洞。<br>查看源代码后，在最底下有一行注释，提示一些信息，有门！<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/102.jpg?raw=true" alt="information"></p>
-<p>上网搜查下FengCms，发现FengCms是由地方网络工作室完全知识产权打造的一套适用于个人、企业建站的内容管理系统。在这个网页上有相关的漏洞<a href="https://www.seebug.org/appdir/FengCMS" target="_blank" rel="external">https://www.seebug.org/appdir/FengCMS</a><br>这次使用的是任意文件下载漏洞<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/103.jpg?raw=true" alt="任意文件下载"></p>
-<p>通过扫描发现这段PHP代码有明显的漏洞。<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/104.jpg?raw=true" alt="PHP"></p>
-<p>通过找到这个文件名，base64编码后获取文件内容，将其下载到本地。<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/107.jpg?raw=true" alt="本地"></p>
-<p>演示站证明:</p>
-<blockquote>
-<ul>
-<li><a href="http://guf521656.h163.92hezu.org/?controller=down&amp;file=Y29uZmlnLnBocA" target="_blank" rel="external">http://guf521656.h163.92hezu.org/?controller=down&amp;file=Y29uZmlnLnBocA</a></li>
-</ul>
-</blockquote>
-<p>打开后发现MySQL的用户名和密码<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/108.jpg?raw=true" alt="MySQL"></p>
-<p>用nmap扫描到演示站开着3306端口<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/111.jpg?raw=true" alt="3306"></p>
-<p>利用所得的账号密码，进入数据库<br>根据phpinfo.php中，找到的绝对路径<code>/var/www/html</code><br>document_root的值，得到网站的绝对路径<br>利用MySQL上传一句话木马<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/113.jpg?raw=true" alt="一句话"></p>
-<p>就会发现<code>/upload/</code>下多出<code>1.php</code>文件，上传成功<br><img src="https://github.com/sunstady/hexo/blob/master/images/17.8.30/114.jpg?raw=true" alt="1.php"><br>随后可用中国菜刀链接到网站，提取里面的信息~</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1818,7 +1808,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">64</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1914,7 +1904,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

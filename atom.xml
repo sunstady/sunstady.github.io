@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2017-12-31T13:21:26.401Z</updated>
+  <updated>2018-01-15T07:36:12.257Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javax/xml/bind/DatatypeConverter</title>
+    <link href="http://sunstady.github.io/2018/01/15/javax-xml-bind-DatatypeConverter/"/>
+    <id>http://sunstady.github.io/2018/01/15/javax-xml-bind-DatatypeConverter/</id>
+    <published>2018-01-15T07:35:27.000Z</published>
+    <updated>2018-01-15T07:36:12.257Z</updated>
+    
+    <content type="html"><![CDATA[<p>话不多说，上图。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7f76602e9ecba6b36378722b447e72238f15fc24/java%E9%97%AE%E9%A2%98%E4%BA%8C/1.png" alt="NoClassDefFoundError"><br>重装系统后，想调试下实训的代码，发现一样的代码竟然运行不了。后来发现，重装后安装的jdk版本是9.0，并不是完全兼容。<br>看错误提示是<code>java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter</code>。<br>这是因为Java虚拟机在编译时候能找到这个类，而在运行时没能找到这个类。按照错误提示，下载这个类的jar包就行。<br><a href="https://github.com/sunstady/hexo/blob/master/java%E9%97%AE%E9%A2%98%E4%BA%8C/javax.xml.bind.DatatypeConverter.jar" target="_blank" rel="external">jar包下载地址</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;话不多说，上图。&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/sunstady/hexo/7f76602e9ecba6b36378722b447e72238f15fc24/java%E9%97%AE%E9%A2%98%E4%
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>.length和.length()的区别</title>
@@ -556,27 +577,6 @@
     <summary type="html">
     
       &lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;li
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://sunstady.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>base混合加密</title>
-    <link href="http://sunstady.github.io/2017/11/10/base%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86/"/>
-    <id>http://sunstady.github.io/2017/11/10/base混合加密/</id>
-    <published>2017-11-10T12:11:44.000Z</published>
-    <updated>2017-11-10T12:12:16.987Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import base64</div><div class="line"><span class="keyword">file</span> = <span class="keyword">open</span>(<span class="string">'base.txt'</span>,<span class="string">'r'</span>)</div><div class="line"><span class="keyword">st</span> = <span class="keyword">file</span>.<span class="keyword">read</span>()</div><div class="line"><span class="keyword">while</span> True:</div><div class="line">   <span class="keyword">try</span>:</div><div class="line">       <span class="keyword">st</span> = base64.b16decode(<span class="keyword">st</span>)</div><div class="line">   excep<span class="variable">t:</span></div><div class="line">       <span class="keyword">try</span>:</div><div class="line">           <span class="keyword">st</span> = base64.b32decode(<span class="keyword">st</span>)</div><div class="line">       excep<span class="variable">t:</span></div><div class="line">           <span class="keyword">st</span> = base64.b64decode(<span class="keyword">st</span>)</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">st</span>.<span class="keyword">find</span>(<span class="string">'flag'</span>) == <span class="number">0</span>):</div><div class="line">       <span class="keyword">print</span>(<span class="keyword">st</span>)</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;
     
     </summary>
     
