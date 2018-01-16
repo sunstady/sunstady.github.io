@@ -311,6 +311,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/12/08/隐写之图片隐藏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/08/隐写之图片隐藏/" itemprop="url">隐写之图片隐藏</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-08T10:40:17+08:00">
+                2017-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/08/隐写之图片隐藏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/08/隐写之图片隐藏/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/08/隐写之图片隐藏/" class="leancloud_visitors" data-flag-title="隐写之图片隐藏">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在图片中插入其他的文件，例如一段音乐，一段视频，或是某个文件。<br>1、准备一张图片和要隐藏的资料信息<br>比如这里，style准备了一张壁纸和一个txt文件。现在需要将一个文件隐藏在这张图片里。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/1.jpg" alt="1"><br>2、选择需要隐藏的文件，右键压缩成一个rar文件，文件名字可以随便起，在这里style将其压缩成1.rar。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/2.jpg" alt="2"><br>3、新建一个文本文档，名字随便起，style这里将其命名为2.txt,，在里面输入以下代码<code>copy /b 1.jpg+1.rar 222.jpg</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/3.jpg" alt="3"><br>4、接着另存为这个文本文档，重要的是文件类型得是bat类型，也就是批处理命令。style这里命名为2.bat。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/4.jpg" alt="4"><br>5、双击这个bat命令，得到一个最终的文件222.jpg。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/5.jpg" alt="5"><br>6、这个图片打开看的话和正常的图片一样，但是大小与封面图片相比是不一样的，其实这里面包含了刚刚隐藏的那些重要信息。将得到的新的图片的后缀改为rar，然后解压就可得到我们刚刚隐藏的文件。也可以用二进制编辑器查看，发现在后面有个zip的文件头，可以将这个压缩包提取出来，再解压。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/6.jpg" alt="6"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/7.jpg" alt="7"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/12/07/情报搜集技术/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1692,150 +1836,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/10/人生苦短/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/10/人生苦短/" itemprop="url">人生苦短</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T20:53:06+08:00">
-                2017-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/10/人生苦短/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/10/人生苦短/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/10/人生苦短/" class="leancloud_visitors" data-flag-title="人生苦短">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>用Wireshark打开这个流量包<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/1.png" alt="Wireshark"><br>点文件中的导出对象，选HTTP，发现其中有如下文件<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/2.png" alt="flag"><br>在010编辑器中打开，发现flagaa中有压缩包的头部，flagaf中有压缩包的尾部，猜测应该是压缩包分解成aa-af，拼凑一下，导出压缩包<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/3.png" alt="压缩包"><br>解压此压缩包，发现有密码<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/4.png" alt="密码"><br>先尝试用<code>Ziperello</code>爆破下<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/5.png" alt="Ziperello"><br>没有加密文件，发现它是伪加密<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/6.png" alt="ZipCenOp"><br>压缩包打开，得flag<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/7.png" alt="flag"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1889,7 +1889,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-count">66</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
