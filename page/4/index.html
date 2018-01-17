@@ -311,6 +311,225 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/10/28/本地连接腾讯云MySQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/28/本地连接腾讯云MySQL/" itemprop="url">本地连接腾讯云MySQL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-28T11:33:35+08:00">
+                2017-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/28/本地连接腾讯云MySQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/28/本地连接腾讯云MySQL/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/10/28/本地连接腾讯云MySQL/" class="leancloud_visitors" data-flag-title="本地连接腾讯云MySQL">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在腾讯云的MySQL中先新建一个用户，用于远程登录账号。<br>环境是centos7<br><code>登录MySQL</code> </p>
+<blockquote>
+<p>mysql -u root -p 回车后输入密码</p>
+</blockquote>
+<p><code>创建用户</code></p>
+<p>允许本地IP访问localhost</p>
+<blockquote>
+<p>create user ‘style’@’localhost’ identified by ‘123456’;</p>
+</blockquote>
+<p>用户名是<code>style</code>，密码是<code>123456</code>;</p>
+<p><code>允许外网IP访问</code></p>
+<blockquote>
+<p>create user ‘style’@’%’ identified by ‘123456’;</p>
+</blockquote>
+<p><code>刷新授权</code></p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p><code>为用户创建数据库</code></p>
+<p>数据库名是<code>student</code></p>
+<blockquote>
+<p>create database student DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</p>
+</blockquote>
+<p><code>为新用户分配权限</code></p>
+<p>授予用户通过外网IP对于该数据库的全部权限</p>
+<blockquote>
+<p>grant all privileges on <code>student</code>.* to ‘style’@’%’ identified by ‘1234’;</p>
+</blockquote>
+<p>授予用户在本地服务器对该数据库的全部权限</p>
+<blockquote>
+<p>grant all privileges on <code>student</code>.* to ‘style’@’localhost’ identified by ‘1234’;</p>
+</blockquote>
+<p><code>刷新权限</code></p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p><code>退出root重新登录</code></p>
+<blockquote>
+<p>exit</p>
+</blockquote>
+<p>用新账号style重新登录，由于使用的是 % 任意IP连接， 所以需要指定外部访问IP</p>
+<blockquote>
+<p>mysql -h 腾讯云的公网IP -u用户名 -p密码</p>
+</blockquote>
+<p>登录成功！</p>
+<p><code>查询用户权限</code></p>
+<blockquote>
+<p>show grants for style</p>
+</blockquote>
+<p><code>赋予权限</code></p>
+<blockquote>
+<p>grant all privileges on <em>.</em> to ‘style’@’%’ identified by ‘1234’;</p>
+</blockquote>
+<p>授予style用户在所有数据库上的所有权限</p>
+<p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权</p>
+<blockquote>
+<p>revoke all privileges on <em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘style`@’%’ identified by ‘1234’;</p>
+</blockquote>
+<p>甚至还可以指定该用户只能执行select和update命令</p>
+<blockquote>
+<p>grant select, update on student.* to ‘style’@’%’ identified by ‘1234’;</p>
+</blockquote>
+<p>这样一来，再次以<code>style</code>用户登录MySQL，只有<code>student</code>数据库是对其可见的，并且如果你只授权它<code>select</code>权限，那么它就不能执行<code>delete</code>语句</p>
+<p><code>每当调整权限后，通常需要执行以下语句来刷新权限</code></p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p><code>删除创建的用户</code></p>
+<blockquote>
+<p>drop user style@’%’;</p>
+</blockquote>
+<p><code>可用如下命令查看相应用户及对应的host</code></p>
+<blockquote>
+<p>select host, user from user;</p>
+</blockquote>
+<p><code>MarkSown</code>语法用的不是很好，有些符号没有显示，以下图为准<br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="MySQL用户"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/10/27/修改MySQL密码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1616,155 +1835,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/09/23/eclipse快捷键/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/23/eclipse快捷键/" itemprop="url">eclipse快捷键</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T13:55:03+08:00">
-                2017-09-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/23/eclipse快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/23/eclipse快捷键/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/23/eclipse快捷键/" class="leancloud_visitors" data-flag-title="eclipse快捷键">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>eclipse常用快捷键</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Syso+alt+/            快速输出代码</div><div class="line">Ctrl+<span class="built_in">shift</span>+f          快速调整代码格式</div><div class="line">Ctrl+D                快速删除光标所在的行</div><div class="line"><span class="built_in">shift</span>+回车            当输入代码较长的时候换行</div><div class="line">ctrl+F11              运行</div><div class="line">Alt+上下箭头           快速移动光标所在的行代码</div><div class="line">Ctrl+alt+上下箭头      快速复制光标所在行代码</div><div class="line">Alt+/                 快速补全代码</div><div class="line">Ctrl+/                快速添加单行注释</div><div class="line">Ctrl+<span class="built_in">shift</span>+/          添加多行注释</div></pre></td></tr></table></figure>
-<p><code>小常识</code></p>
-<p>打开eclipse，在上方的菜单栏中找到Window<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/101.jpg?raw=true" alt="Window"><br>选中Preferences，点击Java–&gt;Editor–&gt;Content<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/102.jpg?raw=true" alt="Preferences"><br>在红框中输入下面一行字符串，点击OK，退出。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
-<p><code>输入这一串，敲代码的时候可以智能提示</code></p>
-<p><code>包的命名规则</code><br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*<span class="strong">*.*</span><span class="strong">*(对应项目的名字).*</span><span class="strong">*（项目功能）</span></div><div class="line"><span class="strong">com 公司 </span></div><div class="line"><span class="strong">org 组织</span></div><div class="line"><span class="strong">model 模型</span></div><div class="line"><span class="strong">util 工具</span></div><div class="line"><span class="strong">edu 教育</span></div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1818,7 +1888,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1831,7 +1901,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>

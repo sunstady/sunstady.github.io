@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2018-01-17T07:37:20.288Z</updated>
+  <updated>2018-01-17T08:14:29.157Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ie11降级</title>
+    <link href="http://sunstady.github.io/2018/01/17/ie11%E9%99%8D%E7%BA%A7/"/>
+    <id>http://sunstady.github.io/2018/01/17/ie11降级/</id>
+    <published>2018-01-17T08:13:55.000Z</published>
+    <updated>2018-01-17T08:14:29.157Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.ntce.cn/" target="_blank" rel="external">中小学教师资格证考试</a>有点坑…<br>上图<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a39dee29260bcfe92f1110e14775444b564bd1ed/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/1.png" alt="1"><br>说是使用IE6-IE10系列浏览器或“搜狗浏览器(兼容模式)”！对于我这种不太使用IE系列浏览器的人来说，确实有点…<br>下面说下解决方法：<br>打开你的IE<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a39dee29260bcfe92f1110e14775444b564bd1ed/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/2.png" alt="2"><br>按照流程进入到报名系统处<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a39dee29260bcfe92f1110e14775444b564bd1ed/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/7.png" alt="7"><br>发现系统提示<code>使用IE6-IE10系列浏览器或“搜狗浏览器(兼容模式)”！</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/a39dee29260bcfe92f1110e14775444b564bd1ed/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/1.png" alt="1"><br>检查了下发现自家的IE是11，降级就行。<br>在此网页下，点右上角的齿轮，选择F12开发人员工具<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a39dee29260bcfe92f1110e14775444b564bd1ed/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/3.png" alt="3"><br>将<code>文档模式</code>和<code>用户代理字符串</code>改为11以下的就行，比如10<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a39dee29260bcfe92f1110e14775444b564bd1ed/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/4.png" alt="4"><br>然后将上方网址的<code>/memapp/ieNote</code>删除<br><img src="https://raw.githubusercontent.com/sunstady/hexo/e04c57a0ac6edf534a73ea0b78e190e68a3d2cfc/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/8.png" alt="8"><br>再回车，就可以登录了。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/e04c57a0ac6edf534a73ea0b78e190e68a3d2cfc/%E6%95%99%E5%B8%88%E8%B5%84%E6%A0%BC%E8%AF%81/9.png" alt="9"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.ntce.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;中小学教师资格证考试&lt;/a&gt;有点坑…&lt;br&gt;上图&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/suns
+    
+    </summary>
+    
+    
+      <category term="Skill" scheme="http://sunstady.github.io/tags/Skill/"/>
+    
+  </entry>
   
   <entry>
     <title>银行管理系统修改一</title>
@@ -561,28 +582,6 @@
     
     
       <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CLOCK置换算法</title>
-    <link href="http://sunstady.github.io/2017/11/13/CLOCK%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/"/>
-    <id>http://sunstady.github.io/2017/11/13/CLOCK置换算法/</id>
-    <published>2017-11-13T14:33:47.000Z</published>
-    <updated>2017-11-13T14:35:02.644Z</updated>
-    
-    <content type="html"><![CDATA[<p>在请求分页存储管理系统中，若为进程分配的物理块为4，开始执行时内存中没有装入任何页面，若进程依次访问的页面号为：7，1，6，4，6，2，3，0，3，1，0，7，6，0，1，3，6，3，0，7，2，0，5请用CLOCK算法完成作业(低物理地址优先)<br><code>红色代表访问位为1，星号表示替换指针的位置</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/304771c47487cd69f4cb50b569c158cf851fa633/clock/11.png" alt="clock"></p>
-<p>缺页次数: 14次<br>缺页率: 14/23= 60.9%<br>置换次数: 10次<br>依次被置换的页号: 7 1 6 4 2 3 0 1 7 6<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="number">7</span>号页面：进程分配的物理块为<span class="number">4</span>，开始执行的时候没有装入任何页面，当开始访问<span class="number">7</span>号页面的时候，内存中没有该页面号，将页面直接调入内存，低物理地址优先，将页面放入第一个物理块，把访问位置为<span class="number">1.</span></div><div class="line"><span class="number">1</span>、<span class="number">6</span>、<span class="number">4</span>号页面：访问<span class="number">1</span>号页面的时候，内存中没有该页面号，且内存中还有空位，将<span class="number">1</span>、<span class="number">6</span>、<span class="number">4</span>号页面放入内存，把访问位置为<span class="number">1</span>，替换指针指向最高地址的物理块。</div><div class="line"><span class="number">6</span>号页面：访问<span class="number">6</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">2</span>号页面：访问<span class="number">2</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">7</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">1</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">6</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">4</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">1</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">6</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">1</span>号页面：访问<span class="number">1</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">4</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">7</span>号页面：访问<span class="number">7</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">2</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">3</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">9</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">1</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">6</span>号页面：访问<span class="number">6</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">3</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">1</span>号页面：访问<span class="number">1</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">0</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">1</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">7</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">6</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">6</span>号页面：访问<span class="number">6</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">1</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">7</span>号页面：访问<span class="number">7</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">2</span>号页面：访问<span class="number">2</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">7</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">6</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">3</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">0</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">5</span>号页面：访问<span class="number">5</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">6</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在请求分页存储管理系统中，若为进程分配的物理块为4，开始执行时内存中没有装入任何页面，若进程依次访问的页面号为：7，1，6，4，6，2，3，0，3，1，0，7，6，0，1，3，6，3，0，7，2，0，5请用CLOCK算法完成作业(低物理地址优先)&lt;br&gt;&lt;code&gt;红色代表
-    
-    </summary>
-    
-    
-      <category term="OS" scheme="http://sunstady.github.io/tags/OS/"/>
     
   </entry>
   

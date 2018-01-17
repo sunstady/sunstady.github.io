@@ -311,6 +311,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/13/CLOCK置换算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/13/CLOCK置换算法/" itemprop="url">CLOCK置换算法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-13T22:33:47+08:00">
+                2017-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/13/CLOCK置换算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/13/CLOCK置换算法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/13/CLOCK置换算法/" class="leancloud_visitors" data-flag-title="CLOCK置换算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在请求分页存储管理系统中，若为进程分配的物理块为4，开始执行时内存中没有装入任何页面，若进程依次访问的页面号为：7，1，6，4，6，2，3，0，3，1，0，7，6，0，1，3，6，3，0，7，2，0，5请用CLOCK算法完成作业(低物理地址优先)<br><code>红色代表访问位为1，星号表示替换指针的位置</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/304771c47487cd69f4cb50b569c158cf851fa633/clock/11.png" alt="clock"></p>
+<p>缺页次数: 14次<br>缺页率: 14/23= 60.9%<br>置换次数: 10次<br>依次被置换的页号: 7 1 6 4 2 3 0 1 7 6<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="number">7</span>号页面：进程分配的物理块为<span class="number">4</span>，开始执行的时候没有装入任何页面，当开始访问<span class="number">7</span>号页面的时候，内存中没有该页面号，将页面直接调入内存，低物理地址优先，将页面放入第一个物理块，把访问位置为<span class="number">1.</span></div><div class="line"><span class="number">1</span>、<span class="number">6</span>、<span class="number">4</span>号页面：访问<span class="number">1</span>号页面的时候，内存中没有该页面号，且内存中还有空位，将<span class="number">1</span>、<span class="number">6</span>、<span class="number">4</span>号页面放入内存，把访问位置为<span class="number">1</span>，替换指针指向最高地址的物理块。</div><div class="line"><span class="number">6</span>号页面：访问<span class="number">6</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">2</span>号页面：访问<span class="number">2</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">7</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">1</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">6</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">4</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">1</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">6</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">1</span>号页面：访问<span class="number">1</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">4</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">7</span>号页面：访问<span class="number">7</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">2</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">3</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">9</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">1</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">6</span>号页面：访问<span class="number">6</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">3</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">1</span>号页面：访问<span class="number">1</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">0</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">1</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">7</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">6</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">6</span>号页面：访问<span class="number">6</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">3</span>号页面：访问<span class="number">3</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">1</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">7</span>号页面：访问<span class="number">7</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">2</span>号页面：访问<span class="number">2</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">7</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">6</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">3</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会；检查<span class="number">0</span>号页面，访问位为<span class="number">1</span>，将其置为<span class="number">0</span>，暂不换出，给予该页第二次驻留内存的机会。检查到队列的最后一个页面时，访问位仍为<span class="number">1</span>，返回队首检查第一个页面，发现访问位为<span class="number">0</span>，则选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div><div class="line"><span class="number">0</span>号页面：访问<span class="number">0</span>号页面的时候，内存中有，将其访问位置为<span class="number">1</span>，替换指针不动。</div><div class="line"><span class="number">5</span>号页面：访问<span class="number">5</span>号页面的时候，内存中没有，且内存中没有空位，需要替换掉一个页面。将内存中所有的页面链成一个循环队列，从替换指针的下一位开始检查。先检查<span class="number">6</span>号页面，访问位为<span class="number">0</span>，选择此页面替换，访问位置为<span class="number">1</span>，替换指针指向被替换的页面。</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/12/虚拟存储器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1634,225 +1779,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/10/28/本地连接腾讯云MySQL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/28/本地连接腾讯云MySQL/" itemprop="url">本地连接腾讯云MySQL</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-28T11:33:35+08:00">
-                2017-10-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/28/本地连接腾讯云MySQL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/28/本地连接腾讯云MySQL/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/28/本地连接腾讯云MySQL/" class="leancloud_visitors" data-flag-title="本地连接腾讯云MySQL">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在腾讯云的MySQL中先新建一个用户，用于远程登录账号。<br>环境是centos7<br><code>登录MySQL</code> </p>
-<blockquote>
-<p>mysql -u root -p 回车后输入密码</p>
-</blockquote>
-<p><code>创建用户</code></p>
-<p>允许本地IP访问localhost</p>
-<blockquote>
-<p>create user ‘style’@’localhost’ identified by ‘123456’;</p>
-</blockquote>
-<p>用户名是<code>style</code>，密码是<code>123456</code>;</p>
-<p><code>允许外网IP访问</code></p>
-<blockquote>
-<p>create user ‘style’@’%’ identified by ‘123456’;</p>
-</blockquote>
-<p><code>刷新授权</code></p>
-<blockquote>
-<p>flush privileges;</p>
-</blockquote>
-<p><code>为用户创建数据库</code></p>
-<p>数据库名是<code>student</code></p>
-<blockquote>
-<p>create database student DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</p>
-</blockquote>
-<p><code>为新用户分配权限</code></p>
-<p>授予用户通过外网IP对于该数据库的全部权限</p>
-<blockquote>
-<p>grant all privileges on <code>student</code>.* to ‘style’@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>授予用户在本地服务器对该数据库的全部权限</p>
-<blockquote>
-<p>grant all privileges on <code>student</code>.* to ‘style’@’localhost’ identified by ‘1234’;</p>
-</blockquote>
-<p><code>刷新权限</code></p>
-<blockquote>
-<p>flush privileges;</p>
-</blockquote>
-<p><code>退出root重新登录</code></p>
-<blockquote>
-<p>exit</p>
-</blockquote>
-<p>用新账号style重新登录，由于使用的是 % 任意IP连接， 所以需要指定外部访问IP</p>
-<blockquote>
-<p>mysql -h 腾讯云的公网IP -u用户名 -p密码</p>
-</blockquote>
-<p>登录成功！</p>
-<p><code>查询用户权限</code></p>
-<blockquote>
-<p>show grants for style</p>
-</blockquote>
-<p><code>赋予权限</code></p>
-<blockquote>
-<p>grant all privileges on <em>.</em> to ‘style’@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>授予style用户在所有数据库上的所有权限</p>
-<p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权</p>
-<blockquote>
-<p>revoke all privileges on <em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘style`@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>甚至还可以指定该用户只能执行select和update命令</p>
-<blockquote>
-<p>grant select, update on student.* to ‘style’@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>这样一来，再次以<code>style</code>用户登录MySQL，只有<code>student</code>数据库是对其可见的，并且如果你只授权它<code>select</code>权限，那么它就不能执行<code>delete</code>语句</p>
-<p><code>每当调整权限后，通常需要执行以下语句来刷新权限</code></p>
-<blockquote>
-<p>flush privileges;</p>
-</blockquote>
-<p><code>删除创建的用户</code></p>
-<blockquote>
-<p>drop user style@’%’;</p>
-</blockquote>
-<p><code>可用如下命令查看相应用户及对应的host</code></p>
-<blockquote>
-<p>select host, user from user;</p>
-</blockquote>
-<p><code>MarkSown</code>语法用的不是很好，有些符号没有显示，以下图为准<br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="MySQL用户"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1906,7 +1832,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1919,7 +1845,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
