@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2018-01-17T06:31:14.039Z</updated>
+  <updated>2018-01-17T06:40:42.248Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>银行管理系统修改版(一)</title>
-    <link href="http://sunstady.github.io/2018/01/17/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E7%89%88-%E4%B8%80/"/>
-    <id>http://sunstady.github.io/2018/01/17/银行管理系统修改版-一/</id>
-    <published>2018-01-17T06:29:32.000Z</published>
-    <updated>2018-01-17T06:31:14.039Z</updated>
+    <title>银行管理系统修改一</title>
+    <link href="http://sunstady.github.io/2018/01/17/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/"/>
+    <id>http://sunstady.github.io/2018/01/17/银行管理系统修改一/</id>
+    <published>2018-01-17T06:40:05.000Z</published>
+    <updated>2018-01-17T06:40:42.248Z</updated>
     
-    <content type="html"><![CDATA[<p>之前写过一个<a href="https://sunstady.github.io/2017/12/29/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">银行管理系统</a>，现在对它进行了一些完善。<br>增加了主界面的背景图片。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6924acb4bbb611321a9aea89eae0657548cdbcc6/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E7%89%88(%E4%B8%80" alt="1">/1.png)<br>增加了管理员功能<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6924acb4bbb611321a9aea89eae0657548cdbcc6/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E7%89%88(%E4%B8%80" alt="2">/2.png)<br>管理员登陆成功<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6924acb4bbb611321a9aea89eae0657548cdbcc6/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E7%89%88(%E4%B8%80" alt="3">/3.png)<br>管理员界面<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6924acb4bbb611321a9aea89eae0657548cdbcc6/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E7%89%88(%E4%B8%80" alt="4">/4.png)<br>点击查询按钮可以将数据库中的账户信息显示在上方表中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6924acb4bbb611321a9aea89eae0657548cdbcc6/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E7%89%88(%E4%B8%80" alt="5">/5.png)<br>选中一行，可以对一些信息进行修改，比如删除或修改。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6924acb4bbb611321a9aea89eae0657548cdbcc6/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E7%89%88(%E4%B8%80" alt="6">/6.png)</p>
+    <content type="html"><![CDATA[<p>之前写过一个<a href="https://sunstady.github.io/2017/12/29/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">银行管理系统</a>，现在对它进行了一些完善。<br>增加了主界面的背景图片。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/1.png" alt="1"><br>增加了管理员功能<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/2.png" alt="2"><br>管理员登陆成功<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/3.png" alt="3"><br>管理员界面<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/4.png" alt="4"><br>点击查询按钮可以将数据库中的账户信息显示在上方表中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/5.png" alt="5"><br>选中一行，可以对一些信息进行修改，比如删除或修改。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/6.png" alt="6"></p>
 ]]></content>
     
     <summary type="html">
