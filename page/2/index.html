@@ -311,6 +311,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/12/29/银行管理系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/29/银行管理系统/" itemprop="url">银行管理系统</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T20:01:23+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/29/银行管理系统/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/29/银行管理系统/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/29/银行管理系统/" class="leancloud_visitors" data-flag-title="银行管理系统">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>此次的项目是银行管理系统，要求连接数据库，在此记录下。</p>
+<h2 id="总界面"><a href="#总界面" class="headerlink" title="总界面"></a>总界面</h2><p>在此界面除了开户和退出两个功能能实现外，其它功能都需要登录后才能使用。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/1.png" alt="总界面"></p>
+<h2 id="开户界面"><a href="#开户界面" class="headerlink" title="开户界面"></a>开户界面</h2><p>此界面需要用户输入个人信息来进行开户操作，用户输入的信息将会保存到数据库中。开户成功后系统会反馈一个开户账号。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/2.png" alt="开户界面"><br>这个账号是使用的<code>System.currentTimeMillis()</code>产生一个当前的毫秒，这个毫秒其实就是自1970年1月1日0时起的毫秒数。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/3.png" alt="开户账号"></p>
+<h2 id="登录界面"><a href="#登录界面" class="headerlink" title="登录界面"></a>登录界面</h2><p>此界面需要用户输入开户的账号和密码，系统会从数据库中读取信息与之比对，无误则成功登录。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/4.png" alt="登录界面"></p>
+<h2 id="存款界面"><a href="#存款界面" class="headerlink" title="存款界面"></a>存款界面</h2><p>此界面需要用户输入存款金额，完成后系统会显示当前账号的余额。此操作记录将会存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/4.png" alt="存款界面"></p>
+<h2 id="取款界面"><a href="#取款界面" class="headerlink" title="取款界面"></a>取款界面</h2><p>此界面需要用户输入取款金额，完成后系统会显示当前账号的余额。此操作记录将会保存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/6.png" alt="取款界面"></p>
+<h2 id="转账界面"><a href="#转账界面" class="headerlink" title="转账界面"></a>转账界面</h2><p>此界面需要用户输入对方的账号和转账金额，完成后系统会显示当前账号的余额。此操作记录将会保存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/7.png" alt="转账界面"></p>
+<h2 id="销户界面"><a href="#销户界面" class="headerlink" title="销户界面"></a>销户界面</h2><p>进入此界面，系统会判断账户余额是否为零，如果不是，不能销户。用户将余额取出，销户完成。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/8.png" alt="销户界面"></p>
+<h2 id="修改密码界面"><a href="#修改密码界面" class="headerlink" title="修改密码界面"></a>修改密码界面</h2><p>用户需要输入两次相同的六位数字或字母密码，此操作记录将会保存到数据库中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/10.png" alt="修改密码界面"></p>
+<h2 id="查看个人信息界面"><a href="#查看个人信息界面" class="headerlink" title="查看个人信息界面"></a>查看个人信息界面</h2><p>此界面将会显示查询到的当前账户的信息包括账号，姓名，性别，身份证号，联系电话以及开户时间。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7218246af6cd6ff8b84b2543aef07fa9b9fc0c3a/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/9.png" alt="查看个人信息界面"><br><a href="http://download.csdn.net/download/sanstyle/10180777" target="_blank" rel="external">源码</a>可在这里下载。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/12/13/Four-or-six/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1688,150 +1841,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/28/Java获取本机外网IP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/28/Java获取本机外网IP/" itemprop="url">Java获取本机外网IP</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-28T10:25:19+08:00">
-                2017-11-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/28/Java获取本机外网IP/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/28/Java获取本机外网IP/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/28/Java获取本机外网IP/" class="leancloud_visitors" data-flag-title="Java获取本机外网IP">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一种可行的获取方法，是通过http请求从网站中取出ip字段。例如: <a href="http://ip.chinaz.com/" target="_blank" rel="external">http://ip.chinaz.com/</a><br>通过这个网址，加上简单的正则表达式，即可得到<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> getV4IP()&#123;</div><div class="line">	<span class="keyword">String</span> ip = <span class="string">""</span>;</div><div class="line">	<span class="keyword">String</span> chinaz = <span class="string">"http://ip.chinaz.com"</span>;</div><div class="line">	</div><div class="line">	StringBuilder inputLine = <span class="keyword">new</span> <span class="type">StringBuilder</span>();</div><div class="line">	<span class="keyword">String</span> read = <span class="string">""</span>;</div><div class="line">	URL url = <span class="literal">null</span>;</div><div class="line">	HttpURLConnection urlConnection = <span class="literal">null</span>;</div><div class="line">	BufferedReader <span class="keyword">in</span> = <span class="literal">null</span>;</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		url = <span class="keyword">new</span> <span class="type">URL</span>(chinaz);</div><div class="line">		urlConnection = (HttpURLConnection) url.openConnection();</div><div class="line">	    <span class="keyword">in</span> = <span class="keyword">new</span> <span class="type">BufferedReader</span>( <span class="keyword">new</span> <span class="type">InputStreamReader</span>(urlConnection.getInputStream(),<span class="string">"UTF-8"</span>));</div><div class="line">		<span class="keyword">while</span>((read=<span class="keyword">in</span>.readLine())!=<span class="literal">null</span>)&#123;</div><div class="line">			inputLine.append(read+<span class="string">"\r\n"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//System.out.println(inputLine.toString());</span></div><div class="line">	&#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125;finally&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="keyword">in</span>!=<span class="literal">null</span>)&#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">in</span>.close();</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	</div><div class="line">	Pattern p = Pattern.compile(<span class="string">"\\&lt;dd class\\=\"fz24\"&gt;(.*?)\\&lt;\\/dd&gt;"</span>);</div><div class="line">	Matcher m = p.matcher(inputLine.toString());</div><div class="line">	<span class="keyword">if</span>(m.find())&#123;</div><div class="line">		<span class="keyword">String</span> ipstr = m.group(<span class="number">1</span>);</div><div class="line">		ip = ipstr;</div><div class="line">		<span class="comment">//System.out.println(ipstr);</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ip;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1885,7 +1894,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
