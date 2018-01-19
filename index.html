@@ -311,6 +311,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2018/01/20/py基础四之异常处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/20/py基础四之异常处理/" itemprop="url">py基础四之异常处理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T00:51:17+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/20/py基础四之异常处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/20/py基础四之异常处理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/20/py基础四之异常处理/" class="leancloud_visitors" data-flag-title="py基础四之异常处理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="number">1</span> / <span class="number">0</span></div><div class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">    <span class="string">'''异常的父类，可以捕获所有的异常'''</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"0不能被除"</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="string">'''保护不抛出异常的代码'''</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"没有异常"</span></div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">"最后总是要执行我"</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">try：</span></div><div class="line"><span class="string">  code    #需要判断是否会抛出异常的代码，如果没有异常处理，python会直接停止执行程序</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">except:  #这里会捕捉到上面代码中的异常，并根据异常抛出异常处理信息</span></div><div class="line"><span class="string">#except ExceptionName，args：    #同时也可以接受异常名称和参数，针对不同形式的异常做处理</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">  code  #这里执行异常处理的相关代码，打印输出等</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">else：  #如果没有异常则执行else</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">  code  #try部分被正常执行后执行的代码</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">finally：</span></div><div class="line"><span class="string">  code  #退出try语句块总会执行的程序</span></div><div class="line"><span class="string">'''</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2018/01/20/py基础三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1628,155 +1772,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/12/31/窗口程序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/31/窗口程序/" itemprop="url">窗口程序</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-31T20:52:07+08:00">
-                2017-12-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/31/窗口程序/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/31/窗口程序/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/12/31/窗口程序/" class="leancloud_visitors" data-flag-title="窗口程序">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>编写一个程序，生成一个窗口。标题为记事本，有一个文件菜单，正中显示一个TextArea,默认值为“我是TextArea！”。</code><br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.awt.*;</div><div class="line"><span class="keyword">import</span> java.awt.event.*;</div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">WindowJiShiBen</span> <span class="keyword"><span class="keyword">extends</span> <span class="type">Frame</span></span></span></div><div class="line"><span class="class"><span class="keyword"><span class="keyword">implements</span> <span class="type">ActionListener</span></span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">	MenuBar menubar;</div><div class="line">	Menu menu;</div><div class="line">	MenuItem itemExit;</div><div class="line">	MenuItem itemSave;</div><div class="line">	TextArea text1;</div><div class="line">    	FileWriter tofile;</div><div class="line">	BufferedWriter out; </div><div class="line">	FileDialog filedialog_save;</div><div class="line">	WindowJiShiBen(<span class="keyword">String</span> s)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">super</span>(s);</div><div class="line">		</div><div class="line">		text1 =<span class="keyword">new</span> <span class="type">TextArea</span>(<span class="string">"我是TextArea"</span>);</div><div class="line">		menubar =<span class="keyword">new</span> <span class="type">MenuBar</span>();</div><div class="line">		menu =<span class="keyword">new</span> <span class="type">Menu</span>(<span class="string">"文件"</span>);</div><div class="line">		itemExit =<span class="keyword">new</span> <span class="type">MenuItem</span>(<span class="string">"退出"</span>);</div><div class="line">		itemExit.setShortcut(<span class="keyword">new</span> <span class="type">MenuShortcut</span>(KeyEvent.VK_E));</div><div class="line">		itemSave=<span class="keyword">new</span> <span class="type">MenuItem</span>(<span class="string">"保存"</span>);</div><div class="line">		itemSave.setShortcut(<span class="keyword">new</span> <span class="type">MenuShortcut</span>(KeyEvent.VK_S));</div><div class="line">		filedialog_save=<span class="keyword">new</span> <span class="type">FileDialog</span>(<span class="built_in">this</span>,<span class="string">"保存文件话框"</span>,FileDialog.SAVE);</div><div class="line">		menu.add(itemExit);</div><div class="line">		menubar.add(menu);</div><div class="line">		menu.add(itemSave);</div><div class="line">		setMenuBar(menubar);</div><div class="line">		add(text1);</div><div class="line">		itemExit.addActionListener(<span class="built_in">this</span>);</div><div class="line">		itemSave.addActionListener(<span class="built_in">this</span>);</div><div class="line">		setBounds(<span class="number">100</span>,<span class="number">100</span>,<span class="number">150</span>,<span class="number">150</span>);</div><div class="line">		setVisible(<span class="literal">true</span>);</div><div class="line">		validate();</div><div class="line">		filedialog_save.addWindowListener(<span class="keyword">new</span> <span class="type">WindowAdapter</span>()</div><div class="line">                                  &#123;<span class="keyword">public</span> void windowClosing(WindowEvent e)</div><div class="line">                                       &#123;  filedialog_save.setVisible(<span class="literal">false</span>);</div><div class="line">                                       &#125;</div><div class="line">                                  &#125;);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> void actionPerformed(ActionEvent e)</div><div class="line">		&#123;</div><div class="line">		<span class="keyword">if</span>(e.getSource()==itemExit)</div><div class="line">			&#123;System.exit(<span class="number">0</span>);&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(e.getSource()==itemSave)</div><div class="line">			&#123;filedialog_save.setVisible(<span class="literal">true</span>);</div><div class="line">           			<span class="keyword">if</span>(filedialog_save.getFile()!=<span class="literal">null</span>)</div><div class="line">             		 	&#123; <span class="keyword">try</span> &#123;  File file=<span class="keyword">new</span><span class="type"></span></div><div class="line"><span class="type"></span>                       File(filedialog_save.getDirectory(),filedialog_save.getFile());</div><div class="line">                       tofile=<span class="keyword">new</span> <span class="type">FileWriter</span>(file);</div><div class="line">                       out=<span class="keyword">new</span> <span class="type">BufferedWriter</span>(tofile);</div><div class="line">                       out.write(text1.getText(),<span class="number">0</span>,(text1.getText()).length());</div><div class="line">                       out.close();</div><div class="line">                       tofile.close();</div><div class="line">                     &#125;</div><div class="line">                <span class="keyword">catch</span>(IOException e2)&#123;&#125;</div><div class="line">              &#125;</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">jishiben</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span> args[])</div><div class="line">	&#123;</div><div class="line">		WindowJiShiBen win=<span class="keyword">new</span> <span class="type">WindowJiShiBen</span>(<span class="string">"记事本"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1825,7 +1825,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">70</span>
+                <span class="site-state-item-count">71</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
