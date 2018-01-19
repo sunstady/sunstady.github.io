@@ -311,6 +311,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2018/01/20/py基础三/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/20/py基础三/" itemprop="url">py基础三</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T00:38:49+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/20/py基础三/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/20/py基础三/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/20/py基础三/" class="leancloud_visitors" data-flag-title="py基础三">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="comment">#打开一个文件</span></div><div class="line">fo= open(<span class="string">"4.txt"</span>, <span class="string">"r+"</span>)</div><div class="line"><span class="comment">#fo.write( "www.runoob.com!\nVery good site!\n");</span></div><div class="line">str= fo.read(10)</div><div class="line"></div><div class="line"><span class="builtin-name">print</span> <span class="string">"文件名: "</span>, fo.name</div><div class="line"><span class="builtin-name">print</span> <span class="string">"是否已关闭: "</span>, fo.closed</div><div class="line"><span class="builtin-name">print</span> <span class="string">"访问模式: "</span>, fo. mode</div><div class="line"><span class="builtin-name">print</span> <span class="string">"末尾是否强制加空格: "</span>, fo.softspace</div><div class="line"><span class="builtin-name">print</span> <span class="string">"读取的字符串是: "</span>, str</div><div class="line"></div><div class="line">position= fo.tell()</div><div class="line"><span class="builtin-name">print</span> <span class="string">"当前文件位置: "</span>, position</div><div class="line"></div><div class="line">position= fo.seek(0, 0)</div><div class="line">str= fo.read(10)</div><div class="line"><span class="builtin-name">print</span> <span class="string">"重新读取字符串: "</span>, str</div><div class="line">fo.close()</div><div class="line"></div><div class="line"><span class="comment">#重命名文件</span></div><div class="line">import os</div><div class="line">os.rename(<span class="string">"4.txt"</span>, <span class="string">"1.txt"</span>)</div><div class="line"></div><div class="line"><span class="comment">#删除文件</span></div><div class="line">os.<span class="builtin-name">remove</span>(<span class="string">"1.txt"</span>)</div><div class="line"></div><div class="line"><span class="comment">#创建目录</span></div><div class="line">os.mkdir(<span class="string">"test"</span>)</div><div class="line"></div><div class="line"><span class="comment">#改变目录</span></div><div class="line"><span class="comment">#将当前目录改为"/home/newdir"</span></div><div class="line">os.chdir(<span class="string">"/home/newdir"</span>)</div><div class="line"></div><div class="line"><span class="comment">#显示当前目录</span></div><div class="line">os.getcwd()</div><div class="line"></div><div class="line"><span class="comment">#删除目录</span></div><div class="line">os.rmdir(<span class="string">"/tmp/test"</span>)</div><div class="line"></div><div class="line"><span class="comment">#在 write 内容后，直接 read 文件输出会为空，是因为指针已经在内容末尾。</span></div><div class="line"><span class="comment">#两种解决方式: 其一，先 close 文件，open 后再读取，其二，可以设置指针回到文件最初后再 read</span></div><div class="line"></div><div class="line">document = open(<span class="string">"testfile.txt"</span>, <span class="string">"w+"</span>);</div><div class="line"><span class="builtin-name">print</span> <span class="string">"文件名: "</span>, document.name;</div><div class="line">document.write(<span class="string">"这是我创建的第一个测试文件！\nwelcome!"</span>);</div><div class="line"><span class="builtin-name">print</span> document.tell();</div><div class="line"><span class="comment">#输出当前指针位置</span></div><div class="line">document.seek(os.SEEK_SET);</div><div class="line"><span class="comment">#设置指针回到文件最初</span></div><div class="line">context = document.read();</div><div class="line"><span class="builtin-name">print</span> context;</div><div class="line">document.close();</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2018/01/18/py基础二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1628,150 +1772,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/12/29/Java常见问题一/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/29/Java常见问题一/" itemprop="url">Java常见问题一</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T22:12:01+08:00">
-                2017-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/29/Java常见问题一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/29/Java常见问题一/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/12/29/Java常见问题一/" class="leancloud_visitors" data-flag-title="Java常见问题一">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>错误: 找不到或无法加载主类 Test8.Main</code><br>解决方法：右键你的项目，选最后一个<code>properties</code>，把<code>properties</code>属性里的<code>java compiler</code>–&gt;<code>building</code>–&gt;<code>abort build when build path errors occur</code>前的勾去掉就好了。<br>好像还有其他的<a href="http://blog.csdn.net/chenleixing/article/details/44816629" target="_blank" rel="external">解决方法</a>。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1825,7 +1825,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
