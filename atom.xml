@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2018-02-25T02:53:13.988Z</updated>
+  <updated>2018-02-25T08:36:02.053Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>eclipse配置Tomcat</title>
+    <link href="http://sunstady.github.io/2018/02/25/eclipse%E9%85%8D%E7%BD%AETomcat/"/>
+    <id>http://sunstady.github.io/2018/02/25/eclipse配置Tomcat/</id>
+    <published>2018-02-25T08:34:55.000Z</published>
+    <updated>2018-02-25T08:36:02.053Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h2><p>1、打开eclipse，单击<code>Window</code>菜单，选择下方的<code>Preferences</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/1.png" alt="1"><br>2、单击<code>Server</code>选项，选择下方的<code>Runtime Environments</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/2.png" alt="2"><br>3、点击<code>Add</code>，添加 Tomcat。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/3.png" alt="3"><br>4、点击<code>Next</code>， 选中自己安装的Tomcat路径。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/4.png" alt="4"><br>5、点击<code>Finish</code>完成。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/5.png" alt="5"></p>
+<h2 id="建立一个Web应用"><a href="#建立一个Web应用" class="headerlink" title="建立一个Web应用"></a>建立一个Web应用</h2><p>1、<code>File</code>–&gt;<code>New</code>–&gt;<code>Dynamic Web Project</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/6.png" alt="6"><br>2、创建一个<code>Dynamic Web Project</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/7.png" alt="7"><br>3、连续点击两下<code>Next</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/8.png" alt="8"><br>4、点击<code>Finish</code>完成。</p>
+<h2 id="让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat"><a href="#让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat" class="headerlink" title="让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat"></a>让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat</h2><p>1、<code>Window</code>–&gt;<code>Show View</code>–&gt;<code>Servers</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/9.png" alt="9"><br>2、右键<code>Server</code>面板中的<code>Add and Remove</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/10.png" alt="10"><br>3、添加项目到<code>Configured</code>，选中项目并点击<code>Add</code>或者双击都可以添加到右边。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/11.png" alt="11"><br>4、点击<code>Finish</code>完成。<br>返回下方的<code>Servers</code>面板，右键单击该面板中的<code>Tomcat v9.0 Server at localhost</code>节点，在弹出的快捷菜单中单击<code>Start</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/15.png" alt="15"><br>即可启动指定的Web服务器。如果此时直接访问<code>http://localhost:8080/test_first</code> ,会发现报404的错误。这是因为我们没有添加主页，下面添加主页(index.jsp)的内容。<br>5、右键<code>WebContent</code>–&gt;<code>New</code>–&gt;<code>JSP File</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/12.png" alt="12"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/13.png" alt="13"><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="section">注意: Web资源一定要在WebContent目录下添加。</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/14.png" alt="14"><br>此时，再一次来访问<code>http://localhost:8080/test_first</code> ，效果如下:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/16.png" alt="16"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;配置Tomcat&quot;&gt;&lt;a href=&quot;#配置Tomcat&quot; class=&quot;headerlink&quot; title=&quot;配置Tomcat&quot;&gt;&lt;/a&gt;配置Tomcat&lt;/h2&gt;&lt;p&gt;1、打开eclipse，单击&lt;code&gt;Window&lt;/code&gt;菜单，选择下方的&lt;code
+    
+    </summary>
+    
+    
+      <category term="Java Web" scheme="http://sunstady.github.io/tags/Java-Web/"/>
+    
+  </entry>
   
   <entry>
     <title>安装Tomcat</title>
@@ -540,27 +564,6 @@
     
     
       <category term="渗透" scheme="http://sunstady.github.io/tags/%E6%B8%97%E9%80%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java读写文件二</title>
-    <link href="http://sunstady.github.io/2017/12/05/java%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%E4%BA%8C/"/>
-    <id>http://sunstady.github.io/2017/12/05/java读写文件二/</id>
-    <published>2017-12-05T03:54:42.000Z</published>
-    <updated>2017-12-05T03:56:07.941Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用Java的输入流、输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.<span class="keyword">BufferedReader</span>;  </div><div class="line"><span class="keyword">import</span> java.io.BufferedWriter;  </div><div class="line"><span class="keyword">import</span> java.io.FileNotFoundException;  </div><div class="line"><span class="keyword">import</span> java.io.FileReader;  </div><div class="line"><span class="keyword">import</span> java.io.FileWriter;  </div><div class="line"><span class="keyword">import</span> java.io.IOException;  </div><div class="line">  </div><div class="line"><span class="keyword">public</span> class Test4 &#123;  </div><div class="line">  </div><div class="line">    <span class="comment">/** </span></div><div class="line"><span class="comment">     * @param args </span></div><div class="line"><span class="comment">     */</span>  </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;  </div><div class="line">        <span class="comment">// TODO Auto-generated method stub  </span></div><div class="line">        <span class="keyword">BufferedReader</span> br = <span class="keyword">null</span>;  </div><div class="line">        BufferedWriter bw = <span class="keyword">null</span>;  </div><div class="line">        <span class="keyword">try</span> &#123;  </div><div class="line">            br = <span class="keyword">new</span> <span class="keyword">BufferedReader</span>(<span class="keyword">new</span> FileReader(<span class="string">"Input.txt"</span>));  </div><div class="line">            bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"Output.txt"</span>));  </div><div class="line">            <span class="keyword">String</span> <span class="built_in">str</span> = <span class="string">""</span>;  </div><div class="line">            <span class="built_in">int</span> i = <span class="number">1</span>;  </div><div class="line">            <span class="keyword">while</span>((<span class="built_in">str</span> = br.readLine()) != <span class="keyword">null</span>)&#123;  </div><div class="line">                bw.write(i+<span class="string">" "</span>);  </div><div class="line">                bw.write(<span class="built_in">str</span>);  </div><div class="line">                System.out.<span class="built_in">println</span>(i+ <span class="string">" "</span>+ <span class="built_in">str</span>);  </div><div class="line">                bw.newLine();  <span class="comment">//换行，换行后可以使用readline()来一行行读取数据</span></div><div class="line">                i++;  </div><div class="line">            &#125;  </div><div class="line">            bw.flush();  </div><div class="line">            <span class="comment">//清空缓冲区的数据流，进行流的操作时，数据先被读到内存中，然后再用数据写到文件中，</span></div><div class="line">            <span class="comment">//当数据读完时，如果调用close()方法关闭读写流，就可能造成数据丢失，</span></div><div class="line">            <span class="comment">//原因是一部分的数据可能留在缓存区</span></div><div class="line">            bw.close();  </div><div class="line">            br.close();  </div><div class="line">              </div><div class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;  </div><div class="line">            <span class="comment">// TODO Auto-generated catch block  </span></div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"找不到指定文件！"</span>);  </div><div class="line">        &#125;<span class="keyword">catch</span> (IOException e) &#123;  </div><div class="line">            <span class="comment">// TODO Auto-generated catch block  </span></div><div class="line">            e.printStackTrace();  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用Java的输入流、输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中。&lt;br&gt;&lt;figure class=&quot;highlight processing&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://sunstady.github.io/tags/Java/"/>
     
   </entry>
   
