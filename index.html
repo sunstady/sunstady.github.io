@@ -311,6 +311,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2018/02/25/安装Tomcat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/25/安装Tomcat/" itemprop="url">安装Tomcat</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-25T10:52:39+08:00">
+                2018-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/25/安装Tomcat/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/25/安装Tomcat/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/02/25/安装Tomcat/" class="leancloud_visitors" data-flag-title="安装Tomcat">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Tomcat是Apache软件基金会的Jakarta项目中的一个核心项目，由Apache、Sun和其他一些公司及个人共同开发而成，成为目前比较流行的Web应用服务器。<br><code>一、下载</code><br>登录<code>http://tomcat.apache.org</code> 站点，下载合适的Tomcat版本。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/de28aa72181c35f7c9722acb7b3abc1ae15c7593/Tomcat/1.png" alt="1"><br>单击左边的Download下的<code>Tomcat 9</code> 超链接，在打开的新页面中，下载Tomcat的最新版9.0.5版的所有安装包。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/2.png" alt="2"><br>选择合适的版本下载即可。style选择下载的是64位的Windows下的<code>64-bit Windows zip(pgp, md5, sha1, sha512)</code>安装包。把下载得到的<code>apache-tomcat-9.0.5-windows-x64.zip</code>文件解压到合适的位置。可以看到如图的文件结构。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/3.png" alt="3"><br>style将其解压到了<code>F:\apache-tomcat-9.0.5</code>目录。<br>各个文件目录的说明如下所示。<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/<span class="symbol">bin:</span> 存放Windows或Linux平台上启动和关闭Tomcat的脚本文件。</div><div class="line">/<span class="symbol">conf:</span> 存放Tomcat服务器的各种全局配置文件，其中，最重要的是server.xml和web.xml。</div><div class="line">/<span class="class"><span class="keyword">lib</span>: 存放<span class="title">Tomcat</span>服务器所需的各种<span class="title">JAR</span>文件。</span></div><div class="line">/<span class="symbol">logs:</span> 存放Tomcat执行时的日志文件。</div><div class="line">/<span class="symbol">temp:</span> 存放Web运行过程中生成的临时文件。</div><div class="line">/<span class="symbol">webapps:</span> Tomcat的主要Web发布目录，默认情况下把Web应用文件放于此目录。</div><div class="line">/<span class="symbol">work:</span> 存放JSP编译后产生的<span class="class"><span class="keyword">class</span>文件。</span></div></pre></td></tr></table></figure></p>
+<p><code>二、Tomcat的配置</code><br>要想运行Tomcat，还需要配置环境变量以及配置管理员。<br>(1) 添加环境变量，如图所示，在”环境变量”里新建系统变量，变量名为<code>CATALINA_HOME</code>，变量值为<code>F:\apache-tomcat-9.0.5</code>(Tomcat解压到的目录)。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/4.png" alt="4"><br>(2) 如图所示，在系统变量Path的最后面添加:<br><code>%CATALINA_HOME%\lib;%CATALINA_HOME%\lib\servlet-api.jar;%CATALINA_HOME%\lib\jsp-api.jar</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/5.png" alt="5"><br>注意不同系统变量之间的分号一定是英文的分号。<br>(3) 如图所示，为Tomcat 9.0的管理员的配置，进入<code>F:\apache-tomcat-9.0.5</code>下的conf目录，编辑<code>tomcat-users.xml</code>,找到最后的<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--</div><div class="line">  &lt;role <span class="attribute">rolename</span>=<span class="string">"tomcat"</span>/&gt;</div><div class="line">  &lt;role <span class="attribute">rolename</span>=<span class="string">"role1"</span>/&gt;</div><div class="line">  &lt;user <span class="attribute">username</span>=<span class="string">"tomcat"</span> <span class="attribute">password</span>=<span class="string">"&lt;must-be-changed&gt;"</span> <span class="attribute">roles</span>=<span class="string">"tomcat"</span>/&gt;</div><div class="line">  &lt;user <span class="attribute">username</span>=<span class="string">"both"</span> <span class="attribute">password</span>=<span class="string">"&lt;must-be-changed&gt;"</span> <span class="attribute">roles</span>=<span class="string">"tomcat,role1"</span>/&gt;</div><div class="line">  &lt;user <span class="attribute">username</span>=<span class="string">"role1"</span> <span class="attribute">password</span>=<span class="string">"&lt;must-be-changed&gt;"</span> <span class="attribute">roles</span>=<span class="string">"role1"</span>/&gt;</div><div class="line">--&gt;</div></pre></td></tr></table></figure></p>
+<p>在上面这段后面添加上<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;role <span class="attribute">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</div><div class="line">&lt;role <span class="attribute">rolename</span>=<span class="string">"admin-gui"</span>/&gt;</div><div class="line">&lt;user <span class="attribute">username</span>=<span class="string">"admin"</span> <span class="attribute">password</span>=<span class="string">"1234"</span> <span class="attribute">roles</span>=<span class="string">"admin-gui"</span>/&gt;</div><div class="line">&lt;user <span class="attribute">username</span>=<span class="string">"admin"</span> <span class="attribute">password</span>=<span class="string">"123"</span> <span class="attribute">roles</span>=<span class="string">"manager-gui"</span>/&gt;</div></pre></td></tr></table></figure></p>
+<p>保存并关闭<code>tomcat-users.xml</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/6.png" alt="6"><br>(4) 进入Tomcat目录下的bin目录，双击<code>startup.bat</code>启动Tomcat，在命令行窗口会显示出英文提示，如图所示。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/7.png" alt="7"><br>(5) 在浏览器中输入<code>http://localhost:8080/</code> 出现Tomcat的欢迎页面就说明配置成功了，如图所示。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/8.png" alt="8"><br>(6) 单机右上角的Manager App按钮，输入上面配置的用户名和密码，就可以进入管理页面，如图所示。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9e72f985b5f6e9108cd9028de76ec59035b0ba08/Tomcat/9.png" alt="9"><br>(7) 至此，Tomcat安装配置完成。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2018/01/23/py之计算器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1594,161 +1741,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/12/31/length和-length-的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/31/length和-length-的区别/" itemprop="url">.length和.length()的区别</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-31T21:20:59+08:00">
-                2017-12-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/31/length和-length-的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/31/length和-length-的区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/12/31/length和-length-的区别/" class="leancloud_visitors" data-flag-title=".length和.length()的区别">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>java中的length属性是针对<code>数组</code>说的,比如说你声明了一个数组,想知道这个数组的长度则用到了length这个属性。java中的length()方法是针对<code>字符串String</code>说的,如果想看这个字符串的长度则用到length()这个方法。</p>
-<p>如何获取一个数组的长度？以及，如何获取一个字符串的长度？</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">int</span>[] arr = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>];</div><div class="line">System.out.<span class="built_in">println</span>(arr.length);<span class="comment">//使用length获取数组的程度</span></div><div class="line"> </div><div class="line"><span class="keyword">String</span> <span class="built_in">str</span> = <span class="string">"abc"</span>;</div><div class="line">System.out.<span class="built_in">println</span>(<span class="built_in">str</span>.length());<span class="comment">//使用length()获取字符串的长度</span></div></pre></td></tr></table></figure>
-<p>为什么数组有length属性？</p>
-<blockquote>
-<p>数组是一个容器对象，其中包含固定数量的同一类型的值。<br>一旦数组被创建，他的长度就是固定的了。<br>数组的长度可以作为final实例变量的长度。<br>因此，长度可以被视为一个数组的属性。</p>
-</blockquote>
-<p>为什么String有length()方法？</p>
-<blockquote>
-<p>String背后的数据结构是一个char数组,所以没有必要来定义一个不必要的属性（因为该属性在char数值中已经提供了）。<br>和C不同的是，Java中char的数组并不等于字符串，虽然String的内部机制是char数组实现的。</p>
-</blockquote>
-<p><code>注: 要想把char[]转成字符串有以下方式：</code><br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> []s = &#123;<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>&#125;;</div><div class="line"><span class="keyword">String</span> string1 = s.toString();</div><div class="line"><span class="keyword">String</span> string2 = <span class="keyword">new</span> <span class="keyword">String</span>(s);</div><div class="line"><span class="keyword">String</span> string3 = <span class="keyword">String</span>.valueOf(s);</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1802,7 +1794,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1815,7 +1807,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
