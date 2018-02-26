@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunstady.github.io/"/>
-  <updated>2018-02-25T09:05:06.568Z</updated>
+  <updated>2018-02-26T11:58:53.177Z</updated>
   <id>http://sunstady.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSP自动提示</title>
+    <link href="http://sunstady.github.io/2018/02/26/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/"/>
+    <id>http://sunstady.github.io/2018/02/26/JSP自动提示/</id>
+    <published>2018-02-26T11:58:22.000Z</published>
+    <updated>2018-02-26T11:58:53.177Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、<code>Window</code>–&gt;<code>Preferences</code>–&gt;<code>Java</code>–&gt;<code>Editor</code>–&gt;<code>Content Assist</code><br>修改<code>Auto activation triggers for Java</code>的值为:<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/sunstady/hexo/ef3a6fec219f14c2735a61b61e653ec641a09425/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/1.png" alt="1"><br>2、<code>JavaScript</code>–&gt;<code>Editor</code>–&gt;<code>Content Assist</code><br>修改<code>Auto activation triggers for JavaScript</code>的值为:<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/sunstady/hexo/ef3a6fec219f14c2735a61b61e653ec641a09425/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/2.png" alt="2"><br>3、<code>Web</code>–&gt;<code>Html Files</code>–&gt;<code>Editor</code>–&gt;<code>Content Assist</code><br>修改<code>Prompt when these characters are inserted</code>的值为:<br><figure class="highlight fix"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">&lt;</span>=<span class="string">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/sunstady/hexo/ef3a6fec219f14c2735a61b61e653ec641a09425/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/3.png" alt="3"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1、&lt;code&gt;Window&lt;/code&gt;–&amp;gt;&lt;code&gt;Preferences&lt;/code&gt;–&amp;gt;&lt;code&gt;Java&lt;/code&gt;–&amp;gt;&lt;code&gt;Editor&lt;/code&gt;–&amp;gt;&lt;code&gt;Content Assist&lt;/code&gt;&lt;br&gt;修改&lt;co
+    
+    </summary>
+    
+    
+      <category term="软件" scheme="http://sunstady.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>jsp编码</title>
@@ -469,27 +493,6 @@
     
     
       <category term="OS" scheme="http://sunstady.github.io/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>隐写之图片隐藏</title>
-    <link href="http://sunstady.github.io/2017/12/08/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/"/>
-    <id>http://sunstady.github.io/2017/12/08/隐写之图片隐藏/</id>
-    <published>2017-12-08T02:40:17.000Z</published>
-    <updated>2017-12-08T02:50:17.874Z</updated>
-    
-    <content type="html"><![CDATA[<p>在图片中插入其他的文件，例如一段音乐，一段视频，或是某个文件。<br>1、准备一张图片和要隐藏的资料信息<br>比如这里，style准备了一张壁纸和一个txt文件。现在需要将一个文件隐藏在这张图片里。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/1.jpg" alt="1"><br>2、选择需要隐藏的文件，右键压缩成一个rar文件，文件名字可以随便起，在这里style将其压缩成1.rar。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/2.jpg" alt="2"><br>3、新建一个文本文档，名字随便起，style这里将其命名为2.txt,，在里面输入以下代码<code>copy /b 1.jpg+1.rar 222.jpg</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/3.jpg" alt="3"><br>4、接着另存为这个文本文档，重要的是文件类型得是bat类型，也就是批处理命令。style这里命名为2.bat。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/4.jpg" alt="4"><br>5、双击这个bat命令，得到一个最终的文件222.jpg。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/5.jpg" alt="5"><br>6、这个图片打开看的话和正常的图片一样，但是大小与封面图片相比是不一样的，其实这里面包含了刚刚隐藏的那些重要信息。将得到的新的图片的后缀改为rar，然后解压就可得到我们刚刚隐藏的文件。也可以用二进制编辑器查看，发现在后面有个zip的文件头，可以将这个压缩包提取出来，再解压。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/6.jpg" alt="6"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/6f6dc0c117f0279e1c8407f5e690c1a3e704b3b4/%E9%9A%90%E5%86%99%E4%B9%8B%E5%9B%BE%E7%89%87%E9%9A%90%E8%97%8F/7.jpg" alt="7"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在图片中插入其他的文件，例如一段音乐，一段视频，或是某个文件。&lt;br&gt;1、准备一张图片和要隐藏的资料信息&lt;br&gt;比如这里，style准备了一张壁纸和一个txt文件。现在需要将一个文件隐藏在这张图片里。&lt;br&gt;&lt;img src=&quot;https://raw.githubuserc
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="http://sunstady.github.io/tags/CTF/"/>
     
   </entry>
   
