@@ -311,6 +311,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/12/虚拟存储器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/12/虚拟存储器/" itemprop="url">虚拟存储器</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T21:24:14+08:00">
+                2017-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/12/虚拟存储器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/11/12/虚拟存储器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/12/虚拟存储器/" class="leancloud_visitors" data-flag-title="虚拟存储器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>1、什么是虚拟存储器？（虚存）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解答：虚拟存储器是由硬件和操作系统自动实现存储信息调度和管理的，是在具有层次结构存储器的计算机系统中，自动实现部分装入和部分替换功能，能从逻辑上为用户提供一个比物理贮存容量大的多，可寻址的“主存储器”。</div></pre></td></tr></table></figure></p>
+<p><code>2、为什么要引入虚拟存储器？</code><br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">解答：<span class="number">1</span>&gt;能提高操作系统的内存利用率和系统吞吐量 </div><div class="line"><span class="number">2</span>&gt;在计算机系统中，主存的容量有一定的限制，不可能大大满足各种用户的需要，而在技术上辅助存储器却可以做的相当大。为了给大作业提供方便，使它们不再承担对主存和辅存的具体分配和管理工作，而由操作系统把主存和辅存统一管理起来。</div></pre></td></tr></table></figure></p>
+<p><code>3、虚拟存储器的特征？</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">解答：虚拟存储器具有虚拟性、离散性、多次性及强对换性等特征，其中最重要的特征是虚拟性。</div><div class="line"><span class="meta">1&gt;</span><span class="bash">	虚拟性。虚拟性是指能够从逻辑上扩充内存容量，使用户所看到的内存容量远大于实际的内存容量，这是虚拟存储器所表现出的最重要的特征，也是虚拟存储器最重要的目标。</span></div><div class="line"><span class="meta">2&gt;</span><span class="bash">	离散性。离散性是指内存分配时采用离散分配的方式，没有离散性就不可能实现虚拟存储器。采用连续分配方式，需要将作业装入到连续的内存区域，这样需要连续地一次性申请一部分内存空间，以便将整个作业先后多次装入内存。如果仍然采用连续装入的方式，则无法实现虚拟存储功能，只有采用离散分配方式，才能为它申请内存空间，以避免浪费内存空间。</span></div><div class="line"><span class="meta">3&gt;</span><span class="bash">	多次性。多次性是指一个作业被分成多次调入内存运行。作业在运行时，只将当前运行的那部分程序和数据装入内存，以后再陆续从外存将需要的部分调入内存。</span></div><div class="line"><span class="meta">4&gt;</span><span class="bash">	对换性。对换性是指允许在作业运行过程中换进换出。允许将暂时不用的程序和数据从内存调至外存的对换区，以后需要时再从外存调入到内存。</span></div></pre></td></tr></table></figure></p>
+<p><code>4、虚存可以建立在分区分配管理的基础上吗？为什么？</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解答：不可以。在虚拟存储器中，允许将一个作业分多次调入内存。入宫采用连续分配方式时，应将作业装入一个连续的内存区域中。为此，需事先为它一次性地申请足够的内存空间，以便将整个作业先后分多次装入内存，这不仅会使相当一部分内存空间都处于暂时或“永久”的空闲状态，造成内存资源的严重浪费，而且也无法从逻辑上扩大内存容量。因此，虚拟存储器的实现都是建立在离散分配存储管理方式的基础上。</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/11/10/人生苦短/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1706,152 +1853,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunstady.github.io/2017/10/27/修改MySQL密码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/修改MySQL密码/" itemprop="url">修改MySQL密码</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T20:46:46+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/27/修改MySQL密码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/27/修改MySQL密码/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/27/修改MySQL密码/" class="leancloud_visitors" data-flag-title="修改MySQL密码">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在DOS下执行：<code>mysql -u root -p</code><br>然后输入旧的密码，如果是第一次进入，则直接回车<br>mysql&gt;<code>show databases;</code><br>mysql&gt;<code>use mysql;</code><br>注意一定先执行<code>use mysql;</code>再执行下面命令设置密码，如新密码123456<br>mysql&gt;<code>UPDATE user SET password=PASSWORD(&#39;123456&#39;) WHERE user=&#39;root&#39;;</code><br>mysql&gt;<code>FLUSH PRIVILEGES;</code><br>mysql&gt;<code>exit;</code></p>
-<p>附上常用mysql命令(win8.1以管理员身份执行win+x+a):<br>安装mysql服务：<code>mysqld -install</code><br>卸载mysql服务：<code>mysqld -remove</code><br>启动mysql服务：<code>net start mysql</code><br>停止mysql服务：<code>net stop mysql</code></p>
-<p>如果启动mysql服务出现1067错误码<br>尝试清理<code>datadir</code>目录下的以下文件：<code>auto.cnf</code>、<code>Cryhelyxx-pc.err</code>、<code>Cryhelyxx-pc.pid</code>、<code>ib_logfile0</code>、<code>ib_logfile1</code>、<code>ibdata1</code>、<code>ibtmp1</code><br>注意：在清理之前请备份好数据库，否则后果自负，并再次启动mysql服务：<code>net start mysql</code>。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1905,7 +1906,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">77</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
