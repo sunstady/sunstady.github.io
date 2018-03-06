@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http:/sanstylemc.cn/sitemap.xml
-Sitemap: http:/sanstylemc.cn/baidusitemap.xml
+Sitemap: http://sanstylemc.cn/sitemap.xml
+Sitemap: http://sanstylemc.cn/baidusitemap.xml
