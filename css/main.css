@@ -1252,7 +1252,7 @@ pre .javascript .function {
 .posts-expand {
   padding-top: 40px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1920px) {
   .posts-expand {
     margin: 0 20px;
   }
@@ -2056,7 +2056,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b4ffe4;
+  background: #dfffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2831,7 +2831,7 @@ img:hover {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 960px;
+  width: 1080px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2880,7 +2880,7 @@ img:hover {
   clear: both;
 }
 .container .main-inner {
-  width: 960px;
+  width: 1920px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2938,7 +2938,7 @@ img:hover {
   display: none;
 }
 .footer-inner {
-  width: 960px;
+  width: 1920px;
   padding-left: 260px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
