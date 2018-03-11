@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="12345678910111213import base64file = open(&apos;base.txt&apos;,&apos;r&apos;)st = file.read()while True:   try:       st = base64.b16decode(st)   except:       try:           st = base64.b32decode(st)       except:">
+<meta name="description" content="Base64和Base32混合解密脚本">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="base混合加密">
+<meta property="og:title" content="base混合解密">
 <meta property="og:url" content="http://www.sanstylemc.cn/2017/11/10/base混合加密/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="12345678910111213import base64file = open(&apos;base.txt&apos;,&apos;r&apos;)st = file.read()while True:   try:       st = base64.b16decode(st)   except:       try:           st = base64.b32decode(st)       except:">
+<meta property="og:description" content="Base64和Base32混合解密脚本">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-10T12:12:16.987Z">
+<meta property="og:updated_time" content="2018-03-11T14:32:34.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="base混合加密">
-<meta name="twitter:description" content="12345678910111213import base64file = open(&apos;base.txt&apos;,&apos;r&apos;)st = file.read()while True:   try:       st = base64.b16decode(st)   except:       try:           st = base64.b32decode(st)       except:">
+<meta name="twitter:title" content="base混合解密">
+<meta name="twitter:description" content="Base64和Base32混合解密脚本">
 
 
 
@@ -167,7 +167,7 @@
 })();
 </script>
 
-  <title>base混合加密 | Sanstyle</title>
+  <title>base混合解密 | Sanstyle</title>
   
 
 
@@ -334,7 +334,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">base混合加密</h2>
+          <h2 class="post-title" itemprop="name headline">base混合解密</h2>
         
 
         <div class="post-meta">
@@ -375,7 +375,7 @@
 
           
           
-             <span id="/2017/11/10/base混合加密/" class="leancloud_visitors" data-flag-title="base混合加密">
+             <span id="/2017/11/10/base混合加密/" class="leancloud_visitors" data-flag-title="base混合解密">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -406,7 +406,7 @@
       
 
       
-        <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import base64</div><div class="line"><span class="keyword">file</span> = <span class="keyword">open</span>(<span class="string">'base.txt'</span>,<span class="string">'r'</span>)</div><div class="line"><span class="keyword">st</span> = <span class="keyword">file</span>.<span class="keyword">read</span>()</div><div class="line"><span class="keyword">while</span> True:</div><div class="line">   <span class="keyword">try</span>:</div><div class="line">       <span class="keyword">st</span> = base64.b16decode(<span class="keyword">st</span>)</div><div class="line">   excep<span class="variable">t:</span></div><div class="line">       <span class="keyword">try</span>:</div><div class="line">           <span class="keyword">st</span> = base64.b32decode(<span class="keyword">st</span>)</div><div class="line">       excep<span class="variable">t:</span></div><div class="line">           <span class="keyword">st</span> = base64.b64decode(<span class="keyword">st</span>)</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">st</span>.<span class="keyword">find</span>(<span class="string">'flag'</span>) == <span class="number">0</span>):</div><div class="line">       <span class="keyword">print</span>(<span class="keyword">st</span>)</div></pre></td></tr></table></figure>
+        <p><code>Base64和Base32混合解密脚本</code><br><a id="more"></a><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import base64</div><div class="line"><span class="keyword">file</span> = <span class="keyword">open</span>(<span class="string">'base.txt'</span>,<span class="string">'r'</span>)</div><div class="line"><span class="keyword">st</span> = <span class="keyword">file</span>.<span class="keyword">read</span>()</div><div class="line"><span class="keyword">while</span> True:</div><div class="line">   <span class="keyword">try</span>:</div><div class="line">       <span class="keyword">st</span> = base64.b16decode(<span class="keyword">st</span>)</div><div class="line">   excep<span class="variable">t:</span></div><div class="line">       <span class="keyword">try</span>:</div><div class="line">           <span class="keyword">st</span> = base64.b32decode(<span class="keyword">st</span>)</div><div class="line">       excep<span class="variable">t:</span></div><div class="line">           <span class="keyword">st</span> = base64.b64decode(<span class="keyword">st</span>)</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">st</span>.<span class="keyword">find</span>(<span class="string">'flag'</span>) == <span class="number">0</span>):</div><div class="line">       <span class="keyword">print</span>(<span class="keyword">st</span>)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -815,7 +815,7 @@
         var disqus_config = function () {
           this.page.url = 'http://www.sanstylemc.cn/2017/11/10/base混合加密/';
           this.page.identifier = '2017/11/10/base混合加密/';
-          this.page.title = 'base混合加密';
+          this.page.title = 'base混合解密';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';

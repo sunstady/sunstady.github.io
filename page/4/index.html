@@ -767,7 +767,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/10/base混合加密/" itemprop="url">base混合加密</a></h2>
+                <a class="post-title-link" href="/2017/11/10/base混合加密/" itemprop="url">base混合解密</a></h2>
         
 
         <div class="post-meta">
@@ -808,7 +808,7 @@
 
           
           
-             <span id="/2017/11/10/base混合加密/" class="leancloud_visitors" data-flag-title="base混合加密">
+             <span id="/2017/11/10/base混合加密/" class="leancloud_visitors" data-flag-title="base混合解密">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -840,10 +840,14 @@
 
       
         
-          
-            <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import base64</div><div class="line"><span class="keyword">file</span> = <span class="keyword">open</span>(<span class="string">'base.txt'</span>,<span class="string">'r'</span>)</div><div class="line"><span class="keyword">st</span> = <span class="keyword">file</span>.<span class="keyword">read</span>()</div><div class="line"><span class="keyword">while</span> True:</div><div class="line">   <span class="keyword">try</span>:</div><div class="line">       <span class="keyword">st</span> = base64.b16decode(<span class="keyword">st</span>)</div><div class="line">   excep<span class="variable">t:</span></div><div class="line">       <span class="keyword">try</span>:</div><div class="line">           <span class="keyword">st</span> = base64.b32decode(<span class="keyword">st</span>)</div><div class="line">       excep<span class="variable">t:</span></div><div class="line">           <span class="keyword">st</span> = base64.b64decode(<span class="keyword">st</span>)</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">st</span>.<span class="keyword">find</span>(<span class="string">'flag'</span>) == <span class="number">0</span>):</div><div class="line">       <span class="keyword">print</span>(<span class="keyword">st</span>)</div></pre></td></tr></table></figure>
-
-          
+          <p><code>Base64和Base32混合解密脚本</code><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/10/base混合加密/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
