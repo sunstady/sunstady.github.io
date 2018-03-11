@@ -234,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -254,7 +254,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -264,7 +264,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -340,7 +340,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T13:36:43+08:00">
                 2017-09-23
@@ -404,11 +404,16 @@
       
         
           
-            <p><code>定义Friend类，编写它具有的属性：姓名(name)、电话(phone)、邮箱(email)和公司(comp)以及它的方法showInfo()。编写测试类AddFriend，实现添加联系人的功能(从键盘输入)</code></p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//AddFriend.java</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> class AddFried &#123;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		Friend <span class="keyword">friend</span>= <span class="keyword">new</span> Friend();</div><div class="line">		Scanner inputScanner= <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人姓名: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setName(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人电话: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setPhone(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人电子邮箱: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setEmail(inputScanner.next());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"请输入联系人公司: "</span>);</div><div class="line">		<span class="keyword">friend</span>.setComp(inputScanner.next());</div><div class="line">		</div><div class="line">		<span class="keyword">friend</span>.showInfo();</div><div class="line">		</div><div class="line"><span class="comment">//		friend.name= "花千骨";</span></div><div class="line"><span class="comment">//		friend.showInfo();</span></div><div class="line">		<span class="comment">/*</span></div><div class="line"><span class="comment">		 * 没有封装，将String name等四个变量封装为private就行</span></div><div class="line"><span class="comment">		 * 封装：把不想或不该告诉别人的事情隐藏起来</span></div><div class="line"><span class="comment">		 * 具体做法：将属性私有化，提供公有化的方法来访问属性</span></div><div class="line"><span class="comment">		 * */</span></div><div class="line">		inputScanner.<span class="built_in">close</span>();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Friend.java</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> class Friend &#123;</div><div class="line">	<span class="keyword">String</span> name;<span class="comment">// 默认private</span></div><div class="line">	<span class="keyword">String</span> phone;</div><div class="line">	<span class="keyword">String</span> email;</div><div class="line">	<span class="keyword">String</span> comp;</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setName(<span class="keyword">String</span> name) &#123;</div><div class="line">		<span class="keyword">this</span>.name= name;<span class="comment">// 访问本类中的属性和方法</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getName()&#123;</div><div class="line">		<span class="built_in">return</span> name;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getPhone() &#123;</div><div class="line">		<span class="built_in">return</span> phone;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setPhone(<span class="keyword">String</span> phone) &#123;</div><div class="line">		<span class="keyword">this</span>.phone = phone;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getEmail() &#123;</div><div class="line">		<span class="built_in">return</span> email;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setEmail(<span class="keyword">String</span> email) &#123;</div><div class="line">		<span class="keyword">this</span>.email = email;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getComp() &#123;</div><div class="line">		<span class="built_in">return</span> comp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setComp(<span class="keyword">String</span> comp) &#123;</div><div class="line">		<span class="keyword">this</span>.comp = comp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> showInfo()&#123;</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"新朋友的联系信息为: "</span>);</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"姓名: "</span>+ <span class="keyword">this</span>.getName());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"电话: "</span>+ <span class="keyword">this</span>.getPhone());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"电子邮箱: "</span>+ <span class="keyword">this</span>.getEmail());</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="string">"公司: "</span>+ <span class="keyword">this</span>.hashCode());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          定义Friend类，编写它具有的属性：姓名(name)、电话(phone)、邮箱(email)和公司(comp)以及它的方法showInfo()。编写测试类AddFriend，实现添加联系人的功能(从键盘输入)
+12345678910111213141516171819202122232425262
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/小型通讯录/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -486,7 +491,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T13:26:22+08:00">
                 2017-09-23
@@ -550,11 +555,15 @@
       
         
           
-            <p><code>电视商品价格竞猜活动， 活动规则是：随机出现一个商品名，用户猜测它的价格，连续猜测5次，如果猜对便可获得此商品</code><br><code>提示：(1)定义GuessMachine，编写它的initial方法，预定义商品信息根据产生的随机数字，选定一款竞猜商品</code><br><code>(2)编写GuessMachine的guess方法，如果猜测正确，返回“猜对了，恭喜中奖！”，价格偏高，提示高了，偏低，提示低了。</code><br><code>(3)编写测试类模拟竞猜，产生随机数 Math.radom();只产生0.0~1.0之间的数</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//GuessMachine</span></div><div class="line"></div><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GuessMachine</span> &#123;</div><div class="line">	String mach= <span class="literal">null</span>;</div><div class="line">	<span class="keyword">int</span> price= <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initial</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">int</span> data= (<span class="keyword">int</span>)(Math.random()* <span class="number">4</span>);</div><div class="line">		<span class="keyword">switch</span>(data)&#123;</div><div class="line">		<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">			mach= <span class="string">"电视机"</span>;</div><div class="line">			price= <span class="number">3359</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">			mach= <span class="string">"电冰箱"</span>;</div><div class="line">			price= <span class="number">1243</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">			mach= <span class="string">"油烟机"</span>;</div><div class="line">			price= <span class="number">4654</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">			mach= <span class="string">"ipthone"</span>;</div><div class="line">			price= <span class="number">2324</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">			mach= <span class="string">"洗衣机"</span>;</div><div class="line">			price= <span class="number">5643</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">default</span>:</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"><span class="comment">//		System.out.println(data);</span></div><div class="line"><span class="comment">//		System.out.println("请输出"+ mach+ "的价格: ");</span></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">guess</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		Scanner inpScanner= <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">		<span class="keyword">int</span> guess= <span class="number">0</span>;<span class="comment">//用户输入的价格</span></div><div class="line">		<span class="keyword">int</span> i= <span class="number">0</span>;<span class="comment">//用户猜价格的次数</span></div><div class="line">		<span class="keyword">while</span>(i&lt; <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"请输入您竞猜的价格: "</span>);</div><div class="line">			guess= inpScanner.nextInt();</div><div class="line">			<span class="keyword">if</span>(price== guess)&#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"猜对了，恭喜中奖！"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(price&gt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"低了，请高一点。"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span> (price&lt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"高了， 请低一点。"</span>);</div><div class="line">			&#125;</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(i&gt;= <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"您已经猜奖5次，欢迎下次光临！"</span>);</div><div class="line">		&#125;</div><div class="line">		inpScanner.close();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Test.java</span></div><div class="line"></div><div class="line"><span class="keyword">package</span> com.cnstrong.com;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args)&#123;</div><div class="line">		GuessMachine gMachine= <span class="keyword">new</span> <span class="type">GuessMachine</span>();</div><div class="line">		</div><div class="line">		gMachine.initial();<span class="comment">//初始化</span></div><div class="line">		gMachine.guess();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          电视商品价格竞猜活动， 活动规则是：随机出现一个商品名，用户猜测它的价格，连续猜测5次，如果猜对便可获得此商品提示：(1)定义GuessMachine，编写它的initial方法，预定义商品信息根据产生的随机数字，选定一款竞猜商品(2)编写GuessMachine的guess方法，如果猜测正确，返回
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/竞猜商品/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -632,7 +641,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:41:03+08:00">
                 2017-09-23
@@ -696,10 +705,17 @@
       
         
           
-            <p><code>运行环境python2.7</code></p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import <span class="built_in">base64</span></div><div class="line"><span class="built_in">print</span> <span class="built_in">base64</span>.b32decode(<span class="string">"NNSXS63JONRWGY3GOJTGO5DBMVTGCZ3SNB2H2==="</span>)</div></pre></td></tr></table></figure>
+          运行环境python2.7
+12import base64print base64.b32decode("NNSXS63JONRWGY3GOJTGO5DBMVTGCZ3SNB2H2===")
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/base32解密/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -777,7 +793,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:35:09+08:00">
                 2017-09-23
@@ -841,10 +857,16 @@
       
         
           
-            <p><code>运行环境python2.7</code></p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!usr/bin/env python</span></div><div class="line"><span class="comment">#-*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">from</span> itertools import *</div><div class="line"></div><div class="line"><span class="built_in">from</span> optparse import *</div><div class="line"></div><div class="line">def <span class="built_in">start</span>():</div><div class="line"></div><div class="line">	opt = OptionParser()</div><div class="line"></div><div class="line">	opt.add_option(<span class="string">'-c'</span>,dest=<span class="string">'content'</span>,help=<span class="string">'Input your content'</span>)</div><div class="line"></div><div class="line">	opt.add_option(<span class="string">'-o'</span>,dest=<span class="string">'output'</span>,help=<span class="string">'File to save the result'</span>)</div><div class="line"></div><div class="line">	<span class="built_in">get</span>,args = opt.parse_args()</div><div class="line"></div><div class="line">	<span class="keyword">if</span> <span class="built_in">get</span>.content is None <span class="keyword">or</span> <span class="built_in">get</span>.output is None:</div><div class="line"></div><div class="line">		print <span class="string">'Use \'help\' to get help'</span></div><div class="line"></div><div class="line">		exit(<span class="number">0</span>)</div><div class="line"></div><div class="line">	<span class="literal">return</span> <span class="built_in">get</span>.content,<span class="built_in">get</span>.output</div><div class="line"></div><div class="line">def Exp(content,output):</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="built_in">len</span>(content)):</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> <span class="built_in">len</span>(content)%i == <span class="number">0</span>:</div><div class="line"></div><div class="line">			filename = <span class="built_in">open</span>(output,<span class="string">'a+'</span>)</div><div class="line"></div><div class="line">			getList = Code(i)</div><div class="line"></div><div class="line">			getCo = SplitStr(i,content)</div><div class="line"></div><div class="line">			<span class="keyword">for</span> <span class="built_in">num</span> <span class="keyword">in</span> getList:</div><div class="line"></div><div class="line">				<span class="built_in">get</span> = <span class="string">''</span></div><div class="line"></div><div class="line">				<span class="keyword">for</span> s <span class="keyword">in</span> getCo:</div><div class="line"></div><div class="line">					<span class="keyword">for</span> <span class="literal">one</span> <span class="keyword">in</span> <span class="built_in">num</span>:</div><div class="line"></div><div class="line">						<span class="built_in">get</span> = <span class="built_in">get</span> + s[int(<span class="literal">one</span>):int(<span class="literal">one</span>)+<span class="number">1</span>]</div><div class="line"></div><div class="line">				filename.<span class="built_in">write</span>(<span class="built_in">get</span>+<span class="string">'\n'</span>)</div><div class="line"></div><div class="line">			filename.<span class="built_in">close</span>()</div><div class="line"></div><div class="line">	print <span class="string">'The result is saved as '</span> + output</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">def SplitStr(<span class="built_in">num</span>,content):</div><div class="line"></div><div class="line">	<span class="built_in">result</span> = []</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="built_in">len</span>(content)/<span class="built_in">num</span>):</div><div class="line"></div><div class="line">		<span class="built_in">result</span>.append(content[i*<span class="built_in">num</span>:(i+<span class="number">1</span>)*<span class="built_in">num</span>])</div><div class="line"></div><div class="line">	<span class="literal">return</span> <span class="built_in">result</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">def Code(<span class="built_in">num</span>):</div><div class="line"></div><div class="line">	<span class="built_in">number</span> = <span class="string">''</span></div><div class="line"></div><div class="line">	<span class="built_in">result</span> = []</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="built_in">num</span>):</div><div class="line"></div><div class="line">		<span class="built_in">number</span> = <span class="built_in">number</span> + str(i)</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> permutations(<span class="built_in">number</span>,<span class="built_in">num</span>):</div><div class="line"></div><div class="line">		<span class="built_in">result</span>.append(i)</div><div class="line"></div><div class="line">	<span class="literal">return</span> <span class="built_in">result</span></div><div class="line"></div><div class="line"></div><div class="line">def main():</div><div class="line"></div><div class="line">	content,output = <span class="built_in">start</span>()</div><div class="line"></div><div class="line">	Exp(content,output)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line"></div><div class="line">	main()</div></pre></td></tr></table></figure>
-
-          
+          运行环境python2.7
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/列置换/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -922,7 +944,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:33:16+08:00">
                 2017-09-23
@@ -986,10 +1008,16 @@
       
         
           
-            <p><code>运行环境python3</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">UCaseChar</span><span class="params">(ch)</span>:</span> </div><div class="line">    <span class="keyword">if</span> ord(ch) <span class="keyword">in</span> range(<span class="number">97</span>, <span class="number">122</span>): </div><div class="line">        <span class="keyword">return</span> chr(ord(ch) - <span class="number">32</span>) </div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> ch </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">LCaseChar</span><span class="params">(ch)</span>:</span> </div><div class="line">    <span class="keyword">if</span> ord(ch) <span class="keyword">in</span> range(<span class="number">65</span>, <span class="number">91</span>): </div><div class="line">        <span class="keyword">return</span> chr(ord(ch) + <span class="number">32</span>) </div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> ch </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">UCase</span><span class="params">(str)</span>:</span> </div><div class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(map(UCaseChar, str)) </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">LCase</span><span class="params">(str)</span>:</span> </div><div class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(map(LCaseChar, str)) </div><div class="line"></div><div class="line"><span class="keyword">print</span> (LCase(<span class="string">'ABC我abc'</span>)) </div><div class="line"><span class="keyword">print</span> (UCase(<span class="string">'ABC我abc'</span>))</div></pre></td></tr></table></figure>
-
-          
+          运行环境python3
+1234567891011121314151617181920def UCaseChar(ch):     if ord(ch) in range(97, 122):         return chr(ord(ch) - 32)     else:        retu
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/大小写转换/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1067,7 +1095,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:27:02+08:00">
                 2017-09-23
@@ -1131,10 +1159,16 @@
       
         
           
-            <p><code>运行环境python2.7</code></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">key=<span class="string">'CRL'</span>.upper()</div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> in range(<span class="number">0</span>,<span class="number">26</span>):</div><div class="line">    flag=<span class="string">''</span></div><div class="line">    <span class="keyword">for</span> <span class="built_in">j</span> in key:</div><div class="line">        <span class="keyword">if</span> <span class="built_in">j</span>.isalpha():</div><div class="line">            flag+=chr(((ord(<span class="built_in">j</span>)-ord(<span class="string">'A'</span>)+<span class="built_in">i</span>)<span class="comment">%26)+ord('A'))</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            flag+=<span class="built_in">j</span></div><div class="line">    print str(<span class="built_in">i</span>).zfill(<span class="number">2</span>),flag</div></pre></td></tr></table></figure>
-
-          
+          运行环境python2.7
+123456789key='CRL'.upper()for i in range(0,26):    flag=''    for j in key:        if j.isalpha():            flag+=chr(((ord(j)-ord('A'
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/移位/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1212,7 +1246,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:20:50+08:00">
                 2017-09-23
@@ -1276,10 +1310,16 @@
       
         
           
-            <p><code>运行环境python3</code></p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">CODE = &#123;<span class="string">'A'</span>: <span class="string">'.-'</span>,     <span class="string">'B'</span>: <span class="string">'-...'</span>,   <span class="string">'C'</span>: <span class="string">'-.-.'</span>,</div><div class="line">        <span class="string">'D'</span>: <span class="string">'-..'</span>,    <span class="string">'E'</span>: <span class="string">'.'</span>,      <span class="string">'F'</span>: <span class="string">'..-.'</span>,</div><div class="line">        <span class="string">'G'</span>: <span class="string">'--.'</span>,    <span class="string">'H'</span>: <span class="string">'....'</span>,   <span class="string">'I'</span>: <span class="string">'..'</span>,</div><div class="line">        <span class="string">'J'</span>: <span class="string">'.---'</span>,   <span class="string">'K'</span>: <span class="string">'-.-'</span>,    <span class="string">'L'</span>: <span class="string">'.-..'</span>,</div><div class="line">        <span class="string">'M'</span>: <span class="string">'--'</span>,     <span class="string">'N'</span>: <span class="string">'-.'</span>,     <span class="string">'O'</span>: <span class="string">'---'</span>,</div><div class="line">        <span class="string">'P'</span>: <span class="string">'.--.'</span>,   <span class="string">'Q'</span>: <span class="string">'--.-'</span>,   <span class="string">'R'</span>: <span class="string">'.-.'</span>,</div><div class="line">             <span class="string">'S'</span>: <span class="string">'...'</span>,    <span class="string">'T'</span>: <span class="string">'-'</span>,      <span class="string">'U'</span>: <span class="string">'..-'</span>,</div><div class="line">        <span class="string">'V'</span>: <span class="string">'...-'</span>,   <span class="string">'W'</span>: <span class="string">'.--'</span>,    <span class="string">'X'</span>: <span class="string">'-..-'</span>,</div><div class="line">        <span class="string">'Y'</span>: <span class="string">'-.--'</span>,   <span class="string">'Z'</span>: <span class="string">'--..'</span>,</div><div class="line"></div><div class="line">        <span class="string">'0'</span>: <span class="string">'-----'</span>,  <span class="string">'1'</span>: <span class="string">'.----'</span>,  <span class="string">'2'</span>: <span class="string">'..---'</span>,</div><div class="line">        <span class="string">'3'</span>: <span class="string">'...--'</span>,  <span class="string">'4'</span>: <span class="string">'....-'</span>,  <span class="string">'5'</span>: <span class="string">'.....'</span>,</div><div class="line">        <span class="string">'6'</span>: <span class="string">'-....'</span>,  <span class="string">'7'</span>: <span class="string">'--...'</span>,  <span class="string">'8'</span>: <span class="string">'---..'</span>,</div><div class="line">        <span class="string">'9'</span>: <span class="string">'----.'</span></div><div class="line">        &#125;</div><div class="line">def main():</div><div class="line"></div><div class="line">        msg = <span class="built_in">input</span>(<span class="string">'MESSAGE: '</span>)</div><div class="line"></div><div class="line">        <span class="keyword">for</span> <span class="built_in">char</span> <span class="keyword">in</span> msg:</div><div class="line">                <span class="keyword">if</span> <span class="built_in">char</span> == <span class="string">' '</span>:</div><div class="line">                        <span class="built_in">print</span></div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                        <span class="built_in">print</span> (CODE[<span class="built_in">char</span>.<span class="built_in">upper</span>()] + <span class="string">'  '</span>,)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">        main()</div></pre></td></tr></table></figure>
-
-          
+          运行环境python3
+123456789101112131415161718192021222324252627CODE = &#123;'A': '.-',     'B': '-...',   'C': '-.-.',        'D': '-..',    'E': '.',      
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/字符串转莫尔斯/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1357,7 +1397,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:16:50+08:00">
                 2017-09-23
@@ -1421,9 +1461,15 @@
       
         
           
-            <p><code>请在python3环境下运行</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">chars = <span class="string">",.0123456789?abcdefghijklmnopqrstuvwxyz"</span></div><div class="line">codes = <span class="string">"""--..-- .-.-.- ----- .---- ..--- ...-- ....- ..... -.... --... ---..</span></div><div class="line"><span class="string">      ----. ..--.. .- -... -.-. -... . ..-. --. .... .. .--- -.- .-.. --</span></div><div class="line"><span class="string">      -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.."""</span></div><div class="line">keys = dict(zip(chars, codes.split()))</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">char2morse</span><span class="params">(char)</span>:</span></div><div class="line">  <span class="keyword">return</span> keys.get(char.lower(), char)</div><div class="line"><span class="keyword">print</span> (<span class="string">' '</span>.join(char2morse(c) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">'SOS'</span>))</div></pre></td></tr></table></figure></p>
-
-          
+          请在python3环境下运行12345678chars = ",.0123456789?abcdefghijklmnopqrstuvwxyz"codes = """--..-- .-.-.- ----- .---- ..--- ...-- ....- ..... -.... --... ---.. 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/转换字符串为莫尔斯/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1501,7 +1547,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:14:28+08:00">
                 2017-09-23
@@ -1565,9 +1611,15 @@
       
         
           
-            <p><code>运行环境python3</code><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">key='helloworld'</div><div class="line">plaintext='whereisthekey'</div><div class="line"></div><div class="line"><span class="comment">#key='relations'</span></div><div class="line"><span class="comment">#plaintext='tobeornottobeth'</span></div><div class="line"> </div><div class="line">ascii='abcdefghijklmnopqrstuvwxyz'</div><div class="line">keylen=len(key)</div><div class="line">ptlen=len(plaintext)</div><div class="line">ciphertext = ''</div><div class="line">i = 0</div><div class="line">while i &lt; ptlen:</div><div class="line">    j = i % keylen</div><div class="line">    k = ascii.index(key[j])</div><div class="line">    m = ascii.index(plaintext[i])</div><div class="line">    ciphertext += ascii[(m+k)%26]</div><div class="line">    i += 1</div><div class="line"> </div><div class="line">print (ciphertext)</div></pre></td></tr></table></figure></p>
-
-          
+          运行环境python312345678910111213141516171819key='helloworld'plaintext='whereisthekey'#key='relations'#plaintext='tobeornottobeth' ascii='abcdefghijklmnopq
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/维吉尼亚/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1645,7 +1697,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T09:11:41+08:00">
                 2017-09-23
@@ -1709,9 +1761,15 @@
       
         
           
-            <p><code>运行环境python3</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> base64</div><div class="line">str = <span class="string">'''</span></div><div class="line"><span class="string">Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSWFJteFZVMjA1VjAxV2JETlhhMk0xVmpKS1NHVkVRbUZX</span></div><div class="line"><span class="string">VmxsM1ZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjSEJXYTFwaFpWWmFkRTFV</span></div><div class="line"><span class="string">VWxSTmF6RTFWa2QwYzJGc1NuUmhSemxWVmpOT00xcFZXbUZrUjA1R1drWlNUbUpGY0VwV2JURXdZVEZr</span></div><div class="line"><span class="string">U0ZOclpHcFNWR3hoV1d4U1IyUnNXbGRYYlhSWFRWaENSbFpYZUhkV01ERkZVbFJDVjAxdVVuWldha3BI</span></div><div class="line"><span class="string">VmpGT2RWVnNXbWhsYlhob1ZtMXdUMkl5UmtkalJtUllZbGhTV0ZSV2FFTlNiRnBZWlVoa1YwMUVSa1pW</span></div><div class="line"><span class="string">YkZKRFZqSkdjbUV6YUZaaGExcG9WakJhVDJOdFJrZFhiV2hzWWxob2IxWnRNWGRVTVZWNVVtdGtWMWRI</span></div><div class="line"><span class="string">YUZsWmJGWmhZMVphZEdONlJteFNiSEJaV2xWb2ExWXdNVVZTYTFwV1lrWktSRlpxU2tabFZsSlpZVVpr</span></div><div class="line"><span class="string">VTFKV2NIbFdWRUpoVkRKT2MyTkZhR3BTYkVwVVZteG9RMWRzV25KWGJHUmFWakZHTkZaSGRHdFdiVXBI</span></div><div class="line"><span class="string">VjJ4U1dtSkhhRlJXTUZwVFZqRmtkRkp0ZUZkaVZrbzFWbXBLTkZReFdsaFRiRnBxVWxkU1lWUlZXbmRs</span></div><div class="line"><span class="string">YkZweFVtMUdUMkpGV2xwWlZWcHJWVEZLVjJOSWJGZFdSVXBvVmtSS1QyUkdTbkphUm1ocFZqTm9WVmRX</span></div><div class="line"><span class="string">VWs5Uk1XUkhWMjVTVGxaRlNsaFVWbVEwVjBaYVdHUkhkRmhTTUhCSlZsZDRjMWR0U2toaFJsSlhUVVp3</span></div><div class="line"><span class="string">VkZacVNrZFNiRkp6Vlcxc1UwMHhSalpXYWtvd1ZURlZlRmR1U2s1WFJYQnhWVzB4YjFZeFVsaE9Wemxz</span></div><div class="line"><span class="string">WWtad2VGVnRNVWRVTWtwR1YyeHdXbFpXY0hKV1ZFWkxWMVpHY21KR1pHbFhSVXBKVm10U1MxVXhXWGhX</span></div><div class="line"><span class="string">YmxaV1lsaENWRmxyVm5kV1ZscDBaVWM1VWsxWFVucFdNV2h2VjBkS1JrNVdVbFZXTTJoSVZHdGFjMk5z</span></div><div class="line"><span class="string">WkhSa1IyaHBVbGhCZDFkV1ZtOVVNVnAwVTJ4V1YyRXhTbUZhVjNSaFYwWndSbFpZYUZkTlZrcDVWR3hh</span></div><div class="line"><span class="string">VDJGV1NuUlBWRTVYVFc1b1dGbHFTa1psUm1SWldrVTFWMVpzY0ZWWFZsSkhaREZrUjJKSVRtaFNlbXhQ</span></div><div class="line"><span class="string">VkZaYWQyVkdWblJsU0dScFVqQndWMVl5ZEhkV01ERnhVbXRvVjFaRldreFdNVnBIWTIxS1IxcEdaRTVO</span></div><div class="line"><span class="string">UlhCS1ZtMTBVMU14VlhoWFdHaGhVMFphVmxscldrdGpSbHB4VkcwNWEySkhVbnBYYTFKVFYyeFpkMkpF</span></div><div class="line"><span class="string">VWxkTmFsWlVWa2Q0WVZKc1RuTmhSbkJZVTBWS1NWWnFRbUZXYlZaWVZXdG9hMUp0YUZSWmJGcExVMnhr</span></div><div class="line"><span class="string">VjFadFJtcE5WMUl3Vld4b2MyRkdTbGRUYlVaaFZqTlNhRmxWV25OT2JFcHpXa2R3YVZORlNrbFdiR040</span></div><div class="line"><span class="string">WXpGVmQwMUliR2hTYlhoWVdXeG9RMVJHVW5KYVJWcHNVbTFTZWxsVldsTmhSVEZ6VTI1b1YxWjZSVEJh</span></div><div class="line"><span class="string">UkVaclVqSktTVlJ0YUZObGJYaFFWa1phWVdReVZrZFdibEpPVmxkU1YxUlhkSGRXTVd4eVZXMUdXRkl3</span></div><div class="line"><span class="string">VmpSWk1HaExWMnhhV0ZWclpHRldWMUpRVldwS1MxSXlSa2hoUlRWWFltdEtNbFp0TVRCVk1VMTRWVzVT</span></div><div class="line"><span class="string">VjJKSFVsVlpiWFIzWWpGV2NWTnRPVmRTYlhoYVdUQmFhMkV3TVZkalJteGhWbGROTVZaWGMzaGpNVTUx</span></div><div class="line"><span class="string">WTBaa1RtRnNXbFZXYTJRMFV6RktjMXBJVmxSaVJscFlXV3RhZG1Wc1drZFdiVVphVmpGS1IxUnNXbUZW</span></div><div class="line"><span class="string">UmxsNVlVaENWbUpIYUVSVWJYaHJWbFpHZEZKdGNFNVdNVWwzVmxkNGIyTXlSa2RUYkdSVVlsVmFWbFp1</span></div><div class="line"><span class="string">Y0Zka2JGcHlWMjFHYWxacmNEQmFSV1F3VlRKRmVsRllaRmhpUmxwb1dWUktSMVl4VG5OYVIyaE9UV3hL</span></div><div class="line"><span class="string">V1ZkWGVHOVJNVTE0WTBaYVdHRXpRbk5WYlRGVFpXeHNWbGRzVG1oV2EzQXhWVmMxYjFZeFdYcGhTRXBY</span></div><div class="line"><span class="string">VmtWYWVsWnFSbGRqTVdSellVZG9UazFWY0RKV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRY</span></div><div class="line"><span class="string">Ym1Sc1ZteHNOVlJzYUd0V01rcEhZa1JhV2xaV1NsQldNakZHWlZaV2NscEhSbGRXTVVwUlZsUkNWazVX</span></div><div class="line"><span class="string">V1hsU2EyaG9VbFJXV0ZsdGRFdE5iRnAwVFZSQ1ZrMVZNVFJXVnpWVFZqSktTRlZzV2xwaVdGSXpXV3BH</span></div><div class="line"><span class="string">VjJOV1RuUlBWbVJUWWxob1lWZFVRbUZoTVZwelUyNU9hbEp0ZUZaV2JGcExVMFphV0dNemFGaFNiRnA1</span></div><div class="line"><span class="string">V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmxVUms5U01WcDFWR3hvYVZKc2NGbFhWM1JoWkRGa1YxZHJhR3hT</span></div><div class="line"><span class="string">TUZwaFZtcEdTMUl4VW5OWGJVWldVbXhzTlZsVldsTldNa1Y0VjJ0MFZWWnNjSEpaZWtaaFpFVTVWMVpy</span></div><div class="line"><span class="string">TlZkaWEwWXpWbXhqZDAxV1RYaFZXR2hZWW1zMVZWbHNWbUZXYkZwMFpVaGtUazFXY0hsV01qRkhZV3hh</span></div><div class="line"><span class="string">Y21ORVJsaGhNWEJRVmtkNFlXTnRUa1ZYYkdST1lteEtlVmRZY0VkV2JWWlhWRzVXVkdKRk5XOVpXSEJY</span></div><div class="line"><span class="string">VjFaa1YxVnJaR3ROYTFwSVdXdGFiMkZ0Vm5KWGJHaFZWbTFTVkZZeWVHdGpiRnBWVW14b1UyRXpRbUZX</span></div><div class="line"><span class="string">Vm1NeFlqRlplRmRxV2xKWFIyaFhWbXRXWVdWc1duRlNiWFJyVm14S01GVnRlRTloUjFaelYyeGtWMkpI</span></div><div class="line"><span class="string">VGpSVWEyUlNaVlphY2xwR1pGaFNNMmg1Vmxkd1ExbFhUa2RXYmxKc1UwZFNjMWxyV2xkT1ZsSnpXWHBX</span></div><div class="line"><span class="string">VjAxRVJsaFphMUpoVjJ4YVYyTklXbGROYm1ob1ZtcEdZV05XVm5OYVJUVlhZbXRLU2xZeGFIZFNNVmw1</span></div><div class="line"><span class="string">VkZoc1UyRXlhSEJWYlhNeFkwWnNWVkZ1WkU1aVJuQXdXbFZqTldFd01WWk5WRkpYWWtkb2RsWXdXbXRU</span></div><div class="line"><span class="string">UjBaSFlVWndhVmRIYUc5V2JURTBZekpPYzFwSVZtRlNNMEpVV1d0YWQwNUdXbGhOVkVKT1VteHNORll5</span></div><div class="line"><span class="string">TlZOV2JVcElaVWRvVm1KSFVsUlZNRnBoWTFaT2NscEZPV2xTV0VJMlZtdGtORmxXVlhsVGExcFlWMGhD</span></div><div class="line"><span class="string">V0Zac1duZFNNVkY0VjJ0T1ZtSkZTbFpVVlZGM1VGRTlQUT09</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">16</span>):</div><div class="line">    str = base64.b64decode(str)</div><div class="line"><span class="keyword">print</span> (str)</div></pre></td></tr></table></figure></p>
-
-          
+          运行环境python31234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import base64str = '''Vm0wd2QyUXlVWGxWV0d4V1YwZD
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/n次base64解密/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1801,7 +1859,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">77</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1814,7 +1872,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1906,7 +1964,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 

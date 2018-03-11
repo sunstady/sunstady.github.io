@@ -234,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -254,7 +254,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -264,7 +264,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -340,7 +340,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T20:46:46+08:00">
                 2017-10-27
@@ -404,11 +404,15 @@
       
         
           
-            <p>在DOS下执行：<code>mysql -u root -p</code><br>然后输入旧的密码，如果是第一次进入，则直接回车<br>mysql&gt;<code>show databases;</code><br>mysql&gt;<code>use mysql;</code><br>注意一定先执行<code>use mysql;</code>再执行下面命令设置密码，如新密码123456<br>mysql&gt;<code>UPDATE user SET password=PASSWORD(&#39;123456&#39;) WHERE user=&#39;root&#39;;</code><br>mysql&gt;<code>FLUSH PRIVILEGES;</code><br>mysql&gt;<code>exit;</code></p>
-<p>附上常用mysql命令(win8.1以管理员身份执行win+x+a):<br>安装mysql服务：<code>mysqld -install</code><br>卸载mysql服务：<code>mysqld -remove</code><br>启动mysql服务：<code>net start mysql</code><br>停止mysql服务：<code>net stop mysql</code></p>
-<p>如果启动mysql服务出现1067错误码<br>尝试清理<code>datadir</code>目录下的以下文件：<code>auto.cnf</code>、<code>Cryhelyxx-pc.err</code>、<code>Cryhelyxx-pc.pid</code>、<code>ib_logfile0</code>、<code>ib_logfile1</code>、<code>ibdata1</code>、<code>ibtmp1</code><br>注意：在清理之前请备份好数据库，否则后果自负，并再次启动mysql服务：<code>net start mysql</code>。</p>
-
-          
+          在DOS下执行：mysql -u root -p然后输入旧的密码，如果是第一次进入，则直接回车mysql&gt;show databases;mysql&gt;use mysql;注意一定先执行use mysql;再执行下面命令设置密码，如新密码123456mysql&gt;UPDATE user 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/27/修改MySQL密码/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -486,7 +490,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-10T22:09:38+08:00">
                 2017-10-10
@@ -550,13 +554,17 @@
       
         
           
-            <p>安装android studio的时候，出现几个错误，在此记录下。</p>
-<p>第一个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/2.jpg" alt="First Run"><br><code>解决方法：</code>在自己的android studio安装目录下找到这个文件<code>idea.properties</code>,在最后面添加一行<code>disable.android.first.run=true</code></p>
-<p>第二个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/3.jpg" alt="汉字">(图是百度的==当时没保存下来)<br><code>解决方法：</code>SDK的目录名称不能有汉字，换个路径</p>
-<p>第三个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/9d4e725780e458c740289e8c420650457ba4c761/android%20studio/4.jpg" alt="out of date"><br><code>解决方法：</code>点击右下角的<code>Configure</code><img src="https://raw.githubusercontent.com/sunstady/hexo/62829847e40e333fe7e569ebc5a20c0ae8b5867f/android%20studio/5.jpg" alt="Configure">点击<code>project Defaults</code>,点击<code>Project Structure</code>,填入SDK的地址<img src="https://raw.githubusercontent.com/sunstady/hexo/f55e7eb2849820a93edd2b434d3c2f261bf0c46b/android%20studio/6.jpg" alt="sdk"></p>
-<p>第四个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/1.jpg" alt="空格"><br><code>解决方法：</code>SDK的目录不能有空格，换路径</p>
-
-          
+          安装android studio的时候，出现几个错误，在此记录下。
+第一个是出现这个解决方法：在自己的android studio安装目录下找到这个文件idea.properties,在最后面添加一行disable.android.first.run=true
+第二个是出现这个(图是百度的==当时没
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/10/Android-Studio-安装问题/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -634,7 +642,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T09:40:22+08:00">
                 2017-09-28
@@ -698,14 +706,15 @@
       
         
           
-            <p><code>使用super调用父类的构造方法</code><br>子类不继承父类的构造方法，因此，子类如果想使用父类的构造方法，必须在子类的构造方法中使用，必须使用关键字super来表示，而且super必须是子类构造方法中的<code>头一条</code>语句<br><code>Student5_6.java</code><br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> Student5_6 &#123;</div><div class="line">	<span class="built_in">int</span> <span class="keyword">number</span>;</div><div class="line">	String <span class="keyword">name</span>;</div><div class="line">	Student5_6()&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	Student5_6(<span class="built_in">int</span> <span class="keyword">number</span>, String <span class="keyword">name</span>)&#123;</div><div class="line">		this.<span class="keyword">number</span>= <span class="keyword">number</span>;</div><div class="line">		this.<span class="keyword">name</span>= <span class="keyword">name</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="built_in">int</span> getNumber()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">number</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> String getName() &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">name</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>UniverStudent.java</code><br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">UniverStudent</span> <span class="keyword">extends</span> <span class="title">Student5_6</span> </span>&#123;</div><div class="line">	boolean isNarriage;<span class="comment">//子类新增的结婚属性</span></div><div class="line">	<span class="type">UniverStudent</span>(int number, <span class="type">String</span> name, boolean v)&#123;</div><div class="line">		<span class="keyword">super</span>(number, name);<span class="comment">//调用父类的构造方法</span></div><div class="line">	&#125;</div><div class="line">	public boolean getIsNarriage()&#123;</div><div class="line">		<span class="keyword">return</span> isNarriage;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Example5_6.java</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_6</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		UniverStudent zhangStudent= <span class="keyword">new</span> UniverStudent(<span class="number">20111</span>, <span class="string">"张三"</span>, <span class="literal">false</span>);</div><div class="line">		<span class="keyword">int</span> number= zhangStudent.getNumber();</div><div class="line">		String name= zhangStudent.getName();</div><div class="line">		boolean marriage= zhangStudent.getIsNarriage();</div><div class="line">		System.<span class="keyword">out</span>.println(name+ <span class="string">"的学号是: "</span>+ number);</div><div class="line">		<span class="keyword">if</span>(marriage== <span class="literal">true</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(name+ <span class="string">"已婚"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			System.<span class="keyword">out</span>.println(name+ <span class="string">"未婚"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>使用super操作被隐藏的成员变量和方法</code><br>如果在子类中想使用被子类隐藏的成员变量或方法，可以使用关键字super，super.x、super.play()，就是访问和调用被子类隐藏的成员变量x和方法play()<br><code>Sum.java</code><br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sum</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">double</span> f()&#123;</div><div class="line">		<span class="keyword">double</span> <span class="keyword">sum</span>= <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">1</span>; i&lt;= n;i++)&#123;</div><div class="line">			<span class="keyword">sum</span>= <span class="keyword">sum</span>+ i;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">sum</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Average.java</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Average</span> <span class="keyword">extends</span> <span class="title">Sum</span> </span>&#123;</div><div class="line">	<span class="keyword">double</span> nm;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">fq</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">double</span> c;</div><div class="line">		<span class="keyword">super</span>.n= (<span class="keyword">int</span>)nm;</div><div class="line">		c= <span class="keyword">super</span>.f();</div><div class="line">		<span class="keyword">return</span> c+ nm;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">g</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">double</span> c;</div><div class="line">		c= <span class="keyword">super</span>.f();</div><div class="line">		<span class="keyword">return</span> c- nm;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Example5_7.java</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_7</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		Average average= <span class="keyword">new</span> Average();</div><div class="line">		average.nm= <span class="number">100.5678</span>;</div><div class="line">		<span class="keyword">double</span> result1= average.fq();</div><div class="line">		<span class="keyword">double</span> result2= average.g();</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"result1= "</span>+ result1);</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"result2= "</span>+ result2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          使用super调用父类的构造方法子类不继承父类的构造方法，因此，子类如果想使用父类的构造方法，必须在子类的构造方法中使用，必须使用关键字super来表示，而且super必须是子类构造方法中的头一条语句Student5_6.java1234567891011121314151617public cla
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/28/super关键字/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -783,7 +792,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T22:32:02+08:00">
                 2017-09-26
@@ -847,9 +856,15 @@
       
         
           
-            <p>方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。<br><code>由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//外部类</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloWorld</span> &#123;</div><div class="line">    <span class="keyword">private</span> String name = <span class="string">"爱慕课"</span>;</div><div class="line">    <span class="comment">// 外部类中的show方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123; </div><div class="line">	<span class="comment">// 定义方法内部类</span></div><div class="line">	<span class="keyword">class</span> <span class="title">MInner</span> &#123;</div><div class="line">	    <span class="keyword">int</span> score = <span class="number">83</span>;</div><div class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getScore</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> score + <span class="number">10</span>;</div><div class="line">	    &#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 创建方法内部类的对象</span></div><div class="line">	MInner mi= <span class="keyword">new</span> MInner();</div><div class="line">	<span class="comment">// 调用内部类的方法</span></div><div class="line">	<span class="keyword">int</span> newScore= mi.getScore();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"姓名："</span> + name + <span class="string">"\n加分后的成绩："</span> + newScore);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 测试方法内部类</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">	<span class="comment">// 创建外部类的对象</span></div><div class="line">	HelloWorld mo= <span class="keyword">new</span> HelloWorld();</div><div class="line">	<span class="comment">// 调用外部类的方法</span></div><div class="line">	mo.show();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。1234567891011121314151617181920212223242526//外部类
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/26/方法内部类/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -927,7 +942,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T22:06:19+08:00">
                 2017-09-26
@@ -991,11 +1006,15 @@
       
         
           
-            <p><code>内部类中最常见的就是成员内部类，也称为普通内部类</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//外部类HelloWorld</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloWorld</span>&#123;</div><div class="line">  <span class="comment">//外部类的私有属性name</span></div><div class="line">  <span class="keyword">private</span> String name = <span class="string">"imooc"</span>;</div><div class="line">  <span class="comment">//外部类的成员属性</span></div><div class="line">  <span class="keyword">int</span> age = <span class="number">20</span>;</div><div class="line">  <span class="comment">//成员内部类Inner</span></div><div class="line">  <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Inner</span> &#123;</div><div class="line">	  String name = <span class="string">"爱慕课"</span>;</div><div class="line">      <span class="comment">//内部类中的方法</span></div><div class="line">	  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123; </div><div class="line">		  System.<span class="keyword">out</span>.println(<span class="string">"外部类中的name："</span> + HelloWorld.<span class="keyword">this</span>.name);</div><div class="line">		  System.<span class="keyword">out</span>.println(<span class="string">"内部类中的name："</span> + name);</div><div class="line">		  System.<span class="keyword">out</span>.println(<span class="string">"外部类中的age："</span> + age);</div><div class="line">		  &#125;</div><div class="line">	  &#125;</div><div class="line">  <span class="comment">//测试成员内部类</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">	  <span class="comment">//创建外部类的对象</span></div><div class="line">	  HelloWorld o = <span class="keyword">new</span> HelloWorld (); </div><div class="line">      <span class="comment">//创建内部类的对象</span></div><div class="line">	  Inner inn =  o.new Inner();</div><div class="line">      <span class="comment">//调用内部类对象的show方法</span></div><div class="line">	  inn.show();</div><div class="line">      <span class="comment">//外部类不能直接使用内部类的成员何方法，如show();</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>静态内部类是static修饰的内部类，这种内部类的特点是:</code><br><code>静态内部类不能直接访问外部类的非静态成员，但可以通过 new 外部类().成员 的方式访问</code><br><code>如果外部类的静态成员与内部类的成员名称相同，可通过“类名.静态成员”访问外部类的静态成员；
-如果外部类的静态成员与内部类的成员名称不相同，则可通过“成员名”直接调用外部类的静态成员</code><br><code>创建静态内部类的对象时，不需要外部类的对象，可以直接创建 内部类 对象名= new 内部类();</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//外部类</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloWorld</span> &#123;</div><div class="line">	<span class="comment">// 外部类中的静态变量score</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> score = <span class="number">84</span>;</div><div class="line">	<span class="comment">// 创建静态内部类</span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">SInner</span> &#123;</div><div class="line">    <span class="comment">// 内部类中的变量score</span></div><div class="line">    <span class="keyword">int</span> score = <span class="number">91</span>; </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"访问外部类中的score："</span> + HelloWorld.score);</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"访问内部类中的score："</span> + score);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 测试静态内部类</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		<span class="comment">// 直接创建内部类的对象</span></div><div class="line">		SInner si= <span class="keyword">new</span> SInner();</div><div class="line">		<span class="comment">// 调用show方法</span></div><div class="line">		si.show();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          内部类中最常见的就是成员内部类，也称为普通内部类123456789101112131415161718192021222324252627//外部类HelloWorldpublic class HelloWorld&#123;  //外部类的私有属性name  private String name
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/26/成员内部类与静态内部类/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1073,7 +1092,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T21:25:05+08:00">
                 2017-09-26
@@ -1137,10 +1156,16 @@
       
         
           
-            <p><code>内部类提供了更好的封装，可以把内部类隐藏在外部类之内，不允许同一个包中的其他类访问该类</code><br><code>内部类的方法可以直接访问外部类的所有数据，包括私有的数据</code><br><code>内部类所实现的功能使用外部类同样可以实现，只是有时使用内部类更方便</code><br><code>内部类分为：成员内部类、静态内部类、方法内部类、匿名内部类</code></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">neibulei</span> &#123;</span></div><div class="line">	<span class="comment">//内部类Inner，类Inner在类neibulei的内部</span></div><div class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span>&#123;</span></div><div class="line">		<span class="comment">//内部类的方法</span></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</div><div class="line">			System.out.println(<span class="string">"Hello World!"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		<span class="comment">//创建外部类对象</span></div><div class="line">		neibulei neibulei= <span class="keyword">new</span> neibulei();</div><div class="line">		<span class="comment">//创建内部类对象</span></div><div class="line">		Inner inner= neibulei.<span class="keyword">new</span> Inner();</div><div class="line">		<span class="comment">//调用内部类对象的方法</span></div><div class="line">		inner.show();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          内部类提供了更好的封装，可以把内部类隐藏在外部类之内，不允许同一个包中的其他类访问该类内部类的方法可以直接访问外部类的所有数据，包括私有的数据内部类所实现的功能使用外部类同样可以实现，只是有时使用内部类更方便内部类分为：成员内部类、静态内部类、方法内部类、匿名内部类
+1234567891011121
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/26/内部类/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1218,7 +1243,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T08:38:45+08:00">
                 2017-09-26
@@ -1282,11 +1307,16 @@
       
         
           
-            <p><code>x是可变参数的代表，代表若干哥int型参数</code><br><code>x.length是x代表的参数的个数</code><br><code>x[i]是x代表的第i个参数(类似数组)</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example4_11</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		f(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">		f(<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>);</div><div class="line">		f(<span class="number">9</span>, <span class="number">7</span>, <span class="number">6</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span>(<span class="params"><span class="keyword">int</span> ... x</span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; x.length; i++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(x[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面的方法输出的是一个数字一行，觉得不好看，改版如下<br><code>print输出不换行，println输出换行</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example4_11</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		f(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">		f(<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>);</div><div class="line">		f(<span class="number">9</span>, <span class="number">7</span>, <span class="number">6</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span>(<span class="params"><span class="keyword">int</span> ... x</span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; x.length<span class="number">-1</span>; i++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.print(x[i]);</div><div class="line">		&#125;</div><div class="line">		System.<span class="keyword">out</span>.println(x[x.length<span class="number">-1</span>]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          x是可变参数的代表，代表若干哥int型参数x.length是x代表的参数的个数x[i]是x代表的第i个参数(类似数组)
+123456789101112public class Example4_11 &#123;	public static void main(String[] args) &#12
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/26/可变参数/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1364,7 +1394,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T08:23:29+08:00">
                 2017-09-26
@@ -1428,10 +1458,16 @@
       
         
           
-            <p><code>static存在的时候，调用b2.setN(5)，sum=6，去掉static，sum从0开始</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> <span class="title">B</span>&#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">static</span> <span class="keyword">int</span> sum= <span class="number">0</span>;  </div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setN</span>(<span class="params"><span class="keyword">int</span> n</span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.n= n;</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"this.n= "</span>+ <span class="keyword">this</span>.n);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getSum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">1</span>;i&lt;= n; i++)&#123;</div><div class="line">			sum= sum+ i;</div><div class="line">		&#125;</div><div class="line">		System.<span class="keyword">out</span>.println(sum);</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example4_9</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		B b1=<span class="keyword">new</span> B(), b2= <span class="keyword">new</span> B();</div><div class="line">		b1.setN(<span class="number">3</span>);</div><div class="line">		b2.setN(<span class="number">5</span>);</div><div class="line">		<span class="keyword">int</span> a1= b1.getSum();</div><div class="line">		<span class="keyword">int</span> a2= b2.getSum();</div><div class="line">		System.<span class="keyword">out</span>.println(a1+ a2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          static存在的时候，调用b2.setN(5)，sum=6，去掉static，sum从0开始
+123456789101112131415161718192021222324252627class B&#123;	int n;	static int sum= 0;  	void setN(int n
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/26/static/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1509,7 +1545,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T14:34:53+08:00">
                 2017-09-23
@@ -1573,14 +1609,19 @@
       
         
           
-            <p><code>今天有个想法，是输出每个月的天数，正好最近学了enum，就想用这个来做。
+          今天有个想法，是输出每个月的天数，正好最近学了enum，就想用这个来做。
 说干就干，啪啪啪啪...咦~有个错误，我改我改我改！
 然而改了多次，还是没成功，最后根据错误提示问了下度娘，说是格式有误。
 我就想，是不是不能重复内容，我改我改，改到enum里面的内容只有两位31，30，还真是！
-但还是有相同的错误，又想了想，前面加上月份呢？ 啪！问题解决</code><br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Tian</span>&#123;</span></div><div class="line">	一月<span class="number">31</span>天, 二月<span class="number">28</span>天, 三月<span class="number">31</span>天, 四月<span class="number">30</span>天, 五月<span class="number">31</span>天, 六月<span class="number">30</span>天, </div><div class="line">	七月<span class="number">31</span>天, 八月<span class="number">31</span>天, 九月<span class="number">30</span>天, 十月<span class="number">31</span>天, 十一月<span class="number">30</span>天, 十二月<span class="number">31</span>天</div><div class="line">&#125;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Java</span> &#123;</span></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		<span class="keyword">for</span>(Tian <span class="symbol">a:</span> Tian.values())&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(a);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>总结: enum中的内容不能重复，enum中的内容不能只是数字,不然会出现</code>Syntax error on token(s), misplaced constructs(s)<code>这个错误</code></p>
-
-          
+但还是有相同
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/enum问题/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1658,7 +1699,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T13:55:03+08:00">
                 2017-09-23
@@ -1722,14 +1763,16 @@
       
         
           
-            <p><code>eclipse常用快捷键</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Syso+alt+/            快速输出代码</div><div class="line">Ctrl+<span class="built_in">shift</span>+f          快速调整代码格式</div><div class="line">Ctrl+D                快速删除光标所在的行</div><div class="line"><span class="built_in">shift</span>+回车            当输入代码较长的时候换行</div><div class="line">ctrl+F11              运行</div><div class="line">Alt+上下箭头           快速移动光标所在的行代码</div><div class="line">Ctrl+alt+上下箭头      快速复制光标所在行代码</div><div class="line">Alt+/                 快速补全代码</div><div class="line">Ctrl+/                快速添加单行注释</div><div class="line">Ctrl+<span class="built_in">shift</span>+/          添加多行注释</div></pre></td></tr></table></figure>
-<p><code>小常识</code></p>
-<p>打开eclipse，在上方的菜单栏中找到Window<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/101.jpg?raw=true" alt="Window"><br>选中Preferences，点击Java–&gt;Editor–&gt;Content<br><img src="https://github.com/sunstady/hexo/blob/master/images/eclipse/102.jpg?raw=true" alt="Preferences"><br>在红框中输入下面一行字符串，点击OK，退出。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
-<p><code>输入这一串，敲代码的时候可以智能提示</code></p>
-<p><code>包的命名规则</code><br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*<span class="strong">*.*</span><span class="strong">*(对应项目的名字).*</span><span class="strong">*（项目功能）</span></div><div class="line"><span class="strong">com 公司 </span></div><div class="line"><span class="strong">org 组织</span></div><div class="line"><span class="strong">model 模型</span></div><div class="line"><span class="strong">util 工具</span></div><div class="line"><span class="strong">edu 教育</span></div></pre></td></tr></table></figure></p>
-
-          
+          eclipse常用快捷键
+12345678910Syso+alt+/            快速输出代码Ctrl+shift+f          快速调整代码格式Ctrl+D                快速删除光标所在的行shift+回车            当输入代码较长的时候换行ctrl
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/eclipse快捷键/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1819,7 +1862,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">77</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1832,7 +1875,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1924,7 +1967,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 

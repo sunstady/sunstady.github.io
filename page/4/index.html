@@ -234,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -254,7 +254,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -264,7 +264,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -340,7 +340,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T21:24:14+08:00">
                 2017-11-12
@@ -404,12 +404,16 @@
       
         
           
-            <p><code>1、什么是虚拟存储器？（虚存）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解答：虚拟存储器是由硬件和操作系统自动实现存储信息调度和管理的，是在具有层次结构存储器的计算机系统中，自动实现部分装入和部分替换功能，能从逻辑上为用户提供一个比物理贮存容量大的多，可寻址的“主存储器”。</div></pre></td></tr></table></figure></p>
-<p><code>2、为什么要引入虚拟存储器？</code><br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">解答：<span class="number">1</span>&gt;能提高操作系统的内存利用率和系统吞吐量 </div><div class="line"><span class="number">2</span>&gt;在计算机系统中，主存的容量有一定的限制，不可能大大满足各种用户的需要，而在技术上辅助存储器却可以做的相当大。为了给大作业提供方便，使它们不再承担对主存和辅存的具体分配和管理工作，而由操作系统把主存和辅存统一管理起来。</div></pre></td></tr></table></figure></p>
-<p><code>3、虚拟存储器的特征？</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">解答：虚拟存储器具有虚拟性、离散性、多次性及强对换性等特征，其中最重要的特征是虚拟性。</div><div class="line"><span class="meta">1&gt;</span><span class="bash">	虚拟性。虚拟性是指能够从逻辑上扩充内存容量，使用户所看到的内存容量远大于实际的内存容量，这是虚拟存储器所表现出的最重要的特征，也是虚拟存储器最重要的目标。</span></div><div class="line"><span class="meta">2&gt;</span><span class="bash">	离散性。离散性是指内存分配时采用离散分配的方式，没有离散性就不可能实现虚拟存储器。采用连续分配方式，需要将作业装入到连续的内存区域，这样需要连续地一次性申请一部分内存空间，以便将整个作业先后多次装入内存。如果仍然采用连续装入的方式，则无法实现虚拟存储功能，只有采用离散分配方式，才能为它申请内存空间，以避免浪费内存空间。</span></div><div class="line"><span class="meta">3&gt;</span><span class="bash">	多次性。多次性是指一个作业被分成多次调入内存运行。作业在运行时，只将当前运行的那部分程序和数据装入内存，以后再陆续从外存将需要的部分调入内存。</span></div><div class="line"><span class="meta">4&gt;</span><span class="bash">	对换性。对换性是指允许在作业运行过程中换进换出。允许将暂时不用的程序和数据从内存调至外存的对换区，以后需要时再从外存调入到内存。</span></div></pre></td></tr></table></figure></p>
-<p><code>4、虚存可以建立在分区分配管理的基础上吗？为什么？</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解答：不可以。在虚拟存储器中，允许将一个作业分多次调入内存。入宫采用连续分配方式时，应将作业装入一个连续的内存区域中。为此，需事先为它一次性地申请足够的内存空间，以便将整个作业先后分多次装入内存，这不仅会使相当一部分内存空间都处于暂时或“永久”的空闲状态，造成内存资源的严重浪费，而且也无法从逻辑上扩大内存容量。因此，虚拟存储器的实现都是建立在离散分配存储管理方式的基础上。</div></pre></td></tr></table></figure></p>
-
-          
+          1、什么是虚拟存储器？（虚存）1解答：虚拟存储器是由硬件和操作系统自动实现存储信息调度和管理的，是在具有层次结构存储器的计算机系统中，自动实现部分装入和部分替换功能，能从逻辑上为用户提供一个比物理贮存容量大的多，可寻址的“主存储器”。
+2、为什么要引入虚拟存储器？12解答：1&gt;能提高操作系统的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/12/虚拟存储器/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -487,7 +491,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T20:53:06+08:00">
                 2017-11-10
@@ -551,9 +555,15 @@
       
         
           
-            <p>用Wireshark打开这个流量包<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/1.png" alt="Wireshark"><br>点文件中的导出对象，选HTTP，发现其中有如下文件<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/2.png" alt="flag"><br>在010编辑器中打开，发现flagaa中有压缩包的头部，flagaf中有压缩包的尾部，猜测应该是压缩包分解成aa-af，拼凑一下，导出压缩包<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/3.png" alt="压缩包"><br>解压此压缩包，发现有密码<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/4.png" alt="密码"><br>先尝试用<code>Ziperello</code>爆破下<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/5.png" alt="Ziperello"><br>没有加密文件，发现它是伪加密<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/6.png" alt="ZipCenOp"><br>压缩包打开，得flag<br><img src="https://raw.githubusercontent.com/sunstady/hexo/d1e65759b8c210f00de1599ec070607f9976824c/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD/7.png" alt="flag"></p>
-
-          
+          用Wireshark打开这个流量包点文件中的导出对象，选HTTP，发现其中有如下文件在010编辑器中打开，发现flagaa中有压缩包的头部，flagaf中有压缩包的尾部，猜测应该是压缩包分解成aa-af，拼凑一下，导出压缩包解压此压缩包，发现有密码先尝试用Ziperello爆破下没有加密文件，发现它
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/10/人生苦短/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -631,7 +641,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T20:26:17+08:00">
                 2017-11-10
@@ -695,9 +705,15 @@
       
         
           
-            <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="built_in">from</span> PIL import Image</div><div class="line">MAX = <span class="number">280</span></div><div class="line">pic = Image.<span class="built_in">new</span>(<span class="string">"RGB"</span>,(MAX, MAX))</div><div class="line"><span class="built_in">file</span> = <span class="built_in">open</span>(<span class="string">"flag.txt"</span>,<span class="string">'r'</span>)</div><div class="line">m = <span class="built_in">file</span>.<span class="built_in">read</span>().<span class="built_in">split</span>(<span class="string">'\n'</span>)</div><div class="line">i=<span class="number">0</span></div><div class="line"><span class="keyword">for</span> y <span class="keyword">in</span> range (<span class="number">0</span>,MAX):</div><div class="line">   <span class="keyword">for</span> x <span class="keyword">in</span> range (<span class="number">0</span>,MAX):</div><div class="line">       <span class="keyword">if</span>(m[i] == <span class="string">'(0, 0, 0)'</span>):</div><div class="line">           pic.putpixel([x,y],(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</div><div class="line">       <span class="keyword">else</span>:</div><div class="line">           pic.putpixel([x,y],(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>))</div><div class="line">       i = i+<span class="number">1</span></div><div class="line">pic.show()</div><div class="line">pic.save(<span class="string">"flag.png"</span>)</div></pre></td></tr></table></figure>
-
-          
+          12345678910111213141516#!/usr/bin/env pythonfrom PIL import ImageMAX = 280pic = Image.new("RGB",(MAX, MAX))file = open("flag.txt",'r')m = file.read().
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/10/RGB/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -775,7 +791,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T20:11:44+08:00">
                 2017-11-10
@@ -839,9 +855,15 @@
       
         
           
-            <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import base64</div><div class="line"><span class="keyword">file</span> = <span class="keyword">open</span>(<span class="string">'base.txt'</span>,<span class="string">'r'</span>)</div><div class="line"><span class="keyword">st</span> = <span class="keyword">file</span>.<span class="keyword">read</span>()</div><div class="line"><span class="keyword">while</span> True:</div><div class="line">   <span class="keyword">try</span>:</div><div class="line">       <span class="keyword">st</span> = base64.b16decode(<span class="keyword">st</span>)</div><div class="line">   excep<span class="variable">t:</span></div><div class="line">       <span class="keyword">try</span>:</div><div class="line">           <span class="keyword">st</span> = base64.b32decode(<span class="keyword">st</span>)</div><div class="line">       excep<span class="variable">t:</span></div><div class="line">           <span class="keyword">st</span> = base64.b64decode(<span class="keyword">st</span>)</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">st</span>.<span class="keyword">find</span>(<span class="string">'flag'</span>) == <span class="number">0</span>):</div><div class="line">       <span class="keyword">print</span>(<span class="keyword">st</span>)</div></pre></td></tr></table></figure>
-
-          
+          12345678910111213import base64file = open('base.txt','r')st = file.read()while True:   try:       st = base64.b16decode(st)   except:       try:      
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/10/base混合加密/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -919,7 +941,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T19:16:42+08:00">
                 2017-11-08
@@ -983,11 +1005,15 @@
       
         
           
-            <p>今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。<br>首先上VM的密钥：<br>VMware Workstation Pro 14 许可证序列号：<br><code>FF590-2DX83-M81LZ-XDM7E-MKUT4</code><br><code>CG54H-D8D0H-H8DHY-C6X7X-N2KG6</code><br><code>ZC3WK-AFXEK-488JP-A7MQX-XL8YF</code><br><code>AC5XK-0ZD4H-088HP-9NQZV-ZG2R4</code><br><code>ZC5XK-A6E0M-080XQ-04ZZG-YF08D</code><br><code>ZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8</code></p>
-<p>黑屏问题解决:<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以管理员身份进入cmd，输入`netsh winsock reset`, 重启，问题解决</div></pre></td></tr></table></figure></p>
-<p>网上也有其他的解决方法，不过没试过：<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">以管理员身份运行命令提示符（<span class="keyword">cmd</span>.<span class="bash">exe），输入命令 netsh winsock show catalog</span></div><div class="line"><span class="bash">可以看到VMware注册了两个LSP：vSockets DGRAM、vSockets STREAM，路径是%windir%\system32\vsocklib.dll</span></div><div class="line"><span class="bash">观察有没有其他模块也注册了vSockets DGRAM、vSockets STREAM，如果有，就卸载掉这个模块所属的软件。</span></div></pre></td></tr></table></figure></p>
-
-          
+          今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。首先上VM的密钥：VMware Workstation Pro 14 许可证序列号：FF590-2DX83-M81LZ-XDM7E-MKUT4CG54H-D8D0H-H8DHY-C6X7X
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/08/VMware-Workstation-14黑屏问题及密钥/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1065,7 +1091,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T10:57:00+08:00">
                 2017-10-31
@@ -1129,9 +1155,15 @@
       
         
           
-            <p><code>写一个类，该类有一个方法，public int ff(int a, int b), 该方法返回a 和b 的最大公约数。然后再编写一个该类的子类，要求子类重写方法ff，而且重写的方法将返回a 和b 的最小公约数；要求在重写的方法的方法体中首先调用被隐藏的方法返回a 和b 的最大公约数m ，然后将乘积(a* b)/ m返回；要求在应用的程序的主类中分别使用父类和子类创建对象，并分别调用方法f 计算两个正整数的最大公约数和最小公约数。</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AAb</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(b&lt; a)&#123;</div><div class="line">			<span class="keyword">int</span> temp= <span class="number">0</span>;</div><div class="line">			temp= a;</div><div class="line">			a= b;</div><div class="line">			b= temp;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> r= b% a;</div><div class="line">		<span class="keyword">while</span>(r!= <span class="number">0</span>)&#123;</div><div class="line">			b= a;</div><div class="line">			a= r;</div><div class="line">			r= b% a;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> a;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BBb</span> <span class="keyword">extends</span> <span class="title">AAb</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> division= <span class="keyword">super</span>.f(a, b);</div><div class="line">		<span class="keyword">return</span> (a* b)/ division;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example5_10</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		AAb aAb= <span class="keyword">new</span> AAb();</div><div class="line">		BBb bBb= <span class="keyword">new</span> BBb();</div><div class="line">		System.out.println(<span class="string">"最大公约数: "</span>+ aAb.f(<span class="number">36</span>, <span class="number">24</span>));</div><div class="line">		System.out.println(<span class="string">"最小公倍数: "</span>+ bBb.f(<span class="number">36</span>, <span class="number">24</span>));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          写一个类，该类有一个方法，public int ff(int a, int b), 该方法返回a 和b 的最大公约数。然后再编写一个该类的子类，要求子类重写方法ff，而且重写的方法将返回a 和b 的最小公约数；要求在重写的方法的方法体中首先调用被隐藏的方法返回a 和b 的最大公约数m ，然后将乘积(
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/31/Example5-10/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1209,7 +1241,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T10:22:01+08:00">
                 2017-10-31
@@ -1273,10 +1305,16 @@
       
         
           
-            <p><code>写一个类Aa， 该类创建的对象可以调用方法k输出英文字母表，然后再编写一个该类的子类Bb，要求子类Bb必须继承Aa类的方法k(不允许重写)，子类创建的对象不仅可以调用方法k输出英文字母表，而且可以调用子类新增的方法g输出希腊字母表。</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> <span class="title">Ab</span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> final <span class="keyword">void</span> <span class="title">k</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">char</span> cStart= <span class="string">'a'</span>, cEnd= <span class="string">'z'</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">char</span> c= cStart; c&lt;= cEnd; c++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.print(<span class="string">" "</span>+ c);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> <span class="title">Ba</span> <span class="title">extends</span> <span class="title">Ab</span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">g</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">char</span> cStart= <span class="string">'α'</span>, cEnd= <span class="string">'ω'</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">char</span> c= cStart; c&lt;= cEnd; c++)&#123;</div><div class="line">			System.<span class="keyword">out</span>.print(<span class="string">" "</span>+ c);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_9</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		Ba ba=<span class="keyword">new</span> Ba();</div><div class="line">		ba.k();</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">""</span>);</div><div class="line">		ba.g();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          写一个类Aa， 该类创建的对象可以调用方法k输出英文字母表，然后再编写一个该类的子类Bb，要求子类Bb必须继承Aa类的方法k(不允许重写)，子类创建的对象不仅可以调用方法k输出英文字母表，而且可以调用子类新增的方法g输出希腊字母表。
+123456789101112131415161718192021
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/31/Example5-9/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1354,7 +1392,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T15:45:51+08:00">
                 2017-10-29
@@ -1418,21 +1456,18 @@
       
         
           
-            <blockquote>
-<p>工具：<br>eclipse<br>MySQL5.5<br>MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar</p>
-</blockquote>
-<p>Java编译器是eclipse，下载<code>mysql-connector-java-5.1.44-bin.jar</code>，我下的是最新版。<br>加载驱动：<br>1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：<img src="https://raw.githubusercontent.com/sunstady/hexo/d27213020770dfd56fd073dc33909d63192befa4/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg" alt="lib"><br>2、右键工程名，点击Properties <img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/2.jpg" alt="properties"><br>选择Java Build Path中的Libraries，点击Add JARs…, 选择刚才添加的JDBC，如下图:<img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/3.jpg" alt="JDBC"><br>3、配置好MySQL，添加一个用户，用户名是style,密码是1234,  创建一个数据库, 数据库名是student。创建表：</p>
-<blockquote>
-<p>create table students(<br>    -&gt; sno int(10) not null,<br>    -&gt; sname varchar(8) not null,<br>    -&gt; sex char(2) not null,<br>    -&gt; bdate date not null,<br>    -&gt; height dec(5,2) default 000.00,<br>    -&gt; primary key(sno));</p>
-</blockquote>
-<p>然后插入一条数据：</p>
-<blockquote>
-<p>insert into students(sno,sname,sex,bdate,height) values(‘1’,’gfa’,’男’,’2017-10-29’,’fwef’);</p>
-</blockquote>
-<p>创建好数据库后, 编写Java文件来访问MySQL数据库。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> sqldemo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> class mains &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        <span class="comment">//声明Connection对象</span></div><div class="line">        Connection con;</div><div class="line">        <span class="comment">//驱动程序名</span></div><div class="line">        <span class="keyword">String</span> driver = <span class="string">"com.mysql.jdbc.Driver"</span>;</div><div class="line">        <span class="comment">//URL指向要访问的数据库名student</span></div><div class="line">        <span class="keyword">String</span> url = <span class="string">"jdbc:mysql://localhost:3306/student"</span>;</div><div class="line">        <span class="comment">//MySQL配置时的用户名</span></div><div class="line">        <span class="keyword">String</span> user = <span class="string">"style"</span>;</div><div class="line">        <span class="comment">//MySQL配置时的密码</span></div><div class="line">        <span class="keyword">String</span> password = <span class="string">"1234"</span>;</div><div class="line">        <span class="comment">//遍历查询结果集</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//加载驱动程序</span></div><div class="line">            Class.forName(driver);</div><div class="line">            <span class="comment">//1.getConnection()方法，连接MySQL数据库！！</span></div><div class="line">            con = DriverManager.getConnection(url,user,password);</div><div class="line">            <span class="keyword">if</span>(!con.isClosed())</div><div class="line">                System.out.<span class="built_in">println</span>(<span class="string">"Succeeded connecting to the Database!"</span>);</div><div class="line">            <span class="comment">//2.创建statement类对象，用来执行SQL语句！！</span></div><div class="line">            Statement statement = con.createStatement();</div><div class="line">            <span class="comment">//要执行的SQL语句</span></div><div class="line">            <span class="keyword">String</span> sql = <span class="string">"select * from students"</span>;</div><div class="line">            <span class="comment">//3.ResultSet类，用来存放获取的结果集！！</span></div><div class="line">            ResultSet rs = statement.executeQuery(sql);</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"执行结果如下所示:"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"姓名"</span> + <span class="string">"\t"</span> + <span class="string">"性别"</span>);  </div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"-----------------"</span>);  </div><div class="line">             </div><div class="line">            <span class="keyword">String</span> job = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">String</span> id = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">while</span>(rs.next())&#123;</div><div class="line">                <span class="comment">//获取stuname这列数据</span></div><div class="line">                job = rs.getString(<span class="string">"sname"</span>);</div><div class="line">                <span class="comment">//获取stuid这列数据</span></div><div class="line">                id = rs.getString(<span class="string">"sex"</span>);</div><div class="line">                <span class="comment">//输出结果</span></div><div class="line">                System.out.<span class="built_in">println</span>(job + <span class="string">"\t"</span> + id);</div><div class="line">            &#125;</div><div class="line">            rs.close();</div><div class="line">            con.close();</div><div class="line">        &#125; <span class="keyword">catch</span>(ClassNotFoundException e) &#123;   </div><div class="line">            <span class="comment">//数据库驱动类异常处理</span></div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"Sorry,can`t find the Driver!"</span>);   </div><div class="line">            e.printStackTrace();   </div><div class="line">            &#125; <span class="keyword">catch</span>(SQLException e) &#123;</div><div class="line">            <span class="comment">//数据库连接失败异常处理</span></div><div class="line">            e.printStackTrace();  </div><div class="line">            &#125;<span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            <span class="comment">// <span class="doctag">TODO:</span> handle exception</span></div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;<span class="keyword">finally</span>&#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"数据库数据获取成功！"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>运行结果如图所示：<br><img src="https://raw.githubusercontent.com/sunstady/hexo/0a3385c406e09a8466706d5ecd5b335a4a73d967/Java%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/4.jpg" alt="结果"></p>
-
           
+工具：eclipseMySQL5.5MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar
+
+Java编译器是eclipse，下载mysql-connector-java-5.1.44-bin.jar，我下的是最新版。加载驱动：1、在工程目录中创建lib文件夹，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/29/Java连接MySQL数据库/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1510,7 +1545,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-28T18:26:37+08:00">
                 2017-10-28
@@ -1574,31 +1609,23 @@
       
         
           
-            <p><code>创建数据表</code></p>
-<blockquote>
-<p>CRETE TABLE tes(<br>NAME VARCHAR(20) NULL,<br>SEX VARCHAR(5) NULL,<br>STUDENTID INT(20) NULL);</p>
-</blockquote>
-<p><code>txt文件中的内容如下</code></p>
-<blockquote>
-<p>你好    男  123<br>世界    女  456<br>啦啦啦  男  485</p>
-</blockquote>
-<p>中间空格部分是<code>TAB</code>键, 保存为UTF-8编码.<br><code>导入txt文件</code></p>
-<blockquote>
-<p>load data local infile ‘C:/文件名.txt’ into table 数据表名;</p>
-</blockquote>
-<p>如果第一行开头出现特殊符号，我的解决方法是在第一行中增加一行可以删去的信息，等导入数据库后，<code>DELETE FROM 数据库表 WHERE 字段=&#39;字段对应的唯一信息&#39;;</code>删除第一行就行。<br>但这只是治标不治本，希望大家能提出宝贵的建议，共同学习。</p>
-<p><code>导入数据库到MySQL</code></p>
-<blockquote>
-<p>mysql -u root -p &lt; 数据库文件名</p>
-</blockquote>
-<p>回车后输入数据库密码，即可导入成功。</p>
-<p><code>导出数据库</code></p>
-<blockquote>
-<p>mysqldump -u  root -p 数据库名 &gt; 要保存的数据库文件名</p>
-</blockquote>
-<p>回车后输入数据库密码，导出的数据库在当前目录。</p>
+          创建数据表
 
-          
+CRETE TABLE tes(NAME VARCHAR(20) NULL,SEX VARCHAR(5) NULL,STUDENTID INT(20) NULL);
+
+txt文件中的内容如下
+
+你好    男  123世界    女  456啦啦啦  男  485
+
+中间空格部分是TA
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/28/txt文件导入MySQL/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1676,7 +1703,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-28T11:33:35+08:00">
                 2017-10-28
@@ -1740,84 +1767,22 @@
       
         
           
-            <p>在腾讯云的MySQL中先新建一个用户，用于远程登录账号。<br>环境是centos7<br><code>登录MySQL</code> </p>
-<blockquote>
-<p>mysql -u root -p 回车后输入密码</p>
-</blockquote>
-<p><code>创建用户</code></p>
-<p>允许本地IP访问localhost</p>
-<blockquote>
-<p>create user ‘style’@’localhost’ identified by ‘123456’;</p>
-</blockquote>
-<p>用户名是<code>style</code>，密码是<code>123456</code>;</p>
-<p><code>允许外网IP访问</code></p>
-<blockquote>
-<p>create user ‘style’@’%’ identified by ‘123456’;</p>
-</blockquote>
-<p><code>刷新授权</code></p>
-<blockquote>
-<p>flush privileges;</p>
-</blockquote>
-<p><code>为用户创建数据库</code></p>
-<p>数据库名是<code>student</code></p>
-<blockquote>
-<p>create database student DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</p>
-</blockquote>
-<p><code>为新用户分配权限</code></p>
-<p>授予用户通过外网IP对于该数据库的全部权限</p>
-<blockquote>
-<p>grant all privileges on <code>student</code>.* to ‘style’@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>授予用户在本地服务器对该数据库的全部权限</p>
-<blockquote>
-<p>grant all privileges on <code>student</code>.* to ‘style’@’localhost’ identified by ‘1234’;</p>
-</blockquote>
-<p><code>刷新权限</code></p>
-<blockquote>
-<p>flush privileges;</p>
-</blockquote>
-<p><code>退出root重新登录</code></p>
-<blockquote>
-<p>exit</p>
-</blockquote>
-<p>用新账号style重新登录，由于使用的是 % 任意IP连接， 所以需要指定外部访问IP</p>
-<blockquote>
-<p>mysql -h 腾讯云的公网IP -u用户名 -p密码</p>
-</blockquote>
-<p>登录成功！</p>
-<p><code>查询用户权限</code></p>
-<blockquote>
-<p>show grants for style</p>
-</blockquote>
-<p><code>赋予权限</code></p>
-<blockquote>
-<p>grant all privileges on <em>.</em> to ‘style’@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>授予style用户在所有数据库上的所有权限</p>
-<p>如果此时发现刚刚给的权限太大了，如果我们只想授予它在某个数据库上的权限，那么需要切换到root用户撤销刚才的权限，重新授权</p>
-<blockquote>
-<p>revoke all privileges on <em>.</em> from ‘style’@’%’;<br>grant all privileges on student.* to ‘style`@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>甚至还可以指定该用户只能执行select和update命令</p>
-<blockquote>
-<p>grant select, update on student.* to ‘style’@’%’ identified by ‘1234’;</p>
-</blockquote>
-<p>这样一来，再次以<code>style</code>用户登录MySQL，只有<code>student</code>数据库是对其可见的，并且如果你只授权它<code>select</code>权限，那么它就不能执行<code>delete</code>语句</p>
-<p><code>每当调整权限后，通常需要执行以下语句来刷新权限</code></p>
-<blockquote>
-<p>flush privileges;</p>
-</blockquote>
-<p><code>删除创建的用户</code></p>
-<blockquote>
-<p>drop user style@’%’;</p>
-</blockquote>
-<p><code>可用如下命令查看相应用户及对应的host</code></p>
-<blockquote>
-<p>select host, user from user;</p>
-</blockquote>
-<p><code>MarkSown</code>语法用的不是很好，有些符号没有显示，以下图为准<br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="MySQL用户"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/880fb39c29ea64b39ebcdc2d810e866266f0ba2b/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="MySQL用户"></p>
+          在腾讯云的MySQL中先新建一个用户，用于远程登录账号。环境是centos7登录MySQL 
 
-          
+mysql -u root -p 回车后输入密码
+
+创建用户
+允许本地IP访问localhost
+
+create user ‘style’@’localhost’ identified by ‘12345
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/28/本地连接腾讯云MySQL/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1907,7 +1872,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">77</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1920,7 +1885,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -2012,7 +1977,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 
