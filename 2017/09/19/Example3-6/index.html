@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和 1234567891011121314151617public class Example3_6 &amp;#123;    public static void main(String[] args) &amp;#123;        double sum= 0, a= 1, i= 1;        while">
+<meta name="description" content="分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Example3_6">
 <meta property="og:url" content="http://www.sanstylemc.cn/2017/09/19/Example3-6/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和 1234567891011121314151617public class Example3_6 &amp;#123;    public static void main(String[] args) &amp;#123;        double sum= 0, a= 1, i= 1;        while">
+<meta property="og:description" content="分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-19T13:42:58.680Z">
+<meta property="og:updated_time" content="2018-03-11T14:38:53.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Example3_6">
-<meta name="twitter:description" content="分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和 1234567891011121314151617public class Example3_6 &amp;#123;    public static void main(String[] args) &amp;#123;        double sum= 0, a= 1, i= 1;        while">
+<meta name="twitter:description" content="分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和">
 
 
 
@@ -406,8 +406,7 @@
       
 
       
-        <p><code>分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和</code></p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example3_6</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="keyword">double</span> <span class="keyword">sum</span>= <span class="number">0</span>, a= <span class="number">1</span>, i= <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i&lt;= <span class="number">20</span>)&#123;</div><div class="line">            a= (<span class="number">1.0</span>/i)* a;</div><div class="line">            i++;</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ a;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"使用while循环计算的sum= "</span>+ <span class="keyword">sum</span>);</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">sum</span>= <span class="number">0</span>, i= <span class="number">1</span>, a= <span class="number">1</span>; i&lt;= <span class="number">20</span>; i++)&#123;</div><div class="line">            a= a*(<span class="number">1.0</span>/ i);</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ a;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"使用for循环计算的sum= "</span>+ <span class="keyword">sum</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p><code>分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和</code><br><a id="more"></a><br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example3_6</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="keyword">double</span> <span class="keyword">sum</span>= <span class="number">0</span>, a= <span class="number">1</span>, i= <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i&lt;= <span class="number">20</span>)&#123;</div><div class="line">            a= (<span class="number">1.0</span>/i)* a;</div><div class="line">            i++;</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ a;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"使用while循环计算的sum= "</span>+ <span class="keyword">sum</span>);</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">sum</span>= <span class="number">0</span>, i= <span class="number">1</span>, a= <span class="number">1</span>; i&lt;= <span class="number">20</span>; i++)&#123;</div><div class="line">            a= a*(<span class="number">1.0</span>/ i);</div><div class="line">            <span class="keyword">sum</span>= <span class="keyword">sum</span>+ a;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"使用for循环计算的sum= "</span>+ <span class="keyword">sum</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
