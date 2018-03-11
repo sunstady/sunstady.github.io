@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-03-04T12:40:15.412Z</updated>
+  <updated>2018-03-11T14:24:27.327Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://www.sanstylemc.cn/2018/03/04/eclipse%E5%AE%89%E8%A3%85JBoss-Tools/"/>
     <id>http://www.sanstylemc.cn/2018/03/04/eclipse安装JBoss-Tools/</id>
     <published>2018-03-04T12:39:33.000Z</published>
-    <updated>2018-03-04T12:40:15.412Z</updated>
+    <updated>2018-03-11T14:24:27.327Z</updated>
     
-    <content type="html"><![CDATA[<p>进入<a href="http://tools.jboss.org/downloads/" target="_blank" rel="external">JBoss Tools插件</a>下载页面，点击<code>Download</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/1.png" alt="1"><br>style的eclipse版本是4.7.2，选择相对应版本的插件下载。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/2.png" alt="2"><br>点击<code>Update Site</code>，复制对应的更新地址。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/3.png" alt="3"><br>打开eclipse，点击<code>Help</code>–&gt;<code>Install New Software</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/4.png" alt="4"><br>进入插件安装界面，点击<code>Add</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/5.png" alt="5"><br>输入name和url。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/6.png" alt="6"><br>确定后选择<code>Select All</code>，点击<code>Next</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/7.png" alt="7"></p>
+    <content type="html"><![CDATA[<p>进入<a href="http://tools.jboss.org/downloads/" target="_blank" rel="external">JBoss Tools插件</a>下载页面，点击<code>Download</code>。<br><a id="more"></a><br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/1.png" alt="1"><br>style的eclipse版本是4.7.2，选择相对应版本的插件下载。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/2.png" alt="2"><br>点击<code>Update Site</code>，复制对应的更新地址。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/3.png" alt="3"><br>打开eclipse，点击<code>Help</code>–&gt;<code>Install New Software</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/4.png" alt="4"><br>进入插件安装界面，点击<code>Add</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/5.png" alt="5"><br>输入name和url。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/6.png" alt="6"><br>确定后选择<code>Select All</code>，点击<code>Next</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/14ab5fd06c85ca009559f2c9a437e5bd7a41d854/JBoss%20Tools/7.png" alt="7"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;进入&lt;a href=&quot;http://tools.jboss.org/downloads/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JBoss Tools插件&lt;/a&gt;下载页面，点击&lt;code&gt;Download&lt;/code&gt;。&lt;br&gt;&lt;img src=&quot;
+      &lt;p&gt;进入&lt;a href=&quot;http://tools.jboss.org/downloads/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JBoss Tools插件&lt;/a&gt;下载页面，点击&lt;code&gt;Download&lt;/code&gt;。&lt;br&gt;
     
     </summary>
     
