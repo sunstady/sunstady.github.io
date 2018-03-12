@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。基于UDP通信地基本模式如下:(1)将数据打包，称为数据包，然后将数据包发往目的地。(2)接收别人发来地数据包，然后查看数据包中地内容。 发送数据包用DatagramPacket类将数据打包，即用Da">
+<meta name="description" content="基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UDP通信-AES和Base64加解密">
 <meta property="og:url" content="http://www.sanstylemc.cn/2017/12/04/UDP通信-AES和Base64加解密/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。基于UDP通信地基本模式如下:(1)将数据打包，称为数据包，然后将数据包发往目的地。(2)接收别人发来地数据包，然后查看数据包中地内容。 发送数据包用DatagramPacket类将数据打包，即用Da">
+<meta property="og:description" content="基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-04T12:36:43.335Z">
+<meta property="og:updated_time" content="2018-03-12T01:42:12.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UDP通信-AES和Base64加解密">
-<meta name="twitter:description" content="基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。基于UDP通信地基本模式如下:(1)将数据打包，称为数据包，然后将数据包发往目的地。(2)接收别人发来地数据包，然后查看数据包中地内容。 发送数据包用DatagramPacket类将数据打包，即用Da">
+<meta name="twitter:description" content="基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。">
 
 
 
@@ -406,7 +406,7 @@
       
 
       
-        <p>基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。<br>基于UDP通信地基本模式如下:<br>(1)将数据打包，称为数据包，然后将数据包发往目的地。<br>(2)接收别人发来地数据包，然后查看数据包中地内容。</p>
+        <p>基于UDP的通信和基于TCP的通信不同，基于UDP的信息传递更快，但不提供可靠性保证。也就是说，数据在传输时，用户无法知道能否正确地到达目的地主机，也不能确定数据到达目的地地顺序是否和发送地顺序相同。<br><a id="more"></a><br>基于UDP通信地基本模式如下:<br>(1)将数据打包，称为数据包，然后将数据包发往目的地。<br>(2)接收别人发来地数据包，然后查看数据包中地内容。</p>
 <h3 id="发送数据包"><a href="#发送数据包" class="headerlink" title="发送数据包"></a>发送数据包</h3><p>用DatagramPacket类将数据打包，即用DatagramPacket类创建一个对象，称为数据包。用DatagramPacket地以下两个构造方法创建待发送地数据包: DatagramPacket(byte data[], int length, InetAddtress address, int port);<br>使用该构造方法创建地数据包对象具有下列两个性质：<br>(1)含有data数组指定地数据<br>(2)该数据包将发送到地址是adress、端口号是port的主机上。<br>用DatagramSocket类的不带参数的构造方法DatagramSocket()创建一个对象，该对象负责发送数据包。例如: </p>
 <blockquote>
 <p>DatagramSocket mail_out= new DatagramSocket();<br>mail_out.send(data_pack);</p>

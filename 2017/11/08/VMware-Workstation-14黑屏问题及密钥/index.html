@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。首先上VM的密钥：VMware Workstation Pro 14 许可证序列号：FF590-2DX83-M81LZ-XDM7E-MKUT4CG54H-D8D0H-H8DHY-C6X7X-N2KG6ZC3WK-AFXEK-488JP-A7MQX-XL8YFAC5XK-0ZD4H-088">
+<meta name="description" content="今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。">
 <meta name="keywords" content="软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VMware Workstation 14黑屏问题及密钥">
 <meta property="og:url" content="http://www.sanstylemc.cn/2017/11/08/VMware-Workstation-14黑屏问题及密钥/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。首先上VM的密钥：VMware Workstation Pro 14 许可证序列号：FF590-2DX83-M81LZ-XDM7E-MKUT4CG54H-D8D0H-H8DHY-C6X7X-N2KG6ZC3WK-AFXEK-488JP-A7MQX-XL8YFAC5XK-0ZD4H-088">
+<meta property="og:description" content="今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-08T11:17:10.892Z">
+<meta property="og:updated_time" content="2018-03-12T01:42:26.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VMware Workstation 14黑屏问题及密钥">
-<meta name="twitter:description" content="今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。首先上VM的密钥：VMware Workstation Pro 14 许可证序列号：FF590-2DX83-M81LZ-XDM7E-MKUT4CG54H-D8D0H-H8DHY-C6X7X-N2KG6ZC3WK-AFXEK-488JP-A7MQX-XL8YFAC5XK-0ZD4H-088">
+<meta name="twitter:description" content="今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。">
 
 
 
@@ -406,7 +406,7 @@
       
 
       
-        <p>今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。<br>首先上VM的密钥：<br>VMware Workstation Pro 14 许可证序列号：<br><code>FF590-2DX83-M81LZ-XDM7E-MKUT4</code><br><code>CG54H-D8D0H-H8DHY-C6X7X-N2KG6</code><br><code>ZC3WK-AFXEK-488JP-A7MQX-XL8YF</code><br><code>AC5XK-0ZD4H-088HP-9NQZV-ZG2R4</code><br><code>ZC5XK-A6E0M-080XQ-04ZZG-YF08D</code><br><code>ZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8</code></p>
+        <p>今儿个升级VM到14，完事后打开VM，想用下kali，却发现进入黑屏，如论如何都不能解决，没办法，拜访了下度娘。<br><a id="more"></a><br>首先上VM的密钥：<br>VMware Workstation Pro 14 许可证序列号：<br><code>FF590-2DX83-M81LZ-XDM7E-MKUT4</code><br><code>CG54H-D8D0H-H8DHY-C6X7X-N2KG6</code><br><code>ZC3WK-AFXEK-488JP-A7MQX-XL8YF</code><br><code>AC5XK-0ZD4H-088HP-9NQZV-ZG2R4</code><br><code>ZC5XK-A6E0M-080XQ-04ZZG-YF08D</code><br><code>ZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8</code></p>
 <p>黑屏问题解决:<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以管理员身份进入cmd，输入`netsh winsock reset`, 重启，问题解决</div></pre></td></tr></table></figure></p>
 <p>网上也有其他的解决方法，不过没试过：<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">以管理员身份运行命令提示符（<span class="keyword">cmd</span>.<span class="bash">exe），输入命令 netsh winsock show catalog</span></div><div class="line"><span class="bash">可以看到VMware注册了两个LSP：vSockets DGRAM、vSockets STREAM，路径是%windir%\system32\vsocklib.dll</span></div><div class="line"><span class="bash">观察有没有其他模块也注册了vSockets DGRAM、vSockets STREAM，如果有，就卸载掉这个模块所属的软件。</span></div></pre></td></tr></table></figure></p>
 
