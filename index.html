@@ -313,6 +313,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/03/16/Java经典逻辑编程三/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/16/Java经典逻辑编程三/" itemprop="url">Java经典逻辑编程三</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-16T20:50:51+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/16/Java经典逻辑编程三/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/16/Java经典逻辑编程三/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/16/Java经典逻辑编程三/" class="leancloud_visitors" data-flag-title="Java经典逻辑编程三">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="求1-2-3-…-20-的和"><a href="#求1-2-3-…-20-的和" class="headerlink" title="求1+2!+3!+…+20!的和"></a>求1+2!+3!+…+20!的和</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">class_name</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">         </div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"你想计算到哪个数的阶乘的和"</span>);</div><div class="line">        <span class="keyword">int</span> num = <span class="keyword">in</span>.nextInt();</div><div class="line">         </div><div class="line">        <span class="keyword">long</span> temp = <span class="number">0</span>L;</div><div class="line">        <span class="keyword">long</span> sum = <span class="number">0</span>L;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= num; i++)&#123;</div><div class="line">            temp = recursion(i);</div><div class="line">            sum += temp;</div><div class="line">        &#125;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"计算到"</span> + num + <span class="string">"的阶乘和是 "</span> + sum);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">            <span class="comment">//计算某个数 num 的阶乘</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">recursion</span>(<span class="params"><span class="keyword">int</span> num</span>) </span>&#123;</div><div class="line">        <span class="comment">// TODO Auto-generated method stub</span></div><div class="line">        <span class="keyword">if</span>(num &gt; <span class="number">1</span>)&#123;</div><div class="line">            <span class="keyword">return</span> num * recursion(num - <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="给一个不多于5位的正整数，要求-一、求它是几位数；二、逆序打印出各位数字"><a href="#给一个不多于5位的正整数，要求-一、求它是几位数；二、逆序打印出各位数字" class="headerlink" title="给一个不多于5位的正整数，要求: 一、求它是几位数；二、逆序打印出各位数字"></a>给一个不多于5位的正整数，要求: 一、求它是几位数；二、逆序打印出各位数字</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">class_name</span> </span>&#123;</div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"请输入一个不多于5位的整数"</span>);</div><div class="line">        <span class="built_in">int</span> <span class="built_in">num</span> = <span class="keyword">in</span>.nextInt();</div><div class="line">         </div><div class="line">        <span class="built_in">int</span> n = <span class="number">1</span>;</div><div class="line">        System.out.<span class="built_in">print</span>(<span class="string">"这个数的逆序为："</span>);</div><div class="line">        <span class="keyword">while</span>(<span class="built_in">num</span> / <span class="number">10</span> &gt; <span class="number">0</span>)&#123;</div><div class="line">            n++;</div><div class="line">            <span class="built_in">int</span> tmp = <span class="built_in">num</span> % <span class="number">10</span>;</div><div class="line">            System.out.<span class="built_in">print</span>(tmp);</div><div class="line">            <span class="built_in">num</span> /= <span class="number">10</span>;</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="built_in">num</span>);</div><div class="line">        System.out.println(<span class="string">"这个数共有"</span> + n + <span class="string">"位数"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="请输入星期几的第一个字母来判断以下是星期几，如果第一个字母一样，则继续判断第二个字符。"><a href="#请输入星期几的第一个字母来判断以下是星期几，如果第一个字母一样，则继续判断第二个字符。" class="headerlink" title="请输入星期几的第一个字母来判断以下是星期几，如果第一个字母一样，则继续判断第二个字符。"></a>请输入星期几的第一个字母来判断以下是星期几，如果第一个字母一样，则继续判断第二个字符。</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">class_name</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">         </div><div class="line">        <span class="keyword">char</span> firstletter, secondletter;     <span class="comment">//存放第一第二个字母</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"请输入第一字母"</span>);</div><div class="line">        String letter = <span class="keyword">in</span>.next();</div><div class="line">         </div><div class="line">        firstletter = letter.charAt(<span class="number">0</span>);</div><div class="line">        <span class="keyword">switch</span>(firstletter)&#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">'m'</span>:</div><div class="line">        <span class="keyword">case</span> <span class="string">'M'</span>: </div><div class="line">            System.<span class="keyword">out</span>.println(<span class="string">"是星期一"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">'w'</span>:</div><div class="line">        <span class="keyword">case</span> <span class="string">'W'</span>:</div><div class="line">            System.<span class="keyword">out</span>.println(<span class="string">"是星期三"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">'f'</span>:</div><div class="line">        <span class="keyword">case</span> <span class="string">'F'</span>:</div><div class="line">            System.<span class="keyword">out</span>.println(<span class="string">"是星期五"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">'t'</span>:</div><div class="line">        <span class="keyword">case</span> <span class="string">'T'</span>:</div><div class="line">            System.<span class="keyword">out</span>.println(<span class="string">"仅由该字母无法判断出星期几，请输入第二个字母"</span>);</div><div class="line">            letter = <span class="keyword">in</span>.next();</div><div class="line">            secondletter = letter.charAt(<span class="number">0</span>);</div><div class="line">            <span class="keyword">if</span>(secondletter == <span class="string">'u'</span> || secondletter == <span class="string">'U'</span>)&#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"是星期二"</span>);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(secondletter == <span class="string">'h'</span> || secondletter == <span class="string">'H'</span>)&#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"是星期四"</span>);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"输入错误"</span>);</div><div class="line">            &#125;</div><div class="line">        <span class="keyword">case</span> <span class="string">'s'</span>:</div><div class="line">        <span class="keyword">case</span> <span class="string">'S'</span>:</div><div class="line">            System.<span class="keyword">out</span>.println(<span class="string">"仅由该字母无法判断出星期几，请输入第二个字母"</span>);</div><div class="line">            letter = <span class="keyword">in</span>.next();</div><div class="line">            secondletter = letter.charAt(<span class="number">0</span>);</div><div class="line">            <span class="keyword">if</span>(secondletter == <span class="string">'a'</span> || secondletter == <span class="string">'A'</span>)&#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"是星期六"</span>);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(secondletter == <span class="string">'u'</span> || secondletter == <span class="string">'U'</span>)&#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"是星期天"</span>);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"输入错误"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="求一个3-3矩阵对角线元素之和"><a href="#求一个3-3矩阵对角线元素之和" class="headerlink" title="求一个3*3矩阵对角线元素之和"></a>求一个3*3矩阵对角线元素之和</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">class_name</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">         </div><div class="line">        <span class="comment">//输入数据</span></div><div class="line">        <span class="keyword">int</span>[][] mat = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][<span class="number">3</span>];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">3</span>; j++)&#123;</div><div class="line">                System.<span class="keyword">out</span>.println(<span class="string">"请输入第"</span> + i + <span class="string">"行第"</span> + j + <span class="string">"列的整数"</span>);</div><div class="line">                mat[i <span class="number">-1</span>][j - <span class="number">1</span>] = <span class="keyword">in</span>.nextInt();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        <span class="comment">//显示数据</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</div><div class="line">                System.<span class="keyword">out</span>.printf(<span class="string">"%d\t"</span>,mat[i][j]);    <span class="comment">// \t是制表符</span></div><div class="line">        System.<span class="keyword">out</span>.println();</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        <span class="comment">//计算对角线元素和</span></div><div class="line">        <span class="comment">//从左上至右下的数归为主对角线，从左下至右上的数归为副对角线。</span></div><div class="line">        <span class="keyword">int</span> sum1 = mat[<span class="number">0</span>][<span class="number">0</span>] + mat[<span class="number">1</span>][<span class="number">1</span>] + mat[<span class="number">2</span>][<span class="number">2</span>];</div><div class="line">        <span class="keyword">int</span> sum2 = mat[<span class="number">2</span>][<span class="number">0</span>] + mat[<span class="number">1</span>][<span class="number">1</span>] + mat[<span class="number">0</span>][<span class="number">2</span>];</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"主对角线上元素和为 "</span> + sum1);</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"副对角线上元素和为 "</span> + sum2);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。"><a href="#有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。" class="headerlink" title="有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。"></a>有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">class_name</span> </span>&#123;</div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">         </div><div class="line">        <span class="built_in">int</span>[] ary = &#123;<span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>, <span class="number">30</span>, <span class="number">35</span>, <span class="number">40</span>, <span class="number">45</span>, <span class="number">50</span>&#125;;</div><div class="line">        <span class="built_in">int</span>[] changedAry = <span class="keyword">new</span> <span class="built_in">int</span>[ary.length + <span class="number">1</span>];</div><div class="line">         </div><div class="line">        System.out.<span class="built_in">print</span>(<span class="string">"初始数组："</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; ary.length; i++)&#123;</div><div class="line">            changedAry[i] = ary[i];</div><div class="line">            System.out.<span class="built_in">print</span>(ary[i] + <span class="string">" "</span>);</div><div class="line">        &#125;</div><div class="line">        System.out.println();</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"请输入一个整数"</span>);</div><div class="line">        <span class="built_in">int</span> <span class="built_in">num</span> = <span class="keyword">in</span>.nextInt();</div><div class="line">         </div><div class="line">        System.out.<span class="built_in">print</span>(<span class="string">"插入数字后的数组："</span>);</div><div class="line">        insort(changedAry, <span class="built_in">num</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    private <span class="keyword">static</span> <span class="keyword">void</span> insort(<span class="built_in">int</span>[] changedAry, <span class="built_in">int</span> <span class="built_in">num</span>) &#123;</div><div class="line">        <span class="comment">// TODO Auto-generated method stub</span></div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; changedAry.length; i++)&#123;</div><div class="line">            <span class="keyword">if</span>(<span class="built_in">num</span> &lt; changedAry[i])&#123;         <span class="comment">//找到插入位置</span></div><div class="line">                <span class="keyword">for</span>(<span class="built_in">int</span> j = changedAry.length - <span class="number">1</span>; j &gt; i;j--)&#123;</div><div class="line">                    changedAry[j] = changedAry[j - <span class="number">1</span>];  <span class="comment">//待插入位置及以后的数后退一个位置</span></div><div class="line">                &#125;</div><div class="line">                changedAry[i] = <span class="built_in">num</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="built_in">num</span> &gt; changedAry[changedAry.length - <span class="number">1</span>])      <span class="comment">//待插入数大于所有数</span></div><div class="line">            changedAry[changedAry.length - <span class="number">1</span>] = <span class="built_in">num</span>;</div><div class="line">         </div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> k = <span class="number">0</span>; k &lt; changedAry.length; k++)</div><div class="line">            System.out.<span class="built_in">print</span>(changedAry[k] + <span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="将一个数组逆序输出"><a href="#将一个数组逆序输出" class="headerlink" title="将一个数组逆序输出"></a>将一个数组逆序输出</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">class_name</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        <span class="comment">//这里直接初始化一个数组</span></div><div class="line">        <span class="keyword">int</span>[] ary = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;;</div><div class="line"><span class="comment">//      String[] ary = &#123;"i", "love", "you"&#125;;        //字符（串）数组也可以</span></div><div class="line">         </div><div class="line">        System.<span class="keyword">out</span>.print(<span class="string">"数组初始顺序为："</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ary.length; i++)</div><div class="line">            System.<span class="keyword">out</span>.print(ary[i] + <span class="string">" "</span>);</div><div class="line">        System.<span class="keyword">out</span>.println();       <span class="comment">//换行</span></div><div class="line">         </div><div class="line">        System.<span class="keyword">out</span>.print(<span class="string">"数组的逆序为："</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = ary.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</div><div class="line">            System.<span class="keyword">out</span>.print(ary[i] + <span class="string">" "</span>);</div><div class="line">        System.<span class="keyword">out</span>.println();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="取一个整数a从右端开始的4-7位。"><a href="#取一个整数a从右端开始的4-7位。" class="headerlink" title="取一个整数a从右端开始的4~7位。"></a>取一个整数a从右端开始的4~7位。</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">class_name</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"请输入一个大于等于 7 位的整数"</span>);</div><div class="line">        <span class="keyword">long</span> sum = <span class="keyword">in</span>.nextLong();</div><div class="line">        Long sum1 = <span class="keyword">new</span> Long(sum);      <span class="comment">//Long是 long 的包装类</span></div><div class="line">        String sum2 = sum1.toString();</div><div class="line">        System.<span class="keyword">out</span>.println(sum2.substring(sum2.length() - <span class="number">7</span>, sum2.length() - <span class="number">3</span>));</div><div class="line">    &#125;       <span class="comment">// substring 截取两参数间的字符串</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="打印出杨辉三角形"><a href="#打印出杨辉三角形" class="headerlink" title="打印出杨辉三角形"></a>打印出杨辉三角形</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">class_name</span> </span>&#123;</div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</div><div class="line">        <span class="built_in">int</span> i, j;</div><div class="line">        <span class="built_in">int</span>[][] <span class="built_in">num</span> = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">10</span>][<span class="number">10</span>];</div><div class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;<span class="comment">// 把所有的 1 放入数组</span></div><div class="line">            <span class="built_in">num</span>[i][<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">            <span class="built_in">num</span>[i][i] = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt; <span class="number">10</span>; i++) &#123;<span class="comment">// 计算数组的其他数</span></div><div class="line">            <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; i; j++) &#123;</div><div class="line">                <span class="built_in">num</span>[i][j] = <span class="built_in">num</span>[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="built_in">num</span>[i - <span class="number">1</span>][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123; </div><div class="line">                        <span class="comment">// k &lt; 4 倍的空格是因为输出每个数字时用了 4 个占位符</span></div><div class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span> * (<span class="number">10</span> - i) / <span class="number">2</span>; k++)       <span class="comment">// 输出空格</span></div><div class="line">                System.out.printf(<span class="string">" "</span>);</div><div class="line"> </div><div class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;= i; j++) &#123;</div><div class="line">                System.out.printf(<span class="string">"%4d"</span>, <span class="built_in">num</span>[i][j]); <span class="comment">// 每个数字 4 个占位符</span></div><div class="line">            &#125;</div><div class="line">            System.out.println();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。"><a href="#输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。" class="headerlink" title="输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。"></a>输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">class_name</span> </span>&#123;</div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"请输入数组长度"</span>);</div><div class="line">        <span class="built_in">int</span> arylen = <span class="keyword">in</span>.nextInt();</div><div class="line">        <span class="built_in">int</span>[] <span class="built_in">num</span> = <span class="keyword">new</span> <span class="built_in">int</span>[arylen];</div><div class="line">         </div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">num</span>.length; i++) &#123;</div><div class="line">            System.out.printf(<span class="string">"请输入第 %d 个数："</span>, i + <span class="number">1</span>);</div><div class="line">            <span class="built_in">num</span>[i] = <span class="keyword">in</span>.nextInt();</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"变化前的数组："</span>);</div><div class="line">        outArray(<span class="built_in">num</span>);</div><div class="line">            <span class="comment">//循环找出最大值、最小值</span></div><div class="line">        <span class="built_in">int</span> max = <span class="built_in">num</span>[<span class="number">0</span>];</div><div class="line">        <span class="built_in">int</span> min = <span class="built_in">num</span>[<span class="number">0</span>];</div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; <span class="built_in">num</span>.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(<span class="built_in">num</span>[i] &gt; max)</div><div class="line">                max = <span class="built_in">num</span>[i];</div><div class="line">            <span class="keyword">if</span>(<span class="built_in">num</span>[i] &lt; min)</div><div class="line">                min = <span class="built_in">num</span>[i];</div><div class="line">        &#125;</div><div class="line">                <span class="comment">//替换</span></div><div class="line">        <span class="built_in">num</span>[<span class="number">0</span>] = max;</div><div class="line">        <span class="built_in">num</span>[<span class="built_in">num</span>.length - <span class="number">1</span>] = min;</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"变化后的数组："</span>);</div><div class="line">        outArray(<span class="built_in">num</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    private <span class="keyword">static</span> <span class="keyword">void</span> outArray(<span class="built_in">int</span>[] <span class="built_in">num</span>) &#123;</div><div class="line">        <span class="comment">// TODO Auto-generated method stub</span></div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">num</span>.length; i++)</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="built_in">num</span>[i] + <span class="string">" "</span>);</div><div class="line">        System.out.println();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="有n个整数，使其前面各数顺序向后移m个位置，最后m个数变成最前面的m个数。"><a href="#有n个整数，使其前面各数顺序向后移m个位置，最后m个数变成最前面的m个数。" class="headerlink" title="有n个整数，使其前面各数顺序向后移m个位置，最后m个数变成最前面的m个数。"></a>有n个整数，使其前面各数顺序向后移m个位置，最后m个数变成最前面的m个数。</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">class_name</span> </span>&#123;</div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</div><div class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">        <span class="built_in">int</span>[] <span class="built_in">num</span> = &#123;<span class="number">14</span>, <span class="number">32</span>, <span class="number">5</span>, <span class="number">42</span>, <span class="number">36</span>, <span class="number">80</span>&#125;;</div><div class="line">        <span class="built_in">int</span>[] temp = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="built_in">num</span>.length];</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"移动前的数组："</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">num</span>.length; i++)&#123;</div><div class="line">            temp[i] = <span class="built_in">num</span>[i];</div><div class="line">            System.out.<span class="built_in">print</span>(<span class="built_in">num</span>[i] + <span class="string">" "</span>);</div><div class="line">        &#125;</div><div class="line">        System.out.println();</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"需要向后移动几个位置"</span>);</div><div class="line">        <span class="built_in">int</span> m = <span class="keyword">in</span>.nextInt();</div><div class="line">         </div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">num</span>.length; i++)&#123;</div><div class="line">            <span class="built_in">int</span> t = (i + m) % <span class="built_in">num</span>.length;</div><div class="line">            <span class="built_in">num</span>[t] = temp[i];       <span class="comment">//这行的 t 和 i 互换一下就变成了（1）</span></div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        System.out.println(<span class="string">"移动后的数组："</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i: <span class="built_in">num</span>)</div><div class="line">            System.out.<span class="built_in">print</span>(i + <span class="string">" "</span>);</div><div class="line">        System.out.println();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/03/16/Java经典逻辑编程二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1632,154 +1785,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/01/20/py基础三/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MC">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanstyle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/20/py基础三/" itemprop="url">py基础三</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T00:38:49+08:00">
-                2018-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/20/py基础三/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/20/py基础三/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/01/20/py基础三/" class="leancloud_visitors" data-flag-title="py基础三">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><code>python基础语法(三)</code><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/20/py基础三/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
- 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1833,7 +1838,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-count">80</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
