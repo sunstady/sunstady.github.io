@@ -317,11 +317,11 @@
   </entry>
   
   <entry>
-    <title>eclipse配置Tomcat</title>
+    <title>eclipse Java EE配置Tomcat</title>
     <link href="http://www.sanstylemc.cn/2018/02/25/eclipse%E9%85%8D%E7%BD%AETomcat/"/>
     <id>http://www.sanstylemc.cn/2018/02/25/eclipse配置Tomcat/</id>
     <published>2018-02-25T08:34:55.000Z</published>
-    <updated>2018-03-11T14:34:29.179Z</updated>
+    <updated>2018-03-20T11:40:24.925Z</updated>
     
     <content type="html"><![CDATA[<h2 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h2><p>1、打开eclipse，单击<code>Window</code>菜单，选择下方的<code>Preferences</code>。<br><a id="more"></a><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/1.png" alt="1"><br>2、单击<code>Server</code>选项，选择下方的<code>Runtime Environments</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/2.png" alt="2"><br>3、点击<code>Add</code>，添加 Tomcat。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/3.png" alt="3"><br>4、点击<code>Next</code>， 选中自己安装的Tomcat路径。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/4.png" alt="4"><br>5、点击<code>Finish</code>完成。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/5.png" alt="5"></p>
 <h2 id="建立一个Web应用"><a href="#建立一个Web应用" class="headerlink" title="建立一个Web应用"></a>建立一个Web应用</h2><p>1、<code>File</code>–&gt;<code>New</code>–&gt;<code>Dynamic Web Project</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/6.png" alt="6"><br>2、创建一个<code>Dynamic Web Project</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/7.png" alt="7"><br>3、连续点击两下<code>Next</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/8.png" alt="8"><br>4、点击<code>Finish</code>完成。</p>

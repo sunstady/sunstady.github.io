@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://www.sanstylemc.cn/2018/02/25/eclipse%E9%85%8D%E7%BD%AETomcat/</loc>
+    <lastmod>2018-03-20T11:40:24.925Z</lastmod>
+    <data>
+        <display>
+        <title>eclipse Java EE配置Tomcat</title>
+        <pubTime>2018-02-25T08:34:55.000Z</pubTime>
+        
+        <tag>Java Web</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sanstylemc.cn/2018/02/25/%E5%AE%89%E8%A3%85Tomcat/</loc>
     <lastmod>2018-03-20T11:36:42.268Z</lastmod>
     <data>
@@ -1225,23 +1242,6 @@
         <tag>python</tag>
          
         <tag>软件</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sanstylemc.cn/2018/02/25/eclipse%E9%85%8D%E7%BD%AETomcat/</loc>
-    <lastmod>2018-03-11T14:34:29.179Z</lastmod>
-    <data>
-        <display>
-        <title>eclipse配置Tomcat</title>
-        <pubTime>2018-02-25T08:34:55.000Z</pubTime>
-        
-        <tag>Java Web</tag>
          
          
            
