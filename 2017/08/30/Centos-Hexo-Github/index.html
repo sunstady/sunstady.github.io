@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="baidu-site-verification" content="cXQEZqaI9F" />
+<meta name="google-site-verification" content="NY8peQ32MbxOmV571OfSDBBBIr8cxSpCo5-V8X9T_S4" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="环境," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sanstyle" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="本文只介绍style安装的过程，其他版本请另行借鉴！(万变不离其宗)">
+<meta name="keywords" content="环境">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos + Hexo + Github">
+<meta property="og:url" content="http://www.sanstylemc.cn/2017/08/30/Centos-Hexo-Github/index.html">
+<meta property="og:site_name" content="Sanstyle">
+<meta property="og:description" content="本文只介绍style安装的过程，其他版本请另行借鉴！(万变不离其宗)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-11T14:33:00.292Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Centos + Hexo + Github">
+<meta name="twitter:description" content="本文只介绍style安装的过程，其他版本请另行借鉴！(万变不离其宗)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.sanstylemc.cn/2017/08/30/Centos-Hexo-Github/"/>
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title>Centos + Hexo + Github | Sanstyle</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?759661ba6404a2dc2692ec1dabecb1d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/sunstady"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sanstyle</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">功有所不全 才有所不任 力有所不足</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+     
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2017/08/30/Centos-Hexo-Github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Centos + Hexo + Github</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-30T19:25:18+08:00">
+                2017-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/30/Centos-Hexo-Github/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/30/Centos-Hexo-Github/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/08/30/Centos-Hexo-Github/" class="leancloud_visitors" data-flag-title="Centos + Hexo + Github">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文只介绍style安装的过程，其他版本请另行借鉴！(万变不离其宗)<br><a id="more"></a><br>必需品：</p>
+<blockquote>
+<ul>
+<li>注册有腾讯有以及域名</li>
+<li>腾讯云中安装Centos 7</li>
+<li>注册有Github</li>
+</ul>
+</blockquote>
+<p>###Centos 7 中  下载并安装LNMP<br>  我安装的是稳定版</p>
+<blockquote>
+<ul>
+<li>wget -c <a href="http://soft.vpser.net/lnmp/lnmp1.4.tar.gz" target="_blank" rel="external">http://soft.vpser.net/lnmp/lnmp1.4.tar.gz</a> &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; cd lnmp1.4 &amp;&amp; ./install.sh lnmp</li>
+</ul>
+</blockquote>
+<p>安装成功后， 下一步</p>
+<p>###Centos 7 中  安装Hexo<br>这个茬可真不好弄==，style第一次安装的时候出了许多的错误，无奈之下只能一点一点解决。安装过程中借鉴了许多资料，另行总结才搭配好，总觉得网上的教程不是很全面。<br>在root下安装</p>
+<p>####首先安装Node.js<br>找到最新的下载地址，用 wget 命令下载到本地</p>
+<blockquote>
+<ul>
+<li>wget <a href="https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz" target="_blank" rel="external">https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz</a></li>
+</ul>
+</blockquote>
+<p>下载完后解压，因为是xz文件， 所以如下</p>
+<blockquote>
+<ul>
+<li>xz -d node-v4.4.4-linux-x64.tar.gz</li>
+<li>tar -xvf node-v4.4.4-linux-x64.tar</li>
+</ul>
+</blockquote>
+<p>文件被解压到当前文件夹下</p>
+<blockquote>
+<ul>
+<li>mv node-v4.4.4-linux-x64 node-v4.4.4</li>
+<li>mv  node-v4.4.4 /usr/local/node</li>
+</ul>
+</blockquote>
+<p>####配置环境变量</p>
+<blockquote>
+<p><em>#编辑 /etc/profile (使用 vim)<br>    vim /etc/profile
+</em>#在底部添加PATH变量<br>    export PATH=$PATH:/usr/local/node/bin<br>*#保存退出， 先按<code>Esc</code>键， 再按<code>Shift + :</code><br>    输入<code>wq</code>即可保存退出</p>
+<ul>
+<li>最后保存并使其生效即可<br>  source /etc/profile</li>
+</ul>
+</blockquote>
+<p>###安装Hexo</p>
+<blockquote>
+<ul>
+<li>创建目录<br>  mkdir hexo </li>
+<li>切换目录<br>  cd hexo</li>
+<li>安装Git(已安装， 跳过)<br>  yum install git-core</li>
+<li>安装Hexo<br>  npm install -g hexo-cli</li>
+<li>初始化Hexo<br>  hexo init</li>
+</ul>
+</blockquote>
+<p>这里可能有个问题，就是在安装Hexo的时候， 输入安装Hexo的安装指令<code>npm install -g hexo-cli</code>，可能会出现错误，如果出错，可将官方源替换成淘宝源</p>
+<blockquote>
+<ul>
+<li>npm install -g hexo –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></li>
+</ul>
+</blockquote>
+<p>####安装插件</p>
+<blockquote>
+<ul>
+<li>npm install hexo-generator-index –save</li>
+<li>npm install hexo-generator-archive –save</li>
+<li>npm install hexo-generator-category –save</li>
+<li>npm install hexo-generator-tag –save</li>
+<li>npm install hexo-server –save</li>
+<li>npm install hexo-deployer-git –save</li>
+<li>npm install hexo-deployer-heroku –save</li>
+<li>npm install hexo-deployer-rsync –save</li>
+<li>npm install hexo-deployer-openshift –save</li>
+<li>npm install hexo-renderer-marked –save</li>
+<li>npm install hexo-renderer-stylus –save</li>
+<li>npm install hexo-generator-feed –save</li>
+<li>npm install hexo-generator-sitemap –save</li>
+</ul>
+</blockquote>
+<p>安装结束后，进行下一步<br>修改Hexo配置文件(站点文件，即<code>hexo/config._yml</code>,, <code>hexo/themes/next/_config.yml</code>是主题文件)<br><code>注： key值没有对应的value值的时候，冒号后面一定要有空格！否则会报错，例如：timezone:会报错，，timezone: 不会</code></p>
+<p>###部署到Github<br>这个简单</p>
+<p>####配置本机全局git变量(如果已经配置过请忽略)<br>在VPS(你的服务器)上设置你的Git</p>
+<blockquote>
+<ul>
+<li>git config –global user.email “你的github注册时的邮箱”</li>
+<li>git config –global user.name “你的名字”</li>
+</ul>
+</blockquote>
+<p>####生成ssh和密钥<br>输入下面一段指令</p>
+<blockquote>
+<ul>
+<li>less ~/.ssh/id_rsa.pub</li>
+</ul>
+</blockquote>
+<p>如果出现一堆密码，则证明你已经生成ssh，可跳过下面一步，如果报错，请进行下一步。</p>
+<blockquote>
+<ul>
+<li>ssh-keygen -t rsa -C example@126.com<br><code>注： -C后面跟你在github注册的用户名邮箱，这样公钥才会被github认可</code><br><code>回车后，不用输入文件夹路径和名字，自动选择默认的路径，存储新的ssh密钥</code><br><code>连续回车，结束</code><br><code>查看公钥内容，稍后加入github账户的sshkey中</code></li>
+<li>less ~/.ssh/id_rsa.pub</li>
+</ul>
+</blockquote>
+<p>###创建博客工程<br>  创建一个新的仓库，仓库名为<code>用户名.github.io</code>，比如我的github用户名是<code>sunstady</code>，则创建的项目名为<code>sunstady.github.io</code></p>
+<p>###将ssh密钥添加到github中<br>生成后，需要将密钥放到github上去，登录你的github账号，进入密钥设置面板：<a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a><br>在执行<code>less ~/.ssh/id_rsa.pub</code>后，会有一堆长的密码，把这一堆密码全部复制到github上</p>
+<p>####配置Hexo， 编译与部署<br>在<code>站点文件_config.yml</code>里第一段</p>
+<blockquote>
+<ul>
+<li>#Site 站点信息设置<br>title: Sanstyle  #站名<br>subtitle: 世界， 你好    #这是副标题<br>description:   #站描述<br>autor: MC   #作者<br>language: zh-CN  #语言<br>timezone: </li>
+</ul>
+</blockquote>
+<p>在<code>站点文件_config.yml</code>里最后一段</p>
+<blockquote>
+<ul>
+<li>deploy:<pre><code>type: git
+repo:git@github.com:sunstady/sunstady.github.io.git
+branch: master
+message: &apos;站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}&apos;
+</code></pre></li>
+</ul>
+</blockquote>
+<p>这里， 就是你创建的博客工程<br>最后一步，编译， 上传静态代码</p>
+<blockquote>
+<ul>
+<li>编译<br>  hexo generate</li>
+<li>在主机的hexo目录下，执行以下命令将自动更新到github<br>  hexo d</li>
+</ul>
+</blockquote>
+<p>###修改主题和配置文件</p>
+<p>####安装主题NEXT<br>切换到目录<code>hexo</code>下</p>
+<blockquote>
+<ul>
+<li>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>在<code>站点文件_config.yml</code>中</li>
+<li>找到 theme: 修改后面的参数，默认是 landscape<br>  theme: next</li>
+</ul>
+</blockquote>
+<p>####验证主题<br>首先启动Hexo站点， 并开启调试模式，整个命令是<code>hexo s --debug</code>。<br>在启动服务的过程中，注意观察命令行输出是否有任何异常信息，当命令行提示：<br><code>INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code><br>此时即可使用浏览器访问<code>http://localhost:4000</code>，检查站点是否正确运行。</p>
+<p>###主题设定</p>
+<p>####选择Scheme<br>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<blockquote>
+<ul>
+<li>Muse - 默认Scheme， 这是NexT最初的版本，黑白主调，大量留白</li>
+<li>Mist - Muse的紧凑版本， 整洁有序的单栏外观</li>
+<li>Pisces - 双栏Scheme， 小家碧玉似的清新</li>
+</ul>
+</blockquote>
+<p>Scheme的切换通过更改<code>主题文件</code>，搜索scheme关键字(用 vim 打开后，输入<code>/scheme</code>就可搜索)<br>你会看到三行scheme的配置，将你启用的scheme前面注释<code>#</code>去掉即可。</p>
+<blockquote>
+<ul>
+<li>scheme: Pisces</li>
+</ul>
+</blockquote>
+<p>####设置菜单<br>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 Font Awesome 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
+<p>编辑<code>主题文件</code>， 修改如下：</p>
+<blockquote>
+<ul>
+<li>menu:<pre><code>home: /
+archives: /archives
+about: /about
+categories: /categories
+tags: /tags
+commonweal: /404.html
+</code></pre></li>
+</ul>
+</blockquote>
+<p>若你的站点运行在子目录中，请将链接前缀的<code>/</code>去掉</p>
+<p>设定菜单项的图标，对应的字段是 menu_icons。 此设定格式是 item name: icon name，其中 item name 与上一步所配置的菜单名字对应，icon name 是 Font Awesome 图标的 名字。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。</p>
+<blockquote>
+<ul>
+<li>menu_icons: <pre><code>enable: true
+home: home
+about: about
+categories: th
+tags: tags
+archives: archive
+commonweal: heartbeat
+</code></pre></li>
+</ul>
+</blockquote>
+<p>####设置头像<br>编辑<code>主题文件</code>，修改字段<code>avatar</code>, 值设置成头像的链接地址</p>
+<blockquote>
+<ul>
+<li>avatar: <a href="http://xxxx.com/xxxxx.jpg" target="_blank" rel="external">http://xxxx.com/xxxxx.jpg</a></li>
+</ul>
+</blockquote>
+<p>###访问：<br>现在可以通过<code>用户名.github.io</code>访问博客</p>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Your support will encourage me to continue to create!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="MC WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="MC Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/环境/" rel="tag"># 环境</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/30/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/30/SQLMAP提数据/" rel="prev" title="SQLMAP提数据">
+                SQLMAP提数据 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true"
+              alt="MC" />
+          
+            <p class="site-author-name" itemprop="name">MC</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.shiyanbar.com/" title="实验吧" target="_blank" rel="external nofollow">实验吧</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3school.com.cn/" title="w3school" target="_blank" rel="external nofollow">w3school</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itellyou.cn/" title="MSDN" target="_blank" rel="external nofollow">MSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.huai235.com/" title="坏235" target="_blank" rel="external nofollow">坏235</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.imooc.com/course/landingpagephp?from=phpkecheng" title="慕课网" target="_blank" rel="external nofollow">慕课网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank" rel="external nofollow">前端书籍资料</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">NexT.Pisces</a> v5.1.2</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<span>
+  Host by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages
+</span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://sunstadys.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.sanstylemc.cn/2017/08/30/Centos-Hexo-Github/';
+          this.page.identifier = '2017/08/30/Centos-Hexo-Github/';
+          this.page.title = 'Centos + Hexo + Github';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sunstadys.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("i7jzN6yAlCyc52D54nDFzeXb-gzGzoHsz", "JKAIt4j5SoPJyHMx4IphgTdI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
