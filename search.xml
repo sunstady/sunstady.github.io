@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[禁止U盘拷贝]]></title>
+    <url>%2F2018%2F03%2F27%2F%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D%2F</url>
+    <content type="text"><![CDATA[经常会有人在我们电脑上拷贝一些东西，那我们不想让别人拷贝怎么办呢？1、键入win + r键，打开运行，输入gpedit.msc，打开本地组策略编辑器。2、点击计算机配置–&gt;管理模板–&gt;系统，找到右侧可移动存储访问。3、双击后可看到右侧有五个可移动磁盘项目，我们不想让别人从我们电脑拷贝的话，双击拒绝写入权限。4、选中已启用，点击确定。5、打开U盘，将文件放入U盘，可以看到提示需要管理员权限。6、我们点击继续，发现没有办法将文件放入U盘。]]></content>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[py使用itchat发送微信消息]]></title>
     <url>%2F2018%2F03%2F25%2Fpy%E4%BD%BF%E7%94%A8itchat%E5%8F%91%E9%80%81%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF%2F</url>
     <content type="text"><![CDATA[环境：Windows、python3.6、itchat库代码参考于奇幻果园。itchat使用需要事先下载安装，命令如下: pip install itchat这个代码的作用就是在指定时间给微信好友发送信息，并且可以间隔特定时间再次发送，类似于短信轰炸？学习！嗯，用来学习。12345678910111213141516171819202122232425262728293031#!usr/bin/python# -*- coding: UTF-8 -*-import itchatimport datetime, os, platform,timedef timerfun(sched_time) : flag = 0 while True: now = datetime.datetime.now() if now &gt; sched_time and now &lt; sched_time + datetime.timedelta(seconds=1) : #因为时间秒之后的小数数据部分不一定相等，要标记一个范围判断 send_move() time.sleep(2) #每次判断间隔2s, 避免多次触发事件 flag = 1 else : if flag == 1 : sched_time = sched_time + datetime.timedelta(hours=24) #把目标时间增加一个小时，24小时后触发再次执行 flag = 0def send_move(): users= itchat.search_friends(name= 'Love') #使用备注名来查找实际用户名 print(users) #获取好友全部信息，返回一个列表，列表内是一个字典 userName= users[0]['UserName'] #获取UserName，用来发送消息 itchat.send("It's time to take a rest. 宝贝, 该睡觉啦!", toUserName= userName) print('succeed')if __name__=='__main__': itchat.auto_login(hotReload=True) #首次扫描登录后后续自动登录 sched_time = datetime.datetime(2018,3,25,23,40,00) #设定初次触发时间的事件点 print('run the timer task at &#123;0&#125;'.format(sched_time)) timerfun(sched_time) 有些地方需要注意下:1、第11行判断时间是否到达指定时间处，因为now = datetime.datetime.now()返回的时间精确到了ms, 所以直接拿精确到s的特定时间去比较会出现False。所以改用判断时间是否在范围内。并且判断完后会用time.sleep(2)延时2s再次比较，避免多次命中或多次判断。2、第17行内，每次时间判断满足指定时间范围时，将指定时间往后延一定时间。这里+ datetime.timedelta(hours=24)表示延后24小时，达到每过24小时触发一次send_move函数的目的。3、第28行内，itchat.auto_login(hotReload=True)如注释说明的一样，避免每次都要扫描二维码登录，在登录一次之后”保持在线状态”4、第27行，if __name__==&#39;__main__&#39;:表示当前模块仅在自己运行时才运行后续的语句，否则当该模块被其他模块引用时，不会运行后续语句。每个模块都有__name__属性，当它等于__main__时，表示该模块被用户单独运行，可以执行特殊的操作。5、第30行，注意一下这里的print函数对sched_time字符串的使用方式。为了按照一般时间格式打印输出，对sched_time进行了format格式化处理，我理解就是保持sched_time原本的时间形式不变，而按照字符串的方法进行处理。这里用{0}来表示格式化后的sched_time，让其能够以原来时间格式与前面待打印的字符串进行字符串拼接。]]></content>

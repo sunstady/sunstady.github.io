@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-03-25T08:26:02.251Z</updated>
+  <updated>2018-03-27T06:52:40.341Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>禁止U盘拷贝</title>
+    <link href="http://www.sanstylemc.cn/2018/03/27/%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D/"/>
+    <id>http://www.sanstylemc.cn/2018/03/27/禁止U盘拷贝/</id>
+    <published>2018-03-27T06:52:12.000Z</published>
+    <updated>2018-03-27T06:52:40.341Z</updated>
+    
+    <content type="html"><![CDATA[<p>经常会有人在我们电脑上拷贝一些东西，那我们不想让别人拷贝怎么办呢？<br><a id="more"></a><br>1、键入<code>win + r</code>键，打开运行，输入<code>gpedit.msc</code>，打开本地组策略编辑器。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7677a713dc129c7bdfbd31a9cc145c61cd4f165b/%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D/1.png" alt="1"><br>2、点击<code>计算机配置</code>–&gt;<code>管理模板</code>–&gt;<code>系统</code>，找到右侧<code>可移动存储访问</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7677a713dc129c7bdfbd31a9cc145c61cd4f165b/%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D/2.png" alt="2"><br>3、双击后可看到右侧有五个可移动磁盘项目，我们不想让别人从我们电脑拷贝的话，双击<code>拒绝写入权限</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7677a713dc129c7bdfbd31a9cc145c61cd4f165b/%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D/3.png" alt="3"><br>4、选中<code>已启用</code>，点击<code>确定</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7677a713dc129c7bdfbd31a9cc145c61cd4f165b/%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D/4.png" alt="4"><br>5、打开U盘，将文件放入U盘，可以看到提示需要管理员权限。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7677a713dc129c7bdfbd31a9cc145c61cd4f165b/%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D/5.png" alt="5"><br>6、我们点击继续，发现没有办法将文件放入U盘。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/7677a713dc129c7bdfbd31a9cc145c61cd4f165b/%E7%A6%81%E6%AD%A2U%E7%9B%98%E6%8B%B7%E8%B4%9D/6.png" alt="6"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经常会有人在我们电脑上拷贝一些东西，那我们不想让别人拷贝怎么办呢？&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="http://www.sanstylemc.cn/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>py使用itchat发送微信消息</title>
@@ -537,29 +558,6 @@
     
     
       <category term="Skill" scheme="http://www.sanstylemc.cn/tags/Skill/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>银行管理系统修改一</title>
-    <link href="http://www.sanstylemc.cn/2018/01/17/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/"/>
-    <id>http://www.sanstylemc.cn/2018/01/17/银行管理系统修改一/</id>
-    <published>2018-01-17T06:51:38.000Z</published>
-    <updated>2018-03-12T01:48:55.187Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前写过一个<a href="https://sunstady.github.io/2017/12/29/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_blank" rel="external">银行管理系统</a>，现在对它进行了一些完善。<br>增加了主界面的背景图片。<br><a id="more"></a><br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/1.png" alt="1"><br>增加了管理员功能<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/2.png" alt="2"><br>管理员登陆成功<br><img src="https://raw.githubusercontent.com/sunstady/hexo/70bd83fbd842dbfb2ce8e6ba59ea429c79e1cc74/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/3.png" alt="3"><br>管理员界面<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/4.png" alt="4"><br>点击查询按钮可以将数据库中的账户信息显示在上方表中。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/5.png" alt="5"><br>选中一行，可以对一些信息进行修改，比如删除或修改。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/da8f266525d6e33d1091b4e13a1ea0655527f7db/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/6.png" alt="6"><br>完善了账户退出功能<br>用户登陆账户，点第一次退出会退出当前账户，再次点击退出会退出程序。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/dad7fe2656efc6349345cab1fe7c94c4d4aa9c23/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E4%B8%80/7.png" alt="7"><br><a href="http://download.csdn.net/download/sanstyle/10210018" target="_blank" rel="external">源码下载</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前写过一个&lt;a href=&quot;https://sunstady.github.io/2017/12/29/%E9%93%B6%E8%A1%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;银行管理系统&lt;/a&gt;，现在对它进行了一些完善。&lt;br&gt;增加了主界面的背景图片。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
     
   </entry>
   
