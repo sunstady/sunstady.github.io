@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="什么是Spring1、Spring是一个开源框架，Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能。Spring是一个IOC和AOP容器框架。在Java开发领域，SPring相对于EJB来说是一种 轻量级的、非侵入性的Java开发框架。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-28T05:02:14.665Z">
+<meta property="og:updated_time" content="2018-03-28T05:27:40.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring解析">
 <meta name="twitter:description" content="什么是Spring1、Spring是一个开源框架，Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能。Spring是一个IOC和AOP容器框架。在Java开发领域，SPring相对于EJB来说是一种 轻量级的、非侵入性的Java开发框架。">
@@ -449,7 +449,10 @@
 <h2 id="代理的两种方式"><a href="#代理的两种方式" class="headerlink" title="代理的两种方式"></a>代理的两种方式</h2><p><code>静态代理</code></p>
 <ul>
 <li>针对每个具体类分别编写代理类</li>
-<li>针对一个接口编写一个代理类<br><code>动态代理</code></li>
+<li>针对一个接口编写一个代理类</li>
+</ul>
+<p><code>动态代理</code></p>
+<ul>
 <li>针对一个方面编写一个InvocationHandler，然后借用JDK反射包中的Proxy类为各种接口动态生成相应的代理类。<br>不用写代理类，虚拟机根据真实对象实现的接口产生一个类，通过类实例化一个动态代理，在实例化动态代理时将真实对象及装备注入到动态代理中，向客户端公开的是动态代理，当客户端调用动态代理方法时，动态代理根据类的反射得到真实对象的Method,调用装备的invoke方法，将动态代理、 Method、方法参数传与装备的invoke方法，invoke方法在唤起method方法前或后做一些处理。     <blockquote>
 <p>产生动态代理的类: java.lang.refect.Proxy<br>装备必须实现InvocationHandler接口实现invoke方法。</p>
 </blockquote>
