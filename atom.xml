@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-03-28T02:41:16.467Z</updated>
+  <updated>2018-03-28T02:45:14.634Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.sanstylemc.cn/2018/03/28/py%E5%B8%B8%E8%AF%86/"/>
     <id>http://www.sanstylemc.cn/2018/03/28/py常识/</id>
     <published>2018-03-28T02:22:05.000Z</published>
-    <updated>2018-03-28T02:41:16.467Z</updated>
+    <updated>2018-03-28T02:45:14.634Z</updated>
     
     <content type="html"><![CDATA[<p>一些基础的python知识。<br><a id="more"></a></p>
 <h2 id="python特性"><a href="#python特性" class="headerlink" title="python特性"></a>python特性</h2><blockquote>
@@ -31,10 +31,7 @@
 </blockquote>
 <p>2) <code>浅拷贝</code></p>
 <blockquote>
-<p><code>对于可变对象深浅拷贝</code><br>Name|值|地址</p>
-<ul>
-<li>| :-: | -:<br>=浅拷贝|值相等|地址相等<br>copy浅拷贝|值相等|地址不相等<br>deepcopy深拷贝|值相等|地址不相等<br>一般引用copy.copy()，可以进行对象的浅拷贝。它复制了对象但对于对象中的元素，依然使用原始的引用。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9582c97b0cc4db60b3b844bdab6a26185f4683f0/py%E5%B8%B8%E8%AF%86/2.png" alt="2"><br>使用copy对a进行浅拷贝，b复制了a的对象，但是b里面的[2, 3, 4]和a里面的[2, 3, 4]其实都是指向同一块内存地址，所以改变了a[1]之后，b里面的b[1]也发生了改变。</li>
-</ul>
+<p><code>对于可变对象深浅拷贝</code><br>|Name|值|地址|<br>| - | :-: | -: |<br>|=浅拷贝|值相等|地址相等|<br>|copy浅拷贝|值相等|地址不相等|<br>|deepcopy深拷贝|值相等|地址不相等|<br>一般引用copy.copy()，可以进行对象的浅拷贝。它复制了对象但对于对象中的元素，依然使用原始的引用。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9582c97b0cc4db60b3b844bdab6a26185f4683f0/py%E5%B8%B8%E8%AF%86/2.png" alt="2"><br>使用copy对a进行浅拷贝，b复制了a的对象，但是b里面的[2, 3, 4]和a里面的[2, 3, 4]其实都是指向同一块内存地址，所以改变了a[1]之后，b里面的b[1]也发生了改变。</p>
 <p><code>对于不可变对象的深浅拷贝</code><br>不可变对象类型，没有被拷贝的说法，即便是用深拷贝，查看id的话也是一样的，如果对其重新赋值，也只是新创建一个对象，替换掉旧的而已。一句话就是，不可变类型，不管是深拷贝还是浅拷贝，地址值和拷贝后的值都是一样的。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a99c74107615d9f8b75c552b526d81e9867f3cff/py%E5%B8%B8%E8%AF%86/2_1.png" alt="2.1"><br>3) <code>深拷贝</code><br>深拷贝需要用copy.deepcopy()进行拷贝。它是复制一个容器对象，以及它里面的所有元素(包含元素的子元素)<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/3.png" alt="3"><br>当对a列表进行深度拷贝之后，b复制了a的对象，但是b里面的[2, 3, 4]和a里面的[2, 3, 4]其实都是指向不同的内存地址。</p>
 </blockquote>
 <h2 id="python中的-和is的区别"><a href="#python中的-和is的区别" class="headerlink" title="python中的==和is的区别"></a>python中的<code>==</code>和<code>is</code>的区别</h2><blockquote>
