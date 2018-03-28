@@ -87,7 +87,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -105,13 +105,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sanstyle">
-<meta property="og:url" content="http://www.sanstylemc.cn/archives/2017/09/page/3/index.html">
+<meta name="description" content="字符串常量是编译时确定的，编译完成，生成class文件，那就不会再变了。在编译的时候，编译器会将字符串常量直接放在一起，然后查找常量池里面，有没有对应的字符串。">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String中加号和字符串拼接">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/03/28/String中加号和字符串拼接/index.html">
 <meta property="og:site_name" content="Sanstyle">
+<meta property="og:description" content="字符串常量是编译时确定的，编译完成，生成class文件，那就不会再变了。在编译的时候，编译器会将字符串常量直接放在一起，然后查找常量池里面，有没有对应的字符串。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-28T03:51:53.798Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sanstyle">
+<meta name="twitter:title" content="String中加号和字符串拼接">
+<meta name="twitter:description" content="字符串常量是编译时确定的，编译完成，生成class文件，那就不会再变了。在编译的时候，编译器会将字符串常量直接放在一起，然后查找常量池里面，有没有对应的字符串。">
 
 
 
@@ -141,7 +146,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/archives/2017/09/page/3/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/03/28/String中加号和字符串拼接/"/>
 
 
 
@@ -162,7 +167,7 @@
 })();
 </script>
 
-  <title>归档 | Sanstyle</title>
+  <title>String中加号和字符串拼接 | Sanstyle</title>
   
 
 
@@ -191,7 +196,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/sunstady"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
@@ -332,410 +337,208 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/03/28/String中加号和字符串拼接/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h2 class="post-title" itemprop="name headline">String中加号和字符串拼接</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T11:51:08+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        很好! 目前共计 89 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2017">2017</h2>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/28/String中加号和字符串拼接/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/28/String中加号和字符串拼接/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
+             <span id="/2018/03/28/String中加号和字符串拼接/" class="leancloud_visitors" data-flag-title="String中加号和字符串拼接">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/22/Java中this用法-二/" itemprop="url">
-              
-                <span itemprop="name">Java中this用法(二)</span>
-              
-            </a>
-        
-      </h3>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-22T13:45:35+08:00"
-              content="2017-09-22" >
-          09-22
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/22/Java中this用法-一/" itemprop="url">
-              
-                <span itemprop="name">Java中this用法(一)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-22T13:43:02+08:00"
-              content="2017-09-22" >
-          09-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/判断输入的字符串是否为数字/" itemprop="url">
-              
-                <span itemprop="name">判断输入的字符串是否为数字</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T17:26:44+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/19/Example3-9/" itemprop="url">
-              
-                <span itemprop="name">Example3_9</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-19T21:46:00+08:00"
-              content="2017-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>字符串常量是编译时确定的，编译完成，生成class文件，那就不会再变了。在编译的时候，编译器会将字符串常量直接放在一起，然后查找常量池里面，有没有对应的字符串。<br><a id="more"></a><br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">String </span><span class="keyword">str1= </span>new <span class="keyword">String("abc");</span></div><div class="line"><span class="keyword">String </span><span class="keyword">str2= </span><span class="string">"abc"</span><span class="comment">;</span></div><div class="line"><span class="keyword">String </span><span class="keyword">str3= </span><span class="string">"a"</span>+ <span class="string">"b"</span>+ <span class="string">"c"</span><span class="comment">;</span></div><div class="line"><span class="symbol">System.out.println</span>(<span class="keyword">str1== </span><span class="keyword">str2); </span>  //输出false</div><div class="line"><span class="symbol">System.out.println</span>(<span class="keyword">str1.intern()== </span><span class="keyword">str2); </span> //输出true</div><div class="line">//intern()方法返回字符串对象的规范化表示形式。</div><div class="line"><span class="symbol">System.out.println</span>(<span class="keyword">str2== </span><span class="keyword">str3); </span>  //输出true</div><div class="line"><span class="keyword">String </span><span class="keyword">str4= </span><span class="string">"ab"</span><span class="comment">;</span></div><div class="line"><span class="keyword">String </span><span class="keyword">str5= </span><span class="keyword">str4+ </span><span class="string">"c"</span><span class="comment">;</span></div><div class="line"><span class="symbol">System.out.println</span>(<span class="keyword">str2== </span><span class="keyword">str5); </span>  //输出false</div></pre></td></tr></table></figure></p>
+<ul>
+<li>第一个<code>str1== str2</code>对比的是引用的地址是否相同，由于str1采用的是<code>new String</code>方式定义的，所以地址引用一定不相等。</li>
+<li>第二个<code>str1.intern()== str2</code>，当str1调用intern的时候，会检查字符串池中是否含有 该字符串。由于定义的str2已经进入字符串池中，所以会得到相同的引用。</li>
+<li>定义str3，在编译的时候，编译器会将字符串常量直接放在一起，然后查找常量池里面，有没有对应的字符串，所以str2和str3是相等的，也就是指向相同的内存区域。</li>
+<li>看一下下面的代码<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">String</span> a = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"ab"</span>);</div><div class="line"><span class="keyword">String</span> b = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"ab"</span>);</div><div class="line"><span class="keyword">String</span> c = <span class="string">"ab"</span>;</div><div class="line"><span class="keyword">String</span> d = <span class="string">"a"</span> + <span class="string">"b"</span>;</div><div class="line"><span class="keyword">String</span> e = <span class="string">"b"</span>;</div><div class="line"><span class="keyword">String</span> f = <span class="string">"a"</span> + e;</div><div class="line"></div><div class="line">System.out.<span class="built_in">println</span>(b.intern() == a);   <span class="comment">//输出false</span></div><div class="line">System.out.<span class="built_in">println</span>(b.intern() == c);   <span class="comment">//输出true</span></div><div class="line">System.out.<span class="built_in">println</span>(b.intern() == d);   <span class="comment">//输出true</span></div><div class="line">System.out.<span class="built_in">println</span>(b.intern() == f);   <span class="comment">//输出false</span></div><div class="line">System.out.<span class="built_in">println</span>(b.intern() == a.intern());   <span class="comment">//输出true</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>由运行结果可以看出来，b.intern() == a和b.intern() == c可知，采用new 创建的字符串对象不进入字符串池，并且通过b.intern() == d和b.intern() == f可知，字符串相加的时候，都是静态字符串的结果会添加到字符串池，如果其中含有变量（如f中的e）则不会进入字符串池中。但是字符串一旦进入字符串池中，就会先查找池中有无此对象。如果有此对象，则让对象引用指向此对象。如果无此对象，则先创建此对象，再让对象引用指向此对象。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/19/Example3-8/" itemprop="url">
-              
-                <span itemprop="name">Example3_8</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-19T21:44:57+08:00"
-              content="2017-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/19/Example3-7/" itemprop="url">
-              
-                <span itemprop="name">Example3_7</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-19T21:43:38+08:00"
-              content="2017-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/19/Example3-6/" itemprop="url">
-              
-                <span itemprop="name">Example3_6</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-19T21:42:30+08:00"
-              content="2017-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/19/Example3-5/" itemprop="url">
-              
-                <span itemprop="name">Example3_5</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-19T21:40:51+08:00"
-              content="2017-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/19/Example3-4/" itemprop="url">
-              
-                <span itemprop="name">Example3_4</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-19T21:39:50+08:00"
-              content="2017-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/19/Example3-3/" itemprop="url">
-              
-                <span itemprop="name">Example3_3</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-19T21:38:03+08:00"
-              content="2017-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Your support will encourage me to continue to create!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="MC WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="MC Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/28/py常识/" rel="next" title="py常识">
+                <i class="fa fa-chevron-left"></i> py常识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/09/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/09/">1</a><a class="page-number" href="/archives/2017/09/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2017/09/page/4/">4</a><a class="extend next" rel="next" href="/archives/2017/09/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -743,6 +546,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1018,6 +832,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1035,6 +853,18 @@
       <script id="dsq-count-scr" src="https://sunstadys.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.sanstylemc.cn/2018/03/28/String中加号和字符串拼接/';
+          this.page.identifier = '2018/03/28/String中加号和字符串拼接/';
+          this.page.title = 'String中加号和字符串拼接';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sunstadys.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
