@@ -46,7 +46,7 @@
     <link href="http://www.sanstylemc.cn/2018/03/28/cookie%E5%92%8Csession%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://www.sanstylemc.cn/2018/03/28/cookie和session的区别/</id>
     <published>2018-03-28T09:45:41.000Z</published>
-    <updated>2018-03-28T09:46:15.546Z</updated>
+    <updated>2018-03-29T06:38:46.791Z</updated>
     
     <content type="html"><![CDATA[<p>对于许多人来说，都知道的是，cookie是存储在客户端的，可以用来放需要长期使用的内容，例如用户密码、用户账户等等，服务器是可以获取到cookie的内容的；而session则是存储在服务器端，通过唯一的session_id来区别用户，用于保存用户的登录状态和请求等，客户是不能获取到其内容的。这对于许多人来说都是比较基础的内容，也是表现形式上的区别，在这里我们深入的了解一下两者。<br><a id="more"></a></p>
 <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><figure class="highlight ldif"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">cookie是存在于客户端的由浏览器按照一定的原则在后台自动发送给服务器的。浏览器检查所有存储的cookie，如果某个cookie所声明的作用范围大于等于将要请求的资源所在的位置，则把该cookie附在请求资源的HTTP请求头上发送给服务器。</span></div><div class="line"><span class="attribute">cookie的内容主要包括</span>: 名字、值、过期时间、路径和域。其中路径与域一起构成cookie的作用范围，若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失。</div><div class="line"><span class="attribute">cookie是服务器端给客户端分发的一种凭证，客户端要请求服务，就需要在发送数据的同时发送cookie，服务器端通过识别cookie的内容，得知用户身份。</span></div></pre></td></tr></table></figure>
@@ -68,7 +68,7 @@
     </summary>
     
     
-      <category term="skill" scheme="http://www.sanstylemc.cn/tags/skill/"/>
+      <category term="Skill" scheme="http://www.sanstylemc.cn/tags/Skill/"/>
     
   </entry>
   
