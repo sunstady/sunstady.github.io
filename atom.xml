@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-03-30T14:27:00.460Z</updated>
+  <updated>2018-03-31T07:27:50.591Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ArrayList和LinkedList的区别</title>
+    <link href="http://www.sanstylemc.cn/2018/03/31/ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://www.sanstylemc.cn/2018/03/31/ArrayList和LinkedList的区别/</id>
+    <published>2018-03-31T07:24:19.000Z</published>
+    <updated>2018-03-31T07:27:50.591Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>ArrayList</code>和<code>LinkedList</code>是常用的两种存储结构。<br><a id="more"></a><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表的数据结构。这俩都是对List接口的实现。前者是数组队列，相当于动态数组；后者为双向链表结构，也可当作堆栈、队列、双端队列。</div><div class="line">对于随机访问<span class="keyword">get</span>和<span class="keyword">set</span>，ArrayList觉得优于LinkedList，因为LinkedList是线性的数据存储方式，需要移动指针从前往后依次查找。</div><div class="line">对于新增和删除操作<span class="keyword">add</span>和<span class="keyword">remove</span>，LinkedList比较占优势，因为ArrayList是数组，所以在其中进行增删操作时，会对操作点之后所有数据的下标索引造成影响，需要移动数据。</div><div class="line">从利用效率来看，ArrayList自由性较低，因为它需要手动的设置固定大小的容量，但是它的使用比较方便，只需要创建，然后添加数据，通过调用下标进行使用；而LinkedList自由性较高，能够动态的随数据量的变化而变化，但是它不便于使用。</div><div class="line">ArrayList主要控件开销在于需要在List列表预留一定空间；而LinkedList主要控件开销在于需要存储结点信息以及结点指针信息。</div><div class="line">LinkedList需要更多的内存空间，因为它除了要存储数据之外，还需要存储该结点的前后结点信息，而ArrayList索引处就是存的数据。</div></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.LinkedList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">long1_1</span> &#123;</span></div><div class="line">	<span class="keyword">static</span> final <span class="keyword">int</span> N=<span class="number">50000</span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">long</span> <span class="title">timeList</span><span class="params">(List <span class="built_in">list</span>)</span></span>&#123;</div><div class="line">        <span class="keyword">long</span> start=System.currentTimeMillis();</div><div class="line">        Object o = <span class="keyword">new</span> Object();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</div><div class="line">            <span class="built_in">list</span>.add(<span class="number">0</span>, o);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> System.currentTimeMillis()-start;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">long</span> <span class="title">readList</span><span class="params">(List <span class="built_in">list</span>)</span></span>&#123;</div><div class="line">        <span class="keyword">long</span> start=System.currentTimeMillis();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="built_in">list</span>.size();i&lt;j;i++)&#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> System.currentTimeMillis()-start;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">static</span> List <span class="title">addList</span><span class="params">(List <span class="built_in">list</span>)</span></span>&#123;</div><div class="line">        Object o = <span class="keyword">new</span> Object();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</div><div class="line">            <span class="built_in">list</span>.add(<span class="number">0</span>, o);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">list</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"ArrayList添加"</span>+N+<span class="string">"条耗时："</span>+timeList(<span class="keyword">new</span> ArrayList()));</div><div class="line">        System.out.println(<span class="string">"LinkedList添加"</span>+N+<span class="string">"条耗时："</span>+timeList(<span class="keyword">new</span> LinkedList()));</div><div class="line"></div><div class="line">        List list1=addList(<span class="keyword">new</span> ArrayList&lt;&gt;());</div><div class="line">        List list2=addList(<span class="keyword">new</span> LinkedList&lt;&gt;());</div><div class="line">        System.out.println(<span class="string">"ArrayList查找"</span>+N+<span class="string">"条耗时："</span>+readList(list1));</div><div class="line">        System.out.println(<span class="string">"LinkedList查找"</span>+N+<span class="string">"条耗时："</span>+timeList(list2));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当我们在集合中装5万条数据，测试运行结果如下:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5fa64a9a35fb77be9a695ca8c4772512d1ebf57f/ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB/2.png" alt="2"><br>可以看到ArrayList更适合读取数据，LinkedList更多的时候添加或删除数据。</p>
+<blockquote>
+<p>当插入的数据量很小时，两者区别不太大，当插入的数据量大时，大约在容量的1/10之前，LinkedList会优于ArrayList，在其后就劣于ArrayList，且越靠近后面越差。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;ArrayList&lt;/code&gt;和&lt;code&gt;LinkedList&lt;/code&gt;是常用的两种存储结构。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="框架" scheme="http://www.sanstylemc.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>Java虚拟机的架构</title>
@@ -639,30 +665,6 @@
     
     
       <category term="软件" scheme="http://www.sanstylemc.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eclipse Java EE配置Tomcat</title>
-    <link href="http://www.sanstylemc.cn/2018/02/25/eclipse%E9%85%8D%E7%BD%AETomcat/"/>
-    <id>http://www.sanstylemc.cn/2018/02/25/eclipse配置Tomcat/</id>
-    <published>2018-02-25T08:34:55.000Z</published>
-    <updated>2018-03-20T11:40:24.925Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h2><p>1、打开eclipse，单击<code>Window</code>菜单，选择下方的<code>Preferences</code>。<br><a id="more"></a><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/1.png" alt="1"><br>2、单击<code>Server</code>选项，选择下方的<code>Runtime Environments</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/2.png" alt="2"><br>3、点击<code>Add</code>，添加 Tomcat。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/3.png" alt="3"><br>4、点击<code>Next</code>， 选中自己安装的Tomcat路径。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/4.png" alt="4"><br>5、点击<code>Finish</code>完成。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/5.png" alt="5"></p>
-<h2 id="建立一个Web应用"><a href="#建立一个Web应用" class="headerlink" title="建立一个Web应用"></a>建立一个Web应用</h2><p>1、<code>File</code>–&gt;<code>New</code>–&gt;<code>Dynamic Web Project</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/6.png" alt="6"><br>2、创建一个<code>Dynamic Web Project</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/7.png" alt="7"><br>3、连续点击两下<code>Next</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/8.png" alt="8"><br>4、点击<code>Finish</code>完成。</p>
-<h2 id="让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat"><a href="#让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat" class="headerlink" title="让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat"></a>让Tomcat服务器显示在控制台上，将Web应用部署到Tomcat</h2><p>1、<code>Window</code>–&gt;<code>Show View</code>–&gt;<code>Servers</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/9.png" alt="9"><br>2、右键<code>Server</code>面板中的<code>Add and Remove</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/10.png" alt="10"><br>3、添加项目到<code>Configured</code>，选中项目并点击<code>Add</code>或者双击都可以添加到右边。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/11.png" alt="11"><br>4、点击<code>Finish</code>完成。<br>返回下方的<code>Servers</code>面板，右键单击该面板中的<code>Tomcat v9.0 Server at localhost</code>节点，在弹出的快捷菜单中单击<code>Start</code><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/15.png" alt="15"><br>即可启动指定的Web服务器。如果此时直接访问<code>http://localhost:8080/test_first</code> ,会发现报404的错误。这是因为我们没有添加主页，下面添加主页(index.jsp)的内容。<br>5、右键<code>WebContent</code>–&gt;<code>New</code>–&gt;<code>JSP File</code>。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/12.png" alt="12"><br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/13.png" alt="13"><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="section">注意: Web资源一定要在WebContent目录下添加。</span></div></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/14.png" alt="14"><br>此时，再一次来访问<code>http://localhost:8080/test_first</code> ，效果如下:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5e21c74fa2824cf35d83b9d4d3cb10e8ae835f9a/eclipse%E9%85%8D%E7%BD%AETomcat/16.png" alt="16"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;配置Tomcat&quot;&gt;&lt;a href=&quot;#配置Tomcat&quot; class=&quot;headerlink&quot; title=&quot;配置Tomcat&quot;&gt;&lt;/a&gt;配置Tomcat&lt;/h2&gt;&lt;p&gt;1、打开eclipse，单击&lt;code&gt;Window&lt;/code&gt;菜单，选择下方的&lt;code&gt;Preferences&lt;/code&gt;。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Java Web" scheme="http://www.sanstylemc.cn/tags/Java-Web/"/>
     
   </entry>
   
