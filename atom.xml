@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-03-31T08:26:53.895Z</updated>
+  <updated>2018-04-01T01:33:29.064Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL事务及其四个特性</title>
+    <link href="http://www.sanstylemc.cn/2018/04/01/MySQL%E4%BA%8B%E5%8A%A1%E5%8F%8A%E5%85%B6%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7/"/>
+    <id>http://www.sanstylemc.cn/2018/04/01/MySQL事务及其四个特性/</id>
+    <published>2018-04-01T01:32:55.000Z</published>
+    <updated>2018-04-01T01:33:29.064Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="事务概念引入"><a href="#事务概念引入" class="headerlink" title="事务概念引入"></a>事务概念引入</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;现实生活中，我们往往经常会进行转账操作，转账操作可以分为两部分来完成，转入和转出。只有这两部分都完成了才可以认为是转账成功。在数据库中，这个过程是使用两条语句来完成的，如果其中任意一条语句出现了异常没有执行，则会导致两个账号的金额不同步，造成错误。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了防止上面可能出现的情况，MySQL引入了事务，所谓事务就是针对数据库的一组操作，它可以由一条或多条SQL语句组成，同一个事务的操作具备同步的特点，如果其中有一条语句不能执行的话，那么所有的语句都不会执行，也就是说，事务中的语句要么都执行，要么都不执行。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;在使用数据库时候需要使用事务，必须先开启事务，开启事务的语句具体如下:<br><code>start transaction;</code><br>即:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/0541984ef0c403e9971cf5b1e11fe393d0c788f4/MySQL%E4%BA%8B%E5%8A%A1/1.png" alt="1"><br>上面语句是用来开启事务，事务开启之后就可以执行SQL语句，SQL语句执行成功之后，需要使用相应语句提交事务，提交事务的语句如下:<br><code>commit;</code><br>需要注意的是，在MySQL中直接书写SQL语句都是自动提交的，而事务中的操作语句需要使用<code>commit</code>语句手动提交，只有事务提交后其中的操作才会生效。<br>如果不想提交事务，我们还可以使用相关语句取消事务(也称回滚)，具体语句如下:<br><code>rollback;</code><br>注: <code>rollback</code>语句只能针对未提交的事务执行的回滚操作，已经提交的事务是不能回滚的。</p>
+<h2 id="事务的四个基本要素-ACID"><a href="#事务的四个基本要素-ACID" class="headerlink" title="事务的四个基本要素(ACID)"></a>事务的四个基本要素(ACID)</h2><p>ACID，指数据库事务正确执行的四个基本要素的缩写。包含: <code>原子性</code>、<code>一致性</code>、<code>隔离性</code>、<code>持久性</code>。<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="section">原子性: 原子性意味着事务的整体性和不可分割性，这就类似化学中的原子，是一个不可分割的单元。一个事务可以是一个（任务）操作，也可以是多个（任务）操作，假设一个事务由多个操作（任务）组成，那么这些操作必须都执行成功这个事务才被认为执行成功，只要其中有一个任务执行失败那么整个事务都会被认为执行失败，导致自动回滚到初始状态，通俗来讲就是“同进退”，这保证了事务的整体性。这就是事物的原子性。 专业来讲，原子的执行是一个全部发生或全部失败的整体过程。在一个原子操作中，如果事务中的任何一个语句失败，前面执行的语句都将被返回，以保证数据的整体性不被破坏。这在常用的系统应用中，为保证数据的安全性起到一定作用。 </span></div><div class="line"><span class="section">一致性: 在MySql事务处理过程中，无论事务是完全成功或是在中途因某些环节失败而导致失败，但事务使系统处于一致的状态时，必须保持一致性，用户A向用户B的账户中转入5000元，但用户B在查询转账信息的时候，发现自己的账户只增加了3000元，这样不能使整个事务达到一致性。 在MySql中，一致性主要由MySql的日志机制处理，它记录数据库的所有变化，为事务回复提供跟踪记录。如果系统在事务处理中间发生错误，MySql恢复过程将使用这些日志发现事务是否已经完全成功执行或需要返回。一致性属性保证数据库从不返回一个未处理的事务。</span></div><div class="line"><span class="section">隔离性: 它是指每个事务在自己的空间发生，和其他发生在系统中的事务隔离，而且事务的结果只在它完全被执行的时候才能看到，如果该事务未提交，则其他会话看不到执行的结果。这样的话即使一个系统中同时发生多个事务，孤立性也可以保证特定的事务在完成之前，其结果是不被公布的。当系统支持多个同时存在的用户和连接时，系统必须遵守孤立性原则，否则在执行过程中可能导致大量数据被破坏，孤立性保证每个事务完整地在其各自的空间内被顺序的执行，保证事务之间不会相互冲突。</span></div><div class="line"><span class="section">持久性: 在MySql中，即使是数据库系统崩溃，一个提交的事务仍然在坚持。当一个事务完成，数据库的日志已经被更新时，持久性即可发挥其特有功效。在MySql中，如果系统崩溃或者数据存储介质被破坏，通过使用日志，系统能够恢复在重启前进行的最后一次成功更新，可以反应系统崩溃时处于执行过程的事务的变化。 MySql的持久性是通过一条记录事务过程中系统变化的二进制事务日志文件来实现的。如果遇到硬件损坏或者系统的异常关机，系统在下一次启动时，通过使用最后的备份和日志就可以恢复丢失数据。</span></div></pre></td></tr></table></figure></p>
+<p>如何使用事务？<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">databases</span> <span class="keyword">test</span>;</div><div class="line"><span class="keyword">use</span> <span class="keyword">test</span>;</div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> accounts(</div><div class="line"><span class="keyword">id</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</div><div class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">40</span>),</div><div class="line">money <span class="built_in">float</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> accounts(<span class="keyword">name</span>, money) <span class="keyword">values</span>(<span class="string">'a'</span>, <span class="number">1000</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> accounts(<span class="keyword">name</span>, money) <span class="keyword">values</span>(<span class="string">'b'</span>, <span class="number">1000</span>);</div></pre></td></tr></table></figure></p>
+<p>执行效果如下:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/0541984ef0c403e9971cf5b1e11fe393d0c788f4/MySQL%E4%BA%8B%E5%8A%A1/2.png" alt="2"><br>演示使用事务来实现转账功能:<br>首先开启一个事务，然后通过update语句将a账户的100元转给b账户，然后提交事务，具体语句如下:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">start</span> <span class="keyword">transaction</span>;</div><div class="line"><span class="keyword">update</span> <span class="keyword">account</span> <span class="keyword">set</span> money= money- <span class="number">100</span> <span class="keyword">where</span> <span class="keyword">name</span>= <span class="string">'a'</span>;</div><div class="line"><span class="keyword">update</span> <span class="keyword">account</span> <span class="keyword">set</span> money= money+ <span class="number">100</span> <span class="keyword">where</span> <span class="keyword">name</span>= <span class="string">'b'</span>;</div><div class="line"><span class="keyword">commit</span>;</div></pre></td></tr></table></figure></p>
+<p>执行效果如下:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/0541984ef0c403e9971cf5b1e11fe393d0c788f4/MySQL%E4%BA%8B%E5%8A%A1/3.png" alt="3"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;事务概念引入&quot;&gt;&lt;a href=&quot;#事务概念引入&quot; class=&quot;headerlink&quot; title=&quot;事务概念引入&quot;&gt;&lt;/a&gt;事务概念引入&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;现实生活中，我们往往经常会进行转账操作，转账操作可以分为两部分来完成，转入和转出。只有这两部分都完成了才可以认为是转账成功。在数据库中，这个过程是使用两条语句来完成的，如果其中任意一条语句出现了异常没有执行，则会导致两个账号的金额不同步，造成错误。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;为了防止上面可能出现的情况，MySQL引入了事务，所谓事务就是针对数据库的一组操作，它可以由一条或多条SQL语句组成，同一个事务的操作具备同步的特点，如果其中有一条语句不能执行的话，那么所有的语句都不会执行，也就是说，事务中的语句要么都执行，要么都不执行。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Java多线程</title>
@@ -644,30 +669,6 @@
     <summary type="html">
     
       &lt;p&gt;进入&lt;a href=&quot;http://tools.jboss.org/downloads/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JBoss Tools插件&lt;/a&gt;下载页面，点击&lt;code&gt;Download&lt;/code&gt;。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="软件" scheme="http://www.sanstylemc.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSP自动提示</title>
-    <link href="http://www.sanstylemc.cn/2018/02/26/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/"/>
-    <id>http://www.sanstylemc.cn/2018/02/26/JSP自动提示/</id>
-    <published>2018-02-26T11:58:22.000Z</published>
-    <updated>2018-03-11T14:30:01.061Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、<code>Window</code>–&gt;<code>Preferences</code>–&gt;<code>Java</code>–&gt;<code>Editor</code>–&gt;<code>Content Assist</code><br>修改<code>Auto activation triggers for Java</code>的值为:<br><a id="more"></a><br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/sunstady/hexo/ef3a6fec219f14c2735a61b61e653ec641a09425/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/1.png" alt="1"><br>2、<code>JavaScript</code>–&gt;<code>Editor</code>–&gt;<code>Content Assist</code><br>修改<code>Auto activation triggers for JavaScript</code>的值为:<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/sunstady/hexo/ef3a6fec219f14c2735a61b61e653ec641a09425/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/2.png" alt="2"><br>3、<code>Web</code>–&gt;<code>Html Files</code>–&gt;<code>Editor</code>–&gt;<code>Content Assist</code><br>修改<code>Prompt when these characters are inserted</code>的值为:<br><figure class="highlight fix"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">&lt;</span>=<span class="string">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/sunstady/hexo/ef3a6fec219f14c2735a61b61e653ec641a09425/JSP%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA/3.png" alt="3"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1、&lt;code&gt;Window&lt;/code&gt;–&amp;gt;&lt;code&gt;Preferences&lt;/code&gt;–&amp;gt;&lt;code&gt;Java&lt;/code&gt;–&amp;gt;&lt;code&gt;Editor&lt;/code&gt;–&amp;gt;&lt;code&gt;Content Assist&lt;/code&gt;&lt;br&gt;修改&lt;code&gt;Auto activation triggers for Java&lt;/code&gt;的值为:&lt;br&gt;
     
     </summary>
     
