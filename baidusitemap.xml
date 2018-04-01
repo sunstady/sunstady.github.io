@@ -5,11 +5,28 @@
     
   <url>
     <loc>http://www.sanstylemc.cn/2018/04/01/Object%E7%B1%BB%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2018-04-01T07:06:59.980Z</lastmod>
+    <lastmod>2018-04-01T07:42:00.352Z</lastmod>
     <data>
         <display>
         <title>Object类及其常用方法</title>
         <pubTime>2018-04-01T07:06:28.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sanstylemc.cn/2018/04/01/equal-%E5%92%8ChashCode-%E6%AF%94%E8%BE%83/</loc>
+    <lastmod>2018-04-01T07:41:41.520Z</lastmod>
+    <data>
+        <display>
+        <title>equal()和hashCode()比较</title>
+        <pubTime>2018-04-01T07:40:37.000Z</pubTime>
         
         <tag>Java</tag>
          
