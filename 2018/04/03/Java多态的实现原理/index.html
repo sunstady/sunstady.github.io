@@ -87,7 +87,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -105,25 +105,18 @@
 
 
 
-<meta name="description" content="安装android studio的时候，出现几个错误，在此记录下。">
-<meta name="keywords" content="Android">
+<meta name="description" content="Java多态概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Studio 安装问题">
-<meta property="og:url" content="http://www.sanstylemc.cn/2017/10/10/Android-Studio-安装问题/index.html">
+<meta property="og:title" content="Java多态的实现原理">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="安装android studio的时候，出现几个错误，在此记录下。">
+<meta property="og:description" content="Java多态概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/2.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/3.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/9d4e725780e458c740289e8c420650457ba4c761/android%20studio/4.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/62829847e40e333fe7e569ebc5a20c0ae8b5867f/android%20studio/5.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/f55e7eb2849820a93edd2b434d3c2f261bf0c46b/android%20studio/6.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/1.jpg">
-<meta property="og:updated_time" content="2018-03-11T14:29:17.398Z">
+<meta property="og:updated_time" content="2018-04-03T07:38:08.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Studio 安装问题">
-<meta name="twitter:description" content="安装android studio的时候，出现几个错误，在此记录下。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/2.jpg">
+<meta name="twitter:title" content="Java多态的实现原理">
+<meta name="twitter:description" content="Java多态概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。">
 
 
 
@@ -153,7 +146,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2017/10/10/Android-Studio-安装问题/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/"/>
 
 
 
@@ -174,7 +167,7 @@
 })();
 </script>
 
-  <title>Android Studio 安装问题 | Sanstyle</title>
+  <title>Java多态的实现原理 | Sanstyle</title>
   
 
 
@@ -358,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2017/10/10/Android-Studio-安装问题/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -375,7 +368,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Android Studio 安装问题</h2>
+          <h2 class="post-title" itemprop="name headline">Java多态的实现原理</h2>
         
 
         <div class="post-meta">
@@ -387,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T22:09:38+08:00">
-                2017-10-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T15:36:59+08:00">
+                2018-04-03
               </time>
             
 
@@ -406,9 +399,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/10/Android-Studio-安装问题/#comments" itemprop="discussionUrl">
+                <a href="/2018/04/03/Java多态的实现原理/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/Android-Studio-安装问题/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/04/03/Java多态的实现原理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -416,7 +409,7 @@
 
           
           
-             <span id="/2017/10/10/Android-Studio-安装问题/" class="leancloud_visitors" data-flag-title="Android Studio 安装问题">
+             <span id="/2018/04/03/Java多态的实现原理/" class="leancloud_visitors" data-flag-title="Java多态的实现原理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,10 +440,16 @@
       
 
       
-        <p>安装android studio的时候，出现几个错误，在此记录下。<br><a id="more"></a><br>第一个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/2.jpg" alt="First Run"><br><code>解决方法：</code>在自己的android studio安装目录下找到这个文件<code>idea.properties</code>,在最后面添加一行<code>disable.android.first.run=true</code></p>
-<p>第二个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/3.jpg" alt="汉字">(图是百度的==当时没保存下来)<br><code>解决方法：</code>SDK的目录名称不能有汉字，换个路径</p>
-<p>第三个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/9d4e725780e458c740289e8c420650457ba4c761/android%20studio/4.jpg" alt="out of date"><br><code>解决方法：</code>点击右下角的<code>Configure</code><img src="https://raw.githubusercontent.com/sunstady/hexo/62829847e40e333fe7e569ebc5a20c0ae8b5867f/android%20studio/5.jpg" alt="Configure">点击<code>project Defaults</code>,点击<code>Project Structure</code>,填入SDK的地址<img src="https://raw.githubusercontent.com/sunstady/hexo/f55e7eb2849820a93edd2b434d3c2f261bf0c46b/android%20studio/6.jpg" alt="sdk"></p>
-<p>第四个是出现这个<img src="https://raw.githubusercontent.com/sunstady/hexo/3f242cc9eb519692028ee68fa4606928d0bcc6e4/android%20studio/1.jpg" alt="空格"><br><code>解决方法：</code>SDK的目录不能有空格，换路径</p>
+        <h2 id="Java多态概述"><a href="#Java多态概述" class="headerlink" title="Java多态概述"></a>Java多态概述</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>类引用调用的大致过程为:</code>Java编译器将Java源代码编译成class文件，在编译过程中，会根据静态类型将调用的符号引用写到class文件中。在执行时，JVM根据class文件找到调用方法的符号引用，然后在静态类型的方法表中找到偏移量，然后根据this指针确定对象的实际类型，使用实际类型的方法表，偏移量跟静态类型中方法表的偏移量一样，如果在实际类型的方法表中找到该方法，则直接调用，否则，认为没有重写父类该方法。按照继承关系从下往上搜索。<br><img src="" alt="1"><br>&nbsp;&nbsp;&nbsp;&nbsp;从上图可以看出，当程序运行时，需要某个类时，类载入子系统会将相应的class文件载入到JVM中，并在内部建立该类的类型信息（这个类型信息其实就是class文件在JVM中存储的一种数据结构），包含java类定义的所有信息，包括方法代码，类变量、成员变量、以及本博文要重点讨论的方法表。这个类型信息就存储在方法区。<br>&nbsp;&nbsp;&nbsp;&nbsp;注意，这个方法区中的类型信息跟在堆中存放的class对象是不同的。在方法区中，这个class的类型信息只有唯一的实例（所以是各个线程共享的内存区域），而在堆中可以有多个该class对象。可以通过堆中的class对象访问到方法区中类型信息。就像在java反射机制那样，通过class对象可以访问到该类的所有信息一样。<br><code>方法表是实现动态调用的核心。上面讲过方法表存放在方法区中的类型信息中。为了优化对象
+调用方法的速度，方法区的类型信息会增加一个指针，该指针指向一个记录该类方法的方法表，
+方法表中的每一个项都是对应方法的指针。</code><br>这些方法中包括从父类继承的所有方法以及自身重写（override）的方法。<br><code>方法区:</code>方法区和JAVA堆一样，是各个线程共享的内存区域，用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。<br><code>运行时常量池:</code>它是方法区的一部分，Class文件中除了有类的版本、方法、字段等描述信息外，还有一项信息是常量池，用于存放编译器生成的各种符号引用，这部分信息在类加载时进入方法区的运行时常量池中。方法区的内存回收目标是针对常量池的回收及对类型的卸载。</p>
+<h2 id="Java的方法调用方式"><a href="#Java的方法调用方式" class="headerlink" title="Java的方法调用方式"></a>Java的方法调用方式</h2><blockquote>
+<p>1、Java 的方法调用有两类，动态方法调用与静态方法调用。<br>2、静态方法调用是指对于类的静态方法的调用方式，是静态绑定的；而动态方法调用需要有方法调用所作用的对象，是动态绑定的。<br>3、类调用 (invokestatic) 是在编译时就已经确定好具体调用方法的情况。<br>4、实例调用 (invokevirtual)则是在调用的时候才确定具体的调用方法，这就是动态绑定，也是多态要解决的核心问题。<br>5、JVM 的方法调用指令有四个，分别是 invokestatic，invokespecial，invokesvirtual 和 invokeinterface。前两个是静态绑定，后两个是动态绑定的。本文也可以说是对于JVM后两种调用实现的考察。</p>
+</blockquote>
+<h2 id="方法表与方法调用"><a href="#方法表与方法调用" class="headerlink" title="方法表与方法调用"></a>方法表与方法调用</h2><p>如有类定义Persion、Girl、Boy<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">    <span class="keyword">return</span> <span class="string">"I'm a person."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line">        </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Boy</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">    <span class="keyword">return</span> <span class="string">"I'm a boy"</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fight</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Girl</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">    <span class="keyword">return</span> <span class="string">"I'm a girl"</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sing</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;当这三个类被载入到Java虚拟机之后，方法区中就包含了各自的类的信息。<br>&nbsp;&nbsp;&nbsp;&nbsp;Girl 和 Boy 的方法表包含继承自 Object 的方法，继承自直接父类Person的方法及各自新定义的方法。注意方法表条目指向的具体的方法地址，如 Girl 继承自Object的方法中，只有 toString()指向自己的实现（Girl 的方法代码），其余皆指向 Object 的方法代码；其继承自于 Person 的方法 eat() 和 speak() 分别指向 Person 的方法实现和本身的实现。<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>如果子类改写了父类的方法，那么子类和父类的那些同名的方法共享一个方法表项。</code><br>&nbsp;&nbsp;&nbsp;&nbsp;因此，方法表的偏移量总是固定的。所有继承父类的子类的方法表中，其父类所定义的方法的偏移量也总是一个定值。<br>&nbsp;&nbsp;&nbsp;&nbsp;Person或Object中的任意一个方法，在它们的方法表和其子类 Girl和Boy的方法表中的位置(index)是一样的。这样 JVM在调用实例方法其实只需要指定调用方法表中的第几个方法即可。</p>
+<h2 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;因为 Java 类是可以同时实现多个接口的，而当用接口引用调用某个方法的时候，情况就有所不同了。<br>&nbsp;&nbsp;&nbsp;&nbsp;Java 允许一个类实现多个接口，从某种意义上来说相当于多继承，这样同样的方法在基类和派生类的方法表的位置就可能不一样了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IDance</span></span>&#123;     </div><div class="line">   <span class="function"><span class="keyword">void</span> <span class="title">dance</span><span class="params">()</span></span>;     </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">   <span class="keyword">return</span> <span class="string">"I'm a person."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line">        </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Dancer</span> <span class="keyword">extends</span> <span class="title">Person</span>     </span></div><div class="line"><span class="class"> <span class="keyword">implements</span> <span class="title">IDance</span> </span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">   <span class="keyword">return</span> <span class="string">"I'm a dancer."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dance</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Snake</span> <span class="keyword">implements</span> <span class="title">IDance</span></span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">   <span class="keyword">return</span> <span class="string">"A snake."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dance</span><span class="params">()</span></span>&#123;     </div><div class="line"> <span class="comment">//snake dance     </span></div><div class="line">     &#125;     </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以看到，由于接口的介入，继承自于接口 IDance 的方法 dance()在类Dancer和Snake的方法表中的位置已经不一样了，显然我们无法仅根据偏移量来进行方法的调用。<br>&nbsp;&nbsp;&nbsp;&nbsp;Java对于接口方法的调用是采用搜索方法表的方式，如，要在Dancer的方法表中找到dance()方法，必须搜索Dancer的整个方法表。<br>&nbsp;&nbsp;&nbsp;&nbsp;因为每次接口调用都要搜索方法表，所以从效率上来说，接口方法的调用总是慢于类方法的调用的。</p>
 
       
     </div>
@@ -499,7 +498,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -512,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/28/super关键字/" rel="next" title="super关键字">
-                <i class="fa fa-chevron-left"></i> super关键字
+              <a href="/2018/04/02/悲观锁与乐观锁/" rel="next" title="悲观锁与乐观锁">
+                <i class="fa fa-chevron-left"></i> 悲观锁与乐观锁
               </a>
             
           </div>
@@ -521,10 +520,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/27/修改MySQL密码/" rel="prev" title="修改MySQL密码">
-                修改MySQL密码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,8 +578,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -681,6 +685,24 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java多态概述"><span class="nav-number">1.</span> <span class="nav-text">Java多态概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java的方法调用方式"><span class="nav-number">2.</span> <span class="nav-text">Java的方法调用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法表与方法调用"><span class="nav-number">3.</span> <span class="nav-text">方法表与方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口调用"><span class="nav-number">4.</span> <span class="nav-text">接口调用</span></a></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -862,9 +884,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2017/10/10/Android-Studio-安装问题/';
-          this.page.identifier = '2017/10/10/Android-Studio-安装问题/';
-          this.page.title = 'Android Studio 安装问题';
+          this.page.url = 'http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/';
+          this.page.identifier = '2018/04/03/Java多态的实现原理/';
+          this.page.title = 'Java多态的实现原理';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
