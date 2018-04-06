@@ -87,7 +87,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="写入文件后可逆序输出">
-<meta name="keywords" content="Java">
+<meta name="description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java读写文件一">
-<meta property="og:url" content="http://www.sanstylemc.cn/2017/12/05/java读写文件一/index.html">
+<meta property="og:title" content="py统计单词个数">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/04/06/py统计单词个数/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="写入文件后可逆序输出">
+<meta property="og:description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T01:33:57.405Z">
+<meta property="og:updated_time" content="2018-04-06T14:33:08.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java读写文件一">
-<meta name="twitter:description" content="写入文件后可逆序输出">
+<meta name="twitter:title" content="py统计单词个数">
+<meta name="twitter:description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
 
 
 
@@ -146,7 +146,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2017/12/05/java读写文件一/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/04/06/py统计单词个数/"/>
 
 
 
@@ -167,7 +167,7 @@
 })();
 </script>
 
-  <title>java读写文件一 | Sanstyle</title>
+  <title>py统计单词个数 | Sanstyle</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2017/12/05/java读写文件一/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/04/06/py统计单词个数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -368,7 +368,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">java读写文件一</h2>
+          <h2 class="post-title" itemprop="name headline">py统计单词个数</h2>
         
 
         <div class="post-meta">
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T11:27:31+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T22:32:28+08:00">
+                2018-04-06
               </time>
             
 
@@ -399,9 +399,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/05/java读写文件一/#comments" itemprop="discussionUrl">
+                <a href="/2018/04/06/py统计单词个数/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/05/java读写文件一/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/04/06/py统计单词个数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,7 +409,7 @@
 
           
           
-             <span id="/2017/12/05/java读写文件一/" class="leancloud_visitors" data-flag-title="java读写文件一">
+             <span id="/2018/04/06/py统计单词个数/" class="leancloud_visitors" data-flag-title="py统计单词个数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +440,7 @@
       
 
       
-        <p><code>写入文件后可逆序输出</code><br><a id="more"></a><br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> Test3 &#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">		<span class="comment">//创建文件对象</span></div><div class="line">		<span class="keyword">File</span> <span class="keyword">file</span>= <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"2.txt"</span>);</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">file</span>.exists()) &#123;</div><div class="line">			<span class="comment">//文件存在</span></div><div class="line">			String name= <span class="keyword">file</span>.getName();</div><div class="line">			<span class="keyword">long</span> len= <span class="keyword">file</span>.length();</div><div class="line">			<span class="comment">//判断文件隐藏属性</span></div><div class="line">			<span class="keyword">boolean</span> hidden= <span class="keyword">file</span>.isHidden();</div><div class="line">			System.out.<span class="keyword">println</span>(<span class="string">"文件名称: "</span>+ name+ <span class="string">"\n文件长度: "</span>+ len+ <span class="string">"\n隐藏属性: "</span>+ hidden);</div><div class="line">			writefile(<span class="keyword">file</span>);</div><div class="line">			readfile(<span class="keyword">file</span>);</div><div class="line">		&#125;<span class="keyword">else</span> &#123;</div><div class="line">			<span class="comment">//文件不存在，创建文件</span></div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">file</span>.createNewFile();</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;<span class="keyword">finally</span> &#123;</div><div class="line">				System.out.<span class="keyword">println</span>(<span class="string">"文件已创建"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> readfile(<span class="keyword">File</span> <span class="keyword">file</span>) &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">		FileInputStream fileInputStream= <span class="keyword">new</span> FileInputStream(<span class="keyword">file</span>);</div><div class="line">		</div><div class="line">		<span class="keyword">byte</span>[] b= <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">		</div><div class="line">		<span class="keyword">int</span> len= fileInputStream.<span class="keyword">read</span>(b);</div><div class="line">		fileInputStream.close();</div><div class="line">		StringBuilder ab = <span class="keyword">new</span> StringBuilder(<span class="keyword">new</span> String(b, <span class="number">0</span>, len));</div><div class="line">		</div><div class="line">		System.out.<span class="keyword">println</span>(<span class="string">"文件读出的内容是: \n"</span>+ ab.<span class="keyword">reverse</span>().toString());</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> writefile(<span class="keyword">File</span> <span class="keyword">file</span>) &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		Scanner in= <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		System.out.<span class="keyword">println</span>(<span class="string">"请输入要写入得内容"</span>);</div><div class="line">		String string= in.<span class="keyword">next</span>();</div><div class="line">		</div><div class="line">		<span class="comment">//建立文件传输管道</span></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			FileOutputStream fileOutputStream= <span class="keyword">new</span> FileOutputStream(<span class="keyword">file</span>);</div><div class="line">			</div><div class="line">			<span class="comment">//写文件</span></div><div class="line">			fileOutputStream.<span class="keyword">write</span>(string.getBytes());</div><div class="line">			</div><div class="line">			<span class="comment">//关闭管道</span></div><div class="line">			fileOutputStream.close();</div><div class="line">			System.out.<span class="keyword">println</span>(<span class="string">"文件写入完成"</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;<span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>任一个英文的纯文本文件，统计其中的单词出现的个数<br><a id="more"></a><br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import <span class="built_in">string</span></div><div class="line">f= open(r'C:\Users\<span class="number">12905</span>\Desktop\<span class="number">1.</span>txt', 'r+')   <span class="comment">#从文件中读取内容</span></div><div class="line">str1= f.<span class="built_in">read</span>()</div><div class="line">str= str1.lower()   <span class="comment">#全部切换成小写</span></div><div class="line"><span class="built_in">list</span>= str.split()   <span class="comment">#切片</span></div><div class="line">list1= []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(<span class="built_in">list</span>)):</div><div class="line">    <span class="built_in">list</span>[i]= <span class="built_in">list</span>[i].strip(<span class="built_in">string</span>.punctuation)</div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">word</span> <span class="keyword">in</span> <span class="built_in">list</span>:</div><div class="line">    <span class="keyword">if</span> <span class="built_in">word</span> <span class="keyword">not</span> <span class="keyword">in</span> list1:</div><div class="line">        list1.append(<span class="built_in">word</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">word</span> <span class="keyword">in</span> list1:</div><div class="line">    print(<span class="built_in">word</span>, <span class="built_in">list</span>.<span class="built_in">count</span>(<span class="built_in">word</span>))</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -489,7 +489,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -502,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/04/UDP简单大文件传送/" rel="next" title="UDP简单大文件传送">
-                <i class="fa fa-chevron-left"></i> UDP简单大文件传送
+              <a href="/2018/04/06/py生成图片验证码/" rel="next" title="py生成图片验证码">
+                <i class="fa fa-chevron-left"></i> py生成图片验证码
               </a>
             
           </div>
@@ -511,10 +511,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/05/java读写文件二/" rel="prev" title="java读写文件二">
-                java读写文件二 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -852,9 +848,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2017/12/05/java读写文件一/';
-          this.page.identifier = '2017/12/05/java读写文件一/';
-          this.page.title = 'java读写文件一';
+          this.page.url = 'http://www.sanstylemc.cn/2018/04/06/py统计单词个数/';
+          this.page.identifier = '2018/04/06/py统计单词个数/';
+          this.page.title = 'py统计单词个数';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[py统计单词个数]]></title>
+    <url>%2F2018%2F04%2F06%2Fpy%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[任一个英文的纯文本文件，统计其中的单词出现的个数123456789101112131415import stringf= open(r'C:\Users\12905\Desktop\1.txt', 'r+') #从文件中读取内容str1= f.read()str= str1.lower() #全部切换成小写list= str.split() #切片list1= []for i in range(0, len(list)): list[i]= list[i].strip(string.punctuation)for word in list: if word not in list1: list1.append(word)for word in list1: print(word, list.count(word))]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[py生成图片验证码]]></title>
     <url>%2F2018%2F04%2F06%2Fpy%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81%2F</url>
     <content type="text"><![CDATA[生成图片二维码，并判断填写的验证码是否正确。1234567891011121314151617181920212223242526272829import randomimport stringimport sysfrom PIL import Image,ImageDraw,ImageFontdef random_text (): #生成一串4位的随机字符串 text= string.digits+ string.ascii_letters str= '' for i in range(0, 4): str= str+ text[random.randint(0, len(text))] return strdef get_code (str): width= 120 height= 60 #设置图片大小 color= (43, 34, 88) #设置图片颜色 image= Image.new('RGB', (width, height), color) #创建图片 fontl= ImageFont.truetype("simsun.ttc", 40, index= 1) #设置字体样式 draw= ImageDraw.Draw(image) #将验证码画到图片上 draw.text((20, 10), str, fill=(355, 0, 0), font= fontl) image.show()s= random_text()get_code(s)code= input("请输入图片中的验证码: ")if s.lower()== code.lower(): print("验证码输入正确")else: print ("验证码输入错误") 运行结果如图所示:]]></content>
