@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-06T02:02:13.803Z</updated>
+  <updated>2018-04-06T03:06:03.776Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>什么是线程池</title>
+    <link href="http://www.sanstylemc.cn/2018/04/06/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    <id>http://www.sanstylemc.cn/2018/04/06/什么是线程池/</id>
+    <published>2018-04-06T03:05:36.000Z</published>
+    <updated>2018-04-06T03:06:03.776Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;到目前为止我们使用多线程应用程序的目的是尽可能多地使用计算机处理器资源。所以，看起来我们仅需要为每个独立的任务分配一个不同的线程，并让处理器确定在任何时间它总会处理其中的某一个任务。额，对小系统来说这样做很好。但是当系统越来越复杂时，线程的数量也会越来越多，操作系统将会花费更多时间处理锁分配，理清线程之间的关系，处理程序指令的时间实际上是很少的。为了让我们的程序具备可扩展性，我们将不得不对线程进行一些控制。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;对那些生存周期比较短的线程来说，使用线程池来处理任务要比为每个任务都创建一个线程然后顺序地回收它们要高效得多。一个任务，在概念上说，可以是一个单一方法的执行过程或者一系列方法的执行过程。<code>为一个线程预分配一个集合或者一个池来以备未来之需以及能够在一个应用程序中重用的技术称作线程池</code>。</p>
+<h2 id="什么是线程池"><a href="#什么是线程池" class="headerlink" title="什么是线程池"></a>什么是线程池</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;线程池是指在初始化一个多线程应用程序过程中创建一个线程集合，然后在需要执行新的任务时重用这些线程而不是新建一个线程。线程池中线程的数量通常完全取决于可用内存数量和应用程序的需求。然而，增加可用线程数量是可能的。线程池中的每个线程都有被分配一个任务，一旦任务已经完成了，线程回到池子中并等待下一个分配任务。</p>
+<h2 id="为什么需要线程池"><a href="#为什么需要线程池" class="headerlink" title="为什么需要线程池"></a>为什么需要线程池</h2><p>基于以下几个原因在多线程应用程序中使用线程是必须的:<br>1、线程池改进了一个应用程序的响应时间。由于线程池中的线程已经准备好且等待被分配任务，应用程序可以直接拿来使用而不用新建一个线程。<br>2、线程池节省了CLR为每个短生存周期任务创建一个完整的线程的开销并可以在任务完成后回收资源。<br>3、线程池根据当前在系统中运行的进程来优化线程时间片。<br>4、线程池允许我们开启多个任务而不用为每个线程设置属性。<br>5、线程池允许我们为正在执行的任务的程序参数传递一个包含状态信息的对象引用。<br>6、线程池可以用来解决处理一个特定请求最大线程数量限制问题。</p>
+<h2 id="线程池的概念"><a href="#线程池的概念" class="headerlink" title="线程池的概念"></a>线程池的概念</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;影响一个多线程应用程序的相应时间的几个主要因素之一是为每个任务生成一个线程时间。<br>&nbsp;&nbsp;&nbsp;&nbsp;例如，一个web Server是一个多线程应用程序，它可以同时对多个客户端请求提供服务。假设有是个客户端同时访问web Server:<br>1、如果服务执行一个客户端对应一个线程的策略，它将为这些客户端生成十个新线程，从创建第一个线程开始到在线程的整个生命周期管理它们都会增加系统开销。也有可能在某个时间计算机的资源耗尽。<br>2、相反的，如果服务端使用一个线程池来处理这些请求，那么当每次客户端请求来到后都创建一个线程的时间会节省下来。它可以管理已经创建的线程，如果线程池太忙的话也可以拒绝客户端请求。这是线程池背后的概念。<br>&nbsp;&nbsp;&nbsp;&nbsp;.NET CLR 为服务请求维护一个线程池。如果我们的应用程序从线程池中请求一个新线程，CLR 将试着从线程池中取出一个。如果线程池是空的，它将生成一个新线程并把它给我们。当我们的代码使用的线程结束以后，线程由.NET 回收并返回给线程池。线程池中线程的数量由当前可用地内存数量决定。<br>&nbsp;&nbsp;&nbsp;&nbsp;影响设计一个多线程应用程序的因素有:<br>1、一个应用程序的响应时间。<br>2、线程管理资源的分配。<br>3、资源共享。<br>4、线程同步。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;到目前为止我们使用多线程应用程序的目的是尽可能多地使用计算机处理器资源。所以，看起来我们仅需要为每个独立的任务分配一个不同的线程，并让处理器确定在任何时间它总会处理其中的某一个任务。额，对小系统来说这样做很好。但是当系统越来越复杂时，线程的数量也会越来越多，操作系统将会花费更多时间处理锁分配，理清线程之间的关系，处理程序指令的时间实际上是很少的。为了让我们的程序具备可扩展性，我们将不得不对线程进行一些控制。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo提交文章被killed</title>
@@ -821,54 +845,6 @@
     
     
       <category term="Skill" scheme="http://www.sanstylemc.cn/tags/Skill/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring解析</title>
-    <link href="http://www.sanstylemc.cn/2018/03/28/Spring%E8%A7%A3%E6%9E%90/"/>
-    <id>http://www.sanstylemc.cn/2018/03/28/Spring解析/</id>
-    <published>2018-03-28T05:01:31.000Z</published>
-    <updated>2018-03-28T05:27:40.655Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是Spring"><a href="#什么是Spring" class="headerlink" title="什么是Spring"></a>什么是Spring</h2><p>1、Spring是一个开源框架，Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能。Spring是一个IOC和AOP容器框架。<br>在Java开发领域，SPring相对于EJB来说是一种 轻量级的、非侵入性的Java开发框架。<br><a id="more"></a><br>Spring主要核心是:<br>1) 控制反转(IOC):</p>
-<blockquote>
-<p>概念: 控制权由对象本身转向容器；由容器根据配置文件去创建实例并创建各个实例之间的依赖关系<br>核心: bean工厂；在Spring中，bean工厂创建的各个实例称作bean  </p>
-</blockquote>
-<p>以前传统的Java开发模式中，当需要一个对象时，我们会自己使用new或getInstance等直接或间接调用构造方法创造一个对象，而在Spring开发模式中，Spring容器使用了工厂模式为我们创建了所需要的对象，我们使用时不需要自己去创建，直接调用Spring为我们提供的对象即可，这就是控制反转思想。实例化一个Java对象由三种方式: 使用类构造器，使用静态工厂方法，使用实例工厂方法。当使用Spring时我们就不需要关心通过何种方式实例化一个对象，Spring通过控制反转机制自动为我们实例化一个对象。<br>2) 依赖注入(DI): Spring使用JavaBean对象的Set方法或者带参数的构造方法为我们在创建所需对象时将其属性自动设置所需要的值的过程就是依赖注入的基本思想。<br>3) 面向切面编程(AOP): 在面向对象编程 (OOP)思想中，我们将事物纵向抽象成一个个的对象。而在面向切面编程中，我们将一个个对象某些类似的方面横向抽象成一个切面，对这个切面进行一些如权限验证，事物管理，记录日志等公用操作初级的过程就是面向切面编程的思想。<br>2、在Spring中，所有管理的对象都是JavaBean对象，而BeanFactory和ApplicationContext就是Spring框架的两个IOC容器，现在一般使用ApplicationContext，其不但包含了BeanFactory的作用，同时还进行更多的扩展。</p>
-<h2 id="Spring原理"><a href="#Spring原理" class="headerlink" title="Spring原理"></a>Spring原理</h2><p>1) 内部最核心的就是IOC了，动态注入，让一个对象的创建不用new了，可以自动的生产，这其实就是利用java里的反射，反射其实就是在运行时动态的去创建、调用对象，Spring就是在运行时，跟xml Spring的配置文件来动态的创建对象，和调用对象里的方法的 。<br>2) Spring还有一个核心就是AOP这个就是面向切面编程，可以为某一类对象 进行监督和控制（也就是 在调用这类对象的具体方法的前后去调用你指定的 模块）从而达到对一个模块扩充的功能。这些都是通过  配置类达到的。<br>3) Spring目的：就是让对象与对象（模块与模块）之间的关系没有通过代码来关联，都是通过配置类说明管理的（Spring根据这些配置 内部通过反射去动态的组装对象）  要记住：Spring是一个容器，凡是在容器里的对象才会有Spring所提供的这些服务和功能。</p>
-<h2 id="代理的两种方式"><a href="#代理的两种方式" class="headerlink" title="代理的两种方式"></a>代理的两种方式</h2><p><code>静态代理</code></p>
-<ul>
-<li>针对每个具体类分别编写代理类</li>
-<li>针对一个接口编写一个代理类</li>
-</ul>
-<p><code>动态代理</code></p>
-<ul>
-<li>针对一个方面编写一个InvocationHandler，然后借用JDK反射包中的Proxy类为各种接口动态生成相应的代理类。<br>不用写代理类，虚拟机根据真实对象实现的接口产生一个类，通过类实例化一个动态代理，在实例化动态代理时将真实对象及装备注入到动态代理中，向客户端公开的是动态代理，当客户端调用动态代理方法时，动态代理根据类的反射得到真实对象的Method,调用装备的invoke方法，将动态代理、 Method、方法参数传与装备的invoke方法，invoke方法在唤起method方法前或后做一些处理。     <blockquote>
-<p>产生动态代理的类: java.lang.refect.Proxy<br>装备必须实现InvocationHandler接口实现invoke方法。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Spring的三种注入方式是什么"><a href="#Spring的三种注入方式是什么" class="headerlink" title="Spring的三种注入方式是什么"></a>Spring的三种注入方式是什么</h2><blockquote>
-<p>setter<br>interface<br>constructor</p>
-</blockquote>
-<h2 id="Spring的核心接口及核类配置文件是什么"><a href="#Spring的核心接口及核类配置文件是什么" class="headerlink" title="Spring的核心接口及核类配置文件是什么"></a>Spring的核心接口及核类配置文件是什么</h2><blockquote>
-<p>FactoryBean: 工厂 Bean主要实现ioc/di<br>ApplicationContext ac= new FileXmlApplicationContext(“applicationContext.xml”);<br>Object obj= ac.getBean(“id值”);</p>
-</blockquote>
-<h2 id="Spring框架的7个模块"><a href="#Spring框架的7个模块" class="headerlink" title="Spring框架的7个模块"></a>Spring框架的7个模块</h2><p>Spring 框架是一个分层架构，由 7 个定义良好的模块组成。Spring 模块构建在核心容器之上，核心容器定义了创建、配置和管理 bean 的方式，组成 Spring 框架的每个模块（或组件）都可以单独存在，或者与其他一个或多个模块联合实现。每个模块的功能如下：</p>
-<blockquote>
-<p><code>核心容器</code>：核心容器提供 Spring 框架的基本功能。核心容器的主要组件是 BeanFactory，它是工厂模式的实现。BeanFactory 使用控制反转 （IOC）模式将应用程序的配置和依赖性规范与实际的应用程序代码分开。<br><code>Spring 上下文</code>：Spring 上下文是一个配置文件，向 Spring 框架提供上下文信息。Spring 上下文包括企业服务，例如 JNDI、EJB、电子邮件、国际化、校验和调度功能。<br><code>Spring AOP</code>：通过配置管理特性，Spring AOP 模块直接将面向方面的编程功能集成到了 Spring 框架中。所以，可以很容易地使 Spring 框架管理的任何对象支持 AOP。Spring AOP 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。通过使用 Spring AOP，不用依赖 EJB 组件，就可以将声明性事务管理集成到应用程序中。<br><code>Spring DAO</code>：JDBC DAO 抽象层提供了有意义的异常层次结构，可用该结构来管理异常处理和不同数据库供应商抛出的错误消息。异常层次结构简化了错误处理，并且极大地降低了需要编写的异常代码数量（例如打开和关闭连接）。Spring DAO 的面向 JDBC 的异常遵从通用的 DAO 异常层次结构。<br><code>Spring ORM</code>：Spring 框架插入了若干个 ORM 框架，从而提供了 ORM 的对象关系工具，其中包括 JDO、Hibernate 和 iBatis SQL Map。所有这些都遵从 Spring 的通用事务和 DAO 异常层次结构。<br><code>Spring Web 模块</code>：Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。所以，Spring 框架支持与 Jakarta Struts 的集成。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作。<br><code>Spring MVC 框架</code>：MVC 框架是一个全功能的构建 Web 应用程序的 MVC 实现。通过策略接口，MVC 框架变成为高度可配置的，MVC 容纳了大量视图技术，其中包括 JSP、Velocity、Tiles、iText 和 POI。<br>Spring 框架的功能可以用在任何 J2EE 服务器中，大多数功能也适用于不受管理的环境。Spring 的核心要点是：支持不绑定到特定 J2EE 服务的可重用业务和数据访问对象。毫无疑问，这样的对象可以在不同 J2EE 环境 （Web 或 EJB）、独立应用程序、测试环境之间重用。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;什么是Spring&quot;&gt;&lt;a href=&quot;#什么是Spring&quot; class=&quot;headerlink&quot; title=&quot;什么是Spring&quot;&gt;&lt;/a&gt;什么是Spring&lt;/h2&gt;&lt;p&gt;1、Spring是一个开源框架，Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能。Spring是一个IOC和AOP容器框架。&lt;br&gt;在Java开发领域，SPring相对于EJB来说是一种 轻量级的、非侵入性的Java开发框架。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="框架" scheme="http://www.sanstylemc.cn/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
