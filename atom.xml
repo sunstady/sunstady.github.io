@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-05T12:57:18.351Z</updated>
+  <updated>2018-04-06T01:30:43.654Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>进程和线程的区别</title>
+    <link href="http://www.sanstylemc.cn/2018/04/06/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://www.sanstylemc.cn/2018/04/06/进程和线程的区别/</id>
+    <published>2018-04-06T01:30:09.000Z</published>
+    <updated>2018-04-06T01:30:43.654Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p><code>狭义定义:</code>进程是正在运行的程序的实例。</p>
+<p><code>组成:</code>进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。<br><a id="more"></a><br><code>结构:</code>结构特征: 进程由程序、数据和进程控制块三部分组成。</p>
+<p><code>调度算法:</code>实时系统中: FIFO(First Input First Output, 先进先出算法)， SJF(Shortest Job First, 最短作业优先算法)，SRTF(Shortest Remaining Time First, 最短剩余时间优先算法)。<br>交互式系统中: RR(Round Robin, 时间片轮转法)，HPF(Highest Priority First, 最高优先级算法)，多级队列，最短进程优先，保证调度，彩票调度，公平分享调度。</p>
+<h2 id="线程的定义及基本概念"><a href="#线程的定义及基本概念" class="headerlink" title="线程的定义及基本概念"></a>线程的定义及基本概念</h2><p>一个标准的线程由线程ID，当前指令指针(PC)，寄存器集合和堆栈组成。另外，线程式进程中的一个实体，是被系统独立调度和分派的基本单位，线程自己不拥有系统资源，只拥有一点儿在运行中不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。</p>
+<p><code>线程之间的关系:</code>一个线程可以创建和撤销另一个线程，同一进程中的多个线程之间可以并发执行。由于线程之间的相互制约，致使线程在运行中呈现出间断性。线程也有就绪、阻塞和运行三种基本状态。</p>
+<p><code>特点:</code> </p>
+<ul>
+<li>轻型实体(线程的实体包括程序、数据和TCB。TCB用于指示被执行指令序列的程序计数器、保留局部变量、少数状态参数和返回地址等的一组寄存器和堆栈。)</li>
+<li>独立调度和分派的基本单位</li>
+<li>可并发执行</li>
+<li>共享进程资源(所有线程都具有相同的地址空间(进程的地址空间)，这意味着，线程可以访问该地址空间的每一个虚地址；此外，还可以访问进程所拥有的已打开文件、定时器、信号量机构等。由于同一个进程内的线程共享内存和文件，所以线程之间互相通信不必调用内核。)</li>
+</ul>
+<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h2><blockquote>
+<p>1、线程是处理器调度的基本单位，但进程不是。<br>2、二者均可并发执行。<br>3、进程是资源的分配和调度的一个独立单元，而线程是CPU调度的基本单元<br>4、同一个进程中可以包括多个线程，并且线程共享整个进程的资源（寄存器、堆栈、上下文），一个进行至少包括一个线程。<br>5、进程的创建调用fork或者vfork，而线程的创建调用pthread_create，进程结束后它拥有的所有线程都将销毁，而线程的结束不会影响同个进程中的其他线程的结束<br>6、线程是轻两级的进程，它的创建和销毁所需要的时间比进程小很多，所有操作系统中的执行功能都是创建线程去完成的<br>7、线程中执行时一般都要进行同步和互斥，因为他们共享同一进程的所有资源<br>8、线程有自己的私有属性TCB，线程id，寄存器、硬件上下文，而进程也有自己的私有属性进程控制块PCB，这些私有属性是不被共享的，用来标示一个进程或一个线程的标志</p>
+</blockquote>
+<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><ul>
+<li>Mutex(互斥锁): 用来锁住公用的内存，同时只有一个线程访问。</li>
+<li>这时的解决方法，就是在门口挂n把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做”信号量”（Semaphore），用来保证多个线程不会互相冲突。<br>不难看出，mutex是semaphore的一种特殊情况（n=1时）。也就是说，完全可以用后者替代前者。但是，因为mutex较为简单，且效率高，所以在必须保证资源独占的情况下，还是采用这种设计。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>进程是资源分配的基本单位，线程是调度的基本单位。进程包含线程，线程共用进程的资源。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;进程&quot;&gt;&lt;a href=&quot;#进程&quot; class=&quot;headerlink&quot; title=&quot;进程&quot;&gt;&lt;/a&gt;进程&lt;/h2&gt;&lt;p&gt;&lt;code&gt;狭义定义:&lt;/code&gt;进程是正在运行的程序的实例。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;组成:&lt;/code&gt;进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery技巧</title>
@@ -835,85 +876,6 @@
     
     
       <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>py常识</title>
-    <link href="http://www.sanstylemc.cn/2018/03/28/py%E5%B8%B8%E8%AF%86/"/>
-    <id>http://www.sanstylemc.cn/2018/03/28/py常识/</id>
-    <published>2018-03-28T02:22:05.000Z</published>
-    <updated>2018-03-28T02:47:08.066Z</updated>
-    
-    <content type="html"><![CDATA[<p>一些基础的python知识。<br><a id="more"></a></p>
-<h2 id="python特性"><a href="#python特性" class="headerlink" title="python特性"></a>python特性</h2><blockquote>
-<p>1) python是一种解释型语言，这意味着，与C、C++不同，python不需要在运行之前进行编译，它是边运行边解释。<br>2) python是动态类型化的，这意味着当你声明它们或类似的东西时，你不需要声明变量的类型。你可以x= 1，然后x= “abc”没有错误。<br>3) python非常适合面向对象编程，因为它允许定义类以及组合和继承。python没有访问修饰符(例C++大的public，private)。<br>4) 在python中函数是一等对象，这意味着它们可以在运行时动态创建，能赋值给变量或者作为参数传给函数，还能作为函数的返回值。<br>5) python代码容易上手，开发速度很快，但运行速度通常比编译语言慢。幸运的是，python允许包含基于C的扩展，所以瓶颈可以被优化掉。比如，numpy包就是一个很好的例子，它非常快，因为它所做的很多运算在底部都是用C编写的。</p>
-</blockquote>
-<h2 id="python中的赋值、浅拷贝和深拷贝的区别"><a href="#python中的赋值、浅拷贝和深拷贝的区别" class="headerlink" title="python中的赋值、浅拷贝和深拷贝的区别"></a>python中的赋值、浅拷贝和深拷贝的区别</h2><blockquote>
-<p>1) <code>对象的赋值</code><br>python中对象的赋值实际上是简单的对象引用，也就是说，当你创建一个对象，然后把它复制给另一个变量的时候，python并没有拷贝这个对象，而是拷贝了这个对象的引用。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/1.png" alt="1"></p>
-</blockquote>
-<p>2) <code>浅拷贝</code></p>
-<blockquote>
-<p><code>对于可变对象深浅拷贝</code> </p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th style="text-align:center">值</th>
-<th style="text-align:right">地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>=浅拷贝</td>
-<td style="text-align:center">值相等</td>
-<td style="text-align:right">地址相等</td>
-</tr>
-<tr>
-<td>copy浅拷贝</td>
-<td style="text-align:center">值相等</td>
-<td style="text-align:right">地址不相等</td>
-</tr>
-<tr>
-<td>deepcopy深拷贝</td>
-<td style="text-align:center">值相等</td>
-<td style="text-align:right">地址不相等</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>一般引用copy.copy()，可以进行对象的浅拷贝。它复制了对象但对于对象中的元素，依然使用原始的引用。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/9582c97b0cc4db60b3b844bdab6a26185f4683f0/py%E5%B8%B8%E8%AF%86/2.png" alt="2"><br>使用copy对a进行浅拷贝，b复制了a的对象，但是b里面的[2, 3, 4]和a里面的[2, 3, 4]其实都是指向同一块内存地址，所以改变了a[1]之后，b里面的b[1]也发生了改变。</p>
-<p><code>对于不可变对象的深浅拷贝</code><br>不可变对象类型，没有被拷贝的说法，即便是用深拷贝，查看id的话也是一样的，如果对其重新赋值，也只是新创建一个对象，替换掉旧的而已。一句话就是，不可变类型，不管是深拷贝还是浅拷贝，地址值和拷贝后的值都是一样的。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/a99c74107615d9f8b75c552b526d81e9867f3cff/py%E5%B8%B8%E8%AF%86/2_1.png" alt="2.1"><br>3) <code>深拷贝</code><br>深拷贝需要用copy.deepcopy()进行拷贝。它是复制一个容器对象，以及它里面的所有元素(包含元素的子元素)<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/3.png" alt="3"><br>当对a列表进行深度拷贝之后，b复制了a的对象，但是b里面的[2, 3, 4]和a里面的[2, 3, 4]其实都是指向不同的内存地址。</p>
-</blockquote>
-<h2 id="python中的-和is的区别"><a href="#python中的-和is的区别" class="headerlink" title="python中的==和is的区别"></a>python中的<code>==</code>和<code>is</code>的区别</h2><blockquote>
-<p><code>is</code>也被叫做同一性运算符，这个运算符比较判断的是对象间的唯一身份标识，也就是id是否相同。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/4.png" alt="4"><br>而<code>==</code>是python标准操作符中的比较操作符，用来比较判断两个对象的value(值)是否相等。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/5.png" alt="5"></p>
-</blockquote>
-<h2 id="线程如何在python中实现"><a href="#线程如何在python中实现" class="headerlink" title="线程如何在python中实现"></a>线程如何在python中实现</h2><blockquote>
-<p>python有一个多线程包threading，可以使用多线程来加快你的代码。但是python有一个叫做Global Interpreter Lock(GIL)的构造。GIL确保只有一个”线程”可以在任何时候执行。<br>线程获取GIL，做一些工作，然后将GIL传递到下一个线程。这种情况发生得非常快，所以对于人眼而言，它可能看起来像你的线程并行执行，但它们实际上只是轮流使用相同的CPU内核。因此GIL的存在是得python中的多线程无法真正的利用多核的优势来提高性能。<br>对于IO密集型操作，在等待操作系统返回的时候会释放GIL；再比如爬虫因为有等待的服务器的响应时间，可以利用多线程来加速。但是对于CPU密集型操作，只能通过多进程Multiprocess来加速。</p>
-</blockquote>
-<h2 id="python中的猴子补丁式是什么"><a href="#python中的猴子补丁式是什么" class="headerlink" title="python中的猴子补丁式是什么"></a>python中的猴子补丁式是什么</h2><blockquote>
-<p>考虑下面的例子:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/6.png" alt="6"><br>猴子补丁:<br>是一种非常pythonic的用法，即函数再python中可以像使用变量一样对它进行赋值等操作，我们可以再运行时动态替换模块，俗称手法，称为猴子补丁。我们通过对MyClass.f重新赋值，动态的改变了输出的结果。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/7.png" alt="7"></p>
-</blockquote>
-<h2 id="python中的负数index"><a href="#python中的负数index" class="headerlink" title="python中的负数index"></a>python中的负数index</h2><blockquote>
-<p>python中的负数index是用来做什么的？<br>python中的序列是索引的，它由正数和负数组成。正的数字使用’0’作为第一个索引，’1’作为第二个索引。<br>负数的索引从’-1’开始，表示序列中的最后一个索引，’-2’作为倒数第二个索引，序列像整数一样向前。<br>负数索引也可以用来非常方便的切片，比如:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/8.png" alt="8"></p>
-</blockquote>
-<h2 id="类里面的new和init的区别"><a href="#类里面的new和init的区别" class="headerlink" title="类里面的new和init的区别"></a>类里面的new和init的区别</h2><blockquote>
-<p>1) <code>__init__</code>为初始化方法，而<code>__new__</code>方法才是真正的构造函数。只有继承了object的新式类才有<code>__new__</code>。<br>2) <code>——new__</code>至少要有一个参数cls，代表要实例化的类，此参数在实例化时由python解释器自动提供，<code>__new__</code>必须要有返回值，返回实例化出来的实例。<br>3) <code>__init__</code>有一个参数self，就是这个<code>__new__</code>返回的实例，先运行<code>__new__</code>然后才运行<code>__init__</code>。<br>4) <code>__init__</code>在<code>__new__</code>的基础上可以完成一些其它初始的动作，<code>__init__</code>不需要返回值。</p>
-</blockquote>
-<h2 id="python中的参数-args和-kwargs"><a href="#python中的参数-args和-kwargs" class="headerlink" title="python中的参数*args和**kwargs"></a>python中的参数<code>*args</code>和<code>**kwargs</code></h2><blockquote>
-<p><code>*args</code>是可变参数，一般用来表示我们不能确定多少参数将被传递给函数，或者如果我们想用列表或元组的方式传递给函数。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/9.png" alt="9"><br><code>**kwargs</code>是可变关键字参数，当我们不知道有多少关键字参数会传递给一个函数时，或者想把一个字典作为关键字参数时使用。<br><img src="https://raw.githubusercontent.com/sunstady/hexo/1754108a3c1c7b65cc088a2fe1317e53c0a5cf2d/py%E5%B8%B8%E8%AF%86/10.png" alt="10"><br>注: <code>*args</code>和<code>**kwargs</code>可以同时在函数的定义中，但是<code>*args</code>必须在<code>**kwargs</code>前面。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一些基础的python知识。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.sanstylemc.cn/tags/python/"/>
     
   </entry>
   
