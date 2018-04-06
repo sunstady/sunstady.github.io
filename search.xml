@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[py统计单词个数]]></title>
     <url>%2F2018%2F04%2F06%2Fpy%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0%2F</url>
-    <content type="text"><![CDATA[任一个英文的纯文本文件，统计其中的单词出现的个数123456789101112131415import stringf= open(r'C:\Users\12905\Desktop\1.txt', 'r+') #从文件中读取内容str1= f.read()str= str1.lower() #全部切换成小写list= str.split() #切片list1= []for i in range(0, len(list)): list[i]= list[i].strip(string.punctuation)for word in list: if word not in list1: list1.append(word)for word in list1: print(word, list.count(word))]]></content>
+    <content type="text"><![CDATA[任一个英文的纯文本文件，统计其中的单词出现的个数123456789101112131415import stringf= open(r'C:\Users\12905\Desktop\1.txt', 'r+') #从文件中读取内容str1= f.read()str= str1.lower() #全部切换成小写list= str.split() #切片list1= []for i in range(0, len(list)): list[i]= list[i].strip(string.punctuation)for word in list: if word not in list1: list1.append(word)for word in list1: print(word, list.count(word)) 运行结果如下图所示:]]></content>
       <tags>
         <tag>python</tag>
       </tags>

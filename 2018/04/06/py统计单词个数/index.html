@@ -113,10 +113,12 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-06T14:33:08.927Z">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/py%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/1.png?raw=true">
+<meta property="og:updated_time" content="2018-04-06T14:35:41.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="py统计单词个数">
 <meta name="twitter:description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
+<meta name="twitter:image" content="https://github.com/sunstady/hexo/blob/master/py%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/1.png?raw=true">
 
 
 
@@ -441,6 +443,7 @@
 
       
         <p>任一个英文的纯文本文件，统计其中的单词出现的个数<br><a id="more"></a><br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import <span class="built_in">string</span></div><div class="line">f= open(r'C:\Users\<span class="number">12905</span>\Desktop\<span class="number">1.</span>txt', 'r+')   <span class="comment">#从文件中读取内容</span></div><div class="line">str1= f.<span class="built_in">read</span>()</div><div class="line">str= str1.lower()   <span class="comment">#全部切换成小写</span></div><div class="line"><span class="built_in">list</span>= str.split()   <span class="comment">#切片</span></div><div class="line">list1= []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(<span class="built_in">list</span>)):</div><div class="line">    <span class="built_in">list</span>[i]= <span class="built_in">list</span>[i].strip(<span class="built_in">string</span>.punctuation)</div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">word</span> <span class="keyword">in</span> <span class="built_in">list</span>:</div><div class="line">    <span class="keyword">if</span> <span class="built_in">word</span> <span class="keyword">not</span> <span class="keyword">in</span> list1:</div><div class="line">        list1.append(<span class="built_in">word</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">word</span> <span class="keyword">in</span> list1:</div><div class="line">    print(<span class="built_in">word</span>, <span class="built_in">list</span>.<span class="built_in">count</span>(<span class="built_in">word</span>))</div></pre></td></tr></table></figure></p>
+<p>运行结果如下图所示:<br><img src="https://github.com/sunstady/hexo/blob/master/py%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/1.png?raw=true" alt="1"></p>
 
       
     </div>
