@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-06T08:23:03.790Z</updated>
+  <updated>2018-04-06T14:23:23.746Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>py生成图片验证码</title>
+    <link href="http://www.sanstylemc.cn/2018/04/06/py%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+    <id>http://www.sanstylemc.cn/2018/04/06/py生成图片验证码/</id>
+    <published>2018-04-06T14:22:18.000Z</published>
+    <updated>2018-04-06T14:23:23.746Z</updated>
+    
+    <content type="html"><![CDATA[<p>生成图片二维码，并判断填写的验证码是否正确。<br><a id="more"></a><br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="built_in">random</span></div><div class="line"><span class="keyword">import</span> string</div><div class="line"><span class="keyword">import</span> sys</div><div class="line">from PIL <span class="keyword">import</span> Image,ImageDraw,ImageFont</div><div class="line"></div><div class="line">def random_text ():     #生成一串<span class="number">4</span>位的随机字符串</div><div class="line">	<span class="built_in">text</span>= string.digits+ string.ascii_letters</div><div class="line">	<span class="built_in">str</span>= <span class="string">''</span></div><div class="line">	<span class="keyword">for</span> i in range(<span class="number">0</span>, <span class="number">4</span>):</div><div class="line">		<span class="built_in">str</span>= <span class="built_in">str</span>+ <span class="built_in">text</span>[<span class="built_in">random</span>.randint(<span class="number">0</span>, len(<span class="built_in">text</span>))]</div><div class="line">	<span class="keyword">return</span> <span class="built_in">str</span></div><div class="line"></div><div class="line">def get_code (<span class="built_in">str</span>):</div><div class="line">	<span class="built_in">width</span>= <span class="number">120</span></div><div class="line">	<span class="built_in">height</span>= <span class="number">60</span>   #设置图片大小</div><div class="line">	<span class="built_in">color</span>= (<span class="number">43</span>, <span class="number">34</span>, <span class="number">88</span>)   #设置图片颜色</div><div class="line">	<span class="built_in">image</span>= Image.<span class="keyword">new</span>(<span class="string">'RGB'</span>, (<span class="built_in">width</span>, <span class="built_in">height</span>), <span class="built_in">color</span>)   #创建图片</div><div class="line">	fontl= ImageFont.truetype(<span class="string">"simsun.ttc"</span>, <span class="number">40</span>, index= <span class="number">1</span>)   #设置字体样式</div><div class="line">	<span class="title">draw</span>= ImageDraw.Draw(<span class="built_in">image</span>)   #将验证码画到图片上</div><div class="line">	<span class="title">draw</span>.<span class="built_in">text</span>((<span class="number">20</span>, <span class="number">10</span>), <span class="built_in">str</span>, <span class="built_in">fill</span>=(<span class="number">355</span>, <span class="number">0</span>, <span class="number">0</span>), font= fontl)</div><div class="line">	<span class="built_in">image</span>.show()</div><div class="line"></div><div class="line">s= random_text()</div><div class="line">get_code(s)</div><div class="line">code= input(<span class="string">"请输入图片中的验证码: "</span>)</div><div class="line"><span class="keyword">if</span> s.lower()== code.lower():</div><div class="line">	<span class="built_in">print</span>(<span class="string">"验证码输入正确"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">	<span class="built_in">print</span> (<span class="string">"验证码输入错误"</span>)</div></pre></td></tr></table></figure></p>
+<p>运行结果如图所示:<br><img src="https://github.com/sunstady/hexo/blob/master/py%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81%E7%A0%81/1.png?raw=true" alt="1"><br><img src="https://github.com/sunstady/hexo/blob/master/py%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81%E7%A0%81/2.png?raw=true" alt="2"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生成图片二维码，并判断填写的验证码是否正确。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.sanstylemc.cn/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>线程地生命周期</title>
@@ -833,32 +855,6 @@
     
     
       <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ArrayList和LinkedList的区别</title>
-    <link href="http://www.sanstylemc.cn/2018/03/31/ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://www.sanstylemc.cn/2018/03/31/ArrayList和LinkedList的区别/</id>
-    <published>2018-03-31T07:24:19.000Z</published>
-    <updated>2018-03-31T07:27:50.591Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>ArrayList</code>和<code>LinkedList</code>是常用的两种存储结构。<br><a id="more"></a><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表的数据结构。这俩都是对List接口的实现。前者是数组队列，相当于动态数组；后者为双向链表结构，也可当作堆栈、队列、双端队列。</div><div class="line">对于随机访问<span class="keyword">get</span>和<span class="keyword">set</span>，ArrayList觉得优于LinkedList，因为LinkedList是线性的数据存储方式，需要移动指针从前往后依次查找。</div><div class="line">对于新增和删除操作<span class="keyword">add</span>和<span class="keyword">remove</span>，LinkedList比较占优势，因为ArrayList是数组，所以在其中进行增删操作时，会对操作点之后所有数据的下标索引造成影响，需要移动数据。</div><div class="line">从利用效率来看，ArrayList自由性较低，因为它需要手动的设置固定大小的容量，但是它的使用比较方便，只需要创建，然后添加数据，通过调用下标进行使用；而LinkedList自由性较高，能够动态的随数据量的变化而变化，但是它不便于使用。</div><div class="line">ArrayList主要控件开销在于需要在List列表预留一定空间；而LinkedList主要控件开销在于需要存储结点信息以及结点指针信息。</div><div class="line">LinkedList需要更多的内存空间，因为它除了要存储数据之外，还需要存储该结点的前后结点信息，而ArrayList索引处就是存的数据。</div></pre></td></tr></table></figure></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.LinkedList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">long1_1</span> &#123;</span></div><div class="line">	<span class="keyword">static</span> final <span class="keyword">int</span> N=<span class="number">50000</span>;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">long</span> <span class="title">timeList</span><span class="params">(List <span class="built_in">list</span>)</span></span>&#123;</div><div class="line">        <span class="keyword">long</span> start=System.currentTimeMillis();</div><div class="line">        Object o = <span class="keyword">new</span> Object();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</div><div class="line">            <span class="built_in">list</span>.add(<span class="number">0</span>, o);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> System.currentTimeMillis()-start;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">long</span> <span class="title">readList</span><span class="params">(List <span class="built_in">list</span>)</span></span>&#123;</div><div class="line">        <span class="keyword">long</span> start=System.currentTimeMillis();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="built_in">list</span>.size();i&lt;j;i++)&#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> System.currentTimeMillis()-start;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">static</span> List <span class="title">addList</span><span class="params">(List <span class="built_in">list</span>)</span></span>&#123;</div><div class="line">        Object o = <span class="keyword">new</span> Object();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</div><div class="line">            <span class="built_in">list</span>.add(<span class="number">0</span>, o);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">list</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"ArrayList添加"</span>+N+<span class="string">"条耗时："</span>+timeList(<span class="keyword">new</span> ArrayList()));</div><div class="line">        System.out.println(<span class="string">"LinkedList添加"</span>+N+<span class="string">"条耗时："</span>+timeList(<span class="keyword">new</span> LinkedList()));</div><div class="line"></div><div class="line">        List list1=addList(<span class="keyword">new</span> ArrayList&lt;&gt;());</div><div class="line">        List list2=addList(<span class="keyword">new</span> LinkedList&lt;&gt;());</div><div class="line">        System.out.println(<span class="string">"ArrayList查找"</span>+N+<span class="string">"条耗时："</span>+readList(list1));</div><div class="line">        System.out.println(<span class="string">"LinkedList查找"</span>+N+<span class="string">"条耗时："</span>+timeList(list2));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当我们在集合中装5万条数据，测试运行结果如下:<br><img src="https://raw.githubusercontent.com/sunstady/hexo/5fa64a9a35fb77be9a695ca8c4772512d1ebf57f/ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB/2.png" alt="2"><br>可以看到ArrayList更适合读取数据，LinkedList更多的时候添加或删除数据。</p>
-<blockquote>
-<p>当插入的数据量很小时，两者区别不太大，当插入的数据量大时，大约在容量的1/10之前，LinkedList会优于ArrayList，在其后就劣于ArrayList，且越靠近后面越差。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;ArrayList&lt;/code&gt;和&lt;code&gt;LinkedList&lt;/code&gt;是常用的两种存储结构。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="框架" scheme="http://www.sanstylemc.cn/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
