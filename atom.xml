@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-07T10:06:01.190Z</updated>
+  <updated>2018-04-07T10:07:36.658Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.sanstylemc.cn/2018/04/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://www.sanstylemc.cn/2018/04/07/正则表达式/</id>
     <published>2018-04-07T09:21:00.000Z</published>
-    <updated>2018-04-07T10:06:01.190Z</updated>
+    <updated>2018-04-07T10:07:36.658Z</updated>
     
     <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;打开开源中国提供的正则表达式测试工具–&gt;<a href="http://tool.oschina.net/regex/" target="_blank" rel="external">在线正则表达式测试</a>，输入待匹配的文本，然后选择常用的正则表达式，就可以得出相应的匹配结果了。例如，这里输入待匹配的文本如下: </p>
 <blockquote>
@@ -615,9 +615,35 @@
     <link href="http://www.sanstylemc.cn/2018/04/05/Git%E5%91%BD%E4%BB%A4/"/>
     <id>http://www.sanstylemc.cn/2018/04/05/Git命令/</id>
     <published>2018-04-05T08:35:43.000Z</published>
-    <updated>2018-04-05T08:36:24.676Z</updated>
+    <updated>2018-04-07T10:08:33.410Z</updated>
     
-    <content type="html"><![CDATA[<p>需要学习的东西太多了，很多命令用到时却忘了，分享一个经典的Git 常用命清单，建议收藏，或者收进你的云笔记中，方便用到时查阅。<br><a id="more"></a><br>|名词|翻译|<br>|-|:-:|<br>|workspace|工作区|<br>|Index/Stage|暂存区|<br>|Repository|仓库区(本地仓库)|<br>|Remote|远程仓库|</p>
+    <content type="html"><![CDATA[<p>需要学习的东西太多了，很多命令用到时却忘了，分享一个经典的Git 常用命清单，建议收藏，或者收进你的云笔记中，方便用到时查阅。<br><a id="more"></a></p>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th style="text-align:center">翻译</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>workspace</td>
+<td style="text-align:center">工作区</td>
+</tr>
+<tr>
+<td>Index/Stage</td>
+<td style="text-align:center">暂存区</td>
+</tr>
+<tr>
+<td>Repository</td>
+<td style="text-align:center">仓库区(本地仓库)</td>
+</tr>
+<tr>
+<td>Remote</td>
+<td style="text-align:center">远程仓库</td>
+</tr>
+</tbody>
+</table>
 <h2 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h2><p>在当前目录新建一个Git代码库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> git init</span></div></pre></td></tr></table></figure></p>
 <p>新建一个目录，将其初始化为Git代码库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> git init [project-name]</span></div></pre></td></tr></table></figure></p>
 <p>下载一个项目和它的整个代码历史<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">clone</span> <span class="title">[url</span>]</div></pre></td></tr></table></figure></p>
