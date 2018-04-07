@@ -114,7 +114,7 @@
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;打开开源中国提供的正则表达式测试工具–&amp;gt;在线正则表达式测试，输入待匹配的文本，然后选择常用的正则表达式，就可以得出相应的匹配结果了。例如，这里输入待匹配的文本如下:   Hello, my phone number is 086+18845658121 and email is sunstady@gmail.com, and my websit">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1.png?raw=true">
-<meta property="og:updated_time" content="2018-04-07T09:28:09.814Z">
+<meta property="og:updated_time" content="2018-04-07T10:06:01.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;打开开源中国提供的正则表达式测试工具–&amp;gt;在线正则表达式测试，输入待匹配的文本，然后选择常用的正则表达式，就可以得出相应的匹配结果了。例如，这里输入待匹配的文本如下:   Hello, my phone number is 086+18845658121 and email is sunstady@gmail.com, and my websit">
@@ -450,7 +450,113 @@
 <blockquote>
 <p>[a-zA-z]+://[^\s]*</p>
 </blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;用这个正则表达式去匹配一个字符串，如果这个字符串中包含类似URL的文本，那就会被提取出来。<br>&nbsp;&nbsp;&nbsp;&nbsp;这个正则表达式看上去是乱糟糟的一团，其实不然，这里面都是有特定的语法规则的。比如，<code>a-z</code>代表匹配任意的小写字母，<code>\s</code>表示匹配任意的空白字符，<code>*</code>就代表匹配前面的字符任意多个，这一长串的正则表达式就是这么多匹配规则的组合。<br>&nbsp;&nbsp;&nbsp;&nbsp;写好正则表达式后，就可以拿它去一个长字符串里匹配查找了。不论这个字符串里面有什么，只要符合我们写的规则，统统可以找出来。对于网页来说，如果想找出网页源码里有多少个URL，用匹配URL的正则表达式去匹配即可。<br>&nbsp;&nbsp;&nbsp;&nbsp;下面是常用的匹配规则。<br>|模式|描述|<br>|:-:|:-:|<br>|\w|匹配字母、数字及下划线|<br>|\W|匹配不是字母、数字及下划线的字符|<br>|\s|匹配任意空白字符，等价于[\t\n\r\f]|<br>|\S|匹配任意非空字符|<br>|\d|匹配任意数字，等价于[0-9]|<br>|\D|匹配任意非数字的字符|<br>|\A|匹配字符串开头|<br>|\Z|匹配字符串结尾，如果存在换行，只匹配到换行前的结束字符串|<br>|\z|匹配字符串结尾，如果存在换行，同时还会匹配换行符|<br>|\G|匹配最后匹配完成的位置|<br>|\n|匹配一个换行符|<br>|\t|匹配一个制表符|<br>|^|匹配一行字符串的开头|<br>|$|匹配一行字符串的结尾|<br>|.|匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符|<br>|[…]|用来表示一组字符，单独列出，比如[amk]匹配a、m或k|<br>|[^…]|不在[]中的字符，比如[^abc]匹配除了a、b、c之外的字符|<br>|*|匹配0个或多个表达式|<br>|+|匹配1个或多个表达式|<br>|?|匹配0个或1个前面的正则表达式定义的片段，非贪婪方式|<br>|{n}|精确匹配n个前面的表达式|<br>|{n,m}|匹配n到m次由前面正则表达式定义的片段，贪婪方式|<br>|a\b|匹配a或b|<br>|()|匹配括号内的表达式，也表示一个组|</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;用这个正则表达式去匹配一个字符串，如果这个字符串中包含类似URL的文本，那就会被提取出来。<br>&nbsp;&nbsp;&nbsp;&nbsp;这个正则表达式看上去是乱糟糟的一团，其实不然，这里面都是有特定的语法规则的。比如，<code>a-z</code>代表匹配任意的小写字母，<code>\s</code>表示匹配任意的空白字符，<code>*</code>就代表匹配前面的字符任意多个，这一长串的正则表达式就是这么多匹配规则的组合。<br>&nbsp;&nbsp;&nbsp;&nbsp;写好正则表达式后，就可以拿它去一个长字符串里匹配查找了。不论这个字符串里面有什么，只要符合我们写的规则，统统可以找出来。对于网页来说，如果想找出网页源码里有多少个URL，用匹配URL的正则表达式去匹配即可。<br>&nbsp;&nbsp;&nbsp;&nbsp;下面是常用的匹配规则。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模式</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母、数字及下划线</td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td style="text-align:center">匹配不是字母、数字及下划线的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配任意空白字符，等价于[\t\n\r\f]</td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td style="text-align:center">匹配任意非空字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配任意数字，等价于[0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center">\D</td>
+<td style="text-align:center">匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\A</td>
+<td style="text-align:center">匹配字符串开头</td>
+</tr>
+<tr>
+<td style="text-align:center">\Z</td>
+<td style="text-align:center">匹配字符串结尾，如果存在换行，只匹配到换行前的结束字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">\z</td>
+<td style="text-align:center">匹配字符串结尾，如果存在换行，同时还会匹配换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\G</td>
+<td style="text-align:center">匹配最后匹配完成的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:center">匹配一个换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\t</td>
+<td style="text-align:center">匹配一个制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配一行字符串的开头</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配一行字符串的结尾</td>
+</tr>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">[…]</td>
+<td style="text-align:center">用来表示一组字符，单独列出，比如[amk]匹配a、m或k</td>
+</tr>
+<tr>
+<td style="text-align:center">[^…]</td>
+<td style="text-align:center">不在[]中的字符，比如[^abc]匹配除了a、b、c之外的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">匹配0个或多个表达式</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">匹配1个或多个表达式</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">匹配0个或1个前面的正则表达式定义的片段，非贪婪方式</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">精确匹配n个前面的表达式</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">匹配n到m次由前面正则表达式定义的片段，贪婪方式</td>
+</tr>
+<tr>
+<td style="text-align:center">a\b</td>
+<td style="text-align:center">匹配a或b</td>
+</tr>
+<tr>
+<td style="text-align:center">()</td>
+<td style="text-align:center">匹配括号内的表达式，也表示一个组</td>
+</tr>
+</tbody>
+</table>
 <h2 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;向它传入要匹配的字符串以及正则表达式，就可以检测这个正则表达式是否匹配字符串。<br>&nbsp;&nbsp;&nbsp;&nbsp;match()方法会尝试从字符串的起始位置匹配正则表达式，如果匹配，就返回匹配成功的结果；如果不匹配，就返回None。示例如下:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import re</div><div class="line"> </div><div class="line"><span class="attribute">content</span> = <span class="string">'Hello 123 4567 World_This is a Regex Demo'</span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(len(content)</span></span>)</div><div class="line">result = re.match(<span class="string">'^Hello\s\d\d\d\s\d&#123;4&#125;\s\w&#123;10&#125;'</span>, <span class="attribute">content</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(result)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(result.group()</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(result.span()</span></span>)</div></pre></td></tr></table></figure></p>
 <p>运行结果如下:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">41</span></div><div class="line">&lt;_sre.SRE_Match object; span=(<span class="number">0</span>, <span class="number">25</span>), match='Hello <span class="number">123</span> <span class="number">4567</span> World_This'&gt;</div><div class="line">Hello <span class="number">123</span> <span class="number">4567</span> World_This</div><div class="line">(<span class="number">0</span>, <span class="number">25</span>)</div></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;这里首先声明了一个字符串，其中包含英文字母、空白字符、数字等。接下来，我们写一个正则表达式。<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^Hello<span class="tag">\<span class="name">s</span></span><span class="tag">\<span class="name">d</span></span><span class="tag">\<span class="name">d</span></span><span class="tag">\<span class="name">d</span></span><span class="tag">\<span class="name">s</span></span><span class="tag">\<span class="name">d</span><span class="string">&#123;4&#125;</span></span><span class="tag">\<span class="name">s</span></span><span class="tag">\<span class="name">w</span><span class="string">&#123;10&#125;</span></span></div></pre></td></tr></table></figure></p>
@@ -472,7 +578,41 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;和上面的例子相仿，我们在字符串中加了换行符，正则表达式还是一样的，用来匹配其中的数字。看一下运行结果:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">AttributeError Traceback (most recent <span class="keyword">call</span> <span class="keyword">last</span>)</div><div class="line">&lt;ipython-<span class="keyword">input</span><span class="number">-18</span>-c7d232b39645&gt; <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;()</div><div class="line">      <span class="number">5</span> <span class="string">'''</span></div><div class="line"><span class="string">      6 result = re.match('</span>^He.*?(\d+).*?Demo$<span class="string">', content)</span></div><div class="line"><span class="string">----&gt; 7 print(result.group(1))</span></div><div class="line"><span class="string"> </span></div><div class="line"><span class="string">AttributeError: '</span>NoneType<span class="string">' object has no attribute '</span><span class="keyword">group</span><span class="string">'</span></div></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;运行直接报错，也就是说正则表达式没有匹配到这个字符串，返回结果为<code>None</code>，而我们又调用了<code>group()</code>方法导致<code>AttributeError</code>。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么，为什么加了一个换行符，就匹配不到了呢？这是因为<code>\.</code>匹配的是除换行符之外的任意字符，当遇到换行符时，<code>.*?</code>就不能匹配了，所以导致匹配失败。这里只需加一个修饰符<code>re.S</code>，即可修正这个错误:<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">result</span> = re.match(<span class="string">'^He.*?(\d+).*?Demo$'</span>, content, re.S)</div></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;这个修饰符的作用是使.匹配包括换行符在内的所有字符。此时运行结果如下:<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1234567</span></div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;这个<code>re.S</code>在网页匹配中经常用到。因为HTML节点经常会有换行，加上它，就可以匹配节点与节点之间的换行了。<br>&nbsp;&nbsp;&nbsp;&nbsp;另外，还有一些修饰符，在必要的情况下也可以使用。<br>|修饰符|描述|<br>|:-:|:-:|<br>|re.I|使匹配对大小写不敏感|<br>|re.L|做本地化识别（locale-aware）匹配|<br>|re.M|多行匹配，影响^和$|<br>|re.S|使.匹配包括换行在内的所有字符|<br>|re.U|根据Unicode字符集解析字符。这个标志影响\w、\W、 \b和\B|<br>|re.X|该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解|</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这个<code>re.S</code>在网页匹配中经常用到。因为HTML节点经常会有换行，加上它，就可以匹配节点与节点之间的换行了。<br>&nbsp;&nbsp;&nbsp;&nbsp;另外，还有一些修饰符，在必要的情况下也可以使用。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">re.I</td>
+<td style="text-align:center">使匹配对大小写不敏感</td>
+</tr>
+<tr>
+<td style="text-align:center">re.L</td>
+<td style="text-align:center">做本地化识别（locale-aware）匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">re.M</td>
+<td style="text-align:center">多行匹配，影响^和$</td>
+</tr>
+<tr>
+<td style="text-align:center">re.S</td>
+<td style="text-align:center">使.匹配包括换行在内的所有字符</td>
+</tr>
+<tr>
+<td style="text-align:center">re.U</td>
+<td style="text-align:center">根据Unicode字符集解析字符。这个标志影响\w、\W、 \b和\B</td>
+</tr>
+<tr>
+<td style="text-align:center">re.X</td>
+<td style="text-align:center">该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解</td>
+</tr>
+</tbody>
+</table>
 <p>在网页匹配中，较为常用的有<code>re.S</code>和<code>re.I</code>。</p>
 <h3 id="转义匹配"><a href="#转义匹配" class="headerlink" title="转义匹配"></a><code>转义匹配</code></h3><p>&nbsp;&nbsp;&nbsp;&nbsp;我们知道正则表达式定义了许多匹配模式，如<code>.</code>匹配除换行符以外的任意字符，但是如果目标字符串里面就包含<code>.</code>，那该怎么办呢？<br>&nbsp;&nbsp;&nbsp;&nbsp;这里就需要用到转义匹配了，示例如下:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import re</div><div class="line"> </div><div class="line"><span class="attribute">content</span> = <span class="string">'(百度)www.baidu.com'</span></div><div class="line">result = re.match(<span class="string">'\(百度\)www\.baidu\.com'</span>, <span class="attribute">content</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(result)</span></span></div></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;当遇到用于正则匹配模式的特殊字符时，在前面加反斜线转义一下即可。例如.就可以用.来匹配，运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">_sre.SRE_Match</span> <span class="attr">object</span>; <span class="attr">span</span>=<span class="string">(0,</span> <span class="attr">17</span>), <span class="attr">match</span>=<span class="string">'(百度)www.baidu.com'</span>&gt;</span></div></pre></td></tr></table></figure></p>
