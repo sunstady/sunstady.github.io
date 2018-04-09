@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="baidu-site-verification" content="cXQEZqaI9F" />
+<meta name="google-site-verification" content="NY8peQ32MbxOmV571OfSDBBBIr8cxSpCo5-V8X9T_S4" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,解析库," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sanstyle" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;PyQuery库也是一个非常强大又灵活的网页解析库，PyQuery 是 Python 仿照 jQuery 的严格实现。pyquery相当于jQuery的python实现，可以用于解析HTML网页等。语法与jQuery几乎完全相同。">
+<meta name="keywords" content="python,解析库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用pyquery">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/04/09/使用pyquery/index.html">
+<meta property="og:site_name" content="Sanstyle">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;PyQuery库也是一个非常强大又灵活的网页解析库，PyQuery 是 Python 仿照 jQuery 的严格实现。pyquery相当于jQuery的python实现，可以用于解析HTML网页等。语法与jQuery几乎完全相同。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-09T09:38:59.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用pyquery">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;PyQuery库也是一个非常强大又灵活的网页解析库，PyQuery 是 Python 仿照 jQuery 的严格实现。pyquery相当于jQuery的python实现，可以用于解析HTML网页等。语法与jQuery几乎完全相同。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/04/09/使用pyquery/"/>
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title>使用pyquery | Sanstyle</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?759661ba6404a2dc2692ec1dabecb1d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/sunstady"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sanstyle</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">功有所不全 才有所不任 力有所不足</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+     
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/04/09/使用pyquery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">使用pyquery</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T17:38:15+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/09/使用pyquery/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/09/使用pyquery/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/04/09/使用pyquery/" class="leancloud_visitors" data-flag-title="使用pyquery">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;PyQuery库也是一个非常强大又灵活的网页解析库，PyQuery 是 Python 仿照 jQuery 的严格实现。pyquery相当于jQuery的python实现，可以用于解析HTML网页等。语法与jQuery几乎完全相同。<br><a id="more"></a></p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;像Beautiful Soup一样，初始化pyquery的时候，也需要传入HTML文本来初始化一个PyQuery对象。它的初始化方式有多种，比如直接传入字符串，传入URL，传入文件名，等等。</p>
+<h3 id="字符串初始化"><a href="#字符串初始化" class="headerlink" title="字符串初始化"></a>字符串初始化</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;首先，我们用一个实例来感受下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">'''</div><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = pq(html)</div><div class="line">print(doc('li'))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里首先引入<code>PyQuery</code>这个对象，取别名为<code>pq</code>。然后声明了一个HTML字符串，并将其当作参数传递给<code>PyQuery</code>类，这样就成功完成了初始化。接下来，将初始化的对象传入CSS选择器。在这个实例中，我们传入<code>li</code>节点，这样就可以选择所有的<code>li</code>节点。</p>
+<h3 id="URL初始化"><a href="#URL初始化" class="headerlink" title="URL初始化"></a>URL初始化</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;初始化的参数不仅可以以字符串的形式传递，还可以传入网页的URL，此时只需要指定参数为<code>url</code>即可:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = pq(<span class="name">url=</span>'https<span class="symbol">://sanstylemc</span>.cn/')</div><div class="line">print(<span class="name">doc</span>('title'))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span> Sanstyle -  <span class="tag">&lt;/<span class="name">title</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这样的话，<code>PyQuery</code>对象会首先请求这个URL，然后用得到的HTML内容完成初始化，这其实就相当于用网页的源代码以字符串的形式传递给<code>PyQuery</code>类来初始化。<br>&nbsp;&nbsp;&nbsp;&nbsp;它与下面的功能是相同的:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">import requests</div><div class="line">doc = pq(<span class="name">requests</span>.get('http<span class="symbol">://cuiqingcai</span>.com').text)</div><div class="line">print(<span class="name">doc</span>('title'))</div></pre></td></tr></table></figure></p>
+<h3 id="文件初始化"><a href="#文件初始化" class="headerlink" title="文件初始化"></a>文件初始化</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;当然，除了传递URL，还可以传递本地的文件名，此时将参数指定为<code>filename</code>即可:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = pq(<span class="name">filename=</span>'demo.html')</div><div class="line">print(<span class="name">doc</span>('li'))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;当然，这里需要有一个本地HTML文件demo.html，其内容是待解析的HTML字符串。这样它会首先读取本地的文件内容，然后用文件内容以字符串的形式传递给<code>PyQuery</code>类来初始化。</p>
+<h2 id="基本CSS选择器"><a href="#基本CSS选择器" class="headerlink" title="基本CSS选择器"></a>基本CSS选择器</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;首先，用一个实例来感受<code>PyQuery</code>的CSS选择器的用法:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line">&lt;div id=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;ul <span class="keyword">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">         &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0"</span>&gt;first item&lt;/<span class="keyword">li</span>&gt;</div><div class="line">         &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1"</span>&gt;&lt;a href=<span class="string">"link2.html"</span>&gt;second item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">         &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0 active"</span>&gt;&lt;a href=<span class="string">"link3.html"</span>&gt;&lt;span <span class="keyword">class</span>=<span class="string">"bold"</span>&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">         &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1 active"</span>&gt;&lt;a href=<span class="string">"link4.html"</span>&gt;fourth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">         &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0"</span>&gt;&lt;a href=<span class="string">"link5.html"</span>&gt;fifth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">     &lt;/ul&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line">'''</div><div class="line">from pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line"><span class="keyword">print</span>(doc('#container .<span class="keyword">list</span> <span class="keyword">li</span>'))</div><div class="line"><span class="keyword">print</span>(<span class="keyword">type</span>(doc('#container .<span class="keyword">list</span> <span class="keyword">li</span>')))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里我们初始化<code>PyQuery</code>对象之后，传入了一个CSS选择器<code>#container .list li</code>，它的意思是先选取<code>id</code>为<code>container</code>的节点，然后再选取其内部的<code>class</code>为<code>list</code>的节点内容的所有<code>li</code>节点。然后，打印输出。可以看到，我们成功获取到了符合条件的节点。<br>&nbsp;&nbsp;&nbsp;&nbsp;最后，将它的类型打印输出。可以看到，它的类型依然是<code>PyQuery</code>类型。</p>
+<h2 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;下面我们介绍一些常用的查询函数，这些函数和jQuery中函数的用法完全相同。</p>
+<h3 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;查找子节点时，需要用到<code>find()</code>方法，此时传入的参数是CSS选择器。这里还是以前面的HTML为例:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = pq(html)</div><div class="line">items = doc(<span class="string">'.list'</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(type(items)</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(items)</span></span></div><div class="line">lis = items.find(<span class="string">'li'</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(type(lis)</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(lis)</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;首先，我们选取<code>class</code>为<code>list</code>的节点，然后调用了<code>find()</code>方法，传入CSS选择器，选取其内部的<code>li</code>节点，最后打印输出。可以发现，<code>find()</code>方法会将符合条件的所有节点选择出来，结果的类型是<code>PyQuery</code>类型。<br>&nbsp;&nbsp;&nbsp;&nbsp;其实<code>find()</code>的查找范围是节点的所有子孙节点，而如果我们只想查找子节点，那么可以用<code>children()</code>方法:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">lis</span> = items.children()</div><div class="line"><span class="keyword">print</span>(<span class="keyword">type</span>(<span class="keyword">lis</span>))</div><div class="line"><span class="keyword">print</span>(<span class="keyword">lis</span>)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;如果要筛选所有子节点中符合条件的节点，比如想筛选出子节点中<code>class</code>为<code>active</code>的节点，可以向<code>children()</code>方法传入CSS选择器<code>.active</code>:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lis = items.children(<span class="string">'.active'</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(lis)</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-1 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以看到，输出结果已经做了筛选，留下了<code>class</code>为<code>active</code>的节点。</p>
+<h3 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;我们可以用<code>parent()</code>方法来获取某个节点的父节点，示例如下:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"wrap"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;ul <span class="built_in">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0"</span>&gt;<span class="keyword">first</span> <span class="built_in">item</span>&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-1"</span>&gt;&lt;a href=<span class="string">"link2.html"</span>&gt;<span class="keyword">second</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0 active"</span>&gt;&lt;a href=<span class="string">"link3.html"</span>&gt;&lt;span <span class="built_in">class</span>=<span class="string">"bold"</span>&gt;<span class="keyword">third</span> <span class="built_in">item</span>&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-1 active"</span>&gt;&lt;a href=<span class="string">"link4.html"</span>&gt;<span class="keyword">fourth</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0"</span>&gt;&lt;a href=<span class="string">"link5.html"</span>&gt;<span class="keyword">fifth</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">         &lt;/ul&gt;</div><div class="line">     &lt;/<span class="keyword">div</span>&gt;</div><div class="line"> &lt;/<span class="keyword">div</span>&gt;</div><div class="line">'''</div><div class="line"><span class="keyword">from</span> pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">items = doc('.<span class="built_in">list</span>')</div><div class="line">container = items.parent()</div><div class="line">print(type(container))</div><div class="line">print(container)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里我们首先用<code>.list</code>选取<code>class</code>为<code>list</code>的节点，然后调用<code>parent()</code>方法得到其父节点，其类型依然是<code>PyQuery</code>类型。<br>&nbsp;&nbsp;&nbsp;&nbsp;这里的父节点是该节点的直接父节点，也就是说，它不会再去查找父节点的父节点，即祖先节点。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是如果想获取某个祖先节点，该怎么办呢？这时可以用<code>parents()</code>方法:<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = p<span class="string">q(html)</span></div><div class="line">items = doc(<span class="string">'.list'</span>)</div><div class="line">parents = items.parents()</div><div class="line"><span class="keyword">print</span>(type(parents))</div><div class="line"><span class="keyword">print</span>(parents)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以看到，输出结果有两个：一个是<code>class</code>为<code>wrap</code>的节点，一个是<code>id</code>为<code>container</code>的节点。也就是说，<code>parents()</code>方法会返回所有的祖先节点。<br>&nbsp;&nbsp;&nbsp;&nbsp;如果想要筛选某个祖先节点的话，可以向<code>parents()</code>方法传入CSS选择器，这样就会返回祖先节点中符合CSS选择器的节点:<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">parent</span> = items.parents(<span class="string">'.wrap'</span>)</div><div class="line"><span class="keyword">print</span>(<span class="keyword">parent</span>)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"wrap"</span>&gt;</div><div class="line">    &lt;div id=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"list"</span>&gt;</div><div class="line">             &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0"</span>&gt;first item&lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">             &lt;li class="item-1"&gt;&lt;a href="link2.html"&gt;second item&lt;/</span>a&gt;<span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">             &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">             &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-1 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">             &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">         &lt;<span class="regexp">/ul&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>div&gt;</div><div class="line"> &lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以看到，输出结果少了一个节点，只保留了<code>class</code>为<code>wrap</code>的节点。</p>
+<h3 id="兄弟节点"><a href="#兄弟节点" class="headerlink" title="兄弟节点"></a>兄弟节点</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;前面我们说明了子节点和父节点的用法，还有一种节点，那就是兄弟节点。如果要获取兄弟节点，可以使用<code>siblings()</code>方法。这里还是以上面的HTML代码为例:<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = p<span class="string">q(html)</span></div><div class="line">li = doc(<span class="string">'.list .item-0.active'</span>)</div><div class="line"><span class="keyword">print</span>(li.siblings())</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里首先选择<code>class</code>为<code>list</code>的节点内部<code>class</code>为<code>item-0</code>和<code>active</code>的节点，也就是第三个<code>li</code>节点。那么，很明显，它的兄弟节点有4个，那就是第一、二、四、五个<code>li</code>节点。<br>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以看到，这正是我们刚才所说的4个兄弟节点。<br>&nbsp;&nbsp;&nbsp;&nbsp;如果要筛选某个兄弟节点，我们依然可以向<code>siblings</code>方法传入CSS选择器，这样就会从所有兄弟节点中挑选出符合条件的节点了:<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = p<span class="string">q(html)</span></div><div class="line">li = doc(<span class="string">'.list .item-0.active'</span>)</div><div class="line"><span class="keyword">print</span>(li.siblings(<span class="string">'.active'</span>))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里我们筛选了<code>class</code>为<code>active</code>的节点，通过刚才的结果可以观察到，<code>class</code>为<code>active</code>的兄弟节点只有第四个<code>li</code>节点，所以结果应该是一个。<br>&nbsp;&nbsp;&nbsp;&nbsp;我们再看一下运行结果:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-1 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;刚才可以观察到，<code>pyquery</code>的选择结果可能是多个节点，也可能是单个节点，类型都是<code>PyQuery</code>类型，并没有返回像Beautiful Soup那样的列表。<br>&nbsp;&nbsp;&nbsp;&nbsp;对于单个节点来说，可以直接打印输出，也可以直接转成字符串:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = pq(<span class="name">html</span>)</div><div class="line">li = doc('.item-0.active')</div><div class="line">print(<span class="name">li</span>)</div><div class="line">print(<span class="name">str</span>(<span class="name">li</span>))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;对于多个节点的结果，我们就需要遍历来获取了。例如，这里把每一个<code>li</code>节点进行遍历，需要调用<code>items()</code>方法:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line"><span class="keyword">lis</span> = doc('<span class="keyword">li</span>').items()</div><div class="line"><span class="keyword">print</span>(<span class="keyword">type</span>(<span class="keyword">lis</span>))</div><div class="line"><span class="keyword">for</span> <span class="keyword">li</span> <span class="keyword">in</span> <span class="keyword">lis</span>:</div><div class="line">    <span class="keyword">print</span>(<span class="keyword">li</span>, <span class="keyword">type</span>(<span class="keyword">li</span>))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">generator</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span>first item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link2.html"</span>&gt;</span>second item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link4.html"</span>&gt;</span>fourth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link5.html"</span>&gt;</span>fifth item<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">class</span> '<span class="attr">pyquery.pyquery.PyQuery</span>'&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以发现，调用<code>items()</code>方法后，会得到一个生成器，遍历一下，就可以逐个得到<code>li</code>节点对象了，它的类型也是<code>PyQuery</code>类型。每个<code>li</code>节点还可以调用前面所说的方法进行选择，比如继续查询子节点，寻找某个祖先节点等，非常灵活。</p>
+<h2 id="获取信息"><a href="#获取信息" class="headerlink" title="获取信息"></a>获取信息</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;提取到节点之后，我们的最终目的当然是提取节点所包含的信息了。比较重要的信息有两类，一是获取属性，二是获取文本，下面分别进行说明。</p>
+<h3 id="获取属性"><a href="#获取属性" class="headerlink" title="获取属性"></a>获取属性</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;提取到某个<code>PyQuery</code>类型的节点后，就可以调用<code>attr()</code>方法来获取属性:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"wrap"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;ul <span class="built_in">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0"</span>&gt;<span class="keyword">first</span> <span class="built_in">item</span>&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-1"</span>&gt;&lt;a href=<span class="string">"link2.html"</span>&gt;<span class="keyword">second</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0 active"</span>&gt;&lt;a href=<span class="string">"link3.html"</span>&gt;&lt;span <span class="built_in">class</span>=<span class="string">"bold"</span>&gt;<span class="keyword">third</span> <span class="built_in">item</span>&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-1 active"</span>&gt;&lt;a href=<span class="string">"link4.html"</span>&gt;<span class="keyword">fourth</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0"</span>&gt;&lt;a href=<span class="string">"link5.html"</span>&gt;<span class="keyword">fifth</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">         &lt;/ul&gt;</div><div class="line">     &lt;/<span class="keyword">div</span>&gt;</div><div class="line"> &lt;/<span class="keyword">div</span>&gt;</div><div class="line">'''</div><div class="line"><span class="keyword">from</span> pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">a = doc('.<span class="built_in">item</span><span class="number">-0.</span>active a')</div><div class="line">print(a, type(a))</div><div class="line">print(a.attr('href'))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"link3.html"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span> &lt;<span class="class"><span class="keyword">class</span> '<span class="title">pyquery</span>.<span class="title">pyquery</span>.<span class="title">PyQuery</span>'&gt;</span></div><div class="line"><span class="class"><span class="title">link3</span>.<span class="title">html</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里首先选中<code>class</code>为<code>item-0</code>和<code>active</code>的<code>li</code>节点内的<code>a</code>节点，它的类型是<code>PyQuery</code>类型。<br>&nbsp;&nbsp;&nbsp;&nbsp;然后调用<code>attr()</code>方法。在这个方法中传入属性的名称，就可以得到这个属性值了。<br>&nbsp;&nbsp;&nbsp;&nbsp;此外，也可以通过调用<code>attr</code>属性来获取属性，用法如下:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">print</span><span class="params">(a.attr.href)</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;结果如下:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">link3</span><span class="selector-class">.html</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这两种方法的结果完全一样。<br>&nbsp;&nbsp;&nbsp;&nbsp;如果选中的是多个元素，然后调用<code>attr()</code>方法，会出现怎样的结果呢？我们用实例来测试一下:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = doc(<span class="string">'a'</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(a, type(a)</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(a.attr(<span class="string">'href'</span>)</span></span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(a.attr.href)</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">a</span> href=<span class="string">"link2.html"</span>&gt;<span class="keyword">second</span> <span class="keyword">item</span>&lt;/<span class="keyword">a</span>&gt;&lt;<span class="keyword">a</span> href=<span class="string">"link3.html"</span>&gt;&lt;span class=<span class="string">"bold"</span>&gt;<span class="keyword">third</span> <span class="keyword">item</span>&lt;/span&gt;&lt;/<span class="keyword">a</span>&gt;&lt;<span class="keyword">a</span> href=<span class="string">"link4.html"</span>&gt;<span class="keyword">fourth</span> <span class="keyword">item</span>&lt;/<span class="keyword">a</span>&gt;&lt;<span class="keyword">a</span> href=<span class="string">"link5.html"</span>&gt;<span class="keyword">fifth</span> <span class="keyword">item</span>&lt;/<span class="keyword">a</span>&gt; &lt;class <span class="string">'pyquery.pyquery.PyQuery'</span>&gt;</div><div class="line">link2.html</div><div class="line">link2.html</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;照理来说，我们选中的<code>a</code>节点应该有4个，而且打印结果也应该是4个，但是当我们调用<code>attr()</code>方法时，返回结果却只是第一个。这是因为，当返回结果包含多个节点时，调用<code>attr()</code>方法，只会得到第一个节点的属性。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么，遇到这种情况时，如果想获取所有的<code>a</code>节点的属性，就要用到前面所说的遍历了:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">from</span> pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line"><span class="keyword">a</span> = doc(<span class="string">'a'</span>)</div><div class="line"><span class="keyword">for</span> <span class="keyword">item</span> <span class="keyword">in</span> <span class="keyword">a</span>.<span class="keyword">items</span>():</div><div class="line">    print(<span class="keyword">item</span>.attr(<span class="string">'href'</span>))</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;此时的运行结果如下:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">link2.html</div><div class="line">link3.html</div><div class="line">link4.html</div><div class="line">link5.html</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;因此，在进行属性获取时，可以观察返回节点是一个还是多个，如果是多个，则需要遍历才能依次获取每个节点的属性。</p>
+<h3 id="获取文本"><a href="#获取文本" class="headerlink" title="获取文本"></a>获取文本</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;获取节点之后的另一个主要操作就是获取其内部的文本了，此时可以调用<code>text()</code>方法来实现:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"wrap"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;ul <span class="built_in">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0"</span>&gt;<span class="keyword">first</span> <span class="built_in">item</span>&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-1"</span>&gt;&lt;a href=<span class="string">"link2.html"</span>&gt;<span class="keyword">second</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0 active"</span>&gt;&lt;a href=<span class="string">"link3.html"</span>&gt;&lt;span <span class="built_in">class</span>=<span class="string">"bold"</span>&gt;<span class="keyword">third</span> <span class="built_in">item</span>&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-1 active"</span>&gt;&lt;a href=<span class="string">"link4.html"</span>&gt;<span class="keyword">fourth</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">             &lt;li <span class="built_in">class</span>=<span class="string">"item-0"</span>&gt;&lt;a href=<span class="string">"link5.html"</span>&gt;<span class="keyword">fifth</span> <span class="built_in">item</span>&lt;/a&gt;&lt;/li&gt;</div><div class="line">         &lt;/ul&gt;</div><div class="line">     &lt;/<span class="keyword">div</span>&gt;</div><div class="line"> &lt;/<span class="keyword">div</span>&gt;</div><div class="line">'''</div><div class="line"><span class="keyword">from</span> pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">a = doc('.<span class="built_in">item</span><span class="number">-0.</span>active a')</div><div class="line">print(a)</div><div class="line">print(a.<span class="built_in">text</span>())</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">a</span> href=<span class="string">"link3.html"</span>&gt;&lt;span class=<span class="string">"bold"</span>&gt;<span class="keyword">third</span> <span class="keyword">item</span>&lt;/span&gt;&lt;/<span class="keyword">a</span>&gt;</div><div class="line"><span class="keyword">third</span> <span class="keyword">item</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里首先选中一个<code>a</code>节点，然后调用<code>text()</code>方法，就可以获取其内部的文本信息。此时它会忽略掉节点内部包含的所有HTML，只返回纯文字内容。<br>&nbsp;&nbsp;&nbsp;&nbsp;但如果想要获取这个节点内部的HTML文本，就要用<code>html()</code>方法了:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from pyquery import PyQuery as pq</div><div class="line">doc = pq(html)</div><div class="line"><span class="selector-tag">li</span> = doc(<span class="string">'.item-0.active'</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(li)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(li.html()</span></span>)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里我们选中了第三个<code>li</code>节点，然后调用了<code>html()</code>方法，它返回的结果应该是<code>li</code>节点内的所有HTML文本。<br>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"link3.html"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里同样有一个问题，如果我们选中的结果是多个节点，<code>text()</code>或<code>html()</code>会返回什么内容？我们用实例来看一下:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line">&lt;div <span class="keyword">class</span>=<span class="string">"wrap"</span>&gt;</div><div class="line">    &lt;div id=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;ul <span class="keyword">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1"</span>&gt;&lt;a href=<span class="string">"link2.html"</span>&gt;second item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0 active"</span>&gt;&lt;a href=<span class="string">"link3.html"</span>&gt;&lt;span <span class="keyword">class</span>=<span class="string">"bold"</span>&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1 active"</span>&gt;&lt;a href=<span class="string">"link4.html"</span>&gt;fourth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0"</span>&gt;&lt;a href=<span class="string">"link5.html"</span>&gt;fifth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">         &lt;/ul&gt;</div><div class="line">     &lt;/div&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line">'''</div><div class="line">from pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line"><span class="keyword">li</span> = doc('<span class="keyword">li</span>')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>.html())</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>.text())</div><div class="line"><span class="keyword">print</span>(<span class="keyword">type</span>(<span class="keyword">li</span>.text())</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">a</span> href=<span class="string">"link2.html"</span>&gt;<span class="keyword">second</span> <span class="keyword">item</span>&lt;/<span class="keyword">a</span>&gt;</div><div class="line"><span class="keyword">second</span> <span class="keyword">item</span> <span class="keyword">third</span> <span class="keyword">item</span> <span class="keyword">fourth</span> <span class="keyword">item</span> <span class="keyword">fifth</span> <span class="keyword">item</span></div><div class="line">&lt;class <span class="string">'str'</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;结果可能比较出乎意料，<code>html()</code>方法返回的是第一个<code>li</code>节点的内部HTML文本，而<code>text()</code>则返回了所有的<code>li</code>节点内部的纯文本，中间用一个空格分割开，即返回结果是一个字符串。<br>&nbsp;&nbsp;&nbsp;&nbsp;所以这个地方值得注意，如果得到的结果是多个节点，并且想要获取每个节点的内部HTML文本，则需要遍历每个节点。而<code>text()</code>方法不需要遍历就可以获取，它将所有节点取文本之后合并成一个字符串。</p>
+<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;pyquery提供了一系列方法来对节点进行动态修改，比如为某个节点添加一个<code>class</code>，移除某个节点等，这些操作有时候会为提取信息带来极大的便利。<br>&nbsp;&nbsp;&nbsp;&nbsp;由于节点操作的方法太多，下面举几个典型的例子来说明它的用法。<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>addClass</code>和<code>removeClass</code><br>&nbsp;&nbsp;&nbsp;&nbsp;我们先用实例来感受一下:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line">&lt;div <span class="keyword">class</span>=<span class="string">"wrap"</span>&gt;</div><div class="line">    &lt;div id=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;ul <span class="keyword">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0"</span>&gt;first item&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1"</span>&gt;&lt;a href=<span class="string">"link2.html"</span>&gt;second item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0 active"</span>&gt;&lt;a href=<span class="string">"link3.html"</span>&gt;&lt;span <span class="keyword">class</span>=<span class="string">"bold"</span>&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1 active"</span>&gt;&lt;a href=<span class="string">"link4.html"</span>&gt;fourth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0"</span>&gt;&lt;a href=<span class="string">"link5.html"</span>&gt;fifth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">         &lt;/ul&gt;</div><div class="line">     &lt;/div&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line">'''</div><div class="line">from pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line"><span class="keyword">li</span> = doc('.item-0.active')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)</div><div class="line"><span class="keyword">li</span>.removeClass('active')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)</div><div class="line"><span class="keyword">li</span>.addClass('active')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;首先选中了第三个<code>li</code>节点，然后调用<code>removeClass()</code>方法，将<code>li</code>节点的<code>active</code>这个<code>class</code>移除，后来又调用<code>addClass()</code>方法，将<code>class</code>添加回来。每执行一次操作，就打印输出当前<code>li</code>节点的内容。<br>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"item-0 active"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以看到，一共输出了3次。第二次输出时，<code>li</code>节点的<code>active</code>这个<code>class</code>被移除了，第三次<code>class</code>又添加回来了。<br>&nbsp;&nbsp;&nbsp;&nbsp;所以说，<code>addClass()</code>和<code>removeClass()</code>这些方法可以动态改变节点的<code>class</code>属性。<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>attr</code>、<code>text</code>和<code>html</code><br>&nbsp;&nbsp;&nbsp;&nbsp;当然，除了操作<code>class</code>这个属性外，也可以用<code>attr()</code>方法对属性进行操作。此外，还可以用<code>text()</code>和<code>html()</code>方法来改变节点内部的内容。示例如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">html = <span class="string">'''</span></div><div class="line"><span class="string">&lt;ul class="list"&gt;</span></div><div class="line"><span class="string">     &lt;li class="item-0 active"&gt;&lt;a href="link3.html"&gt;&lt;span class="bold"&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span></div><div class="line"><span class="string">&lt;/ul&gt;</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">li = doc(<span class="string">'.item-0.active'</span>)</div><div class="line">print(li)</div><div class="line">li.attr(<span class="string">'name'</span>, <span class="string">'link'</span>)</div><div class="line">print(li)</div><div class="line">li.text(<span class="string">'changed item'</span>)</div><div class="line">print(li)</div><div class="line">li.html(<span class="string">'&lt;span&gt;changed item&lt;/span&gt;'</span>)</div><div class="line">print(li)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里我们首先选中<code>li</code>节点，然后调用<code>attr()</code>方法来修改属性，其中该方法的第一个参数为属性名，第二个参数为属性值。接着，调用<code>text()</code>和<code>html()</code>方法来改变节点内部的内容。三次操作后，分别打印输出当前的li节点。<br>&nbsp;&nbsp;&nbsp;&nbsp;运行结果如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span> <span class="attr">name</span>=<span class="string">"link"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"link3.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>third item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span> <span class="attr">name</span>=<span class="string">"link"</span>&gt;</span>changed item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-0 active"</span> <span class="attr">name</span>=<span class="string">"link"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>changed item<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;可以发现，调用<code>attr()</code>方法后，<code>li</code>节点多了一个原本不存在的属性<code>name</code>，其值为<code>link</code>。接着调用<code>text()</code>方法，传入文本之后，<code>li</code>节点内部的文本全被改为传入的字符串文本了。最后，调用<code>html()</code>方法传入HTML文本后，<code>li</code>节点内部又变为传入的HTML文本了。<br>&nbsp;&nbsp;&nbsp;&nbsp;所以说，如果<code>attr()</code>方法只传入第一个参数的属性名，则是获取这个属性值；如果传入第二个参数，可以用来修改属性值。<code>text()</code>和<code>html()</code>方法如果不传参数，则是获取节点内纯文本和HTML文本；如果传入参数，则进行赋值。</p>
+<h3 id="remove"><a href="#remove" class="headerlink" title="remove()"></a><code>remove()</code></h3><p>&nbsp;&nbsp;&nbsp;&nbsp;顾名思义，<code>remove()</code>方法就是移除，它有时会为信息的提取带来非常大的便利。下面有一段HTML文本:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">html = <span class="string">'''</span></div><div class="line"><span class="string">&lt;div class="wrap"&gt;</span></div><div class="line"><span class="string">    Hello, World</span></div><div class="line"><span class="string">    &lt;p&gt;This is a paragraph.&lt;/p&gt;</span></div><div class="line"><span class="string"> &lt;/div&gt;</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">wrap = doc(<span class="string">'.wrap'</span>)</div><div class="line">print(wrap.text())</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;现在想提取<code>Hello, World</code>这个字符串，而不要p节点内部的字符串，需要怎样操作呢？<br>&nbsp;&nbsp;&nbsp;&nbsp;这里直接先尝试提取<code>class</code>为<code>wrap</code>的节点的内容，看看是不是我们想要的。运行结果如下:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello, World This <span class="keyword">is</span> a <span class="built_in">paragraph</span>.</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这个结果还包含了内部的<code>p</code>节点的内容，也就是说<code>text()</code>把所有的纯文本全提取出来了。如果我们想去掉<code>p</code>节点内部的文本，可以选择再把<code>p</code>节点内的文本提取一遍，然后从整个结果中移除这个子串，但这个做法明显比较烦琐。<br>&nbsp;&nbsp;&nbsp;&nbsp;这时<code>remove()</code>方法就可以派上用场了，我们可以接着这么做:<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">wrap</span>.<span class="built_in">find</span>(<span class="string">'p'</span>).<span class="built_in">remove</span>()</div><div class="line"><span class="built_in">print</span>(<span class="built_in">wrap</span>.text())</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;首先选中<code>p</code>节点，然后调用了<code>remove()</code>方法将其移除，然后这时<code>wrap</code>内部就只剩下<code>Hello, World</code>这句话了，然后再利用<code>text()</code>方法提取即可。</p>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;CSS选择器之所以强大，还有一个很重要的原因，那就是它支持多种多样的伪类选择器，例如选择第一个节点、最后一个节点、奇偶数节点、包含某一文本的节点等。示例如下:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">html = '''</div><div class="line">&lt;div <span class="keyword">class</span>=<span class="string">"wrap"</span>&gt;</div><div class="line">    &lt;div id=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;ul <span class="keyword">class</span>=<span class="string">"list"</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0"</span>&gt;first item&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1"</span>&gt;&lt;a href=<span class="string">"link2.html"</span>&gt;second item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0 active"</span>&gt;&lt;a href=<span class="string">"link3.html"</span>&gt;&lt;span <span class="keyword">class</span>=<span class="string">"bold"</span>&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-1 active"</span>&gt;&lt;a href=<span class="string">"link4.html"</span>&gt;fourth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">             &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"item-0"</span>&gt;&lt;a href=<span class="string">"link5.html"</span>&gt;fifth item&lt;/a&gt;&lt;/<span class="keyword">li</span>&gt;</div><div class="line">         &lt;/ul&gt;</div><div class="line">     &lt;/div&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line">'''</div><div class="line">from pyquery import PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line"><span class="keyword">li</span> = doc('<span class="keyword">li</span>:first-child')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)</div><div class="line"><span class="keyword">li</span> = doc('<span class="keyword">li</span>:last-child')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)</div><div class="line"><span class="keyword">li</span> = doc('<span class="keyword">li</span>:nth-child(2)')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)</div><div class="line"><span class="keyword">li</span> = doc('<span class="keyword">li</span>:gt(2)')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)</div><div class="line"><span class="keyword">li</span> = doc('<span class="keyword">li</span>:nth-child(2n)')</div><div class="line"><span class="keyword">print</span>(<span class="keyword">li</span>)&lt;code <span class="keyword">class</span>=<span class="string">"lang-python"</span>&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pln"</span>&gt;</div><div class="line"><span class="keyword">li</span> &lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pun"</span>&gt;=&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pln"</span>&gt; doc&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pun"</span>&gt;(&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"str"</span>&gt;'<span class="keyword">li</span>:contains(second)'&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pun"</span>&gt;)&lt;/span&gt;</div><div class="line">&lt;span <span class="keyword">class</span>=<span class="string">"kwd"</span>&gt;<span class="keyword">print</span>&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pun"</span>&gt;(&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pln"</span>&gt;<span class="keyword">li</span>&lt;/span&gt;&lt;span <span class="keyword">class</span>=<span class="string">"pun"</span>&gt;)&lt;/span&gt;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这里我们使用了CSS3的伪类选择器，依次选择了第一个<code>li</code>节点、最后一个<code>li</code>节点、第二个<code>li</code>节点、第三个<code>li</code>之后的<code>li</code>节点、偶数位置的<code>li</code>节点、包含<code>second</code>文本的<code>li</code>节点。</p>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Your support will encourage me to continue to create!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="MC WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="MC Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/解析库/" rel="tag"># 解析库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/08/使用Beautiful-Soup/" rel="next" title="使用Beautiful Soup">
+                <i class="fa fa-chevron-left"></i> 使用Beautiful Soup
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true"
+              alt="MC" />
+          
+            <p class="site-author-name" itemprop="name">MC</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">122</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.shiyanbar.com/" title="实验吧" target="_blank" rel="external nofollow">实验吧</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3school.com.cn/" title="w3school" target="_blank" rel="external nofollow">w3school</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itellyou.cn/" title="MSDN" target="_blank" rel="external nofollow">MSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.huai235.com/" title="坏235" target="_blank" rel="external nofollow">坏235</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.imooc.com/course/landingpagephp?from=phpkecheng" title="慕课网" target="_blank" rel="external nofollow">慕课网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank" rel="external nofollow">前端书籍资料</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.</span> <span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串初始化"><span class="nav-number">1.1.</span> <span class="nav-text">字符串初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL初始化"><span class="nav-number">1.2.</span> <span class="nav-text">URL初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件初始化"><span class="nav-number">1.3.</span> <span class="nav-text">文件初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本CSS选择器"><span class="nav-number">2.</span> <span class="nav-text">基本CSS选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找节点"><span class="nav-number">3.</span> <span class="nav-text">查找节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子节点"><span class="nav-number">3.1.</span> <span class="nav-text">子节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父节点"><span class="nav-number">3.2.</span> <span class="nav-text">父节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兄弟节点"><span class="nav-number">3.3.</span> <span class="nav-text">兄弟节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历"><span class="nav-number">4.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取信息"><span class="nav-number">5.</span> <span class="nav-text">获取信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取属性"><span class="nav-number">5.1.</span> <span class="nav-text">获取属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取文本"><span class="nav-number">5.2.</span> <span class="nav-text">获取文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点操作"><span class="nav-number">6.</span> <span class="nav-text">节点操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#remove"><span class="nav-number">6.1.</span> <span class="nav-text">remove()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪类选择器"><span class="nav-number">7.</span> <span class="nav-text">伪类选择器</span></a></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=90 src="//music.163.com/outchain/player?type=2&id=487590187&auto=0&height=66"></iframe>
+</div>
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">NexT.Pisces</a> v5.1.2</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<span>
+  Host by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages
+</span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://sunstadys.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.sanstylemc.cn/2018/04/09/使用pyquery/';
+          this.page.identifier = '2018/04/09/使用pyquery/';
+          this.page.title = '使用pyquery';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sunstadys.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("i7jzN6yAlCyc52D54nDFzeXb-gzGzoHsz", "JKAIt4j5SoPJyHMx4IphgTdI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
