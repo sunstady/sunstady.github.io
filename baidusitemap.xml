@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://www.sanstylemc.cn/2018/04/02/%E6%82%B2%E8%A7%82%E9%94%81%E4%B8%8E%E4%B9%90%E8%A7%82%E9%94%81/</loc>
+    <lastmod>2018-04-10T12:58:55.700Z</lastmod>
+    <data>
+        <display>
+        <title>悲观锁与乐观锁</title>
+        <pubTime>2018-04-02T01:45:43.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sanstylemc.cn/2018/04/06/%E7%BA%BF%E7%A8%8B%E5%9C%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2018-04-10T12:54:55.563Z</lastmod>
+    <data>
+        <display>
+        <title>线程的生命周期</title>
+        <pubTime>2018-04-06T08:22:05.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sanstylemc.cn/2018/04/09/TXT%E5%AD%98%E5%82%A8/</loc>
     <lastmod>2018-04-09T14:33:51.229Z</lastmod>
     <data>
@@ -199,23 +233,6 @@
 
     
   <url>
-    <loc>http://www.sanstylemc.cn/2018/04/06/%E7%BA%BF%E7%A8%8B%E5%9C%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
-    <lastmod>2018-04-06T08:23:03.790Z</lastmod>
-    <data>
-        <display>
-        <title>线程地生命周期</title>
-        <pubTime>2018-04-06T08:22:05.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.sanstylemc.cn/2018/04/06/sleep-%E5%92%8Cwait-%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
     <lastmod>2018-04-06T07:40:27.344Z</lastmod>
     <data>
@@ -377,23 +394,6 @@
         <pubTime>2018-04-03T07:36:59.000Z</pubTime>
         
         <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sanstylemc.cn/2018/04/02/%E6%82%B2%E8%A7%82%E9%94%81%E4%B8%8E%E4%B9%90%E8%A7%82%E9%94%81/</loc>
-    <lastmod>2018-04-02T01:46:14.074Z</lastmod>
-    <data>
-        <display>
-        <title>悲观锁与乐观锁</title>
-        <pubTime>2018-04-02T01:45:43.000Z</pubTime>
-        
-        <tag>MySQL</tag>
          
          
            

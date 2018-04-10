@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过新建(New)、就绪(Runnable)、运行(Running)、阻塞(Blocked)和死亡(Dead)五种状态。尤其事当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过新建(New)、就绪(Runnable)、运行(Running)、阻塞(Blocked)和死亡(Dead)五种状态。尤其是当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线程地生命周期">
+<meta property="og:title" content="线程的生命周期">
 <meta property="og:url" content="http://www.sanstylemc.cn/2018/04/06/线程地生命周期/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过新建(New)、就绪(Runnable)、运行(Running)、阻塞(Blocked)和死亡(Dead)五种状态。尤其事当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过新建(New)、就绪(Runnable)、运行(Running)、阻塞(Blocked)和死亡(Dead)五种状态。尤其是当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-06T08:23:03.790Z">
+<meta property="og:updated_time" content="2018-04-10T12:54:55.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线程地生命周期">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过新建(New)、就绪(Runnable)、运行(Running)、阻塞(Blocked)和死亡(Dead)五种状态。尤其事当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间">
+<meta name="twitter:title" content="线程的生命周期">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过新建(New)、就绪(Runnable)、运行(Running)、阻塞(Blocked)和死亡(Dead)五种状态。尤其是当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间">
 
 
 
@@ -167,7 +167,7 @@
 })();
 </script>
 
-  <title>线程地生命周期 | Sanstyle</title>
+  <title>线程的生命周期 | Sanstyle</title>
   
 
 
@@ -368,7 +368,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">线程地生命周期</h2>
+          <h2 class="post-title" itemprop="name headline">线程的生命周期</h2>
         
 
         <div class="post-meta">
@@ -409,7 +409,7 @@
 
           
           
-             <span id="/2018/04/06/线程地生命周期/" class="leancloud_visitors" data-flag-title="线程地生命周期">
+             <span id="/2018/04/06/线程地生命周期/" class="leancloud_visitors" data-flag-title="线程的生命周期">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,7 +440,7 @@
       
 
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过<code>新建(New)</code>、<code>就绪(Runnable)</code>、<code>运行(Running)</code>、<code>阻塞(Blocked)</code>和<code>死亡(Dead)</code>五种状态。尤其事当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间切换。<br><a id="more"></a></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过<code>新建(New)</code>、<code>就绪(Runnable)</code>、<code>运行(Running)</code>、<code>阻塞(Blocked)</code>和<code>死亡(Dead)</code>五种状态。尤其是当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间切换。<br><a id="more"></a></p>
 <blockquote>
 <p>1、新建状态: 当程序使用new关键字创建了一个线程之后，该线程就处于新建状态，此时仅由JVM为其分配内存，并初始化其成员变量的值。<br>2、就绪状态: 当线程对象调用了start()方法后，该线程处于就绪状态。Java虚拟机会为其创建方法调用栈和程序计数器，等待调度运行。<br>3、运行状态: 如果处于就绪状态的线程获得了CPU，开始执行run()方法的线程执行体，则该线程处于运行状态。<br>4、阻塞状态: 当处于运行状态的线程失去所占用资源后，便进入阻塞状态。<br>5、死亡状态: 当线程执行完毕或被其它线程杀死，线程就进入死亡状态，这时线程不可能进入就绪状态等待执行。</p>
 </blockquote>
@@ -905,7 +905,7 @@
         var disqus_config = function () {
           this.page.url = 'http://www.sanstylemc.cn/2018/04/06/线程地生命周期/';
           this.page.identifier = '2018/04/06/线程地生命周期/';
-          this.page.title = '线程地生命周期';
+          this.page.title = '线程的生命周期';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
