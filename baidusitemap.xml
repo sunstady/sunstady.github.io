@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.sanstylemc.cn/2018/04/11/CSV%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8/</loc>
-    <lastmod>2018-04-11T02:34:55.424Z</lastmod>
+    <lastmod>2018-04-11T05:04:32.238Z</lastmod>
     <data>
         <display>
         <title>CSV文件存储</title>
@@ -14,6 +14,25 @@
         <tag>python</tag>
          
         <tag>存储</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sanstylemc.cn/2018/04/11/MySQL%E5%AD%98%E5%82%A8/</loc>
+    <lastmod>2018-04-11T05:04:04.184Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL存储</title>
+        <pubTime>2018-04-11T05:03:18.000Z</pubTime>
+        
+        <tag>存储</tag>
+         
+        <tag>MySQL</tag>
          
          
            
