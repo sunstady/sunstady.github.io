@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-12T13:19:10.169Z</updated>
+  <updated>2018-04-17T12:30:17.211Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,342 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础题</title>
+    <link href="http://www.sanstylemc.cn/2018/04/17/Java%E5%9F%BA%E7%A1%80%E9%A2%98/"/>
+    <id>http://www.sanstylemc.cn/2018/04/17/Java基础题/</id>
+    <published>2018-04-17T12:28:59.000Z</published>
+    <updated>2018-04-17T12:30:17.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、下面哪个是Java语言中正确的标识符（<strong>B</strong>）<br>A、3com&nbsp;&nbsp;&nbsp;&nbsp;B、import&nbsp;&nbsp;&nbsp;&nbsp;C、that&nbsp;&nbsp;&nbsp;&nbsp;D、this</p>
+<blockquote>
+<p>标识符是以字母开头的字母数字序列。字母通常指大小写英文字母，下划线<code>_</code>、美元符<code>&amp;</code>等，也可以是Unicode字符集中的字符，如汉字等；数字通常指0-9，可以是字母数字的任意组合但不能包含(如<code>+</code>，<code>-</code>)等，不能使用关键字但长度不受限制。<br><a id="more"></a></p>
+</blockquote>
+<p>2、下面哪个语句(初始化数组)是不正确的（<strong>B</strong>）<br>A、int x[]={1,2,3};&nbsp;&nbsp;&nbsp;&nbsp;B、int x[3]={1,2,3}<br>C、int[] x={1,2,3};&nbsp;&nbsp;&nbsp;&nbsp;D、int x[]= new int[]{1,2,3};</p>
+<blockquote>
+<p><code>int x[]={1,2,3};</code>数组直接赋初值可以不标数组元素个数，会根据后面赋值个数自动分配空间。<br><code>int[] x={1,2,3};</code>这种方式等价于使用new来进行存储空间分配，即：<code>int x[]= new int[]{1,2,3};</code></p>
+</blockquote>
+<p>3、下述概念中不属于面向对象方法的是（<strong>D</strong>）<br>A、对象&nbsp;&nbsp;&nbsp;&nbsp;B、继承、多态&nbsp;&nbsp;&nbsp;&nbsp;C、类、封装&nbsp;&nbsp;&nbsp;&nbsp;D、过程调用</p>
+<blockquote>
+<p>面向对象=对象+类+继承+通过消息的通信<br><code>对象</code>: 一组属性及其上的操作的封装体<br><code>类</code>: 一组有相同属性和操作的对象的集合<br><code>继承</code>: 一个类为另一个类上的扩充的方式，子类继承父类，主要目的是代码服用<br><code>消息</code>: 对象间通信的手段</p>
+</blockquote>
+<p>4、下面的代码段中，执行之后，i和j的值是什么？（<strong>B</strong>）<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int <span class="built_in">i</span>= <span class="number">1</span>; int <span class="built_in">j</span>;</div><div class="line"><span class="built_in">j</span>= <span class="built_in">i</span>++* <span class="number">2</span>+ <span class="number">3</span>* --<span class="built_in">i</span>;</div></pre></td></tr></table></figure></p>
+<p>A、1，2&nbsp;&nbsp;&nbsp;&nbsp;B、1，5&nbsp;&nbsp;&nbsp;&nbsp;C、2，1&nbsp;&nbsp;&nbsp;&nbsp;D、2，2</p>
+<blockquote>
+<p><code>i++</code>: 先运算再赋值，例如: a= i++，先运算a= i;再运算i= i+ 1;所以结果是a= 1；<br><code>--i</code>: 先赋值再运算，例如: a= –i;先运算i= i- 1;再运算a= i，所以结果是a= 2；<br>本题中<code>i++* 2+ 3* --i</code>也可写为<code>1* 2+ 3* 1</code>。</p>
+</blockquote>
+<p>5、java.lang包的（）方法比较两个对象是否相等，相等返回 true。（<strong>B</strong>）<br>A、toString()&nbsp;&nbsp;&nbsp;&nbsp;B、equals()&nbsp;&nbsp;&nbsp;&nbsp;C、compare()&nbsp;&nbsp;&nbsp;&nbsp;D、全错</p>
+<blockquote>
+<p><code>toString</code>: 返回该对象的字符串表示。<br><code>equals</code>: 此方法一般用于比较的是对象的内容但是也有的情况下也会去比较两个对象的地址。<br><code>compare()</code>: 此方法可以用来比较 两个基本类型值的大小，同时也可以用来比较两个Boolean类型值。</p>
+</blockquote>
+<p>6、使用 ___（）方法可以获得 Calendar类的实例（<strong>D</strong>）<br>A、get()&nbsp;&nbsp;&nbsp;&nbsp;B、equals()&nbsp;&nbsp;&nbsp;&nbsp;C、getTime()&nbsp;&nbsp;&nbsp;&nbsp;D、getInstance()</p>
+<blockquote>
+<p><code>Calendar</code>提供了一个类方法<code>getInstance</code>，以获得此类型的一个通用的对象，<code>getInstance</code>方法返回一个<code>Calendar</code>对象（该对象为Calendar的子类对象）</p>
+</blockquote>
+<p>7、给出下面代码:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Person</span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> arr[]= <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String a[]</span>)</span>&#123;</div><div class="line">        System.<span class="keyword">out</span>.println(arr[<span class="number">1</span>]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面哪个语句是正确的？（<strong>B</strong>）<br>A、编译时将产生错误;&nbsp;&nbsp;&nbsp;&nbsp;B、输出零;<br>C、编译时正确，运行时将产生错误;&nbsp;&nbsp;&nbsp;&nbsp;D、输出空</p>
+<blockquote>
+<p>arr[]为整型数组，分配地址后默认值为0，所以创建数组时也是对每个数组元素赋初值0。</p>
+</blockquote>
+<p>8、下面关于java中类的说法哪个是不正确的 ?（<strong>C</strong>）<br>A、类体中只能有变量定义和成员方法的定义，不能有其他语句。<br>B、构造函数是类中的特殊方法。<br>C、类一定要声明为 public 的，才可以执行。<br>D、一个 java文件中可以有多个 class定义。</p>
+<blockquote>
+<p>class前的修饰符是用来控制访问权限的，public表示在任何包里都可访问，protected表示同一包和子类可访问，package(缺省不写时就是这个）表示在同一包内可访问，private表示只有当前类可访问。</p>
+</blockquote>
+<p>9、在 Java中如果要在字符串类型对象 s=“ JAVA”，中找出, V出现的<br>位置可使用下面哪个方法：（<strong>C</strong>）<br>A、mid(2, s);&nbsp;&nbsp;&nbsp;&nbsp;B、charAt(2); &nbsp;&nbsp;&nbsp;&nbsp; C、s.indexOf(“V”); &nbsp;&nbsp;&nbsp;&nbsp;D、indexOf(s, V);</p>
+<blockquote>
+<p><code>mid()</code>: 从一个字符串中截取出指定数量的字符。<br><code>charAt()</code>: 返回指定索引位置的char值。检索范围是<code>0~length()-1</code>。<br><code>indexOf()</code>: 返回某个指定的字符串值在字符串中首次出现的位置。</p>
+</blockquote>
+<p>10、A 派生出子类 B， B 派生出子类 C，并且在 Java源代码中有如下<br>声明:<br>1) A a0=new A();<br>2) A a1=new B();<br>3) A a2=new C();<br>问以下哪个说法是正确的？（<strong>D</strong>）<br>A、只有第 1 行能通过编译<br>B、第 1、 2 行能通过编译，但第 3 行编译出错<br>C、第 1、 2、 3 行能通过编译，但第 2、 3 行运行时出错<br>D、第 1 行、第 2 行和第 3 行的声明都是正确的</p>
+<blockquote>
+<p>子类继承父类的所有属性和方法，B为A的子类，用A可以去实例B；C为B的子类，用B去实例C，也可以；间接的，C也是A的子类，可以用A去实例C</p>
+</blockquote>
+<p>11、下面说法正确的是（<strong>A</strong>）<br>A、final可修饰类、属性、方法。<br>B、abstract可修饰类、属性、方法<br>C、定义抽象方法需有方法的返回类型、名称、参数列表和方法体。<br>D、用final修饰的变量，在程序中可对这个变量的值进行更改。</p>
+<blockquote>
+<p><code>final</code>为最终的 可以修饰类、属性、方法。<br><code>abstract</code>为抽象的 可以修饰类、方法，但是不能修饰属性。<br>定义抽象方法不能有方法体。<br>既然final为最终的，就不能更改。</p>
+</blockquote>
+<p>12、Java中main()函数的值是什么？（<strong>D</strong>）<br>A、String&nbsp;&nbsp;&nbsp;&nbsp;B、int&nbsp;&nbsp;&nbsp;&nbsp;C、char&nbsp;&nbsp;&nbsp;&nbsp;D、void</p>
+<p>13、已知表达式 int m[] = {0, 1, 2, 3, 4, 5, 6 }; 下面表达式的<br>值与数组下标量总数相等。（<strong>B</strong>）<br>A、m.length()&nbsp;&nbsp;&nbsp;&nbsp;B、m.length- 1&nbsp;&nbsp;&nbsp;&nbsp; C、m.length()+ 1&nbsp;&nbsp;&nbsp;&nbsp;D、m.length+ 1</p>
+<blockquote>
+<p>数组的下标是从0开始的，所以数组下标最大为6。而<code>m.length</code>得值为7,所以<code>m.length- 1</code>。<br><code>length</code>用于求<code>String</code>字符串<code>数组</code>的长度；<code>length()</code>用于求<code>String</code>字符串<code>对象</code>的长度。</p>
+</blockquote>
+<p>14、以下（<strong>C</strong>）方法用于定义线程的执行体。<br>A、start()&nbsp;&nbsp;&nbsp;&nbsp;B、init()&nbsp;&nbsp;&nbsp;&nbsp;C、run()&nbsp;&nbsp;&nbsp;&nbsp;D、main()</p>
+<blockquote>
+<p><code>run()</code>方法是用来定义这个线程在启动的时候需要做什么。但是，直接执行run()方法那就不是线程，必须使用start()启动，那样才是线程。</p>
+</blockquote>
+<p>15、当浏览器返回到新URL的包含applet 的页面时调用以下哪个函数（<strong>B</strong>）<br>A、init()&nbsp;&nbsp;&nbsp;&nbsp;B、start()&nbsp;&nbsp;&nbsp;&nbsp;C、stop()&nbsp;&nbsp;&nbsp;&nbsp;D、destory()</p>
+<p>16、下列方法与Applet显示无关的是（<strong>D</strong>）<br>A、paint&nbsp;&nbsp;&nbsp;&nbsp;B、update&nbsp;&nbsp;&nbsp;&nbsp;C、repaint()&nbsp;&nbsp;&nbsp;&nbsp;D、draw</p>
+<blockquote>
+<p>Applet显示相关的方法主要有3个。<code>paint()</code>方法，具体执行Applet的绘制，定义为: <code>public void paint(Graphics g)</code>。<code>update()</code>方法，定义为: <code>public void update(Graphics g)</code>，主要用于更新Applet的显示。<code>repaint()</code>方法，定义为: <code>public void repaint()</code>，主要用于Applet的重新显示，它调用<code>update()</code>方法实现对Applet的更新。而<code>draw()</code>方法与显示无关。</p>
+</blockquote>
+<p>17、请问如下（<strong>D</strong>）方法可以将 MenuBar 加入 Frame 中。<br>A、setMenu()&nbsp;&nbsp;&nbsp;&nbsp;B、setMenuBar()&nbsp;&nbsp;&nbsp;&nbsp;C、add()&nbsp;&nbsp;&nbsp;&nbsp;D、addMenuBar()</p>
+<p>18、下面（<strong>B、E</strong>）不是Java中的容器。<br>A、ScrollPane&nbsp;&nbsp;&nbsp;&nbsp;B、Canvas&nbsp;&nbsp;&nbsp;&nbsp;C、Dialog&nbsp;&nbsp;&nbsp;&nbsp;D、Applet&nbsp;&nbsp;&nbsp;&nbsp;E、Scrollbar</p>
+<blockquote>
+<p>Canvas只是画布，是游戏中所有UI组件的”容器”。Scrollbar是滚动条，它是一个构件。<br>常用的容器由Frame(窗口容器)，Panel(画板容器)，Applet(Java小程序的容器)，Dialog(对话框容器)等。</p>
+</blockquote>
+<p>19、下面的程序段创建了 BufferedReader 类的对象in，以便读取本机d盘my 文件夹下的文件1.txt。File构造函数中正确的路径和文件名的表示是 （<strong>C</strong>）。<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> f=<span class="keyword">new</span> <span class="keyword">File</span>( 填代码处 );</div><div class="line"><span class="keyword">file</span>=<span class="keyword">new</span> FileReader(f);</div><div class="line"><span class="keyword">in</span>=<span class="keyword">new</span> BufferedReader(<span class="keyword">file</span>);</div></pre></td></tr></table></figure></p>
+<p>A、”1.txt”&nbsp;&nbsp;&nbsp;&nbsp;B、”d:\my\1”&nbsp;&nbsp;&nbsp;&nbsp; C、”d:\my\1.txt”&nbsp;&nbsp;&nbsp;&nbsp;D、”my\1.txt”</p>
+<p>20、有整型数组：<code>int[] x={12,35,8,7,2};</code>, 则 调 用 方 法<br>Arrays.sort(x) 后，数组 x 中的元素值依次是（<strong>A</strong>）<br>A、2 7 8 12 35&nbsp;&nbsp;&nbsp;&nbsp;B、12 35 8 7 2<br>C、35 12 8 7 2&nbsp;&nbsp;&nbsp;&nbsp;D、8 7 12 35 2</p>
+<p>21、下面（<strong>A</strong>）赋值语句是不合法的。<br>A 、float a= 2.0&nbsp;&nbsp;&nbsp;&nbsp;B、double b = 2.0<br>C、int c = 2&nbsp;&nbsp;&nbsp;&nbsp;D、long d = 2L</p>
+<p>22、下面（<strong>C</strong>）语句不是创建数组的正确语句。<br>A、float f[][] = new float[6][6];<br>B、float []f[] = new float[6][6];<br>C、float f[][] = new float[][6];<br>D、float [][]f = new float[6][6];<br>E、float f[][] = new float[6][];<br>F、float [][]f = new float[6][];</p>
+<blockquote>
+<p>行不能为空</p>
+</blockquote>
+<p>23、Java中如下（<strong>A、B、C</strong>）约束符是正确的。<br>A、private&nbsp;&nbsp;&nbsp;&nbsp;B、public&nbsp;&nbsp;&nbsp;&nbsp;C、protected&nbsp;&nbsp;&nbsp;&nbsp;D、protect&nbsp;&nbsp;&nbsp;&nbsp;E、final</p>
+<p>24、下面（<strong>C、D</strong>）事件监听器在Java中没有事件适配器。<br>A、MouseListener<br>B、KeyListener<br>C、ActionListener<br>D、ItemListener<br>E、WindowListener</p>
+<blockquote>
+<p>这两个借口中都只有一个abstract方法。java中只要该接口中包含了两个或以上abstract方法的接口都有适配器。<br>Java语言为一些Listener接口提供了适配器(Adapter)类。可以通过继承事件所对应的Adapter类，重写重要的方法，无关方法不用实现。<br>java.awt,enent包中定义的事件适配器类包括以下几个:<br>1、ComponentAdapter，构件适配器。<br>2、ContainerAdapter，容器适配器。<br>3、FocusAdapter，焦点适配器。<br>4、KeyAdapter，键盘适配器。<br>5、MouseMotionAdapter，鼠标运动适配器。<br>6、MouseAdapter，鼠标适配器。<br>7、WindowAdapter，窗口适配器。</p>
+</blockquote>
+<p>25、已知如下的命令执行java MyTest a b c，（<strong>C、D</strong>）语句是正确的。<br>A、 args[0] = “MyTest a b c”<br>B、 args[0] = “MyTest”<br>C、 args[0] = “a”<br>D、 args[1]= ‘b’</p>
+<p>26、下列特点中，（<strong>A</strong>）是Java虚拟机执行的特点之一。<br>A、字节代码&nbsp;&nbsp;&nbsp;&nbsp;B、多进程&nbsp;&nbsp;&nbsp;&nbsp;C、静态链接&nbsp;&nbsp;&nbsp;&nbsp;D、编译</p>
+<blockquote>
+<p>Java语言的执行模式是半编译和半解释型。Java编写好的程序首先由编译器转换为标准字节代码，然后由Java虚拟机去解释执行。字节代码也是一种二进制文件，但不能直接在操作系统上运行，它可看作虚拟机的机器码。虚拟机把字节代码程序与各操作系统和硬件分开，使Java程序独立于平台。</p>
+</blockquote>
+<p>27、对于catch字句的排列，下列（<strong>A</strong>）是正确的。<br>A、父类在先，子类在后&nbsp;&nbsp;&nbsp;&nbsp;B、子类在先，父类在后<br>C、有继承关系的异常不能在同一个try程序段内<br>D、先有子类，其他如何排列都无关</p>
+<blockquote>
+<p>在Java中提供了结构化的异常处理功能，其主要是通过<code>try...catch</code>语句来实现的。在Java中可以将可能产生异常的代码放入到try子句中，如果产生异常，将会执行catch子句。如果有多个异常，则应先处理父类异常，再处理子类异常，否则后面的异常处理，将得不到执行。</p>
+</blockquote>
+<p>28、以下（<strong>B</strong>）表达式是不合法的。<br>A、String x=”Hello”; int y=9; x+=y;<br>B、String x=”Hello”; int y=9; if(x==y) { }<br>C、String x=”Hello”; int y=9; x=x+y;<br>D、String x=null; int y=(x!=null)&amp;&amp;(x.length()&gt;0) ? x.length() : 0</p>
+<blockquote>
+<p>Java对”+”进行了扩展，不仅可以连接字符串，而且还能将字符串与其他类型数据进行连接，结果是字符串。<br>若”+”的第一个操作数是字符串，Java会自动将后面的操作数类型转换成字符串类型。例如本题选项A中，x+= y即x= x+ y，则计算结果x的值为字符串Hello9；选项C与此类似，故此选项也是正确的；选项D主要考查的是条件运算符”?:”，即把表达式<code>(x!=null)&amp;&amp;(x.length()&gt;0) ? x.length() : 0</code>的值赋给整型变量y，运算结果y的值是0；而选项B是因为<code>==</code>两边的类型不匹配，无法比较，所以此表达式是错误的。</p>
+</blockquote>
+<p>29、在程序读入字符文件时，能够以该文件作为直接参数的类是（<strong>A</strong>）。<br>A、FileReader&nbsp;&nbsp;&nbsp;&nbsp;B、BufferedReader<br>C、FileInputStream&nbsp;&nbsp;&nbsp;&nbsp;D、ObjectInputStream</p>
+<blockquote>
+<p>FileReader、BufferedReader是字符类输入流。FileInputStream是字节输入流。对象串行化时，需要使用ObjectInputStream类中提供的方法从对象流中读取对象。所以，在程序读入字符文件时，要使用字符流FileReader或BufferedReader。但是FileReader的参数是读入的文件，而BufferedReader的参数是FileReader流的一个对象。</p>
+</blockquote>
+<p>30、在Java中，线程是（<strong>B</strong>）。<br>A、分时的&nbsp;&nbsp;&nbsp;&nbsp;B、抢占式的<br>C、非抢占式的&nbsp;&nbsp;&nbsp;&nbsp;D、非分时的</p>
+<blockquote>
+<p>Java的线程调度策略是一种基于优先级的抢占式调度。Java这种抢占式调度可以是分时的，即每个等待池中的线程轮流执行，也可以不是，即线程逐个运行。具体待用哪种方式，由具体JVM而定。线程一般通过使用sleep()等方法保证其他线程运行时间。</p>
+</blockquote>
+<p>31、数据库设计中，用E-R图来描述信息结构但不涉及信息在计算机中的表示，它属于数据库设计的（<strong>C</strong>）。<br>A．需求分析阶段<br>B．逻辑设计阶段<br>C．概念设计阶段<br>D．物理设计阶段</p>
+<blockquote>
+<p>E-R图是E-R模型的一种非常直观的图的形式表示，它描述信息结构但不涉及信息在计算机中的表示，它是数据库概念设计阶段的工具。</p>
+</blockquote>
+<p>32、下列关于Java布尔类型的描述中，正确的是（<strong>A</strong>）。<br>A．一种基本的数据类型，它的类型名称为boolean<br>B．用int表示类型<br>C．其值可以赋给int类型的变量<br>D．有两个值，1代表真，0代表假</p>
+<blockquote>
+<p>Java语言中boolean型数据只有两个值：true(真)和false(假)。它不对应任何数值，也不能与数字进行相互转换。</p>
+</blockquote>
+<p>33、在文件类提供的方法中，用于创建目录的方法是（<strong>A</strong>）。<br>A．mkdir()&nbsp;&nbsp;&nbsp;&nbsp;B．mkdirs()<br>C．list()&nbsp;&nbsp;&nbsp;&nbsp;D．listRoots()</p>
+<blockquote>
+<p>mkdir()是为目录操作提供的方法，用来创建目录；mkdirs()也是为目录操作提供的方法，创建包含父目录的目录；list()是对文件名操作提供的方法，返回一个字符串数组，为该文件所在目录下的所有文件名列表；listRoots是为目录提供的方法，返回根目录结构。</p>
+</blockquote>
+<p>34、下列能够正确创建线程的方法是（<strong>D</strong>）。<br>Ⅰ．继承java．1ang．Thread类，并重写run()方法<br>Ⅱ．继承java．1ang．Runnable类，并重写start()方法<br>Ⅲ．实现java．1ang．Thread接口，并实现run()方法<br>IV．实现java．1ang．Runable接口，并实现run()方法<br>A、I，Ⅲ&nbsp;&nbsp;&nbsp;&nbsp;B、Ⅱ，IV<br>C、Ⅱ，Ⅲ&nbsp;&nbsp;&nbsp;&nbsp;D、I，IV</p>
+<blockquote>
+<p>用Thread类的构造方法Thread(Runnabletarget)创建线程对象时，构造方法中的参数必须是一个具体的对象，该对象称作线程的目标对象，创建目标对象的类必须要实现Runnable接口。</p>
+</blockquote>
+<p>35、下列有关数组的叙述中，错误的是（<strong>A</strong>）。<br>A、在同一个环境下，数组与内存变量可以同名，两者互不影响<br>B、可以用一维数组的形式访问二维数组<br>C、在可以使用简单内存变量的地方都可以使用数组元素<br>D、一个数组中各元素的数据类型可以相同，也可以不同</p>
+<blockquote>
+<p>整个数组的数据类型为A(Array)，而各个数组元素可以分别存放不同类型的数据。在使用数组和数组元素时，应注意如下问题：1) 在任何能使用简单内存变量的地方都可以使用数组元素；2) 在同一个环境下，数组名不能与简单变量名重复；3) 可以用一维数组的形式访问二维数组。</p>
+</blockquote>
+<p>36、下列关于构造方法的叙述中，错误的是（<strong>C</strong>）。<br>A、Java语言规定构造方法名与类名必须相同<br>B、Java语言规定构造方法没有返回值，但不用void声明<br>C、Java语言规定构造方法不可以重载<br>D、Java语言规定构造方法只能通过new自动调用</p>
+<blockquote>
+<p>构造方法是类中的一种特殊方法，是为对象初始化操作编写的方法，用它来定义对象的初始状态。构造方法名必须与类名相同，它没有返回值，用户不能直接调用它，只能通过new自动调用。构造方法具有下列特点：①因为构造方法与类名必须相同，所以方法首字母小写规则对它不适用。②构造方法是给对象赋初值，所以没有返回值，但不要void来声明。③构造方法不能被程序调用。④构造方法可由编程人员在类中定义，默认时由Java语言自动生成。⑤构造方法可以重载实现不同的初始化方法，调用时按参数决定调用哪个方法。</p>
+</blockquote>
+<p>37、用来导入已定义好的类或包的语句是（<strong>B</strong>）。<br>A、main<br>B、import<br>C、public class<br>D、ClaSS</p>
+<blockquote>
+<p>Java中使用import语句来导入已定义好的类或包，需要注意Java语言的java．1ang包是编译器自动导入的，编程时如果使用该包中的类，可省去import导入，如果要使用其他包中的类，必须用import导入。</p>
+</blockquote>
+<p>38、Java程序的执行过程中用到一套JDK工具，其中java.exe是指（<strong>B</strong>）<br>A、Java文档生成器<br>B、Java解释器<br>C、Java编译器<br>D、Java类分解器</p>
+<blockquote>
+<p>javac是编译器，Java是运行Java程序的，也就是启动虚拟机，把.class字节码文件解释成机器码，然后运行</p>
+</blockquote>
+<p>39、Java编程所必须的默认引用包为（<strong>A</strong>）<br>A、java.sys包<br>B、java.lang包<br>C、java.new包<br>D、以上都不是</p>
+<p>40、定义一个类名为“ MyClass.java ”的类，并且该类可被<br>一 个 工 程 中 的 所 有 类 访 问 ， 那 么 该 类 的 正 确 声 明 应<br>为（<strong>C</strong>）<br>A、private class MyClass extends Object<br>B、class MyClass extends Object<br>C、public class MyClass<br>D、private class MyClass extends Object</p>
+<p>41、Java程序经常用到”递归”，”递归”的基本思想是（<strong>C</strong>）<br>A、”让别人反复调用自己”<br>B、”自己反复调用别人”<br>C、”自己反复调用自己”<br>D、以上说法都不对</p>
+<p>42、Applet类的直接父类是（<strong>D</strong>）<br>A、Component类<br>B、Container类<br>C、Frame类<br>D、Panel类</p>
+<p>43、Frame的默认的布局管理器是下列哪一个（<strong>B</strong>）<br>A、FlowLayout&nbsp;&nbsp;&nbsp;&nbsp;B、BorderLayout<br>C、GridLayout&nbsp;&nbsp;&nbsp;&nbsp;D、CardLayout</p>
+<p>44、下列说法不正确的是（<strong>C</strong>）<br>A、IOException 必须被捕获或抛出<br>B、java 语言会自动初始化变量的值<br>C、java 语言不允许同时继承一个类并实现一个接口<br>D、java 语言会自动回收内存中的垃圾</p>
+<p>45、下面的说法正确的是（<strong>A、B、C、D</strong>）。<br>A、Java 语言是面向对象的、解释执行的网络编程语言。<br>B、Java 语言具有可移植性，是与平台无关的编程语言。<br>C、Java 语言可对内存垃圾自动收集。<br>D、Java 语言编写的程序虽然是“一次编译，到处运行” ，但必须要 java 的运行环境。</p>
+<p>46、定义变量如下:<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">char c</span>= <span class="string">'w'</span>;</div><div class="line"><span class="attribute">int i</span>= 8; </div><div class="line"><span class="attribute">long l</span>= 15;</div><div class="line"><span class="attribute">float f</span>= 8.9f;</div></pre></td></tr></table></figure></p>
+<p>以下赋值语句正确的是（<strong>B、C</strong>）<br>A、i= c+ i;<br>B、c= c+ i;<br>C、l= f+ l;<br>D、f= i+ l+ f;</p>
+<blockquote>
+<p><code>double</code>&gt; <code>float</code>&gt; <code>long</code>&gt; <code>int</code>&gt; <code>short</code>&gt; <code>char</code></p>
+</blockquote>
+<p>47、下列哪一种叙述是正确的（<strong>D</strong>）<br>A、abstract 修饰符可修饰字段、方法和类<br>B、抽象方法的 body 部分必须用一对大括号{ }包住<br>C、声明抽象方法，大括号可有可无<br>D、声明抽象方法不可写出大括号</p>
+<blockquote>
+<p><code>abstract</code>不能修饰字段。既然是抽象方法，当然是没有实现的方法，根本就没有<code>body</code>部分。</p>
+</blockquote>
+<p>48、下列说法正确的有 （<strong>C</strong>）<br>A、class 中的 constructor 不可省略<br>B、constructor 必须与 class 同名，但方法不能与 class同名<br>C、constructor 在一个对象被 new 时执行<br>D、一个 class 只能定义一个 constructor<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">见代码，很明显方法是可以和类名同名的，和构造方法唯一的区别就是，构造方法没有返回值。</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">long1_1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"1"</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">long1_1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"2"</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String a[]</span>)</span>&#123;</div><div class="line">	long1_1 aLong1_1= <span class="keyword">new</span> long1_1();</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="string">"3"</span>);</div><div class="line">	aLong1_1.long1_1();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果为: </p>
+<blockquote>
+<p>1<br>3<br>2</p>
+</blockquote>
+<p>49、下列关于修饰符混用的说法，错误的是（<strong>D</strong>）<br>A、abstract不能与 final 并列修饰同一个类<br>B、abstract类中不可以有 private 的成员<br>C、abstract方法必须在 abstract 类中<br>D、static 方法中能处理非 static 的属性</p>
+<p>50、（<strong>B</strong>）修饰符允许对类成员的访问不依赖于该类的任何对象<br>A、 abstract<br>B、 static<br>C、 return<br>D、 public</p>
+<p>51、关于被私有访问控制符private修饰的成员变量，以下说法正确的是（<strong>C</strong>）<br>A、可以被三种类所引用：该类自身、与它在同一个包中的其他类、在其他包中的该类的子类<br>B、可以被两种类访问和引用：该类本身、该类的所有子类<br>C、只能被该类自身所访问和修改<br>D、只能被同一个包中的类访问</p>
+<p>52、下面的集合中，（<strong>C</strong>）不可以存储重复元素。<br>A、Set<br>B、Collection<br>C、Map<br>D、List</p>
+<p>53、关于 Map 和 List，下面说法正确的是（<strong>D</strong>）。<br>A、Map 继承 List<br>B、List 中可以保存 Map 或 List<br>C、Map 和 List 只能保存从数据库中取出的数据<br>D、Map 的 value 可以是 List 或 Map</p>
+<p>54、给定Java代码如下，编译运行后，结果是（<strong>B</strong>）<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">long1_1</span>&#123;</div><div class="line">    <span class="keyword">static</span> String <span class="keyword">string</span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		<span class="keyword">char</span> c= <span class="keyword">string</span>.charAt(<span class="number">0</span>);</div><div class="line">		System.<span class="keyword">out</span>.println(c);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、编译错误<br>B、运行期异常，异常类型为<code>NullPointerException</code><br>C、运行期异常，异常类型为<code>ArithmeticException</code><br>D、正确运行，但无输出内容</p>
+<p>55、给定Java代码如下，关于super的用法，以下描述正确的是（<strong>C</strong>）<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">B</span></span>&#123;</div><div class="line">    	public <span class="type">C</span>() &#123;</div><div class="line">    		<span class="keyword">super</span>();</div><div class="line">    	&#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>A、用来调用类B中定义的super()方法<br>B、用来调用类C中定义的super()方法<br>C、用来调用类B的无参构造方法<br>D、用来调用类B中第一个出现的构造方法</p>
+<p>56、给定Java代码如下，编译运行，结果是（<strong>A</strong>）<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">long1_1</span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		<span class="keyword">int</span> i;</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"i= "</span>+ i);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、编译错误<br>B、运行时出现例外<br>C、正常运行，输出i= -1;<br>D、正常运行，输出i= 0;</p>
+<blockquote>
+<p>编译一下会出现这个错误<code>The local variable i may not have been initialized</code>。意思是没有对该变量进行初始化。</p>
+</blockquote>
+<p>57、下面的Java代码，当x= 2时，运行结果是（<strong>C</strong>）<br><figure class="highlight roboconf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">switch (x) &#123;</div><div class="line">		<span class="attribute">case 1</span>:</div><div class="line">			System<span class="variable">.out</span><span class="variable">.println</span>(1);</div><div class="line">		<span class="attribute">case 2</span>:</div><div class="line">		case 3:</div><div class="line">			System<span class="variable">.out</span><span class="variable">.println</span>(3);</div><div class="line">		<span class="attribute">case 4</span>:</div><div class="line">			System<span class="variable">.out</span><span class="variable">.println</span>(4);</div><div class="line">		&#125;</div></pre></td></tr></table></figure></p>
+<p>A、没有输出任何结果<br>B、输出结果为3<br>C、输出结果是3和4<br>D、输出结果是1、3和4</p>
+<p>58、分析如下Java代码片段，输出结果为（<strong>A</strong>）<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">int</span> money= <span class="number">0</span>;</div><div class="line"><span class="built_in">int</span> price= <span class="number">10</span>;</div><div class="line"><span class="built_in">int</span> <span class="keyword">number</span>= <span class="number">0</span>;</div><div class="line">for(<span class="built_in">int</span> i= <span class="number">0</span>; i&lt; <span class="number">2</span>; i++) &#123;</div><div class="line">	<span class="keyword">number</span>++;</div><div class="line">	System.<span class="keyword">out</span>.println(<span class="keyword">number</span>);</div><div class="line">	--price;</div><div class="line">	System.<span class="keyword">out</span>.println(price);</div><div class="line">	money+= <span class="keyword">number</span>* price;</div><div class="line">&#125;</div><div class="line">System.<span class="keyword">out</span>.println(money);</div></pre></td></tr></table></figure></p>
+<p>A、25&nbsp;&nbsp;&nbsp;&nbsp;B、28<br>C、31&nbsp;&nbsp;&nbsp;&nbsp;D、30</p>
+<p>59、给定如下Java代码，编译运行时，结果是（<strong>C</strong>）<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">		<span class="keyword">String</span> <span class="keyword">string</span>= <span class="string">"123456789"</span>;</div><div class="line">		System.out.<span class="built_in">println</span>(<span class="keyword">string</span>.indexOf(<span class="string">"5"</span>));</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>A、6&nbsp;&nbsp;&nbsp;&nbsp;B、5&nbsp;&nbsp;&nbsp;&nbsp;C、4&nbsp;&nbsp;&nbsp;&nbsp;D、-1</p>
+<p>60、下列哪一个操作不能使线程从等待阻塞状态进入对象阻塞状态（<strong>D</strong>）<br>A、等待阻塞状态下的线程被notify()唤醒<br>B、等待阻塞状态下的纯种被interrput()中断<br>C、等待时间到<br>D、等待阻塞状态下的线程调用wait()方法</p>
+<p>61、在Java中，下列（<strong>D</strong>）类不能派生出子类。<br>A、public class MyClass{}<br>B、class MyClass{}<br>C、abstract class MyClass{}<br>D、final class MyClass{}</p>
+<p>62、在Java中，要判断D盘下是否存在文件abc.txt，应该使用以下（<strong>C</strong>）判断语句。<br>A、if(new File(“d:abc.txt”).exists()== 1)<br>B、if(File.exists(“d:abc.txt”)== 1)<br>C、if(new File(“d:/abc.txt”).exists())<br>D、if(File.exists(“d:/abc.txt”))</p>
+<p>63、在Java中，关于HashMap类的描述，以下说法错误的是（<strong>B</strong>）<br>A、HashMap使用键/值的形式保存数据<br>B、HashMap能够保证其中元素的顺序<br>C、HashMap允许将null用作键<br>D、HashMap允许将null用作值</p>
+<p>64、在Java中，下面关于变量及其作用域的描述错误的是（<strong>A、B</strong>）<br>A、实例变量是存放在方法区中<br>B、实例变量用关键字static声明<br>C、在方法中定义的局部变量在该方法被执行时创建<br>D、局部变量在使用前必须被初始化</p>
+<blockquote>
+<p>对象的所有数据成员都在堆中。实例变量在栈中，实例在堆中。<br>定义该成员变量时没有使用static修饰，该成员变量又被称为非静态变量或实例变量；如果使用了static修饰，则该成员变量又可被称为静态变量或类变量。</p>
+</blockquote>
+<p>65、给定Java代码，如下:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Shape</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span>(<span class="params"></span>)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>要创建Shape类的子类Circle，以下代码正确的是（<strong>B、D</strong>）<br>A、class Circle extends Shape{int draw(){}}<br>B、abstract class Circle extends Shape{}<br>C、class Circle extends Shape{void draw()}<br>D、class Circle extends Shape{void draw(){}}</p>
+<p>66、给定一个Java程序的方法结构如下，以下方法体实现语句正确的是（<strong>B、C</strong>）<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Integer <span class="title">change</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、Integer int= new Integer(i); return int;<br>B、Integer t= Integer.valueOf(i); return t;<br>C、return new Integer(i);<br>D、return i;</p>
+<p>67、给定一段Java代码如下，要打印出list中存储的内容，以下语句正确的是（<strong>A、B</strong>）<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ArrayList <span class="built_in">list</span>= <span class="keyword">new</span> ArrayList();</div><div class="line">		<span class="built_in">list</span>.add(<span class="string">"a"</span>);</div><div class="line">		<span class="built_in">list</span>.add(<span class="string">"b"</span>);</div><div class="line">		Iterator iterator= <span class="built_in">list</span>.iterator();</div></pre></td></tr></table></figure></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">A、</div><div class="line"><span class="keyword">while</span>(<span class="keyword">iterator</span>.hasNext()) &#123;</div><div class="line">	<span class="type">System</span>.<span class="keyword">out</span>.println(<span class="keyword">iterator</span>.next());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">B、</div><div class="line"><span class="built_in">for</span>(<span class="keyword">int</span> i= <span class="number">0</span>; i&lt; list.<span class="built_in">size</span>(); i++) &#123;</div><div class="line">	System.out.<span class="built_in">println</span>(list.<span class="built_in">get</span>(i));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight golo"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">C、</div><div class="line"><span class="keyword">while</span>(<span class="keyword">list</span>.hasNext()) &#123;</div><div class="line">	System.out.<span class="keyword">println</span>(<span class="keyword">list</span>.next());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">D、</div><div class="line"><span class="keyword">for</span>(int <span class="built_in">i</span>= <span class="number">0</span>; <span class="built_in">i</span>&lt; list.<span class="built_in">size</span>(); <span class="built_in">i</span>++) &#123;</div><div class="line">	System.out.println(iterator(i));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>68、在Java中，下面（<strong>C、D</strong>）是不合法的声明。<br>A、short x[]<br>B、short[] y<br>C、short[5] x2<br>D、short z2[5]</p>
+<p>69、以下（<strong>B、C</strong>）不是Java的原始数据类型。<br>A、short<br>B、Booleam<br>C、unit<br>D、float</p>
+<blockquote>
+<p>Java的原始数据类型一共就8个，分别是: <code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>boolean</code>、<code>char</code>、<code>float</code>、<code>double</code>。注意这些都是大小写敏感的，而<code>Booleanm</code>是<code>boolean</code>的封装类(Wrapper class)。</p>
+</blockquote>
+<p>70、给定如下Java代码，编译运行时，以下（<strong>A、C</strong>）语句的值是true。<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">String</span> <span class="keyword">string</span>= <span class="string">"Hello"</span>;</div><div class="line"><span class="keyword">String</span> t= <span class="string">"Hello"</span>;</div><div class="line"><span class="keyword">String</span> e= <span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"Hello"</span>);</div><div class="line"><span class="keyword">char</span> c[]= &#123;<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">"G"</span>&#125;;</div></pre></td></tr></table></figure></p>
+<p>A、string.equals(t);<br>B、t.equals(c);<br>C、t.equals(e);<br>D、t== c;</p>
+<blockquote>
+<p><code>==</code>操作符所比较的是操作符两端的操作数是否是同一个对象，而<code>String</code>的<code>`equals()</code>方法所比较的是两个<code>String</code>对象的内容是否一样，其参数是一个<code>String</code>对象时才有可能返回<code>true</code>，其他对象都返回false。<br>定义<code>char</code>时候，字符必须用单引号，字符串用双引号。例如，在char c= ‘a’中，’a’是字符常量，必须用单引号。”a”表示字符串，包含两个字符，一个是’a’，一个是’\0’。</p>
+</blockquote>
+<p>71、在Java中，下面关于抽象类的描述正确的是（<strong>B、D</strong>）<br>A、抽象类可以被实例化<br>B、如果一个类中有一个方法被声明为抽象的，那么这个类必须是抽象类<br>C、抽象类中的方法必须都是抽象的<br>D、声明抽象类必须带有关键字abstract</p>
+<p>72、以下代码运行输出的是（）<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="type">String</span> name= <span class="string">"Person"</span>;</div><div class="line">	int age= <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">long1_1</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;	</div><div class="line">	public <span class="type">String</span> grade;</div><div class="line">	public static void main(<span class="type">String</span>[] args) &#123;</div><div class="line">		<span class="type">Person</span> person= <span class="keyword">new</span> <span class="type">Person</span>();</div><div class="line">		<span class="type">System</span>.out.println(person.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、输出: Person<br>B、没有输出<br>C、编译错误<br>D、运行出错</p>
+<p>73、在使用 super 和 this关键字时，以下描述正确的是（<strong>A</strong>）<br>A、在子类构造方法中使用super()显示调用父类的构造方法，super()必须写在子类构造方法的第一行，否则编译不通过<br>B、super()和this()不一定要放在构造方法内第一行<br>C、this()和super()可以同时出现在一个构造函数中<br>D、this()和super()可以在static环境中使用，包括static方法和static语句块</p>
+<blockquote>
+<p>1、调用super()必须写在子类构造方法的第一行，否则编译不通过。每个子类构造方法的第一条语句，都是隐含地调用super()，如果父类没有这种形式的构造函数，那么在编译的时候就会报错。<br>2、super()和this()类似。区别是：super()从子类中调用父类的构造方法，this()在同一类内调用其它方法。<br>3、super()和this()均需放在构造方法内第一行。<br>4、尽管可以用this()调用一个构造器，但却不能调用两个。<br>5、this()和super()不能同时出现在一个构造函数里面，因为this()必然会调用其它的构造函数，其它的构造函数必然也会有super()语句的存在，所以在同一个构造函数里面有相同的语句，就失去了语句的意义，编译器也不会通过。<br>6、this()和super()都指的是对象，所以，均不可以在static环境中使用。包括：static变量，static方法，static语句块。<br>7、从本质上讲，this()是一个指向本对象的指针,然而super()是一个Java关键字。</p>
+</blockquote>
+<p>74、以下对封装的描述正确的是（<strong>D</strong>）<br>A、只能对一个类中的方法进行封装，不能对属性进行封装<br>B、如果子类继承了父类，对于父类中进行封装的方法，子类仍然可以直接调用<br>C、封装的意义不大，因此在编码时尽量不要使用<br>D、封装的主要作用在于对外隐藏内部实现细节，增强程序的安全性</p>
+<p>75、以下对继承的描述错误的是（<strong>A</strong>）<br>A、Java 中的继承允许一个子类继承多个父类<br>B、父类更具有通用性，子类更具体<br>C、Java 中的继承存在着传递性<br>D、当实例化子类时会递归调用父类中的构造方法</p>
+<p>76、Java提供哪几种运算符（<strong>A、B、C、D</strong>）<br>A、算数运算符<br>B、位运算符<br>C、关系运算符<br>D、逻辑运算符<br>E、条件运算符</p>
+<p>77、以下说法错误的是（<strong>D</strong>）<br>A. super.方法()可以调用父类的所有非私有方法<br>B. super()可以调用父类的所有非私有构造函数<br>C. super.属性可以调用父类的所有非私有属性<br>D. this和super关键字可以出现在同一个构造函数中</p>
+<p>78、访问修饰符作用范围由大到小是（<strong>D</strong>）<br>A、private-default-protected-public<br>B、public-default-protected-private<br>C、private-protected-default-public<br>D、public-protected-default-private</p>
+<p>79、多态的表现形式有（<strong>A</strong>）<br>A、重写<br>B、抽象<br>C、继承<br>D、封装</p>
+<p>80、以下对重载描述错误的是（<strong>B</strong>） overload(重载 ) override(重写)<br>A、方法重载多发生在一个类的内部<br>B、构造方法不能重载<br>C、重载要求方法名相同，参数列表不同<br>D、方法的返回值类型不是区分方法重载的条件</p>
+<p>81、以下对抽象类的描述正确的是（<strong>C</strong>）<br>A、抽象类没有构造方法<br>B、抽象类必须提供抽象方法<br>C、有抽象方法的类一定是抽象类<br>D、抽象类可以通过 new 关键字直接实例化</p>
+<p>82、以下对接口描述错误的有（<strong>D</strong>）<br>A、接口没有提供构造方法<br>B、接口中的方法默认使用 public、 abstract 修饰<br>C、接口中的属性默认使用 public、 static、 final 修饰<br>D、接口不允许多继承</p>
+<p>83、以下代码，描述正确的有（<strong>A</strong>）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IDemo</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String name;   <span class="comment">//1</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;   <span class="comment">//2</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getInfo</span><span class="params">()</span></span>;   <span class="comment">//3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">long1_1</span> <span class="keyword">implements</span> <span class="title">IDemo</span></span>&#123;   <span class="comment">//4</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、第1行错误，没有给变量赋值<br>B、第2行错误，方法没有修饰符<br>C、第4行错误，没有实现接口的全部方法<br>D、第3行错误，没有方法的实现</p>
+<p>84、以下描述错误的有（<strong>C</strong>）<br>A、abstract 可以修饰类、接口、方法<br>B、abstract 修饰的类主要用于被继承<br>C、abstract 可以修饰变量<br>D、abstract 修饰的类，其子类也可以是 abstract修饰的</p>
+<p>85、以下描述正确的有（<strong>B</strong>）<br>A、方法的重写应用在一个类的内部<br>B、方法的重载与返回值类型无关<br>C、构造方法不能重载<br>D、构造方法可以重写</p>
+<p>86、以下对异常的描述不正确的有（<strong>C</strong>）<br>A、异常分为 Error 和 Exception<br>B、Throwable 是所有异常类的父类<br>C、Exception 是所有异常类父类<br>D、Exception 包括 RuntimeException 和 RuntimeException 之外的异常</p>
+<p>87、下面代码的运行结果是（<strong>B</strong>）<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">long1_1</span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span>(<span class="params"><span class="keyword">int</span> a, <span class="keyword">int</span> b</span>) </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">return</span> a+ b;</div><div class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"catch语句块"</span>);</div><div class="line">		&#125;<span class="keyword">finally</span> &#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"finally语句块"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		long1_1 long1_1= <span class="keyword">new</span> long1_1();</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"和是: "</span>+ long1_1.<span class="keyword">add</span>(<span class="number">9</span>,  <span class="number">34</span>));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、编译异常<br>B、finally语句块和是: 43<br>C、和是: 43finally语句块<br>D、catch语句块和是: 43</p>
+<p>88、以下对自定义异常描述正确的是（<strong>C</strong>）<br>A、自定义异常必须继承 Exception<br>B、自定义异常可以继承自 Error<br>C、自定义异常可以更加明确定位异常出错的位置和给出详细出错信息<br>D、程序中已经提供了丰富的异常类，使用自定义异常没有意义</p>
+<p>89、Java中的集合类包括 ArrayList 、 LinkedList 、 HashMap 等类，下列关于集合类描述错误的是（<strong>C</strong>）<br>A、ArrayList 和 LinkedList 均实现了 List 接口<br>B、ArrayList 的访问速度比 LinkedList 快<br>C、添加和删除元素时， ArrayList 的表现更佳<br>D、HashMap实现Map接口，它允许任何类型的键和值对象，并允许将null用作键或值</p>
+<p>90、在Java中开发JDBC应用程序时，使用DriverManager类的getConnection（）方法建立与数据源的连接语句为：Connection con= DriverManager.getConnection( “ jdbc:odbc:news ” ); URL连接中的”news”表示的是（<strong>C</strong>）<br>A、数据库中表的名称<br>B、数据库服务器的机器名<br>C、数据源的名称<br>D、用户名</p>
+<p>91、获取 ResutlSet对象 rst 的第一行数据，以下正确的是（<strong>B</strong>）<br>A、rst.hashNext();<br>B、rst.next();<br>C、rst.first();<br>D、rst.nextRow();</p>
+<blockquote>
+<p>first()：移动到第一条记录，并未读取。</p>
+</blockquote>
+<p>92、以下哪个方法用于定义线程的执行体？（<strong>C</strong>）<br>A、start()<br>B、init()<br>C、run()<br>D、synchronized()</p>
+<blockquote>
+<p>创建线程有两种方法：实现java.lang.Runnable接口和继承Thread类并重写run()方法。无论通过哪种方式创建线程，都必须通过run()方法定义线程体，因为一个线程在开始执行时，就是通过从其run()方法开始执行的。Runnable接口中定义了抽象run()方法，而Thread类本身也实现了Runnable接口。</p>
+</blockquote>
+<p>93、下面哪个流类属于面向字符的输入流（<strong>D</strong>）<br>A、BufferedWriter<br>B、FileInputStream<br>C、ObjectInputStream<br>D、InputStreamReader</p>
+<blockquote>
+<p>字节输入流: <code>InputStream</code><br>FileInputStream、ByteArrayInputStream、PipedInputStream、BufferedInputStream、ObjectInputStream、FilterInputStream、PushbackInputStream、DataInputStream<br>字节输出流: <code>OutputStream</code><br>FileOutputStream、ByteArrayOutputStream、PipedOutputStream、BufferedOutputStream、ObjectOutputStream、FilterOutputStream、PrintStream、DataOutputStream<br>字符输入流: <code>Reader</code><br>FileReader、CharArrayReader、PipedReader、StringReader、BufferedReader、InputStreamReader、FilterReader、PushbackReader<br>字符输出流: <code>Writer</code><br>FileWriter、CharArrayWriter、PipedWriter、StringWriter、BufferedWriter、OutputStreamWriter、FilterWriter、PrintWriter</p>
+</blockquote>
+<p>94、一个线程在任何时刻都处于某种线程状态（thread state）,例如创建状态、运行状态、阻塞状态、就绪状态等。一个线程可以由选项中的哪种线程状态直接到达运行状态？（<strong>D</strong>）<br>A、死亡状态<br>B、阻塞状态（对象 lock 池内）<br>C、阻塞状态（对象 wait 池内）<br>D、就绪状态</p>
+<p>95、选项中哪一行代码可以替换题目中<code>//add code here</code>而不产生编译错误？（<strong>A</strong>）<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">long1_1</span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> constInt= <span class="number">5</span>;</div><div class="line">	<span class="comment">//add code here</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span>(<span class="params"></span>) </span>&#123;	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、public abstract void method(int a);<br>B、constInt= constInt+ 5;<br>C、public int method();<br>D、public abstract void anotherMethod() {}</p>
+<p>96、下列哪种说法是正确的（<strong>D</strong>）<br>A、实例方法可直接调用超类的实例方法<br>B、实例方法可直接调用超类的类方法<br>C、实例方法可直接调用其他类的实例方法<br>D、实例方法可直接调用本类的类方法</p>
+<blockquote>
+<p>类方法即用static修饰的方法，不能使用this，super关键字，不能调用非static的成员变量，非static的成员方法，只能访问static修饰的成员变量，成员方法<br>类方法指的是用static关键字修饰的方法，而实例方法就是相对于类方法的其它方法。<br>当类的字节码文件被加载到内存时，类的实例方法不会被分配入口地址，当该类创建对象后，类中的实例方法才分配入口地址，从而实例方法可以被类创建的任何对象调用执行。需要注意的是，当我们创建第一个对象时，类中的实例方法就分配了入口地址，当再创建对象时，不再分配入口地址，也就是说，方法的入口地址被所有的对象共享，当所有的对象都不存在时，方法的入口地址才被取消。<br>对于类中的类方法，在该类被加载到内存时，就分配了相应的入口地址。从而类方法不仅可以被类创建的任何对象调用执行，也可以直接通过类名调用。类方法的入口地址直到程序退出才被取消。<br>对于A,不可以调用父类的private实例方法。因为private修饰的方法只有本类对象才可以调用<br>对于B,类方法只有本类才可以调用<br>对于C,跟A相同，比A更离谱</p>
+</blockquote>
+<p>97、用于调用存储过程的对象是（<strong>C</strong>）<br>A、ResultSet<br>B、DriverManager<br>C、CallableStatemet<br>D、PreparedStatement</p>
+<p>98、按照 MVC 设计模式， JSP 用于实现（B）<br>A、Model<br>B、View<br>C、Controller<br>D、容器</p>
+<p>99、在什么时候Float对象会被垃圾回收（<strong>C</strong>）<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">Object</span> m() &#123;</div><div class="line">    <span class="keyword">Object</span> o = <span class="keyword">new</span> Float(<span class="number">3.14</span>F);</div><div class="line">    <span class="keyword">Object</span>[] oa = <span class="keyword">new</span> <span class="keyword">Object</span>[<span class="number">1</span>];</div><div class="line">    oa[<span class="number">0</span>] = o;</div><div class="line">    o = <span class="keyword">null</span>;</div><div class="line">    oa[<span class="number">0</span>] = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">return</span> o;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、在“oa[0] = o;”之后<br>B、在“o = null;”之后<br>C、在“oa[0] = null;”之后<br>D、在“return o;”之后 </p>
+<blockquote>
+<p>垃圾回收的判断条件是对象不可达，上面代码中与Float对象可达的有对象o和oa[0]，所以在这两个对象都为空之后就可以回收了</p>
+</blockquote>
+<p>100、下面代码的输出结果是（<strong>B</strong>）<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span> </span>&#123;</div><div class="line">    <span class="type">Base</span>() &#123;</div><div class="line">        <span class="type">System</span>.out.print(<span class="string">"Base"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Alpha</span> <span class="keyword">extends</span> <span class="title">Base</span> </span>&#123;</div><div class="line">    public static void main(<span class="type">String</span>[] args) &#123;</div><div class="line">        <span class="keyword">new</span> <span class="type">Alpha</span>();</div><div class="line">        <span class="keyword">new</span> <span class="type">Base</span>();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>A、Base<br>B、BaseBase<br>C、代码运行但没有输出<br>D、运行时抛出异常 </p>
+<blockquote>
+<p>子类如果没有构造方法，默认调用父类的无参的构造方法</p>
+</blockquote>
+<p>101、在Servlet的生命周期中，容器只调用一次的方法是（<strong>C、D</strong>）<br>A、service<br>B、getServletConfig<br>C、init<br>D、destroy </p>
+<blockquote>
+<p>init() 和destroy() 即 初始化 和 销毁 只执行一次</p>
+</blockquote>
+<p>102、在一个线程中Sleep（1000）方法，将使得该线程在多少时间后获得对CPU的控制（假设睡眠过程中不会有其他事件唤醒该线程）（<strong>C</strong>）<br>Ａ、正好1000毫秒<br>Ｂ、1000毫秒不到<br>Ｃ、=&gt;1000毫秒<br>Ｄ、不一定 </p>
+<blockquote>
+<p>因为在1000ms之后，只是让线程重新回到队列中，如果还有其它线程在执行，还会继续等待，不会立即取得CPU的控制</p>
+</blockquote>
+<p>103、下面关于垃圾收集的说法正确的是（<strong>D</strong>）<br>Ａ、一旦一个对象成为垃圾，就立刻被收集掉。<br>Ｂ、对象空间被收集掉之后，会执行该对象的finalize方法<br>Ｃ、finalize方法和C++的析构函数是完全一回事情<br>Ｄ、一个对象成为垃圾是因为不再有引用指着它，但是线程并非如此。</p>
+<blockquote>
+<p>只要JVM还没有快到耗尽内存的地步，它是不会浪费时间进行垃圾回收的；垃圾回收器准备释放内存的时候，会先调用finalize()；如果你为某个对象定义了finalize() 方法，JVM 可能不会调用它，因为垃圾回收器不曾释放过那些对象的内，调用System.gc() 也不会起作用，因为它仅仅是给 JVM 一个建议而不是命令。</p>
+</blockquote>
+<p>104、下面的语句会产生什么样的输出？（<strong>A</strong>）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">System</span><span class="selector-class">.out</span><span class="selector-class">.println</span>(4&amp;7);</div></pre></td></tr></table></figure></p>
+<p>A、4&nbsp;&nbsp;&nbsp;&nbsp;B、5<br>C、6&nbsp;&nbsp;&nbsp;&nbsp;D、7</p>
+<blockquote>
+<p>0100 &amp; 1111= 0100即为4</p>
+</blockquote>
+<p>105、下列关于构造方法的叙述中，错误的（<strong>C</strong>）<br>A、Java语言规定构造方法名与类名必须相同<br>B、Java语言规定构造方法没有返回值，但不用void声明<br>C、Java语言规定构造方法不可以重载<br>D、Java语言规定构造方法只能通过new自动调用</p>
+<blockquote>
+<p>当不声明构造函数时，默认有一个无参数的构造方法；构造函数不能有返回类型；构造函数可以是私有的，这样外部就无法由私有的构造函数创建对象，如单例模式</p>
+</blockquote>
+<p>106、在接口中以下哪条定义是正确的?（<strong>A、B</strong>）<br>A、void methoda();<br>B、public double methoda();<br>C、public final double methoda();<br>D、static void methoda(double d1);<br>E、protected void methoda(double d1);</p>
+<blockquote>
+<p>接口only public, abstract, default, static and strictfp are permitted，而且只有default, static修饰的方法才能有方法体，而且必须有方法体，也就是方法后面得有大括号</p>
+</blockquote>
+<p>107、如下代码<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">X</span> </span>&#123;</div><div class="line"></div><div class="line">public <span class="type">X</span> aMethod() &#123; <span class="keyword">return</span> <span class="keyword">this</span>;&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Y</span> <span class="keyword">extends</span> <span class="title">X</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>哪两个方法能加到Y类的定义中（<strong>C、E</strong>）<br>A、public void aMethod() {}<br>B、private void aMethod() {}<br>C、public void aMethod(String s) {}<br>D、private Y aMethod() { return null; }<br>E、public X aMethod() { return new Y(); } </p>
+<blockquote>
+<p>C属于重载，其实跟父类的同名方法没什么关系，E属于重写，覆盖父类的同名方法</p>
+</blockquote>
+<p>108、写一个SIngleton（单例模式）出来<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Singleton &#123;  </div><div class="line">    private static Singleton<span class="built_in"> instance </span>= new Singleton();  </div><div class="line">    private Singleton ()&#123;&#125;  </div><div class="line">    public static Singleton getInstance() &#123;  </div><div class="line">    return<span class="built_in"> instance; </span> </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>109、垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？</p>
+<blockquote>
+<p>对于GC来说，当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是”可达的”，哪些对象是”不可达的”。当GC确定一些对象为”不可达”时，GC就有责任回收这些内存空间。可以。程序员可以手动执行System.gc()，通知GC运行，但是Java语言规范并不保证GC一定会执行。</p>
+</blockquote>
+<p>110、描述forward和redirect的区别</p>
+<blockquote>
+<p>forward是服务器请求资源，服务器直接访问目标地址的URL，目标地址可以接收request 请求参数，然后把结果发给浏览器，浏览器根本不知道服务器发送的内容是从哪儿来的，所以它的地址栏中还是原来的地址。redirect就是服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求哪个地址，浏览器会重新进行请求，此时不能用request传值，浏览器的地址栏会变成新的地址。</p>
+</blockquote>
+<p>111、数据连接池的工作机制是什么？</p>
+<blockquote>
+<p>J2EE服务器启动时会建立一定数量的池连接，并一直维持不少于此数目的池连接。客户端程序需要连接时，池驱动程序会返回一个未使用的池连接并将其标记为忙。如果当前没有空闲连接，池驱动程序就新建一定数量的连接，新建连接的数量由配置参数决定。当使用的池连接调用完成后，池驱动程序将此连接表记为空闲，其他调用就可以使用这个连接。</p>
+</blockquote>
+<p>112、swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上?</p>
+<blockquote>
+<p>switch（expr1）中，expr1是一个整数表达式。因此传递给 switch 和 case 语句的参数应该是 int、 short、 char 或者 byte。long,string 都不能作用于swtich。</p>
+</blockquote>
+<p>113、JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？</p>
+<blockquote>
+<p>JSP是Servlet技术的扩展，本质上是Servlet的简易方式，更强调应用的外表表达。JSP编译后是”类servlet”。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。JSP侧重于视图，Servlet主要用于控制逻辑。</p>
+</blockquote>
+<p>114、jsp 指令中 isELIgnored=”boolean” 的意思是（<strong>C</strong>）<br>A、决定是否实现 Servler 的单线程模式，<br>B、决定改页面是否是一个错误处理页面，<br>C、决定是否支持 EL表示，<br>D、没有具体的含义</p>
+<p>115、下面关于 Java 的引用，说法正确的是（<strong>B</strong>）<br>A、应用实际上就是指针<br>B、应用本身是 Primitive<br>C、引用就是对象本身<br>D、一个对象只能被一个引用所指引</p>
+<p>116、用于调用存储过程的对象是（<strong>C</strong>）<br>A、ResultSet<br>B、DriverManager<br>C、CallableStatement<br>D、PreparedStatement</p>
+<p>117、对于 import java.util 包，以下那种说法是错误的（<strong>C</strong>）<br>A、Vector 类属于 java.util 包<br>B、Vector 类放在 … ／ java/util/ 目录下<br>C、Vector 类放在 java.util 文件中<br>D、Vector 类是 Sun 公司的产品</p>
+<p>118、下面关于垃圾收集的说法正确的是（<strong>D</strong>）<br>A、一旦一个对象成为垃圾，就立刻被收集掉。<br>B、对象空间被收集掉之后，会执行该对象的 finalize 方法<br>C、finalize 方法和 C++的析构函数是完全一回事情<br>D、一个对象成为垃圾是因为不再有引用指着它，但是线程并非如此。</p>
+<p>119、下列标识符（名字）命名原则中，正确的是（<strong>D</strong>）<br>A、类名的首字母小写<br>B、变量和方法名的首写字母大写<br>C、接口名的首写字母小写<br>D、常量完全大写</p>
+<p>120、类 Test1定义如下：<br>1． public class Test1{<br>2． public float aMethod （ float a， float b ） { return 0;}<br>3．<br>4． }<br>将以下哪种方法插入行 3 是不合法的。（<strong>B</strong>）<br>A、public float aMethod （ float a， float b ， float c） { return 0;}<br>B、public float aMethod （ float c ， float d ） { return 0;}<br>C、public intaMethod （ int a， int b） { return 0;}<br>D、private float aMethod （ int a， int b ， int c） { return 0;}</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1、下面哪个是Java语言中正确的标识符（&lt;strong&gt;B&lt;/strong&gt;）&lt;br&gt;A、3com&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;B、import&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;C、that&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;D、this&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;标识符是以字母开头的字母数字序列。字母通常指大小写英文字母，下划线&lt;code&gt;_&lt;/code&gt;、美元符&lt;code&gt;&amp;amp;&lt;/code&gt;等，也可以是Unicode字符集中的字符，如汉字等；数字通常指0-9，可以是字母数字的任意组合但不能包含(如&lt;code&gt;+&lt;/code&gt;，&lt;code&gt;-&lt;/code&gt;)等，不能使用关键字但长度不受限制。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Java基础题" scheme="http://www.sanstylemc.cn/tags/Java%E5%9F%BA%E7%A1%80%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Selenium的使用</title>
@@ -1261,28 +1597,6 @@
     
     
       <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo提交文章被killed</title>
-    <link href="http://www.sanstylemc.cn/2018/04/06/hexo%E6%8F%90%E4%BA%A4%E6%96%87%E7%AB%A0%E8%A2%ABkilled/"/>
-    <id>http://www.sanstylemc.cn/2018/04/06/hexo提交文章被killed/</id>
-    <published>2018-04-06T02:01:43.000Z</published>
-    <updated>2018-04-06T02:02:13.803Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://github.com/sunstady/hexo/blob/master/hexo%E8%A2%ABkilled/2.png?raw=true" alt="2"><br>如图所示，不管如何提交，都是被killed。<br><a id="more"></a><br><code>问题原因:</code><br>2016年4月15日起，新购买的Linux操作系统CVM，将不再提供2GB的SWAP盘。<br>swap分区是在系统物理内存不够用的时候，由系统内存管理程序将那些很长时间没有操作内存数据，临时保存到Swap分区中，以提高可用内存额度的一种机制。当那些程序要再次重新运行时，会再从Swap分区恢复之前保存的数据到内存中。<br>相关操作会导致额外的IO开销，特别是，如果内存使用率已经非常高，而同时IO性能也不是很好的情况下，该机制其实会起到相反的效果：不仅系统性能提升较小（因为内存使用率已经非常高了），而且由于频繁的内存到SWAP的切换操作，会导致产生大量额外的IO操作，导致IO性能进一步降低，最终反而降低了系统总体性能。<br>内存与磁盘性能有10倍以上的差距，如Mysql等业务，当内存数据临时保存到SWAP分区时，数据库的整体服务质量会大大下降。为了保证您业务的正常运行，当服务器内存不足时，建议您增加内存空间。<br><code>解决方法:</code><br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">free -m   <span class="string">//</span>查看系统当前的分区情况</div><div class="line">dd <span class="keyword">if</span>=<span class="string">/dev/zero</span> of=<span class="string">/swap</span> bs=4096 count=1572864   <span class="string">//</span>创建用于交换分区的文件</div><div class="line">mkswap <span class="string">/swap</span>   <span class="string">//</span>设置交换分区文件</div><div class="line">swapon <span class="string">/swap</span>   <span class="string">//</span>启用交换分区文件</div><div class="line"><span class="keyword">echo</span> “LABEL=SWAP-sda <span class="string">/xxx/swap</span> swap swap defaults 0 0” &gt;&gt; <span class="string">/etc/fstab</span>   <span class="string">//</span>若想开机时自启用，则需要修改文件<span class="string">/etc/fstab</span>中的swap行</div></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/sunstady/hexo/blob/master/hexo%E8%A2%ABkilled/1.png?raw=true" alt="1"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://github.com/sunstady/hexo/blob/master/hexo%E8%A2%ABkilled/2.png?raw=true&quot; alt=&quot;2&quot;&gt;&lt;br&gt;如图所示，不管如何提交，都是被killed。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="软件" scheme="http://www.sanstylemc.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
