@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-18T08:41:54.752Z</updated>
+  <updated>2018-04-18T08:49:19.502Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.sanstylemc.cn/2018/04/18/FIRST%E3%80%81FOLLOW%E3%80%81SELECT/"/>
     <id>http://www.sanstylemc.cn/2018/04/18/FIRST、FOLLOW、SELECT/</id>
     <published>2018-04-18T08:23:53.000Z</published>
-    <updated>2018-04-18T08:41:54.752Z</updated>
+    <updated>2018-04-18T08:49:19.502Z</updated>
     
     <content type="html"><![CDATA[<h2 id="LL-1-文法"><a href="#LL-1-文法" class="headerlink" title="LL(1)文法"></a>LL(1)文法</h2><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;遍历所有表达式，取具有相同左部的表达式的select集合，将这些具有相同左部表达式的select集合取交集。<br>&nbsp;&nbsp;&nbsp;&nbsp;只要有一组相同左部表达式交集不为空，则该文法非LL1文法。<br>&nbsp;&nbsp;&nbsp;&nbsp;只有所有相同左部表达式交集都不为空，则为LL1文法。<br><a id="more"></a></p>
@@ -40,9 +40,7 @@
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Follow(B)=&#123;#&#125;</div><div class="line">看B的follow，找所有-&gt;后面有B的，找到了S-&gt;AB，看B后面有字母吗？没有，就加上-&gt;左边的S的follow，所以Follow(B)=Follow(S)</div></pre></td></tr></table></figure>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Follow(<span class="keyword">C</span>)=&#123;#&#125;</div><div class="line">看<span class="keyword">C</span>的follow，找所有-&gt;后面有<span class="keyword">C</span>的，找到了S-&gt;bC，看<span class="keyword">C</span>后面有字母吗？没有，就加上-&gt;左边的S的follow集，所以Follow(<span class="keyword">C</span>)=Follow(S)</div></pre></td></tr></table></figure>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Follow(<span class="keyword">D</span>)=&#123;#&#125;</div><div class="line">看<span class="keyword">D</span>的follow，找所有-&gt;后面有<span class="keyword">D</span>的，找到了B-&gt;aD，<span class="keyword">C</span>-&gt;AD，这两句<span class="keyword">D</span>后面都没有字母，所以加上-&gt;左边的B和<span class="keyword">C</span>的follow，所以Follow(<span class="keyword">D</span>)=Follow(B)∪Flollow(<span class="keyword">C</span>)</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Follow(S)=#∪Follow(D)，Follow(D)=Follow(B)+ Follow(C)，所以Follow(S)=#∪Follow(B)∪Follow(C)，Follow(B)= Follow(S)，Follow(C)= Follow(S)，所以Follow(S)=#，Follow(B)=#，Follow(C)=#，Follow(D)=#，Follow(A)=a,c,#。</p>
-</blockquote>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Follow(S)=&#123;#&#125;∪Follow(<span class="keyword">D</span>)，Follow(<span class="keyword">D</span>)=Follow(B)+ Follow(<span class="keyword">C</span>)，所以Follow(S)=&#123;#&#125;∪Follow(B)∪Follow(<span class="keyword">C</span>)，Follow(B)= Follow(S)，Follow(<span class="keyword">C</span>)= Follow(S)，所以Follow(S)=&#123;#&#125;，Follow(B)=&#123;#&#125;，Follow(<span class="keyword">C</span>)=&#123;#&#125;，Follow(<span class="keyword">D</span>)=&#123;#&#125;，Follow(A)=&#123;a,c,#&#125;。</div></pre></td></tr></table></figure>
 <p>##SELECT<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;AB)</span></span>，AB都能推出ε，所以SELECT(S-&gt;AB)=First(AB)-ε+Follow(S)，所以SELECT(S-&gt;AB)=&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,#&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;bC)</span></span>，bC不能推出ε，所以是First(bC)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(A-&gt;ε)</span>，A能推出ε所以是First<span class="comment">(ε)</span>-ε+Follow<span class="comment">(A)</span>，结果是&#123;a,c,<span class="attr">#&#125;</span></div></pre></td></tr></table></figure>
