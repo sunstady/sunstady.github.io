@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-18T08:24:30.589Z</updated>
+  <updated>2018-04-18T08:41:54.752Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://www.sanstylemc.cn/2018/04/18/FIRST%E3%80%81FOLLOW%E3%80%81SELECT/"/>
     <id>http://www.sanstylemc.cn/2018/04/18/FIRST、FOLLOW、SELECT/</id>
     <published>2018-04-18T08:23:53.000Z</published>
-    <updated>2018-04-18T08:24:30.589Z</updated>
+    <updated>2018-04-18T08:41:54.752Z</updated>
     
     <content type="html"><![CDATA[<h2 id="LL-1-文法"><a href="#LL-1-文法" class="headerlink" title="LL(1)文法"></a>LL(1)文法</h2><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;遍历所有表达式，取具有相同左部的表达式的select集合，将这些具有相同左部表达式的select集合取交集。<br>&nbsp;&nbsp;&nbsp;&nbsp;只要有一组相同左部表达式交集不为空，则该文法非LL1文法。<br>&nbsp;&nbsp;&nbsp;&nbsp;只有所有相同左部表达式交集都不为空，则为LL1文法。<br><a id="more"></a></p>
-<h2 id="FIRST"><a href="#FIRST" class="headerlink" title="FIRST"></a>FIRST</h2><p>S-&gt;AB|bC<br>A-&gt;ε|b<br>B-&gt;ε|aD<br>C-&gt;AD|b<br>D-&gt;aS|c</p>
 </blockquote>
+<h2 id="FIRST"><a href="#FIRST" class="headerlink" title="FIRST"></a>FIRST</h2><p>S-&gt;AB|bC<br>A-&gt;ε|b<br>B-&gt;ε|aD<br>C-&gt;AD|b<br>D-&gt;aS|c</p>
 <figure class="highlight dust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml">FIRST(S)= (FIRST(A)-</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪(FIRST(B)- </span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">∪</span><span class="template-variable">&#123;b&#125;</span><span class="xml">=</span><span class="template-variable">&#123;a,b,ε&#125;</span><span class="xml"></span></div><div class="line"><span class="xml">因为A的first有ε，B的first有ε，S-&gt;AB，所以是(FIRST(A)-</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪(FIRST(B)- </span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)，然后S-&gt;bC，所以再加一个b，就是(FIRST(A)-</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪(FIRST(B)- </span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪</span><span class="template-variable">&#123;b&#125;</span><span class="xml">。</span></div></pre></td></tr></table></figure>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">First</span>(A= &#123;b, ε&#125;</div><div class="line">没什么好解释的</div></pre></td></tr></table></figure>
 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">First(B)=&#123;a</span><span class="string">,</span><span class="comment">ε&#125;</span></div><div class="line"><span class="comment">ε不用解释，就是B</span><span class="literal">-</span>&gt;<span class="comment">ε，所以有它，a就是因为B</span><span class="literal">-</span>&gt;<span class="comment">aD，第一个非终结符是a所以有a，那要不要加上D的first呢，就是a和c，答案是不用，就只要aD里面的a就可以。</span></div></pre></td></tr></table></figure>
@@ -45,8 +45,8 @@
 </blockquote>
 <p>##SELECT<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;AB)</span></span>，AB都能推出ε，所以SELECT(S-&gt;AB)=First(AB)-ε+Follow(S)，所以SELECT(S-&gt;AB)=&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,#&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;bC)</span></span>，bC不能推出ε，所以是First(bC)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(A-&gt;ε)</span></span>，A能推出ε所以是First(ε)-ε+Follow(A)，结果是&#123;<span class="selector-tag">a</span>,c,#&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(A-&gt;b)</span></span>，这里的A是推出ｂ，不是ε所以是first(b)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(A-&gt;ε)</span>，A能推出ε所以是First<span class="comment">(ε)</span>-ε+Follow<span class="comment">(A)</span>，结果是&#123;a,c,<span class="attr">#&#125;</span></div></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(A-&gt;b)</span>，这里的A是推出ｂ，不是ε所以是first<span class="comment">(b)</span>，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(B-&gt;ε)</span>，B能推出ε，所以是First<span class="comment">(ε)</span>-ε+Follow<span class="comment">(B)</span>，结果是&#123;<span class="attr">#&#125;</span></div></pre></td></tr></table></figure>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(B-&gt;aD)</span></span>，这里B不能推出ε，所以是First(aD)，结果是&#123;a&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(C-&gt;AD)</span></span>，这里D不能推出ε，所以算AD不能推出ε，就是First(AD)，结果是&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,c&#125;</div></pre></td></tr></table></figure>
