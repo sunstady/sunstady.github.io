@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-18T08:49:19.502Z</updated>
+  <updated>2018-04-19T01:28:05.773Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>导包错误</title>
+    <link href="http://www.sanstylemc.cn/2018/04/19/%E5%AF%BC%E5%8C%85%E9%94%99%E8%AF%AF/"/>
+    <id>http://www.sanstylemc.cn/2018/04/19/导包错误/</id>
+    <published>2018-04-19T01:27:27.000Z</published>
+    <updated>2018-04-19T01:28:05.773Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">The package javax.servlet is accessible from more than one <span class="class"><span class="keyword">module</span>: &lt;unnamed&gt;, <span class="title">jstl</span>, <span class="title">servlet</span>.<span class="title">api</span></span></div></pre></td></tr></table></figure>
+<p>今天导入包的时候出现这个错误，后来发现是导入位置错误。<br><a id="more"></a><br><img src="https://github.com/sunstady/hexo/blob/master/JavaWeb%E9%94%99%E8%AF%AF/1.jpg?raw=true" alt="1"><br><code>解决方法:</code></p>
+<blockquote>
+<p>1、Remove the external jars from the node “modulepath”.<br>2、Select the node “Classpath” then add the external jars.<br>3、Review that all the jars are under the node “Classpath”.<br><img src="https://github.com/sunstady/hexo/blob/master/JavaWeb%E9%94%99%E8%AF%AF/2.jpg?raw=true" alt="2"></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;The package javax.servlet is accessible from more than one &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt;: &amp;lt;unnamed&amp;gt;, &lt;span class=&quot;title&quot;&gt;jstl&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;servlet&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;api&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;今天导入包的时候出现这个错误，后来发现是导入位置错误。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="失误锦集" scheme="http://www.sanstylemc.cn/tags/%E5%A4%B1%E8%AF%AF%E9%94%A6%E9%9B%86/"/>
+    
+  </entry>
   
   <entry>
     <title>FIRST、FOLLOW、SELECT</title>
@@ -1592,28 +1618,6 @@
     <summary type="html">
     
       &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过&lt;code&gt;新建(New)&lt;/code&gt;、&lt;code&gt;就绪(Runnable)&lt;/code&gt;、&lt;code&gt;运行(Running)&lt;/code&gt;、&lt;code&gt;阻塞(Blocked)&lt;/code&gt;和&lt;code&gt;死亡(Dead)&lt;/code&gt;五种状态。尤其是当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间切换。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sleep()和wait()的区别</title>
-    <link href="http://www.sanstylemc.cn/2018/04/06/sleep-%E5%92%8Cwait-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://www.sanstylemc.cn/2018/04/06/sleep-和wait-的区别/</id>
-    <published>2018-04-06T07:40:00.000Z</published>
-    <updated>2018-04-06T07:40:27.344Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;对于sleep()方法，该方法是属于Thread类中的。而wait()方法是属于Object()类中的。<br>&nbsp;&nbsp;&nbsp;&nbsp;sleep()方法导致了程序暂停执行指定的时间，让出cpu改其他线程，但是他的监控状态依然保持着，当指定的时间到了又会自动恢复运行状态。<br>&nbsp;&nbsp;&nbsp;&nbsp;在调用sleep()方法的过程中，线程不会释放对象锁。<br>&nbsp;&nbsp;&nbsp;&nbsp;而当调用wait()方法的时候，线程会放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象调用notify()方法后本线程才进入对象锁定池准备获取对象锁进入运行状态。<br><a id="more"></a><br>举个例子说明:<br><figure class="highlight d"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> long1_1 &#123;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">		<span class="keyword">new</span> Thread(<span class="keyword">new</span> Thread1()).start();</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			Thread.sleep(<span class="number">5000</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">new</span> Thread(<span class="keyword">new</span> Thread2()).start();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> Thread1 implements Runnable &#123;</div><div class="line">		<span class="keyword">@Override</span></div><div class="line">		<span class="keyword">public</span> <span class="keyword">void</span> run() &#123;</div><div class="line">			<span class="keyword">synchronized</span> (long1_1.<span class="keyword">class</span>) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"enter thread1..."</span>);</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"thread1 is waiting..."</span>);</div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					<span class="comment">// 调用wait()方法，线程会放弃对象锁，进入等待此对象的等待锁定池</span></div><div class="line">					long1_1.<span class="keyword">class</span>.wait();</div><div class="line">				&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"thread1 is going on ...."</span>);</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"thread1 is over!!!"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> Thread2 implements Runnable &#123;</div><div class="line">		<span class="keyword">@Override</span></div><div class="line">		<span class="keyword">public</span> <span class="keyword">void</span> run() &#123;</div><div class="line">			<span class="keyword">synchronized</span> (long1_1.<span class="keyword">class</span>) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"enter thread2...."</span>);</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"thread2 is sleep...."</span>);</div><div class="line">				<span class="comment">// 只有针对此对象调用notify()方法后本线程才进入对象锁定池准备获取对象锁进入运行状态。</span></div><div class="line">				long1_1.<span class="keyword">class</span>.notify();</div><div class="line">				<span class="comment">// ==================</span></div><div class="line">				<span class="comment">// 区别</span></div><div class="line">				<span class="comment">// 如果我们把代码：TestD.class.notify();给注释掉，即TestD.class调用了wait()方法，但是没有调用notify()</span></div><div class="line">				<span class="comment">// 方法，则线程永远处于挂起状态。</span></div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					<span class="comment">// sleep()方法导致了程序暂停执行指定的时间，让出cpu该其他线程，</span></div><div class="line">					<span class="comment">// 但是他的监控状态依然保持者，当指定的时间到了又会自动恢复运行状态。</span></div><div class="line">					<span class="comment">// 在调用sleep()方法的过程中，线程不会释放对象锁。</span></div><div class="line">					Thread.sleep(<span class="number">5000</span>);</div><div class="line">				&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"thread2 is going on...."</span>);</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"thread2 is over!!!"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>运行结果如下:<br><img src="https://github.com/sunstady/hexo/blob/master/sleep%E5%92%8Cwait%E5%8C%BA%E5%88%AB/1.png?raw=true" alt="1"><br>如果注释掉<code>long1_1.class.notify();</code><br>运行结果如下:<br><img src="https://github.com/sunstady/hexo/blob/master/sleep%E5%92%8Cwait%E5%8C%BA%E5%88%AB/2.png?raw=true" alt="2"><br>且程序一直处于挂起状态。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;对于sleep()方法，该方法是属于Thread类中的。而wait()方法是属于Object()类中的。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sleep()方法导致了程序暂停执行指定的时间，让出cpu改其他线程，但是他的监控状态依然保持着，当指定的时间到了又会自动恢复运行状态。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在调用sleep()方法的过程中，线程不会释放对象锁。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;而当调用wait()方法的时候，线程会放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象调用notify()方法后本线程才进入对象锁定池准备获取对象锁进入运行状态。&lt;br&gt;
     
     </summary>
     
