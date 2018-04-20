@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Edraw激活]]></title>
+    <url>%2F2018%2F04%2F21%2FEdraw%E6%BF%80%E6%B4%BB%2F</url>
+    <content type="text"><![CDATA[请在断网的情况下激活，选择手动激活。 用户名:1GUANTAO2008 产品密钥:10711-8621-3000-8217-5433]]></content>
+      <tags>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[导包错误]]></title>
     <url>%2F2018%2F04%2F19%2F%E5%AF%BC%E5%8C%85%E9%94%99%E8%AF%AF%2F</url>
     <content type="text"><![CDATA[1The package javax.servlet is accessible from more than one module: &lt;unnamed&gt;, jstl, servlet.api 今天导入包的时候出现这个错误，后来发现是导入位置错误。解决方法: 1、Remove the external jars from the node “modulepath”.2、Select the node “Classpath” then add the external jars.3、Review that all the jars are under the node “Classpath”.]]></content>
@@ -549,8 +557,8 @@
     <url>%2F2018%2F01%2F15%2FEditPlus%E8%BF%90%E8%A1%8Cpy%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[文本编辑器是EditPlus，运行python时候报出如下错误: SyntaxError: (unicode error) &#39;utf-8&#39; codec can&#39;t decode byte 0xc4 in position 0: invalid continuation byte。非常普通的Hello World，编码格式是utf-8解决方法：用notepad++打开python1_1.py发现存储格式是ANSI。保存的时候默认是保存成ANSI格式。发现问题就好解决啦，保存文件的时候将文件格式换成UTF-8就好了。成功输出！]]></content>
       <tags>
-        <tag>python</tag>
         <tag>软件</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>

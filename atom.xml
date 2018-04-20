@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-04-19T01:28:05.773Z</updated>
+  <updated>2018-04-20T23:24:43.574Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Edraw激活</title>
+    <link href="http://www.sanstylemc.cn/2018/04/21/Edraw%E6%BF%80%E6%B4%BB/"/>
+    <id>http://www.sanstylemc.cn/2018/04/21/Edraw激活/</id>
+    <published>2018-04-20T23:24:19.000Z</published>
+    <updated>2018-04-20T23:24:43.574Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>请在<code>断网</code>的情况下激活，选择<code>手动激活</code>。</p>
+</blockquote>
+<p>用户名:<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GUA<span class="symbol">NTAO2008</span></div></pre></td></tr></table></figure></p>
+<p>产品密钥:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">0711</span><span class="number">-8621</span><span class="number">-3000</span><span class="number">-8217</span><span class="number">-5433</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;请在&lt;code&gt;断网&lt;/code&gt;的情况下激活，选择&lt;code&gt;手动激活&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用户名:&lt;br&gt;&lt;figure class=&quot;highlight gcode&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
+    
+    </summary>
+    
+    
+      <category term="软件" scheme="http://www.sanstylemc.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>导包错误</title>
@@ -1578,51 +1606,6 @@
     
     
       <category term="python" scheme="http://www.sanstylemc.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线程的生命周期</title>
-    <link href="http://www.sanstylemc.cn/2018/04/06/%E7%BA%BF%E7%A8%8B%E5%9C%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>http://www.sanstylemc.cn/2018/04/06/线程地生命周期/</id>
-    <published>2018-04-06T08:22:05.000Z</published>
-    <updated>2018-04-10T12:54:55.563Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过<code>新建(New)</code>、<code>就绪(Runnable)</code>、<code>运行(Running)</code>、<code>阻塞(Blocked)</code>和<code>死亡(Dead)</code>五种状态。尤其是当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间切换。<br><a id="more"></a></p>
-<blockquote>
-<p>1、新建状态: 当程序使用new关键字创建了一个线程之后，该线程就处于新建状态，此时仅由JVM为其分配内存，并初始化其成员变量的值。<br>2、就绪状态: 当线程对象调用了start()方法后，该线程处于就绪状态。Java虚拟机会为其创建方法调用栈和程序计数器，等待调度运行。<br>3、运行状态: 如果处于就绪状态的线程获得了CPU，开始执行run()方法的线程执行体，则该线程处于运行状态。<br>4、阻塞状态: 当处于运行状态的线程失去所占用资源后，便进入阻塞状态。<br>5、死亡状态: 当线程执行完毕或被其它线程杀死，线程就进入死亡状态，这时线程不可能进入就绪状态等待执行。</p>
-</blockquote>
-<h2 id="新建和就绪状态"><a href="#新建和就绪状态" class="headerlink" title="新建和就绪状态"></a>新建和就绪状态</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;当程序使用new关键字创建了一个线程之后，该线程就处于新建状态，此时它和其他的Java对象一样，仅仅由Java虚拟机为其分配内存，并初始化其成员变量的值。此时的线程对象没有表现出任何线程的动态特征，程序也不会执行线程的线程执行体。<br>&nbsp;&nbsp;&nbsp;&nbsp;当线程对象调用了start()方法之后，该线程处于就绪状态。Java虚拟机会为其创建方法调用栈和程序计数器，处于这个状态中的线程并没有开始运行，只是表示该线程可以运行了。至于该线程何时开始运行，取决于JVM里线程调度器的调度。</p>
-<blockquote>
-<p>注意：启动线程使用start()方法，而不是run()方法。永远不要调用线程对象的run()方法。调用start()方法来启动线程，系统会把该run()方法当成线程执行体来处理；但如果直按调用线程对象的run()方法，则run()方法立即就会被执行，而且在run()方法返回之前其他线程无法并发执行。也就是说，系统把线程对象当成一个普通对象，而run()方法也是一个普通方法，而不是线程执行体。需要指出的是，调用了线程的run()方法之后，该线程已经不再处于新建状态，不要再次调用线程对象的start()方法。只能对处于新建状态的线程调用start()方法，否则将引发IllegaIThreadStateExccption异常。</p>
-</blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;调用线程对象的start()方法之后，该线程立即进入就绪状态——就绪状态相当于”等待执行”，但该线程并未真正进入运行状态。如果希望调用子线程的start()方法后子线程立即开始执行，程序可以使用Thread.sleep(1) 来让当前运行的线程（主线程）睡眠1毫秒，1毫秒就够了，因为在这1毫秒内CPU不会空闲，它会去执行另一个处于就绪状态的线程，这样就可以让子线程立即开始执行。</p>
-<h2 id="运行和阻塞状态"><a href="#运行和阻塞状态" class="headerlink" title="运行和阻塞状态"></a>运行和阻塞状态</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;如果处于就绪状态的线程获得了CPU，开始执行run()方法的线程执行体，则该线程处于运行状态，如果计算机只有一个CPU。那么在任何时刻只有一个线程处于运行状态，当然在一个多处理器的机器上，将会有多个线程并行执行；当线程数大于处理器数时，依然会存在多个线程在同一个CPU上轮换的现象。<br>&nbsp;&nbsp;&nbsp;&nbsp;当一个线程开始运行后，它不可能一直处于运行状态（除非它的线程执行体足够短，瞬间就执行结束了）。线程在运行过程中需要被中断，目的是使其他线程获得执行的机会，线程调度的细节取决于底层平台所采用的策略。对于采用抢占式策略的系统而言，系统会给每个可执行的线程一个小时间段来处理任务；当该时间段用完后，系统就会剥夺该线程所占用的资源，让其他线程获得执行的机会。在选择下一个线程时，系统会考虑线程的优先级。<br>&nbsp;&nbsp;&nbsp;&nbsp;所有现代的桌面和服务器操作系统都采用抢占式调度策略，但一些小型设备如手机则可能采用协作式调度策略，在这样的系统中，只有当一个线程调用了它的sleep()或yield()方法后才会放弃所占用的资源——也就是必须由该线程主动放弃所占用的资源。<br>&nbsp;&nbsp;&nbsp;&nbsp;当发生如下情况时，线程将会进入阻塞状态</p>
-<blockquote>
-<p>1、线程调用sleep()方法主动放弃所占用的处理器资源。<br>2、线程调用了一个阻塞式IO方法，在该方法返回之前，该线程被阻塞。<br>3、线程试图获得一个同步监视器，但该同步监视器正被其他线程所持有。<br>4、线程在等待某个通知(notify)<br>5、程序调用了线程的suspend()方法将该线程挂起。但这个方法容易导致死锁，所以应该尽量避免使用该方法。</p>
-</blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;当前正在执行的线程被阻塞之后，其他线程就可以获得执行的机会。被阻塞的线程会在合适的时候重新进入就绪状态，注意是就绪状态而不是运行状态。也就是说，被阻塞线程的阻塞解除后，必须重新等待线程调度器再次调度它。<br>&nbsp;&nbsp;&nbsp;&nbsp;针对上面几种情况，当发生如下特定的情况时可以解除上面的阻塞，让该线程重新进入就绪状态</p>
-<blockquote>
-<p>1、调用sleep()方法的线程经过了指定时间<br>2、线程调用的阻塞式IO方法已经返回<br>3、线程成功地获得了识图取得地同步监视器<br>4、线程正在等待的某个通知时，其他线程发出了一个通知（signal）<br>5、处于挂起状态地线程被调用了resume()恢复方法</p>
-</blockquote>
-<h2 id="线程死亡"><a href="#线程死亡" class="headerlink" title="线程死亡"></a>线程死亡</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;线程会以如下三种方式结束，结束以后就处于死亡状态</p>
-<blockquote>
-<p>1、run()或call()方法执行完成，线程正常结束<br>2、线程抛出一个未捕获地Exception或Error<br>3、直接调用该线程stop()方法来结束该线程–该方法容易导致死锁，通常不推荐使用。</p>
-</blockquote>
-<p>注意: 当主线程结束时，其他线程不受任何影响，并不会随之结束。一旦子线程启动起来后，他就拥有和主线程相同地地位，他不会受主线程地影响。为了测试某个线程是否已经死亡，可以调用线程对象的isAlivc()方法，当线程处于就绪、运行、阻塞了种状态时，该方法将返回true；当线程处于新建、死亡状态时，该方法将返回false。</p>
-<blockquote>
-<p>不要试图对一个已经死亡的线程调用start()方法使它重新启动，死亡就是死亡，该线程将不可再次作为线程执行。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;当线程被创建并启动后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，它要经过&lt;code&gt;新建(New)&lt;/code&gt;、&lt;code&gt;就绪(Runnable)&lt;/code&gt;、&lt;code&gt;运行(Running)&lt;/code&gt;、&lt;code&gt;阻塞(Blocked)&lt;/code&gt;和&lt;code&gt;死亡(Dead)&lt;/code&gt;五种状态。尤其是当线程启动以后，它不可能一直”霸占”着CPU独自运行，所以CPU需要在多条线程之间切换，于是线程状态也会多次在运行、阻塞之间切换。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
     
   </entry>
   
