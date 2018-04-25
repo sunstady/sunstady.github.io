@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[MyBatis配置文件基本结构]]></title>
     <url>%2F2018%2F04%2F25%2FMyBatis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;在使用mybatis框架时，首先导入其对应的jar包，并进行相应的配置，所以得对配置文件的每个参数都得了解。一个完全的mybatis配置文件结构如下:12345678910111213141516171819202122232425&lt;?xml version="1.0" encoding="UTF-8" ?&gt;&lt;!-- xml的版本：1.0 和编码：utf8 --&gt;&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;&lt;configuration&gt; &lt;!-- 配置文件的根元素 --&gt; &lt;properties&gt;&lt;/properties&gt; &lt;!-- 属性：定义配置外在化 --&gt; &lt;settings&gt; &lt;!-- 设置：定义mybatis的一些全局性设置 --&gt; &lt;setting name= "" value= "" /&gt; &lt;!-- 具体的参数名和参数值 --&gt; &lt;/settings&gt; &lt;typeAliases&gt;&lt;/typeAliases&gt; &lt;!-- 类型名称：为一些类定义别名 --&gt; &lt;typeHandlers&gt;&lt;/typeHandlers&gt; &lt;!-- 类型处理器：定义Java类型与数据库中的数据类型之间的转换关系 --&gt; &lt;objectFactory type=""&gt;&lt;/objectFactory&gt; &lt;!-- 对象工厂 --&gt; &lt;plugins&gt; &lt;!-- 插件，mybatis的插件，插件可以修改mybatis的内部运行规则 --&gt; &lt;plugin interceptor=""&gt;&lt;/plugin&gt; &lt;/plugins&gt; &lt;environments default=""&gt; &lt;!-- 环境变量：可以配置多个环境变量，比如使用多数据源时，就需要配置多个环境变量 --&gt; &lt;environment id=""&gt; &lt;transactionManager type=""&gt;&lt;/transactionManager&gt; &lt;!-- 事务管理器 --&gt; &lt;dataSource type=""&gt;&lt;/dataSource&gt; &lt;!-- 数据源 --&gt; &lt;/environment&gt; &lt;/environments&gt; &lt;databaseIdProvider type=""&gt;&lt;/databaseIdProvider&gt; &lt;!-- 数据库厂商标识 --&gt; &lt;mappers&gt;&lt;/mappers&gt; &lt;!-- 映射器: 指定映射文件或者映射类 --&gt;&lt;/configuration&gt;]]></content>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;在使用mybatis框架时，首先导入其对应的jar包，并进行相应的配置，所以得对配置文件的每个参数都得了解。一个完全的mybatis配置文件结构如下:1234567891011121314151617181920212223242526&lt;?xml version="1.0" encoding="UTF-8" ?&gt;&lt;!-- xml的版本：1.0 和编码：utf8 --&gt;&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;&lt;configuration&gt; &lt;!-- 配置文件的根元素 --&gt; &lt;properties&gt;&lt;/properties&gt; &lt;!-- 属性：定义配置外在化 --&gt; &lt;settings&gt; &lt;!-- 设置：定义mybatis的一些全局性设置 --&gt; &lt;setting name= "" value= "" /&gt; &lt;!-- 具体的参数名和参数值 --&gt; &lt;/settings&gt; &lt;typeAliases&gt;&lt;/typeAliases&gt; &lt;!-- 类型名称：为一些类定义别名 --&gt; &lt;typeHandlers&gt;&lt;/typeHandlers&gt; &lt;!-- 类型处理器：定义Java类型与数据库中的数据类型之间的转换关系 --&gt; &lt;objectFactory type=""&gt;&lt;/objectFactory&gt; &lt;!-- 对象工厂 --&gt; &lt;plugins&gt; &lt;!-- 插件，mybatis的插件，插件可以修改mybatis的内部运行规则 --&gt; &lt;plugin interceptor=""&gt;&lt;/plugin&gt; &lt;/plugins&gt; &lt;environments default=""&gt; &lt;!-- 环境变量：可以配置多个环境变量，比如使用多数据源时，就需要配置多个环境变量 --&gt;&lt;!-- default指现在默认使用什么环境，default的值必须是id对应的值 --&gt; &lt;environment id=""&gt; &lt;transactionManager type=""&gt;&lt;/transactionManager&gt; &lt;!-- 事务管理器 --&gt; &lt;dataSource type=""&gt;&lt;/dataSource&gt; &lt;!-- 数据源 --&gt; &lt;/environment&gt; &lt;/environments&gt; &lt;databaseIdProvider type=""&gt;&lt;/databaseIdProvider&gt; &lt;!-- 数据库厂商标识 --&gt; &lt;mappers&gt;&lt;/mappers&gt; &lt;!-- 映射器: 指定映射文件或者映射类 --&gt;&lt;/configuration&gt;]]></content>
       <tags>
         <tag>框架</tag>
       </tags>
@@ -565,8 +565,8 @@
     <url>%2F2018%2F01%2F15%2FEditPlus%E8%BF%90%E8%A1%8Cpy%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[文本编辑器是EditPlus，运行python时候报出如下错误: SyntaxError: (unicode error) &#39;utf-8&#39; codec can&#39;t decode byte 0xc4 in position 0: invalid continuation byte。非常普通的Hello World，编码格式是utf-8解决方法：用notepad++打开python1_1.py发现存储格式是ANSI。保存的时候默认是保存成ANSI格式。发现问题就好解决啦，保存文件的时候将文件格式换成UTF-8就好了。成功输出！]]></content>
       <tags>
-        <tag>软件</tag>
         <tag>python</tag>
+        <tag>软件</tag>
       </tags>
   </entry>
   <entry>
