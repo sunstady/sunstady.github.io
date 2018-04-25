@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MyBatis配置文件基本结构]]></title>
+    <url>%2F2018%2F04%2F25%2FMyBatis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;在使用mybatis框架时，首先导入其对应的jar包，并进行相应的配置，所以得对配置文件的每个参数都得了解。一个完全的mybatis配置文件结构如下:12345678910111213141516171819202122232425&lt;?xml version="1.0" encoding="UTF-8" ?&gt;&lt;!-- xml的版本：1.0 和编码：utf8 --&gt;&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;&lt;configuration&gt; &lt;!-- 配置文件的根元素 --&gt; &lt;properties&gt;&lt;/properties&gt; &lt;!-- 属性：定义配置外在化 --&gt; &lt;settings&gt; &lt;!-- 设置：定义mybatis的一些全局性设置 --&gt; &lt;setting name= "" value= "" /&gt; &lt;!-- 具体的参数名和参数值 --&gt; &lt;/settings&gt; &lt;typeAliases&gt;&lt;/typeAliases&gt; &lt;!-- 类型名称：为一些类定义别名 --&gt; &lt;typeHandlers&gt;&lt;/typeHandlers&gt; &lt;!-- 类型处理器：定义Java类型与数据库中的数据类型之间的转换关系 --&gt; &lt;objectFactory type=""&gt;&lt;/objectFactory&gt; &lt;!-- 对象工厂 --&gt; &lt;plugins&gt; &lt;!-- 插件，mybatis的插件，插件可以修改mybatis的内部运行规则 --&gt; &lt;plugin interceptor=""&gt;&lt;/plugin&gt; &lt;/plugins&gt; &lt;environments default=""&gt; &lt;!-- 环境变量：可以配置多个环境变量，比如使用多数据源时，就需要配置多个环境变量 --&gt; &lt;environment id=""&gt; &lt;transactionManager type=""&gt;&lt;/transactionManager&gt; &lt;!-- 事务管理器 --&gt; &lt;dataSource type=""&gt;&lt;/dataSource&gt; &lt;!-- 数据源 --&gt; &lt;/environment&gt; &lt;/environments&gt; &lt;databaseIdProvider type=""&gt;&lt;/databaseIdProvider&gt; &lt;!-- 数据库厂商标识 --&gt; &lt;mappers&gt;&lt;/mappers&gt; &lt;!-- 映射器: 指定映射文件或者映射类 --&gt;&lt;/configuration&gt;]]></content>
+      <tags>
+        <tag>框架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Edraw激活]]></title>
     <url>%2F2018%2F04%2F21%2FEdraw%E6%BF%80%E6%B4%BB%2F</url>
     <content type="text"><![CDATA[请在断网的情况下激活，选择手动激活。 用户名:1GUANTAO2008 产品密钥:10711-8621-3000-8217-5433]]></content>
