@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="进程狭义定义:进程是正在运行的程序的实例。 组成:进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-06T01:30:43.654Z">
+<meta property="og:updated_time" content="2018-04-26T06:07:51.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进程和线程的区别">
 <meta name="twitter:description" content="进程狭义定义:进程是正在运行的程序的实例。 组成:进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。">
@@ -443,7 +443,7 @@
         <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p><code>狭义定义:</code>进程是正在运行的程序的实例。</p>
 <p><code>组成:</code>进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。<br><a id="more"></a><br><code>结构:</code>结构特征: 进程由程序、数据和进程控制块三部分组成。</p>
 <p><code>调度算法:</code>实时系统中: FIFO(First Input First Output, 先进先出算法)， SJF(Shortest Job First, 最短作业优先算法)，SRTF(Shortest Remaining Time First, 最短剩余时间优先算法)。<br>交互式系统中: RR(Round Robin, 时间片轮转法)，HPF(Highest Priority First, 最高优先级算法)，多级队列，最短进程优先，保证调度，彩票调度，公平分享调度。</p>
-<h2 id="线程的定义及基本概念"><a href="#线程的定义及基本概念" class="headerlink" title="线程的定义及基本概念"></a>线程的定义及基本概念</h2><p>一个标准的线程由线程ID，当前指令指针(PC)，寄存器集合和堆栈组成。另外，线程式进程中的一个实体，是被系统独立调度和分派的基本单位，线程自己不拥有系统资源，只拥有一点儿在运行中不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。</p>
+<h2 id="线程的定义及基本概念"><a href="#线程的定义及基本概念" class="headerlink" title="线程的定义及基本概念"></a>线程的定义及基本概念</h2><p>一个标准的线程由线程ID，当前指令指针(PC)，寄存器集合和堆栈组成。另外，线程是进程中的一个实体，是被系统独立调度和分派的基本单位，线程自己不拥有系统资源，只拥有一点儿在运行中不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。</p>
 <p><code>线程之间的关系:</code>一个线程可以创建和撤销另一个线程，同一进程中的多个线程之间可以并发执行。由于线程之间的相互制约，致使线程在运行中呈现出间断性。线程也有就绪、阻塞和运行三种基本状态。</p>
 <p><code>特点:</code> </p>
 <ul>
