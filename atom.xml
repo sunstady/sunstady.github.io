@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-05-05T00:19:16.793Z</updated>
+  <updated>2018-05-05T01:44:52.115Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将jdk9版本写的项目转换成jdk1.8</title>
+    <link href="http://www.sanstylemc.cn/2018/05/05/%E5%B0%86jdk9%E7%89%88%E6%9C%AC%E5%86%99%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BD%AC%E6%8D%A2%E6%88%90jdk1-8/"/>
+    <id>http://www.sanstylemc.cn/2018/05/05/将jdk9版本写的项目转换成jdk1-8/</id>
+    <published>2018-05-05T01:43:58.000Z</published>
+    <updated>2018-05-05T01:44:52.115Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;将jdk9版本写的项目转换成jdk1.8:<br><code>右键项目名</code>–&gt;<code>Properties</code>–&gt;<code>Project Facets</code>–&gt;<code>Java</code><br>选择右边的1.8就OK了。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;将jdk1.8设为默认:<br><code>Window</code>–&gt;<code>Preferences</code>–&gt;<code>Java</code>–&gt;<code>Installed JREs</code>–&gt;<code>add选择需要添加的jdk1.8版本位置</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将jdk9版本写的项目转换成jdk1.8:&lt;br&gt;&lt;code&gt;右键项目名&lt;/code&gt;–&amp;gt;&lt;code&gt;Properties&lt;/code&gt;–&amp;gt;&lt;code&gt;Project Facets&lt;/code&gt;–&amp;gt;&lt;code
+    
+    </summary>
+    
+    
+      <category term="Skill" scheme="http://www.sanstylemc.cn/tags/Skill/"/>
+    
+  </entry>
   
   <entry>
     <title>拦截器</title>
@@ -224,8 +246,8 @@
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Follow(S)=&#123;#&#125;∪Follow(<span class="keyword">D</span>)，Follow(<span class="keyword">D</span>)=Follow(B)+ Follow(<span class="keyword">C</span>)，所以Follow(S)=&#123;#&#125;∪Follow(B)∪Follow(<span class="keyword">C</span>)，Follow(B)= Follow(S)，Follow(<span class="keyword">C</span>)= Follow(S)，所以Follow(S)=&#123;#&#125;，Follow(B)=&#123;#&#125;，Follow(<span class="keyword">C</span>)=&#123;#&#125;，Follow(<span class="keyword">D</span>)=&#123;#&#125;，Follow(A)=&#123;a,c,#&#125;。</div></pre></td></tr></table></figure>
 <p>##SELECT<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;AB)</span></span>，AB都能推出ε，所以SELECT(S-&gt;AB)=First(AB)-ε+Follow(S)，所以SELECT(S-&gt;AB)=&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,#&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;bC)</span></span>，bC不能推出ε，所以是First(bC)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(A-&gt;ε)</span>，A能推出ε所以是First<span class="comment">(ε)</span>-ε+Follow<span class="comment">(A)</span>，结果是&#123;a,c,<span class="attr">#&#125;</span></div></pre></td></tr></table></figure>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(A-&gt;b)</span>，这里的A是推出ｂ，不是ε所以是first<span class="comment">(b)</span>，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(A-&gt;ε)</span></span>，A能推出ε所以是First(ε)-ε+Follow(A)，结果是&#123;<span class="selector-tag">a</span>,c,#&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(A-&gt;b)</span></span>，这里的A是推出ｂ，不是ε所以是first(b)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(B-&gt;ε)</span>，B能推出ε，所以是First<span class="comment">(ε)</span>-ε+Follow<span class="comment">(B)</span>，结果是&#123;<span class="attr">#&#125;</span></div></pre></td></tr></table></figure>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(B-&gt;aD)</span></span>，这里B不能推出ε，所以是First(aD)，结果是&#123;a&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(C-&gt;AD)</span></span>，这里D不能推出ε，所以算AD不能推出ε，就是First(AD)，结果是&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,c&#125;</div></pre></td></tr></table></figure>
@@ -1634,38 +1656,6 @@
     
     
       <category term="正则" scheme="http://www.sanstylemc.cn/tags/%E6%AD%A3%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下SCP指令的使用</title>
-    <link href="http://www.sanstylemc.cn/2018/04/07/Linux%E4%B8%8BSCP%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://www.sanstylemc.cn/2018/04/07/Linux下SCP指令的使用/</id>
-    <published>2018-04-07T03:19:34.000Z</published>
-    <updated>2018-04-07T03:20:01.638Z</updated>
-    
-    <content type="html"><![CDATA[<p>SCP，即Secure copy的简写。通常在Linux下执行远程拷贝文件使用，他和cp指令类似，只不过cp是本机使用，而SCP则是跨机器使用。SCP传输是基于SSH的加密传输，也就是说知道SSH的账密就可以上下载文件了，因此比较安全。<br><a id="more"></a><br>SCP常用实例(在Linux的centos环境下为例，从服务器上下载一个文件到本地)<br>1、从远程服务器下载文件到本地服务器。</p>
-<blockquote>
-<p>scp 用户名@IP地址:/home/1.txt ./</p>
-</blockquote>
-<p>2、Linux下，通过指定端口从远程服务器下载文件到本地。</p>
-<blockquote>
-<p>scp -oPort=端口号 用户名@IP地址:/opt/ftp-0.17054.el6.x86_64.rpm ./</p>
-</blockquote>
-<p>3、Linux下，通过指定端口将本地文件，上传到远程服务器指定目录下。</p>
-<blockquote>
-<p>scp -oPort=端口号 -r ./1.txt 用户名@IP地址:/opt/</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;SCP，即Secure copy的简写。通常在Linux下执行远程拷贝文件使用，他和cp指令类似，只不过cp是本机使用，而SCP则是跨机器使用。SCP传输是基于SSH的加密传输，也就是说知道SSH的账密就可以上下载文件了，因此比较安全。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://www.sanstylemc.cn/tags/Linux/"/>
     
   </entry>
   
