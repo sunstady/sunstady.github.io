@@ -1179,7 +1179,7 @@
 
       
         
-          <h2 id="Java多态概述"><a href="#Java多态概述" class="headerlink" title="Java多态概述"></a>Java多态概述</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。<br>
+          <h2 id="Java多态概述"><a href="#Java多态概述" class="headerlink" title="Java多态概述"></a>Java多态概述</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。<br>&nbsp;&nbsp;&nbsp;&nbsp;多态分为<code>操作符的多态</code>和<code>类的多态</code>。<code>操作符的多态</code>：<code>+</code>可以作为算术运算，也可作为字符串连接。<code>类的多态</code>：父类引用指向子类对象。要实现类的多态，需要如下条件：<code>父类(接口)引用指向子类对象</code>和<code>调用的方法有重写</code>。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/03/Java多态的实现原理/#more" rel="contents">
