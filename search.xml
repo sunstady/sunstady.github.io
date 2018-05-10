@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[抽象类和接口的区别]]></title>
+    <url>%2F2018%2F05%2F10%2F%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[区别一： 子类只能继承一个抽象类，不能继承多个 子类可以实现多个接口 区别二： 抽象类可以定义public、protected、package、private。静态、非静态final、非final属性 但是接口中声明的属性，只能是public、静态、final 抽象类和接口都可以有实体方法。接口中的实体方法，叫做默认方法。12345678910public interface AP &#123; public static final int resistPhysic = 100; //resistMagic即便没有显式的声明为 public static final //但依然默认为public static final int resistMagic = 0; public void magicAttack();&#125;]]></content>
+      <tags>
+        <tag>Skill</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[将jdk9版本写的项目转换成jdk1.8]]></title>
     <url>%2F2018%2F05%2F05%2F%E5%B0%86jdk9%E7%89%88%E6%9C%AC%E5%86%99%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BD%AC%E6%8D%A2%E6%88%90jdk1-8%2F</url>
     <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;将jdk9版本写的项目转换成jdk1.8:右键项目名–&gt;Properties–&gt;Project Facets–&gt;Java选择右边的1.8就OK了。 &nbsp;&nbsp;&nbsp;&nbsp;将jdk1.8设为默认:Window–&gt;Preferences–&gt;Java–&gt;Installed JREs–&gt;add选择需要添加的jdk1.8版本位置]]></content>
