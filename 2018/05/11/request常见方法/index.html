@@ -87,7 +87,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="ssm," />
 
 
 
@@ -105,18 +105,22 @@
 
 
 
-<meta name="description" content="进程狭义定义:进程是正在运行的程序的实例。 组成:进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。">
-<meta name="keywords" content="Java">
+<meta name="description" content="request常见方法request.getRequestURL(): 浏览器发出请求时的完整URL，包括协议 主机名 端口(如果有)” +request.getRequestURI(): 浏览器发出请求的资源名部分，去掉了协议和主机名” +request.getQueryString(): 请求行中的参数部分，只能显示以get方式发出的参数，post方式的看不到request.getRemote">
+<meta name="keywords" content="ssm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="进程和线程的区别">
-<meta property="og:url" content="http://www.sanstylemc.cn/2018/04/06/进程和线程的区别/index.html">
+<meta property="og:title" content="request常见方法">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/05/11/request常见方法/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="进程狭义定义:进程是正在运行的程序的实例。 组成:进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。">
+<meta property="og:description" content="request常见方法request.getRequestURL(): 浏览器发出请求时的完整URL，包括协议 主机名 端口(如果有)” +request.getRequestURI(): 浏览器发出请求的资源名部分，去掉了协议和主机名” +request.getQueryString(): 请求行中的参数部分，只能显示以get方式发出的参数，post方式的看不到request.getRemote">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-26T06:07:51.190Z">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/request%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/request%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/request%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/3.jpg?raw=true">
+<meta property="og:updated_time" content="2018-05-11T08:54:17.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="进程和线程的区别">
-<meta name="twitter:description" content="进程狭义定义:进程是正在运行的程序的实例。 组成:进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。">
+<meta name="twitter:title" content="request常见方法">
+<meta name="twitter:description" content="request常见方法request.getRequestURL(): 浏览器发出请求时的完整URL，包括协议 主机名 端口(如果有)” +request.getRequestURI(): 浏览器发出请求的资源名部分，去掉了协议和主机名” +request.getQueryString(): 请求行中的参数部分，只能显示以get方式发出的参数，post方式的看不到request.getRemote">
+<meta name="twitter:image" content="https://github.com/sunstady/hexo/blob/master/request%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/1.jpg?raw=true">
 
 
 
@@ -146,7 +150,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2018/04/06/进程和线程的区别/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/05/11/request常见方法/"/>
 
 
 
@@ -167,7 +171,7 @@
 })();
 </script>
 
-  <title>进程和线程的区别 | Sanstyle</title>
+  <title>request常见方法 | Sanstyle</title>
   
 
 
@@ -351,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/04/06/进程和线程的区别/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/05/11/request常见方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -368,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">进程和线程的区别</h2>
+          <h2 class="post-title" itemprop="name headline">request常见方法</h2>
         
 
         <div class="post-meta">
@@ -380,8 +384,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T09:30:09+08:00">
-                2018-04-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T16:53:47+08:00">
+                2018-05-11
               </time>
             
 
@@ -399,9 +403,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/06/进程和线程的区别/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/11/request常见方法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/06/进程和线程的区别/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/11/request常见方法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,7 +413,7 @@
 
           
           
-             <span id="/2018/04/06/进程和线程的区别/" class="leancloud_visitors" data-flag-title="进程和线程的区别">
+             <span id="/2018/05/11/request常见方法/" class="leancloud_visitors" data-flag-title="request常见方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,26 +444,13 @@
       
 
       
-        <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p><code>狭义定义:</code>进程是正在运行的程序的实例。</p>
-<p><code>组成:</code>进程是一个实体。每一个进程都有它自己的地址空间。一般情况下，包括文本区域(text region)、数据区域(data region)和堆栈(stack region)。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。<br><a id="more"></a><br><code>结构:</code>结构特征: 进程由程序、数据和进程控制块三部分组成。</p>
-<p><code>调度算法:</code>实时系统中: FIFO(First Input First Output, 先进先出算法)， SJF(Shortest Job First, 最短作业优先算法)，SRTF(Shortest Remaining Time First, 最短剩余时间优先算法)。<br>交互式系统中: RR(Round Robin, 时间片轮转法)，HPF(Highest Priority First, 最高优先级算法)，多级队列，最短进程优先，保证调度，彩票调度，公平分享调度。</p>
-<h2 id="线程的定义及基本概念"><a href="#线程的定义及基本概念" class="headerlink" title="线程的定义及基本概念"></a>线程的定义及基本概念</h2><p>一个标准的线程由线程ID，当前指令指针(PC)，寄存器集合和堆栈组成。另外，线程是进程中的一个实体，是被系统独立调度和分派的基本单位，线程自己不拥有系统资源，只拥有一点儿在运行中不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。</p>
-<p><code>线程之间的关系:</code>一个线程可以创建和撤销另一个线程，同一进程中的多个线程之间可以并发执行。由于线程之间的相互制约，致使线程在运行中呈现出间断性。线程也有就绪、阻塞和运行三种基本状态。</p>
-<p><code>特点:</code> </p>
-<ul>
-<li>轻型实体(线程的实体包括程序、数据和TCB。TCB用于指示被执行指令序列的程序计数器、保留局部变量、少数状态参数和返回地址等的一组寄存器和堆栈。)</li>
-<li>独立调度和分派的基本单位</li>
-<li>可并发执行</li>
-<li>共享进程资源(所有线程都具有相同的地址空间(进程的地址空间)，这意味着，线程可以访问该地址空间的每一个虚地址；此外，还可以访问进程所拥有的已打开文件、定时器、信号量机构等。由于同一个进程内的线程共享内存和文件，所以线程之间互相通信不必调用内核。)</li>
-</ul>
-<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h2><blockquote>
-<p>1、线程是处理器调度的基本单位，但进程不是。<br>2、二者均可并发执行。<br>3、进程是资源的分配和调度的一个独立单元，而线程是CPU调度的基本单元<br>4、同一个进程中可以包括多个线程，并且线程共享整个进程的资源（寄存器、堆栈、上下文），一个进行至少包括一个线程。<br>5、进程的创建调用fork或者vfork，而线程的创建调用pthread_create，进程结束后它拥有的所有线程都将销毁，而线程的结束不会影响同个进程中的其他线程的结束<br>6、线程是轻两级的进程，它的创建和销毁所需要的时间比进程小很多，所有操作系统中的执行功能都是创建线程去完成的<br>7、线程中执行时一般都要进行同步和互斥，因为他们共享同一进程的所有资源<br>8、线程有自己的私有属性TCB，线程id，寄存器、硬件上下文，而进程也有自己的私有属性进程控制块PCB，这些私有属性是不被共享的，用来标示一个进程或一个线程的标志</p>
-</blockquote>
-<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><ul>
-<li>Mutex(互斥锁): 用来锁住公用的内存，同时只有一个线程访问。</li>
-<li>这时的解决方法，就是在门口挂n把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做”信号量”（Semaphore），用来保证多个线程不会互相冲突。<br>不难看出，mutex是semaphore的一种特殊情况（n=1时）。也就是说，完全可以用后者替代前者。但是，因为mutex较为简单，且效率高，所以在必须保证资源独占的情况下，还是采用这种设计。</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>进程是资源分配的基本单位，线程是调度的基本单位。进程包含线程，线程共用进程的资源。</p>
+        <h2 id="request常见方法"><a href="#request常见方法" class="headerlink" title="request常见方法"></a>request常见方法</h2><p><code>request.getRequestURL()</code>: 浏览器发出请求时的完整URL，包括协议 主机名 端口(如果有)” +<br><code>request.getRequestURI()</code>: 浏览器发出请求的资源名部分，去掉了协议和主机名” +<br><code>request.getQueryString()</code>: 请求行中的参数部分，只能显示以get方式发出的参数，post方式的看不到<br><code>request.getRemoteAddr()</code>: 浏览器所处于的客户机的IP地址<br><code>request.getRemoteHost()</code>: 浏览器所处于的客户机的主机名<br><code>request.getRemotePort()</code>: 浏览器所处于的客户机使用的网络端口<br><code>request.getLocalAddr()</code>: 服务器的IP地址<br><code>request.getLocalName()</code>: 服务器的主机名<br><code>request.getMethod()</code>: 得到客户机请求方式一般是GET或者POST<br><a id="more"></a><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"> </div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginServlet</span> <span class="title">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line"> </div><div class="line">    protected void service(<span class="type">HttpServletRequest</span> request, <span class="type">HttpServletResponse</span> response)</div><div class="line">            <span class="keyword">throws</span> <span class="type">ServletException</span>, <span class="type">IOException</span> &#123;</div><div class="line">        <span class="type">String</span> name = request.getParameter(<span class="string">"name"</span>);</div><div class="line">        <span class="type">String</span> password = request.getParameter(<span class="string">"password"</span>);</div><div class="line"> </div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"浏览器发出请求时的完整URL，包括协议 主机名 端口(如果有): "</span> + request.getRequestURL());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"浏览器发出请求的资源名部分，去掉了协议和主机名: "</span> + request.getRequestURI());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"请求行中的参数部分: "</span> + request.getQueryString());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"浏览器所处于的客户机的IP地址: "</span> + request.getRemoteAddr());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"浏览器所处于的客户机的主机名: "</span> + request.getRemoteHost());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"浏览器所处于的客户机使用的网络端口: "</span> + request.getRemotePort());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"服务器的IP地址: "</span> + request.getLocalAddr());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"服务器的主机名: "</span> + request.getLocalName());</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"得到客户机请求方式: "</span> + request.getMethod());</div><div class="line"> </div><div class="line">        <span class="type">String</span> html = null;</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> (<span class="string">"admin"</span>.equals(name) &amp;&amp; <span class="string">"123"</span>.equals(password))</div><div class="line">            html = <span class="string">"&lt;div style='color:green'&gt;登录成功&lt;/div&gt;"</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            html = <span class="string">"&lt;div style='color:red'&gt;登录失败&lt;/div&gt;"</span>;</div><div class="line"> </div><div class="line">        response.setContentType(<span class="string">"text/html; charset=UTF-8"</span>);</div><div class="line">        <span class="type">PrintWriter</span> pw = response.getWriter();</div><div class="line">        pw.<span class="built_in">println</span>(html);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/sunstady/hexo/blob/master/request%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/1.jpg?raw=true" alt="1"></p>
+<h2 id="获取参数"><a href="#获取参数" class="headerlink" title="获取参数"></a>获取参数</h2><p><code>request.getParameter()</code>：是常见的方法，用于获取单值的参数<br><code>request.getParameterValues()</code>：用于获取具有多值的参数，比如注册的时候提交的爱好，可以是多选的。<br><code>request.getParameterMap()</code>：用于遍历所有的参数，并返回Map类型。<br>本例准备了一个注册的例子：<br>包括一个注册页面register.html<br>服务端的RegisterServlet<br>分别演示了获取单值参数，多值参数以及遍历所有的参数。<br><img src="https://github.com/sunstady/hexo/blob/master/request%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/2.jpg?raw=true" alt="2"><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">register.html</div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"> </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></div><div class="line"> </div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"register"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></div><div class="line">    账号 ： <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    爱好 ： LOL<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobits"</span> <span class="attr">value</span>=<span class="string">"lol"</span>&gt;</span></div><div class="line">        DOTA<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobits"</span> <span class="attr">value</span>=<span class="string">"dota"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">       </div><div class="line">         <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"注册"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="type">RegisterServlet</span>.java</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.util.Arrays;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"><span class="keyword">import</span> java.util.Set;</div><div class="line"> </div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegisterServlet</span> <span class="title">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line"> </div><div class="line">    protected void service(<span class="type">HttpServletRequest</span> request, <span class="type">HttpServletResponse</span> response)</div><div class="line">            <span class="keyword">throws</span> <span class="type">ServletException</span>, <span class="type">IOException</span> &#123;</div><div class="line"> </div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"获取单值参数name:"</span> + request.getParameter(<span class="string">"name"</span>));</div><div class="line"> </div><div class="line">        <span class="type">String</span>[] hobits = request.getParameterValues(<span class="string">"hobits"</span>);</div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"获取具有多值的参数hobits: "</span> + <span class="type">Arrays</span>.asList(hobits));</div><div class="line"> </div><div class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"通过 getParameterMap 遍历所有的参数： "</span>);</div><div class="line">        <span class="type">Map</span>&lt;<span class="type">String</span>, <span class="type">String</span>[]&gt; parameters = request.getParameterMap();</div><div class="line"> </div><div class="line">        <span class="type">Set</span>&lt;<span class="type">String</span>&gt; paramNames = parameters.keySet();</div><div class="line">        <span class="keyword">for</span> (<span class="type">String</span> param : paramNames) &#123;</div><div class="line">            <span class="type">String</span>[] value = parameters.<span class="keyword">get</span>(param);</div><div class="line">            <span class="type">System</span>.out.<span class="built_in">println</span>(param + <span class="string">":"</span> + <span class="type">Arrays</span>.asList(value));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">web.xml</div><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">web-app</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>10<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">     </div><div class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>LoginServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>LoginServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>LoginServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/login<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span>   </div><div class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>RegisterServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>RegisterServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>RegisterServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/register<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span>   </div><div class="line"> </div><div class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="获取头信息"><a href="#获取头信息" class="headerlink" title="获取头信息"></a>获取头信息</h2><p><code>request.getHeader()</code>获取浏览器传递过来的头信息。比如getHeader(“user-agent”)可以获取 浏览器的基本资料，这样就能判断是firefox、IE、chrome或者是safari浏览器 。<br><code>request.getHeaderNames()</code>获取 浏览器所有的头信息名称，根据头信息名称就能遍历出所有的头信息。<br>在本例，修改HelloServlet，使其获取头信息。<br>访问HelloServlet获取如下头信息：<br><code>host</code>: 主机地址<br><code>user-agent</code>: 浏览器基本资料<br><code>accept</code>: 表示浏览器接受的数据类型<br><code>accept-language</code>: 表示浏览器接受的语言<br><code>accept-encoding</code>: 表示浏览器接受的压缩方式，是压缩方式，并非编码<br><code>connection</code>: 是否保持连接<br><code>cache-control</code>:缓存时限<br><img src="https://github.com/sunstady/hexo/blob/master/request%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95/3.jpg?raw=true" alt="3"><br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.io.IOException;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.util.Date;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.util.Enumeration;</span></div><div class="line"> </div><div class="line"><span class="meta"><span class="meta-keyword">import</span> javax.servlet.ServletConfig;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> javax.servlet.http.HttpServlet;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> javax.servlet.http.HttpServletRequest;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> javax.servlet.http.HttpServletResponse;</span></div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span></span>&#123;</div><div class="line">     </div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> init(ServletConfig config)&#123;</div><div class="line">        System.out.println(<span class="string">"init of Hello Servlet"</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> doGet(HttpServletRequest request, HttpServletResponse response)&#123;</div><div class="line">     </div><div class="line">        Enumeration&lt;String&gt; headerNames= request.getHeaderNames();</div><div class="line">        <span class="keyword">while</span>(headerNames.hasMoreElements())&#123;</div><div class="line">            String header = headerNames.nextElement();</div><div class="line">            String value = request.getHeader(header);</div><div class="line">            System.out.printf(<span class="string">"%s\t%s%n"</span>,header,value);</div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            response.getWriter().println(<span class="string">"&lt;h1&gt;Hello Servlet!&lt;/h1&gt;"</span>);</div><div class="line">            response.getWriter().println(<span class="keyword">new</span> Date().toLocaleString());</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            <span class="comment">// TODO Auto-generated catch block</span></div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="服务器传参"><a href="#服务器传参" class="headerlink" title="服务器传参"></a>服务器传参</h2><p><code>setAttribute</code>和<code>getAttribute</code>可以用来在进行服务端跳转的时候，在不同的Servlet之间进行数据共享。</p>
 
       
     </div>
@@ -508,7 +499,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/ssm/" rel="tag"># ssm</a>
           
         </div>
       
@@ -521,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/05/jQuery技巧/" rel="next" title="jQuery技巧">
-                <i class="fa fa-chevron-left"></i> jQuery技巧
+              <a href="/2018/05/11/跳转/" rel="next" title="跳转">
+                <i class="fa fa-chevron-left"></i> 跳转
               </a>
             
           </div>
@@ -530,10 +521,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/06/hexo提交文章被killed/" rel="prev" title="hexo提交文章被killed">
-                hexo提交文章被killed <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -709,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的定义及基本概念"><span class="nav-number">2.</span> <span class="nav-text">线程的定义及基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程和线程的区别"><span class="nav-number">3.</span> <span class="nav-text">进程和线程的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程同步"><span class="nav-number">4.</span> <span class="nav-text">线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#request常见方法"><span class="nav-number">1.</span> <span class="nav-text">request常见方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取参数"><span class="nav-number">2.</span> <span class="nav-text">获取参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取头信息"><span class="nav-number">3.</span> <span class="nav-text">获取头信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器传参"><span class="nav-number">4.</span> <span class="nav-text">服务器传参</span></a></li></ol></div>
             
 
 
@@ -898,9 +885,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2018/04/06/进程和线程的区别/';
-          this.page.identifier = '2018/04/06/进程和线程的区别/';
-          this.page.title = '进程和线程的区别';
+          this.page.url = 'http://www.sanstylemc.cn/2018/05/11/request常见方法/';
+          this.page.identifier = '2018/05/11/request常见方法/';
+          this.page.title = 'request常见方法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
