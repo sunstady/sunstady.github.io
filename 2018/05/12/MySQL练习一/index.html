@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="baidu-site-verification" content="cXQEZqaI9F" />
+<meta name="google-site-verification" content="NY8peQ32MbxOmV571OfSDBBBIr8cxSpCo5-V8X9T_S4" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MySQL," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sanstyle" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="查找最晚入职员工的所有信息12345678CREATE TABLE employees ( emp_no int(11) NOT NULL, birth_date date NOT NULL, first_name varchar(14) NOT NULL, last_name varchar(16) NOT NULL, gender char(1) NOT NULL, hire_date dat">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL练习一">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/05/12/MySQL练习一/index.html">
+<meta property="og:site_name" content="Sanstyle">
+<meta property="og:description" content="查找最晚入职员工的所有信息12345678CREATE TABLE employees ( emp_no int(11) NOT NULL, birth_date date NOT NULL, first_name varchar(14) NOT NULL, last_name varchar(16) NOT NULL, gender char(1) NOT NULL, hire_date dat">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-12T14:15:39.485Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL练习一">
+<meta name="twitter:description" content="查找最晚入职员工的所有信息12345678CREATE TABLE employees ( emp_no int(11) NOT NULL, birth_date date NOT NULL, first_name varchar(14) NOT NULL, last_name varchar(16) NOT NULL, gender char(1) NOT NULL, hire_date dat">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/05/12/MySQL练习一/"/>
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title>MySQL练习一 | Sanstyle</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?759661ba6404a2dc2692ec1dabecb1d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/sunstady"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sanstyle</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">功有所不全 才有所不任 力有所不足</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+     
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/05/12/MySQL练习一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">MySQL练习一</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T22:14:59+08:00">
+                2018-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/12/MySQL练习一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/12/MySQL练习一/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/12/MySQL练习一/" class="leancloud_visitors" data-flag-title="MySQL练习一">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="查找最晚入职员工的所有信息"><a href="#查找最晚入职员工的所有信息" class="headerlink" title="查找最晚入职员工的所有信息"></a>查找最晚入职员工的所有信息</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employees ( </div><div class="line">emp_no <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">birth_date <span class="built_in">date</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">first_name <span class="built_in">varchar</span>(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">last_name <span class="built_in">varchar</span>(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">gender <span class="built_in">char</span>(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">hire_date <span class="built_in">date</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>, </div><div class="line">PRIMARY <span class="keyword">KEY</span> (emp_no));</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">birth_date</th>
+<th style="text-align:center">first_name</th>
+<th style="text-align:center">last_name</th>
+<th style="text-align:center">gender</th>
+<th style="text-align:center">hire_date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10008</td>
+<td style="text-align:center">1958-02-19</td>
+<td style="text-align:center">Saniya</td>
+<td style="text-align:center">Kalloufi</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">1994-09-15</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> employees <span class="keyword">order</span> <span class="keyword">by</span> hire_date <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">1</span></div></pre></td></tr></table></figure>
+<h2 id="查找入职员工时间排名倒数第三的员工所有信息"><a href="#查找入职员工时间排名倒数第三的员工所有信息" class="headerlink" title="查找入职员工时间排名倒数第三的员工所有信息"></a>查找入职员工时间排名倒数第三的员工所有信息</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">birth_date</th>
+<th style="text-align:center">first_name</th>
+<th style="text-align:center">last_name</th>
+<th style="text-align:center">gender</th>
+<th style="text-align:center">hire_date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10005</td>
+<td style="text-align:center">1955-01-21</td>
+<td style="text-align:center">Kyoichi</td>
+<td style="text-align:center">Maliniak</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">1989-09-12</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-1"><a href="#解答-1" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> employees <span class="keyword">order</span> <span class="keyword">by</span> hire_date <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">2</span>, <span class="number">1</span></div></pre></td></tr></table></figure>
+<h2 id="查找各个部门当前-to-date-’9999-01-01’-领导当前薪水详情以及其对应部门编号dept-no"><a href="#查找各个部门当前-to-date-’9999-01-01’-领导当前薪水详情以及其对应部门编号dept-no" class="headerlink" title="查找各个部门当前(to_date=’9999-01-01’)领导当前薪水详情以及其对应部门编号dept_no"></a>查找各个部门当前(to_date=’9999-01-01’)领导当前薪水详情以及其对应部门编号dept_no</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_manager`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-2"><a href="#输入描述-2" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-2"><a href="#输出描述-2" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">salary</th>
+<th style="text-align:center">from_date</th>
+<th style="text-align:center">to_date</th>
+<th style="text-align:center">dept_no</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10002</td>
+<td style="text-align:center">72527</td>
+<td style="text-align:center">2001-08-02</td>
+<td style="text-align:center">9999-01-01</td>
+<td style="text-align:center">d001</td>
+</tr>
+<tr>
+<td style="text-align:center">10004</td>
+<td style="text-align:center">74057</td>
+<td style="text-align:center">2001-11-27</td>
+<td style="text-align:center">9999-01-01</td>
+<td style="text-align:center">d004</td>
+</tr>
+<tr>
+<td style="text-align:center">10005</td>
+<td style="text-align:center">94692</td>
+<td style="text-align:center">2001-09-09</td>
+<td style="text-align:center">9999-01-01</td>
+<td style="text-align:center">d003</td>
+</tr>
+<tr>
+<td style="text-align:center">10006</td>
+<td style="text-align:center">43311</td>
+<td style="text-align:center">2001-08-02</td>
+<td style="text-align:center">9999-01-01</td>
+<td style="text-align:center">d002</td>
+</tr>
+<tr>
+<td style="text-align:center">10010</td>
+<td style="text-align:center">94409</td>
+<td style="text-align:center">2001-11-23</td>
+<td style="text-align:center">9999-01-01</td>
+<td style="text-align:center">d006</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-2"><a href="#解答-2" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.*, b.dept_no <span class="keyword">from</span> salaries a <span class="keyword">left</span> <span class="keyword">join</span> dept_manager b <span class="keyword">on</span> a.emp_no= b.emp_no <span class="keyword">where</span> a.to_date= <span class="string">'9999-01-01'</span> <span class="keyword">and</span> b.to_date= <span class="string">'9999-01-01'</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>注解:<br><code>INNER JOIN</code> 两边表同时有对应的数据，即任何一边缺失数据就不显示。<br><code>LEFT JOIN</code> 会读取左边数据表的全部数据，即便右边表无对应数据。<br><code>RIGHT JOIN</code> 会读取右边数据表的全部数据，即便左边表无对应数据。</p>
+</blockquote>
+<h2 id="查找所有已经分配部门的员工的last-name和first-name"><a href="#查找所有已经分配部门的员工的last-name和first-name" class="headerlink" title="查找所有已经分配部门的员工的last_name和first_name"></a>查找所有已经分配部门的员工的last_name和first_name</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-3"><a href="#输入描述-3" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-3"><a href="#输出描述-3" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">last_name</th>
+<th style="text-align:center">first_name</th>
+<th style="text-align:center">dept_no</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Facello</td>
+<td style="text-align:center">Georgi</td>
+<td style="text-align:center">d001</td>
+</tr>
+<tr>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+</tr>
+<tr>
+<td style="text-align:center">Piveteau</td>
+<td style="text-align:center">Duangkaew</td>
+<td style="text-align:center">d006</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-3"><a href="#解答-3" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select <span class="selector-tag">a</span><span class="selector-class">.last_name</span>, <span class="selector-tag">a</span><span class="selector-class">.first_name</span>, <span class="selector-tag">b</span><span class="selector-class">.dept_no</span> from employees <span class="selector-tag">a</span>, dept_emp <span class="selector-tag">b</span> where <span class="selector-tag">a</span>.emp_no= <span class="selector-tag">b</span>.emp_no</div></pre></td></tr></table></figure>
+<h2 id="查找所有员工的last-name和first-name以及对应部门编号dept-no，也包括展示没有分配具体部门的员工"><a href="#查找所有员工的last-name和first-name以及对应部门编号dept-no，也包括展示没有分配具体部门的员工" class="headerlink" title="查找所有员工的last_name和first_name以及对应部门编号dept_no，也包括展示没有分配具体部门的员工"></a>查找所有员工的last_name和first_name以及对应部门编号dept_no，也包括展示没有分配具体部门的员工</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-4"><a href="#输入描述-4" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-4"><a href="#输出描述-4" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">last_name</th>
+<th style="text-align:center">first_name</th>
+<th style="text-align:center">dept_no</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Facello</td>
+<td style="text-align:center">Georgi</td>
+<td style="text-align:center">d001</td>
+</tr>
+<tr>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+</tr>
+<tr>
+<td style="text-align:center">Sluis</td>
+<td style="text-align:center">Mary</td>
+<td style="text-align:center">NULL(在sqlite中此处为空,MySQL为NULL)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-4"><a href="#解答-4" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select <span class="keyword">a</span>.last_name, <span class="keyword">a</span>.first_name, b.dept_no <span class="built_in">from</span> employees <span class="keyword">a</span> left join dept_emp b <span class="keyword">on</span> <span class="title">a</span>.<span class="title">emp_no</span>= <span class="title">b</span>.<span class="title">emp_no</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>注解<br>数据库在通过连接两张或多张表来返回记录时，都会生成一张中间的临时表，然后再将这张临时表返回给用户。<br>在使用left join时，on和where条件的区别如下:<br>1、on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。<br>2、where条件是在临时表生成后，再对临时表进行过滤的条件。这时已经没有left join的含义(必须返回左边表的记录)了，条件不为真的就全部过滤掉。</p>
+</blockquote>
+<h2 id="查找所有员工入职时候的薪水情况，给出emp-no以及salary，-并按照emp-no进行逆序"><a href="#查找所有员工入职时候的薪水情况，给出emp-no以及salary，-并按照emp-no进行逆序" class="headerlink" title="查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序"></a>查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-5"><a href="#输入描述-5" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-5"><a href="#输出描述-5" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10011</td>
+<td style="text-align:center">25828</td>
+</tr>
+<tr>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+</tr>
+<tr>
+<td style="text-align:center">10001</td>
+<td style="text-align:center">60117</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-5"><a href="#解答-5" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select <span class="keyword">a</span>.emp_no, b.salary <span class="built_in">from</span> employees <span class="keyword">a</span>, salaries b where <span class="keyword">a</span>.emp_no= b.emp_no <span class="keyword">and</span> <span class="keyword">a</span>.hire_date= b.from_date order <span class="keyword">by</span> <span class="keyword">a</span>.emp_no desc</div></pre></td></tr></table></figure>
+<h2 id="查找薪水涨幅超过15次的员工号emp-no以及其对应的涨幅次数t"><a href="#查找薪水涨幅超过15次的员工号emp-no以及其对应的涨幅次数t" class="headerlink" title="查找薪水涨幅超过15次的员工号emp_no以及其对应的涨幅次数t"></a>查找薪水涨幅超过15次的员工号emp_no以及其对应的涨幅次数t</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-6"><a href="#输入描述-6" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-6"><a href="#输出描述-6" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10001</td>
+<td style="text-align:center">17</td>
+</tr>
+<tr>
+<td style="text-align:center">10004</td>
+<td style="text-align:center">16</td>
+</tr>
+<tr>
+<td style="text-align:center">10009</td>
+<td style="text-align:center">18</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-6"><a href="#解答-6" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select emp_no, count(emp_no) as t <span class="keyword">from</span> salaries<span class="built_in"> group </span>by emp_no having t&gt; 15</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注解<br><code>GROUP BY</code>语法可以根据给定数据列的每个成员对查询结果进行分组统计，最终得到一个分组汇总表。<br><code>SELECT</code>子句中的列名必须为分组列或列函数，列函数对于<code>GROUP BY</code>子句定义的每个组返回一个结果。<br><code>GROUP BY</code>子句之后使用<code>Having</code>子句，可应用限定条件进行分组，以便系统仅对满足条件的组返回结果。因此，在<code>GROUP BY</code>子句后面包含了一个<code>HAVING</code>子句。<code>HAVING</code>类似于<code>WHERE</code>(唯一的差别是<code>WHERE</code>过滤行，<code>HAVING</code>过滤组), <code>HAVING</code>支持所有的<code>WHERE</code>操作符。</p>
+</blockquote>
+<h2 id="找出所有员工当前-to-date-’9999-01-01’-具体的薪水salary情况，对于相同的薪水只显示一次-并按照逆序显示"><a href="#找出所有员工当前-to-date-’9999-01-01’-具体的薪水salary情况，对于相同的薪水只显示一次-并按照逆序显示" class="headerlink" title="找出所有员工当前(to_date=’9999-01-01’)具体的薪水salary情况，对于相同的薪水只显示一次,并按照逆序显示"></a>找出所有员工当前(to_date=’9999-01-01’)具体的薪水salary情况，对于相同的薪水只显示一次,并按照逆序显示</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-7"><a href="#输入描述-7" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-7"><a href="#输出描述-7" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">94692</td>
+</tr>
+<tr>
+<td style="text-align:center">94409</td>
+</tr>
+<tr>
+<td style="text-align:center">88958</td>
+</tr>
+<tr>
+<td style="text-align:center">88070</td>
+</tr>
+<tr>
+<td style="text-align:center">74057</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-7"><a href="#解答-7" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> salary <span class="keyword">from</span> salaries <span class="keyword">where</span> <span class="keyword">to_date</span>= <span class="string">'9999-01-01'</span> <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span></div></pre></td></tr></table></figure>
+<h2 id="获取所有部门当前manager的当前薪水情况，给出dept-no-emp-no以及salary，当前表示to-date-’9999-01-01’"><a href="#获取所有部门当前manager的当前薪水情况，给出dept-no-emp-no以及salary，当前表示to-date-’9999-01-01’" class="headerlink" title="获取所有部门当前manager的当前薪水情况，给出dept_no, emp_no以及salary，当前表示to_date=’9999-01-01’"></a>获取所有部门当前manager的当前薪水情况，给出dept_no, emp_no以及salary，当前表示to_date=’9999-01-01’</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_manager`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-8"><a href="#输入描述-8" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-8"><a href="#输出描述-8" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">dept_no</th>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">d001</td>
+<td style="text-align:center">10002</td>
+<td style="text-align:center">72527</td>
+</tr>
+<tr>
+<td style="text-align:center">d004</td>
+<td style="text-align:center">10004</td>
+<td style="text-align:center">74057</td>
+</tr>
+<tr>
+<td style="text-align:center">d003</td>
+<td style="text-align:center">10005</td>
+<td style="text-align:center">94692</td>
+</tr>
+<tr>
+<td style="text-align:center">d002</td>
+<td style="text-align:center">10006</td>
+<td style="text-align:center">43311</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-8"><a href="#解答-8" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select <span class="selector-tag">a</span><span class="selector-class">.dept_no</span>, <span class="selector-tag">a</span><span class="selector-class">.emp_no</span>, <span class="selector-tag">b</span><span class="selector-class">.salary</span> from salaries <span class="selector-tag">b</span> inner join dept_manager <span class="selector-tag">a</span> on <span class="selector-tag">a</span>.emp_no= <span class="selector-tag">b</span><span class="selector-class">.emp_no</span> where <span class="selector-tag">a</span>.to_date= <span class="string">'9999-01-01'</span> and <span class="selector-tag">b</span>.to_date=<span class="string">'9999-01-01'</span></div></pre></td></tr></table></figure>
+<h2 id="获取所有非manager的员工emp-no"><a href="#获取所有非manager的员工emp-no" class="headerlink" title="获取所有非manager的员工emp_no"></a>获取所有非manager的员工emp_no</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_manager`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-9"><a href="#输入描述-9" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-9"><a href="#输出描述-9" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10001</td>
+</tr>
+<tr>
+<td style="text-align:center">10003</td>
+</tr>
+<tr>
+<td style="text-align:center">10007</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-9"><a href="#解答-9" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select <span class="selector-tag">a</span><span class="selector-class">.emp_no</span> from employees <span class="selector-tag">a</span> where <span class="selector-tag">a</span><span class="selector-class">.emp_no</span> not <span class="keyword">in</span> (select <span class="selector-tag">b</span><span class="selector-class">.emp_no</span> from dept_manager b)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注解<br><code>employees</code>里的<code>emp_no</code>不在<code>dept_manager</code>出现非<code>manager</code>了，关键使用<code>not in</code></p>
+</blockquote>
+<h2 id="获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to-date-’9999-01-01’。结果第一列给出当前员工的emp-no-第二列给出其manager对应的manager-no。"><a href="#获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to-date-’9999-01-01’。结果第一列给出当前员工的emp-no-第二列给出其manager对应的manager-no。" class="headerlink" title="获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to_date=’9999-01-01’。结果第一列给出当前员工的emp_no,第二列给出其manager对应的manager_no。"></a>获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to_date=’9999-01-01’。结果第一列给出当前员工的emp_no,第二列给出其manager对应的manager_no。</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_manager`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-10"><a href="#输入描述-10" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-10"><a href="#输出描述-10" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">manager_no</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10001</td>
+<td style="text-align:center">10002</td>
+</tr>
+<tr>
+<td style="text-align:center">10003</td>
+<td style="text-align:center">10004</td>
+</tr>
+<tr>
+<td style="text-align:center">10009</td>
+<td style="text-align:center">10010</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-10"><a href="#解答-10" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select <span class="selector-tag">a</span><span class="selector-class">.emp_no</span>, <span class="selector-tag">b</span><span class="selector-class">.emp_no</span> as manager_no from dept_emp <span class="selector-tag">a</span>, dept_manager <span class="selector-tag">b</span> where <span class="selector-tag">a</span>.to_date= <span class="string">'9999-01-01'</span> and <span class="selector-tag">b</span>.to_date=<span class="string">'9999-01-01'</span> and <span class="selector-tag">a</span>.dept_no= <span class="selector-tag">b</span><span class="selector-class">.dept_no</span> and <span class="selector-tag">a</span><span class="selector-class">.emp_no</span> != <span class="selector-tag">b</span>.emp_no</div></pre></td></tr></table></figure>
+<blockquote>
+<p>他们的职位不一样，部门却是一样的。</p>
+</blockquote>
+<h2 id="获取所有部门中当前员工薪水最高的相关信息，给出dept-no-emp-no以及其对应的salary"><a href="#获取所有部门中当前员工薪水最高的相关信息，给出dept-no-emp-no以及其对应的salary" class="headerlink" title="获取所有部门中当前员工薪水最高的相关信息，给出dept_no, emp_no以及其对应的salary"></a>获取所有部门中当前员工薪水最高的相关信息，给出dept_no, emp_no以及其对应的salary</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-11"><a href="#输入描述-11" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-11"><a href="#输出描述-11" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">dept_no</th>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">d001</td>
+<td style="text-align:center">10001</td>
+<td style="text-align:center">88958</td>
+</tr>
+<tr>
+<td style="text-align:center">d002</td>
+<td style="text-align:center">10006</td>
+<td style="text-align:center">43311</td>
+</tr>
+<tr>
+<td style="text-align:center">d003</td>
+<td style="text-align:center">10005</td>
+<td style="text-align:center">94692</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-11"><a href="#解答-11" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">select <span class="selector-tag">a</span><span class="selector-class">.dept_no</span>,<span class="selector-tag">a</span><span class="selector-class">.emp_no</span>,max(s.salary) as salary</div><div class="line">from dept_emp <span class="selector-tag">a</span> <span class="attribute">left</span> join salaries s </div><div class="line">            on <span class="selector-tag">a</span>.emp_no= s.emp_no</div><div class="line">where <span class="selector-tag">a</span>.to_date=<span class="string">'9999-01-01'</span></div><div class="line">    and s.to_date=<span class="string">'9999-01-01'</span></div><div class="line">group by <span class="selector-tag">a</span>.dept_no</div></pre></td></tr></table></figure>
+<h2 id="从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。"><a href="#从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。" class="headerlink" title="从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。"></a>从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">"titles"</span> (</div><div class="line"><span class="string">`emp_no`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="string">`title`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="string">`from_date`</span> <span class="built_in">date</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="string">`to_date`</span> <span class="built_in">date</span> <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>);</div></pre></td></tr></table></figure>
+<h3 id="输入描述-12"><a href="#输入描述-12" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-12"><a href="#输出描述-12" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">title</th>
+<th style="text-align:center">t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Assistant Engineer</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">Engineer</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+</tr>
+<tr>
+<td style="text-align:center">Staff</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-12"><a href="#解答-12" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select title, count(title) as t <span class="keyword">from</span> titles<span class="built_in"> group </span>by title having t&gt;= 2</div></pre></td></tr></table></figure>
+<blockquote>
+<p>having语句可以筛选出满足条件的聚合函数的结果。</p>
+</blockquote>
+<h2 id="从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。注意对于重复的emp-no进行忽略。"><a href="#从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。注意对于重复的emp-no进行忽略。" class="headerlink" title="从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。注意对于重复的emp_no进行忽略。"></a>从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。注意对于重复的emp_no进行忽略。</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">"titles"</span> (</div><div class="line"><span class="string">`emp_no`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="string">`title`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="string">`from_date`</span> <span class="built_in">date</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="string">`to_date`</span> <span class="built_in">date</span> <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>);</div></pre></td></tr></table></figure>
+<h3 id="输入描述-13"><a href="#输入描述-13" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-13"><a href="#输出描述-13" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">title</th>
+<th style="text-align:center">t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Assistant Engineer</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">Engineer</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+</tr>
+<tr>
+<td style="text-align:center">Staff</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-13"><a href="#解答-13" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select title, count(distinct emp_no) as t <span class="keyword">from</span> titles<span class="built_in"> group </span>by title having t&gt;= 2</div></pre></td></tr></table></figure>
+<h2 id="查找employees表所有emp-no为奇数，且last-name不为Mary的员工信息，并按照hire-date逆序排列"><a href="#查找employees表所有emp-no为奇数，且last-name不为Mary的员工信息，并按照hire-date逆序排列" class="headerlink" title="查找employees表所有emp_no为奇数，且last_name不为Mary的员工信息，并按照hire_date逆序排列"></a>查找employees表所有emp_no为奇数，且last_name不为Mary的员工信息，并按照hire_date逆序排列</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-14"><a href="#输入描述-14" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-14"><a href="#输出描述-14" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">birth_date</th>
+<th style="text-align:center">first_name</th>
+<th style="text-align:center">last_name</th>
+<th style="text-align:center">gender</th>
+<th style="text-align:center">hire_date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10011</td>
+<td style="text-align:center">1953-11-07</td>
+<td style="text-align:center">Mary</td>
+<td style="text-align:center">Sluis</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">1990-01-22</td>
+</tr>
+<tr>
+<td style="text-align:center">10005</td>
+<td style="text-align:center">1955-01-21</td>
+<td style="text-align:center">Kyoichi</td>
+<td style="text-align:center">Maliniak</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">1989-09-12</td>
+</tr>
+<tr>
+<td style="text-align:center">10007</td>
+<td style="text-align:center">1957-05-23</td>
+<td style="text-align:center">Tzvetan</td>
+<td style="text-align:center">Zielinski</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">1989-02-10</td>
+</tr>
+<tr>
+<td style="text-align:center">10003</td>
+<td style="text-align:center">1959-12-03</td>
+<td style="text-align:center">Parto</td>
+<td style="text-align:center">Bamford</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">1986-08-28</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-14"><a href="#解答-14" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> employees <span class="keyword">where</span> emp_no% <span class="number">2</span>!= <span class="number">0</span> <span class="keyword">and</span> last_name!= <span class="string">"Mary"</span> <span class="keyword">order</span> <span class="keyword">by</span> hire_date <span class="keyword">desc</span></div></pre></td></tr></table></figure>
+<h2 id="统计出当前各个title类型对应的员工当前薪水对应的平均工资。结果给出title以及平均工资avg。"><a href="#统计出当前各个title类型对应的员工当前薪水对应的平均工资。结果给出title以及平均工资avg。" class="headerlink" title="统计出当前各个title类型对应的员工当前薪水对应的平均工资。结果给出title以及平均工资avg。"></a>统计出当前各个title类型对应的员工当前薪水对应的平均工资。结果给出title以及平均工资avg。</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">"titles"</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`title`</span> varchar(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date DEFAULT <span class="literal">NULL</span>);</div></pre></td></tr></table></figure>
+<h3 id="输入描述-15"><a href="#输入描述-15" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-15"><a href="#输出描述-15" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">title</th>
+<th style="text-align:center">avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Engineer Engineer</td>
+<td style="text-align:center">94409.0</td>
+</tr>
+<tr>
+<td style="text-align:center">Senior Engineer</td>
+<td style="text-align:center">69009.2</td>
+</tr>
+<tr>
+<td style="text-align:center">Senior Staff</td>
+<td style="text-align:center">91381.0</td>
+</tr>
+<tr>
+<td style="text-align:center">Staff</td>
+<td style="text-align:center">72527.0</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-15"><a href="#解答-15" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select title, avg(salary) <span class="keyword">from</span> titles left join salaries on titles.emp_no= salaries.emp_no where titles.to_date= <span class="string">"9999-01-01"</span> <span class="keyword">and</span> salaries.to_date= <span class="string">"9999-01-01"</span><span class="built_in"> group </span>by titles.title</div></pre></td></tr></table></figure>
+<h2 id="获取当前（to-date-’9999-01-01’）薪水第二多的员工的emp-no以及其对应的薪水salary"><a href="#获取当前（to-date-’9999-01-01’）薪水第二多的员工的emp-no以及其对应的薪水salary" class="headerlink" title="获取当前（to_date=’9999-01-01’）薪水第二多的员工的emp_no以及其对应的薪水salary"></a>获取当前（to_date=’9999-01-01’）薪水第二多的员工的emp_no以及其对应的薪水salary</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-16"><a href="#输入描述-16" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-16"><a href="#输出描述-16" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10009</td>
+<td style="text-align:center">94409</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-16"><a href="#解答-16" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> emp_no, salary <span class="keyword">from</span> salaries <span class="keyword">where</span> <span class="keyword">to_date</span>= <span class="string">"9999-01-01"</span> <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">1</span>, <span class="number">1</span></div></pre></td></tr></table></figure>
+<h2 id="查找当前薪水-to-date-’9999-01-01’-排名第二多的员工编号emp-no、薪水salary、last-name以及first-name，不准使用order-by"><a href="#查找当前薪水-to-date-’9999-01-01’-排名第二多的员工编号emp-no、薪水salary、last-name以及first-name，不准使用order-by" class="headerlink" title="查找当前薪水(to_date=’9999-01-01’)排名第二多的员工编号emp_no、薪水salary、last_name以及first_name，不准使用order by"></a>查找当前薪水(to_date=’9999-01-01’)排名第二多的员工编号emp_no、薪水salary、last_name以及first_name，不准使用order by</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-17"><a href="#输入描述-17" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-17"><a href="#输出描述-17" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">salary</th>
+<th style="text-align:center">last_name</th>
+<th style="text-align:center">first_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10009</td>
+<td style="text-align:center">94409</td>
+<td style="text-align:center">Peac</td>
+<td style="text-align:center">Sumant</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-17"><a href="#解答-17" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select <span class="selector-tag">a</span><span class="selector-class">.emp_no</span>, max(<span class="selector-tag">a</span>.salary), <span class="selector-tag">b</span><span class="selector-class">.last_name</span>, <span class="selector-tag">b</span><span class="selector-class">.first_name</span> </div><div class="line">from salaries <span class="selector-tag">a</span>, employees <span class="selector-tag">b</span> where <span class="selector-tag">a</span>.emp_no= <span class="selector-tag">b</span><span class="selector-class">.emp_no</span> </div><div class="line">    and <span class="selector-tag">a</span>.to_date= <span class="string">"9999-01-01"</span> </div><div class="line">    and <span class="selector-tag">a</span><span class="selector-class">.salary</span> not <span class="keyword">in</span> (select max(salary) from salaries where to_date= <span class="string">"9999-01-01"</span>)</div></pre></td></tr></table></figure>
+<h2 id="查找所有员工的last-name和first-name以及对应的dept-name，也包括暂时没有分配部门的员工"><a href="#查找所有员工的last-name和first-name以及对应的dept-name，也包括暂时没有分配部门的员工" class="headerlink" title="查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工"></a>查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`departments`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_name`</span> varchar(<span class="number">40</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-18"><a href="#输入描述-18" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-18"><a href="#输出描述-18" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">last_name</th>
+<th style="text-align:center">first_name</th>
+<th style="text-align:center">dept_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Facello</td>
+<td style="text-align:center">Georgi</td>
+<td style="text-align:center">Marketing</td>
+</tr>
+<tr>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+</tr>
+<tr>
+<td style="text-align:center">Sluis</td>
+<td style="text-align:center">Mary</td>
+<td style="text-align:center">NULL</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-18"><a href="#解答-18" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> a.last_name, a.first_name, c.dept_name <span class="keyword">from</span> employees a <span class="keyword">left</span> <span class="keyword">join</span> dept_emp b <span class="keyword">on</span> a.emp_no= b.emp_no <span class="keyword">left</span> <span class="keyword">join</span> departments c <span class="keyword">on</span> b.dept_no= c.dept_no</div></pre></td></tr></table></figure>
+<h2 id="查找员工编号emp-now为10001其自入职以来的薪水salary涨幅值growth"><a href="#查找员工编号emp-now为10001其自入职以来的薪水salary涨幅值growth" class="headerlink" title="查找员工编号emp_now为10001其自入职以来的薪水salary涨幅值growth"></a>查找员工编号emp_now为10001其自入职以来的薪水salary涨幅值growth</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-19"><a href="#输入描述-19" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-19"><a href="#输出描述-19" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">28841</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-19"><a href="#解答-19" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> (</div><div class="line">    (<span class="keyword">select</span> salary <span class="keyword">from</span> salaries <span class="keyword">where</span> emp_no= <span class="string">"10001"</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">to_date</span> <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">1</span>)- </div><div class="line">    (<span class="keyword">select</span> salary <span class="keyword">from</span> salaries <span class="keyword">where</span> emp_no= <span class="string">"10001"</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">to_date</span> <span class="keyword">asc</span> <span class="keyword">limit</span> <span class="number">1</span>)</div><div class="line">) <span class="keyword">as</span> growth</div></pre></td></tr></table></figure>
+<h2 id="查找所有员工自入职以来的薪水涨幅情况，给出员工编号emp-noy以及其对应的薪水涨幅growth，并按照growth进行升序"><a href="#查找所有员工自入职以来的薪水涨幅情况，给出员工编号emp-noy以及其对应的薪水涨幅growth，并按照growth进行升序" class="headerlink" title="查找所有员工自入职以来的薪水涨幅情况，给出员工编号emp_noy以及其对应的薪水涨幅growth，并按照growth进行升序"></a>查找所有员工自入职以来的薪水涨幅情况，给出员工编号emp_noy以及其对应的薪水涨幅growth，并按照growth进行升序</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
+<h3 id="输入描述-20"><a href="#输入描述-20" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
+<p>无</p>
+</blockquote>
+<h3 id="输出描述-20"><a href="#输出描述-20" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">emp_no</th>
+<th style="text-align:center">growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10011</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">省略</td>
+<td style="text-align:center">省略</td>
+</tr>
+<tr>
+<td style="text-align:center">10010</td>
+<td style="text-align:center">54496</td>
+</tr>
+<tr>
+<td style="text-align:center">10004</td>
+<td style="text-align:center">34003</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="解答-20"><a href="#解答-20" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select t1<span class="selector-class">.emp_no</span>, t1<span class="selector-class">.salary-</span> t2<span class="selector-class">.salary</span> as growth from(</div><div class="line">    (select <span class="selector-tag">a</span><span class="selector-class">.emp_no</span>, <span class="selector-tag">b</span><span class="selector-class">.salary</span> from employees <span class="selector-tag">a</span>, salaries <span class="selector-tag">b</span> where <span class="selector-tag">a</span>.emp_no= <span class="selector-tag">b</span><span class="selector-class">.emp_no</span> and <span class="selector-tag">b</span>.to_date= <span class="string">"9999-01-01"</span>) as t1, </div><div class="line">    (select <span class="selector-tag">a</span><span class="selector-class">.emp_no</span>, <span class="selector-tag">b</span><span class="selector-class">.salary</span> from employees <span class="selector-tag">a</span>, salaries <span class="selector-tag">b</span> where <span class="selector-tag">a</span>.emp_no= <span class="selector-tag">b</span><span class="selector-class">.emp_no</span> and <span class="selector-tag">b</span>.from_date= <span class="selector-tag">a</span>.hire_date) as t2</div><div class="line">) where t1.emp_no= t2<span class="selector-class">.emp_no</span> <span class="attribute">order</span> by growth</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Your support will encourage me to continue to create!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="MC WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="MC Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/11/response用法/" rel="next" title="response用法">
+                <i class="fa fa-chevron-left"></i> response用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true"
+              alt="MC" />
+          
+            <p class="site-author-name" itemprop="name">MC</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">144</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.shiyanbar.com/" title="实验吧" target="_blank" rel="external nofollow">实验吧</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3school.com.cn/" title="w3school" target="_blank" rel="external nofollow">w3school</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itellyou.cn/" title="MSDN" target="_blank" rel="external nofollow">MSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.huai235.com/" title="坏235" target="_blank" rel="external nofollow">坏235</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.imooc.com/course/landingpagephp?from=phpkecheng" title="慕课网" target="_blank" rel="external nofollow">慕课网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank" rel="external nofollow">前端书籍资料</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找最晚入职员工的所有信息"><span class="nav-number">1.</span> <span class="nav-text">查找最晚入职员工的所有信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述"><span class="nav-number">1.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述"><span class="nav-number">1.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答"><span class="nav-number">1.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找入职员工时间排名倒数第三的员工所有信息"><span class="nav-number">2.</span> <span class="nav-text">查找入职员工时间排名倒数第三的员工所有信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-1"><span class="nav-number">2.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-1"><span class="nav-number">2.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-1"><span class="nav-number">2.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找各个部门当前-to-date-’9999-01-01’-领导当前薪水详情以及其对应部门编号dept-no"><span class="nav-number">3.</span> <span class="nav-text">查找各个部门当前(to_date=’9999-01-01’)领导当前薪水详情以及其对应部门编号dept_no</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-2"><span class="nav-number">3.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-2"><span class="nav-number">3.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-2"><span class="nav-number">3.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找所有已经分配部门的员工的last-name和first-name"><span class="nav-number">4.</span> <span class="nav-text">查找所有已经分配部门的员工的last_name和first_name</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-3"><span class="nav-number">4.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-3"><span class="nav-number">4.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-3"><span class="nav-number">4.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找所有员工的last-name和first-name以及对应部门编号dept-no，也包括展示没有分配具体部门的员工"><span class="nav-number">5.</span> <span class="nav-text">查找所有员工的last_name和first_name以及对应部门编号dept_no，也包括展示没有分配具体部门的员工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-4"><span class="nav-number">5.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-4"><span class="nav-number">5.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-4"><span class="nav-number">5.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找所有员工入职时候的薪水情况，给出emp-no以及salary，-并按照emp-no进行逆序"><span class="nav-number">6.</span> <span class="nav-text">查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-5"><span class="nav-number">6.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-5"><span class="nav-number">6.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-5"><span class="nav-number">6.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找薪水涨幅超过15次的员工号emp-no以及其对应的涨幅次数t"><span class="nav-number">7.</span> <span class="nav-text">查找薪水涨幅超过15次的员工号emp_no以及其对应的涨幅次数t</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-6"><span class="nav-number">7.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-6"><span class="nav-number">7.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-6"><span class="nav-number">7.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找出所有员工当前-to-date-’9999-01-01’-具体的薪水salary情况，对于相同的薪水只显示一次-并按照逆序显示"><span class="nav-number">8.</span> <span class="nav-text">找出所有员工当前(to_date=’9999-01-01’)具体的薪水salary情况，对于相同的薪水只显示一次,并按照逆序显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-7"><span class="nav-number">8.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-7"><span class="nav-number">8.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-7"><span class="nav-number">8.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取所有部门当前manager的当前薪水情况，给出dept-no-emp-no以及salary，当前表示to-date-’9999-01-01’"><span class="nav-number">9.</span> <span class="nav-text">获取所有部门当前manager的当前薪水情况，给出dept_no, emp_no以及salary，当前表示to_date=’9999-01-01’</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-8"><span class="nav-number">9.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-8"><span class="nav-number">9.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-8"><span class="nav-number">9.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取所有非manager的员工emp-no"><span class="nav-number">10.</span> <span class="nav-text">获取所有非manager的员工emp_no</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-9"><span class="nav-number">10.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-9"><span class="nav-number">10.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-9"><span class="nav-number">10.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to-date-’9999-01-01’。结果第一列给出当前员工的emp-no-第二列给出其manager对应的manager-no。"><span class="nav-number">11.</span> <span class="nav-text">获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to_date=’9999-01-01’。结果第一列给出当前员工的emp_no,第二列给出其manager对应的manager_no。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-10"><span class="nav-number">11.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-10"><span class="nav-number">11.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-10"><span class="nav-number">11.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取所有部门中当前员工薪水最高的相关信息，给出dept-no-emp-no以及其对应的salary"><span class="nav-number">12.</span> <span class="nav-text">获取所有部门中当前员工薪水最高的相关信息，给出dept_no, emp_no以及其对应的salary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-11"><span class="nav-number">12.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-11"><span class="nav-number">12.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-11"><span class="nav-number">12.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。"><span class="nav-number">13.</span> <span class="nav-text">从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-12"><span class="nav-number">13.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-12"><span class="nav-number">13.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-12"><span class="nav-number">13.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。注意对于重复的emp-no进行忽略。"><span class="nav-number">14.</span> <span class="nav-text">从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。注意对于重复的emp_no进行忽略。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-13"><span class="nav-number">14.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-13"><span class="nav-number">14.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-13"><span class="nav-number">14.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找employees表所有emp-no为奇数，且last-name不为Mary的员工信息，并按照hire-date逆序排列"><span class="nav-number">15.</span> <span class="nav-text">查找employees表所有emp_no为奇数，且last_name不为Mary的员工信息，并按照hire_date逆序排列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-14"><span class="nav-number">15.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-14"><span class="nav-number">15.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-14"><span class="nav-number">15.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计出当前各个title类型对应的员工当前薪水对应的平均工资。结果给出title以及平均工资avg。"><span class="nav-number">16.</span> <span class="nav-text">统计出当前各个title类型对应的员工当前薪水对应的平均工资。结果给出title以及平均工资avg。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-15"><span class="nav-number">16.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-15"><span class="nav-number">16.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-15"><span class="nav-number">16.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取当前（to-date-’9999-01-01’）薪水第二多的员工的emp-no以及其对应的薪水salary"><span class="nav-number">17.</span> <span class="nav-text">获取当前（to_date=’9999-01-01’）薪水第二多的员工的emp_no以及其对应的薪水salary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-16"><span class="nav-number">17.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-16"><span class="nav-number">17.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-16"><span class="nav-number">17.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找当前薪水-to-date-’9999-01-01’-排名第二多的员工编号emp-no、薪水salary、last-name以及first-name，不准使用order-by"><span class="nav-number">18.</span> <span class="nav-text">查找当前薪水(to_date=’9999-01-01’)排名第二多的员工编号emp_no、薪水salary、last_name以及first_name，不准使用order by</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-17"><span class="nav-number">18.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-17"><span class="nav-number">18.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-17"><span class="nav-number">18.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找所有员工的last-name和first-name以及对应的dept-name，也包括暂时没有分配部门的员工"><span class="nav-number">19.</span> <span class="nav-text">查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-18"><span class="nav-number">19.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-18"><span class="nav-number">19.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-18"><span class="nav-number">19.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找员工编号emp-now为10001其自入职以来的薪水salary涨幅值growth"><span class="nav-number">20.</span> <span class="nav-text">查找员工编号emp_now为10001其自入职以来的薪水salary涨幅值growth</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-19"><span class="nav-number">20.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-19"><span class="nav-number">20.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-19"><span class="nav-number">20.3.</span> <span class="nav-text">解答:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找所有员工自入职以来的薪水涨幅情况，给出员工编号emp-noy以及其对应的薪水涨幅growth，并按照growth进行升序"><span class="nav-number">21.</span> <span class="nav-text">查找所有员工自入职以来的薪水涨幅情况，给出员工编号emp_noy以及其对应的薪水涨幅growth，并按照growth进行升序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-20"><span class="nav-number">21.1.</span> <span class="nav-text">输入描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-20"><span class="nav-number">21.2.</span> <span class="nav-text">输出描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解答-20"><span class="nav-number">21.3.</span> <span class="nav-text">解答:</span></a></li></ol></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=90 src="//music.163.com/outchain/player?type=2&id=487590187&auto=0&height=66"></iframe>
+</div>
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">NexT.Pisces</a> v5.1.2</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<span>
+  Host by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages
+</span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://sunstadys.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.sanstylemc.cn/2018/05/12/MySQL练习一/';
+          this.page.identifier = '2018/05/12/MySQL练习一/';
+          this.page.title = 'MySQL练习一';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sunstadys.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("i7jzN6yAlCyc52D54nDFzeXb-gzGzoHsz", "JKAIt4j5SoPJyHMx4IphgTdI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
