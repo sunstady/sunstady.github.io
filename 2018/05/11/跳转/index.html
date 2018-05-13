@@ -114,7 +114,8 @@
 <meta property="og:description" content="准备工作在web目录下准备两个页面success.html，fail.html。分别用于显示登录成功或者登录失败。如果登录成功了，就服务端跳转到success.html；如果登录失败了，就客户端跳转到fail.html。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/%E8%B7%B3%E8%BD%AC/1.png?raw=true">
-<meta property="og:updated_time" content="2018-05-11T08:10:23.803Z">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/%E8%B7%B3%E8%BD%AC/2.png?raw=true">
+<meta property="og:updated_time" content="2018-05-13T01:12:59.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跳转">
 <meta name="twitter:description" content="准备工作在web目录下准备两个页面success.html，fail.html。分别用于显示登录成功或者登录失败。如果登录成功了，就服务端跳转到success.html；如果登录失败了，就客户端跳转到fail.html。">
@@ -453,6 +454,8 @@
 <blockquote>
 <p>客户端的跳转：跳转之后地址栏的信息是会变的，变为跳转之后的地址信息 。<br>服务器端的跳转：跳转之后的地址栏的信息不会 发生任何的改变。<br>(1) 在使用request属性范围时，只有服务器端跳转才能将request范围的属性保存到跳转页面；而如果是客户端的跳转，则无法进行request属性的传递<br>(2) 另外，如果是服务器端的跳转，则执行跳转语句时立刻进行跳转；如果使用的是客户端跳转，则是整个页面执行完之后才执行跳转的。<br>(3) 在Servlet中如果想要进行客户端的跳转，直接使用HttpServletResponse接口的SendRedirect()即可，但是需要注意的是，此跳转只能传递session以及application范围的属性，而无法传递request范围的属性。</p>
 </blockquote>
+<h2 id="响应代码"><a href="#响应代码" class="headerlink" title="响应代码"></a>响应代码</h2><figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">200</span>: 表示响应成功了，比如打开页面，就会看到200响应码。</div><div class="line"><span class="attribute">301</span>: 表示客户端跳转，永久性的跳转。为了实现301跳转，在Servlet中应该使用如下代码: response.setStatus(301); response.setHeader("Location", "fail.html");</div><div class="line"><span class="attribute">302</span>: 表示客户端跳转，临时性的跳转。在Servlet的代码 实现要比301简单点，直接使用: response.sendRedirect("/listHero");</div><div class="line"><span class="attribute">304</span>: 表示资源未被修改。当不是第一次访问一个静态页面或者图片的时候，就会得到这么一个提示。这是服务端提示浏览器，这个资源没有发生变化，你直接使用上一次下载的就行了，不需要重新下载。这样就节约了带宽，并且浏览器的加载速度也更快。</div><div class="line"><span class="attribute">404</span>: 表示访问的页面不存在。</div><div class="line"><span class="attribute">500</span>: 表示服务端的错误。</div></pre></td></tr></table></figure>
+<p>更多代码预览:<br><img src="https://github.com/sunstady/hexo/blob/master/%E8%B7%B3%E8%BD%AC/2.png?raw=true" alt="1"></p>
 
       
     </div>
@@ -702,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端跳转"><span class="nav-number">2.</span> <span class="nav-text">服务端跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端跳转"><span class="nav-number">3.</span> <span class="nav-text">客户端跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端跳转和客户端跳转图示"><span class="nav-number">4.</span> <span class="nav-text">服务端跳转和客户端跳转图示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端跳转"><span class="nav-number">2.</span> <span class="nav-text">服务端跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端跳转"><span class="nav-number">3.</span> <span class="nav-text">客户端跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端跳转和客户端跳转图示"><span class="nav-number">4.</span> <span class="nav-text">服务端跳转和客户端跳转图示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应代码"><span class="nav-number">5.</span> <span class="nav-text">响应代码</span></a></li></ol></div>
             
 
 
