@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="ERROR 1045 (28000): Access denied for user &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; (using password: YES)一般这个错误是由密码错误引起的，解决的方法自然是重置密码。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-29T06:11:23.662Z">
+<meta property="og:updated_time" content="2018-05-16T13:24:33.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重置MySQL密码">
 <meta name="twitter:description" content="ERROR 1045 (28000): Access denied for user &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; (using password: YES)一般这个错误是由密码错误引起的，解决的方法自然是重置密码。">
@@ -445,7 +445,7 @@
 <p>vim /etc/my.cnf(注: windows下修改的是my.ini)</p>
 </blockquote>
 <p>在文档内搜索<code>mysqld</code>定位到<code>[mysqld]</code>字段:<br><code>/mysqld</code>(在vim编辑状态下直接输入该命令可搜索文本内容)<br>在<code>[mysqld]</code>后面任意一行添加<code>skip-grant-tables</code>用来跳过密码验证的过程。<br>保存文档并退出。<br>2、接下来重启MySql:<br><code>/etc/init.d/mysql restart</code>(有些用户可能需要使用/etc/init.d/mysqld restart)<br>3、重启之后输入<code>mysql</code>就可进入mysql。<br>4、接下来就是用sql来修改root的密码。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">use mysql;</div><div class="line">update<span class="built_in"> user </span><span class="builtin-name">set</span> <span class="attribute">password</span>=password("你的新密码") where <span class="attribute">user</span>=<span class="string">"root"</span>;</div><div class="line">flush privileges;</div><div class="line">quit</div></pre></td></tr></table></figure></p>
-<p>到这里root账户就已经重置成新的密码了。<br>5、便器my.cnf去掉刚才添加的内容，然后重启MySql。</p>
+<p>到这里root账户就已经重置成新的密码了。<br>5、编辑my.cnf去掉刚才添加的内容，然后重启MySql。</p>
 
       
     </div>
