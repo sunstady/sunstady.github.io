@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="查询Category.javaCategoryMapper.javaCategoryService.javaCategoryServiceImpl.javaCategoryController.javaCategoryMapper.xmllog4j.propertiesjdbc.propertiesapplicationContext.xmlspringMVC.xmlweb.xmllistCate">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-30T03:05:56.103Z">
+<meta property="og:updated_time" content="2018-05-30T10:40:39.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tmall_ssm后台">
 <meta name="twitter:description" content="查询Category.javaCategoryMapper.javaCategoryService.javaCategoryServiceImpl.javaCategoryController.javaCategoryMapper.xmllog4j.propertiesjdbc.propertiesapplicationContext.xmlspringMVC.xmlweb.xmllistCate">
@@ -454,6 +454,61 @@
 <h2 id="产品属性值设置"><a href="#产品属性值设置" class="headerlink" title="产品属性值设置"></a>产品属性值设置</h2><p>PropertyValue.jsp  新增Property, getter, setter<br>PropertyValueService.java<br>PropertyValueServiceImpl.java<br>PropertyValueController.java<br>editPropertyValue.jsp</p>
 <h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p>User.java<br>UserService.java  CRUD<br>UserServiceImpl.java<br>UserController.java<br>listUser.jsp</p>
 <h2 id="订单管理"><a href="#订单管理" class="headerlink" title="订单管理"></a>订单管理</h2><p>OrderItem.java  新增product, 要在订单管理页面需要看到订单下面的订单项里的产品图片<br>Order.java  新增orderItems, user, total, totalNumber<br>OrderItemService.java  CRUD<br>OrderItemServiceImpl.java  新增fill(Order order)和fill(List<order> orders)进行二次开发<br>OrderService.java  提供CRUD, 订单状态常量值<br>OrderServiceImpl.java  实现CRUD<br>OrderController.java  list和delievery(发货)<br>listOrder.jsp</order></p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h3><p><a href="http://sanstylemc.cn/2018/05/10/tmall-ssm%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank" rel="external">tmall_ssm之数据库</a></p>
+<h3 id="表关系"><a href="#表关系" class="headerlink" title="表关系"></a>表关系</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">一</th>
+<th style="text-align:center">多</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Category-分类</td>
+<td style="text-align:center">Product-产品</td>
+</tr>
+<tr>
+<td style="text-align:center">Category-分类</td>
+<td style="text-align:center">Property-属性</td>
+</tr>
+<tr>
+<td style="text-align:center">Property-属性</td>
+<td style="text-align:center">PropertyValue-属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">Product-产品</td>
+<td style="text-align:center">PropertyValue-属性值</td>
+</tr>
+<tr>
+<td style="text-align:center">Product-产品</td>
+<td style="text-align:center">ProductImage-产品图片</td>
+</tr>
+<tr>
+<td style="text-align:center">Product-产品</td>
+<td style="text-align:center">Review-评价</td>
+</tr>
+<tr>
+<td style="text-align:center">User-用户</td>
+<td style="text-align:center">Order-订单</td>
+</tr>
+<tr>
+<td style="text-align:center">Product-产品</td>
+<td style="text-align:center">OrderItem-订单项</td>
+</tr>
+<tr>
+<td style="text-align:center">User-用户</td>
+<td style="text-align:center">OrderItem-订单项</td>
+</tr>
+<tr>
+<td style="text-align:center">Order-订单</td>
+<td style="text-align:center">OrderItem-订单项</td>
+</tr>
+<tr>
+<td style="text-align:center">User-用户</td>
+<td style="text-align:center">Review-评价</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -699,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">1.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页"><span class="nav-number">2.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加"><span class="nav-number">3.</span> <span class="nav-text">增加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑"><span class="nav-number">5.</span> <span class="nav-text">编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改"><span class="nav-number">6.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构"><span class="nav-number">7.</span> <span class="nav-text">重构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性管理"><span class="nav-number">8.</span> <span class="nav-text">属性管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品管理"><span class="nav-number">9.</span> <span class="nav-text">产品管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品图片管理"><span class="nav-number">10.</span> <span class="nav-text">产品图片管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品属性值设置"><span class="nav-number">11.</span> <span class="nav-text">产品属性值设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理"><span class="nav-number">12.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#订单管理"><span class="nav-number">13.</span> <span class="nav-text">订单管理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">1.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页"><span class="nav-number">2.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加"><span class="nav-number">3.</span> <span class="nav-text">增加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑"><span class="nav-number">5.</span> <span class="nav-text">编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改"><span class="nav-number">6.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构"><span class="nav-number">7.</span> <span class="nav-text">重构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性管理"><span class="nav-number">8.</span> <span class="nav-text">属性管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品管理"><span class="nav-number">9.</span> <span class="nav-text">产品管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品图片管理"><span class="nav-number">10.</span> <span class="nav-text">产品图片管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品属性值设置"><span class="nav-number">11.</span> <span class="nav-text">产品属性值设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理"><span class="nav-number">12.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#订单管理"><span class="nav-number">13.</span> <span class="nav-text">订单管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">14.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表"><span class="nav-number">14.1.</span> <span class="nav-text">数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表关系"><span class="nav-number">14.2.</span> <span class="nav-text">表关系</span></a></li></ol></li></ol></div>
             
 
 
