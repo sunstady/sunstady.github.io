@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-06-06T13:56:03.738Z</updated>
+  <updated>2018-06-07T02:37:17.088Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.sanstylemc.cn/2018/06/06/MySQL%E9%80%89%E6%8B%A9%E9%A2%98/"/>
     <id>http://www.sanstylemc.cn/2018/06/06/MySQL选择题/</id>
     <published>2018-06-06T13:53:21.000Z</published>
-    <updated>2018-06-06T13:56:03.738Z</updated>
+    <updated>2018-06-07T02:37:17.088Z</updated>
     
     <content type="html"><![CDATA[<h2 id="向数据表中插入一条记录用以下哪一项-B"><a href="#向数据表中插入一条记录用以下哪一项-B" class="headerlink" title="向数据表中插入一条记录用以下哪一项(B)"></a>向数据表中插入一条记录用以下哪一项(<strong>B</strong>)</h2><p>A、CREATE<br>B、INSERT<br>C、SAVE<br>D、UPDATE<br><a id="more"></a></p>
 <h2 id="如果只需要返回匹配的列，则应当使用哪种连接-A"><a href="#如果只需要返回匹配的列，则应当使用哪种连接-A" class="headerlink" title="如果只需要返回匹配的列，则应当使用哪种连接(A)"></a>如果只需要返回匹配的列，则应当使用哪种连接(<strong>A</strong>)</h2><p>A、内连接<br>B、交叉连接<br>C、左连接<br>D、全连接</p>
@@ -33,7 +33,7 @@
 <h2 id="查找条件为-姓名不是null的记录-C"><a href="#查找条件为-姓名不是null的记录-C" class="headerlink" title="查找条件为: 姓名不是null的记录(C)"></a>查找条件为: 姓名不是null的记录(<strong>C</strong>)</h2><p>A、WHERE NAME ! NULL<br>B、WHERE NAME NOT NULL<br>C、WHERE NAME IS NOT NULL<br>D、WHERE NAME!=NULL</p>
 <h2 id="使用SQL语句进行分组检索时，为了去掉不满足条件的分组，应当-B"><a href="#使用SQL语句进行分组检索时，为了去掉不满足条件的分组，应当-B" class="headerlink" title="使用SQL语句进行分组检索时，为了去掉不满足条件的分组，应当(B)"></a>使用SQL语句进行分组检索时，为了去掉不满足条件的分组，应当(<strong>B</strong>)</h2><p>A、使用WHERE子句<br>B、在GROUP BY后面使用HAVING子句<br>C、先使用WHERE子句，再使用HAVING子句<br>D、先使用HAVING子句，再使用WHERE子句</p>
 <h2 id="假设有scores表的设计如下"><a href="#假设有scores表的设计如下" class="headerlink" title="假设有scores表的设计如下:"></a>假设有scores表的设计如下:</h2><p>ID (编号，主键)<br>StudentID (学生编号)<br>CourseID (课程编号)<br>Score (分数)<br>现在要查询参加过至少两门课程考试的学生各门课程的平均成绩。以下SQL语句正确的是(<strong>A</strong>)<br>A、select StudentID,avg(score) from scores group by StudentID having count(studentID)&gt;1<br>B、select StudentID,avg(score) from scores group by StudentID where count(studentID)&gt;1<br>C、select StudentID,avg(score) from scores group by StudentID where count(studentID)&gt;1 group by StudentID<br>D、select StudentID,avg(score) from scores having count(studentID)&gt;1</p>
-<h2 id="下列哪种操作能够实现实体完整性-B"><a href="#下列哪种操作能够实现实体完整性-B" class="headerlink" title="下列哪种操作能够实现实体完整性(B)"></a>下列哪种操作能够实现实体完整性(<strong>B</strong>)</h2><p>A、设置非空约束<br>B、设置外键<br>C、减少数据冗余<br>D、设置主键</p>
+<h2 id="下列哪种操作能够实现实体完整性-D"><a href="#下列哪种操作能够实现实体完整性-D" class="headerlink" title="下列哪种操作能够实现实体完整性(D)"></a>下列哪种操作能够实现实体完整性(<strong>D</strong>)</h2><p>A、设置非空约束<br>B、设置外键<br>C、减少数据冗余<br>D、设置主键</p>
 <h2 id="为了去除结果集中重复的行，可在SELECT语句中使用下列哪个关键字-B"><a href="#为了去除结果集中重复的行，可在SELECT语句中使用下列哪个关键字-B" class="headerlink" title="为了去除结果集中重复的行，可在SELECT语句中使用下列哪个关键字(B)"></a>为了去除结果集中重复的行，可在SELECT语句中使用下列哪个关键字(<strong>B</strong>)</h2><p>A、ALL<br>B、DISTINCT<br>C、UPDATE<br>D、MERGE</p>
 <h2 id="下列-C-不属于连接种类"><a href="#下列-C-不属于连接种类" class="headerlink" title="下列(C)不属于连接种类"></a>下列(<strong>C</strong>)不属于连接种类</h2><p>A、左外连接<br>B、内连接<br>C、中间连接<br>D、交叉连接</p>
 <h2 id="SQL语言中允许使用通配符进行字符串匹配的操作，其中’-’可以表示-D"><a href="#SQL语言中允许使用通配符进行字符串匹配的操作，其中’-’可以表示-D" class="headerlink" title="SQL语言中允许使用通配符进行字符串匹配的操作，其中’%’可以表示(D)"></a>SQL语言中允许使用通配符进行字符串匹配的操作，其中’%’可以表示(<strong>D</strong>)</h2><p>A、零个字符<br>B、1个字符<br>C、多个字符<br>D、以上都是</p>
