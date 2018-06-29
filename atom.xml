@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-06-16T09:26:22.095Z</updated>
+  <updated>2018-06-29T05:09:38.422Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL非主键自增</title>
+    <link href="http://www.sanstylemc.cn/2018/06/29/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/"/>
+    <id>http://www.sanstylemc.cn/2018/06/29/MySQL非主键自增/</id>
+    <published>2018-06-29T05:07:37.000Z</published>
+    <updated>2018-06-29T05:09:38.422Z</updated>
+    
+    <content type="html"><![CDATA[<p>MySQL中，一张表只能有一个自增，但不一定是主键自增。<br><a id="more"></a><br>首先创建一个测试表。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">test</span>(</div><div class="line"><span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">11</span>) primary <span class="keyword">key</span>,</div><div class="line"><span class="keyword">sid</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line"><span class="keyword">key</span>(<span class="keyword">sid</span>));</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/sunstady/hexo/blob/master/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/1.jpg?raw=true" alt="1"><br>接着插入一条语句。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">test</span>(<span class="keyword">id</span>, <span class="keyword">name</span>) <span class="keyword">values</span>(<span class="number">1</span>, <span class="string">'a'</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/sunstady/hexo/blob/master/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/2.jpg?raw=true" alt="2"><br>发现sid非主键自增。</p>
+<p><code>原理</code>:<br><img src="https://github.com/sunstady/hexo/blob/master/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/3.jpg?raw=true" alt="3"><br><code>ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key</code><br>意思大义是：只能有一个自动列，并且必须被定义为键(key)。<br>翻译成白话文就是说，普通列是没办法创建自增长的。</p>
+<p><code>结论</code>: MySQL中的每张表只能设置一个字段为自增长，这个字段可以是非主键，但必须是一种键(key)。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL中，一张表只能有一个自增，但不一定是主键自增。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>员工部门表综合查询</title>
@@ -2017,56 +2042,6 @@
     
     
       <category term="失误锦集" scheme="http://www.sanstylemc.cn/tags/%E5%A4%B1%E8%AF%AF%E9%94%A6%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FIRST、FOLLOW、SELECT</title>
-    <link href="http://www.sanstylemc.cn/2018/04/18/FIRST%E3%80%81FOLLOW%E3%80%81SELECT/"/>
-    <id>http://www.sanstylemc.cn/2018/04/18/FIRST、FOLLOW、SELECT/</id>
-    <published>2018-04-18T08:23:53.000Z</published>
-    <updated>2018-06-13T00:08:13.735Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LL-1-文法"><a href="#LL-1-文法" class="headerlink" title="LL(1)文法"></a>LL(1)文法</h2><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;遍历所有表达式，取具有相同左部的表达式的select集合，将这些具有相同左部表达式的select集合取交集。<br>&nbsp;&nbsp;&nbsp;&nbsp;只要有一组相同左部表达式交集不为空，则该文法非LL1文法。<br>&nbsp;&nbsp;&nbsp;&nbsp;只有所有相同左部表达式交集都不为空，则为LL1文法。<br><a id="more"></a></p>
-</blockquote>
-<h2 id="FIRST"><a href="#FIRST" class="headerlink" title="FIRST"></a>FIRST</h2><p>S-&gt;AB|bC<br>A-&gt;ε|b<br>B-&gt;ε|aD<br>C-&gt;AD|b<br>D-&gt;aS|c</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml">FIRST(S)= (FIRST(A)-</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪(FIRST(B)- </span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">∪</span><span class="template-variable">&#123;b&#125;</span><span class="xml">=</span><span class="template-variable">&#123;a,b,ε&#125;</span><span class="xml"></span></div><div class="line"><span class="xml">因为A的first有ε，B的first有ε，S-&gt;AB，所以是(FIRST(A)-</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪(FIRST(B)- </span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)，然后S-&gt;bC，所以再加一个b，就是(FIRST(A)-</span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪(FIRST(B)- </span><span class="template-variable">&#123;ε&#125;</span><span class="xml">)∪</span><span class="template-variable">&#123;b&#125;</span><span class="xml">。</span></div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">First</span><span class="params">(A)</span></span>= &#123;<span class="selector-tag">b</span>, ε&#125;</div><div class="line">没什么好解释的</div></pre></td></tr></table></figure>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">First(B)=&#123;a</span><span class="string">,</span><span class="comment">ε&#125;</span></div><div class="line"><span class="comment">ε不用解释，就是B</span><span class="literal">-</span>&gt;<span class="comment">ε，所以有它，a就是因为B</span><span class="literal">-</span>&gt;<span class="comment">aD，第一个非终结符是a所以有a，那要不要加上D的first呢，就是a和c，答案是不用，就只要aD里面的a就可以。</span></div></pre></td></tr></table></figure>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">First</span>(<span class="keyword">C</span>)=&#123;a,b,c&#125;</div><div class="line"><span class="keyword">C</span>-&gt;AD这一句，AD都是非终结符，所以要找A和<span class="keyword">D</span>的first集。<span class="keyword">D</span>的是a，c。A的是b，ε。因为不是AD同时都能推出ε，所以<span class="keyword">C</span>的first是A和<span class="keyword">D</span>的first的并集减去ε，还要加上b，因为有<span class="keyword">C</span>-&gt;b这一句。</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">First</span><span class="params">(D)</span></span>=&#123;<span class="selector-tag">a</span>,c&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">First</span><span class="params">(AB)</span></span>=&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,ε&#125;</div><div class="line">AB同时能够推出ε，所以First(AB)就是A和B的First的并集减去ε再并上ε。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>两个非终结符的要看是不是他们两个同时能推出ε，能就有ε；要是有一个不能推出ε，那First集就没有ε。</p>
-</blockquote>
-<h2 id="FOLLOW"><a href="#FOLLOW" class="headerlink" title="FOLLOW"></a>FOLLOW</h2><p>从开始符号S开始推导，开始符号的follow里面一定要有#。<br>所以开始符号的S的follow集要有#。<br>follow是找-&gt;后面的。<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">比如找S的<span class="function"><span class="title">follow</span>，就要看谁的-&gt;</span>后面有S。</div><div class="line">D-&gt;<span class="function"><span class="title">aS</span>里面有S，然后再看D-&gt;</span><span class="function"><span class="title">aS</span>的S后面有没有别的符号，没有就加上D的follow集。如果有，就加上后面那个字母的first集里面除了ε以外的符号，再看这个字母能不能推出ε，如果能，就再加上-&gt;</span>左边的那个字母的follow。</div><div class="line">F<span class="function"><span class="title">ollow</span>(S)-&gt;</span>Follow(D)=&#123;#&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">Follow</span><span class="params">(A)</span></span>=&#123;<span class="selector-tag">a</span>,c,#&#125;</div><div class="line">看A的follow，首先找所有-&gt;后面有A的，找到了S-&gt;AB，C-&gt;AD。先看S-&gt;AB，A后面有B，所以要加上B的first集里面除了ε的其他符号，再看B能不能在有限的步骤里推出ε，有B-&gt;ε这句，所以能，就要再加上-&gt;左边的S的follow集，所以目前的A的follow集里面有<span class="selector-tag">a</span>,和follow(S)，再看C-&gt;AD这一句，A后面有D，所以要加上D的first集里面除了ε的其他的，再看D能不能在有限的步骤里推出ε，D不能，所以不用加-&gt;左边的C的follow，所以A的follow就是<span class="selector-tag">a</span>,Follow(S),<span class="selector-tag">a</span>,c，但是如果有重复的，就只要一个，所以最终就是<span class="selector-tag">a</span>,c,follow(S)，这个follow(S)到后面还有算出来，不能就这么写。</div></pre></td></tr></table></figure>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Follow(B)=&#123;#&#125;</div><div class="line">看B的follow，找所有-&gt;后面有B的，找到了S-&gt;AB，看B后面有字母吗？没有，就加上-&gt;左边的S的follow，所以Follow(B)=Follow(S)</div></pre></td></tr></table></figure>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Follow(<span class="keyword">C</span>)=&#123;#&#125;</div><div class="line">看<span class="keyword">C</span>的follow，找所有-&gt;后面有<span class="keyword">C</span>的，找到了S-&gt;bC，看<span class="keyword">C</span>后面有字母吗？没有，就加上-&gt;左边的S的follow集，所以Follow(<span class="keyword">C</span>)=Follow(S)</div></pre></td></tr></table></figure>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Follow(<span class="keyword">D</span>)=&#123;#&#125;</div><div class="line">看<span class="keyword">D</span>的follow，找所有-&gt;后面有<span class="keyword">D</span>的，找到了B-&gt;aD，<span class="keyword">C</span>-&gt;AD，这两句<span class="keyword">D</span>后面都没有字母，所以加上-&gt;左边的B和<span class="keyword">C</span>的follow，所以Follow(<span class="keyword">D</span>)=Follow(B)∪Flollow(<span class="keyword">C</span>)</div></pre></td></tr></table></figure>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Follow(S)=&#123;#&#125;∪Follow(<span class="keyword">D</span>)，Follow(<span class="keyword">D</span>)=Follow(B)+ Follow(<span class="keyword">C</span>)，所以Follow(S)=&#123;#&#125;∪Follow(B)∪Follow(<span class="keyword">C</span>)，Follow(B)= Follow(S)，Follow(<span class="keyword">C</span>)= Follow(S)，所以Follow(S)=&#123;#&#125;，Follow(B)=&#123;#&#125;，Follow(<span class="keyword">C</span>)=&#123;#&#125;，Follow(<span class="keyword">D</span>)=&#123;#&#125;，Follow(A)=&#123;a,c,#&#125;。</div></pre></td></tr></table></figure>
-<h2 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;AB)</span></span>，AB都能推出ε，所以SELECT(S-&gt;AB)=First(AB)-ε+Follow(S)，所以SELECT(S-&gt;AB)=&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,#&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(S-&gt;bC)</span></span>，bC不能推出ε，所以是First(bC)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(A-&gt;ε)</span></span>，A能推出ε所以是First(ε)-ε+Follow(A)，结果是&#123;<span class="selector-tag">a</span>,c,#&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(A-&gt;b)</span></span>，这里的A是推出ｂ，不是ε所以是first(b)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT<span class="comment">(B-&gt;ε)</span>，B能推出ε，所以是First<span class="comment">(ε)</span>-ε+Follow<span class="comment">(B)</span>，结果是&#123;<span class="attr">#&#125;</span></div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(B-&gt;aD)</span></span>，这里B不能推出ε，所以是First(aD)，结果是&#123;a&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">SELECT</span><span class="params">(C-&gt;AD)</span></span>，这里D不能推出ε，所以算AD不能推出ε，就是First(AD)，结果是&#123;<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,c&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT(<span class="keyword">C</span>-&gt;b)，<span class="keyword">C</span>推不出ε，所以是<span class="keyword">First</span>(b)，结果是&#123;b&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span>(D-&gt;<span class="keyword">aS</span>)，这里不能推出ε，所以是<span class="keyword">First</span>(<span class="keyword">aS</span>)，结果是&#123;a&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT(<span class="keyword">D</span>-&gt;c)，这里<span class="keyword">D</span>不能推出ε，所以是<span class="keyword">First</span>(c)，结果是&#123;c&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LL-1-文法&quot;&gt;&lt;a href=&quot;#LL-1-文法&quot; class=&quot;headerlink&quot; title=&quot;LL(1)文法&quot;&gt;&lt;/a&gt;LL(1)文法&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;遍历所有表达式，取具有相同左部的表达式的select集合，将这些具有相同左部表达式的select集合取交集。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;只要有一组相同左部表达式交集不为空，则该文法非LL1文法。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;只有所有相同左部表达式交集都不为空，则为LL1文法。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="编译原理" scheme="http://www.sanstylemc.cn/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
