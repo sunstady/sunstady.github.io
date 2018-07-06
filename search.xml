@@ -925,7 +925,7 @@
   <entry>
     <title><![CDATA[修改MySQL密码]]></title>
     <url>%2F2017%2F10%2F27%2F%E4%BF%AE%E6%94%B9MySQL%E5%AF%86%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[在DOS下执行：mysql -u root -p然后输入旧的密码，如果是第一次进入，则直接回车mysql&gt;show databases;mysql&gt;use mysql;注意一定先执行use mysql;再执行下面命令设置密码，如新密码123456mysql&gt;UPDATE user SET password=PASSWORD(&#39;123456&#39;) WHERE user=&#39;root&#39;;mysql&gt;FLUSH PRIVILEGES;mysql&gt;exit; 附上常用mysql命令(win8.1以管理员身份执行win+x+a):安装mysql服务：mysqld -install卸载mysql服务：mysqld -remove启动mysql服务：net start mysql停止mysql服务：net stop mysql 如果启动mysql服务出现1067错误码尝试清理datadir目录下的以下文件：auto.cnf、Cryhelyxx-pc.err、Cryhelyxx-pc.pid、ib_logfile0、ib_logfile1、ibdata1、ibtmp1注意：在清理之前请备份好数据库，否则后果自负，并再次启动mysql服务：net start mysql。]]></content>
+    <content type="text"><![CDATA[在DOS下执行：mysql -u root -p然后输入旧的密码，如果是第一次进入，则直接回车mysql&gt;show databases;mysql&gt;use mysql;注意一定先执行use mysql;再执行下面命令设置密码，如新密码123456mysql&gt;UPDATE user SET authentication_string=PASSWORD(&#39;123456&#39;) WHERE user=&#39;root&#39;;mysql&gt;FLUSH PRIVILEGES;mysql&gt;exit; 是的，您没看错，就是authentication_string而不是password。MySQL数据库下已经没有password这个字段了，password字段改成了authentication_string。如果写成password的话，会报ERROR 1054 (42S22): Unknown column &#39;password&#39; in &#39;field list&#39;这个错误。 附上常用mysql命令(win8.1以管理员身份执行win+x+a):安装mysql服务：mysqld -install卸载mysql服务：mysqld -remove启动mysql服务：net start mysql停止mysql服务：net stop mysql 如果启动mysql服务出现1067错误码尝试清理datadir目录下的以下文件：auto.cnf、Cryhelyxx-pc.err、Cryhelyxx-pc.pid、ib_logfile0、ib_logfile1、ibdata1、ibtmp1注意：在清理之前请备份好数据库，否则后果自负，并再次启动mysql服务：net start mysql。]]></content>
       <tags>
         <tag>MySQL</tag>
       </tags>
