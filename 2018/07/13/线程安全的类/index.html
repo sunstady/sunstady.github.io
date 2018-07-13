@@ -16,8 +16,8 @@
 
 <script>
     (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
+        if('xcaqdl'){
+            if (prompt('请输入文章密码') !== 'xcaqdl'){
                 alert('密码错误！');
                 history.back();
             }
@@ -98,7 +98,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -116,20 +116,18 @@
 
 
 
-<meta name="description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
-<meta name="keywords" content="python">
+<meta name="description" content="常见的线程安全相关的面试题。">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="py统计单词个数">
-<meta property="og:url" content="http://www.sanstylemc.cn/2018/04/06/py统计单词个数/index.html">
+<meta property="og:title" content="线程安全的类">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/07/13/线程安全的类/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
+<meta property="og:description" content="常见的线程安全相关的面试题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/py%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/1.png?raw=true">
-<meta property="og:updated_time" content="2018-04-06T14:35:41.862Z">
+<meta property="og:updated_time" content="2018-07-13T08:11:38.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="py统计单词个数">
-<meta name="twitter:description" content="任一个英文的纯文本文件，统计其中的单词出现的个数">
-<meta name="twitter:image" content="https://github.com/sunstady/hexo/blob/master/py%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/1.png?raw=true">
+<meta name="twitter:title" content="线程安全的类">
+<meta name="twitter:description" content="常见的线程安全相关的面试题。">
 
 
 
@@ -159,7 +157,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2018/04/06/py统计单词个数/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/07/13/线程安全的类/"/>
 
 
 
@@ -180,7 +178,7 @@
 })();
 </script>
 
-  <title>py统计单词个数 | Sanstyle</title>
+  <title>线程安全的类 | Sanstyle</title>
   
 
 
@@ -364,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/04/06/py统计单词个数/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/07/13/线程安全的类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -381,7 +379,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">py统计单词个数</h2>
+          <h2 class="post-title" itemprop="name headline">线程安全的类</h2>
         
 
         <div class="post-meta">
@@ -393,8 +391,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T22:32:28+08:00">
-                2018-04-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T16:11:00+08:00">
+                2018-07-13
               </time>
             
 
@@ -412,9 +410,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/06/py统计单词个数/#comments" itemprop="discussionUrl">
+                <a href="/2018/07/13/线程安全的类/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/06/py统计单词个数/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/07/13/线程安全的类/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -422,7 +420,7 @@
 
           
           
-             <span id="/2018/04/06/py统计单词个数/" class="leancloud_visitors" data-flag-title="py统计单词个数">
+             <span id="/2018/07/13/线程安全的类/" class="leancloud_visitors" data-flag-title="线程安全的类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -453,8 +451,25 @@
       
 
       
-        <p>任一个英文的纯文本文件，统计其中的单词出现的个数<br><a id="more"></a><br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import <span class="built_in">string</span></div><div class="line">f= open(r'C:\Users\<span class="number">12905</span>\Desktop\<span class="number">1.</span>txt', 'r+')   <span class="comment">#从文件中读取内容</span></div><div class="line">str1= f.<span class="built_in">read</span>()</div><div class="line">str= str1.lower()   <span class="comment">#全部切换成小写</span></div><div class="line"><span class="built_in">list</span>= str.split()   <span class="comment">#切片</span></div><div class="line">list1= []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(<span class="built_in">list</span>)):</div><div class="line">    <span class="built_in">list</span>[i]= <span class="built_in">list</span>[i].strip(<span class="built_in">string</span>.punctuation)</div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">word</span> <span class="keyword">in</span> <span class="built_in">list</span>:</div><div class="line">    <span class="keyword">if</span> <span class="built_in">word</span> <span class="keyword">not</span> <span class="keyword">in</span> list1:</div><div class="line">        list1.append(<span class="built_in">word</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="built_in">word</span> <span class="keyword">in</span> list1:</div><div class="line">    print(<span class="built_in">word</span>, <span class="built_in">list</span>.<span class="built_in">count</span>(<span class="built_in">word</span>))</div></pre></td></tr></table></figure></p>
-<p>运行结果如下图所示:<br><img src="https://github.com/sunstady/hexo/blob/master/py%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/1.png?raw=true" alt="1"></p>
+        <p>常见的线程安全相关的面试题。<br><a id="more"></a></p>
+<h2 id="HashMap和Hashtable的区别"><a href="#HashMap和Hashtable的区别" class="headerlink" title="HashMap和Hashtable的区别"></a>HashMap和Hashtable的区别</h2><p>HashMap和Hashtable都实现了Map接口，都是键值对保存数据的方式。<br>区别1：</p>
+<ul>
+<li>HashMap可以存放null</li>
+<li>Hashtable不能存放null<br>区别2：</li>
+<li>HashMap不是线程安全的类</li>
+<li>Hashtable是线程安全的类</li>
+</ul>
+<h2 id="StringBuffer和StringBuilder的区别"><a href="#StringBuffer和StringBuilder的区别" class="headerlink" title="StringBuffer和StringBuilder的区别"></a>StringBuffer和StringBuilder的区别</h2><p>StringBuffer是线程安全的<br>StringBuilder是非线程安全的<br>所以当进行大量字符串拼接操作的时候，如果是单线程就用StringBuffer会更快些，如果是多线程，就需要用StringBuffer保证数据的安全性。</p>
+<blockquote>
+<p>非线程安全的为什么会比线程安全的快？因为不需要同步，省略了时间。</p>
+</blockquote>
+<h2 id="ArrayList和Vector的区别"><a href="#ArrayList和Vector的区别" class="headerlink" title="ArrayList和Vector的区别"></a>ArrayList和Vector的区别</h2><p>通过在eclipse中查看源代码可以得知：<br>ArrayList类的声明：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">ArrayList&lt;E&gt;</span> <span class="keyword">extends</span> <span class="title">AbstractList&lt;E&gt;</span></span></div><div class="line"><span class="class">    <span class="title">implements</span> <span class="title">List&lt;E&gt;</span>, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></div></pre></td></tr></table></figure></p>
+<p>Vector类的声明：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Vector&lt;E&gt;</span>    <span class="keyword">extends</span> <span class="title">AbstractList&lt;E&gt;</span></span></div><div class="line"><span class="class">    <span class="title">implements</span> <span class="title">List&lt;E&gt;</span>, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></div></pre></td></tr></table></figure></p>
+<p>一模一样的~<br>他们的区别也在于，Vector是线程安全的类，而ArrayList是非线程安全的。</p>
+<h2 id="把非线程安全的集合转换为线程安全"><a href="#把非线程安全的集合转换为线程安全" class="headerlink" title="把非线程安全的集合转换为线程安全"></a>把非线程安全的集合转换为线程安全</h2><p>ArrayList是非线程安全的，换句话说，多个线程可以同时进入一个ArrayList对象的add方法<br>借助<code>Collections.synchronizedList</code>，可以把ArrayList转换为线程安全的List。<br>与此类似的，还有HashSet, LinkedList, HashMap等等非线程安全的类，都通过工具类Collections转换为线程安全的。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">package multiplethread;</div><div class="line"> </div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Collections;</div><div class="line"><span class="keyword">import</span> java.util.<span class="built_in">List</span>;</div><div class="line"> </div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TestThread</span> </span>&#123;</div><div class="line">    </div><div class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</div><div class="line">        <span class="built_in">List</span>&lt;Integer&gt; list1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="built_in">List</span>&lt;Integer&gt; list2 = Collections.synchronizedList(list1);</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="线程安全的MyStack"><a href="#线程安全的MyStack" class="headerlink" title="线程安全的MyStack"></a>线程安全的MyStack</h2><p>把LinkedList通过<code>Collections.synchronizedList</code>转换成了一个线程安全的List。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List<span class="tag">&lt;<span class="name">Hero</span>&gt;</span> heros = (List<span class="tag">&lt;<span class="name">Hero</span>&gt;</span>) Collections.synchronizedList(new LinkedList<span class="tag">&lt;<span class="name">Hero</span>&gt;</span>());</div></pre></td></tr></table></figure></p>
+<p>不需要在push上加synchronized修饰符<br>虽然多个线程可以同时进入push方法，但是调用heros.add方法的时候，同一时间，只有一个线程可以进入。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span>(<span class="params">Hero h</span>) </span>&#123;</div><div class="line">  heros.<span class="keyword">add</span>(h);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> collection;</div><div class="line">     </div><div class="line"><span class="keyword">import</span> java.util.Collections;</div><div class="line"><span class="keyword">import</span> java.util.LinkedList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line">  </div><div class="line"><span class="keyword">import</span> charactor.Hero;</div><div class="line">     </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyStack</span> <span class="keyword">implements</span> <span class="title">Stack</span></span>&#123;</div><div class="line">     </div><div class="line">    <span class="comment">//把LinkedList通过 Collections.synchronizedList转换成了一个线程安全的List</span></div><div class="line">    List&lt;Hero&gt; heros = (List&lt;Hero&gt;) Collections.synchronizedList(<span class="keyword">new</span> LinkedList&lt;Hero&gt;());</div><div class="line">  </div><div class="line">    <span class="comment">//不需要在push上加synchronized修饰符</span></div><div class="line">    <span class="comment">//虽然多个线程可以同时进入push方法，但是调用heros.add方法的时候</span></div><div class="line">    <span class="comment">//同一时间，只有一个线程可以进入</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(Hero h)</span> </span>&#123;</div><div class="line">        heros.add(h);</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">public</span> Hero <span class="title">pull</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> heros.remove(heros.size()-<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">public</span> Hero <span class="title">peek</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> heros.get(heros.size()-<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -503,7 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -516,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/py生成图片验证码/" rel="next" title="py生成图片验证码">
-                <i class="fa fa-chevron-left"></i> py生成图片验证码
+              <a href="/2018/07/12/黑白棋子/" rel="next" title="黑白棋子">
+                <i class="fa fa-chevron-left"></i> 黑白棋子
               </a>
             
           </div>
@@ -525,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/07/公平锁与非公平锁/" rel="prev" title="公平锁与非公平锁">
-                公平锁与非公平锁 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,8 +598,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -685,6 +705,24 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap和Hashtable的区别"><span class="nav-number">1.</span> <span class="nav-text">HashMap和Hashtable的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer和StringBuilder的区别"><span class="nav-number">2.</span> <span class="nav-text">StringBuffer和StringBuilder的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList和Vector的区别"><span class="nav-number">3.</span> <span class="nav-text">ArrayList和Vector的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把非线程安全的集合转换为线程安全"><span class="nav-number">4.</span> <span class="nav-text">把非线程安全的集合转换为线程安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全的MyStack"><span class="nav-number">5.</span> <span class="nav-text">线程安全的MyStack</span></a></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -866,9 +904,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2018/04/06/py统计单词个数/';
-          this.page.identifier = '2018/04/06/py统计单词个数/';
-          this.page.title = 'py统计单词个数';
+          this.page.url = 'http://www.sanstylemc.cn/2018/07/13/线程安全的类/';
+          this.page.identifier = '2018/07/13/线程安全的类/';
+          this.page.title = '线程安全的类';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
