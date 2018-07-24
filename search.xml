@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[索引]]></title>
+    <url>%2F2018%2F07%2F24%2F%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。&nbsp;&nbsp;&nbsp;&nbsp;索引分单列索引和组合索引。单列索引，即一个索引只包含单个列，一个表可以有多个单列索引，但这不是组合索引。组合索引，即一个索引包含多个列。 创建索引时，需要确保索引是应用在SQL查询语句的条件(一般作为WHERE子句的条件) &nbsp;&nbsp;&nbsp;&nbsp;实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录。 缺点: 虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE。因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件。 普通索引1、创建索引1create index indexName on mytable(username(length)); 如果是char、varchar类型，length可以小于字段实际长度；如果是blob和text类型，必须指定length。2、修改表结构(添加索引)1alter table tableName add index indexName(columnName); 3、创建表的时候直接指定12345create table mytable(id int not null,username varchar(16) not null,index [indexName] (username(length))); 4、删除索引的语法1drop index [indexName] on mytable; 唯一索引它与前面的普通索引类似，不同的就是：索引列的值必须唯一，但允许有空值。如果是组合索引，则列值的组合必须唯一。1、创建索引1create unique index indexName on mytable(username(length)); 2、修改表结构1alter table mytable add unique [indexName] (username(length)); 3、创建表的时候直接指定12345create table mytable(id int null,username varchar(16) not null,unique [indexName] (username(length))); 使用alter命令添加和删除索引有四种方式来添加数据表的索引：1alter table tbl_name add primary key(column_list); 该语句添加一个主键，这意味着索引值必须是唯一的，且不能为null。1alter table tbl_name add unique index_name(column_list); 这条语句创建索引的值必须是唯一的(除了null，外，null可能会出现多次)。1alter table tbl_name add index index_name(column_list); 添加普通索引，索引值可出现多次。1alter table tbl_name add fulltext index_name(column_list); 该语句指定了索引为fulltext，用于全文索引。 显示索引信息可以使用show index命令来列出表中的相关的索引信息。1show index from table_name;]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TIMESTAMP和DATETIME]]></title>
     <url>%2F2018%2F07%2F24%2FTIMESTAMP%E5%92%8CDATETIME%2F</url>
     <content type="text"><![CDATA[TIMESTAMP和DATETIME的表示方法非常类似，区别主要有以下几点。 1、TIMESTAMP支持的时间范围比较小，其取值范围从19700101080001到2038年的某个时间，而DATETIME是从1000-01-01 00:00:00 到 9999-12-31 23:59:59，范围更大。2、表中的第一个TIMESTAMP列自动设置为系统时间。如果在一个TIMESTAMP列中插入NULL，则该列值将自动设置为当前的日期和时间。在插入或更新一行但不明确给TIMESTAMP列赋值时也会自动设置该列的值为当前的日期和时间，当插入的值超出取值范围时，MySQL认为该值溢出，使用”0000-00-00 00:00:00”进行填补。3、TIMESTAMP的插入和查询都受当地时区的影响，更能反应出实际的日期。而DATETIME则只能反应出插入时当地的时区，其他时区的人查看数据必然会有误差的。4、TIMESTAMP的属性受MySQL版本和服务器SQLMode的影响很大。]]></content>
