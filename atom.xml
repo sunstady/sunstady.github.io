@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-07-25T01:53:27.685Z</updated>
+  <updated>2018-07-25T02:02:10.010Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>触发器</title>
     <link href="http://www.sanstylemc.cn/2018/07/25/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
     <id>http://www.sanstylemc.cn/2018/07/25/触发器/</id>
-    <published>2018-07-25T01:44:53.000Z</published>
-    <updated>2018-07-25T01:53:27.685Z</updated>
+    <published>2018-07-25T02:01:33.000Z</published>
+    <updated>2018-07-25T02:02:10.010Z</updated>
     
     <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。<br><a id="more"></a></p>
 <h2 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h2><p>创建触发器的语法如下:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> trigger_name trigger_time trigger_event <span class="keyword">ON</span> tb_name <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> trigger_stmt</div><div class="line">trigger_name：触发器的名称</div><div class="line">tirgger_time：触发时机，为<span class="keyword">BEFORE</span>或者<span class="keyword">AFTER</span></div><div class="line">trigger_event：触发事件，为<span class="keyword">INSERT</span>、<span class="keyword">DELETE</span>或者<span class="keyword">UPDATE</span></div><div class="line">tb_name：表示建立触发器的表明，就是在哪张表上建立触发器</div><div class="line">trigger_stmt：触发器的程序体，可以是一条<span class="keyword">SQL</span>语句或者是用<span class="keyword">BEGIN</span>和<span class="keyword">END</span>包含的多条语句</div><div class="line">所以可以说MySQL创建以下六种触发器：</div><div class="line"><span class="keyword">BEFORE</span> <span class="keyword">INSERT</span>,<span class="keyword">BEFORE</span> <span class="keyword">DELETE</span>,<span class="keyword">BEFORE</span> <span class="keyword">UPDATE</span></div><div class="line"><span class="keyword">AFTER</span> <span class="keyword">INSERT</span>,<span class="keyword">AFTER</span> <span class="keyword">DELETE</span>,<span class="keyword">AFTER</span> <span class="keyword">UPDATE</span></div></pre></td></tr></table></figure></p>
@@ -44,6 +44,8 @@
 <blockquote>
 <p>tips: 所有的触发器信息都存储在information_schema数据库下的triggers表中，可以使用select语句查询，如果触发器信息过多，最好通过t字段指定查询。</p>
 </blockquote>
+<h2 id="删除触发器"><a href="#删除触发器" class="headerlink" title="删除触发器"></a>删除触发器</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;一次可以删除一个触发程序，如果没有指定schema_name, 默认为当前数据库，具体语法如下:<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DROP</span> <span class="keyword">TRIGGER</span> [schema_name.] trigger_name;</div></pre></td></tr></table></figure></p>
+<p>例如，要删除users表上的触发器user_log，可以使用如下命令:<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">drop</span> <span class="keyword">trigger</span> user_log;</div></pre></td></tr></table></figure></p>
 <h2 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;触发器会有以下两种限制：<br>1、触发程序不能调用将数据返回客户端的存储程序，也不能使用采用CALL语句的动态SQL语句，但是允许存储程序通过参数将数据返回触发程序，也就是存储过程或者函数通过OUT或者INOUT类型的参数将数据返回触发器是可以的，但是不能调用直接返回数据的过程。<br>2、不能在触发器中使用以显示或隐藏方式开始或结束事务的语句，如STAERT TRANS-ACTION,COMMIT或ROLLBACK。<br>&nbsp;&nbsp;&nbsp;&nbsp;注意事项：MySQL的触发器是按照BEFORE触发器、行操作、AFTER触发器是顺序执行的，其中任何一步发生错误都不会继续执行剩下的操作，如果对事务表进行的操作，如果出现错误，那么将会被回滚，如果是对非事务表进行操作，那么就无法回滚了，数据可能会出错。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;触发器是基于行触发的，所以删除、新增或者修改操作可能都会激活触发器，所以不要编写过于复杂的触发器，也不要增加过得的触发器，这样会对数据的插入、修改或者删除带来比较严重的影响，同时也会带来可移植性差的后果，所以在设计触发器的时候一定要有所考虑。<br>&nbsp;&nbsp;&nbsp;&nbsp;触发器是一种特殊的存储过程，它在插入，删除或修改特定表中的数据时触发执行，它比数据库本身标准的功能有更精细和更复杂的数据控制能力。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;数据库触发器有以下的作用：<br>1、安全性。可以基于数据库的值使用户具有操作数据库的某种权利。</p>
