@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-07-25T01:45:31.149Z</updated>
+  <updated>2018-07-25T01:53:27.685Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.sanstylemc.cn/2018/07/25/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
     <id>http://www.sanstylemc.cn/2018/07/25/触发器/</id>
     <published>2018-07-25T01:44:53.000Z</published>
-    <updated>2018-07-25T01:45:31.149Z</updated>
+    <updated>2018-07-25T01:53:27.685Z</updated>
     
     <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。<br><a id="more"></a></p>
 <h2 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h2><p>创建触发器的语法如下:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> trigger_name trigger_time trigger_event <span class="keyword">ON</span> tb_name <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> trigger_stmt</div><div class="line">trigger_name：触发器的名称</div><div class="line">tirgger_time：触发时机，为<span class="keyword">BEFORE</span>或者<span class="keyword">AFTER</span></div><div class="line">trigger_event：触发事件，为<span class="keyword">INSERT</span>、<span class="keyword">DELETE</span>或者<span class="keyword">UPDATE</span></div><div class="line">tb_name：表示建立触发器的表明，就是在哪张表上建立触发器</div><div class="line">trigger_stmt：触发器的程序体，可以是一条<span class="keyword">SQL</span>语句或者是用<span class="keyword">BEGIN</span>和<span class="keyword">END</span>包含的多条语句</div><div class="line">所以可以说MySQL创建以下六种触发器：</div><div class="line"><span class="keyword">BEFORE</span> <span class="keyword">INSERT</span>,<span class="keyword">BEFORE</span> <span class="keyword">DELETE</span>,<span class="keyword">BEFORE</span> <span class="keyword">UPDATE</span></div><div class="line"><span class="keyword">AFTER</span> <span class="keyword">INSERT</span>,<span class="keyword">AFTER</span> <span class="keyword">DELETE</span>,<span class="keyword">AFTER</span> <span class="keyword">UPDATE</span></div></pre></td></tr></table></figure></p>
@@ -49,11 +49,20 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;数据库触发器有以下的作用：<br>1、安全性。可以基于数据库的值使用户具有操作数据库的某种权利。</p>
 <ul>
 <li>可以基于时间限制用户的操作，例如不允许下班后和节假日修改数据库数据。</li>
-<li>可以基于数据库中的数据限制用户的操作，例如不允许股票的价格的升幅一次超过10%。<br>2、审计。可以跟踪用户对数据库的操作。</li>
-<li>审计用户操作数据库的语句</li>
-<li>把用户对数据库的更新写入审计表<br>3、实现复杂的数据完整性规则。</li>
-<li>实现非标准的数据完整性检查和约束。触发器可产生比规则更为复杂的限制。与规则不同，触发器可以引用列或数据库对象，例如，触发器可回退任何企图吃进超过自己保证金的期货。<br>4、实现复杂的非标准的数据库相关完整性规则。触发器可以对数据库中相关的表进行连环更新。例如，在auths表author_code列上的删除触发器可导致相应删除在其它表中的与之匹配的行。<br>5、同步实时地复制表中的数据。<br>6、自动计算数据值，如果数据的值达到了一定的要求，则进行特定的处理。例如，如果公司的账号上的资金低于5万元则立即给财务人员发送警告数据。</li>
+<li>可以基于数据库中的数据限制用户的操作，例如不允许股票的价格的升幅一次超过10%。</li>
 </ul>
+<p>2、审计。可以跟踪用户对数据库的操作。</p>
+<ul>
+<li>审计用户操作数据库的语句</li>
+<li>把用户对数据库的更新写入审计表</li>
+</ul>
+<p>3、实现复杂的数据完整性规则。</p>
+<ul>
+<li>实现非标准的数据完整性检查和约束。触发器可产生比规则更为复杂的限制。与规则不同，触发器可以引用列或数据库对象，例如，触发器可回退任何企图吃进超过自己保证金的期货。</li>
+</ul>
+<p>4、实现复杂的非标准的数据库相关完整性规则。触发器可以对数据库中相关的表进行连环更新。例如，在auths表author_code列上的删除触发器可导致相应删除在其它表中的与之匹配的行。</p>
+<p>5、同步实时地复制表中的数据。</p>
+<p>6、自动计算数据值，如果数据的值达到了一定的要求，则进行特定的处理。例如，如果公司的账号上的资金低于5万元则立即给财务人员发送警告数据。</p>
 ]]></content>
     
     <summary type="html">
