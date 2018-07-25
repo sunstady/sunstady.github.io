@@ -98,7 +98,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="MySQL," />
 
 
 
@@ -116,20 +116,18 @@
 
 
 
-<meta name="description" content="Java多态概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态分为操作符的多">
-<meta name="keywords" content="Java">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;锁是计算机协调多个进程或线程并发访问某一资源的机制。在数据库中，除传统的计算资源(如CPU、RAM、I/O等)的争用以外，数据也是一种供许多用户共享的资源。锁冲突是影响数据库并发访问性能的一个重要因素。">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java多态的实现原理">
-<meta property="og:url" content="http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/index.html">
+<meta property="og:title" content="锁问题">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/07/25/锁问题/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="Java多态概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态分为操作符的多">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;锁是计算机协调多个进程或线程并发访问某一资源的机制。在数据库中，除传统的计算资源(如CPU、RAM、I/O等)的争用以外，数据也是一种供许多用户共享的资源。锁冲突是影响数据库并发访问性能的一个重要因素。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/Java%E5%A4%9A%E6%80%81%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/3.png?raw=true">
-<meta property="og:updated_time" content="2018-05-09T13:49:03.813Z">
+<meta property="og:updated_time" content="2018-07-25T06:22:56.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java多态的实现原理">
-<meta name="twitter:description" content="Java多态概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;多态分为操作符的多">
-<meta name="twitter:image" content="https://github.com/sunstady/hexo/blob/master/Java%E5%A4%9A%E6%80%81%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/3.png?raw=true">
+<meta name="twitter:title" content="锁问题">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;锁是计算机协调多个进程或线程并发访问某一资源的机制。在数据库中，除传统的计算资源(如CPU、RAM、I/O等)的争用以外，数据也是一种供许多用户共享的资源。锁冲突是影响数据库并发访问性能的一个重要因素。">
 
 
 
@@ -159,7 +157,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/07/25/锁问题/"/>
 
 
 
@@ -180,7 +178,7 @@
 })();
 </script>
 
-  <title>Java多态的实现原理 | Sanstyle</title>
+  <title>锁问题 | Sanstyle</title>
   
 
 
@@ -364,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/07/25/锁问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -381,7 +379,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java多态的实现原理</h2>
+          <h2 class="post-title" itemprop="name headline">锁问题</h2>
         
 
         <div class="post-meta">
@@ -393,8 +391,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T15:36:59+08:00">
-                2018-04-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T14:22:19+08:00">
+                2018-07-25
               </time>
             
 
@@ -412,9 +410,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/03/Java多态的实现原理/#comments" itemprop="discussionUrl">
+                <a href="/2018/07/25/锁问题/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/03/Java多态的实现原理/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/07/25/锁问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -422,7 +420,7 @@
 
           
           
-             <span id="/2018/04/03/Java多态的实现原理/" class="leancloud_visitors" data-flag-title="Java多态的实现原理">
+             <span id="/2018/07/25/锁问题/" class="leancloud_visitors" data-flag-title="锁问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -453,16 +451,21 @@
       
 
       
-        <h2 id="Java多态概述"><a href="#Java多态概述" class="headerlink" title="Java多态概述"></a>Java多态概述</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;多态是面向对象编程语言的重要特性，它允许基类的指针或引用指向派生类的对象，而在具体访问时实现方法的动态绑定。Java对于方法调用动态绑定的实现主要依赖于方法表，但通过类引用调用(invokevitual)和接口引用调用(invokeinterface)的实现则有所不同。<br>&nbsp;&nbsp;&nbsp;&nbsp;多态分为<code>操作符的多态</code>和<code>类的多态</code>。<code>操作符的多态</code>：<code>+</code>可以作为算术运算，也可作为字符串连接。<code>类的多态</code>：父类引用指向子类对象。要实现类的多态，需要如下条件：<code>父类(接口)引用指向子类对象</code>和<code>调用的方法有重写</code>。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>类引用调用的大致过程为:</code>Java编译器将Java源代码编译成class文件，在编译过程中，会根据静态类型将调用的符号引用写到class文件中。在执行时，JVM根据class文件找到调用方法的符号引用，然后在静态类型的方法表中找到偏移量，然后根据this指针确定对象的实际类型，使用实际类型的方法表，偏移量跟静态类型中方法表的偏移量一样，如果在实际类型的方法表中找到该方法，则直接调用，否则，认为没有重写父类该方法。按照继承关系从下往上搜索。<br><img src="https://github.com/sunstady/hexo/blob/master/Java%E5%A4%9A%E6%80%81%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/3.png?raw=true" alt="1"><br>&nbsp;&nbsp;&nbsp;&nbsp;从上图可以看出，当程序运行时，需要某个类时，类载入子系统会将相应的class文件载入到JVM中，并在内部建立该类的类型信息（这个类型信息其实就是class文件在JVM中存储的一种数据结构），包含java类定义的所有信息，包括方法代码，类变量、成员变量、以及本博文要重点讨论的方法表。这个类型信息就存储在方法区。<br>&nbsp;&nbsp;&nbsp;&nbsp;注意，这个方法区中的类型信息跟在堆中存放的class对象是不同的。在方法区中，这个class的类型信息只有唯一的实例（所以是各个线程共享的内存区域），而在堆中可以有多个该class对象。可以通过堆中的class对象访问到方法区中类型信息。就像在java反射机制那样，通过class对象可以访问到该类的所有信息一样。<br><code>方法表是实现动态调用的核心。上面讲过方法表存放在方法区中的类型信息中。为了优化对象
-调用方法的速度，方法区的类型信息会增加一个指针，该指针指向一个记录该类方法的方法表，
-方法表中的每一个项都是对应方法的指针。</code><br>这些方法中包括从父类继承的所有方法以及自身重写（override）的方法。<br><code>方法区:</code>方法区和JAVA堆一样，是各个线程共享的内存区域，用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。<br><code>运行时常量池:</code>它是方法区的一部分，Class文件中除了有类的版本、方法、字段等描述信息外，还有一项信息是常量池，用于存放编译器生成的各种符号引用，这部分信息在类加载时进入方法区的运行时常量池中。方法区的内存回收目标是针对常量池的回收及对类型的卸载。</p>
-<h2 id="Java的方法调用方式"><a href="#Java的方法调用方式" class="headerlink" title="Java的方法调用方式"></a>Java的方法调用方式</h2><blockquote>
-<p>1、Java 的方法调用有两类，动态方法调用与静态方法调用。<br>2、静态方法调用是指对于类的静态方法的调用方式，是静态绑定的；而动态方法调用需要有方法调用所作用的对象，是动态绑定的。<br>3、类调用 (invokestatic) 是在编译时就已经确定好具体调用方法的情况。<br>4、实例调用 (invokevirtual)则是在调用的时候才确定具体的调用方法，这就是动态绑定，也是多态要解决的核心问题。<br>5、JVM 的方法调用指令有四个，分别是 invokestatic，invokespecial，invokesvirtual 和 invokeinterface。前两个是静态绑定，后两个是动态绑定的。本文也可以说是对于JVM后两种调用实现的考察。</p>
-</blockquote>
-<h2 id="方法表与方法调用"><a href="#方法表与方法调用" class="headerlink" title="方法表与方法调用"></a>方法表与方法调用</h2><p>如有类定义Persion、Girl、Boy<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">    <span class="keyword">return</span> <span class="string">"I'm a person."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line">        </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Boy</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">    <span class="keyword">return</span> <span class="string">"I'm a boy"</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fight</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Girl</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">    <span class="keyword">return</span> <span class="string">"I'm a girl"</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sing</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;当这三个类被载入到Java虚拟机之后，方法区中就包含了各自的类的信息。<br>&nbsp;&nbsp;&nbsp;&nbsp;Girl 和 Boy 的方法表包含继承自 Object 的方法，继承自直接父类Person的方法及各自新定义的方法。注意方法表条目指向的具体的方法地址，如 Girl 继承自Object的方法中，只有 toString()指向自己的实现（Girl 的方法代码），其余皆指向 Object 的方法代码；其继承自于 Person 的方法 eat() 和 speak() 分别指向 Person 的方法实现和本身的实现。<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>如果子类改写了父类的方法，那么子类和父类的那些同名的方法共享一个方法表项。</code><br>&nbsp;&nbsp;&nbsp;&nbsp;因此，方法表的偏移量总是固定的。所有继承父类的子类的方法表中，其父类所定义的方法的偏移量也总是一个定值。<br>&nbsp;&nbsp;&nbsp;&nbsp;Person或Object中的任意一个方法，在它们的方法表和其子类 Girl和Boy的方法表中的位置(index)是一样的。这样 JVM在调用实例方法其实只需要指定调用方法表中的第几个方法即可。</p>
-<h2 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;因为 Java 类是可以同时实现多个接口的，而当用接口引用调用某个方法的时候，情况就有所不同了。<br>&nbsp;&nbsp;&nbsp;&nbsp;Java 允许一个类实现多个接口，从某种意义上来说相当于多继承，这样同样的方法在基类和派生类的方法表的位置就可能不一样了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IDance</span></span>&#123;     </div><div class="line">   <span class="function"><span class="keyword">void</span> <span class="title">dance</span><span class="params">()</span></span>;     </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">   <span class="keyword">return</span> <span class="string">"I'm a person."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line">        </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Dancer</span> <span class="keyword">extends</span> <span class="title">Person</span>     </span></div><div class="line"><span class="class"> <span class="keyword">implements</span> <span class="title">IDance</span> </span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">   <span class="keyword">return</span> <span class="string">"I'm a dancer."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dance</span><span class="params">()</span></span>&#123;&#125;     </div><div class="line"> &#125;     </div><div class="line">    </div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Snake</span> <span class="keyword">implements</span> <span class="title">IDance</span></span>&#123;     </div><div class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;     </div><div class="line">   <span class="keyword">return</span> <span class="string">"A snake."</span>;     </div><div class="line">     &#125;     </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dance</span><span class="params">()</span></span>&#123;     </div><div class="line"> <span class="comment">//snake dance     </span></div><div class="line">     &#125;     </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;可以看到，由于接口的介入，继承自于接口 IDance 的方法 dance()在类Dancer和Snake的方法表中的位置已经不一样了，显然我们无法仅根据偏移量来进行方法的调用。<br>&nbsp;&nbsp;&nbsp;&nbsp;Java对于接口方法的调用是采用搜索方法表的方式，如，要在Dancer的方法表中找到dance()方法，必须搜索Dancer的整个方法表。<br>&nbsp;&nbsp;&nbsp;&nbsp;因为每次接口调用都要搜索方法表，所以从效率上来说，接口方法的调用总是慢于类方法的调用的。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;锁是计算机协调多个进程或线程并发访问某一资源的机制。在数据库中，除传统的计算资源(如CPU、RAM、I/O等)的争用以外，数据也是一种供许多用户共享的资源。锁冲突是影响数据库并发访问性能的一个重要因素。<br><a id="more"></a></p>
+<h2 id="MySQL锁概述"><a href="#MySQL锁概述" class="headerlink" title="MySQL锁概述"></a>MySQL锁概述</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;MySQL的锁机制比较简单，其最显著的特点是不同的存储引擎支持不同的锁机制。比如，M有ISAM和MEMORY存储引擎采用的是表级锁(table-level locking); BDB存储引擎采用的是页面锁(page-level locking), 但也支持表级锁; InnoDB存储引擎既支持行级锁，也支持表级锁，但默认情况下是采用行级锁。</p>
+<p>MySQL这3种锁的特性可大致归纳如下。</p>
+<ul>
+<li>表级锁：开销小，加锁快，不会出现死锁，锁定力度大，发生锁冲突的概率最高，并发度最低。</li>
+<li>行级锁：开销大，加锁慢，会出现死锁，锁定力度最小，发生锁冲突的概率最低，并发度也最高。</li>
+<li>页面锁：开销和加锁时间界于表锁和行锁之间，会出现死锁，锁定力度界于表锁和行锁之间，并发度一般。</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;仅从锁的角度来看：表级锁更适合于以查询为主，只有少量按索引条件更新数据的引用，如Web应用；而行级锁则更适合于有大量按索引条件并发更新少量不同数据，同时又有并发查询的应用，如一些在线事务处理(OLTP)系统。</p>
+<h2 id="什么时候使用表锁"><a href="#什么时候使用表锁" class="headerlink" title="什么时候使用表锁"></a>什么时候使用表锁</h2><p>对于InnoDB表，在绝大部分情况下都应该使用行级锁，因为事务和行锁往往是我们之所以选择InnoDB表的理由。但在个别特殊事务中，也可以考虑使用表级锁。</p>
+<ul>
+<li>第一种情况是：事务需要更新大部分或全部数据，表又比较大，如果使用默认的行锁，不仅这个事务执行效率低，而且可能造成其他事务长时间锁等待和锁冲突，这种情况下可以考虑使用表锁来提高该事务的执行速度。</li>
+<li>第二种情况是：事务涉及多个表，比较复杂，很可能引起死锁，造成大量事务回滚。这种情况也可以考虑一次性锁定事务涉及的表，从而避免死锁、减少数据库因事务回滚带来的开销。<br>当然，应用中这两种事务不能太多，否则，就应该考虑使用MyISAM表了。</li>
+</ul>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;MyISAM表锁是deadlock free的，这是因为MyISAM总是一次获得所需的全部锁，要么全部满足，要么等待，因此不会出现死锁。但在InnpDB中，除单个SQL组成的事务外，锁是逐步获得的，这就决定在InnoDB中发生死锁是可能的。<br>&nbsp;&nbsp;&nbsp;&nbsp;发生死锁后，InnoDB一般都能自动检测到，并使一个事务释放锁并回退，另一个事务获得锁，继续完成事务。但在涉及外部锁，或涉及表锁的情况下，InnoDB并不能完全自动检测到死锁，这需要通过设置锁等待超时参数innodb_lock_wait_timeout来解决。需要说明的是，这个参数并不是只用来解决死锁问题，在并发访问比较高的情况下，如果大量事务因无法立即获得所需的锁而挂起，会占用大量计算机资源，造成严重的性能问题，甚至拖垮数据库。可以通过设置合适的锁等待超时阈(yu四声)值,避免这种情况发生。<br>1、在应用中，如果不同的程序会并发存取多个表，应尽量约定以相同的顺序来访问表，这样可以大大降低产生死锁的机会。<br>2、在程序中以批量方式处理数据的时候，如果事先对数据排序，保证每个线程按固定的顺序来处理记录，也可以大大降低出现死锁的可能。<br>3、在事务中，如果要更新记录，应该直接申请足够级别的锁，即排他锁，而不应先申请共享锁，更新时再申请排他锁，因为当用户申请排他锁时，其他事务可能又已经获得了相同记录的共享锁，从而造成锁冲突，甚至死锁。<br>4、在REPEATABLE-READ隔离级别下，如果两个线程同时对相同条件记录用SELECT…FOR UPDATE加排他锁，在没有符合该条件记录情况下，两个线程都会加锁成功。程序发现记录尚不存在，就试图插入一条新记录，如果两个线程都这么做，就会出现死锁。这种情况下，将隔离级别改成READ COMMITTED，就可避免问题。<br>5、当隔离级别为READ COMMITTED时，如果两个线程都先执行SELECT…FOR UPDATE，判断是否存在符合条件的记录，如果没有，就插入记录。此时，只有一个线程能插入成功，另一个线程会出现锁等待， 当第一个线程提交后，第二个线程会因主键重出错，但虽然这个线程出错了，却会获得一个排他锁！这时如果有第三个线程又来申请排他锁，也会出现死锁。<br>&nbsp;&nbsp;&nbsp;&nbsp;对于这种情况，可以直接做插入操作，然后再捕获主键重异常，或者在遇到主键重错误时，总是执行ROLLBACK释放获得的排他锁。</p>
 
       
     </div>
@@ -511,7 +514,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           
         </div>
       
@@ -524,8 +527,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/02/悲观锁与乐观锁/" rel="next" title="悲观锁与乐观锁">
-                <i class="fa fa-chevron-left"></i> 悲观锁与乐观锁
+              <a href="/2018/07/25/procedure与function/" rel="next" title="procedure与function">
+                <i class="fa fa-chevron-left"></i> procedure与function
               </a>
             
           </div>
@@ -533,10 +536,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/05/CSS技巧/" rel="prev" title="CSS技巧">
-                CSS技巧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -712,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java多态概述"><span class="nav-number">1.</span> <span class="nav-text">Java多态概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java的方法调用方式"><span class="nav-number">2.</span> <span class="nav-text">Java的方法调用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法表与方法调用"><span class="nav-number">3.</span> <span class="nav-text">方法表与方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口调用"><span class="nav-number">4.</span> <span class="nav-text">接口调用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL锁概述"><span class="nav-number">1.</span> <span class="nav-text">MySQL锁概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么时候使用表锁"><span class="nav-number">2.</span> <span class="nav-text">什么时候使用表锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#死锁"><span class="nav-number">3.</span> <span class="nav-text">死锁</span></a></li></ol></div>
             
 
 
@@ -901,9 +900,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2018/04/03/Java多态的实现原理/';
-          this.page.identifier = '2018/04/03/Java多态的实现原理/';
-          this.page.title = 'Java多态的实现原理';
+          this.page.url = 'http://www.sanstylemc.cn/2018/07/25/锁问题/';
+          this.page.identifier = '2018/07/25/锁问题/';
+          this.page.title = '锁问题';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
