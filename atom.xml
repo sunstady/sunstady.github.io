@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-07-24T11:30:51.891Z</updated>
+  <updated>2018-07-25T01:45:31.149Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>触发器</title>
+    <link href="http://www.sanstylemc.cn/2018/07/25/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+    <id>http://www.sanstylemc.cn/2018/07/25/触发器/</id>
+    <published>2018-07-25T01:44:53.000Z</published>
+    <updated>2018-07-25T01:45:31.149Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。<br><a id="more"></a></p>
+<h2 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h2><p>创建触发器的语法如下:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> trigger_name trigger_time trigger_event <span class="keyword">ON</span> tb_name <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> trigger_stmt</div><div class="line">trigger_name：触发器的名称</div><div class="line">tirgger_time：触发时机，为<span class="keyword">BEFORE</span>或者<span class="keyword">AFTER</span></div><div class="line">trigger_event：触发事件，为<span class="keyword">INSERT</span>、<span class="keyword">DELETE</span>或者<span class="keyword">UPDATE</span></div><div class="line">tb_name：表示建立触发器的表明，就是在哪张表上建立触发器</div><div class="line">trigger_stmt：触发器的程序体，可以是一条<span class="keyword">SQL</span>语句或者是用<span class="keyword">BEGIN</span>和<span class="keyword">END</span>包含的多条语句</div><div class="line">所以可以说MySQL创建以下六种触发器：</div><div class="line"><span class="keyword">BEFORE</span> <span class="keyword">INSERT</span>,<span class="keyword">BEFORE</span> <span class="keyword">DELETE</span>,<span class="keyword">BEFORE</span> <span class="keyword">UPDATE</span></div><div class="line"><span class="keyword">AFTER</span> <span class="keyword">INSERT</span>,<span class="keyword">AFTER</span> <span class="keyword">DELETE</span>,<span class="keyword">AFTER</span> <span class="keyword">UPDATE</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;其中，触发器名参数指要创建的触发器的名字。<br>&nbsp;&nbsp;&nbsp;&nbsp;对同一个表相同触发时间的相同触发事件，只能定义一个触发器。<br>&nbsp;&nbsp;&nbsp;&nbsp;触发器只能创建在永久表上，不能对临时表创建触发器。</p>
+<p>创建有多个执行语句的触发器<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> 触发器名 <span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span> 触发事件</div><div class="line"><span class="keyword">ON</span> 表名 <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line">    执行语句列表</div><div class="line"><span class="keyword">END</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;其中，BEGIN与END之间的执行语句列表参数表示需要执行的多个语句，不同语句用分号隔开。</p>
+<blockquote>
+<p>tips: 一般情况下，MySQL默认是以 ; 作为结束执行语句，与触发器中需要的分行起冲突。为解决此问题可用DELIMITER，如：DELIMITER ||, 可以将结束符号变成 || 。当触发器创建完成后，可以用DELIMITER; 来将结束符变成 ; 。</p>
+</blockquote>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">mysql&gt; DELIMITER ||</div><div class="line">mysql&gt; CREATE TRIGGER demo BEFORE DELETE</div><div class="line">    -<span class="ruby">&gt; ON users FOR EACH ROW</span></div><div class="line"><span class="ruby">    -&gt; <span class="keyword">BEGIN</span></span></div><div class="line"><span class="ruby">    -&gt; INSERT INTO logs VALUES(NOW());</span></div><div class="line"><span class="ruby">    -&gt; INSERT INTO logs VALUES(NOW());</span></div><div class="line"><span class="ruby">    -&gt; <span class="keyword">END</span></span></div><div class="line"><span class="ruby">    -&gt; <span class="params">||</span></span></div><div class="line"><span class="ruby">Query OK, <span class="number">0</span> rows affected (<span class="number">0</span>.<span class="number">06</span> sec)</span></div><div class="line"><span class="ruby"></span></div><div class="line"><span class="ruby">mysql&gt; DELIMITER ;</span></div></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;上面的语句中，开头将结束符号定义为||，中间定义一个触发器，一旦有满足条件的删除操作，就会执行BEGIN和END中的语句，接着用||结束。最后使用DELIMITER ; 将结束符号还原。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>现有表如下：<br>用户users表<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">create table users(</div><div class="line">id int(11) unsigned <span class="keyword">not</span> <span class="literal">null</span> auto_increment;</div><div class="line">name varchar(255)<span class="built_in"> default </span><span class="literal">null</span>,</div><div class="line">add_time int(11)<span class="built_in"> default </span><span class="literal">null</span>,</div><div class="line">primary key(id),</div><div class="line">key name(name(250)) using btree</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>日志logs表：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">logs</span>(</div><div class="line"><span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">not</span> <span class="literal">null</span> auto_increment;</div><div class="line">log varchar(255) default null <span class="keyword">comment</span> <span class="string">'日志说明'</span>,</div><div class="line">primary <span class="keyword">key</span>(<span class="keyword">id</span>)</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;需求是：当在users中插入一条数据，就会在logs中生成一条日志信息。<br>创建触发器：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">DELIMITER $</div><div class="line">CREATE TRIGGER user_log AFTER INSERT ON<span class="built_in"> users </span><span class="keyword">FOR</span> EACH ROW</div><div class="line">BEGIN</div><div class="line">DECLARE s1 VARCHAR(40) character <span class="builtin-name">set</span> utf8;</div><div class="line">DECLARE s2 VARCHAR(20) character <span class="builtin-name">set</span> utf8;#后面发现中文字符编码出现乱码，这里设置字符集</div><div class="line"><span class="builtin-name">SET</span> s2 = <span class="string">" is created"</span>;</div><div class="line"><span class="builtin-name">SET</span> s1 = CONCAT(NEW.name,s2);     #函数CONCAT可以将字符串连接</div><div class="line">INSERT INTO logs(log) values(s1);</div><div class="line">END $</div><div class="line">DELIMITER ;</div></pre></td></tr></table></figure></p>
+<h2 id="查看触发器"><a href="#查看触发器" class="headerlink" title="查看触发器"></a>查看触发器</h2><p>show triggers语句查看触发器信息。</p>
+<blockquote>
+<p>show triggers无法查询指定的触发器。</p>
+</blockquote>
+<p>在triggers表中查看触发器信息<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> information_schema.triggers;</div></pre></td></tr></table></figure></p>
+<p>同时该方法可以查询制定触发器的详细信息<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> information_schema.triggers <span class="keyword">where</span> trigger_name= <span class="string">'user_log'</span>;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>tips: 所有的触发器信息都存储在information_schema数据库下的triggers表中，可以使用select语句查询，如果触发器信息过多，最好通过t字段指定查询。</p>
+</blockquote>
+<h2 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;触发器会有以下两种限制：<br>1、触发程序不能调用将数据返回客户端的存储程序，也不能使用采用CALL语句的动态SQL语句，但是允许存储程序通过参数将数据返回触发程序，也就是存储过程或者函数通过OUT或者INOUT类型的参数将数据返回触发器是可以的，但是不能调用直接返回数据的过程。<br>2、不能在触发器中使用以显示或隐藏方式开始或结束事务的语句，如STAERT TRANS-ACTION,COMMIT或ROLLBACK。<br>&nbsp;&nbsp;&nbsp;&nbsp;注意事项：MySQL的触发器是按照BEFORE触发器、行操作、AFTER触发器是顺序执行的，其中任何一步发生错误都不会继续执行剩下的操作，如果对事务表进行的操作，如果出现错误，那么将会被回滚，如果是对非事务表进行操作，那么就无法回滚了，数据可能会出错。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;触发器是基于行触发的，所以删除、新增或者修改操作可能都会激活触发器，所以不要编写过于复杂的触发器，也不要增加过得的触发器，这样会对数据的插入、修改或者删除带来比较严重的影响，同时也会带来可移植性差的后果，所以在设计触发器的时候一定要有所考虑。<br>&nbsp;&nbsp;&nbsp;&nbsp;触发器是一种特殊的存储过程，它在插入，删除或修改特定表中的数据时触发执行，它比数据库本身标准的功能有更精细和更复杂的数据控制能力。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;数据库触发器有以下的作用：<br>1、安全性。可以基于数据库的值使用户具有操作数据库的某种权利。</p>
+<ul>
+<li>可以基于时间限制用户的操作，例如不允许下班后和节假日修改数据库数据。</li>
+<li>可以基于数据库中的数据限制用户的操作，例如不允许股票的价格的升幅一次超过10%。<br>2、审计。可以跟踪用户对数据库的操作。</li>
+<li>审计用户操作数据库的语句</li>
+<li>把用户对数据库的更新写入审计表<br>3、实现复杂的数据完整性规则。</li>
+<li>实现非标准的数据完整性检查和约束。触发器可产生比规则更为复杂的限制。与规则不同，触发器可以引用列或数据库对象，例如，触发器可回退任何企图吃进超过自己保证金的期货。<br>4、实现复杂的非标准的数据库相关完整性规则。触发器可以对数据库中相关的表进行连环更新。例如，在auths表author_code列上的删除触发器可导致相应删除在其它表中的与之匹配的行。<br>5、同步实时地复制表中的数据。<br>6、自动计算数据值，如果数据的值达到了一定的要求，则进行特定的处理。例如，如果公司的账号上的资金低于5万元则立即给财务人员发送警告数据。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;触发器是与表有关的数据库对象，在满足定义条件时触发，并执行触发器中定义的语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>获取无线局域网适配器IP</title>
@@ -811,356 +863,6 @@
     
     
       <category term="tmall_ssm" scheme="http://www.sanstylemc.cn/tags/tmall-ssm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL练习二</title>
-    <link href="http://www.sanstylemc.cn/2018/05/18/MySQL%E7%BB%83%E4%B9%A0%E4%BA%8C/"/>
-    <id>http://www.sanstylemc.cn/2018/05/18/MySQL练习二/</id>
-    <published>2018-05-18T14:35:21.000Z</published>
-    <updated>2018-05-18T14:35:59.463Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="统计各个部门对应员工涨幅的次数总和，给出部门编码dept-no、部门名称dept-name以及次数sum"><a href="#统计各个部门对应员工涨幅的次数总和，给出部门编码dept-no、部门名称dept-name以及次数sum" class="headerlink" title="统计各个部门对应员工涨幅的次数总和，给出部门编码dept_no、部门名称dept_name以及次数sum"></a>统计各个部门对应员工涨幅的次数总和，给出部门编码dept_no、部门名称dept_name以及次数sum</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`departments`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_name`</span> varchar(<span class="number">40</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">dept_no</th>
-<th style="text-align:center">dept_name</th>
-<th style="text-align:center">sum</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">d001</td>
-<td style="text-align:center">Marketing</td>
-<td style="text-align:center">24</td>
-</tr>
-<tr>
-<td style="text-align:center">省略</td>
-<td style="text-align:center">省略</td>
-<td style="text-align:center">省略</td>
-</tr>
-<tr>
-<td style="text-align:center">d006</td>
-<td style="text-align:center">Quality Management</td>
-<td style="text-align:center">25</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select c<span class="selector-class">.dept_no</span>, c<span class="selector-class">.dept_name</span>, count(salary) as sum from (salaries <span class="selector-tag">a</span>, dept_emp <span class="selector-tag">b</span> on <span class="selector-tag">a</span>.emp_no= <span class="selector-tag">b</span>.emp_no), departments c on c.dept_no= <span class="selector-tag">b</span><span class="selector-class">.dept_no</span> group by c.dept_no</div></pre></td></tr></table></figure>
-<h2 id="对所有员工的当前-to-date-’9999-01-01’-薪水按照salary进行按照1-N的排名，相同salary并列且按照emp-no升序排列"><a href="#对所有员工的当前-to-date-’9999-01-01’-薪水按照salary进行按照1-N的排名，相同salary并列且按照emp-no升序排列" class="headerlink" title="对所有员工的当前(to_date=’9999-01-01’)薪水按照salary进行按照1-N的排名，相同salary并列且按照emp_no升序排列"></a>对所有员工的当前(to_date=’9999-01-01’)薪水按照salary进行按照1-N的排名，相同salary并列且按照emp_no升序排列</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
-<h3 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">emp_no</th>
-<th style="text-align:center">salary</th>
-<th style="text-align:center">rank</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">10005</td>
-<td style="text-align:center">94692</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">10009</td>
-<td style="text-align:center">94409</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">10010</td>
-<td style="text-align:center">94409</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">10001</td>
-<td style="text-align:center">88958</td>
-<td style="text-align:center">3</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h3 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select <span class="selector-tag">a</span><span class="selector-class">.emp_no</span>, <span class="selector-tag">a</span><span class="selector-class">.salary</span>, count(distinct <span class="selector-tag">b</span>.salary) as rank </div><div class="line">from salaries <span class="selector-tag">a</span>, salaries <span class="selector-tag">b</span> </div><div class="line">where <span class="selector-tag">a</span>.salary&lt;= <span class="selector-tag">b</span><span class="selector-class">.salary</span> and <span class="selector-tag">a</span>.to_date= <span class="string">"9999-01-01"</span> and <span class="selector-tag">b</span>.to_date= <span class="string">"9999-01-01"</span> </div><div class="line">group by <span class="selector-tag">a</span><span class="selector-class">.emp_no</span> <span class="attribute">order</span> by rank</div></pre></td></tr></table></figure>
-<h2 id="获取所有非manager员工当前的薪水情况，给出dept-no、emp-no以及salary-，当前表示to-date-’9999-01-01’"><a href="#获取所有非manager员工当前的薪水情况，给出dept-no、emp-no以及salary-，当前表示to-date-’9999-01-01’" class="headerlink" title="获取所有非manager员工当前的薪水情况，给出dept_no、emp_no以及salary ，当前表示to_date=’9999-01-01’"></a>获取所有非manager员工当前的薪水情况，给出dept_no、emp_no以及salary ，当前表示to_date=’9999-01-01’</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_manager`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`employees`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`birth_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`first_name`</span> varchar(<span class="number">14</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`last_name`</span> varchar(<span class="number">16</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`gender`</span> char(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`hire_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure>
-<h3 id="输入描述-2"><a href="#输入描述-2" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述-2"><a href="#输出描述-2" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">dept_no</th>
-<th style="text-align:center">emp_no</th>
-<th style="text-align:center">salary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">d001</td>
-<td style="text-align:center">10001</td>
-<td style="text-align:center">88958</td>
-</tr>
-<tr>
-<td style="text-align:center">d004</td>
-<td style="text-align:center">10003</td>
-<td style="text-align:center">43311</td>
-</tr>
-<tr>
-<td style="text-align:center">d005</td>
-<td style="text-align:center">10007</td>
-<td style="text-align:center">88070</td>
-</tr>
-<tr>
-<td style="text-align:center">d006</td>
-<td style="text-align:center">10009</td>
-<td style="text-align:center">95409</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h3 id="解答-2"><a href="#解答-2" class="headerlink" title="解答"></a>解答</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> d.dept_no, <span class="built_in">e</span>.emp_no, s.salary </div><div class="line"><span class="keyword">from</span> dept_emp d, (</div><div class="line">    <span class="keyword">select</span> emp_no <span class="keyword">from</span> employees <span class="keyword">where</span> emp_no <span class="keyword">not</span> <span class="keyword">in</span> (</div><div class="line">        <span class="keyword">select</span> emp_no <span class="keyword">from</span> dept_manager</div><div class="line">    )) <span class="built_in">e</span>, salaries s </div><div class="line"><span class="keyword">where</span> d.emp_no= <span class="built_in">e</span>.emp_no <span class="keyword">and</span> d.emp_no= s.emp_no <span class="keyword">and</span> d.to_date= <span class="string">"9999-01-01"</span> <span class="keyword">and</span> s.to_date= <span class="string">"9999-01-01"</span></div></pre></td></tr></table></figure>
-<h2 id="获取员工其当前的薪水比其manager当前薪水还高的相关信息，当前表示to-date-’9999-01-01’"><a href="#获取员工其当前的薪水比其manager当前薪水还高的相关信息，当前表示to-date-’9999-01-01’" class="headerlink" title="获取员工其当前的薪水比其manager当前薪水还高的相关信息，当前表示to_date=’9999-01-01’"></a>获取员工其当前的薪水比其manager当前薪水还高的相关信息，当前表示to_date=’9999-01-01’</h2><p>结果第一列给出员工的emp_no，<br>第二列给出其manager的manager_no，<br>第三列给出该员工当前的薪水emp_salary,<br>第四列给该员工对应的manager当前的薪水manager_salary<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_manager`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure></p>
-<h3 id="输入描述-3"><a href="#输入描述-3" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述-3"><a href="#输出描述-3" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">emp_no</th>
-<th style="text-align:center">manager_no</th>
-<th style="text-align:center">emp_salary</th>
-<th style="text-align:center">manager_salary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">10001</td>
-<td style="text-align:center">10002</td>
-<td style="text-align:center">88958</td>
-<td style="text-align:center">72527</td>
-</tr>
-<tr>
-<td style="text-align:center">10009</td>
-<td style="text-align:center">10010</td>
-<td style="text-align:center">95409</td>
-<td style="text-align:center">94409</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h3 id="解答-3"><a href="#解答-3" class="headerlink" title="解答"></a>解答</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> t1.emp_no, t2.emp_no,t1.salary <span class="keyword">as</span> s1,t2.salary <span class="keyword">as</span> s2</div><div class="line"><span class="keyword">from</span></div><div class="line">(</div><div class="line">    <span class="keyword">select</span> salary,s.emp_no,dept_no</div><div class="line">    <span class="keyword">from</span> salaries <span class="keyword">as</span> s <span class="keyword">join</span> dept_emp de <span class="keyword">on</span> s.emp_no=de.emp_no</div><div class="line">    <span class="keyword">where</span> s.to_date=<span class="string">'9999-01-01'</span> <span class="keyword">and</span> de.to_date=<span class="string">'9999-01-01'</span> <span class="keyword">and</span></div><div class="line">    s.emp_no <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> emp_no <span class="keyword">from</span> dept_manager dm)</div><div class="line">) <span class="keyword">as</span> t1,</div><div class="line">(</div><div class="line">    <span class="keyword">select</span> salary,s.emp_no,dept_no</div><div class="line">    <span class="keyword">from</span> salaries <span class="keyword">as</span> s <span class="keyword">join</span> dept_manager dm <span class="keyword">on</span> s.emp_no=dm.emp_no</div><div class="line">    <span class="keyword">where</span> s.to_date=<span class="string">'9999-01-01'</span></div><div class="line">    <span class="keyword">and</span> dm.to_date=<span class="string">'9999-01-01'</span></div><div class="line">) <span class="keyword">as</span> t2</div><div class="line"><span class="keyword">where</span> s1&gt;s2</div><div class="line"><span class="keyword">and</span> t1.dept_no = t2.dept_no</div></pre></td></tr></table></figure>
-<h2 id="汇总各个部门当前员工的title类型的分配数目，结果给出部门编号dept-no、dept-name、其当前员工所有的title以及该类型title对应的数目count"><a href="#汇总各个部门当前员工的title类型的分配数目，结果给出部门编号dept-no、dept-name、其当前员工所有的title以及该类型title对应的数目count" class="headerlink" title="汇总各个部门当前员工的title类型的分配数目，结果给出部门编号dept_no、dept_name、其当前员工所有的title以及该类型title对应的数目count"></a>汇总各个部门当前员工的title类型的分配数目，结果给出部门编号dept_no、dept_name、其当前员工所有的title以及该类型title对应的数目count</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`departments`</span> (</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_name`</span> varchar(<span class="number">40</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`dept_emp`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`dept_no`</span> char(<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`dept_no`</span>));</div><div class="line"><span class="keyword">CREATE</span> TABLE <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">"titles"</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`title`</span> varchar(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date DEFAULT <span class="literal">NULL</span>);</div></pre></td></tr></table></figure>
-<h3 id="输入描述-4"><a href="#输入描述-4" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述-4"><a href="#输出描述-4" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">dept_no</th>
-<th style="text-align:center">dept_name</th>
-<th style="text-align:center">title</th>
-<th style="text-align:center">count</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">d001</td>
-<td style="text-align:center">Marketing</td>
-<td style="text-align:center">Senior Engineer</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">d001</td>
-<td style="text-align:center">Marketing</td>
-<td style="text-align:center">Staff</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">d002</td>
-<td style="text-align:center">Finance</td>
-<td style="text-align:center">Senior Engineer</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">d003</td>
-<td style="text-align:center">Human Resources</td>
-<td style="text-align:center">Senior Staff</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">d004</td>
-<td style="text-align:center">Production</td>
-<td style="text-align:center">Senior Engineer</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">d005</td>
-<td style="text-align:center">Development</td>
-<td style="text-align:center">Senior Staff</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h3 id="解答-4"><a href="#解答-4" class="headerlink" title="解答"></a>解答</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">法一：</div><div class="line">select e<span class="selector-class">.dept_no</span>,d<span class="selector-class">.dept_name</span>,t<span class="selector-class">.title</span>,count(t.title)</div><div class="line">from departments d,dept_emp e,titles t</div><div class="line">where d.dept_no=e.dept_no</div><div class="line">and e.emp_no=t.emp_no</div><div class="line">and e.to_date=<span class="string">'9999-01-01'</span></div><div class="line">and t.to_date=<span class="string">'9999-01-01'</span></div><div class="line">group by e<span class="selector-class">.dept_no</span>,t.title</div><div class="line">法二：</div><div class="line">select dp<span class="selector-class">.dept_no</span>,dp<span class="selector-class">.dept_name</span>,t<span class="selector-class">.title</span>,count(*) as count</div><div class="line">from (</div><div class="line">        select ds<span class="selector-class">.dept_no</span>,ds<span class="selector-class">.dept_name</span>,de.emp_no</div><div class="line">        from departments as ds </div><div class="line">                inner join</div><div class="line">             dept_emp as de</div><div class="line">                on ds<span class="selector-class">.dept_no</span> = de.dept_no</div><div class="line">           where de<span class="selector-class">.to_date</span> = <span class="string">'9999-01-01'</span></div><div class="line">        ) as dp</div><div class="line">        inner join </div><div class="line">     titles as t</div><div class="line">        on dp<span class="selector-class">.emp_no</span> = t.emp_no</div><div class="line">    where t<span class="selector-class">.to_date</span> = <span class="string">'9999-01-01'</span></div><div class="line">    group by dp<span class="selector-class">.dept_no</span>,t.title</div></pre></td></tr></table></figure>
-<blockquote>
-<p>解析: 法一、先按照emp_no分组，再按照每个emp_no里的title分组。<br>法二、先将部门表和部门员工表进行关联获取到部门编号和部门名称以及员工编号，然后再关联titles表，最后使用dept_no和title进行分组即可。</p>
-</blockquote>
-<h2 id="给出每个员工每年薪水涨幅超过5000的员工编号emp-no、薪水变更开始日期from-date以及薪水涨幅值salary-growth，并按照salary-growth逆序排列。"><a href="#给出每个员工每年薪水涨幅超过5000的员工编号emp-no、薪水变更开始日期from-date以及薪水涨幅值salary-growth，并按照salary-growth逆序排列。" class="headerlink" title="给出每个员工每年薪水涨幅超过5000的员工编号emp_no、薪水变更开始日期from_date以及薪水涨幅值salary_growth，并按照salary_growth逆序排列。"></a>给出每个员工每年薪水涨幅超过5000的员工编号emp_no、薪水变更开始日期from_date以及薪水涨幅值salary_growth，并按照salary_growth逆序排列。</h2><p>提示：在sqlite中获取datetime时间对应的年份函数为strftime(‘%Y’, to_date)<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> TABLE <span class="symbol">`salaries`</span> (</div><div class="line"><span class="symbol">`emp_no`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`salary`</span> int(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`from_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="symbol">`to_date`</span> date <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line"><span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (<span class="symbol">`emp_no`</span>,<span class="symbol">`from_date`</span>));</div></pre></td></tr></table></figure></p>
-<h3 id="输入描述-5"><a href="#输入描述-5" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述-5"><a href="#输出描述-5" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">emp_no</th>
-<th style="text-align:center">from_date</th>
-<th style="text-align:center">salary_growth</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">10003</td>
-<td style="text-align:center">1995-12-03</td>
-<td style="text-align:center">24178</td>
-</tr>
-<tr>
-<td style="text-align:center">10008</td>
-<td style="text-align:center">1998-03-11</td>
-<td style="text-align:center">20843</td>
-</tr>
-<tr>
-<td style="text-align:center">10008</td>
-<td style="text-align:center">2000-03-10</td>
-<td style="text-align:center">5997</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<h3 id="解答-5"><a href="#解答-5" class="headerlink" title="解答"></a>解答</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select </span><span class="built_in">s1</span>.emp_no, <span class="built_in">s1</span>.from_date, <span class="built_in">s1</span>.salary- <span class="built_in">s2</span>.salary as salary_growth</div><div class="line"><span class="symbol">from</span> salaries <span class="built_in">s1</span>, salaries <span class="built_in">s2</span> </div><div class="line"><span class="symbol">where</span> (<span class="keyword">strftime('%Y', </span><span class="built_in">s1</span>.to_date)- <span class="keyword">strftime('%Y', </span><span class="built_in">s2</span>.to_date))= <span class="number">1</span></div><div class="line"><span class="keyword">and </span><span class="built_in">s1</span>.emp_no= <span class="built_in">s2</span>.emp_no</div><div class="line"><span class="keyword">and </span>salary_growth&gt; <span class="number">5000</span></div><div class="line"><span class="symbol">order</span> <span class="keyword">by </span>salary_growth desc</div></pre></td></tr></table></figure>
-<h2 id="查找描述信息中包括robot的电影对应的分类名称以及电影数目，而且还需要该分类对应电影数量-gt-5部"><a href="#查找描述信息中包括robot的电影对应的分类名称以及电影数目，而且还需要该分类对应电影数量-gt-5部" class="headerlink" title="查找描述信息中包括robot的电影对应的分类名称以及电影数目，而且还需要该分类对应电影数量&gt;=5部"></a>查找描述信息中包括robot的电影对应的分类名称以及电影数目，而且还需要该分类对应电影数量&gt;=5部</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">film</th>
-<th style="text-align:center">film</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">字段</td>
-<td style="text-align:center">说明</td>
-</tr>
-<tr>
-<td style="text-align:center">file_id</td>
-<td style="text-align:center">电影id</td>
-</tr>
-<tr>
-<td style="text-align:center">title</td>
-<td style="text-align:center">电影名称</td>
-</tr>
-<tr>
-<td style="text-align:center">description</td>
-<td style="text-align:center">电影描述信息</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> film (</div><div class="line">film_id <span class="built_in">smallint</span>(<span class="number">5</span>)  <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span>,</div><div class="line">title <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line">description <span class="built_in">text</span>,</div><div class="line">PRIMARY <span class="keyword">KEY</span> (film_id));</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">category</th>
-<th style="text-align:center">category</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">字段</td>
-<td style="text-align:center">说明</td>
-</tr>
-<tr>
-<td style="text-align:center">category_id</td>
-<td style="text-align:center">电影分类id</td>
-</tr>
-<tr>
-<td style="text-align:center">name</td>
-<td style="text-align:center">电影分类名称</td>
-</tr>
-<tr>
-<td style="text-align:center">last_update</td>
-<td style="text-align:center">电影分类最后更新时间</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">category</span>  (</div><div class="line">category_id  tinyint(<span class="number">3</span>)  <span class="keyword">NOT</span> <span class="literal">NULL</span> ,</div><div class="line"><span class="keyword">name</span>  <span class="built_in">varchar</span>(<span class="number">25</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="string">`last_update`</span> <span class="keyword">timestamp</span>,</div><div class="line">PRIMARY <span class="keyword">KEY</span> ( category_id ));</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">film_category</th>
-<th style="text-align:center">film_category</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">字段</td>
-<td style="text-align:center">说明</td>
-</tr>
-<tr>
-<td style="text-align:center">film_id</td>
-<td style="text-align:center">电影id</td>
-</tr>
-<tr>
-<td style="text-align:center">category_id</td>
-<td style="text-align:center">电影分类id</td>
-</tr>
-<tr>
-<td style="text-align:center">last_update</td>
-<td style="text-align:center">电影id和分类id对应关系的最后更新时间</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> film_category  (</div><div class="line">film_id  <span class="built_in">smallint</span>(<span class="number">5</span>)  <span class="keyword">NOT</span> <span class="literal">NULL</span>,</div><div class="line">category_id  tinyint(<span class="number">3</span>)  <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="string">`last_update`</span> <span class="keyword">timestamp</span>);</div></pre></td></tr></table></figure>
-<h3 id="输入描述-6"><a href="#输入描述-6" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述-6"><a href="#输出描述-6" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="解答-6"><a href="#解答-6" class="headerlink" title="解答"></a>解答</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> c.name,<span class="keyword">count</span>(fc.film_id)</div><div class="line"><span class="keyword">from</span> (</div><div class="line">        <span class="keyword">select</span> category_id,<span class="keyword">count</span>(film_id) <span class="keyword">as</span> amount</div><div class="line">        <span class="keyword">from</span> film_category</div><div class="line">        <span class="keyword">group</span> <span class="keyword">by</span> category_id</div><div class="line">        <span class="keyword">having</span> amount&gt;=<span class="number">5</span></div><div class="line">        ) <span class="keyword">as</span> cc,</div><div class="line">        <span class="keyword">category</span> <span class="keyword">as</span> c,</div><div class="line">        film <span class="keyword">as</span> f,</div><div class="line">        film_category <span class="keyword">as</span> fc</div><div class="line"><span class="keyword">where</span> f.film_id = fc.film_id</div><div class="line">      <span class="keyword">and</span> fc.category_id = c.category_id</div><div class="line">      <span class="keyword">and</span> cc.category_id = c.category_id</div><div class="line">      <span class="keyword">and</span> f.description <span class="keyword">like</span> <span class="string">'%robot%'</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>解析: 本题考查的是多表关联，本身有三个表关联，但是由于有条件说分类下的电影总数&gt;=5，所以可以先查询出film_category表内满足条件的category_id，然后与其他三表进行关联即可。</p>
-</blockquote>
-<h2 id="使用join查询方式找出没有分类的电影id以及名称"><a href="#使用join查询方式找出没有分类的电影id以及名称" class="headerlink" title="使用join查询方式找出没有分类的电影id以及名称"></a>使用join查询方式找出没有分类的电影id以及名称</h2><h3 id="输入描述-7"><a href="#输入描述-7" class="headerlink" title="输入描述:"></a>输入描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="输出描述-7"><a href="#输出描述-7" class="headerlink" title="输出描述:"></a>输出描述:</h3><blockquote>
-<p>无</p>
-</blockquote>
-<h3 id="解答-7"><a href="#解答-7" class="headerlink" title="解答:"></a>解答:</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> cc.film_id, cc.<span class="built_in">title</span> <span class="keyword">from</span> (<span class="keyword">select</span> * <span class="keyword">from</span> film <span class="keyword">as</span> f <span class="keyword">left</span> <span class="keyword">join</span> film_category <span class="keyword">as</span> fc <span class="keyword">on</span> f.film_id= fc.film_id) <span class="keyword">as</span> cc <span class="keyword">where</span> cc.category_id <span class="keyword">is</span> <span class="literal">null</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;统计各个部门对应员工涨幅的次数总和，给出部门编码dept-no、部门名称dept-name以及次数sum&quot;&gt;&lt;a href=&quot;#统计各个部门对应员工涨幅的次数总和，给出部门编码dept-no、部门名称dept-name以及次数sum&quot; class=&quot;headerlink&quot; title=&quot;统计各个部门对应员工涨幅的次数总和，给出部门编码dept_no、部门名称dept_name以及次数sum&quot;&gt;&lt;/a&gt;统计各个部门对应员工涨幅的次数总和，给出部门编码dept_no、部门名称dept_name以及次数sum&lt;/h2&gt;&lt;figure class=&quot;highlight n1ql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; TABLE &lt;span class=&quot;symbol&quot;&gt;`departments`&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`dept_no`&lt;/span&gt; char(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`dept_name`&lt;/span&gt; varchar(&lt;span class=&quot;number&quot;&gt;40&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;KEY&lt;/span&gt; (&lt;span class=&quot;symbol&quot;&gt;`dept_no`&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; TABLE &lt;span class=&quot;symbol&quot;&gt;`dept_emp`&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`emp_no`&lt;/span&gt; int(&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`dept_no`&lt;/span&gt; char(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`from_date`&lt;/span&gt; date &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`to_date`&lt;/span&gt; date &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;KEY&lt;/span&gt; (&lt;span class=&quot;symbol&quot;&gt;`emp_no`&lt;/span&gt;,&lt;span class=&quot;symbol&quot;&gt;`dept_no`&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; TABLE &lt;span class=&quot;symbol&quot;&gt;`salaries`&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`emp_no`&lt;/span&gt; int(&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`salary`&lt;/span&gt; int(&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`from_date`&lt;/span&gt; date &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;`to_date`&lt;/span&gt; date &lt;span class=&quot;keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;KEY&lt;/span&gt; (&lt;span class=&quot;symbol&quot;&gt;`emp_no`&lt;/span&gt;,&lt;span class=&quot;symbol&quot;&gt;`from_date`&lt;/span&gt;));&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
     
   </entry>
   
