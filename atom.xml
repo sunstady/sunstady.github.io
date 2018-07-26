@@ -49,9 +49,9 @@
     <link href="http://www.sanstylemc.cn/2018/07/26/%E5%8D%B8%E8%BD%BDphp/"/>
     <id>http://www.sanstylemc.cn/2018/07/26/卸载php/</id>
     <published>2018-07-26T07:21:54.000Z</published>
-    <updated>2018-07-26T07:22:44.493Z</updated>
+    <updated>2018-07-26T07:49:52.821Z</updated>
     
-    <content type="html"><![CDATA[<p>RT<br><a id="more"></a><br>一、删除php的相关包及配置。<br><code>sudo apt-get autoremove php7*</code><br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/1.png?raw=true" alt="1"><br>二、删除关联<br><code>sudo find /etc -name &quot;*php*&quot; |xargs rm -rf</code><br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/2.png?raw=true" alt="2"><br>如果提示权限不够，需要先进入root<br>输入<code>su</code><br>根据提示输入密码<br>此时再运行一次，即可删除<br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/3.png?raw=true" alt="3"><br>三、清楚dept列表<br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/4.png?raw=true" alt="4"><br>四、检查是否卸载干净(无返回就是卸载干净)<br><code>dpkg -l | grep php7</code><br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/5.png?raw=true" alt="5"></p>
+    <content type="html"><![CDATA[<p>RT<br><a id="more"></a><br>一、删除php的相关包及配置。<br><code>sudo apt-get autoremove php7*</code><br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/1.png?raw=true" alt="1"><br>二、删除关联<br><code>sudo find /etc -name &quot;*php*&quot; |xargs rm -rf</code><br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/2.png?raw=true" alt="2"><br>如果提示权限不够，需要先进入root<br>输入<code>su</code><br>根据提示输入密码<br>此时再运行一次，即可删除<br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/3.png?raw=true" alt="3"><br>三、清除dept列表<br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/4.png?raw=true" alt="4"><br>四、检查是否卸载干净(无返回就是卸载干净)<br><code>dpkg -l | grep php7</code><br><img src="https://github.com/sunstady/hexo/blob/master/%E5%8D%B8%E8%BD%BDphp/5.png?raw=true" alt="5"></p>
 ]]></content>
     
     <summary type="html">

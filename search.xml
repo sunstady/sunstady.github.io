@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[卸载php]]></title>
     <url>%2F2018%2F07%2F26%2F%E5%8D%B8%E8%BD%BDphp%2F</url>
-    <content type="text"><![CDATA[RT一、删除php的相关包及配置。sudo apt-get autoremove php7*二、删除关联sudo find /etc -name &quot;*php*&quot; |xargs rm -rf如果提示权限不够，需要先进入root输入su根据提示输入密码此时再运行一次，即可删除三、清楚dept列表四、检查是否卸载干净(无返回就是卸载干净)dpkg -l | grep php7]]></content>
+    <content type="text"><![CDATA[RT一、删除php的相关包及配置。sudo apt-get autoremove php7*二、删除关联sudo find /etc -name &quot;*php*&quot; |xargs rm -rf如果提示权限不够，需要先进入root输入su根据提示输入密码此时再运行一次，即可删除三、清除dept列表四、检查是否卸载干净(无返回就是卸载干净)dpkg -l | grep php7]]></content>
       <tags>
         <tag>软件</tag>
       </tags>
