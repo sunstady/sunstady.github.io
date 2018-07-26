@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu 18.04搭建sqli-labs]]></title>
+    <url>%2F2018%2F07%2F26%2FUbuntu-18-04%E6%90%AD%E5%BB%BAsqli-labs%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;近来无事，重温了以前所学。&nbsp;&nbsp;&nbsp;&nbsp;Sqli-labs是一个印度程序员写的，用来学习sql注入的一个游戏教程，网上将sqli-labs大多安装在windows上，故梳理下在Ubuntu上安装的教程。Ubuntu版本RT。 安装sqli-labs之前，需先安装相应的php环境。 安装PHP环境12345678sudo apt-get install apache2sudo apt-get install php(版本为7)sudo apt-get install mysql-serversudo apt-get install libapache2-mod-php(一些基本模块)sudo apt-get install php-gdsudo apt-get install php-curlsudo apt-get install libapache2-mod-auth-mysqlsudo apt-get install php-mysql 测试:浏览器打开: http://localhost , 出现Apache的界面，说明环境搭建成功。默认目录：Apache安装完成后的默认网站根目录是/var/www/html 。这个可以修改，也可以不修改。若想修改可以按照以下步骤进行修改：sudo vim /etc/apache2/apache2.conf将/var/www/修改为/home/www。sudo vim /etc/apache2/sites-available/000-default.conf将DocumentRoot /var/www/html的位置改为/home/www即可。重启Apache服务器：sudo service apache2 restart 安装sqli-labs下载地址https://github.com/Audi-1/sqli-labs我用的是git下载，需要先安装git。sudo apt-get install git安装之后，使用git克隆即可。git clone https://github.com/Audi-1/sqli-labs.git下载后，修改sql-connections文件夹中的db-creds.inc文件，填入mysql数据库的用户名和密码，并将文件夹放在网站根目录下，我放的位置是/var/www/html可以看到我的用户名并不是root，原因是创建了一个用户，创建用户的方法，请看这里 浏览器打开：http://localhost/sqli-labs出现如下界面：点开第一个链接，新建数据库，若出现如下界面，则说明成功！如果只出现一行这个：表明没有创建成功。此时要进入到/var/www/html/sqli-labs/sql-connections使用ls命令可以看到此目录有setup-db.php这个php文件和我们所点的第一个链接执行的php文件是一个。此时在这个目录下, 单独运行这个php文件php setup-db.php会发现运行报错是在第29行，mysql_connect()附近。原因是从PHP5.0开始就不推荐使用mysql_connect()函数，到了PHP7.0则直接废弃了该函数，他的替代品是mysqli_connect()用法是$con=mysqli_connect(&quot;localhost&quot;, &quot;my_user&quot;, &quot;my_password&quot;, &quot;my_db&quot;);所以我们要将setup-db.php文件中的mysql_conect()改为mysqli_connect()除此之外，还要修改mysql_query()参数为($con,$sql)所以修改完后的就是mysqli_query($con,$sql)修改完后重启下Apachesudo service apache2 restart再次打开http://localhost/sqli-labs点击第一个链接，就会出现成功的画面。 注：由于github上的sqli-labs是用php5写的，有很多地方与php7不兼容，所以建议安装php5来使用此环境。]]></content>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[卸载php]]></title>
     <url>%2F2018%2F07%2F26%2F%E5%8D%B8%E8%BD%BDphp%2F</url>
     <content type="text"><![CDATA[RT一、删除php的相关包及配置。sudo apt-get autoremove php7*二、删除关联sudo find /etc -name &quot;*php*&quot; |xargs rm -rf如果提示权限不够，需要先进入root输入su根据提示输入密码此时再运行一次，即可删除三、清楚dept列表四、检查是否卸载干净(无返回就是卸载干净)dpkg -l | grep php7]]></content>

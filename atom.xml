@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-07-26T07:22:44.493Z</updated>
+  <updated>2018-07-26T07:42:22.323Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu 18.04搭建sqli-labs</title>
+    <link href="http://www.sanstylemc.cn/2018/07/26/Ubuntu-18-04%E6%90%AD%E5%BB%BAsqli-labs/"/>
+    <id>http://www.sanstylemc.cn/2018/07/26/Ubuntu-18-04搭建sqli-labs/</id>
+    <published>2018-07-26T07:41:38.000Z</published>
+    <updated>2018-07-26T07:42:22.323Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;近来无事，重温了以前所学。<br>&nbsp;&nbsp;&nbsp;&nbsp;Sqli-labs是一个印度程序员写的，用来学习sql注入的一个游戏教程，网上将sqli-labs大多安装在windows上，故梳理下在Ubuntu上安装的教程。Ubuntu版本RT。<br><a id="more"></a></p>
+<p>安装sqli-labs之前，需先安装相应的php环境。</p>
+<h2 id="安装PHP环境"><a href="#安装PHP环境" class="headerlink" title="安装PHP环境"></a>安装PHP环境</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="keyword">install</span> apache2</div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> php(版本为<span class="number">7</span>)</div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> mysql-<span class="keyword">server</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> libapache2-<span class="keyword">mod</span>-php(一些基本模块)</div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> php-gd</div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> php-curl</div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> libapache2-<span class="keyword">mod</span>-auth-mysql</div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> php-mysql</div></pre></td></tr></table></figure>
+<p>测试:<br>浏览器打开: <code>http://localhost</code> , 出现Apache的界面，说明环境搭建成功。<br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/1.png?raw=true" alt="1"><br>默认目录：<br>Apache安装完成后的默认网站根目录是<code>/var/www/html</code> 。这个可以修改，也可以不修改。<br>若想修改可以按照以下步骤进行修改：<br><code>sudo vim /etc/apache2/apache2.conf</code><br>将<code>/var/www/</code>修改为<code>/home/www</code>。<br><code>sudo vim /etc/apache2/sites-available/000-default.conf</code><br>将<code>DocumentRoot /var/www/html</code>的位置改为<code>/home/www</code>即可。<br>重启Apache服务器：<br><code>sudo service apache2 restart</code></p>
+<h2 id="安装sqli-labs"><a href="#安装sqli-labs" class="headerlink" title="安装sqli-labs"></a>安装sqli-labs</h2><p>下载地址<code>https://github.com/Audi-1/sqli-labs</code><br>我用的是git下载，需要先安装git。<br><code>sudo apt-get install git</code><br>安装之后，使用git克隆即可。<br><code>git clone https://github.com/Audi-1/sqli-labs.git</code><br>下载后，修改<code>sql-connections</code>文件夹中的<code>db-creds.inc</code>文件，填入mysql数据库的用户名和密码，并将文件夹放在网站根目录下，我放的位置是<code>/var/www/html</code><br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/2.png?raw=true" alt="2"><br>可以看到我的用户名并不是<code>root</code>，原因是创建了一个用户，创建用户的方法，请看<a href="http://sanstylemc.cn/2017/10/28/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E8%85%BE%E8%AE%AF%E4%BA%91MySQL/" target="_blank" rel="external">这里</a></p>
+<p>浏览器打开：<code>http://localhost/sqli-labs</code>出现如下界面：<br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/3.png?raw=true" alt="3"><br>点开第一个链接，新建数据库，若出现如下界面，则说明成功！<br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/4.png?raw=true" alt="4"><br>如果只出现一行这个：<br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/5.png?raw=true" alt="5"><br>表明没有创建成功。<br>此时要进入到<code>/var/www/html/sqli-labs/sql-connections</code><br>使用<code>ls</code>命令可以看到此目录有<code>setup-db.php</code><br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/6.png?raw=true" alt="6"><br>这个php文件和我们所点的第一个链接执行的php文件是一个。<br>此时在这个目录下, 单独运行这个php文件<br><code>php setup-db.php</code><br>会发现运行报错<br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/7.png?raw=true" alt="7"><br>是在第29行，<code>mysql_connect()</code>附近。<br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/8.png?raw=true" alt="8"><br>原因是从PHP5.0开始就不推荐使用mysql_connect()函数，到了PHP7.0则直接废弃了该函数，他的替代品是<code>mysqli_connect()</code><br>用法是<code>$con=mysqli_connect(&quot;localhost&quot;, &quot;my_user&quot;, &quot;my_password&quot;, &quot;my_db&quot;);</code><br>所以我们要将<code>setup-db.php</code>文件中的<code>mysql_conect()</code>改为<code>mysqli_connect()</code><br><img src="https://github.com/sunstady/hexo/blob/master/sqli-labs/9.png?raw=true" alt="9"><br>除此之外，还要修改<code>mysql_query()</code>参数为<code>($con,$sql)</code><br>所以修改完后的就是<code>mysqli_query($con,$sql)</code><br>修改完后重启下Apache<br><code>sudo service apache2 restart</code><br>再次打开<code>http://localhost/sqli-labs</code><br>点击第一个链接，就会出现成功的画面。</p>
+<blockquote>
+<p>注：由于github上的sqli-labs是用php5写的，有很多地方与php7不兼容，所以建议安装php5来使用此环境。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;近来无事，重温了以前所学。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Sqli-labs是一个印度程序员写的，用来学习sql注入的一个游戏教程，网上将sqli-labs大多安装在windows上，故梳理下在Ubuntu上安装的教程。Ubuntu版本RT。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="http://www.sanstylemc.cn/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>卸载php</title>
@@ -608,31 +637,6 @@
     
     
       <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL非主键自增</title>
-    <link href="http://www.sanstylemc.cn/2018/06/29/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/"/>
-    <id>http://www.sanstylemc.cn/2018/06/29/MySQL非主键自增/</id>
-    <published>2018-06-29T05:07:37.000Z</published>
-    <updated>2018-06-29T05:09:38.422Z</updated>
-    
-    <content type="html"><![CDATA[<p>MySQL中，一张表只能有一个自增，但不一定是主键自增。<br><a id="more"></a><br>首先创建一个测试表。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">test</span>(</div><div class="line"><span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">11</span>) primary <span class="keyword">key</span>,</div><div class="line"><span class="keyword">sid</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line"><span class="keyword">key</span>(<span class="keyword">sid</span>));</div></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/sunstady/hexo/blob/master/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/1.jpg?raw=true" alt="1"><br>接着插入一条语句。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">test</span>(<span class="keyword">id</span>, <span class="keyword">name</span>) <span class="keyword">values</span>(<span class="number">1</span>, <span class="string">'a'</span>);</div></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/sunstady/hexo/blob/master/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/2.jpg?raw=true" alt="2"><br>发现sid非主键自增。</p>
-<p><code>原理</code>:<br><img src="https://github.com/sunstady/hexo/blob/master/MySQL%E9%9D%9E%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E/3.jpg?raw=true" alt="3"><br><code>ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key</code><br>意思大义是：只能有一个自动列，并且必须被定义为键(key)。<br>翻译成白话文就是说，普通列是没办法创建自增长的。</p>
-<p><code>结论</code>: MySQL中的每张表只能设置一个字段为自增长，这个字段可以是非主键，但必须是一种键(key)。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;MySQL中，一张表只能有一个自增，但不一定是主键自增。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
     
   </entry>
   
