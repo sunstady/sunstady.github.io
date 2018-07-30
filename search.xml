@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java常见的异常种类]]></title>
+    <url>%2F2018%2F07%2F30%2FJava%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8%E7%A7%8D%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;异常类分为两大类型：Error类代表了编译和系统的错误，不允许捕获；Exception类代表了标准Java库方法所激发的异常。Exception类还包含运行异常类Runntime_Exception和非运行异常类Non_RuntimeException这两个直接的子类。 常见的异常简述&nbsp;&nbsp;&nbsp;&nbsp;运行异常类对应于编译错误，它是指Java程序在运行时产生的由解释器引发的各种异常。运行异常可能出现在任何地方，且出现频率很高，因此为了避免巨大的系统资源开销，编译器不对异常进行检查。所以Java语言中的运行异常不一定被捕获。出现运行错误往往表示代码有错误，如：算数异常（如被0除）、下标异常（如数组越界）等。&nbsp;&nbsp;&nbsp;&nbsp;非运行异常时Non_RuntimeException类及其子类的实例，又称为可检测异常。Java编译器利用分析方法或构造方法中可能产生的结果来检测Java程序中是否含有检测异常的处理程序，对于每个可能的可检测异常，方法或构造方法的throws子句必须列出该异常对应的类。在Java的标准包java.lang java.util 和 java.net 中定义的异常都是非运行异常。 常见异常种类算术异常类：ArithmeticExecption&nbsp;&nbsp;&nbsp;&nbsp;比如程序中出现了除以零这样的运算就会出这样的异常。 空指针异常类：NullPointerException&nbsp;&nbsp;&nbsp;&nbsp;调用了未经初始化的对象或者是不存在的对象。 类型强制转换异常：ClassCastException&nbsp;&nbsp;&nbsp;&nbsp;是JVM在检测到两个类型间转换不兼容时引发的运行时异常，此类错误通常会终止用户请求。 数组下标越界异常：ArrayIndexOutOfBoundsException&nbsp;&nbsp;&nbsp;&nbsp;一般是数组下标超出了数组的范围，一般来说，显示(即直接用常数当下标)调用不太容易出这样的错，但隐式(即用变量表示下标)调用就经常出错了。还有一种情况，是程序中定义的数组的长度是通过某些特定方法决定的，不是事先声明的。 文件未找到异常：FileNotFoundException&nbsp;&nbsp;&nbsp;&nbsp;文件不存在或者没有权限操作文件的时候报错。 操作数据库异常：SQLException&nbsp;&nbsp;&nbsp;&nbsp;当使用JDBC与数据库进行交互的时候可能会遇见错误，将会抛出此异常。一个SQLException的异常里面包含以下信息，用于帮助我们更好的定位错误。1、错误表示：使用getMessage方法便可以获取。2、SQLState代码：代码有五位的字母和数字组成。多数的代码又ISO/ANSI和Open Group(X/Open)标准化，但是仍然存在部分的代码由数据库提供商自行实现。3、错误代码：与SQLState不同，错误代码是由数据库提供商自行定义的整数值，存在是由基础数据源返回的实际错误代码的可能。使用getErrorCode方法便可以获取。4、错误原因：表示引发异常的原因，通过不断调用getCause方法可以获取异常发生的底层原因。5、异常链：如果出现多个错误，则通过此链引用异常。使用getNextException方法便可以获取。 方法未找到异常：NoSuchMethodException未找到对应的方法，看看方法名和发送请求的方法名是否一致。 捕获异常的方法1、throw就是抛出一个异常，并获取这个异常的引用，这个异常会被抛到外部的环境，由外部环境进行处理。2、throws并不是抛出一个实际的Exception而是一个异常声明，它声明这个方法可能会抛出一个异常，所以在没有异常的情况下也是可以用throws的，而throws本身的作用也是用来提高程序的健壮性，反过来，如果这个方法的确是有一个异常，那么编译器会强制让你加上throws这个异常声明。通常throws是写在参数列表的后面，这样就表明这个方法可能会抛出一个异常。3、Try catch块，try里经常放上可能会抛出异常的程序段，而catch恰好就是处理try里抛出的异常。]]></content>
+      <tags>
+        <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一如少年模样]]></title>
     <url>%2F2018%2F07%2F28%2F%E4%B8%80%E5%A6%82%E5%B0%91%E5%B9%B4%E6%A8%A1%E6%A0%B7%2F</url>
     <content type="text"><![CDATA[一如少年模样 风雨不挡]]></content>
