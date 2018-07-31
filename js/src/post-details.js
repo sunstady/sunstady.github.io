@@ -149,15 +149,10 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function(){
-    var bFlag= true;
-    if(bFlag){
     $(document).on('click', '.fold_hider', function(){
         
         $('>.fold', this.parentNode).slideToggle();
         $('>:first', this).toggleClass('open');
     });
     $("div.fold").css("display","none");
-    bFlag= false;
-  }
-});
+    
