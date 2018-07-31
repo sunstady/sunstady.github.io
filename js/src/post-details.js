@@ -148,12 +148,16 @@ $(document).ready(function () {
   }
 });
 
+
 $(document).ready(function(){
-    alert("1");
+    var bFlag= true;
+    if(bFlag){
     $(document).on('click', '.fold_hider', function(){
         console.log("2");
         $('>.fold', this.parentNode).slideToggle();
         $('>:first', this).toggleClass('open');
     });
     $("div.fold").css("display","none");
+    bFlag= false;
+  }
 });
