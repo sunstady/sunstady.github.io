@@ -153,7 +153,7 @@ $(document).ready(function(){
     var bFlag= true;
     if(bFlag){
     $(document).on('click', '.fold_hider', function(){
-        console.log("2");
+        
         $('>.fold', this.parentNode).slideToggle();
         $('>:first', this).toggleClass('open');
     });
