@@ -151,6 +151,7 @@ $(document).ready(function () {
 $(document).ready(function(){
     alert("1");
     $(document).on('click', '.fold_hider', function(){
+        console.log("2");
         $('>.fold', this.parentNode).slideToggle();
         $('>:first', this).toggleClass('open');
     });
