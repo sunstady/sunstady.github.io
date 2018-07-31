@@ -148,7 +148,9 @@ $(document).ready(function () {
   }
 });
 
+var bFlag= true;
 $(document).ready(function(){
+  if(bFlag){
     $(document).on('click', '.fold_hider', function(){
         console.log("1");
         $('>.fold', this.parentNode).slideToggle();
@@ -156,4 +158,6 @@ $(document).ready(function(){
     });
     console.log("2");
     $("div.fold").css("display","none");
+  }
+  bFlag= false;
 });
