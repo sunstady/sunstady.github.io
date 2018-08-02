@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-08-02T07:33:34.960Z</updated>
+  <updated>2018-08-02T08:18:30.678Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.sanstylemc.cn/2018/08/02/1235MySQL%E9%94%99%E8%AF%AF/"/>
     <id>http://www.sanstylemc.cn/2018/08/02/1235MySQL错误/</id>
     <published>2018-08-02T07:30:13.000Z</published>
-    <updated>2018-08-02T07:33:34.960Z</updated>
+    <updated>2018-08-02T08:18:30.678Z</updated>
     
     <content type="html"><![CDATA[<p><code>1235 - This version of MySQL doesn&#39;t yet support &#39;LIMIT &amp; IN/ALL/ANY/SOME subquery&#39;</code><br><a id="more"></a></p>
 <h2 id="1235"><a href="#1235" class="headerlink" title="1235"></a>1235</h2><p>今天正在些SQL语句，发现一个从未出现过的问题，在此记录下。<br><code>查询学生信息表中2班及2班之后的所有的学生的信息</code></p>
