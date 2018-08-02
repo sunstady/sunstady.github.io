@@ -16,8 +16,8 @@
 
 <script>
     (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
+        if('classloadergzjz'){
+            if (prompt('请输入文章密码') !== 'classloadergzjz'){
                 alert('密码错误！');
                 history.back();
             }
@@ -98,7 +98,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Interview," />
 
 
 
@@ -116,18 +116,20 @@
 
 
 
-<meta name="description" content="电视商品价格竞猜活动， 活动规则是：随机出现一个商品名，用户猜测它的价格，连续猜测5次，如果猜对便可获得此商品提示：(1)定义GuessMachine，编写它的initial方法，预定义商品信息根据产生的随机数字，选定一款竞猜商品(2)编写GuessMachine的guess方法，如果猜测正确，返回“猜对了，恭喜中奖！”，价格偏高，提示高了，偏低，提示低了。(3)编写测试类模拟竞猜，产生随机数 M">
-<meta name="keywords" content="Java">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ClassLoader翻译过来就是类加载器，ClassLoader的具体作用就是将class文件加载到JVM虚拟机中去，程序就可以正确运行了。但是，JVM启动的时候，并不会一次性加载所有的class文件，而是根据需要去动态加载。">
+<meta name="keywords" content="Interview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="竞猜商品">
-<meta property="og:url" content="http://www.sanstylemc.cn/2017/09/23/竞猜商品/index.html">
+<meta property="og:title" content="ClassLoader工作机制">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/08/02/ClassLoader工作机制/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="电视商品价格竞猜活动， 活动规则是：随机出现一个商品名，用户猜测它的价格，连续猜测5次，如果猜对便可获得此商品提示：(1)定义GuessMachine，编写它的initial方法，预定义商品信息根据产生的随机数字，选定一款竞猜商品(2)编写GuessMachine的guess方法，如果猜测正确，返回“猜对了，恭喜中奖！”，价格偏高，提示高了，偏低，提示低了。(3)编写测试类模拟竞猜，产生随机数 M">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ClassLoader翻译过来就是类加载器，ClassLoader的具体作用就是将class文件加载到JVM虚拟机中去，程序就可以正确运行了。但是，JVM启动的时候，并不会一次性加载所有的class文件，而是根据需要去动态加载。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T01:46:51.962Z">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/ClassLoader/1.png?raw=true">
+<meta property="og:updated_time" content="2018-08-02T03:05:53.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="竞猜商品">
-<meta name="twitter:description" content="电视商品价格竞猜活动， 活动规则是：随机出现一个商品名，用户猜测它的价格，连续猜测5次，如果猜对便可获得此商品提示：(1)定义GuessMachine，编写它的initial方法，预定义商品信息根据产生的随机数字，选定一款竞猜商品(2)编写GuessMachine的guess方法，如果猜测正确，返回“猜对了，恭喜中奖！”，价格偏高，提示高了，偏低，提示低了。(3)编写测试类模拟竞猜，产生随机数 M">
+<meta name="twitter:title" content="ClassLoader工作机制">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ClassLoader翻译过来就是类加载器，ClassLoader的具体作用就是将class文件加载到JVM虚拟机中去，程序就可以正确运行了。但是，JVM启动的时候，并不会一次性加载所有的class文件，而是根据需要去动态加载。">
+<meta name="twitter:image" content="https://github.com/sunstady/hexo/blob/master/ClassLoader/1.png?raw=true">
 
 
 
@@ -157,7 +159,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2017/09/23/竞猜商品/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/08/02/ClassLoader工作机制/"/>
 
 
 
@@ -178,7 +180,7 @@
 })();
 </script>
 
-  <title>竞猜商品 | Sanstyle</title>
+  <title>ClassLoader工作机制 | Sanstyle</title>
   
 
 
@@ -364,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2017/09/23/竞猜商品/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/08/02/ClassLoader工作机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -381,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">竞猜商品</h2>
+          <h2 class="post-title" itemprop="name headline">ClassLoader工作机制</h2>
         
 
         <div class="post-meta">
@@ -396,8 +398,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T13:26:22+08:00">
-                2017-09-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-02T10:58:29+08:00">
+                2018-08-02
               </time>
             
 
@@ -415,9 +417,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/23/竞猜商品/#comments" itemprop="discussionUrl">
+                <a href="/2018/08/02/ClassLoader工作机制/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/23/竞猜商品/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/08/02/ClassLoader工作机制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -425,7 +427,7 @@
 
           
           
-             <span id="/2017/09/23/竞猜商品/" class="leancloud_visitors" data-flag-title="竞猜商品">
+             <span id="/2018/08/02/ClassLoader工作机制/" class="leancloud_visitors" data-flag-title="ClassLoader工作机制">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,8 +458,31 @@
       
 
       
-        <p><code>电视商品价格竞猜活动， 活动规则是：随机出现一个商品名，用户猜测它的价格，连续猜测5次，如果猜对便可获得此商品</code><br><code>提示：(1)定义GuessMachine，编写它的initial方法，预定义商品信息根据产生的随机数字，选定一款竞猜商品</code><br><code>(2)编写GuessMachine的guess方法，如果猜测正确，返回“猜对了，恭喜中奖！”，价格偏高，提示高了，偏低，提示低了。</code><br><code>(3)编写测试类模拟竞猜，产生随机数 Math.radom();只产生0.0~1.0之间的数</code><br><a id="more"></a><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//GuessMachine</span></div><div class="line"></div><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GuessMachine</span> &#123;</div><div class="line">	String mach= <span class="literal">null</span>;</div><div class="line">	<span class="keyword">int</span> price= <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initial</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">int</span> data= (<span class="keyword">int</span>)(Math.random()* <span class="number">4</span>);</div><div class="line">		<span class="keyword">switch</span>(data)&#123;</div><div class="line">		<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">			mach= <span class="string">"电视机"</span>;</div><div class="line">			price= <span class="number">3359</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">			mach= <span class="string">"电冰箱"</span>;</div><div class="line">			price= <span class="number">1243</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">			mach= <span class="string">"油烟机"</span>;</div><div class="line">			price= <span class="number">4654</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">			mach= <span class="string">"ipthone"</span>;</div><div class="line">			price= <span class="number">2324</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">			mach= <span class="string">"洗衣机"</span>;</div><div class="line">			price= <span class="number">5643</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">default</span>:</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"><span class="comment">//		System.out.println(data);</span></div><div class="line"><span class="comment">//		System.out.println("请输出"+ mach+ "的价格: ");</span></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">guess</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		Scanner inpScanner= <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</div><div class="line">		<span class="keyword">int</span> guess= <span class="number">0</span>;<span class="comment">//用户输入的价格</span></div><div class="line">		<span class="keyword">int</span> i= <span class="number">0</span>;<span class="comment">//用户猜价格的次数</span></div><div class="line">		<span class="keyword">while</span>(i&lt; <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"请输入您竞猜的价格: "</span>);</div><div class="line">			guess= inpScanner.nextInt();</div><div class="line">			<span class="keyword">if</span>(price== guess)&#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"猜对了，恭喜中奖！"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(price&gt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"低了，请高一点。"</span>);</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span> (price&lt; guess) &#123;</div><div class="line">				System.<span class="keyword">out</span>.println(<span class="string">"高了， 请低一点。"</span>);</div><div class="line">			&#125;</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(i&gt;= <span class="number">5</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(<span class="string">"您已经猜奖5次，欢迎下次光临！"</span>);</div><div class="line">		&#125;</div><div class="line">		inpScanner.close();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Test.java</span></div><div class="line"></div><div class="line"><span class="keyword">package</span> com.cnstrong.com;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args)&#123;</div><div class="line">		GuessMachine gMachine= <span class="keyword">new</span> <span class="type">GuessMachine</span>();</div><div class="line">		</div><div class="line">		gMachine.initial();<span class="comment">//初始化</span></div><div class="line">		gMachine.guess();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassLoader翻译过来就是类加载器，ClassLoader的具体作用就是将class文件加载到JVM虚拟机中去，程序就可以正确运行了。但是，JVM启动的时候，并不会一次性加载所有的class文件，而是根据需要去动态加载。<br><a id="more"></a></p>
+<h2 id="Class文件"><a href="#Class文件" class="headerlink" title="Class文件"></a>Class文件</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>class</code>文件时字节码格式文件，Java虚拟机并不能直接识别我们平常编写的Java源文件，所以需要<code>javac</code>这个命令转换成<code>.class</code>文件。另外，如果用C或者python编写的程序正确转换成class文件后，Java虚拟机也是可以识别运行的。</p>
+<h2 id="ClassLoader概念"><a href="#ClassLoader概念" class="headerlink" title="ClassLoader概念"></a>ClassLoader概念</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>ClassLoader</code>是用来动态的加载class文件到虚拟机中，并转换成<code>java.lang.class</code>类的一个实例，每个这样的实例用来表示一个Java类，我们可以根据class的实例得到该类的信息，并通过实例的<code>newInstance()</code>方法创建出该类的一个对象，除此之外，<code>ClassLoader</code>还负责加载Java应用所需的资源，如图像文件和配置文件等。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>ClassLoader</code>类是一个抽象类。如果给定类的二进制名称，那么类加载器会试图查找或生成构成类定义的数据。一般策略是将名称转换为某个文件名，然后从文件系统读取该名称的”类文件”。<code>ClassLoader</code>类使用委托模型来搜索类和资源。每个<code>ClassLoader</code>实例都有一个相关的父类加载器。需要查找类或资源时，<code>ClassLoader</code>实例会在试图亲自查找类或资源之前，将搜索类或资源的任务委托给其父类加载器。</p>
+<h2 id="JVM平台提供三层classLoader"><a href="#JVM平台提供三层classLoader" class="headerlink" title="JVM平台提供三层classLoader"></a>JVM平台提供三层classLoader</h2><h3 id="Bootstrap-classLoader"><a href="#Bootstrap-classLoader" class="headerlink" title="Bootstrap classLoader"></a>Bootstrap classLoader</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采用native code实现，是JVM的一部分，主要加载JVM自身工作需要的类，如<code>java.lang.*</code>、<code>java.util.*</code>等；这些类位于<code>%JAVA_HOME%/jre/lib/rt.jar</code>。<code>Bootstrap ClassLoader</code>不继承自<code>ClassLoader</code>，因为它不是一个普通的Java类，底层由C++编写，已嵌入到了JVM内核当中，当JVM启动后，<code>BootStrap ClassLoader</code>也随着启动，负责加载完核心类库后，并构造<code>Extension ClassLoader</code>和<code>App ClassLoader</code>类加载器。</p>
+<h3 id="ExtClassLoader"><a href="#ExtClassLoader" class="headerlink" title="ExtClassLoader"></a>ExtClassLoader</h3><p>扩展的<code>class loader</code>， 加载位于<code>%JAVA_HOME%/jre/lib/ext</code>目录下的扩展<code>jar</code>。</p>
+<h3 id="AppClassLoader"><a href="#AppClassLoader" class="headerlink" title="AppClassLoader"></a>AppClassLoader</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统<code>class loader</code>， 父类是<code>ExtClassLoader</code>，加载<code>CLASSPATH</code>下的目录和<code>jar</code>；它负责加载应用程序主函数类。<br>其体系结构如下：<br><img src="https://github.com/sunstady/hexo/blob/master/ClassLoader/1.png?raw=true" alt="1"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果要实现自己的类加载器，不管是实现抽象列<code>ClassLoader</code>，还是继承<code>URLClassLoader</code>类，它的父加载器都是<code>AppClassLoader</code>，因为不管调用哪个父类加载器，创建的对象都必须最终调用<code>getSystemClassLoader()</code>作为父加载器，<code>getSystemClassLoader()</code>方法获取到的正是<code>AppClassLoader</code>。</p>
+<blockquote>
+<p>注：<code>Bootstrap classLoader</code>并不属于JVM的等级层次，它不遵守<code>ClassLoader</code>的加载规则，<code>Bootstrap classLoader</code>并没有子类。</p>
+</blockquote>
+<h3 id="加载顺序"><a href="#加载顺序" class="headerlink" title="加载顺序"></a>加载顺序</h3><p>1、<code>Bootstrap CLassloder</code><br>2、<code>Extention ClassLoader</code><br>3、<code>AppClassLoader</code></p>
+<h2 id="JVM加载class文件到内存有两种方式"><a href="#JVM加载class文件到内存有两种方式" class="headerlink" title="JVM加载class文件到内存有两种方式"></a>JVM加载class文件到内存有两种方式</h2><h3 id="隐式加载"><a href="#隐式加载" class="headerlink" title="隐式加载"></a>隐式加载</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不通过在代码里调用<code>ClassLoader</code>来加载需要的类，而是通过JVM来自动加载需要的类到内存，例如：当类中继承或者引用某个类时，JVM在解析当前这个类不在内存中时，就会自动将这些类加载到内存中。</p>
+<h3 id="显示加载"><a href="#显示加载" class="headerlink" title="显示加载"></a>显示加载</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在代码中通过<code>CLassLoader</code>类来加载一个类，例如调用<code>this.getClass.getClassLoader().loadClass()</code>或者<code>Class.for</code></p>
+<h2 id="ClassLoader加载类的过程"><a href="#ClassLoader加载类的过程" class="headerlink" title="ClassLoader加载类的过程"></a>ClassLoader加载类的过程</h2><p>1、找到<code>.class</code>文件并把这个文件加载到内存中。<br>2、字节码验证，<code>Class</code>类数据结构分析，内存分配和符号表的链接。<br>3、类中静态属性和初始化赋值以及静态代码块的执行。</p>
+<h2 id="自定义类加载器"><a href="#自定义类加载器" class="headerlink" title="自定义类加载器"></a>自定义类加载器</h2><h3 id="为何要自定义类加载器"><a href="#为何要自定义类加载器" class="headerlink" title="为何要自定义类加载器"></a>为何要自定义类加载器</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JVM提供的类加载器，只能加载指定目录的<code>jar</code>和<code>class</code>，如果我们想加载其他位置的类或者<code>jar</code>时，例如加载网络上的一个<code>class</code>文件，默认的<code>ClassLoader</code>就不能满足我们的需求了，所以需要定义自己的类加载器。</p>
+<h3 id="如何实现自定义的类加载器"><a href="#如何实现自定义的类加载器" class="headerlink" title="如何实现自定义的类加载器"></a>如何实现自定义的类加载器</h3><p>我们实现一个<code>ClassLoader</code>，并指定这个<code>ClassLoader</code>的加载路径。有两种方式：</p>
+<h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>继承<code>CLassLoader</code>，重写父类的<code>findClass()</code>方法，代码如下：<br><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.ByteArrayOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.<span class="keyword">File</span>;</div><div class="line"><span class="keyword">import</span> java.io.FileInputStream;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> PathClassLoader <span class="keyword">extends</span> ClassLoader</div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String drive = <span class="string">"d:/"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String fileType = <span class="string">".class"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) <span class="keyword">throws</span> Exception</div><div class="line">    &#123;</div><div class="line">        PathClassLoader loader = <span class="keyword">new</span> PathClassLoader();</div><div class="line">        <span class="keyword">Class</span>&lt;?&gt; objClass = loader.loadClass(<span class="string">"HelloWorld"</span>, <span class="keyword">true</span>);</div><div class="line">        Object obj = objClass.newInstance();</div><div class="line">        System.out.<span class="keyword">println</span>(objClass.getName());</div><div class="line">        System.out.<span class="keyword">println</span>(objClass.getClassLoader());</div><div class="line">        System.out.<span class="keyword">println</span>(obj.getClass().toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">Class</span>&lt;?&gt; findClass(String name)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">byte</span>[] data = loadClassData(name);</div><div class="line">        <span class="keyword">return</span> defineClass(name, data, <span class="number">0</span>, data.length);<span class="comment">// 将一个 byte 数组转换为 Class// 类的实例</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] loadClassData(String name)</div><div class="line">    &#123;</div><div class="line">        FileInputStream fis = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">byte</span>[] data = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span></div><div class="line">        &#123;</div><div class="line">            fis = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> <span class="keyword">File</span>(drive + name + fileType));</div><div class="line">            ByteArrayOutputStream baos = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">            <span class="keyword">int</span> ch = <span class="number">0</span>;</div><div class="line">            <span class="keyword">while</span> ((ch = fis.<span class="keyword">read</span>()) != -<span class="number">1</span>)</div><div class="line">            &#123;</div><div class="line">                baos.<span class="keyword">write</span>(ch);</div><div class="line">            &#125;</div><div class="line">            data = baos.toByteArray();</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e)</div><div class="line">        &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> data;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</div></div><br>在第13行，我们调用了父类的<code>loadClass()</code>方法，该方法使用指定的二进制名称来加载类，下面是<code>loadClass</code>方法的源代码：<br><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> <span class="keyword">Class</span>&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve) <span class="keyword">throws</span> ClassNotFoundException</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name))</div><div class="line">        &#123;</div><div class="line">            <span class="comment">// 第一步先检查这个类是否已经被加载</span></div><div class="line">            <span class="keyword">Class</span>&lt;?&gt; c = findLoadedClass(name);</div><div class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">long</span> t0 = System.nanoTime();</div><div class="line">                <span class="keyword">try</span></div><div class="line">                &#123;</div><div class="line">                    <span class="comment">//parent为父加载器</span></div><div class="line">                    <span class="keyword">if</span> (parent != <span class="keyword">null</span>)</div><div class="line">                    &#123;</div><div class="line">                        <span class="comment">//将搜索类或资源的任务委托给其父类加载器</span></div><div class="line">                        c = parent.loadClass(name, <span class="keyword">false</span>);</div><div class="line">                    &#125; <span class="keyword">else</span></div><div class="line">                    &#123;</div><div class="line">                        <span class="comment">//检查该class是否被BootstrapClassLoader加载</span></div><div class="line">                        c = findBootstrapClassOrNull(name);</div><div class="line">                    &#125;</div><div class="line">                &#125; </div><div class="line">                <span class="keyword">catch</span> (ClassNotFoundException e)</div><div class="line">                &#123;</div><div class="line">                    <span class="comment">// ClassNotFoundException thrown if class not found</span></div><div class="line">                    <span class="comment">// from the non-null parent class loader</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>)</div><div class="line">                &#123;</div><div class="line">                    <span class="comment">//如果上述两步均没有找到加载的class，则调用findClass()方法</span></div><div class="line">                    <span class="keyword">long</span> t1 = System.nanoTime();</div><div class="line">                    c = findClass(name);</div><div class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></div><div class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</div><div class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</div><div class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (resolve)</div><div class="line">            &#123;</div><div class="line">                resolveClass(c);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> c;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+</div></div><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个方法首先检查指定<code>class</code>是否已经被加载，如果已被加载过，则调用<code>resolveClass()</code>方法链接指定的类，如果还未加载，则先将搜索类或资源的任务委托给其他父类加载器，检查该<code>class</code>是否被<code>BootstrapClassLoader</code>加载，如果上述两部均没有找到加载的<code>class</code>，则调用<code>findClass()</code>方法，在我们自定义的加载器中，我们重写了<code>findClass</code>方法，去我们指定的路径下加载<code>class</code>文件。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;另外，我们自定义的类加载器没有指定父加载器，在JVM规范中不指定父类加载器的情况下，默认采用系统类加载器即<code>AppClassLoader</code>作为其父加载器，所以在使用该自定义类加载器时，需要加载的类不能在类路径中，否则的话根据双亲委派模型的原则，待加载的类会由类加载器加载。如果一定想要把自定义加载器需要加载的类放在类路径中，就要把自定义类加载器的父加载器设置为null。</p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>继承<code>URLClassLoader</code>类，然后设置自定义路径的URL来加载URL下的类。<br>我们将指定的目录转换为URL路径，然后重写<code>findClass</code>方法。</p>
+<h2 id="实现类的热部署"><a href="#实现类的热部署" class="headerlink" title="实现类的热部署"></a>实现类的热部署</h2><h3 id="什么是类的热部署"><a href="#什么是类的热部署" class="headerlink" title="什么是类的热部署"></a>什么是类的热部署</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所谓热部署，就是在应用正在运行的时候升级软件，不需要重新启用应用。<br>对于Java应用程序来说，热部署就是运行时更新Java类文件。在基于Java的应用服务器实现热部署的过程中，类装入器扮演着重要的角色。大多数基于Java的应用服务器，包括EJB服务器和Servlet容器，都支持热部署。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类装入器不能重新装入一个已经装入的类，但只要使用一个新的类装入器实例，就可以将类再次装入一个正在运行的应用程序。</p>
+<h3 id="如何实现Java类的热部署"><a href="#如何实现Java类的热部署" class="headerlink" title="如何实现Java类的热部署"></a>如何实现Java类的热部署</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面的分析，我们已经知道，JVM在加载类之前会检查请求的类是否已经被加载过来，也就是要调用findLoadedClass方法查看是否能够返回类实例。如果类已经加载过来，再调用loadClass会导致类冲突。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是，JVM判断一个类是否是同一个类有两个条件：一是看这个类的完整类名是否一样(包括包名)，二是看加载这个类的ClassLoader加载器是否是同一个(既是是同一个ClassLoader类的两个实例，加载同一个类也会不一样)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所以，要实现类的热部署可以创建不同的ClassLoader的实例对象，然后通过这个不同的实例对象来加载同名的类。</p>
 
       
     </div>
@@ -506,7 +531,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Interview/" rel="tag"># Interview</a>
           
         </div>
       
@@ -519,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/23/base32解密/" rel="next" title="base32解密">
-                <i class="fa fa-chevron-left"></i> base32解密
+              <a href="/2018/08/01/HashMap/" rel="next" title="HashMap">
+                <i class="fa fa-chevron-left"></i> HashMap
               </a>
             
           </div>
@@ -528,10 +553,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/23/小型通讯录/" rel="prev" title="小型通讯录">
-                小型通讯录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -590,8 +611,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -688,6 +718,24 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Class文件"><span class="nav-number">1.</span> <span class="nav-text">Class文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ClassLoader概念"><span class="nav-number">2.</span> <span class="nav-text">ClassLoader概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM平台提供三层classLoader"><span class="nav-number">3.</span> <span class="nav-text">JVM平台提供三层classLoader</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap-classLoader"><span class="nav-number">3.1.</span> <span class="nav-text">Bootstrap classLoader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ExtClassLoader"><span class="nav-number">3.2.</span> <span class="nav-text">ExtClassLoader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AppClassLoader"><span class="nav-number">3.3.</span> <span class="nav-text">AppClassLoader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载顺序"><span class="nav-number">3.4.</span> <span class="nav-text">加载顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM加载class文件到内存有两种方式"><span class="nav-number">4.</span> <span class="nav-text">JVM加载class文件到内存有两种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式加载"><span class="nav-number">4.1.</span> <span class="nav-text">隐式加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示加载"><span class="nav-number">4.2.</span> <span class="nav-text">显示加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ClassLoader加载类的过程"><span class="nav-number">5.</span> <span class="nav-text">ClassLoader加载类的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义类加载器"><span class="nav-number">6.</span> <span class="nav-text">自定义类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何要自定义类加载器"><span class="nav-number">6.1.</span> <span class="nav-text">为何要自定义类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现自定义的类加载器"><span class="nav-number">6.2.</span> <span class="nav-text">如何实现自定义的类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方式一"><span class="nav-number">6.2.1.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方式二"><span class="nav-number">6.2.2.</span> <span class="nav-text">方式二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现类的热部署"><span class="nav-number">7.</span> <span class="nav-text">实现类的热部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是类的热部署"><span class="nav-number">7.1.</span> <span class="nav-text">什么是类的热部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现Java类的热部署"><span class="nav-number">7.2.</span> <span class="nav-text">如何实现Java类的热部署</span></a></li></ol></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -869,9 +917,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2017/09/23/竞猜商品/';
-          this.page.identifier = '2017/09/23/竞猜商品/';
-          this.page.title = '竞猜商品';
+          this.page.url = 'http://www.sanstylemc.cn/2018/08/02/ClassLoader工作机制/';
+          this.page.identifier = '2018/08/02/ClassLoader工作机制/';
+          this.page.title = 'ClassLoader工作机制';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
