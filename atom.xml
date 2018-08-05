@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-08-02T08:18:30.678Z</updated>
+  <updated>2018-08-05T13:22:37.326Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>三种写文件方法</title>
+    <link href="http://www.sanstylemc.cn/2018/08/05/%E4%B8%89%E7%A7%8D%E5%86%99%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
+    <id>http://www.sanstylemc.cn/2018/08/05/三种写文件方法/</id>
+    <published>2018-08-05T13:21:58.000Z</published>
+    <updated>2018-08-05T13:22:37.326Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Java写文件中，通常会使用<code>FileOutputStream</code>和<code>FileWriter</code>, <code>FileWriter</code>只能写文本文件。<code>FileOutputStream</code>也经常结合<code>BufferedOutPutStream</code>。因为实际应用中写文本文件的情况占了大多数。所以下面测试用不同的方式生成一个相同行数、大小相同的三种不同方式。<br><a id="more"></a><br><a href="http://www.codesky.net/article/200912/118652.html" target="_blank" rel="external">转自</a><br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.<span class="built_in">File</span>;</div><div class="line"><span class="keyword">import</span> java.io.FileOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> class Main &#123;</div><div class="line">    <span class="keyword">public</span> Main() &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">        FileOutputStream out = null;</div><div class="line">        FileOutputStream outSTr = null;</div><div class="line">        BufferedOutputStream Buff=null;</div><div class="line">        FileWriter fw = null;</div><div class="line">        <span class="keyword">int</span> count=<span class="number">10000</span>;<span class="comment">//写文件行数</span></div><div class="line">        <span class="built_in">try</span> &#123;</div><div class="line">            out = <span class="keyword">new</span> FileOutputStream(<span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"D:\\add.txt"</span>));</div><div class="line">            <span class="keyword">long</span> <span class="built_in">begin</span> = System.currentTimeMillis();</div><div class="line">            <span class="built_in">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">                out.<span class="built_in">write</span>(<span class="string">"测试java 文件操作\r\n"</span>.getBytes());</div><div class="line">            &#125;</div><div class="line">            out.<span class="built_in">close</span>();</div><div class="line">            <span class="keyword">long</span> <span class="built_in">end</span> = System.currentTimeMillis();</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"FileOutputStream执行耗时:"</span> + (<span class="built_in">end</span> - <span class="built_in">begin</span>) + <span class="string">" 豪秒"</span>);</div><div class="line"></div><div class="line">            outSTr = <span class="keyword">new</span> FileOutputStream(<span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"D:\\add0.txt"</span>));</div><div class="line">            Buff=<span class="keyword">new</span> BufferedOutputStream(outSTr);</div><div class="line">            <span class="keyword">long</span> begin0 = System.currentTimeMillis();</div><div class="line">            <span class="built_in">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">                Buff.<span class="built_in">write</span>(<span class="string">"测试java 文件操作\r\n"</span>.getBytes());</div><div class="line">            &#125;</div><div class="line">            Buff.<span class="built_in">flush</span>();</div><div class="line">            Buff.<span class="built_in">close</span>();</div><div class="line">            <span class="keyword">long</span> end0 = System.currentTimeMillis();</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"BufferedOutputStream执行耗时:"</span> + (end0 - begin0) + <span class="string">" 豪秒"</span>);</div><div class="line"></div><div class="line">            fw = <span class="keyword">new</span> FileWriter(<span class="string">"D:\\add2.txt"</span>);</div><div class="line">            <span class="keyword">long</span> begin3 = System.currentTimeMillis();</div><div class="line">            <span class="built_in">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">                fw.<span class="built_in">write</span>(<span class="string">"测试java 文件操作\r\n"</span>);</div><div class="line">            &#125;</div><div class="line">            fw.<span class="built_in">close</span>();</div><div class="line">            <span class="keyword">long</span> end3 = System.currentTimeMillis();</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"FileWriter执行耗时:"</span> + (end3 - begin3) + <span class="string">" 豪秒"</span>);</div><div class="line"></div><div class="line">        &#125; <span class="built_in">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        finally &#123;</div><div class="line">            <span class="built_in">try</span> &#123;</div><div class="line">                fw.<span class="built_in">close</span>();</div><div class="line">                Buff.<span class="built_in">close</span>();</div><div class="line">                outSTr.<span class="built_in">close</span>();</div><div class="line">                out.<span class="built_in">close</span>();</div><div class="line">            &#125; <span class="built_in">catch</span> (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下结果取几次不同的数据进行比较：<br>1、当<code>count=1000</code>时，即写文件1000行的时候，写出的文件大小为<code>25KB</code>：<br><img src="" alt="1"><br>2、当<code>count=10000</code>时，即写文件10000行的时候，写出的文件大小为<code>245KB</code>：<br><img src="" alt="2"><br>3、当<code>count=100000</code>时，即写文件100000行的时候，写出的文件大小为<code>2442KB</code>：<br><img src="" alt="3"><br>4、当<code>count=1000000</code>时，即写文件1000000行的时候，写出的文件大小为<code>24415KB</code>：<br><img src="" alt="4"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由以上数据可以看到，如果不用缓冲流<code>BufferedOutputStream</code>，<code>FileOutputStream</code>写文件的性能不是很好。当写百万行的文件的时候，<code>FileOutputStream</code>比<code>FileWriter</code>要慢五千多毫秒，<code>BufferedOutputStream</code>比<code>FileWriter</code>要慢十几秒。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在Java写文件中，通常会使用&lt;code&gt;FileOutputStream&lt;/code&gt;和&lt;code&gt;FileWriter&lt;/code&gt;, &lt;code&gt;FileWriter&lt;/code&gt;只能写文本文件。&lt;code&gt;FileOutputStream&lt;/code&gt;也经常结合&lt;code&gt;BufferedOutPutStream&lt;/code&gt;。因为实际应用中写文本文件的情况占了大多数。所以下面测试用不同的方式生成一个相同行数、大小相同的三种不同方式。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>1235MySQL错误</title>
@@ -697,43 +719,6 @@
     
     
       <category term="失误锦集" scheme="http://www.sanstylemc.cn/tags/%E5%A4%B1%E8%AF%AF%E9%94%A6%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>rpm命令</title>
-    <link href="http://www.sanstylemc.cn/2018/07/24/rpm%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.sanstylemc.cn/2018/07/24/rpm命令/</id>
-    <published>2018-07-24T01:17:49.000Z</published>
-    <updated>2018-07-24T01:19:32.582Z</updated>
-    
-    <content type="html"><![CDATA[<p>对于一个rpm包来说，都是有”-“和”.”构成的，基本上有以下几部分组成：<code>包名</code>、<code>版本信息</code>、<code>发布版本号</code>、<code>运行平台</code>，当出现noarch, 代表的是软件可以平台兼容。<br><a id="more"></a></p>
-<h2 id="查询系统已经安装的软件信息"><a href="#查询系统已经安装的软件信息" class="headerlink" title="查询系统已经安装的软件信息"></a>查询系统已经安装的软件信息</h2><p>1、查询系统中已经安装的软件<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm -qa</span></div></pre></td></tr></table></figure></p>
-<p>2、查询一个已经安装的文件属于哪个软件包<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qf 文件名的绝对路径</div></pre></td></tr></table></figure></p>
-<p>3、查询已安装软件包都安装到何处<br><figure class="highlight ldif"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm -ql 软件名</span></div><div class="line"><span class="attribute">软件名定义</span>: rpm包去除平台信息和后缀后的信息</div></pre></td></tr></table></figure></p>
-<p>4、查询一个已安装软件包的信息<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qi 软件名</div></pre></td></tr></table></figure></p>
-<p>5、查看一下已安装软件的配置文件<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rom</span> -qc 软件名</div></pre></td></tr></table></figure></p>
-<p>6、查看一个已安装软件的文档安装位置<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qd 软件名</div></pre></td></tr></table></figure></p>
-<p>7、查看一下已安装软件所依赖的软件包及文件<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -<span class="built_in">qR</span> 软件名</div></pre></td></tr></table></figure></p>
-<h2 id="对于未安装的软件包信息查询"><a href="#对于未安装的软件包信息查询" class="headerlink" title="对于未安装的软件包信息查询"></a>对于未安装的软件包信息查询</h2><p>1、查看一个软件包的用途、版本等信息<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qpi rpm文件</div></pre></td></tr></table></figure></p>
-<p>2、查看软件包的文档所在的位置<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qpl rpm文件</div></pre></td></tr></table></figure></p>
-<p>3、查看软件包的文档所在的位置<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qpd rpm文件</div></pre></td></tr></table></figure></p>
-<p>4、查看一个软件包的配置文件<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qpc rpm文件</div></pre></td></tr></table></figure></p>
-<p>5、查看一个软件包的依赖关系<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -qpR rpm文件</div></pre></td></tr></table></figure></p>
-<h2 id="软件包的安装、升级、删除等"><a href="#软件包的安装、升级、删除等" class="headerlink" title="软件包的安装、升级、删除等"></a>软件包的安装、升级、删除等</h2><p>1、安装或者升级一个rpm包<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rpm -ivh rpm文件 <span class="string">[安装]</span></div><div class="line">rpm -Uvh rpm文件 <span class="string">[更新]</span></div></pre></td></tr></table></figure></p>
-<p>2、删除一个rpm包<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">rpm</span> -e 软件名</div></pre></td></tr></table></figure></p>
-<p>如果需要不管依赖问题，强制删除软件，在如上命令后加上<code>--nodeps</code>。</p>
-<h2 id="签名导入"><a href="#签名导入" class="headerlink" title="签名导入"></a>签名导入</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rpm --<span class="keyword">import</span> 签名文件</div><div class="line">rpm --<span class="keyword">import</span> RPM-GPG-KEY</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;对于一个rpm包来说，都是有”-“和”.”构成的，基本上有以下几部分组成：&lt;code&gt;包名&lt;/code&gt;、&lt;code&gt;版本信息&lt;/code&gt;、&lt;code&gt;发布版本号&lt;/code&gt;、&lt;code&gt;运行平台&lt;/code&gt;，当出现noarch, 代表的是软件可以平台兼容。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Skill" scheme="http://www.sanstylemc.cn/tags/Skill/"/>
     
   </entry>
   
