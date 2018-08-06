@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-08-06T06:35:15.608Z</updated>
+  <updated>2018-08-06T13:39:52.408Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Error和Exception的区别</title>
+    <link href="http://www.sanstylemc.cn/2018/08/06/Error%E5%92%8CException%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://www.sanstylemc.cn/2018/08/06/Error和Exception的区别/</id>
+    <published>2018-08-06T13:37:50.000Z</published>
+    <updated>2018-08-06T13:39:52.408Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>Exception(异常)</code>和<code>Error(错误)</code>, 二者都是Java异常处理的重要子类，各自都包含大量子类。<br><a id="more"></a></p>
+<h2 id="Error-错误"><a href="#Error-错误" class="headerlink" title="Error(错误)"></a>Error(错误)</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是程序无法处理的错误，表示运行应用程序中较严重问题。大多数错误与代码编写者执行的操作无关，而表示代码运行时JVM(Java虚拟机)出现的问题。例如，Java虚拟机运行错误(Virtual MachioneError), 当JVM不再有继续执行操作所需的内存资源时，将出现<code>OutOfMemoryError</code>。这些异常发生时，Java虚拟机(JVM)一般会选择线程终止。这些错误表示故障发生于虚拟机自身或者发生在虚拟机试图执行应用时，如Java虚拟机运行错误(Virtual MachioneError)、类定义错误(NoClassDefFoundError)等。这些错误时不可查的，因为它们在应用程序的控制和处理能力之外，而且绝大多数时程序运行时不允许出现的状况。对于设计合理的应用程序来说，即使确实发生了错误，本质上也不应该试图去处理它所引起的异常状况。在Java中，错误通过Error的子类描述。</p>
+<h2 id="Exception-异常"><a href="#Exception-异常" class="headerlink" title="Exception(异常)"></a>Exception(异常)</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是程序本身可以处理的异常。<code>Exception</code>类有一个重要的子类<code>RuntimeException</code>。<code>RuntimeException</code>类及其子类表示<code>JVM常用操作</code>引发的错误。例如，若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常(NullPointerException、ArithmeticException)和ArrayIndexOutOfBoundException。</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>异常能被程序本身可以处理，错误是无法处理的</code>。通常，Java是异常(包括Exception和Error)分为可查的异常(checked exceptions)和不可查的异常(unchecked exceptions)。<br>可查异常(编译器要求必须处置的异常)：正确的程序在运行中，很容易出现的异常状况。可查异常虽然是异常状况，但在一定程度上它的发生时可以预计的，而且一旦发生这种异常状况，就必须采取某种方式进行处理。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了<code>RuntimeException</code>及其子类以外，其他的<code>Exception</code>类及其子类都属于可查异常。这种异常的特点是Java编译器会检查它，也就是说，当程序种可能出现这类异常，要么用<code>try-cathc</code>语句捕获它，要么用<code>throws</code>子句声明抛出它，否则编译不会通过。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;code&gt;Exception(异常)&lt;/code&gt;和&lt;code&gt;Error(错误)&lt;/code&gt;, 二者都是Java异常处理的重要子类，各自都包含大量子类。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="失误锦集" scheme="http://www.sanstylemc.cn/tags/%E5%A4%B1%E8%AF%AF%E9%94%A6%E9%9B%86/"/>
+    
+  </entry>
   
   <entry>
     <title>三种写文件方法</title>
@@ -697,28 +721,6 @@
     
     
       <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TIMESTAMP和DATETIME</title>
-    <link href="http://www.sanstylemc.cn/2018/07/24/TIMESTAMP%E5%92%8CDATETIME/"/>
-    <id>http://www.sanstylemc.cn/2018/07/24/TIMESTAMP和DATETIME/</id>
-    <published>2018-07-24T03:03:43.000Z</published>
-    <updated>2018-07-24T03:04:21.827Z</updated>
-    
-    <content type="html"><![CDATA[<p>TIMESTAMP和DATETIME的表示方法非常类似，区别主要有以下几点。<br><a id="more"></a></p>
-<p>1、TIMESTAMP支持的时间范围比较小，其取值范围从19700101080001到2038年的某个时间，而DATETIME是从1000-01-01 00:00:00 到 9999-12-31 23:59:59，范围更大。<br>2、表中的第一个TIMESTAMP列自动设置为系统时间。如果在一个TIMESTAMP列中插入NULL，则该列值将自动设置为当前的日期和时间。在插入或更新一行但不明确给TIMESTAMP列赋值时也会自动设置该列的值为当前的日期和时间，当插入的值超出取值范围时，MySQL认为该值溢出，使用”0000-00-00 00:00:00”进行填补。<br>3、TIMESTAMP的插入和查询都受当地时区的影响，更能反应出实际的日期。而DATETIME则只能反应出插入时当地的时区，其他时区的人查看数据必然会有误差的。<br>4、TIMESTAMP的属性受MySQL版本和服务器SQLMode的影响很大。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;TIMESTAMP和DATETIME的表示方法非常类似，区别主要有以下几点。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="失误锦集" scheme="http://www.sanstylemc.cn/tags/%E5%A4%B1%E8%AF%AF%E9%94%A6%E9%9B%86/"/>
     
   </entry>
   
