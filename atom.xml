@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-08-06T13:39:52.408Z</updated>
+  <updated>2018-08-07T02:07:51.527Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java正则忽略大小写</title>
+    <link href="http://www.sanstylemc.cn/2018/08/07/Java%E6%AD%A3%E5%88%99%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99/"/>
+    <id>http://www.sanstylemc.cn/2018/08/07/Java正则忽略大小写/</id>
+    <published>2018-08-07T02:07:21.000Z</published>
+    <updated>2018-08-07T02:07:51.527Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java正则表达式：<br><code>(?i)abc</code>表示abc都忽略大小写。<br><code>a(?i)bc</code>表示bc忽略大小写。<br><code>a((?i)b)c</code>表示只有b忽略大小写。<br>也可以用<code>Pattern.compile(rexp, Pattern.CASE_INSENSITIVE)</code>表示整体都忽略大小写。<br><a id="more"></a><br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span> arg[])&#123;</div><div class="line">    <span class="keyword">String</span> ss = <span class="string">"&amp;nbsP;"</span>;</div><div class="line">    System.out.<span class="built_in">println</span>(ss.replaceAll(<span class="string">"(?i)p"</span>, <span class="string">""</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>结果为：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&amp;nbs;</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Java正则表达式：&lt;br&gt;&lt;code&gt;(?i)abc&lt;/code&gt;表示abc都忽略大小写。&lt;br&gt;&lt;code&gt;a(?i)bc&lt;/code&gt;表示bc忽略大小写。&lt;br&gt;&lt;code&gt;a((?i)b)c&lt;/code&gt;表示只有b忽略大小写。&lt;br&gt;也可以用&lt;code&gt;Pattern.compile(rexp, Pattern.CASE_INSENSITIVE)&lt;/code&gt;表示整体都忽略大小写。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="正则" scheme="http://www.sanstylemc.cn/tags/%E6%AD%A3%E5%88%99/"/>
+    
+  </entry>
   
   <entry>
     <title>Error和Exception的区别</title>
@@ -684,43 +706,6 @@
     
     
       <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>索引</title>
-    <link href="http://www.sanstylemc.cn/2018/07/24/%E7%B4%A2%E5%BC%95/"/>
-    <id>http://www.sanstylemc.cn/2018/07/24/索引/</id>
-    <published>2018-07-24T06:29:27.000Z</published>
-    <updated>2018-07-24T06:41:03.555Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;索引分单列索引和组合索引。单列索引，即一个索引只包含单个列，一个表可以有多个单列索引，但这不是组合索引。组合索引，即一个索引包含多个列。</p>
-<p><code>创建索引时，需要确保索引是应用在SQL查询语句的条件(一般作为WHERE子句的条件)</code></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录。</p>
-<p><code>缺点</code>: 虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行<code>INSERT</code>、<code>UPDATE</code>和<code>DELETE</code>。因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件。</p>
-<h2 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h2><p>1、创建索引<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">index</span> indexName <span class="keyword">on</span> mytable(username(<span class="built_in">length</span>));</div></pre></td></tr></table></figure></p>
-<p>如果是char、varchar类型，length可以小于字段实际长度；如果是blob和text类型，必须指定length。<br>2、修改表结构(添加索引)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tableName <span class="keyword">add</span> <span class="keyword">index</span> indexName(columnName);</div></pre></td></tr></table></figure></p>
-<p>3、创建表的时候直接指定<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> mytable(</div><div class="line"><span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line">username <span class="built_in">varchar</span>(<span class="number">16</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line"><span class="keyword">index</span> [indexName] (username(<span class="keyword">length</span>))</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>4、删除索引的语法<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">drop</span> <span class="keyword">index</span> [indexName] <span class="keyword">on</span> mytable;</div></pre></td></tr></table></figure></p>
-<h2 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h2><p>它与前面的普通索引类似，不同的就是：索引列的值必须唯一，但允许有空值。如果是组合索引，则列值的组合必须唯一。<br>1、创建索引<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">unique</span> <span class="keyword">index</span> indexName <span class="keyword">on</span> mytable(username(<span class="built_in">length</span>));</div></pre></td></tr></table></figure></p>
-<p>2、修改表结构<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> mytable <span class="keyword">add</span> <span class="keyword">unique</span> [indexName] (username(<span class="keyword">length</span>));</div></pre></td></tr></table></figure></p>
-<p>3、创建表的时候直接指定<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> mytable(</div><div class="line"><span class="keyword">id</span> <span class="built_in">int</span> <span class="literal">null</span>,</div><div class="line">username <span class="built_in">varchar</span>(<span class="number">16</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line"><span class="keyword">unique</span> [indexName] (username(<span class="keyword">length</span>))</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<h2 id="使用alter命令添加和删除索引"><a href="#使用alter命令添加和删除索引" class="headerlink" title="使用alter命令添加和删除索引"></a>使用alter命令添加和删除索引</h2><p>有四种方式来添加数据表的索引：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tbl_name <span class="keyword">add</span> primary <span class="keyword">key</span>(column_list);</div></pre></td></tr></table></figure></p>
-<p>该语句添加一个主键，这意味着索引值必须是唯一的，且不能为null。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tbl_name <span class="keyword">add</span> <span class="keyword">unique</span> index_name(column_list);</div></pre></td></tr></table></figure></p>
-<p>这条语句创建索引的值必须是唯一的(除了null，外，null可能会出现多次)。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tbl_name <span class="keyword">add</span> <span class="keyword">index</span> index_name(column_list);</div></pre></td></tr></table></figure></p>
-<p>添加普通索引，索引值可出现多次。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tbl_name <span class="keyword">add</span> fulltext index_name(column_list);</div></pre></td></tr></table></figure></p>
-<p>该语句指定了索引为fulltext，用于全文索引。</p>
-<h2 id="显示索引信息"><a href="#显示索引信息" class="headerlink" title="显示索引信息"></a>显示索引信息</h2><p>可以使用show index命令来列出表中的相关的索引信息。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">index</span> <span class="keyword">from</span> table_name;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
     
   </entry>
   

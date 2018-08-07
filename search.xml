@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java正则忽略大小写]]></title>
+    <url>%2F2018%2F08%2F07%2FJava%E6%AD%A3%E5%88%99%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99%2F</url>
+    <content type="text"><![CDATA[Java正则表达式：(?i)abc表示abc都忽略大小写。a(?i)bc表示bc忽略大小写。a((?i)b)c表示只有b忽略大小写。也可以用Pattern.compile(rexp, Pattern.CASE_INSENSITIVE)表示整体都忽略大小写。1234public static void main(String arg[])&#123; String ss = "&amp;nbsP;"; System.out.println(ss.replaceAll("(?i)p", ""));&#125; 结果为：1&amp;nbs;]]></content>
+      <tags>
+        <tag>正则</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Error和Exception的区别]]></title>
     <url>%2F2018%2F08%2F06%2FError%E5%92%8CException%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exception(异常)和Error(错误), 二者都是Java异常处理的重要子类，各自都包含大量子类。 Error(错误)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是程序无法处理的错误，表示运行应用程序中较严重问题。大多数错误与代码编写者执行的操作无关，而表示代码运行时JVM(Java虚拟机)出现的问题。例如，Java虚拟机运行错误(Virtual MachioneError), 当JVM不再有继续执行操作所需的内存资源时，将出现OutOfMemoryError。这些异常发生时，Java虚拟机(JVM)一般会选择线程终止。这些错误表示故障发生于虚拟机自身或者发生在虚拟机试图执行应用时，如Java虚拟机运行错误(Virtual MachioneError)、类定义错误(NoClassDefFoundError)等。这些错误时不可查的，因为它们在应用程序的控制和处理能力之外，而且绝大多数时程序运行时不允许出现的状况。对于设计合理的应用程序来说，即使确实发生了错误，本质上也不应该试图去处理它所引起的异常状况。在Java中，错误通过Error的子类描述。 Exception(异常)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是程序本身可以处理的异常。Exception类有一个重要的子类RuntimeException。RuntimeException类及其子类表示JVM常用操作引发的错误。例如，若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常(NullPointerException、ArithmeticException)和ArrayIndexOutOfBoundException。 区别&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;异常能被程序本身可以处理，错误是无法处理的。通常，Java是异常(包括Exception和Error)分为可查的异常(checked exceptions)和不可查的异常(unchecked exceptions)。可查异常(编译器要求必须处置的异常)：正确的程序在运行中，很容易出现的异常状况。可查异常虽然是异常状况，但在一定程度上它的发生时可以预计的，而且一旦发生这种异常状况，就必须采取某种方式进行处理。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了RuntimeException及其子类以外，其他的Exception类及其子类都属于可查异常。这种异常的特点是Java编译器会检查它，也就是说，当程序种可能出现这类异常，要么用try-cathc语句捕获它，要么用throws子句声明抛出它，否则编译不会通过。]]></content>
