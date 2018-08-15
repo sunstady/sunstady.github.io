@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Servlet/Http协议]]></title>
+    <url>%2F2018%2F08%2F15%2FServlet-Http%E5%8D%8F%E8%AE%AE%2F</url>
+    <content type="text"><![CDATA[Servlet的生命周期，执行过程&nbsp;&nbsp;&nbsp;&nbsp;Servlet生命周期分为实例化、初始化、响应请求调用service()方法、消亡阶段调用destroy()方法。执行过程如下：&nbsp;&nbsp;&nbsp;&nbsp;1）当浏览器发送一个请求地址，tomcat会接收这个请求&nbsp;&nbsp;&nbsp;&nbsp;2）tomcat会读取项目中的web.xml中的配置&nbsp;&nbsp;&nbsp;&nbsp;3）当请求地址符合servlet-mapping标签映射的地址，会进入这个servlet&nbsp;&nbsp;&nbsp;&nbsp;4）servlet首先会实例化(构造)，然后初始化执行init()方法，init()方法至始至终执行一次，servlet对象是单实例。&nbsp;&nbsp;&nbsp;&nbsp;5）根据请求的方式是get或post，在service()方法中调用doget()或dopost()方法，完成此次请求。&nbsp;&nbsp;&nbsp;&nbsp;6）当服务器停止，会调用destroy()方法，销毁实例。 实例化servlet有几种方式Servlet实例化有两种方式，如下：&nbsp;&nbsp;&nbsp;&nbsp;1）第一次请求时，实力化servlet对象。&nbsp;&nbsp;&nbsp;&nbsp;2）在web.xml文件中的&lt; Servlet &gt;&lt; /Servlet &gt;之间添加&lt; loadon-startup &gt;1&lt; /loadon-startup &gt;,tomcat启动时就会实例化servlet对象。 对 HTTP协议的理解&nbsp;&nbsp;&nbsp;&nbsp;http是超文本传输协议(Hyper Text Transfer Protocol),是用于从WWW服务器传输超文本到本地浏览器的传送协议。&nbsp;&nbsp;&nbsp;&nbsp;HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。大多承载于TCP协议之上。工作流程：一次HTTP操作称为一个事务，其工作过程可分为四步：&nbsp;&nbsp;&nbsp;&nbsp;１）首先客户机与服务器需要建立连接。只要单击某个超级链接，HTTP的工作开始。&nbsp;&nbsp;&nbsp;&nbsp;２）建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可能的内容。&nbsp;&nbsp;&nbsp;&nbsp;３）服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。&nbsp;&nbsp;&nbsp;&nbsp;４）客户端接收服务器返回的信息通过浏览器显示在用户的显示屏上，然后客户机与服务器断开连接。如果在以上过程中的某一步出现错误，那么产生错误的信息将返回到客户端，由显示屏输出。对于用户来说，这些过程是由HTTP自己完成的，用户只要用鼠标点击，等待信息显示就可以了。一个HTTP请求报文格式：&nbsp;&nbsp;&nbsp;&nbsp;请求报文：HTTP请求报文主要由请求行、请求头部、请求正文三部分组成。&nbsp;&nbsp;&nbsp;&nbsp;响应报文：HTTP响应报文主要由状态行、响应头部、响应正文三部分组成。&nbsp;&nbsp;&nbsp;&nbsp;HTTP协议的请求方法由GET、POST、HEAD、PUT、DELETE、OPTIONS、TRACE、CONNECT。]]></content>
+      <tags>
+        <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java正则忽略大小写]]></title>
     <url>%2F2018%2F08%2F07%2FJava%E6%AD%A3%E5%88%99%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99%2F</url>
     <content type="text"><![CDATA[Java正则表达式：(?i)abc表示abc都忽略大小写。a(?i)bc表示bc忽略大小写。a((?i)b)c表示只有b忽略大小写。也可以用Pattern.compile(rexp, Pattern.CASE_INSENSITIVE)表示整体都忽略大小写。1234public static void main(String arg[])&#123; String ss = "&amp;nbsP;"; System.out.println(ss.replaceAll("(?i)p", ""));&#125; 结果为：1&amp;nbs;]]></content>
@@ -949,8 +957,8 @@
     <url>%2F2018%2F01%2F15%2FEditPlus%E8%BF%90%E8%A1%8Cpy%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[文本编辑器是EditPlus，运行python时候报出如下错误: SyntaxError: (unicode error) &#39;utf-8&#39; codec can&#39;t decode byte 0xc4 in position 0: invalid continuation byte。非常普通的Hello World，编码格式是utf-8解决方法：用notepad++打开python1_1.py发现存储格式是ANSI。保存的时候默认是保存成ANSI格式。发现问题就好解决啦，保存文件的时候将文件格式换成UTF-8就好了。成功输出！]]></content>
       <tags>
-        <tag>python</tag>
         <tag>软件</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
