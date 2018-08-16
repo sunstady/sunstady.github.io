@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="需要学习的东西太多了，很多命令用到时却忘了，分享一个经典的Git 常用命清单，建议收藏，或者收进你的云笔记中，方便用到时查阅。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-07T09:26:03.873Z">
+<meta property="og:updated_time" content="2018-08-16T02:12:00.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git命令">
 <meta name="twitter:description" content="需要学习的东西太多了，很多命令用到时却忘了，分享一个经典的Git 常用命清单，建议收藏，或者收进你的云笔记中，方便用到时查阅。">
@@ -564,7 +564,7 @@
 <h2 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h2><p>我们需要敲一行命令，告诉Git，以后<code>st</code>就表示<code>status</code>：<br><code>git config --global alias.st status</code><br>还有别的命令可以简写，很多人用<code>co</code>表示<code>checkout</code>, <code>ci</code>表示<code>commit</code>, <code>br</code>表示<code>branch</code>;<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git<span class="built_in"> config </span>--global alias.co checkout</div><div class="line">git<span class="built_in"> config </span>--global alias.ci commit</div><div class="line">git<span class="built_in"> config </span>--global alias.br brancgh</div></pre></td></tr></table></figure></p>
 <p><code>--global</code>参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。<br>甚至还有人丧心病狂地把<code>lg</code>设置成了:<br><code>git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</code></p>
 <h2 id="Git-gitignore使用"><a href="#Git-gitignore使用" class="headerlink" title="Git .gitignore使用"></a>Git .gitignore使用</h2><p>有些时候我们不希望把一些编译的东西提交到git中，gitignore可以方便管理我们不需要提交的文件，自动过滤设置的文件。<br>Git提供了一种可配性很强的机制来允许用户将指定的文件或目录排除在版本控制之外，它会检查代码仓库的根目录下是否存在一个名为<code>.gitignore</code>的文件，如果存在的话就去一行行读取这个文件中的内容，并把每一行指定的文件或目录排除在版本控制之外。注意<code>.gitignore</code>中指定的文件或目录是可以用<code>*</code>通配符的。</p>
-<p>这里以一个项目为例。<br>第一步，创建代码库<br>首先进入当前的项目根目录<br>执行<code>git init</code><br>这时项目根目录下会有<code>.git</code>文件夹<br>第二部，创建<code>.gitignore</code>文件夹<br>执行如下命令:<br><code>touch .gitignore</code><br>也可以新建一个文件夹，重命名为<code>.gitignore.</code>，注意后面有一个<code>.</code><br>第三部，编辑<code>.gitignore</code>文件<br><code>vim .gitignore</code><br>然后在里面加入<code>build/</code><br>表示我们不希望将<code>build</code>文件夹提交到git中，然后退出。<br>第四步，提交<br><code>git add .</code><br>将所有文件提交到git，会过滤掉bulid文件夹<br><code>git commit -m &quot;过滤掉build文件夹&quot;</code><br>执行提交<br>检查提交是否成功<br><code>git status</code><br>提示没有东西需要提交，说明提交成功。</p>
+<p>这里以一个项目为例。<br>第一步，创建代码库<br>首先进入当前的项目根目录<br>执行<code>git init</code><br>这时项目根目录下会有<code>.git</code>文件夹<br>第二部，创建<code>.gitignore</code>文件<br>执行如下命令:<br><code>touch .gitignore</code><br>也可以新建一个文件，重命名为<code>.gitignore.</code>，注意后面有一个<code>.</code><br>第三部，编辑<code>.gitignore</code>文件<br><code>vim .gitignore</code><br>然后在里面加入<code>build/</code><br>表示我们不希望将<code>build</code>文件夹提交到git中，然后退出。<br>第四步，提交<br><code>git add .</code><br>将所有文件提交到git，会过滤掉bulid文件夹<br><code>git commit -m &quot;过滤掉build文件夹&quot;</code><br>执行提交<br>检查提交是否成功<br><code>git status</code><br>提示没有东西需要提交，说明提交成功。</p>
 
       
     </div>
