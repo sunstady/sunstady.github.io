@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-08-15T11:24:33.280Z</updated>
+  <updated>2018-08-17T03:27:14.950Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>性能调优方法和原则</title>
+    <link href="http://www.sanstylemc.cn/2018/08/17/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E6%96%B9%E6%B3%95%E5%92%8C%E5%8E%9F%E5%88%99/"/>
+    <id>http://www.sanstylemc.cn/2018/08/17/性能调优方法和原则/</id>
+    <published>2018-08-17T03:25:51.000Z</published>
+    <updated>2018-08-17T03:27:14.950Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性能优化基本是BAT等一线互联网公司程序员必备的技能，以下的性能优化有：Web网站调优、数据库、JVM调优、架构调优等。<br><a id="more"></a></p>
+<h2 id="Web网站调优"><a href="#Web网站调优" class="headerlink" title="Web网站调优"></a>Web网站调优</h2><p>1、<code>尽可能减少HTTP请求</code>: 图片合并(css sprites)，Js脚本文件合并、css文件合并。<br>2、<code>减少DNS查询</code><br>3、将<code>css</code>放在页面最上面，将<code>js</code>放在页面最下面。<br>4、<code>压缩js和css</code>: 减少文件体积，去除不必要的空白符、格式符、注释(即对代码进行格式化)<br>5、<code>把js和css提取出来放在外部文件中</code>: 这一条要灵活运用，把<code>js</code>和<code>css</code>提取出来放在外部文件的优点是：减少HTML体积，提高了<code>js</code>和<code>css</code>的复用性，提高日后的可维护性。<br>缺点：增加了HTTP请求，不过这一点可以通过缓存来解决。<br>什么情况下将<code>js</code>和<code>css</code>写在页面内呢，可以分为几种情况：<code>js</code>和<code>css</code>代码比较少；这个页面不怎么会访问。<br>6、<code>避免重定向</code>: 重定向就是用户请求的页面被转移到了别的地方，浏览器向服务请求一个页面，服务器告诉浏览器请求的页面已经被转移到另一个页面，并告知另一个页面地址，浏览器就再发送请求到重定向的地址。这样会增加服务器和浏览器之间的往返次数，影响网站性能。<br>重定向的状态码有：<code>301</code>永久重定向；<code>302</code>临时重定向；<code>304</code>not modified并不是真的重定向，它是用来告诉浏览器<code>get</code>请求的文件在缓存中，避免重新下载。<br>7、<code>移除重复脚本</code>。<br>8、<code>使用Ajax缓存</code>：Ajax的<code>get</code>和<code>post</code>方法：只要是浏览器的<code>get</code>请求，浏览器都会使用缓存，对于同一地址的请求，服务器会发送<code>304</code>状态码到浏览器，浏览器就会使用缓存中的数据。<br><code>post</code>的请求每次都会被执行，浏览器不会缓存。<br>9、<code>使用Gzip压缩</code><br>10、<code>使用CDN(内容分发网络)</code></p>
+<h2 id="数据库调优"><a href="#数据库调优" class="headerlink" title="数据库调优"></a>数据库调优</h2><p>数据库的调优，总的来说分为以下三部分：<br>1、<code>SQL调优</code>：主要集中在索引、减少跨表与大数据<code>join</code>查询等。<br>2、<code>数据库端架构设计优化</code>：通过读写分离调整对数据库的写操作，通过垂直拆分以及水平拆分(分库分表)来解决数据库端连接池瓶颈等问题。<br>3、<code>连接池调优</code>：可以通过熟悉连接池的原理，以及具体的连接池监控数据，来不断调试出最终的连接池参数。</p>
+<h2 id="通过缓存减少后端压力"><a href="#通过缓存减少后端压力" class="headerlink" title="通过缓存减少后端压力"></a>通过缓存减少后端压力</h2><p>目前分布式缓存已经比较成熟，常见的有<code>redis</code>、<code>memcached</code>以及开源的淘宝分布式<code>tair</code>等。</p>
+<h3 id="选型考虑"><a href="#选型考虑" class="headerlink" title="选型考虑"></a>选型考虑</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果数据量小，并且不会频繁地增长又清空(这会导致频繁地垃圾回收)，那么可以选择本地缓存。具体的话，如果需要一些策略的支持(比如缓存满的逐出策略)，可以考虑<code>Ehcache</code>；如果不需要，可以考虑<code>HashMap</code>；如果需要考虑多线程并发的场景，可以考虑<code>ConcurentHashMap</code>。</p>
+<h3 id="缓存是否会满，缓存满了怎么办？"><a href="#缓存是否会满，缓存满了怎么办？" class="headerlink" title="缓存是否会满，缓存满了怎么办？"></a>缓存是否会满，缓存满了怎么办？</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于一个缓存服务，理论上来说，随着缓存数据的日益增多，在容量有限的情况下，缓存肯定有一天会满的。如何应对？</p>
+<ul>
+<li>给缓存服务，选择合适的缓存逐出算法，比如最常见的LRU。</li>
+<li>针对当前设置的容量，设置适当的警戒值，比如10G的缓存，当缓存数据达到8G的时候，就开始发出报警，提前排查问题或者扩容。</li>
+<li>给一些没有必要长期保存的key，尽量设置过期时间。</li>
+</ul>
+<h2 id="数据请求改造为异步"><a href="#数据请求改造为异步" class="headerlink" title="数据请求改造为异步"></a>数据请求改造为异步</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户并不关心或者用户不需要立即拿到这些事情的处理结果，这种情况就比较适合用异步的方式处理，这里的原则就是能异步就异步。</p>
+<h3 id="常见做法"><a href="#常见做法" class="headerlink" title="常见做法"></a>常见做法</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一是额外开辟线程，这里可以采用额外开辟一个线程或者使用线程池的做法，在IO线程(处理请求响应)之外的线程来处理相应的任务，在IO线程中让<code>response</code>先返回。如果异步线程处理的任务设计的数据量非常巨大，那么可以引入阻塞队列<code>BlockingQueue</code>作进一步的优化。具体做法是让一批异步线程不断地往阻塞队列里仍数据，然后额外起一个处理线程。循环批量从队列里拿预设大小的一批数据，来进行批处理(比如发一个批量的远程服务请求)，这样进一步提高了性能。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二是使用消息队列(MQ)中间件服务，MQ天生就是异步的。</p>
+<h2 id="JVM调优"><a href="#JVM调优" class="headerlink" title="JVM调优"></a>JVM调优</h2><h3 id="什么时候调"><a href="#什么时候调" class="headerlink" title="什么时候调"></a>什么时候调</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过监控系统对一些机器关键指标（gc time、gc count、各个分代的内存大小变化、机器的Load值与CPU使用率、JVM的线程数等）的监控报警，也可以看gc log和jstat等命令的输出，再结合线上JVM进程服务的一些关键接口的性能数据和请求体验，基本上就能定位出当前的JVM是否有问题，以及是否需要调优。</p>
+<h3 id="调优工具："><a href="#调优工具：" class="headerlink" title="调优工具："></a>调优工具：</h3><p><code>Jconsole</code>、<code>jProfile</code>、<code>VisualVM</code><br><code>Jconsole</code>: jdk自带，功能简单，但是可以在系统有一定负荷的情况下使用。对垃圾回收算法有很详细的跟踪。<br><code>jProfile</code>: 商业软件，需要付费。功能强大。<br><code>VisualVM</code>: jdk自带，功能强大，与<code>Jconsole</code>类似。推荐。</p>
+<h3 id="如何调优"><a href="#如何调优" class="headerlink" title="如何调优"></a>如何调优</h3><p>观察内存释放情况、集合类检查、对象树。<br>上面这些调优工具都提供了强大的功能，但是总的来说一般分为以下几类功能。</p>
+<h4 id="堆信息查看"><a href="#堆信息查看" class="headerlink" title="堆信息查看"></a>堆信息查看</h4><p>可查看堆空间大小分配(年轻代、年老代、持久代分配)<br><img src="https://github.com/sunstady/hexo/blob/master/%E8%B0%83%E4%BC%98/1.jpg?raw=true" alt="1"><br>提供即时的垃圾回收功能。<br>垃圾监控(长时间监控回收情况)<br><img src="https://github.com/sunstady/hexo/blob/master/%E8%B0%83%E4%BC%98/2.jpg?raw=true" alt="2"><br>查看堆内类、对象信息查看：数量、类型等。<br>对象引用情况查看<br>有了对信息查看方面的功能，我们一般可以顺利解决以下问题：</p>
+<ul>
+<li>年老代年轻代大小划分是否合理。</li>
+<li>内存泄漏</li>
+<li>垃圾回收算法设置是否合理</li>
+</ul>
+<h4 id="线程监控"><a href="#线程监控" class="headerlink" title="线程监控"></a>线程监控</h4><p><img src="https://github.com/sunstady/hexo/blob/master/%E8%B0%83%E4%BC%98/3.jpg?raw=true" alt="3"><br>线程信息监控：系统线程数量。<br>线程状态监控：各个线程都处在什么样的状态下。<br>Dump线程详细信息：查看线程内部运行情况。<br>死锁检查<br>热点分析<br>CPU热点：检查系统哪些方法占用的大量CPU时间。<br>内存热点：检查哪些对象在系统中数量最大（一定时间内存活对象和销毁对象一起统计）<br>这两个东西对于系统优化很有帮助。我们可以根据找到的热点，有针对性的进行系统的瓶颈查找和进行系统优化，而不是漫无目的的进行所有代码的优化。</p>
+<h4 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;快照是系统运行到某一时刻的一个定格。在我们进行调优的时候，不可能用眼睛去跟踪所有系统变化，依赖快照功能，我们就可以进行系统两个不同运行时刻，对象（或类、线程等）的不同，以便快速找到问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;举例说，我要检查系统进行垃圾回收以后，是否还有该收回的对象被遗漏下来的了。那么，我可以在进行垃圾回收前后，分别进行一次堆情况的快照，然后对比两次快照的对象情况。</p>
+<h4 id="内存泄漏检查"><a href="#内存泄漏检查" class="headerlink" title="内存泄漏检查"></a>内存泄漏检查</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内存泄漏是比较常见的问题，而且解决方法也比较通用，这里可以重点说一下，而线程、热点方面的问题则是具体问题具体分析了。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内存泄漏一般可以理解为系统资源（各方面的资源，堆、栈、线程等）在错误使用的情况下，导致使用完毕的资源无法回收（或没有回收），从而导致新的资源分配请求无法完成，引起系统错误。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内存泄漏对系统危害比较大，因为他可以直接导致系统的崩溃。</p>
+<h2 id="性能调优总结"><a href="#性能调优总结" class="headerlink" title="性能调优总结"></a>性能调优总结</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大型网站的性能瓶颈大部分瓶颈都在数据库端，所以性能调优总是沿着如何减少对后端的压力来操作，数据库端的瓶颈经常会造成应用端的雪崩(比如：sql查询过长，长事务)等，所以需要及时解决后端性能。<br>1、通过读写分离、垂直拆分、水平拆分降低对数据库后端的压力。<br>2、通过优化SQL语句，索引等，缩短对SQL的查询时间。<br>3、通过缓存以及CDN来解决对图片、文件等的操作，避免对数据库产生压力。<br>4、通过对Web端的优化，js、css等压缩，提高大文件读取时间，尽量依赖CDN。<br>5、还有一个重点就是监控：对JVM、线程、SQL查询时间等健康指标进行及时监控，通过监控及时发现瓶颈，及时优化。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;性能优化基本是BAT等一线互联网公司程序员必备的技能，以下的性能优化有：Web网站调优、数据库、JVM调优、架构调优等。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Interview" scheme="http://www.sanstylemc.cn/tags/Interview/"/>
+    
+  </entry>
   
   <entry>
     <title>Servlet/Http协议</title>
@@ -684,31 +730,6 @@
     
     
       <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>获取无线局域网适配器IP</title>
-    <link href="http://www.sanstylemc.cn/2018/07/24/%E8%8E%B7%E5%8F%96%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%82%E9%85%8D%E5%99%A8IP/"/>
-    <id>http://www.sanstylemc.cn/2018/07/24/获取无线局域网适配器IP/</id>
-    <published>2018-07-24T11:30:20.000Z</published>
-    <updated>2018-07-31T11:34:55.811Z</updated>
-    
-    <content type="html"><![CDATA[<p>RT，嗯!<br><a id="more"></a></p>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.net.InetAddress;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.net.NetworkInterface;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.util.ArrayList;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.util.Enumeration;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> java.util.List;</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">mc_07241</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">		getLocalIP();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> List&lt;String&gt; getLocalIP() &#123;</div><div class="line">		List&lt;String&gt; ipList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">		InetAddress ip = <span class="literal">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			Enumeration&lt;NetworkInterface&gt; netInterfaces = (Enumeration&lt;NetworkInterface&gt;) NetworkInterface</div><div class="line">					.getNetworkInterfaces();</div><div class="line">			<span class="keyword">while</span> (netInterfaces.hasMoreElements()) &#123;</div><div class="line">				NetworkInterface ni = (NetworkInterface) netInterfaces.nextElement();</div><div class="line">				<span class="keyword">if</span> (ni.getName().indexOf(<span class="string">"wlan"</span>) == <span class="number">-1</span>)</div><div class="line">					<span class="keyword">continue</span>;</div><div class="line">				<span class="comment">// 遍历所有ip</span></div><div class="line">				Enumeration&lt;InetAddress&gt; ips = ni.getInetAddresses();</div><div class="line">				<span class="keyword">while</span> (ips.hasMoreElements()) &#123;</div><div class="line">					ip = (InetAddress) ips.nextElement();</div><div class="line">					<span class="keyword">if</span> (<span class="literal">null</span> == ip || <span class="string">""</span>.equals(ip)) &#123;</div><div class="line">						<span class="keyword">continue</span>;</div><div class="line">					&#125;</div><div class="line">					String sIP = ip.getHostAddress();</div><div class="line">					<span class="keyword">if</span> (sIP == <span class="literal">null</span> || sIP.indexOf(<span class="string">":"</span>) &gt; <span class="number">-1</span>) &#123;</div><div class="line">						<span class="keyword">continue</span>;</div><div class="line">					&#125;</div><div class="line">					ipList.add(sIP);</div><div class="line">					System.out.println(sIP);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> ipList;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-</div></div>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;RT，嗯!&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
     
   </entry>
   
