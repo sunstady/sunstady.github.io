@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/Git%E5%91%BD%E4%BB%A4/4.jpg?raw=true">
 <meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/Git%E5%91%BD%E4%BB%A4/5.jpg?raw=true">
 <meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/Git%E5%91%BD%E4%BB%A4/6.jpg?raw=true">
-<meta property="og:updated_time" content="2018-08-17T07:42:11.013Z">
+<meta property="og:updated_time" content="2018-08-17T07:57:58.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git命令">
 <meta name="twitter:description" content="需要学习的东西太多了，很多命令用到时却忘了，分享一个经典的Git 常用命清单，建议收藏，或者收进你的云笔记中，方便用到时查阅。">
@@ -553,6 +553,9 @@
 <p>显示某个远程仓库的信息<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> git remote show [remote]</span></div></pre></td></tr></table></figure></p>
 <p>增加一个新的远程仓库，并命名<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add <span class="string">[shortname]</span> <span class="string">[url]</span></div></pre></td></tr></table></figure></p>
 <p>取回远程仓库的变化，并与本地分支合并<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull <span class="string">[remote]</span> <span class="string">[branch]</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>git pull</code>是将线上的新分支和本地的分支合并成一个新的分支，并产生一个新的merge节点。而<code>git pull --rebase</code>则不同：<code>git pull --rebase</code>会把线上的每一个节点和本地的节点进行比较然后逐个进行合并。如果出现冲突那么git会在本地创建一个游离节点，你必须要在这个节点上进行解决冲突操作，然后使用<code>git add .</code>, <code>git rebase --continue</code> 之后才可以进行下一个节点的merge。然后会重复这个过程直到所有节点完成merge。当然如果合并时冲突有点多，这个时候就要注意了是不是团队分工有问题，这时可以使<code>git rebase --abort</code>， 放弃合并，回退到没合并的状态。<br>在子库进行了提交，输入<code>git status</code>发现git提示子库有更改。代表了线上的子库有变动。需要<code>git submodule update</code>，再次输入<code>git status</code>时，发现工作区很干净。</p>
+</blockquote>
 <p>上传本地指定分支到远程仓库<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push <span class="string">[remote]</span> <span class="string">[branch]</span></div></pre></td></tr></table></figure></p>
 <p>强行推送当前分支到远程仓库，即使有冲突<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] --force</span></div></pre></td></tr></table></figure></p>
 <p>推送所有分支到远程仓库<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> git push [remote] --<span class="keyword">all</span></div></pre></td></tr></table></figure></p>
