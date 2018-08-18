@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="baidu-site-verification" content="cXQEZqaI9F" />
+<meta name="google-site-verification" content="NY8peQ32MbxOmV571OfSDBBBIr8cxSpCo5-V8X9T_S4" />
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sanstyle" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;本例采用两个项目以及两个公共类库演示对submodule的操作。因为在一些资料或者书上的例子都是一个项目对应1~N个lib，但是实际应用往往并不是这么简单。">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git_Submodules">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/08/18/Git-Submodules/index.html">
+<meta property="og:site_name" content="Sanstyle">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;本例采用两个项目以及两个公共类库演示对submodule的操作。因为在一些资料或者书上的例子都是一个项目对应1~N个lib，但是实际应用往往并不是这么简单。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/5.jpg?raw=true
+![6](https://github.com/sunstady/hexo/blob/master/submodule/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/11.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/12.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/13.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/14.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/15.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/16.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/17.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/18.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/19.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/20.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/21.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/22.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/23.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/24.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/25.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/26.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/27.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/28.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/29.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/30.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/31.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/32.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/33.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/34.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/35.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/36.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/37.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/38.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/39.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/40.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/41.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/42.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/43.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/44.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/45.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/46.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/47.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/48.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/49.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/50.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/51.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/52.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/53.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/54.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/55.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/56.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/57.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/58.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/59.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/60.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/61.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/62.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/63.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/64.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/65.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/66.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/67.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/68.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/69.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/70.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/71.jpg?raw=true">
+<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/submodule/72.jpg?raw=true">
+<meta property="og:updated_time" content="2018-08-18T09:38:58.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git_Submodules">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;本例采用两个项目以及两个公共类库演示对submodule的操作。因为在一些资料或者书上的例子都是一个项目对应1~N个lib，但是实际应用往往并不是这么简单。">
+<meta name="twitter:image" content="https://github.com/sunstady/hexo/blob/master/submodule/1.jpg?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/08/18/Git-Submodules/"/>
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title>Git_Submodules | Sanstyle</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?759661ba6404a2dc2692ec1dabecb1d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/sunstady"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sanstyle</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">功有所不全 才有所不任 力有所不足</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+     
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/08/18/Git-Submodules/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstyle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Git_Submodules</h2>
+        
+
+        <div class="post-meta">
+
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T17:22:51+08:00">
+                2018-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/18/Git-Submodules/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/18/Git-Submodules/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/18/Git-Submodules/" class="leancloud_visitors" data-flag-title="Git_Submodules">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本例采用两个项目以及两个公共类库演示对<code>submodule</code>的操作。因为在一些资料或者书上的例子都是一个项目对应1~N个lib，但是实际应用往往并不是这么简单。<br><a id="more"></a></p>
+<h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/1.jpg?raw=true" alt="1"><br>创建需要的本地仓库：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/2.jpg?raw=true" alt="2"><br>初始化工作区：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/3.jpg?raw=true" alt="3"></p>
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><h3 id="初始化project1"><a href="#初始化project1" class="headerlink" title="初始化project1:"></a>初始化<code>project1</code>:</h3><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/4.jpg?raw=true" alt="4"><br>我在此用的是相对路径，若有问题请用绝对路径。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/5.jpg?raw=true
+![6](https://github.com/sunstady/hexo/blob/master/submodule/6.jpg?raw=true" alt="5"></p>
+<h3 id="初始化project2"><a href="#初始化project2" class="headerlink" title="初始化project2:"></a>初始化<code>project2</code>:</h3><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/7.jpg?raw=true" alt="7"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/8.jpg?raw=true" alt="8"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/9.jpg?raw=true" alt="9"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/10.jpg?raw=true" alt="10"></p>
+<h2 id="初始化公共类库"><a href="#初始化公共类库" class="headerlink" title="初始化公共类库"></a>初始化公共类库</h2><h3 id="初始化公共类库lib1："><a href="#初始化公共类库lib1：" class="headerlink" title="初始化公共类库lib1："></a>初始化公共类库lib1：</h3><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/11.jpg?raw=true" alt="11"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/12.jpg?raw=true" alt="12"></p>
+<h3 id="初始化公共类库lib2"><a href="#初始化公共类库lib2" class="headerlink" title="初始化公共类库lib2:"></a>初始化公共类库lib2:</h3><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/13.jpg?raw=true" alt="13"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/14.jpg?raw=true" alt="14"></p>
+<h2 id="为主项目添加Submodules"><a href="#为主项目添加Submodules" class="headerlink" title="为主项目添加Submodules"></a>为主项目添加Submodules</h2><h3 id="为project1添加lib1和lib2"><a href="#为project1添加lib1和lib2" class="headerlink" title="为project1添加lib1和lib2"></a>为project1添加lib1和lib2</h3><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/15.jpg?raw=true" alt="15"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/16.jpg?raw=true" alt="16"></p>
+<h3 id="查看已下公共类库的内容"><a href="#查看已下公共类库的内容" class="headerlink" title="查看已下公共类库的内容"></a>查看已下公共类库的内容</h3><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/17.jpg?raw=true" alt="17"><br>好了，到目前为止我们已经使用<code>git submodule add</code>命令为<code>project1</code>成功添加了两个工共类库(lib1、lib2)，查看了当前的状态发现添加了一个新文件<code>.gitmodules</code>和两个文件夹<code>libs/lib1、libs/lib2</code>，那么新增的<code>.gitmodules</code>是做什么用的呢？我们查看以下文件内容便知晓了。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/18.jpg?raw=true" alt="18"><br>原来如此，<code>.gitmodules</code>记录了每个<code>submodule</code>的引用信息，知道在当前项目的位置以及仓库的所在。<br>好的，我们现在把更改提交到仓库。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/19.jpg?raw=true" alt="19"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假如你是第一次引入工共类库的开发人员，那么项目组的其他成员怎么<code>Clone</code>带有<code>Submodule</code>的项目呢，下面我们再<code>clone</code>一个项目讲解如何操作。</p>
+<h3 id="Clone带有Submodule的仓库"><a href="#Clone带有Submodule的仓库" class="headerlink" title="Clone带有Submodule的仓库"></a>Clone带有Submodule的仓库</h3><p>模拟开发人员B…<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/20.jpg?raw=true" alt="20"><br>看到<code>submodules</code>的状态是<code>hash</code>码和文件目录，但是注意前面有一个<code>减号</code>，含义是该子模块还没有检出。<br>OK，检出<code>project1-b</code>的<code>submodules</code>…<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/21.jpg?raw=true" alt="21"><br>读者可以查看: <code>.git/config</code>文件的内容，最下面有<code>submodule</code>的注册信息！<br>验证一下类库的文件是否存在：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/22.jpg?raw=true" alt="22"><br>上面的两个命令(git submodule init &amp; update)其实可以简化，后面会讲到!</p>
+<h3 id="修改Submodule"><a href="#修改Submodule" class="headerlink" title="修改Submodule"></a>修改Submodule</h3><p>我们在开发人员B的项目上修改<code>Submodule</code>的内容。<br>先看一下当前<code>Submodule</code>的状态：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/23.jpg?raw=true" alt="23"><br>我们可以看到HEAD不指向分支。<br>Git对于<code>Submodule</code>有特殊的处理方式，在一个主项目中引入了<code>Submodule</code>其实Git做了3件事：</p>
+<ul>
+<li>记录引用的仓库</li>
+<li>记录主项目中<code>Submodule</code>的目录位置</li>
+<li>记录引用<code>Submodule</code>的<code>commit id</code></li>
+</ul>
+<p>在<code>project1</code>中<code>push</code>之后其实就是更新了引用的<code>commit id</code>,然后<code>project1-b</code>在<code>clone</code>的时候获取到了<code>submodule</code>的<code>commit id</code>，然后当执行<code>git submodule update</code>的时候<code>git</code>就根据<code>gitlink</code>获取<code>submodule</code>的<code>commit id</code>，最后获取<code>submodule</code>的文件，所以<code>clone</code>之后不在任何分支上；但是<code>master</code>分支的<code>commit id</code>和<code>HEAD</code>保持一致。<br>现在我们要修改<code>lib1</code>的文件需要先切换到<code>master</code>分支：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/24.jpg?raw=true" alt="24"><br>在主项目中修改<code>Submodule</code>提交到仓库稍微繁琐一点，在<code>git push</code>之前我们先看看<code>project1-b</code>的状态:<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/25.jpg?raw=true" alt="25"><br><code>libs/lib1(new commits)</code>状态表示<code>libs/lib1</code>有新的提交，这个比较特殊，看看<code>project1-b</code>的状态:<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/26.jpg?raw=true" alt="26"><br>从状态中可以看出<code>libs/lib1</code>的<code>commit id</code>由原来的<code>3ee623ea26cd10ec58c1f1fa4f5869e488e0cfc1</code>更改为<code>d176f81129a28e5cb25c2b285818ed0202be7e58</code><br>注意：如果现在执行了<code>git submodule update</code>操作，那么<code>libs/lib1</code>的<code>commit id</code>又会还原到<code>3ee623ea26cd10ec58c1f1fa4f5869e488e0cfc1</code>，这样的话刚刚的修改是不是就丢死了呢？不会，因为修改已经提交到了<code>master</code>分支，只要再<code>git checkout master</code>就可以了。<br>现在可以把<code>libs/lib1</code>的修改提交到仓库了。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/27.jpg?raw=true" alt="27"><br>现在仅仅只完成了一步，下一步要提交<code>project1-b</code>引用<code>submodule</code>的<code>commit id</code>：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/28.jpg?raw=true" alt="28"><br>OK，大功告成，我们完成了<code>Submodule</code>的修改并把<code>libs/lib1</code>的最新<code>commit id</code>提交到了仓库。<br>接下来要看看<code>project1</code>怎么获取<code>submodule</code>了。</p>
+<h3 id="更新主项目的Submodules"><a href="#更新主项目的Submodules" class="headerlink" title="更新主项目的Submodules"></a>更新主项目的<code>Submodules</code></h3><p>好的，让我们进入<code>project1</code>目录同步仓库：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/29.jpg?raw=true" alt="29"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/30.jpg?raw=true" alt="30"><br>我们运行了<code>git pull</code>命令和<code>git status</code>获取了最新的仓库源码，然后看到了状态是<code>modified</code>，这是为什么呢？<br>我们用<code>git diff</code>比较一下不同:<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/31.jpg?raw=true" alt="31"><br>从<code>diff</code>的结果分析出来是因为<code>submodule</code>的<code>commit id</code>更改了，我们前面刚刚讲了要在主项目更新<code>submodule</code>的内容，首先要提交<code>submodule</code>的内容，然后再更新主项目中引用的<code>submodule commit id</code>；现在我们看到的不同就是因为刚刚更改了<code>project1-b</code>的<code>submodule commit id</code>；好的，我们来学习下怎么更新<code>project1</code>的公共类库。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/32.jpg?raw=true" alt="32"><br><code>git submodule update</code>是更新子模块仓库。<br>如果没有更新，是因为子模块是在<code>project1</code>中引入的，<code>git submodule add repos/lib1.git libs/lib1</code>命令的结果，操作之后<code>git</code>只是把<code>lib1</code>的内容<code>clone</code>到了<code>project1</code>中，但是没有在仓库注册。需要输入<code>git submodule init</code>, 再进行<code>git submodule update</code> 在仓库注册后的结果如下：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/33.jpg?raw=true" alt="33"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/34.jpg?raw=true" alt="34"><br>上面的结果足以证明刚刚的推断，所以记得当需要更新子模块的内容时请先确保已经运行过<code>git submodule init</code>。</p>
+<h3 id="为project2添加lib1和lib2"><a href="#为project2添加lib1和lib2" class="headerlink" title="为project2添加lib1和lib2"></a>为project2添加lib1和lib2</h3><p>这个操作对于读到这里的你来说应该是很熟的了：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/35.jpg?raw=true" alt="35"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/36.jpg?raw=true" alt="36"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/37.jpg?raw=true" alt="37"><br>我们一次执行了添加<code>submodule</code>并<code>commit</code>和<code>push</code>到仓库，此阶段任务完成。</p>
+<h3 id="修改lib1和lib2并同步到project1和project2"><a href="#修改lib1和lib2并同步到project1和project2" class="headerlink" title="修改lib1和lib2并同步到project1和project2"></a>修改lib1和lib2并同步到project1和project2</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假如开发人员C同时负责<code>project1</code>和<code>project2</code>，有可能在修改<code>project1</code>的某个功能的时候发现<code>lib1</code>或者<code>lib2</code>的某个组件有bug需要修复，这个需求多模块和大型系统中经常遇到，我们应该怎么解决呢？<br>假如我的需求如下：</p>
+<ul>
+<li>在<code>lib1</code>中添加一个文件：README，用来描述<code>lib1</code>的功能。</li>
+<li>在<code>lib2</code>在的<code>lib2-features</code>文件中添加一些文字：学习Git submodule的修改并同步功能</li>
+</ul>
+<h4 id="在lib1中添加一个文件：README"><a href="#在lib1中添加一个文件：README" class="headerlink" title="在lib1中添加一个文件：README"></a>在lib1中添加一个文件：README</h4><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/38.jpg?raw=true" alt="38"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/39.jpg?raw=true" alt="39"><br>前面提到过现在仅仅只完成了一部分，我们需要在<code>project2</code>中再更新<code>lib1</code>的<code>commit id</code>：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/40.jpg?raw=true" alt="40"><br>我们暂时不<code>push</code>到仓库，等待和<code>lib2</code>的修改一起<code>push</code>。</p>
+<h4 id="在lib2中的lib2-features文件中添加文字"><a href="#在lib2中的lib2-features文件中添加文字" class="headerlink" title="在lib2中的lib2-features文件中添加文字"></a>在lib2中的lib2-features文件中添加文字</h4><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/41.jpg?raw=true" alt="41"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/42.jpg?raw=true" alt="42"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/43.jpg?raw=true" alt="43"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/44.jpg?raw=true" alt="44"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/45.jpg?raw=true" alt="45"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/46.jpg?raw=true" alt="46"></p>
+<h3 id="同步project2的lib1和lib2的修改到project1"><a href="#同步project2的lib1和lib2的修改到project1" class="headerlink" title="同步project2的lib1和lib2的修改到project1"></a>同步project2的lib1和lib2的修改到project1</h3><p>既然project1和project2属于同一个风格，或者调用同一个功能，要让这两个(可能几十个)项目保持一致。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/47.jpg?raw=true" alt="47"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;看看上面的结果对吗？为什么<code>lib1</code>和<code>lib2</code>更新了但是没有显示<code>new commits</code>呢？为什么我明明提交了但是从<code>project1</code>更新不到任何改动呢？<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帮大家分析一下问题，不过在分析之前先看看当前(<code>project1</code>和<code>project2</code>)的<code>submodule</code>状态：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/48.jpg?raw=true" alt="48"><br>两个项目有两个区别：</p>
+<ul>
+<li><code>commit id</code> 各不相同</li>
+<li><code>libs/lib1</code>所处的分支不同</li>
+</ul>
+<h4 id="更新project1的lib1和lib2改动"><a href="#更新project1的lib1和lib2改动" class="headerlink" title="更新project1的lib1和lib2改动"></a>更新project1的lib1和lib2改动</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们还记得刚刚在<code>project2</code>中修改的时候把<code>lib1</code>和<code>lib2</code>都切换到了<code>master</code>分支，目前<code>project1</code>中的<code>lib1</code>不在任何分支，我们先切换到<code>master</code>分支。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/49.jpg?raw=true" alt="49"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/50.jpg?raw=true" alt="50"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;果不其然，我们看到了刚刚在<code>project2</code>中修改的内容，同步到了<code>project1</code>中，当然现在更新了<code>project1</code>的<code>lib1</code>，<code>commit id</code>也会随之变动。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/51.jpg?raw=true" alt="51"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/52.jpg?raw=true" alt="52"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在最新的<code>commit id</code>和<code>project2</code>目前的状态一致，说明真的同步了；好的，现在可以使用相同的方法更新<code>lib2</code>了。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/53.jpg?raw=true" alt="53"></p>
+<h4 id="更新project1的submodule引用"><a href="#更新project1的submodule引用" class="headerlink" title="更新project1的submodule引用"></a>更新project1的submodule引用</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在上面我们更新了<code>project1</code>的<code>lib1</code>和<code>lib2</code>的最新版本，现在要把最新的<code>commit id</code>保存到<code>project1</code>中以保持最新的引用。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/54.jpg?raw=true" alt="54"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/55.jpg?raw=true" alt="55"></p>
+<h3 id="更新project1-b项目的子模块-使用脚本"><a href="#更新project1-b项目的子模块-使用脚本" class="headerlink" title="更新project1-b项目的子模块(使用脚本)"></a>更新project1-b项目的子模块(使用脚本)</h3><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/56.jpg?raw=true" alt="56"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/57.jpg?raw=true" alt="57"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Git提示<code>lib1</code>和<code>lib2</code>有更新内容，这个判断的依据来源于<code>submodule commit id</code>的引用。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在怎么更新呢？难道还是像<code>project1</code>中那样进入子模块的目录然后<code>git checkout master</code>，接着<code>git pull</code>？<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而且现在仅仅才两个子模块、两个项目，如果在真是的项目中使用的话可能几个到几十个不等，再加上N个<code>submodule</code>，自己算一下要怎么更新多少个<code>submodule</code>？<br>工欲善其事，必先利其器。写一个脚本代替手动任务。</p>
+<h4 id="牛刀小试"><a href="#牛刀小试" class="headerlink" title="牛刀小试"></a>牛刀小试</h4><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/58.jpg?raw=true" alt="58"><br>我们通过分析<code>.gitmodules</code>文件得出子模块的路径，然后就可以根据这些路径进行更新。</p>
+<h4 id="上路"><a href="#上路" class="headerlink" title="上路"></a>上路</h4><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/59.jpg?raw=true" alt="59"><br>把下面的脚本复制到<code>bin/update-submodules.sh</code>中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">grep path .gitmodules | awk <span class="string">'&#123; print $3 &#125;'</span> &gt; /tmp/study-git-submodule-dirs</div><div class="line"> </div><div class="line"><span class="comment"># read</span></div><div class="line"><span class="keyword">while</span> <span class="built_in">read</span> LINE</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> <span class="variable">$LINE</span></div><div class="line">    (<span class="built_in">cd</span> ./<span class="variable">$LINE</span> &amp;&amp; git checkout master &amp;&amp; git pull)</div><div class="line"><span class="keyword">done</span> &lt; /tmp/study-git-submodule-dirs</div></pre></td></tr></table></figure></p>
+<p>解释下上面的脚本执行过程：</p>
+<ul>
+<li>首先把子模块的路径写入到文件<code>tmp/sutdy-git-submodule-dirs</code>中；</li>
+<li>然后读取文件中的子模块路径，一次切换到<code>master</code>分支(修改都是在<code>master</code>分支上进行的)，最后更新最近改动。</li>
+</ul>
+<h4 id="2018-08-18更新"><a href="#2018-08-18更新" class="headerlink" title="2018-08-18更新"></a><font color="red">2018-08-18更新</font></h4><p>一个命令就可以代替上面的<code>bin/update-submodules.sh</code>的功能。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;pre <span class="keyword">class</span>=<span class="string">"brush:shell"</span>&gt;git submodule <span class="keyword">foreach</span> git pull</div><div class="line">&lt;/pre&gt;</div></pre></td></tr></table></figure></p>
+<p>此命令与脚本一样，循环进入(enter)每个子模块的目录，然后执行<code>foreach</code>后面的命令。</p>
+<blockquote>
+<p>该后面的命令可以任意的，例如<code>git submodule foreach ls -l</code>可以列出每个子模块的文件列表。</p>
+</blockquote>
+<h4 id="体验工具带来的便利"><a href="#体验工具带来的便利" class="headerlink" title="体验工具带来的便利"></a>体验工具带来的便利</h4><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/60.jpg?raw=true" alt="60"><br>添加执行权限<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/61.jpg?raw=true" alt="61"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/62.jpg?raw=true" alt="62"><br>更新之后的两个变化：</p>
+<ul>
+<li><code>git submodule</code>的结果和<code>project2</code>的<code>submodule commit id</code>保持一致；</li>
+<li><code>project1-b</code>不再显示<code>new commits</code>了。</li>
+</ul>
+<p>现在可以把工具添加到仓库了。<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/63.jpg?raw=true" alt="63"></p>
+<h3 id="新员工加入团队，一次性clone项目和Submodule"><a href="#新员工加入团队，一次性clone项目和Submodule" class="headerlink" title="新员工加入团队，一次性clone项目和Submodule"></a>新员工加入团队，一次性clone项目和Submodule</h3><p>一般人使用的时候都是使用如下命令：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">clone</span> <span class="title">../repos</span>/foo.git</div><div class="line">git submodule init</div><div class="line">git submodule update</div></pre></td></tr></table></figure></p>
+<p>新员工不耐烦了，嘴上不说但是心里想，怎么那么麻烦？<br>上面的命令简直弱爆了，直接一行命令搞定：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">clone</span> <span class="title">--recursive</span> ../repos/foo.git</div></pre></td></tr></table></figure></p>
+<p><code>recursive</code>参数的含义：可以在clone项目时同时<code>clone</code>关联的<code>submodules</code>。</p>
+<h4 id="使用一键方式克隆project2"><a href="#使用一键方式克隆project2" class="headerlink" title="使用一键方式克隆project2"></a>使用一键方式克隆project2</h4><p><img src="https://github.com/sunstady/hexo/blob/master/submodule/64.jpg?raw=true" alt="64"><br>舒服……</p>
+<h4 id="移除Submodules"><a href="#移除Submodules" class="headerlink" title="移除Submodules"></a>移除Submodules</h4><p>我们从<code>project1.git</code>克隆一个项目用来练习移除<code>submodule</code>：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/65.jpg?raw=true" alt="65"></p>
+<h3 id="Step-by"><a href="#Step-by" class="headerlink" title="Step by"></a>Step by</h3><p>1、删除<code>git cache</code>和物理文件夹<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/66.jpg?raw=true" alt="66"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/67.jpg?raw=true" alt="67"><br>2、删除<code>.gitmodules</code>的内容(或者整个文件)<br>因为本例只有两个子模块，直接删除文件：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/68.jpg?raw=true" alt="68"><br>如果仅仅删除某一个<code>submodule</code>，那么打开<code>.gitmodules</code>文件编辑，删除对应<code>submodule</code>配置即可。<br>3、删除<code>.git/config</code>的<code>submodule</code>配置<br>源文件：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/69.jpg?raw=true" alt="69"><br>删除后：<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/70.jpg?raw=true" alt="70"><br>4、提交更改<br><img src="https://github.com/sunstady/hexo/blob/master/submodule/71.jpg?raw=true" alt="71"><br><img src="https://github.com/sunstady/hexo/blob/master/submodule/72.jpg?raw=true" alt="72"></p>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+ 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Your support will encourage me to continue to create!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="MC WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="MC Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/性能调优方法和原则/" rel="next" title="性能调优方法和原则">
+                <i class="fa fa-chevron-left"></i> 性能调优方法和原则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/sunstady/hexo/blob/master/images/2017.jpg?raw=true"
+              alt="MC" />
+          
+            <p class="site-author-name" itemprop="name">MC</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">185</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.shiyanbar.com/" title="实验吧" target="_blank" rel="external nofollow">实验吧</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.w3school.com.cn/" title="w3school" target="_blank" rel="external nofollow">w3school</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itellyou.cn/" title="MSDN" target="_blank" rel="external nofollow">MSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://cuiqingcai.com/" title="静觅" target="_blank" rel="external nofollow">静觅</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.imooc.com/course/landingpagephp?from=phpkecheng" title="慕课网" target="_blank" rel="external nofollow">慕课网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank" rel="external nofollow">前端书籍资料</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备环境"><span class="nav-number">1.</span> <span class="nav-text">准备环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化项目"><span class="nav-number">2.</span> <span class="nav-text">初始化项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化project1"><span class="nav-number">2.1.</span> <span class="nav-text">初始化project1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化project2"><span class="nav-number">2.2.</span> <span class="nav-text">初始化project2:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化公共类库"><span class="nav-number">3.</span> <span class="nav-text">初始化公共类库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化公共类库lib1："><span class="nav-number">3.1.</span> <span class="nav-text">初始化公共类库lib1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化公共类库lib2"><span class="nav-number">3.2.</span> <span class="nav-text">初始化公共类库lib2:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为主项目添加Submodules"><span class="nav-number">4.</span> <span class="nav-text">为主项目添加Submodules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为project1添加lib1和lib2"><span class="nav-number">4.1.</span> <span class="nav-text">为project1添加lib1和lib2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看已下公共类库的内容"><span class="nav-number">4.2.</span> <span class="nav-text">查看已下公共类库的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clone带有Submodule的仓库"><span class="nav-number">4.3.</span> <span class="nav-text">Clone带有Submodule的仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Submodule"><span class="nav-number">4.4.</span> <span class="nav-text">修改Submodule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新主项目的Submodules"><span class="nav-number">4.5.</span> <span class="nav-text">更新主项目的Submodules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为project2添加lib1和lib2"><span class="nav-number">4.6.</span> <span class="nav-text">为project2添加lib1和lib2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改lib1和lib2并同步到project1和project2"><span class="nav-number">4.7.</span> <span class="nav-text">修改lib1和lib2并同步到project1和project2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在lib1中添加一个文件：README"><span class="nav-number">4.7.1.</span> <span class="nav-text">在lib1中添加一个文件：README</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在lib2中的lib2-features文件中添加文字"><span class="nav-number">4.7.2.</span> <span class="nav-text">在lib2中的lib2-features文件中添加文字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步project2的lib1和lib2的修改到project1"><span class="nav-number">4.8.</span> <span class="nav-text">同步project2的lib1和lib2的修改到project1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更新project1的lib1和lib2改动"><span class="nav-number">4.8.1.</span> <span class="nav-text">更新project1的lib1和lib2改动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新project1的submodule引用"><span class="nav-number">4.8.2.</span> <span class="nav-text">更新project1的submodule引用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新project1-b项目的子模块-使用脚本"><span class="nav-number">4.9.</span> <span class="nav-text">更新project1-b项目的子模块(使用脚本)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#牛刀小试"><span class="nav-number">4.9.1.</span> <span class="nav-text">牛刀小试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上路"><span class="nav-number">4.9.2.</span> <span class="nav-text">上路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2018-08-18更新"><span class="nav-number">4.9.3.</span> <span class="nav-text">2018-08-18更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#体验工具带来的便利"><span class="nav-number">4.9.4.</span> <span class="nav-text">体验工具带来的便利</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新员工加入团队，一次性clone项目和Submodule"><span class="nav-number">4.10.</span> <span class="nav-text">新员工加入团队，一次性clone项目和Submodule</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用一键方式克隆project2"><span class="nav-number">4.10.1.</span> <span class="nav-text">使用一键方式克隆project2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除Submodules"><span class="nav-number">4.10.2.</span> <span class="nav-text">移除Submodules</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-by"><span class="nav-number">4.11.</span> <span class="nav-text">Step by</span></a></li></ol></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=90 src="//music.163.com/outchain/player?type=2&id=574837680&auto=0&height=66"></iframe>
+</div>
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">NexT.Pisces</a> v5.1.2</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<span>
+  Host by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages
+</span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://sunstadys.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.sanstylemc.cn/2018/08/18/Git-Submodules/';
+          this.page.identifier = '2018/08/18/Git-Submodules/';
+          this.page.title = 'Git_Submodules';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sunstadys.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("i7jzN6yAlCyc52D54nDFzeXb-gzGzoHsz", "JKAIt4j5SoPJyHMx4IphgTdI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
