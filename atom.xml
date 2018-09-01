@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-09-01T01:33:21.480Z</updated>
+  <updated>2018-09-01T02:13:34.430Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://www.sanstylemc.cn/2018/09/01/IDEA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B9%B1%E7%A0%81/"/>
     <id>http://www.sanstylemc.cn/2018/09/01/IDEA静态资源乱码/</id>
     <published>2018-09-01T01:32:44.000Z</published>
-    <updated>2018-09-01T01:33:21.480Z</updated>
+    <updated>2018-09-01T02:13:34.430Z</updated>
     
     <content type="html"><![CDATA[<p>昨天使用IDEA测试Web项目，请求转发给一个HTML后，会出现中文乱码问题，但是直接访问该HTML则不会出现。<br><a id="more"></a></p>
-<p>1、配置项目启动服务前参数<br><img src="" alt="1"><br>在<code>VM options</code>中加入<code>-Dfile.encoding=UTF-8</code></p>
+<p>1、配置项目启动服务前参数<br><img src="https://github.com/sunstady/hexo/blob/master/idea%E4%B9%B1%E7%A0%81/1.png?raw=true" alt="1"><br>在<code>VM options</code>中加入<code>-Dfile.encoding=UTF-8</code></p>
 <p>设置完后再次启动项目会出现控制台乱码，请进入步骤2。</p>
-<p>2、修改配置文件<br>在idea的安装目录下，进入<code>bin</code>目录，修改两个<code>*.vmoptions</code>配置文件，在最后加上<code>-Dfile.encoding=UTF-8</code><br><img src="" alt="2"><br><img src="" alt="3"></p>
-<p>3、设置一下全局编码<br><code>File-&gt;Other Settings-&gt;Default Settings -&gt;Editor-&gt;File Encodings</code><br><img src="" alt="4"><br><img src="" alt="5"></p>
-<p>4、设置一下项目编码<br><code>File-&gt;Settings-&gt;Editor-&gt;File Encodings</code><br><img src="" alt="6"></p>
+<p>2、修改配置文件<br>在idea的安装目录下，进入<code>bin</code>目录，修改两个<code>*.vmoptions</code>配置文件，在最后加上<code>-Dfile.encoding=UTF-8</code><br><img src="https://github.com/sunstady/hexo/blob/master/idea%E4%B9%B1%E7%A0%81/2.png?raw=true" alt="2"><br><img src="https://github.com/sunstady/hexo/blob/master/idea%E4%B9%B1%E7%A0%81/3.png?raw=true" alt="3"></p>
+<p>3、设置一下全局编码<br><code>File-&gt;Other Settings-&gt;Default Settings -&gt;Editor-&gt;File Encodings</code><br><img src="https://github.com/sunstady/hexo/blob/master/idea%E4%B9%B1%E7%A0%81/4.png?raw=true" alt="4"><br><img src="https://github.com/sunstady/hexo/blob/master/idea%E4%B9%B1%E7%A0%81/5.png?raw=true" alt="5"></p>
+<p>4、设置一下项目编码<br><code>File-&gt;Settings-&gt;Editor-&gt;File Encodings</code><br><img src="https://github.com/sunstady/hexo/blob/master/idea%E4%B9%B1%E7%A0%81/7.png?raw=true" alt="6"></p>
 <p>设置完后重启idea，即可生效。</p>
 ]]></content>
     
