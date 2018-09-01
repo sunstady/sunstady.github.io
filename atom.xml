@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-08-18T09:38:58.773Z</updated>
+  <updated>2018-09-01T01:33:21.480Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IDEA静态资源乱码</title>
+    <link href="http://www.sanstylemc.cn/2018/09/01/IDEA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B9%B1%E7%A0%81/"/>
+    <id>http://www.sanstylemc.cn/2018/09/01/IDEA静态资源乱码/</id>
+    <published>2018-09-01T01:32:44.000Z</published>
+    <updated>2018-09-01T01:33:21.480Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天使用IDEA测试Web项目，请求转发给一个HTML后，会出现中文乱码问题，但是直接访问该HTML则不会出现。<br><a id="more"></a></p>
+<p>1、配置项目启动服务前参数<br><img src="" alt="1"><br>在<code>VM options</code>中加入<code>-Dfile.encoding=UTF-8</code></p>
+<p>设置完后再次启动项目会出现控制台乱码，请进入步骤2。</p>
+<p>2、修改配置文件<br>在idea的安装目录下，进入<code>bin</code>目录，修改两个<code>*.vmoptions</code>配置文件，在最后加上<code>-Dfile.encoding=UTF-8</code><br><img src="" alt="2"><br><img src="" alt="3"></p>
+<p>3、设置一下全局编码<br><code>File-&gt;Other Settings-&gt;Default Settings -&gt;Editor-&gt;File Encodings</code><br><img src="" alt="4"><br><img src="" alt="5"></p>
+<p>4、设置一下项目编码<br><code>File-&gt;Settings-&gt;Editor-&gt;File Encodings</code><br><img src="" alt="6"></p>
+<p>设置完后重启idea，即可生效。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天使用IDEA测试Web项目，请求转发给一个HTML后，会出现中文乱码问题，但是直接访问该HTML则不会出现。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Skill" scheme="http://www.sanstylemc.cn/tags/Skill/"/>
+    
+  </entry>
   
   <entry>
     <title>Git_Submodules</title>
@@ -702,49 +729,6 @@
     
     
       <category term="失误锦集" scheme="http://www.sanstylemc.cn/tags/%E5%A4%B1%E8%AF%AF%E9%94%A6%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL注入及防护</title>
-    <link href="http://www.sanstylemc.cn/2018/07/25/SQL%E6%B3%A8%E5%85%A5%E5%8F%8A%E9%98%B2%E6%8A%A4/"/>
-    <id>http://www.sanstylemc.cn/2018/07/25/SQL注入及防护/</id>
-    <published>2018-07-25T02:35:33.000Z</published>
-    <updated>2018-07-25T02:47:08.108Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;SQL注入(SQL Injection)是利用某些数据库的外部接口将数据插入到实际的数据库操作语言(SQL)当中，从而达到入侵数据库乃至操作系统的目的。它的产生主要是由于程序对用户输入的数据没有进行严格的过滤，导致非法数据库查询语句的执行。<br><a id="more"></a></p>
-<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;下面的用户登陆验证程序就是SQL注入的一个例子(以PHP程序举例)<br>创建用户表user:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(</div><div class="line">userid <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line">username <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line"><span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line">primary <span class="keyword">key</span>(userid)</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>给用户表user添加一条用户记录:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> <span class="keyword">values</span>(<span class="number">1</span>, <span class="string">'root'</span>, <span class="string">'root'</span>);</div></pre></td></tr></table></figure></p>
-<p>验证用户root登录的localhost服务器：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="php">    $servername= <span class="string">"localhost"</span>;</span></div><div class="line"><span class="php">    $dbusername= <span class="string">"root"</span>;</span></div><div class="line"><span class="php">    $dbpassword= <span class="string">""</span>;</span></div><div class="line"><span class="php">    $dbname= <span class="string">"injection"</span>;</span></div><div class="line"><span class="php">    mysql_connect($servername, $dbusername, $dbpassword) <span class="keyword">or</span> <span class="keyword">die</span> (<span class="string">"数据库连接失败"</span>);</span></div><div class="line"><span class="php">    $sql= <span class="string">"select * from user where username= '$username' and password= '$password'"</span>;</span></div><div class="line"><span class="php">    $result= mysql_db_query($dbname, $sql);</span></div><div class="line"><span class="php">    $userinfo= mysql_fetch_array($result);</span></div><div class="line"><span class="php">    <span class="keyword">if</span>(<span class="keyword">empty</span>($userinfo))&#123;</span></div><div class="line"><span class="php">        <span class="keyword">echo</span> <span class="string">"登录失败"</span>;</span></div><div class="line"><span class="php">    &#125;<span class="keyword">else</span> &#123;</span></div><div class="line"><span class="php">        <span class="keyword">echo</span> <span class="string">"登录成功"</span>;</span></div><div class="line"><span class="php">    &#125;</span></div><div class="line"><span class="php">    <span class="keyword">echo</span> <span class="string">"&lt;p&gt;SQL Query:$sql&lt;/p&gt;"</span>;</span></div><div class="line"><span class="php"><span class="meta">?&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后提交如下URL：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:<span class="regexp">//</span><span class="number">127.0</span>.<span class="number">0.1</span><span class="regexp">/injection/u</span>ser.php?username=root<span class="string">' or '</span><span class="number">1</span>=<span class="number">1</span></div></pre></td></tr></table></figure></p>
-<p>结果发现，这个URL可以成功登陆。同样也可以利用SQL的注释语句实现SQL注入，例如：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//127.0.0.1/injection/user.php?username=root'/*</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//127.0.0.1/injection/user.php?username=root'#</span></div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;因为在SQL语句中，” /* “或者” # “都可以将后面的语句注释掉。这样上述语句就可以通过这两个注释符中任意一个将后面的语句给注释掉，结果导致只根据用户名而没有密码的URL都成功进行了登录。利用” or “和注释符的不同之处在于，前者是利用逻辑运算，而后者是根据MySQL的特性，这个比逻辑运算简单的多。</p>
-<h2 id="应对措施"><a href="#应对措施" class="headerlink" title="应对措施"></a>应对措施</h2><h3 id="PrepareStatement-Bind-variable"><a href="#PrepareStatement-Bind-variable" class="headerlink" title="PrepareStatement+Bind-variable"></a>PrepareStatement+Bind-variable</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;对Java、JSP开发的应用，可以使用PrepareStatement+Bind-variable来防止SQL注入，尽量不要使用拼接的SQL。<br>Bind-variable(绑定变量)：查询通常只是因为改变where子句中的内容而产生不同的结果。为了在这种情况下避免硬解析，需要使用绑定变量。它是用户放入查询中的占位符，它会告诉MySQL或者Oracle”我会提供一个值放到这里”，一般在procedure or function中使用，可以优化共享池的使用。</p>
-<h3 id="使用应用程序提高的转换函数"><a href="#使用应用程序提高的转换函数" class="headerlink" title="使用应用程序提高的转换函数"></a>使用应用程序提高的转换函数</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;很多应用程序接口都提供了对特殊字符进行转换的函数，恰当的使用这些函数，可以防止应用程序用户输入使应用程序生成不当期望的语句。</p>
-<ul>
-<li>MySQL C API：使用mysql_real_escape_string()API调用。</li>
-<li>MySQL++：使用escape和quote修饰符。</li>
-<li>PHP：使用mysql_real_escape_string()函数(适用于PHP 4.3.0版本)</li>
-<li>Perl DBI：使用placeholders或者quote()方法。</li>
-<li>Ruby DBI：使用placeholders或者quote()方法。</li>
-</ul>
-<h2 id="自定义函数进行校验"><a href="#自定义函数进行校验" class="headerlink" title="自定义函数进行校验"></a>自定义函数进行校验</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;如果现有的转换函数仍然不能满足要求，则需要自己编写函数进行输入校验。输入验证的途径可以分为以下几种：</p>
-<ul>
-<li>整理数据使之变得有效。</li>
-<li>拒绝已知的非法输入。</li>
-<li>只接受已知的合法输入。</li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;所以如果想要获得最好的安全状态，目前最好的解决方法就是对用户提交或者可能改变的数据进行简单分类，分别应用正则表达式来对用户提供的输入数据进行严格的检测和验证。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;SQL注入(SQL Injection)是利用某些数据库的外部接口将数据插入到实际的数据库操作语言(SQL)当中，从而达到入侵数据库乃至操作系统的目的。它的产生主要是由于程序对用户输入的数据没有进行严格的过滤，导致非法数据库查询语句的执行。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://www.sanstylemc.cn/tags/MySQL/"/>
     
   </entry>
   
