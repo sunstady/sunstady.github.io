@@ -98,7 +98,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Interview," />
 
 
 
@@ -116,18 +116,18 @@
 
 
 
-<meta name="description" content="使用super调用父类的构造方法子类不继承父类的构造方法，因此，子类如果想使用父类的构造方法，必须在子类的构造方法中使用，必须使用关键字super来表示，而且super必须是子类构造方法中的头一条语句Student5_6.java">
-<meta name="keywords" content="Java">
+<meta name="description" content="TCP传输控制协议，是一种面向连接的、可靠的、基于字节流的传输层通道协议。">
+<meta name="keywords" content="Interview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="super关键字">
-<meta property="og:url" content="http://www.sanstylemc.cn/2017/09/28/super关键字/index.html">
+<meta property="og:title" content="TCP三握四挥手">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/09/03/TCP三握四挥手/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="使用super调用父类的构造方法子类不继承父类的构造方法，因此，子类如果想使用父类的构造方法，必须在子类的构造方法中使用，必须使用关键字super来表示，而且super必须是子类构造方法中的头一条语句Student5_6.java">
+<meta property="og:description" content="TCP传输控制协议，是一种面向连接的、可靠的、基于字节流的传输层通道协议。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T01:41:24.669Z">
+<meta property="og:updated_time" content="2018-09-03T09:09:13.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="super关键字">
-<meta name="twitter:description" content="使用super调用父类的构造方法子类不继承父类的构造方法，因此，子类如果想使用父类的构造方法，必须在子类的构造方法中使用，必须使用关键字super来表示，而且super必须是子类构造方法中的头一条语句Student5_6.java">
+<meta name="twitter:title" content="TCP三握四挥手">
+<meta name="twitter:description" content="TCP传输控制协议，是一种面向连接的、可靠的、基于字节流的传输层通道协议。">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2017/09/28/super关键字/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/09/03/TCP三握四挥手/"/>
 
 
 
@@ -178,7 +178,7 @@
 })();
 </script>
 
-  <title>super关键字 | Sanstyle</title>
+  <title>TCP三握四挥手 | Sanstyle</title>
   
 
 
@@ -364,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2017/09/28/super关键字/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/09/03/TCP三握四挥手/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -381,7 +381,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">super关键字</h2>
+          <h2 class="post-title" itemprop="name headline">TCP三握四挥手</h2>
         
 
         <div class="post-meta">
@@ -396,8 +396,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T09:40:22+08:00">
-                2017-09-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T17:08:08+08:00">
+                2018-09-03
               </time>
             
 
@@ -415,9 +415,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/28/super关键字/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/03/TCP三握四挥手/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/28/super关键字/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/03/TCP三握四挥手/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -425,7 +425,7 @@
 
           
           
-             <span id="/2017/09/28/super关键字/" class="leancloud_visitors" data-flag-title="super关键字">
+             <span id="/2018/09/03/TCP三握四挥手/" class="leancloud_visitors" data-flag-title="TCP三握四挥手">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,12 +456,20 @@
       
 
       
-        <p><code>使用super调用父类的构造方法</code><br>子类不继承父类的构造方法，因此，子类如果想使用父类的构造方法，必须在子类的构造方法中使用，必须使用关键字super来表示，而且super必须是子类构造方法中的<code>头一条</code>语句<br><code>Student5_6.java</code><br><a id="more"></a><br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> Student5_6 &#123;</div><div class="line">	<span class="built_in">int</span> <span class="keyword">number</span>;</div><div class="line">	String <span class="keyword">name</span>;</div><div class="line">	Student5_6()&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	Student5_6(<span class="built_in">int</span> <span class="keyword">number</span>, String <span class="keyword">name</span>)&#123;</div><div class="line">		this.<span class="keyword">number</span>= <span class="keyword">number</span>;</div><div class="line">		this.<span class="keyword">name</span>= <span class="keyword">name</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="built_in">int</span> getNumber()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">number</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> String getName() &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">name</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>UniverStudent.java</code><br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">UniverStudent</span> <span class="keyword">extends</span> <span class="title">Student5_6</span> </span>&#123;</div><div class="line">	boolean isNarriage;<span class="comment">//子类新增的结婚属性</span></div><div class="line">	<span class="type">UniverStudent</span>(int number, <span class="type">String</span> name, boolean v)&#123;</div><div class="line">		<span class="keyword">super</span>(number, name);<span class="comment">//调用父类的构造方法</span></div><div class="line">	&#125;</div><div class="line">	public boolean getIsNarriage()&#123;</div><div class="line">		<span class="keyword">return</span> isNarriage;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Example5_6.java</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_6</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		UniverStudent zhangStudent= <span class="keyword">new</span> UniverStudent(<span class="number">20111</span>, <span class="string">"张三"</span>, <span class="literal">false</span>);</div><div class="line">		<span class="keyword">int</span> number= zhangStudent.getNumber();</div><div class="line">		String name= zhangStudent.getName();</div><div class="line">		boolean marriage= zhangStudent.getIsNarriage();</div><div class="line">		System.<span class="keyword">out</span>.println(name+ <span class="string">"的学号是: "</span>+ number);</div><div class="line">		<span class="keyword">if</span>(marriage== <span class="literal">true</span>)&#123;</div><div class="line">			System.<span class="keyword">out</span>.println(name+ <span class="string">"已婚"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			System.<span class="keyword">out</span>.println(name+ <span class="string">"未婚"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>使用super操作被隐藏的成员变量和方法</code><br>如果在子类中想使用被子类隐藏的成员变量或方法，可以使用关键字super，super.x、super.play()，就是访问和调用被子类隐藏的成员变量x和方法play()<br><code>Sum.java</code><br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sum</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">double</span> f()&#123;</div><div class="line">		<span class="keyword">double</span> <span class="keyword">sum</span>= <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">1</span>; i&lt;= n;i++)&#123;</div><div class="line">			<span class="keyword">sum</span>= <span class="keyword">sum</span>+ i;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">sum</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Average.java</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Average</span> <span class="keyword">extends</span> <span class="title">Sum</span> </span>&#123;</div><div class="line">	<span class="keyword">double</span> nm;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">fq</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">double</span> c;</div><div class="line">		<span class="keyword">super</span>.n= (<span class="keyword">int</span>)nm;</div><div class="line">		c= <span class="keyword">super</span>.f();</div><div class="line">		<span class="keyword">return</span> c+ nm;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">g</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">double</span> c;</div><div class="line">		c= <span class="keyword">super</span>.f();</div><div class="line">		<span class="keyword">return</span> c- nm;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>Example5_7.java</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Example5_7</span> &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</div><div class="line">		Average average= <span class="keyword">new</span> Average();</div><div class="line">		average.nm= <span class="number">100.5678</span>;</div><div class="line">		<span class="keyword">double</span> result1= average.fq();</div><div class="line">		<span class="keyword">double</span> result2= average.g();</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"result1= "</span>+ result1);</div><div class="line">		System.<span class="keyword">out</span>.println(<span class="string">"result2= "</span>+ result2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>TCP传输控制协议，是一种面向连接的、可靠的、基于字节流的传输层通道协议。<br><a id="more"></a></p>
+<ul>
+<li>SYN(synchronous建立联机)</li>
+<li>ACK(acknowledgement确认)</li>
+<li>PSH(push传送)</li>
+<li>FIN(finish结束)</li>
+<li>RST(reset重置)</li>
+<li>URG(urgent紧急)</li>
+<li>Sequence number(顺序号码)</li>
+<li>Acknowledge number(确认号码)</li>
+<li>establish(建立，创建)</li>
+</ul>
+<h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>即建立TCP连接，是指建立一个TCP连接时，需要客户端和服务端总共发送3个包以确认连接的建立。<br>1）第一次握手: Client将标志位SYN置为1，随机产生一个值为seq= J, 并将该数据包发送给Server，Client进入SYN_SENT状态，等待Server确认。<br>2）第二次握手：Server收到数据包后由标志位SYN= 1知道Client请求建立连接，Server将标志为SYN和ACK都置为1，ack(number)= J+ 1, 随机产生一个值seq= K, 并将该数据包发送给Client以确认连接请求，Server进入SYN_RCVD状态。<br>3）第三次握手：Client收到确认后，检查ack是否为J+ 1，ACK是否为1， 如果正确则将标志位ACK置为1， ack= K+ 1，并将该数据包发送给Server，Server检查ack是否为K+ 1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client与Server之间可以开始传输数据了。</p>
+<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p>即终止TCP连接，就是指断开一个TCP连接时，需要客户端和服务端总共发送4个包以确认连接的断开。<br>1）第一次挥手：Client发送一个FIN，用来关闭Client到Server的数据传送，Client进入FIN_WAIT_1状态。<br>2）第二次挥手：Server收到FIN后，发送一个ACK给Client，确认序号为收到序号+ 1(与SYN相同，一个FIN占用一个序号)，Server进入CLOSE_WAIT状态。<br>3）第三次挥手：Server发送一个FIN，用来关闭Server到Client的数据传送，Server进入LAST＿ACK状态。<br>4）第四次挥手：Client收到FIN后，Client进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+ 1， Server进入CLOSED状态，完成四次挥手。</p>
 
       
     </div>
@@ -510,7 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Interview/" rel="tag"># Interview</a>
           
         </div>
       
@@ -523,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/26/方法内部类/" rel="next" title="方法内部类">
-                <i class="fa fa-chevron-left"></i> 方法内部类
+              <a href="/2018/09/01/IDEA静态资源乱码/" rel="next" title="IDEA静态资源乱码">
+                <i class="fa fa-chevron-left"></i> IDEA静态资源乱码
               </a>
             
           </div>
@@ -532,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/10/Android-Studio-安装问题/" rel="prev" title="Android Studio 安装问题">
-                Android Studio 安装问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -594,8 +598,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -692,6 +705,24 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -873,9 +904,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2017/09/28/super关键字/';
-          this.page.identifier = '2017/09/28/super关键字/';
-          this.page.title = 'super关键字';
+          this.page.url = 'http://www.sanstylemc.cn/2018/09/03/TCP三握四挥手/';
+          this.page.identifier = '2018/09/03/TCP三握四挥手/';
+          this.page.title = 'TCP三握四挥手';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
