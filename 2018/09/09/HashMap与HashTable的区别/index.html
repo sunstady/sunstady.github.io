@@ -98,7 +98,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="失误锦集," />
+  <meta name="keywords" content="Interview," />
 
 
 
@@ -116,21 +116,18 @@
 
 
 
-<meta name="description" content="今天导入包的时候出现这个错误，后来发现是导入位置错误。">
-<meta name="keywords" content="失误锦集">
+<meta name="description" content="浅记一下HashMap与HashTable的区别。">
+<meta name="keywords" content="Interview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="导包错误">
-<meta property="og:url" content="http://www.sanstylemc.cn/2018/04/19/导包错误/index.html">
+<meta property="og:title" content="HashMap与HashTable的区别">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/09/09/HashMap与HashTable的区别/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="今天导入包的时候出现这个错误，后来发现是导入位置错误。">
+<meta property="og:description" content="浅记一下HashMap与HashTable的区别。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/JavaWeb%E9%94%99%E8%AF%AF/1.jpg?raw=true">
-<meta property="og:image" content="https://github.com/sunstady/hexo/blob/master/JavaWeb%E9%94%99%E8%AF%AF/2.jpg?raw=true">
-<meta property="og:updated_time" content="2018-04-19T01:28:05.773Z">
+<meta property="og:updated_time" content="2018-09-09T05:03:52.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="导包错误">
-<meta name="twitter:description" content="今天导入包的时候出现这个错误，后来发现是导入位置错误。">
-<meta name="twitter:image" content="https://github.com/sunstady/hexo/blob/master/JavaWeb%E9%94%99%E8%AF%AF/1.jpg?raw=true">
+<meta name="twitter:title" content="HashMap与HashTable的区别">
+<meta name="twitter:description" content="浅记一下HashMap与HashTable的区别。">
 
 
 
@@ -160,7 +157,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2018/04/19/导包错误/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/09/09/HashMap与HashTable的区别/"/>
 
 
 
@@ -181,7 +178,7 @@
 })();
 </script>
 
-  <title>导包错误 | Sanstyle</title>
+  <title>HashMap与HashTable的区别 | Sanstyle</title>
   
 
 
@@ -367,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/04/19/导包错误/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/09/09/HashMap与HashTable的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -384,7 +381,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">导包错误</h2>
+          <h2 class="post-title" itemprop="name headline">HashMap与HashTable的区别</h2>
         
 
         <div class="post-meta">
@@ -399,8 +396,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T09:27:27+08:00">
-                2018-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-09T13:03:17+08:00">
+                2018-09-09
               </time>
             
 
@@ -418,9 +415,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/19/导包错误/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/09/HashMap与HashTable的区别/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/19/导包错误/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/09/HashMap与HashTable的区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -428,7 +425,7 @@
 
           
           
-             <span id="/2018/04/19/导包错误/" class="leancloud_visitors" data-flag-title="导包错误">
+             <span id="/2018/09/09/HashMap与HashTable的区别/" class="leancloud_visitors" data-flag-title="HashMap与HashTable的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -459,11 +456,17 @@
       
 
       
-        <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">The package javax.servlet is accessible from more than one <span class="class"><span class="keyword">module</span>: &lt;unnamed&gt;, <span class="title">jstl</span>, <span class="title">servlet</span>.<span class="title">api</span></span></div></pre></td></tr></table></figure>
-<p>今天导入包的时候出现这个错误，后来发现是导入位置错误。<br><a id="more"></a><br><img src="https://github.com/sunstady/hexo/blob/master/JavaWeb%E9%94%99%E8%AF%AF/1.jpg?raw=true" alt="1"><br><code>解决方法:</code></p>
-<blockquote>
-<p>1、Remove the external jars from the node “modulepath”.<br>2、Select the node “Classpath” then add the external jars.<br>3、Review that all the jars are under the node “Classpath”.<br><img src="https://github.com/sunstady/hexo/blob/master/JavaWeb%E9%94%99%E8%AF%AF/2.jpg?raw=true" alt="2"></p>
-</blockquote>
+        <p>浅记一下HashMap与HashTable的区别。<br><a id="more"></a></p>
+<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>HashTable的作者：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Arthur van Hoff</div><div class="line"><span class="keyword">Josh </span><span class="keyword">Bloch</span></div><div class="line"><span class="keyword">Neal </span>Gafter</div></pre></td></tr></table></figure></p>
+<p>HashMap的作者：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Doug Lea</div><div class="line"><span class="keyword">Josh </span><span class="keyword">Bloch</span></div><div class="line"><span class="keyword">Arthur </span>van Hoff</div><div class="line">Neal Gafter</div></pre></td></tr></table></figure></p>
+<p>可以看到HashMap的作者比HashTable的作者多了并发大神<code>Doug Lea</code>。他写了<code>util.concurrent</code>包。</p>
+<h2 id="产生时间"><a href="#产生时间" class="headerlink" title="产生时间"></a>产生时间</h2><p>HashTable是Java一开始发布时就提供的键值映射的数据结构，而HashMap产生于JDK1.2。虽然HashTable比HashMap出现的早一些，但是现在HashTable基本上已经被弃用了。而HashMap已经成为应用最为广泛的一种数据类型了。造成这样的原因一方面是因为HashTable是线程安全的，效率比较低，另一方面可能是因为HashTable没有遵循驼峰命名法吧。。。</p>
+<h2 id="继承的父类不同"><a href="#继承的父类不同" class="headerlink" title="继承的父类不同"></a>继承的父类不同</h2><p>HashMap是继承字AbstractMap类，而HashTable是继承自Dictionary类。不过它们都实现了Map、Cloneable(可复制)、Serializable(可序列化)这三个接口。<br>而HashTable还继承了一个父类(Dictionary)，这是一个已经被废弃的类。</p>
+<h2 id="对外提供的接口不同"><a href="#对外提供的接口不同" class="headerlink" title="对外提供的接口不同"></a>对外提供的接口不同</h2><p>HashTable比HashMap多提供了elements()和contains()两个方法。<br>elements()方法继承自HashTable的父类Dictionary。elements()方法用于返回此HashTable中的value的枚举。<br>contains()方法判断该HashTable是否包含传入的value。它的作用与containsValue()一致。事实上，contansValue()就只是调用了一下contains()方法。</p>
+<h2 id="对Null-key-和-Null-value的支持不同"><a href="#对Null-key-和-Null-value的支持不同" class="headerlink" title="对Null key 和 Null value的支持不同"></a>对Null key 和 Null value的支持不同</h2><p>HashTable既不支持Null key 也不支持 Null value。HashTable的put()方法的注释中有说明。<br>当key为Null时，调用put()方法，key值调用hashCode()时候会抛出空指针异常。因为拿一个Null值去调用方法了。<br>当value为null值时，HashTable对其做了限制，也会抛出空指针异常。<br>HashMap中，null可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为null。当get()方法返回null值时，可能是HashMap中没有该键，也可能使该键所对应的值为null。因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键，而应该用contaionsKey()方法来判断。</p>
+<h2 id="线程安全性不同"><a href="#线程安全性不同" class="headerlink" title="线程安全性不同"></a>线程安全性不同</h2><p>HashTable是线程安全的，它的每个方法中都加入了Synchronize方法。在多线程并发的环境下，可以直接使用HashTable，不需要自己为它的方法实现同步。<br>HashMap不是线程安全的，在多线程并发的环境下，可能会产生死锁等问题。使用HashMap时就必须要自己增加同步处理，虽然HashMap不是线程安全的，但是它的效率会比Hashtable要好很多。这样设计是合理的。在我们的日常使用中，大部分时间是单线程操作的。HashMap把这部分操作解放出来了。当需要多线程操作的时候可以使用线程安全的ConcurrentHashMap。ConcurrentHashMap虽然也是线程安全的，但是它的效率比HashTable要高好多倍。因为ConcurrentHashMap使用了分段锁，并不对整个数据进行锁定。</p>
+<h2 id="遍历方式的内部实现上不同"><a href="#遍历方式的内部实现上不同" class="headerlink" title="遍历方式的内部实现上不同"></a>遍历方式的内部实现上不同</h2><p>HashTable、HashMap都使用了Iterator。而由于历史原因，HashTable还使用了Enumeration的方式。<br>HashMap的Iterator是fail-fast迭代器。当有其它线程改变了HashMap的结构(增加、删除、修改元素)，将会抛出ConcurrentModificationException。不过，通过Iterator的remove()方法移除元素则不会抛出ConcurrentModificationException异常。但这并不是一个一定发生的行为，要看JVM。<br>JDK1.8之前的版本中，HashTable是没有fast-fail机制的。在JDK1.8及以后的版本中，HashTable也是使用fast-fail的。</p>
+<h2 id="初始容量大小和每次扩容大小的不同"><a href="#初始容量大小和每次扩容大小的不同" class="headerlink" title="初始容量大小和每次扩容大小的不同"></a>初始容量大小和每次扩容大小的不同</h2><p>HashTable默认的初始大小为11，之后每次扩容，容量变为原来的2n+1。HashMap默认的初始化大小为16。之后每次扩充，容量变为原来的2倍。<br>但是当HashTable的大小增加到一定的时候，性能会急剧下降，因为迭代时需要被锁定很长的时间。而ConcurrentHashMap引入了分割，不论它变得多么大，仅仅需要锁定map的某个部分，而其它的线程不需要等到迭代完成才能访问map。<br>创建时，如果给定了容量初始值，那么HashTable会直接使用你给定的大小，而HashMap会将其扩充为2的幂次方大小。也就是说HashTable会尽量使用素数、奇数。而HashMap则总是使用2的幂作为哈希表的大小。<br>之所以会有这样的不同，是因为HashTable和HashMap设计时的侧重点不同。HashTable的侧重点是哈希的结果更加均匀，使得哈希冲突减少。当哈希表的大小为素数时，简单的取模哈希的结果会更加均匀。而HashMap则更加关注hash的计算效率问题。在取模计算时，如果模数是2的幂，那么我们可以直接使用位运算来得到结果，效率要大大高于做除法。HashMap为了加快hash的速度，将哈希表的大小固定为了2的幂。当然这引入了哈希分布不均匀的问题，所以HashMap为解决这问题，又对hash算法做了一些改动。这从而导致了HashTable和HashMap的计算hash值的方法不同。<br>为了得到元素的位置，首先需要根据元素的key计算出一个hash值，然后再用这个hash值来计算得到最终的位置。<br>HashTable直接使用对象的hashCode。hashCode是JDK根据对象的地址或者字符串或者数字算出来的int类型的数值。然后再使用除留余数法来获得最终的位置。<br>HashTable在计算元素的位置时需要进行一次除法运算，而除法运算是比较耗时的。<br>HashMap为了提高计算效率，将哈希表的大小固定为2的幂，这样在取模预算时，不需要做除法，只需要做位运算。位运算比除法的效率要高很多。</p>
 
       
     </div>
@@ -512,7 +515,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/失误锦集/" rel="tag"># 失误锦集</a>
+            <a href="/tags/Interview/" rel="tag"># Interview</a>
           
         </div>
       
@@ -525,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/18/FIRST、FOLLOW、SELECT/" rel="next" title="FIRST、FOLLOW、SELECT">
-                <i class="fa fa-chevron-left"></i> FIRST、FOLLOW、SELECT
+              <a href="/2018/09/04/判断数是否存在/" rel="next" title="判断数是否存在">
+                <i class="fa fa-chevron-left"></i> 判断数是否存在
               </a>
             
           </div>
@@ -534,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/21/Edraw激活/" rel="prev" title="Edraw激活">
-                Edraw激活 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -596,8 +595,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -694,6 +702,24 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#作者"><span class="nav-number">1.</span> <span class="nav-text">作者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生时间"><span class="nav-number">2.</span> <span class="nav-text">产生时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的父类不同"><span class="nav-number">3.</span> <span class="nav-text">继承的父类不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对外提供的接口不同"><span class="nav-number">4.</span> <span class="nav-text">对外提供的接口不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对Null-key-和-Null-value的支持不同"><span class="nav-number">5.</span> <span class="nav-text">对Null key 和 Null value的支持不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全性不同"><span class="nav-number">6.</span> <span class="nav-text">线程安全性不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历方式的内部实现上不同"><span class="nav-number">7.</span> <span class="nav-text">遍历方式的内部实现上不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始容量大小和每次扩容大小的不同"><span class="nav-number">8.</span> <span class="nav-text">初始容量大小和每次扩容大小的不同</span></a></li></ol></div>
+            
+
+
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -875,9 +901,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2018/04/19/导包错误/';
-          this.page.identifier = '2018/04/19/导包错误/';
-          this.page.title = '导包错误';
+          this.page.url = 'http://www.sanstylemc.cn/2018/09/09/HashMap与HashTable的区别/';
+          this.page.identifier = '2018/09/09/HashMap与HashTable的区别/';
+          this.page.title = 'HashMap与HashTable的区别';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
