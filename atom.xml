@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-09-11T11:21:56.075Z</updated>
+  <updated>2018-09-17T00:40:37.212Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内部匿名类</title>
+    <link href="http://www.sanstylemc.cn/2018/09/17/%E5%86%85%E9%83%A8%E5%8C%BF%E5%90%8D%E7%B1%BB/"/>
+    <id>http://www.sanstylemc.cn/2018/09/17/内部匿名类/</id>
+    <published>2018-09-17T00:36:10.000Z</published>
+    <updated>2018-09-17T00:40:37.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;什么是内部匿名类，为什么它引用外部变量得加final？并且不能重新赋值？<br><a id="more"></a></p>
+<h2 id="什么是内部匿名类"><a href="#什么是内部匿名类" class="headerlink" title="什么是内部匿名类"></a>什么是内部匿名类</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NiMing</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> static void main(String[] args) &#123;</div><div class="line">        <span class="keyword">final</span> String name = <span class="string">"Haha"</span>;</div><div class="line">        new FunLisenter() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">                System.<span class="keyword">out</span>.println(name);</div><div class="line">            &#125;</div><div class="line">        &#125;.<span class="keyword">fun</span>();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 外部接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FunLisenter</span> </span>&#123;</div><div class="line">    void <span class="function"><span class="title">fun</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;什么是内部匿名类呢？上述demo中的:<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">new FunLisenter() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">        System.<span class="keyword">out</span>.println(name);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这就是内部匿名类。<br>&nbsp;&nbsp;&nbsp;&nbsp;接口不能new，为什么这里被new出来了？因为它是匿名内部类，它是特殊的存在。<br>&nbsp;&nbsp;&nbsp;&nbsp;看它的编译后的<code>.class</code>文件。<br><img src="https://github.com/sunstady/hexoFirst/blob/master/%E5%86%85%E9%83%A8%E5%8C%BF%E5%90%8D%E7%B1%BB/1.png?raw=true" alt="1"><br>&nbsp;&nbsp;&nbsp;&nbsp;发现两个Java文件编译后出来了3个class文件。<br>&nbsp;&nbsp;&nbsp;&nbsp;这就是特殊的存在，我们反编译这个特别的NiMing$1.class文件：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">NiMing</span>$1 <span class="title">implements</span> <span class="title">FunLisenter</span> </span>&#123;</div><div class="line">    Main$<span class="number">1</span>() &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"Haha"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;发现一个奇怪的类实现了我们的FunLisenter接口，难道new的FunLisenter就是new的这个奇怪的NiMing$1类么？<br>&nbsp;&nbsp;&nbsp;&nbsp;深入思考下，为什么叫做匿名？<br>&nbsp;&nbsp;&nbsp;&nbsp;对于我们Java层面来说，这个类根本看不到。<br>&nbsp;&nbsp;&nbsp;&nbsp;之所以被称之为内部匿名类，是因为：在编译阶段，编译器帮我们以内部类的形式，帮我们implement我们的接口，因此我们才可以以new的方式使用。</p>
+<h2 id="内部匿名类引用外部变量为什么得加final"><a href="#内部匿名类引用外部变量为什么得加final" class="headerlink" title="内部匿名类引用外部变量为什么得加final"></a>内部匿名类引用外部变量为什么得加final</h2><p>先来一段代码。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> static void main(String[] args) &#123;</div><div class="line">    NiMing main = new NiMing();</div><div class="line">    main.<span class="keyword">fun</span>();</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="comment">// 这里为什么赋值为null，因为避免String常量对效果的影响</span></div><div class="line">    <span class="keyword">final</span> String nameInner = <span class="literal">null</span>;</div><div class="line">    new FunLisenter() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">            System.<span class="keyword">out</span>.println(nameInner);</div><div class="line">        &#125;</div><div class="line">    &#125;.<span class="keyword">fun</span>();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;为什么内部匿名类能够访问到namelnner？一个方法，就是一个栈帧。对于局部变量来说，方法结束，栈帧弹出，局部变量烟消云散。为什么内部匿名类可以访问？<br>&nbsp;&nbsp;&nbsp;&nbsp;直接看反编译的class文件:<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NiMing</span>$1 <span class="title">implements</span> <span class="title">FunLisenter</span> </span>&#123;</div><div class="line">    NiMing$<span class="number">1</span>(NiMing var1, String var2) &#123;</div><div class="line">        <span class="keyword">this</span>.<span class="keyword">this</span>$<span class="number">0</span> = var1;</div><div class="line">        <span class="keyword">this</span>.<span class="keyword">val</span>$nameInner = var2;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="keyword">this</span>.<span class="keyword">val</span>$nameInner);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这个例子不光解释了内部匿名类为什么能够访问局部变量，还展示了持有外部引用的问题。局部变量nameInner，被我们在编译期在生成匿名内部类的时候以参数的形式赋值给了我们内部持有的外部变量了。因此我们调用fun()方法时，就直接使用<code>this.val$nameInner</code>。<br>&nbsp;&nbsp;&nbsp;&nbsp;为什么要加final呢？<br>&nbsp;&nbsp;&nbsp;&nbsp;从Java代码上来看局部变量nameInner和匿名内部类的nameInner是同一个对象。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是我们反编译了字节码，发现这二者并非是同一个对象。<br>&nbsp;&nbsp;&nbsp;&nbsp;设想一下，如果不加final。在Java的这种设计下，一定会造成这种情况：我们在内部匿名类中重新赋值，但是局部变量并不会同步发生变化。因为按照这种设计，重新赋值，完全就是两个变量！因此为了避免这种情况，索性加上了final。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;什么是内部匿名类，为什么它引用外部变量得加final？并且不能重新赋值？&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>IDEA资源文件xml</title>
@@ -863,27 +891,6 @@
     
     
       <category term="Interview" scheme="http://www.sanstylemc.cn/tags/Interview/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一如少年模样</title>
-    <link href="http://www.sanstylemc.cn/2018/07/28/%E4%B8%80%E5%A6%82%E5%B0%91%E5%B9%B4%E6%A8%A1%E6%A0%B7/"/>
-    <id>http://www.sanstylemc.cn/2018/07/28/一如少年模样/</id>
-    <published>2018-07-28T01:54:51.000Z</published>
-    <updated>2018-07-28T01:56:29.038Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>一如少年模样 风雨不挡</code><br><a id="more"></a><br><img src="https://github.com/sunstady/hexo/blob/eb47b1719cf1bf2f977da4fdc2f7b31d21f6bf67/Gif/Gifs/1.gif?raw=true" alt="1"><br><img src="https://github.com/sunstady/hexo/blob/eb47b1719cf1bf2f977da4fdc2f7b31d21f6bf67/Gif/Gifs/2.gif?raw=true" alt="2"><br><img src="https://github.com/sunstady/hexo/blob/eb47b1719cf1bf2f977da4fdc2f7b31d21f6bf67/Gif/Gifs/3.gif?raw=true" alt="3"><br><img src="https://github.com/sunstady/hexo/blob/5ab4c4dcea7dc703dad27430175e375fb0e99486/Gif/Gifs/4.gif?raw=true" alt="4"><br><img src="https://github.com/sunstady/hexo/blob/5ab4c4dcea7dc703dad27430175e375fb0e99486/Gif/Gifs/5.gif?raw=true" alt="5"><br><img src="https://github.com/sunstady/hexo/blob/5ab4c4dcea7dc703dad27430175e375fb0e99486/Gif/Gifs/6.gif?raw=true" alt="6"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/10.gif?raw=true" alt="7"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/11.gif?raw=true" alt="8"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/12.gif?raw=true" alt="9"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/13.gif?raw=true" alt="10"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/14.gif?raw=true" alt="11"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/15.gif?raw=true" alt="12"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/16.gif?raw=true" alt="13"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/17.gif?raw=true" alt="14"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/18.gif?raw=true" alt="15"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/19.gif?raw=true" alt="16"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/21.gif?raw=true" alt="17"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/22.gif?raw=true" alt="18"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/23.gif?raw=true" alt="19"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/25.gif?raw=true" alt="20"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/26.gif?raw=true" alt="21"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/27.gif?raw=true" alt="22"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/28.gif?raw=true" alt="23"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/29.gif?raw=true" alt="24"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/7.gif?raw=true" alt="25"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/8.gif?raw=true" alt="26"><br><img src="https://github.com/sunstady/hexo/blob/f566f83040f15c591e151d959d61af26798d8519/Gif/Gifs/9.gif?raw=true" alt="27"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;一如少年模样 风雨不挡&lt;/code&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Essay" scheme="http://www.sanstylemc.cn/tags/Essay/"/>
     
   </entry>
   

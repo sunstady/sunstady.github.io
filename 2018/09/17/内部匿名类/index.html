@@ -98,7 +98,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MySQL," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -116,18 +116,20 @@
 
 
 
-<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;SQL注入(SQL Injection)是利用某些数据库的外部接口将数据插入到实际的数据库操作语言(SQL)当中，从而达到入侵数据库乃至操作系统的目的。它的产生主要是由于程序对用户输入的数据没有进行严格的过滤，导致非法数据库查询语句的执行。">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;什么是内部匿名类，为什么它引用外部变量得加final？并且不能重新赋值？">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL注入及防护">
-<meta property="og:url" content="http://www.sanstylemc.cn/2018/07/25/SQL注入及防护/index.html">
+<meta property="og:title" content="内部匿名类">
+<meta property="og:url" content="http://www.sanstylemc.cn/2018/09/17/内部匿名类/index.html">
 <meta property="og:site_name" content="Sanstyle">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;SQL注入(SQL Injection)是利用某些数据库的外部接口将数据插入到实际的数据库操作语言(SQL)当中，从而达到入侵数据库乃至操作系统的目的。它的产生主要是由于程序对用户输入的数据没有进行严格的过滤，导致非法数据库查询语句的执行。">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;什么是内部匿名类，为什么它引用外部变量得加final？并且不能重新赋值？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-25T02:47:08.108Z">
+<meta property="og:image" content="https://github.com/sunstady/hexoFirst/blob/master/%E5%86%85%E9%83%A8%E5%8C%BF%E5%90%8D%E7%B1%BB/1.png?raw=true">
+<meta property="og:updated_time" content="2018-09-17T00:40:37.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL注入及防护">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;SQL注入(SQL Injection)是利用某些数据库的外部接口将数据插入到实际的数据库操作语言(SQL)当中，从而达到入侵数据库乃至操作系统的目的。它的产生主要是由于程序对用户输入的数据没有进行严格的过滤，导致非法数据库查询语句的执行。">
+<meta name="twitter:title" content="内部匿名类">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;什么是内部匿名类，为什么它引用外部变量得加final？并且不能重新赋值？">
+<meta name="twitter:image" content="https://github.com/sunstady/hexoFirst/blob/master/%E5%86%85%E9%83%A8%E5%8C%BF%E5%90%8D%E7%B1%BB/1.png?raw=true">
 
 
 
@@ -157,7 +159,7 @@
 
 
 
-  <link rel="canonical" href="http://www.sanstylemc.cn/2018/07/25/SQL注入及防护/"/>
+  <link rel="canonical" href="http://www.sanstylemc.cn/2018/09/17/内部匿名类/"/>
 
 
 
@@ -178,7 +180,7 @@
 })();
 </script>
 
-  <title>SQL注入及防护 | Sanstyle</title>
+  <title>内部匿名类 | Sanstyle</title>
   
 
 
@@ -364,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/07/25/SQL注入及防护/">
+    <link itemprop="mainEntityOfPage" href="http://www.sanstylemc.cn/2018/09/17/内部匿名类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MC">
@@ -381,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">SQL注入及防护</h2>
+          <h2 class="post-title" itemprop="name headline">内部匿名类</h2>
         
 
         <div class="post-meta">
@@ -396,8 +398,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T10:35:33+08:00">
-                2018-07-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-17T08:36:10+08:00">
+                2018-09-17
               </time>
             
 
@@ -415,9 +417,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/25/SQL注入及防护/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/17/内部匿名类/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/07/25/SQL注入及防护/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/17/内部匿名类/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -425,7 +427,7 @@
 
           
           
-             <span id="/2018/07/25/SQL注入及防护/" class="leancloud_visitors" data-flag-title="SQL注入及防护">
+             <span id="/2018/09/17/内部匿名类/" class="leancloud_visitors" data-flag-title="内部匿名类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,29 +458,14 @@
       
 
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;SQL注入(SQL Injection)是利用某些数据库的外部接口将数据插入到实际的数据库操作语言(SQL)当中，从而达到入侵数据库乃至操作系统的目的。它的产生主要是由于程序对用户输入的数据没有进行严格的过滤，导致非法数据库查询语句的执行。<br><a id="more"></a></p>
-<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;下面的用户登陆验证程序就是SQL注入的一个例子(以PHP程序举例)<br>创建用户表user:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(</div><div class="line">userid <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line">username <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line"><span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line">primary <span class="keyword">key</span>(userid)</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>给用户表user添加一条用户记录:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> <span class="keyword">values</span>(<span class="number">1</span>, <span class="string">'root'</span>, <span class="string">'root'</span>);</div></pre></td></tr></table></figure></p>
-<p>验证用户root登录的localhost服务器：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="php">    $servername= <span class="string">"localhost"</span>;</span></div><div class="line"><span class="php">    $dbusername= <span class="string">"root"</span>;</span></div><div class="line"><span class="php">    $dbpassword= <span class="string">""</span>;</span></div><div class="line"><span class="php">    $dbname= <span class="string">"injection"</span>;</span></div><div class="line"><span class="php">    mysql_connect($servername, $dbusername, $dbpassword) <span class="keyword">or</span> <span class="keyword">die</span> (<span class="string">"数据库连接失败"</span>);</span></div><div class="line"><span class="php">    $sql= <span class="string">"select * from user where username= '$username' and password= '$password'"</span>;</span></div><div class="line"><span class="php">    $result= mysql_db_query($dbname, $sql);</span></div><div class="line"><span class="php">    $userinfo= mysql_fetch_array($result);</span></div><div class="line"><span class="php">    <span class="keyword">if</span>(<span class="keyword">empty</span>($userinfo))&#123;</span></div><div class="line"><span class="php">        <span class="keyword">echo</span> <span class="string">"登录失败"</span>;</span></div><div class="line"><span class="php">    &#125;<span class="keyword">else</span> &#123;</span></div><div class="line"><span class="php">        <span class="keyword">echo</span> <span class="string">"登录成功"</span>;</span></div><div class="line"><span class="php">    &#125;</span></div><div class="line"><span class="php">    <span class="keyword">echo</span> <span class="string">"&lt;p&gt;SQL Query:$sql&lt;/p&gt;"</span>;</span></div><div class="line"><span class="php"><span class="meta">?&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后提交如下URL：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:<span class="regexp">//</span><span class="number">127.0</span>.<span class="number">0.1</span><span class="regexp">/injection/u</span>ser.php?username=root<span class="string">' or '</span><span class="number">1</span>=<span class="number">1</span></div></pre></td></tr></table></figure></p>
-<p>结果发现，这个URL可以成功登陆。同样也可以利用SQL的注释语句实现SQL注入，例如：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//127.0.0.1/injection/user.php?username=root'/*</span></div><div class="line"><span class="symbol">http:</span><span class="comment">//127.0.0.1/injection/user.php?username=root'#</span></div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;因为在SQL语句中，” /* “或者” # “都可以将后面的语句注释掉。这样上述语句就可以通过这两个注释符中任意一个将后面的语句给注释掉，结果导致只根据用户名而没有密码的URL都成功进行了登录。利用” or “和注释符的不同之处在于，前者是利用逻辑运算，而后者是根据MySQL的特性，这个比逻辑运算简单的多。</p>
-<h2 id="应对措施"><a href="#应对措施" class="headerlink" title="应对措施"></a>应对措施</h2><h3 id="PrepareStatement-Bind-variable"><a href="#PrepareStatement-Bind-variable" class="headerlink" title="PrepareStatement+Bind-variable"></a>PrepareStatement+Bind-variable</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;对Java、JSP开发的应用，可以使用PrepareStatement+Bind-variable来防止SQL注入，尽量不要使用拼接的SQL。<br>Bind-variable(绑定变量)：查询通常只是因为改变where子句中的内容而产生不同的结果。为了在这种情况下避免硬解析，需要使用绑定变量。它是用户放入查询中的占位符，它会告诉MySQL或者Oracle”我会提供一个值放到这里”，一般在procedure or function中使用，可以优化共享池的使用。</p>
-<h3 id="使用应用程序提高的转换函数"><a href="#使用应用程序提高的转换函数" class="headerlink" title="使用应用程序提高的转换函数"></a>使用应用程序提高的转换函数</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;很多应用程序接口都提供了对特殊字符进行转换的函数，恰当的使用这些函数，可以防止应用程序用户输入使应用程序生成不当期望的语句。</p>
-<ul>
-<li>MySQL C API：使用mysql_real_escape_string()API调用。</li>
-<li>MySQL++：使用escape和quote修饰符。</li>
-<li>PHP：使用mysql_real_escape_string()函数(适用于PHP 4.3.0版本)</li>
-<li>Perl DBI：使用placeholders或者quote()方法。</li>
-<li>Ruby DBI：使用placeholders或者quote()方法。</li>
-</ul>
-<h2 id="自定义函数进行校验"><a href="#自定义函数进行校验" class="headerlink" title="自定义函数进行校验"></a>自定义函数进行校验</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;如果现有的转换函数仍然不能满足要求，则需要自己编写函数进行输入校验。输入验证的途径可以分为以下几种：</p>
-<ul>
-<li>整理数据使之变得有效。</li>
-<li>拒绝已知的非法输入。</li>
-<li>只接受已知的合法输入。</li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;所以如果想要获得最好的安全状态，目前最好的解决方法就是对用户提交或者可能改变的数据进行简单分类，分别应用正则表达式来对用户提供的输入数据进行严格的检测和验证。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;什么是内部匿名类，为什么它引用外部变量得加final？并且不能重新赋值？<br><a id="more"></a></p>
+<h2 id="什么是内部匿名类"><a href="#什么是内部匿名类" class="headerlink" title="什么是内部匿名类"></a>什么是内部匿名类</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NiMing</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> static void main(String[] args) &#123;</div><div class="line">        <span class="keyword">final</span> String name = <span class="string">"Haha"</span>;</div><div class="line">        new FunLisenter() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">                System.<span class="keyword">out</span>.println(name);</div><div class="line">            &#125;</div><div class="line">        &#125;.<span class="keyword">fun</span>();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 外部接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FunLisenter</span> </span>&#123;</div><div class="line">    void <span class="function"><span class="title">fun</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;什么是内部匿名类呢？上述demo中的:<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">new FunLisenter() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">        System.<span class="keyword">out</span>.println(name);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这就是内部匿名类。<br>&nbsp;&nbsp;&nbsp;&nbsp;接口不能new，为什么这里被new出来了？因为它是匿名内部类，它是特殊的存在。<br>&nbsp;&nbsp;&nbsp;&nbsp;看它的编译后的<code>.class</code>文件。<br><img src="https://github.com/sunstady/hexoFirst/blob/master/%E5%86%85%E9%83%A8%E5%8C%BF%E5%90%8D%E7%B1%BB/1.png?raw=true" alt="1"><br>&nbsp;&nbsp;&nbsp;&nbsp;发现两个Java文件编译后出来了3个class文件。<br>&nbsp;&nbsp;&nbsp;&nbsp;这就是特殊的存在，我们反编译这个特别的NiMing$1.class文件：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">NiMing</span>$1 <span class="title">implements</span> <span class="title">FunLisenter</span> </span>&#123;</div><div class="line">    Main$<span class="number">1</span>() &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"Haha"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;发现一个奇怪的类实现了我们的FunLisenter接口，难道new的FunLisenter就是new的这个奇怪的NiMing$1类么？<br>&nbsp;&nbsp;&nbsp;&nbsp;深入思考下，为什么叫做匿名？<br>&nbsp;&nbsp;&nbsp;&nbsp;对于我们Java层面来说，这个类根本看不到。<br>&nbsp;&nbsp;&nbsp;&nbsp;之所以被称之为内部匿名类，是因为：在编译阶段，编译器帮我们以内部类的形式，帮我们implement我们的接口，因此我们才可以以new的方式使用。</p>
+<h2 id="内部匿名类引用外部变量为什么得加final"><a href="#内部匿名类引用外部变量为什么得加final" class="headerlink" title="内部匿名类引用外部变量为什么得加final"></a>内部匿名类引用外部变量为什么得加final</h2><p>先来一段代码。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> static void main(String[] args) &#123;</div><div class="line">    NiMing main = new NiMing();</div><div class="line">    main.<span class="keyword">fun</span>();</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="comment">// 这里为什么赋值为null，因为避免String常量对效果的影响</span></div><div class="line">    <span class="keyword">final</span> String nameInner = <span class="literal">null</span>;</div><div class="line">    new FunLisenter() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">            System.<span class="keyword">out</span>.println(nameInner);</div><div class="line">        &#125;</div><div class="line">    &#125;.<span class="keyword">fun</span>();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;为什么内部匿名类能够访问到namelnner？一个方法，就是一个栈帧。对于局部变量来说，方法结束，栈帧弹出，局部变量烟消云散。为什么内部匿名类可以访问？<br>&nbsp;&nbsp;&nbsp;&nbsp;直接看反编译的class文件:<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NiMing</span>$1 <span class="title">implements</span> <span class="title">FunLisenter</span> </span>&#123;</div><div class="line">    NiMing$<span class="number">1</span>(NiMing var1, String var2) &#123;</div><div class="line">        <span class="keyword">this</span>.<span class="keyword">this</span>$<span class="number">0</span> = var1;</div><div class="line">        <span class="keyword">this</span>.<span class="keyword">val</span>$nameInner = var2;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">public</span> void <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="keyword">this</span>.<span class="keyword">val</span>$nameInner);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这个例子不光解释了内部匿名类为什么能够访问局部变量，还展示了持有外部引用的问题。局部变量nameInner，被我们在编译期在生成匿名内部类的时候以参数的形式赋值给了我们内部持有的外部变量了。因此我们调用fun()方法时，就直接使用<code>this.val$nameInner</code>。<br>&nbsp;&nbsp;&nbsp;&nbsp;为什么要加final呢？<br>&nbsp;&nbsp;&nbsp;&nbsp;从Java代码上来看局部变量nameInner和匿名内部类的nameInner是同一个对象。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是我们反编译了字节码，发现这二者并非是同一个对象。<br>&nbsp;&nbsp;&nbsp;&nbsp;设想一下，如果不加final。在Java的这种设计下，一定会造成这种情况：我们在内部匿名类中重新赋值，但是局部变量并不会同步发生变化。因为按照这种设计，重新赋值，完全就是两个变量！因此为了避免这种情况，索性加上了final。</p>
 
       
     </div>
@@ -527,7 +514,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -540,8 +527,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/25/触发器/" rel="next" title="触发器">
-                <i class="fa fa-chevron-left"></i> 触发器
+              <a href="/2018/09/11/IDEA资源文件xml/" rel="next" title="IDEA资源文件xml">
+                <i class="fa fa-chevron-left"></i> IDEA资源文件xml
               </a>
             
           </div>
@@ -549,10 +536,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/25/procedure与function/" rel="prev" title="procedure与function">
-                procedure与function <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -728,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL注入"><span class="nav-number">1.</span> <span class="nav-text">SQL注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应对措施"><span class="nav-number">2.</span> <span class="nav-text">应对措施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PrepareStatement-Bind-variable"><span class="nav-number">2.1.</span> <span class="nav-text">PrepareStatement+Bind-variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用应用程序提高的转换函数"><span class="nav-number">2.2.</span> <span class="nav-text">使用应用程序提高的转换函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义函数进行校验"><span class="nav-number">3.</span> <span class="nav-text">自定义函数进行校验</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内部匿名类"><span class="nav-number">1.</span> <span class="nav-text">什么是内部匿名类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部匿名类引用外部变量为什么得加final"><span class="nav-number">2.</span> <span class="nav-text">内部匿名类引用外部变量为什么得加final</span></a></li></ol></div>
             
 
 
@@ -917,9 +900,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sanstylemc.cn/2018/07/25/SQL注入及防护/';
-          this.page.identifier = '2018/07/25/SQL注入及防护/';
-          this.page.title = 'SQL注入及防护';
+          this.page.url = 'http://www.sanstylemc.cn/2018/09/17/内部匿名类/';
+          this.page.identifier = '2018/09/17/内部匿名类/';
+          this.page.title = '内部匿名类';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sunstadys.disqus.com/embed.js';
