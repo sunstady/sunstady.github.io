@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-09-17T00:40:37.212Z</updated>
+  <updated>2018-09-21T01:37:19.729Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring笔记一</title>
+    <link href="http://www.sanstylemc.cn/2018/09/21/spring%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
+    <id>http://www.sanstylemc.cn/2018/09/21/spring笔记一/</id>
+    <published>2018-09-21T01:36:18.000Z</published>
+    <updated>2018-09-21T01:37:19.729Z</updated>
+    
+    <content type="html"><![CDATA[<p>以前的笔记，推上来记录下。<br><a id="more"></a></p>
+<p><code>IOC和DI的区别？</code><br>IOC和DI是同一件事情，都是将对象控制权交给第三方(Spring)管理，只是站在不同角度。</p>
+<p><code>IOC钟哪些方面的控制被反转了？</code><br>获得依赖对象的过程被反转了。控制被反转之后，获得依赖对象的过程由自身管理变为了由IOC容器主动注入。所谓依赖注入，就是由IOC容器在运行期间，动态地将某种依赖关系注入到对象之中。</p>
+<p><code>BeanFactory和FactoryBean的区别？</code><br>BeanFactory：是一个工厂(其实是构建了一个spring上下文的环境，容器)，用来管理和获取很多Bean对象。<br>FactoryBean：是一个Bean生成工具，是用来获取一种类型对象的Bean，它是构造Bean实例的一种方式。</p>
+<p><code>spEL表达式</code><br>spEL(Spring Expression Language)是一种表达式语言，它是spring3.x版本的新特性。<br>它的作用是：支持在运行时操作和查询对象，其语法类似统一的EL语言，但是spEL提供了额外的功能，功能更强大。</p>
+<p><code>什么是EL、OGNL、spEL</code><br>EL：操作servlet相关的一些对象和相关的值<br>OGNL：主要操作struts值栈<br>spEL：操作bean相关的</p>
+<p><code>直接new ClassPathXmlApplicationContext()有什么缺点</code><br>缺点：在创建Spring容器同时，需要对容器种对象初始化。而每次初始化容器的时候，都创建了新的容器对象，消耗了资源，降低了性能。<br>解决思路：保证容器对象只有一个。<br>解决方案：将Spring容器绑定到Web Servlet容器上，让Web容器来管理Spring容器的创建和销毁。<br>分析：ServletContext在Web服务运行过程中是唯一的，其初始化的时候，会自动执行ServletContextListener监听器(用来监听上下文的创建和销毁)。<br>具体步骤为：编写一个ServletContestListener监听器，在监听到ServletContext创建的时候，创建Spring容器，并将其放到ServletContext的属性中保存。<br>我们无需手动创建该监听器，因为Spring提供了一个叫ContextLoaderListener的监听器，它位于spring-web-4.2.5.REKEASE.jar中。<br>开发步骤：<br>第一步：导入spring web的jar<br>第二步：在web.xml配置Spring的核心监听器<br>第三步：启动tomcat服务器，结果发现异常，因为默认会加载。<br>根据异常提示：发现spring的BeanFactory没有初始化，说明没有找到spring容器，即applicationContext.xml文件。<br>第四步：在web容器中配置spring文件路径<br>为什么没有找到applicationContext.xml文件呢？因为此时加载的是WEB-INF/applicationContext.xml，而不是src下的applicationContext.xml文件。<br>原因：找到ContextLoaderListener.class，再找到ContextLoader.class，发现默认加载的WEB-INF/applicationContext.xml。<br>解决方案：需要在web.xml中配置，加载spring容器applicationContext.xml文件的路径。<br>重新启动tomcat服务器，没有异常，问题解决。<br>第五步：修改Servlet代码。在Servlet中通过ServletContext获取Spring容器对象。<br>第一种方式：使用getAttribute。<br>第二种方式：使用WebApplicationContextUtils(推荐)。</p>
+<p><code>servletContext</code><br>1、servletContext就是代表web应用的一个servlet类。也就是说一个web应用只有一个servletContext对象。<br>2、servletContext是用来管理web应用下的资源的。<br>3、servletContext是可以被所有访问其代表web应用的用户共享的。<br>4、servletContext是在服务器端被创建和销毁的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以前的笔记，推上来记录下。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="ssm" scheme="http://www.sanstylemc.cn/tags/ssm/"/>
+    
+  </entry>
   
   <entry>
     <title>内部匿名类</title>
@@ -861,36 +889,6 @@
     
     
       <category term="Java" scheme="http://www.sanstylemc.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java常见的异常种类</title>
-    <link href="http://www.sanstylemc.cn/2018/07/30/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8%E7%A7%8D%E7%B1%BB/"/>
-    <id>http://www.sanstylemc.cn/2018/07/30/Java常见的异常种类/</id>
-    <published>2018-07-30T06:52:05.000Z</published>
-    <updated>2018-07-30T06:53:07.592Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;异常类分为两大类型：Error类代表了编译和系统的错误，不允许捕获；Exception类代表了标准Java库方法所激发的异常。Exception类还包含运行异常类Runntime_Exception和非运行异常类Non_RuntimeException这两个直接的子类。<br><a id="more"></a></p>
-<h2 id="常见的异常"><a href="#常见的异常" class="headerlink" title="常见的异常"></a>常见的异常</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;运行异常类对应于编译错误，它是指Java程序在运行时产生的由解释器引发的各种异常。运行异常可能出现在任何地方，且出现频率很高，因此为了避免巨大的系统资源开销，编译器不对异常进行检查。所以Java语言中的运行异常不一定被捕获。出现运行错误往往表示代码有错误，如：算数异常（如被0除）、下标异常（如数组越界）等。<br>&nbsp;&nbsp;&nbsp;&nbsp;非运行异常时Non_RuntimeException类及其子类的实例，又称为可检测异常。Java编译器利用分析方法或构造方法中可能产生的结果来检测Java程序中是否含有检测异常的处理程序，对于每个可能的可检测异常，方法或构造方法的throws子句必须列出该异常对应的类。在Java的标准包java.lang java.util 和 java.net 中定义的异常都是非运行异常。</p>
-<h3 id="常见异常种类"><a href="#常见异常种类" class="headerlink" title="常见异常种类"></a>常见异常种类</h3><p>算术异常类：<code>ArithmeticExecption</code><br>&nbsp;&nbsp;&nbsp;&nbsp;比如程序中出现了除以零这样的运算就会出这样的异常。</p>
-<p>空指针异常类：<code>NullPointerException</code><br>&nbsp;&nbsp;&nbsp;&nbsp;调用了未经初始化的对象或者是不存在的对象。</p>
-<p>类型强制转换异常：<code>ClassCastException</code><br>&nbsp;&nbsp;&nbsp;&nbsp;是JVM在检测到两个类型间转换不兼容时引发的运行时异常，此类错误通常会终止用户请求。</p>
-<p>数组下标越界异常：<code>ArrayIndexOutOfBoundsException</code><br>&nbsp;&nbsp;&nbsp;&nbsp;一般是数组下标超出了数组的范围，一般来说，显示(即直接用常数当下标)调用不太容易出这样的错，但隐式(即用变量表示下标)调用就经常出错了。还有一种情况，是程序中定义的数组的长度是通过某些特定方法决定的，不是事先声明的。</p>
-<p>文件未找到异常：<code>FileNotFoundException</code><br>&nbsp;&nbsp;&nbsp;&nbsp;文件不存在或者没有权限操作文件的时候报错。</p>
-<p>操作数据库异常：<code>SQLException</code><br>&nbsp;&nbsp;&nbsp;&nbsp;当使用JDBC与数据库进行交互的时候可能会遇见错误，将会抛出此异常。一个SQLException的异常里面包含以下信息，用于帮助我们更好的定位错误。<br>1、错误表示：使用<code>getMessage</code>方法便可以获取。<br>2、SQLState代码：代码有五位的字母和数字组成。多数的代码又ISO/ANSI和Open Group(X/Open)标准化，但是仍然存在部分的代码由数据库提供商自行实现。<br>3、错误代码：与SQLState不同，错误代码是由数据库提供商自行定义的整数值，存在是由基础数据源返回的实际错误代码的可能。使用<code>getErrorCode</code>方法便可以获取。<br>4、错误原因：表示引发异常的原因，通过不断调用<code>getCause</code>方法可以获取异常发生的底层原因。<br>5、异常链：如果出现多个错误，则通过此链引用异常。使用<code>getNextException</code>方法便可以获取。</p>
-<p>方法未找到异常：<code>NoSuchMethodException</code><br>未找到对应的方法，看看方法名和发送请求的方法名是否一致。</p>
-<h2 id="捕获异常的方法"><a href="#捕获异常的方法" class="headerlink" title="捕获异常的方法"></a>捕获异常的方法</h2><p>1、<code>throw</code>就是抛出一个异常，并获取这个异常的引用，这个异常会被抛到外部的环境，由外部环境进行处理。<br>2、<code>throws</code>并不是抛出一个实际的Exception而是一个异常声明，它声明这个方法可能会抛出一个异常，所以在没有异常的情况下也是可以用throws的，而throws本身的作用也是用来提高程序的健壮性，反过来，如果这个方法的确是有一个异常，那么编译器会强制让你加上throws这个异常声明。通常throws是写在参数列表的后面，这样就表明这个方法可能会抛出一个异常。<br>3、<code>Try catch</code>块，try里经常放上可能会抛出异常的程序段，而catch恰好就是处理try里抛出的异常。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;异常类分为两大类型：Error类代表了编译和系统的错误，不允许捕获；Exception类代表了标准Java库方法所激发的异常。Exception类还包含运行异常类Runntime_Exception和非运行异常类Non_RuntimeException这两个直接的子类。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Interview" scheme="http://www.sanstylemc.cn/tags/Interview/"/>
     
   </entry>
   
