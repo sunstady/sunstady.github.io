@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sanstylemc.cn/"/>
-  <updated>2018-10-12T05:02:39.787Z</updated>
+  <updated>2018-10-12T05:19:25.602Z</updated>
   <id>http://www.sanstylemc.cn/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://www.sanstylemc.cn/2018/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%95%E6%93%8E/"/>
     <id>http://www.sanstylemc.cn/2018/10/12/数据库引擎/</id>
     <published>2018-10-12T05:01:07.000Z</published>
-    <updated>2018-10-12T05:02:39.787Z</updated>
+    <updated>2018-10-12T05:19:25.602Z</updated>
     
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;MySQL中有两个引擎MyISAM呵InnoDB，每个引擎有利有弊。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;MySQL中主要有两个引擎MyISAM呵InnoDB，每个引擎有利有弊。<br><a id="more"></a></p>
 <h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;MyISAM适用于一些大量查询的应用，但对于有大量写功能的应用不是很好。甚至你只需要update一个字段整个表都会被锁起来。而别的进程就算是读操作也不行要等到当前update操作完成之后才能继续进行。另外，MyISAM对于select count(*)这类操作是超级快的。<br>PS: 为什么呢？</p>
 <ul>
 <li>MyISAM保存表的总行数，因此count(*)并且无where子句。很快会返回表的总行数。</li>
-<li>……, 利用count(column)并且无where子句，并且此column不为null，会快会返回表的总行数。</li>
+<li>……, 利用count(column)并且无where子句，并且此column不为null，很快会返回表的总行数。</li>
 <li>……, ……, ……, MySQL会对表进行全表或全索引扫描来确定行数。</li>
 <li>InnoDB查询count(*), count(column(not null)), count(cloumn(may be null))并且无where子句，MySQL会对表进行全表或全索引扫描来确定行数。</li>
 <li>MyISAM和InnoDB查询count(*), count(cloumn(not null)), count(column(may be null))并且存在where子句，MySQL会对表进行索引扫描(如果列上有索引)，速度也比较快。</li>
@@ -111,7 +111,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MySQL中有两个引擎MyISAM呵InnoDB，每个引擎有利有弊。&lt;br&gt;
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MySQL中主要有两个引擎MyISAM呵InnoDB，每个引擎有利有弊。&lt;br&gt;
     
     </summary>
     
