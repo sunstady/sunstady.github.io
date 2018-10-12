@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Sanstyle">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MySQL中主要有两个引擎MyISAM呵InnoDB，每个引擎有利有弊。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-12T05:19:25.602Z">
+<meta property="og:updated_time" content="2018-10-12T05:33:07.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库引擎">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MySQL中主要有两个引擎MyISAM呵InnoDB，每个引擎有利有弊。">
@@ -475,7 +475,7 @@
 <h3 id="事务并发调度的问题"><a href="#事务并发调度的问题" class="headerlink" title="事务并发调度的问题"></a>事务并发调度的问题</h3><ul>
 <li>脏读：A事务读取B事务尚未提交的更改数据，并在这个数据基础上操作。如果B事务回滚，那么A事务读到的数据根本不是合法的，称为脏读。在Oracle中，由于有version控制，不会出现脏读。</li>
 <li>不可重复读：A事务读取了B事务已经提交的更改(或删除)数据。比如A事务第一次读取数据，然后B事务更改该数据并提交，A事务再次读取数据，两次读取的数据不一样。</li>
-<li>幻读：A事务读取了B事务已经提交的新增数据。注意和不可重复读的区别，这里是新增，不可重复读是更改(或删除)。这两种情况对策是不一样的，对于不可重复读，只需要采取行级锁防止该记录数据杯更改或删除，然而对于幻读必须加表级锁，防止在这个表中新增一条数据。</li>
+<li>幻读：A事务读取了B事务已经提交的新增数据。注意和不可重复读的区别，这里是新增，不可重复读是更改(或删除)。这两种情况对策是不一样的，对于不可重复读，只需要采取行级锁防止该记录数据被更改或删除，然而对于幻读必须加表级锁，防止在这个表中新增一条数据。</li>
 <li>第一类丢失更新：A事务撤销时，把已提交的B事务的数据覆盖掉。</li>
 <li>第二类丢失更新：A事务提交时，把已提交的B事务的数据覆盖掉。</li>
 </ul>
