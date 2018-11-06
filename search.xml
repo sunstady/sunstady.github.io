@@ -1275,22 +1275,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Example5_10]]></title>
-    <url>%2F2017%2F10%2F31%2FExample5-10%2F</url>
-    <content type="text"><![CDATA[写一个类，该类有一个方法，public int ff(int a, int b), 该方法返回a 和b 的最大公约数。然后再编写一个该类的子类，要求子类重写方法ff，而且重写的方法将返回a 和b 的最小公约数；要求在重写的方法的方法体中首先调用被隐藏的方法返回a 和b 的最大公约数m ，然后将乘积(a* b)/ m返回；要求在应用的程序的主类中分别使用父类和子类创建对象，并分别调用方法f 计算两个正整数的最大公约数和最小公约数。123456789101112131415161718192021222324252627282930313233class AAb&#123; public int f(int a, int b)&#123; if(b&lt; a)&#123; int temp= 0; temp= a; a= b; b= temp; &#125; int r= b% a; while(r!= 0)&#123; b= a; a= r; r= b% a; &#125; return a; &#125;&#125;class BBb extends AAb&#123; public int f(int a, int b)&#123; int division= super.f(a, b); return (a* b)/ division; &#125;&#125;public class Example5_10 &#123; public static void main(String[] args) &#123; AAb aAb= new AAb(); BBb bBb= new BBb(); System.out.println("最大公约数: "+ aAb.f(36, 24)); System.out.println("最小公倍数: "+ bBb.f(36, 24)); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example5_9]]></title>
-    <url>%2F2017%2F10%2F31%2FExample5-9%2F</url>
-    <content type="text"><![CDATA[写一个类Aa， 该类创建的对象可以调用方法k输出英文字母表，然后再编写一个该类的子类Bb，要求子类Bb必须继承Aa类的方法k(不允许重写)，子类创建的对象不仅可以调用方法k输出英文字母表，而且可以调用子类新增的方法g输出希腊字母表。1234567891011121314151617181920212223242526class Ab&#123; public final void k()&#123; char cStart= 'a', cEnd= 'z'; for(char c= cStart; c&lt;= cEnd; c++)&#123; System.out.print(" "+ c); &#125; &#125;&#125;class Ba extends Ab&#123; public void g()&#123; char cStart= 'α', cEnd= 'ω'; for(char c= cStart; c&lt;= cEnd; c++)&#123; System.out.print(" "+ c); &#125; &#125;&#125;public class Example5_9 &#123; public static void main(String[] args) &#123; Ba ba=new Ba(); ba.k(); System.out.println(""); ba.g(); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java连接MySQL数据库]]></title>
     <url>%2F2017%2F10%2F29%2FJava%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%2F</url>
     <content type="text"><![CDATA[工具：eclipseMySQL5.5MySQL连接驱动：mysql-connector-java-5.1.44-bin.jar Java编译器是eclipse，下载mysql-connector-java-5.1.44-bin.jar，我下的是最新版。加载驱动：1、在工程目录中创建lib文件夹，将下载好的JDBC放到该文件夹下，如图所示：2、右键工程名，点击Properties 选择Java Build Path中的Libraries，点击Add JARs…, 选择刚才添加的JDBC，如下图:3、配置好MySQL，添加一个用户，用户名是style,密码是1234, 创建一个数据库, 数据库名是student。创建表： create table students( -&gt; sno int(10) not null, -&gt; sname varchar(8) not null, -&gt; sex char(2) not null, -&gt; bdate date not null, -&gt; height dec(5,2) default 000.00, -&gt; primary key(sno)); 然后插入一条数据： insert into students(sno,sname,sex,bdate,height) values(‘1’,’gfa’,’男’,’2017-10-29’,’fwef’); 创建好数据库后, 编写Java文件来访问MySQL数据库。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263package sqldemo;import java.sql.*;public class mains &#123; public static void main(String[] args) &#123; //声明Connection对象 Connection con; //驱动程序名 String driver = "com.mysql.jdbc.Driver"; //URL指向要访问的数据库名student String url = "jdbc:mysql://localhost:3306/student"; //MySQL配置时的用户名 String user = "style"; //MySQL配置时的密码 String password = "1234"; //遍历查询结果集 try &#123; //加载驱动程序 Class.forName(driver); //1.getConnection()方法，连接MySQL数据库！！ con = DriverManager.getConnection(url,user,password); if(!con.isClosed()) System.out.println("Succeeded connecting to the Database!"); //2.创建statement类对象，用来执行SQL语句！！ Statement statement = con.createStatement(); //要执行的SQL语句 String sql = "select * from students"; //3.ResultSet类，用来存放获取的结果集！！ ResultSet rs = statement.executeQuery(sql); System.out.println("-----------------"); System.out.println("执行结果如下所示:"); System.out.println("-----------------"); System.out.println("姓名" + "\t" + "性别"); System.out.println("-----------------"); String job = null; String id = null; while(rs.next())&#123; //获取stuname这列数据 job = rs.getString("sname"); //获取stuid这列数据 id = rs.getString("sex"); //输出结果 System.out.println(job + "\t" + id); &#125; rs.close(); con.close(); &#125; catch(ClassNotFoundException e) &#123; //数据库驱动类异常处理 System.out.println("Sorry,can`t find the Driver!"); e.printStackTrace(); &#125; catch(SQLException e) &#123; //数据库连接失败异常处理 e.printStackTrace(); &#125;catch (Exception e) &#123; // TODO: handle exception e.printStackTrace(); &#125;finally&#123; System.out.println("数据库数据获取成功！"); &#125; &#125;&#125; 运行结果如图所示：]]></content>
@@ -1510,62 +1494,6 @@
     <title><![CDATA[判断输入的字符串是否为数字]]></title>
     <url>%2F2017%2F09%2F21%2F%E5%88%A4%E6%96%AD%E8%BE%93%E5%85%A5%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E5%AD%97%2F</url>
     <content type="text"><![CDATA[传入的str1包含中文、负数,位数很长的数字的字符串也能正常匹配12345678910111213141516171819202122232425262728293031import java.math.BigDecimal;import java.util.Scanner;import java.util.regex.Matcher;import java.util.regex.Pattern;public class jisuanqiceshi &#123; public static void main(String[] args) &#123; Scanner str1= new Scanner(System.in); System.out.println("请输入您要判断的字符串: "); String str2 = str1.next(); System.out.println(isNumeric(str2)); str1.close(); &#125; //用正则表达式判断字符串是否为数字（含负数） public static boolean isNumeric(String str) &#123; String regEx = "-?[0-9]+\\.?[0-9]*"; Pattern pat = Pattern.compile(regEx); try&#123; regEx= new BigDecimal(str).toString(); &#125; catch (Exception e)&#123; return false;//异常 说明包含非数字 &#125; Matcher mat = pat.matcher(str); if (mat.find()) &#123; return true; &#125; else &#123; return false; &#125; &#125;&#125; 多组输入试过，没成功，希望大家多多指教！]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example3_9]]></title>
-    <url>%2F2017%2F09%2F19%2FExample3-9%2F</url>
-    <content type="text"><![CDATA[求满足1+ 2!+ 3!+ ... +n!&lt;= 9999的最大整数N12345678910111213141516public class Example3_9 &#123; public static void main(String[] args) &#123; int n= 1; long sum= 0, t= 1; t= n* t; while(true)&#123; sum= sum+ t; if(sum&gt; 9999)&#123; break; &#125; n++; t= n* t; &#125; System.out.println("满足条件的最大整数："+ (n- 1)); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example3_8]]></title>
-    <url>%2F2017%2F09%2F19%2FExample3-8%2F</url>
-    <content type="text"><![CDATA[编写一个应用程序，计算两个非零正整数的最大公约数和最小公约数，要求两个非零正整数从键盘输入1234567891011121314151617181920212223public class Example3_8 &#123; public static void main(String[] args) &#123; System.out.println("请输入两个非零正整数，每输入一个数回车确认"); Scanner reader= new Scanner(System.in); int m= 0, n= 0, t= 0, gy= 0, gb= 0; m= reader.nextInt(); n= reader.nextInt(); if(m&gt; n)&#123; t= m; m= n; n= t; &#125; for(int i= 1; i&lt;= m; i++)&#123; if(m% i== 0 &amp;&amp; n% i== 0)&#123; gy= i; &#125; &#125; gb= m* n/ gy; System.out.println(m+ "和"+ n+ "的最大公约数为: "+ gy); System.out.println(m+ "和"+ n+ "的最小公倍数为: "+ gb); reader.close(); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example3_7]]></title>
-    <url>%2F2017%2F09%2F19%2FExample3-7%2F</url>
-    <content type="text"><![CDATA[一个数如果恰好等于它的因子之和，这个数就称为“完数”，编写一个应用程序，求1000之内的所有完整完数123456789101112131415public class Example3_7 &#123; public static void main(String[] args) &#123; int sum= 0, i, j; for(i= 1; i&lt;=1000; i++)&#123; for(j= 1, sum= 0; j&lt; i; j++)&#123; if(i% j== 0)&#123; sum+= j; &#125; &#125; if(sum== i)&#123; System.out.println("完数: "+ i); &#125; &#125; &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example3_6]]></title>
-    <url>%2F2017%2F09%2F19%2FExample3-6%2F</url>
-    <content type="text"><![CDATA[分别用while和for循环计算1+ 1/2!+ 1/3!+ 1/4!+ ... 的前20项之和1234567891011121314151617public class Example3_6 &#123; public static void main(String[] args) &#123; double sum= 0, a= 1, i= 1; while(i&lt;= 20)&#123; a= (1.0/i)* a; i++; sum= sum+ a; &#125; System.out.println("使用while循环计算的sum= "+ sum); for(sum= 0, i= 1, a= 1; i&lt;= 20; i++)&#123; a= a*(1.0/ i); sum= sum+ a; &#125; System.out.println("使用for循环计算的sum= "+ sum); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example3_5]]></title>
-    <url>%2F2017%2F09%2F19%2FExample3-5%2F</url>
-    <content type="text"><![CDATA[编写一个应用程序，求100以内的全部素数法一:123456789101112131415public class Example3_5 &#123; public static void main(String[] args) &#123; int i, j; for(j= 2; j&lt;= 100; j++)&#123; for(i= 2; i&lt;= j/2; i++)&#123; if(j%i== 0)&#123; break; &#125; &#125; if(i&gt; j/ 2)&#123; System.out.print(" "+ j); &#125; &#125; &#125;&#125; 法二:1234567891011121314public class demos &#123; public static void main(String[] args) &#123; int i, n; for(n= 2; n&lt;= 100; n++)&#123; for(i= 2; i&lt;= n- 1; i++)&#123; if (n% i== 0) &#123; break; &#125; &#125;if (i== n) &#123; System.out.print(n+ " "); &#125; &#125; &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example3_4]]></title>
-    <url>%2F2017%2F09%2F19%2FExample3-4%2F</url>
-    <content type="text"><![CDATA[编写一个应用程序，求1!+ 2!+ ... + 20!123456789101112public class Example3_4 &#123; public static void main(String[] args) &#123; double sum= 0, a= 1; int i= 1; while (i&lt;= 20)&#123; sum= sum+ a; i++; a= a*i; &#125; System.out.println("sum= "+ sum); &#125;&#125;]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Example3_3]]></title>
-    <url>%2F2017%2F09%2F19%2FExample3-3%2F</url>
-    <content type="text"><![CDATA[编写一个应用程序，用for循环输出俄文的字母表1234567891011121314151617public class Example3_3&#123; public static void main (String args[]) &#123; int startPosition=0,endPosition=0; char cStart='А',cEnd='Я'; startPosition=(int)cStart;//cStart做int型转换运算，并将结果赋值给startPosition endPosition=(int)cEnd;//cEnd做int型转换运算，并将结果赋值给endPosition System.out.println("俄文字母共有:"+(endPosition-startPosition+1)+"个"); for(int i=startPosition;i&lt;=endPosition;i++) &#123; char c='\0'; c=(char)i;//i做char型转换运算，并将结果赋值给c System.out.print(" "+c); &#125; &#125;&#125;]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
